@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAIF '26 Milano - Avantgarde Edition</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts (Mono & Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        lime: {
+                            400: '#a3e635',
+                            500: '#84cc16',
+                            900: '#365314',
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 10s linear infinite',
+                        'marquee': 'marquee 20s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+        ::selection {
+            background-color: #a3e635; /* lime-400 */
+            color: black;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3e635; 
+        }
+    </style>
+</head>
+<body class="font-mono antialiased">
+
+    <!-- --- TOP BAR (Ticker Style) --- -->
+    <div class="fixed top-0 w-full z-50 bg-black border-b border-white/20 flex justify-between items-center h-12 px-4 text-xs tracking-widest uppercase">
+        <div class="flex items-center gap-4 min-w-fit">
+            <span class="w-2 h-2 bg-lime-500 rounded-full animate-pulse"></span>
+            <span class="hidden sm:inline">ICAIF '26 // SYSTEM ONLINE</span>
+            <span class="sm:hidden">ICAIF '26</span>
+        </div>
+        
+        <!-- Marquee Container -->
+        <div class="hidden md:block overflow-hidden whitespace-nowrap w-1/3 absolute left-1/2 transform -translate-x-1/2">
+            <div class="animate-marquee inline-block">
+                AI IN FINANCE /// MILANO EDITION /// CALL FOR PAPERS OPEN /// SUBMISSION DEADLINE: MAY 15 /// AI IN FINANCE /// MILANO EDITION /// CALL FOR PAPERS OPEN /// SUBMISSION DEADLINE: MAY 15 ///
+            </div>
+        </div>
+
+        <div class="font-bold text-lime-400 min-w-fit" id="clock">00:00:00 MIL</div>
+    </div>
+
+    <!-- --- NAVIGATION BUTTON --- -->
+    <nav class="fixed top-12 right-0 z-40 p-4 md:p-8">
+        <button id="menu-btn" class="bg-white text-black p-3 hover:bg-lime-400 transition-colors border-2 border-transparent hover:border-black group">
+            <i data-lucide="menu" class="w-6 h-6 group-[.open]:hidden"></i>
+            <i data-lucide="x" class="w-6 h-6 hidden group-[.open]:block"></i>
+        </button>
+    </nav>
+
+    <!-- --- FULL SCREEN MENU OVERLAY --- -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/95 z-30 flex items-center justify-center backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <ul class="space-y-6">
+            <li><a href="#papers" class="menu-link text-4xl md:text-6xl font-black text-white hover:text-lime-400 hover:ml-4 transition-all duration-300 block">01. PAPERS</a></li>
+            <li><a href="#program" class="menu-link text-4xl md:text-6xl font-black text-white hover:text-lime-400 hover:ml-4 transition-all duration-300 block">02. PROGRAM</a></li>
+            <li><a href="#venue" class="menu-link text-4xl md:text-6xl font-black text-white hover:text-lime-400 hover:ml-4 transition-all duration-300 block">03. VENUE</a></li>
+            <li><a href="#workshops" class="menu-link text-4xl md:text-6xl font-black text-white hover:text-lime-400 hover:ml-4 transition-all duration-300 block">04. WORKSHOPS</a></li>
+        </ul>
+    </div>
+
+    <!-- --- HERO SECTION --- -->
+    <section class="pt-12 min-h-screen grid grid-cols-1 md:grid-cols-12 border-b border-white/20 relative">
+        
+        <!-- Left: Typographic Title -->
+        <div class="md:col-span-8 border-r border-white/20 p-8 md:p-16 flex flex-col justify-between relative bg-neutral-900/20">
+            <!-- Grid Background Pattern -->
+            <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20" 
+                 style="background-image: linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px); background-size: 24px 24px;">
+            </div>
+            
+            <div class="relative z-10">
+                <div class="inline-block border border-lime-500 text-lime-500 px-3 py-1 text-xs font-bold mb-6">
+                    EDITION NO. 7
+                </div>
+                <h1 class="text-7xl md:text-9xl font-black leading-none tracking-tighter mb-4 font-sans">
+                    ICAIF<span class="text-stroke block md:inline">'26</span>
+                </h1>
+                <p class="text-xl md:text-2xl max-w-xl mt-8 font-light text-neutral-400">
+                    International Conference on <br/>
+                    <span class="text-white font-bold">Artificial Intelligence</span> in Finance.
+                </p>
+            </div>
+
+            <div class="relative z-10 mt-12 md:mt-0">
+                <button class="group relative px-8 py-4 bg-lime-400 text-black font-bold text-lg overflow-hidden border border-lime-400 hover:border-white transition-colors w-full md:w-auto">
+                    <span class="relative z-10 group-hover:text-white transition-colors flex items-center justify-center md:justify-start gap-2">
+                        REGISTER NOW <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-black transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right: Data / Details -->
+        <div class="md:col-span-4 flex flex-col border-t md:border-t-0 border-white/20">
+            <div class="flex-1 border-b border-white/20 p-8 flex flex-col justify-center hover:bg-white/5 transition-colors group">
+                <i data-lucide="map-pin" class="text-lime-400 mb-4 w-8 h-8 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-sm text-neutral-500 uppercase tracking-widest mb-1">Location</h3>
+                <p class="text-3xl font-bold">MILANO, IT</p>
+                <p class="text-neutral-400 mt-2 text-sm">Via Tortona District / <br/>Superstudio Più (TBA)</p>
+            </div>
+            <div class="flex-1 border-b border-white/20 p-8 flex flex-col justify-center hover:bg-white/5 transition-colors group">
+                <i data-lucide="calendar" class="text-lime-400 mb-4 w-8 h-8 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-sm text-neutral-500 uppercase tracking-widest mb-1">Date</h3>
+                <p class="text-3xl font-bold">NOV 2026</p>
+                <p class="text-neutral-400 mt-2 text-sm">Days 14-17 (Workshops included)</p>
+            </div>
+            <div class="flex-1 p-8 flex flex-col justify-center bg-lime-900/10 hover:bg-lime-900/20 transition-colors">
+                <i data-lucide="terminal" class="text-lime-400 mb-4 w-8 h-8 animate-pulse"></i>
+                <h3 class="text-sm text-neutral-500 uppercase tracking-widest mb-1">Status</h3>
+                <p class="text-2xl font-bold text-lime-400">CALL FOR PAPERS: ACTIVE</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SCROLLING TEXT SEPARATOR --- -->
+    <div class="border-b border-white/20 overflow-hidden py-4 bg-white text-black">
+        <div class="animate-marquee whitespace-nowrap text-4xl font-black uppercase tracking-tighter font-sans">
+            Algorithmic Trading • Large Language Models • Risk Management • Ethics in AI • Cryptoeconomics • Reinforcement Learning • 
+            Algorithmic Trading • Large Language Models • Risk Management • Ethics in AI • Cryptoeconomics • Reinforcement Learning •
+        </div>
+    </div>
+
+    <!-- --- TRACKS / TOPICS --- -->
+    <section id="papers" class="grid grid-cols-1 md:grid-cols-3 border-b border-white/20">
+        <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/20 col-span-1 flex flex-col justify-between">
+            <div>
+                <h2 class="text-5xl md:text-6xl font-black mb-6 font-sans">AREAS<br/>OF<br/>FOCUS</h2>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    We investigate the intersection of computational intelligence and financial complexity. Submit your research to one of our core tracks.
+                </p>
+            </div>
+            <a href="#" class="inline-flex items-center text-lime-400 mt-8 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest group">
+                View Submission Guidelines <i data-lucide="arrow-right" class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
+        <!-- Interactive Grid -->
+        <div class="col-span-1 md:col-span-2 grid grid-cols-1 sm:grid-cols-2">
+            <!-- Topic 1 -->
+            <div class="p-8 border-b border-white/20 sm:border-r group hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <span class="font-mono text-xs opacity-50">/01</span>
+                    <i data-lucide="plus" class="opacity-0 group-hover:opacity-100 transition-opacity w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Generative AI</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-80">LLMs for financial sentiment & reporting.</p>
+                </div>
+            </div>
+            <!-- Topic 2 -->
+            <div class="p-8 border-b border-white/20 group hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <span class="font-mono text-xs opacity-50">/02</span>
+                    <i data-lucide="plus" class="opacity-0 group-hover:opacity-100 transition-opacity w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Agent-Based Sim</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-80">Modeling complex market behaviors.</p>
+                </div>
+            </div>
+            <!-- Topic 3 -->
+            <div class="p-8 border-b border-white/20 sm:border-r sm:border-b-0 group hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <span class="font-mono text-xs opacity-50">/03</span>
+                    <i data-lucide="plus" class="opacity-0 group-hover:opacity-100 transition-opacity w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Risk & Fraud</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-80">Anomaly detection via Deep Learning.</p>
+                </div>
+            </div>
+            <!-- Topic 4 -->
+            <div class="p-8 group hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <span class="font-mono text-xs opacity-50">/04</span>
+                    <i data-lucide="plus" class="opacity-0 group-hover:opacity-100 transition-opacity w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">DeFi Protocols</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-80">Automated market makers & smart contracts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PROGRAM --- -->
+    <section id="program" class="border-b border-white/20">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-2 p-4 md:p-8 border-r border-white/20 flex items-center justify-center md:justify-start">
+                <span class="text-xs uppercase tracking-widest -rotate-90 md:rotate-0 whitespace-nowrap">Keynote Speakers</span>
+            </div>
+            <div class="md:col-span-10">
+                <!-- Speaker 1 -->
+                <div class="group border-b border-white/20 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-lime-400 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"></div>
+                    <div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 group-hover:text-black transition-colors">
+                        <div class="flex items-center gap-6 w-full md:w-auto">
+                            <div class="w-16 h-16 bg-neutral-800 group-hover:bg-black rounded-full overflow-hidden flex-shrink-0 border border-white/10 group-hover:border-black/10">
+                                <div class="w-full h-full bg-gradient-to-tr from-gray-700 to-gray-500"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold font-sans">DR. ELENA ROSSI</h4>
+                                <p class="text-sm font-mono opacity-70 group-hover:opacity-100">HEAD OF AI, EUROPEAN CENTRAL BANK</p>
+                            </div>
+                        </div>
+                        <div class="text-right hidden md:block">
+                            <span class="text-5xl font-black opacity-10">01</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker 2 -->
+                <div class="group border-b border-white/20 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-lime-400 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"></div>
+                    <div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 group-hover:text-black transition-colors">
+                        <div class="flex items-center gap-6 w-full md:w-auto">
+                            <div class="w-16 h-16 bg-neutral-800 group-hover:bg-black rounded-full overflow-hidden flex-shrink-0 border border-white/10 group-hover:border-black/10">
+                                <div class="w-full h-full bg-gradient-to-tr from-gray-700 to-gray-500"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold font-sans">PROF. JAMES WU</h4>
+                                <p class="text-sm font-mono opacity-70 group-hover:opacity-100">MIT FINANCIAL ENGINEERING</p>
+                            </div>
+                        </div>
+                        <div class="text-right hidden md:block">
+                            <span class="text-5xl font-black opacity-10">02</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- VENUE --- -->
+    <section id="venue" class="grid grid-cols-1 md:grid-cols-2 min-h-[500px] border-b border-white/20">
+        <div class="p-12 bg-white text-black flex flex-col justify-between">
+            <div>
+                <div class="uppercase tracking-widest text-xs mb-4 font-bold">The Host City</div>
+                <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter font-sans">MI<br/>LA<br/>NO</h2>
+                <p class="max-w-md text-lg font-medium leading-tight">
+                    Where history meets hyper-modernity. Experience the financial capital of Italy during Design Week season.
+                </p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 gap-4 text-xs font-mono border-t border-black pt-4">
+                <div>
+                    <span class="block opacity-50 font-bold">AIRPORTS</span>
+                    MXP / LIN / BGY
+                </div>
+                <div>
+                    <span class="block opacity-50 font-bold">TRANSPORT</span>
+                    M4 BLUE LINE CONNECTED
+                </div>
+            </div>
+        </div>
+        
+        <!-- Abstract Map Visualization -->
+        <div class="relative bg-neutral-900 overflow-hidden group border-t md:border-t-0 border-white/20">
+            <!-- Grid Map Effect -->
+            <div class="absolute inset-0 opacity-30" 
+                 style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+            
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
+                <div class="w-40 h-40 border-2 border-lime-400 rounded-full flex items-center justify-center animate-spin-slow">
+                    <div class="w-32 h-32 border border-white rounded-full"></div>
+                </div>
+                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-lime-400 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_#a3e635]"></div>
+            </div>
+            
+            <div class="absolute bottom-8 left-8 p-4 bg-black/80 border border-white/20 backdrop-blur-md">
+                <div class="flex items-center gap-2 text-lime-400 text-xs font-mono">
+                    <div class="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
+                    LIVE VENUE STATUS: CONFIRMED
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer class="p-8 md:p-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-neutral-500 bg-black">
+        <div class="col-span-1 md:col-span-2">
+            <h5 class="text-white text-lg font-bold mb-4 font-sans">ICAIF '26</h5>
+            <p class="max-w-xs">
+                Associazione per l'Avanzamento dell'Intelligenza Artificiale.
+                Milano, Italia.
+            </p>
+        </div>
+        <div>
+            <h6 class="text-white font-bold mb-4 uppercase">Social</h6>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-lime-400 transition-colors">Twitter / X</a></li>
+                <li><a href="#" class="hover:text-lime-400 transition-colors">LinkedIn</a></li>
+                <li><a href="#" class="hover:text-lime-400 transition-colors">arXiv Index</a></li>
+            </ul>
+        </div>
+        <div>
+            <h6 class="text-white font-bold mb-4 uppercase">Legal</h6>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-lime-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-lime-400 transition-colors">Code of Conduct</a></li>
+                <li><a href="#" class="hover:text-lime-400 transition-colors">Sponsorships</a></li>
+            </ul>
+        </div>
+        <div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono gap-4">
+            <span>© 2026 ICAIF. SYSTEM DESIGN BY [YOU].</span>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-lime-400 transition-colors uppercase cursor-pointer">
+                SCROLL TO TOP [↑]
+            </button>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Clock Logic
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('it-IT', { hour12: false });
+            document.getElementById('clock').innerText = timeString + " MIL";
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('open');
+            const isOpen = menuBtn.classList.contains('open');
+            
+            if (isOpen) {
+                menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        menuLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
