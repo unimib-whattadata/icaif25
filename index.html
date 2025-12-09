@@ -77,6 +77,23 @@
         .announcement-animate {
             animation: slideDownFadeIn 0.6s ease-out;
         }
+        /* Submit Paper button effect */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(210, 93, 31, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(210, 93, 31, 0.6), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .submit-paper-btn {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        .submit-paper-btn:hover {
+            animation: none;
+            box-shadow: 0 0 40px rgba(210, 93, 31, 0.8), 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) scale(1.02);
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -159,7 +176,7 @@
                 </p>
                 
                 <div>
-                    <button class="px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold shadow-lg shadow-brand-900/10 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <button class="submit-paper-btn px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2">
                         Submit Paper <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
