@@ -159,7 +159,7 @@
         <!-- Background Pattern -->
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-16 sm:pb-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-end pb-16 sm:pb-24 relative z-10">
             <div class="w-full lg:w-2/3">
                 <p class="text-white text-xs sm:text-sm font-medium uppercase tracking-wider mb-4 sm:mb-6">
                     7th <strong>ACM/ICAIF</strong> Conference
@@ -202,7 +202,7 @@
                 </div>
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
                     <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">PREVIOUS ATTENDEES</p>
-                    <p class="text-xl sm:text-2xl font-bold">200+</p>
+                    <p class="text-xl sm:text-2xl font-bold"><span id="attendees-counter">0</span>+</p>
                 </div>
             </div>
         </div>
@@ -222,66 +222,99 @@
                 <!-- Card 1 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="bot" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI & LLMs</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI & Foundation Models</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Sentiment analysis, automated financial reporting, and conversational banking assistants.
+                        Generative AI, simulation, synthetic data generation, and foundation models for financial decision-making.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="bar-chart-2" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Market Prediction</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">AI Agents & Reinforcement Learning</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Deep learning models for time series forecasting, volatility, and portfolio risk management.
+                        AI agents, multi-agent systems, reinforcement learning, sequential decision-making, meta-learning, and transfer learning.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="shield-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="file-text" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Ethics & Fairness</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">NLP & Multimodal Analysis</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Explainable AI (XAI), algorithmic bias detection, and regulatory compliance (AI Act).
+                        Natural language processing and multimodal financial data analysis including text, image, time series, and audio.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="shield-check" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">DeFi & Blockchain</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trustworthy & Responsible AI</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        On-chain analysis, crypto transaction fraud detection, and smart contract optimization.
+                        Explainability, ethics, fairness, security, privacy, AI governance, computational regulation, and compliance.
                     </p>
                 </div>
 
                 <!-- Card 5 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="alert-triangle" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Agent-Based Modeling</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Risk Management & Fraud Detection</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Simulation of complex markets and multi-agent economic interactions.
+                        AI-driven risk management, fraud detection, robustness, uncertainty quantification, and model validation and calibration.
                     </p>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i data-lucide="file-text" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Document Processing</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trading & Asset Management</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Automated information extraction from contracts, legal reports, and unstructured banking documents.
+                        Trading strategies, asset pricing, robot-advising, investment recommendations, financial time series analysis, and factor models.
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="credit-card" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Credit & Customer Analytics</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Customer behavior analysis, credit decisioning, fraud detection for credit cards and mortgages, and early detection of firm defaults.
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Blockchain & DeFi</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Blockchain technology, cryptocurrency, federated learning, and decentralized finance applications.
+                    </p>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="leaf" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Financial Inclusion & ESG</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        AI-driven financial inclusion initiatives and Environmental, Social, and Governance (ESG) investing applications.
                     </p>
                 </div>
             </div>
@@ -296,7 +329,7 @@
                     <span class="text-brand-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-2">The Host City</span>
                     <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Welcome to Milan</h2>
                     <p class="text-slate-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-                        Milan is Italy's financial center and a rapidly growing hub for European technology. The conference will be held in the vibrant Tortona District, combining repurposed industrial spaces with modern design.
+                        Milan is Italy's financial center and a rapidly growing hub for European technology. The conference will be held at Bocconi University, one of Europe's leading institutions for economics, management, and finance.
                     </p>
                     
                     <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
@@ -387,6 +420,42 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // Animated Counter for Attendees
+        function animateCounter(elementId, target, duration = 2000) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+
+            let start = 0;
+            const increment = target / (duration / 16); // 60fps
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = Math.floor(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+
+        // Start counter when page loads
+        window.addEventListener('load', () => {
+            // Use Intersection Observer to start animation when element is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('attendees-counter', 200, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const counterElement = document.getElementById('attendees-counter');
+            if (counterElement) {
+                observer.observe(counterElement.parentElement);
+            }
         });
     </script>
 </body>
