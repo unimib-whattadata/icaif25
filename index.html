@@ -164,7 +164,7 @@
                         <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
                             <div class="border-t border-slate-100 my-1"></div>
-                            <a href="#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                            <a href="call-for-workshop-proposals.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
                             <div class="border-t border-slate-100 my-1"></div>
                             <a href="#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
                             <div class="border-t border-slate-100 my-1"></div>
@@ -201,7 +201,7 @@
                     </button>
                     <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
-                        <a href="#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                        <a href="call-for-workshop-proposals.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
                         <a href="#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
                         <a href="#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
                     </div>
@@ -216,7 +216,7 @@
     </nav>
 
     <!-- --- HERO SECTION --- -->
-    <section class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]" style="background-image: url('img/hero.jpg');" id="about">
+    <section class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]" style="background-image: url('/img/hero.jpg');" id="about">
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black/50"></div>
         <!-- Background Pattern -->
@@ -411,7 +411,7 @@
                     </button>
                 </div>
                 <div class="lg:w-1/2 bg-slate-200 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
-                    <img src="img/bocconi-campus.png" alt="Bocconi University Campus" class="w-full h-full object-cover">
+                    <img src="/img/bocconi-campus.png" alt="Bocconi University Campus" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/30"></div>
                 </div>
             </div>
@@ -473,7 +473,7 @@
             const logoContainer = document.getElementById('logo-container');
             if (!logoContainer) return;
             
-            fetch('img/logo.svg')
+            fetch('/img/logo.svg')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);

@@ -359,7 +359,7 @@
             const logoContainer = document.getElementById('logo-container');
             if (!logoContainer) return;
             
-            fetch('img/logo.svg')
+            fetch('/img/logo.svg')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
