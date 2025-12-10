@@ -56,6 +56,13 @@
             background-color: #f8fafc; /* slate-50 */
             color: #1e293b; /* slate-800 */
         }
+        /* Soft shadow for cards */
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        }
         /* Logo orange arc animation */
         #orange-arc {
             fill: #D15B22;
@@ -181,18 +188,30 @@
                 <p class="text-sm text-slate-600 mb-8 italic">
                     <strong>AOE = Anywhere on Earth (UTC-12)</strong>
                 </p>
-                <div class="space-y-5">
-                    <div class="flex flex-col sm:flex-row sm:items-start">
-                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Paper submission deadline:</div>
-                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">TBD</div>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-start">
-                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Author notification:</div>
-                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">TBD</div>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-start">
-                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Main conference:</div>
-                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">14-17 November 2026</div>
+                <div class="bg-white rounded-xl card-shadow border border-slate-100 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-brand-50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-slate-700">Subject</th>
+                                    <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-slate-700">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-slate-900">Paper submission deadline</td>
+                                    <td class="px-6 py-4 text-sm text-slate-600">TBD</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-slate-900">Author notification</td>
+                                    <td class="px-6 py-4 text-sm text-slate-600">TBD</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition-colors bg-brand-50/30">
+                                    <td class="px-6 py-4 text-sm font-bold text-slate-900">Main conference</td>
+                                    <td class="px-6 py-4 text-sm font-semibold text-brand-800">14-17 November 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -461,16 +480,43 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Get in Touch</h2>
-                <div class="space-y-4 text-slate-700 text-base sm:text-lg">
-                    <div>
-                        <strong class="text-slate-900">General chair:</strong> 
-                        <a href="mailto:andrea.maurino@unimib.it" class="text-brand-600 hover:text-brand-800 underline">andrea.maurino@unimib.it</a>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- General Chair Card -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                        <i data-lucide="user" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                        <div class="relative z-10">
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">General Chair</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
+                                For general inquiries about the conference.
+                            </p>
+                            <a href="mailto:andrea.maurino@unimib.it" class="text-brand-600 hover:text-brand-800 underline text-sm sm:text-base font-medium">
+                                andrea.maurino@unimib.it
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <strong class="text-slate-900">Program chairs:</strong> TBD
+
+                    <!-- Program Chairs Card -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                        <i data-lucide="users" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                        <div class="relative z-10">
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Program Chairs</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
+                                For questions about paper submissions and the program.
+                            </p>
+                            <p class="text-slate-500 text-sm sm:text-base italic">TBD</p>
+                        </div>
                     </div>
-                    <div>
-                        <strong class="text-slate-900">Contact us about sponsorship opportunities:</strong> TBD
+
+                    <!-- Sponsorship Card -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden sm:col-span-2 lg:col-span-1">
+                        <i data-lucide="handshake" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                        <div class="relative z-10">
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Sponsorship</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
+                                Contact us about sponsorship opportunities.
+                            </p>
+                            <p class="text-slate-500 text-sm sm:text-base italic">TBD</p>
+                        </div>
                     </div>
                 </div>
             </div>
