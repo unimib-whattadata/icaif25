@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Call for Papers - ICAIF '26. Submit your research on AI in Finance. Deadline: TBD. Topics include Generative AI, Reinforcement Learning, NLP, Trustworthy AI, Risk Management, Trading, and more.">
     <title>Call for Papers - ICAIF '26 Milan</title>
     
     <!-- Tailwind CSS -->
@@ -56,12 +57,65 @@
             background-color: #f8fafc; /* slate-50 */
             color: #1e293b; /* slate-800 */
         }
+        /* Screen reader only class for accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
         /* Soft shadow for cards */
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
         .card-shadow:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        }
+        /* Announcement bar animation */
+        @keyframes slideDownFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .announcement-animate {
+            animation: slideDownFadeIn 0.6s ease-out;
+        }
+        /* Submit Paper button effect */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(210, 93, 31, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(210, 93, 31, 0.6), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .submit-paper-btn {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        .submit-paper-btn:hover {
+            animation: none;
+            box-shadow: 0 0 40px rgba(210, 93, 31, 0.8), 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) scale(1.02);
         }
         /* Logo orange arc animation */
         #orange-arc {
@@ -77,6 +131,8 @@
     </style>
 </head>
 <body class="font-sans antialiased">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#page-header" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip to main content</a>
 
     <!-- --- NAVIGATION --- -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
@@ -101,7 +157,7 @@
                             <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
                         <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
-                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-brand-600 hover:bg-slate-50 transition-colors">Call for Papers</a>
                             <div class="border-t border-slate-100 my-1"></div>
                             <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
                             <div class="border-t border-slate-100 my-1"></div>
@@ -139,7 +195,7 @@
                         <i data-lucide="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
-                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-brand-600 hover:bg-slate-50 transition-colors">Call for Papers</a>
                         <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
                         <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
                         <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
@@ -155,7 +211,7 @@
     </nav>
 
     <!-- --- PAGE HEADER --- -->
-    <section class="bg-brand-900 text-white py-12 sm:py-16 lg:py-20">
+    <section id="page-header" class="bg-brand-900 text-white py-12 sm:py-16 lg:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Call for Papers</h1>
@@ -579,7 +635,12 @@
             if (!logoContainer) return;
             
             fetch('img/logo.svg')
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
                 .then(svg => {
                     logoContainer.innerHTML = svg;
                 })
@@ -588,15 +649,20 @@
                 });
         })();
 
-        lucide.createIcons();
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
 
         // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Desktop Calls Dropdown Toggle
         const callsDropdownBtn = document.getElementById('calls-dropdown-btn');
