@@ -216,7 +216,7 @@
     </nav>
 
     <!-- --- HERO SECTION --- -->
-    <section class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]" style="background-image: url('/img/hero.jpg');" id="about">
+    <section class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]" id="about" data-hero-bg>
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black/50"></div>
         <!-- Background Pattern -->
@@ -411,7 +411,7 @@
                     </button>
                 </div>
                 <div class="lg:w-1/2 bg-slate-200 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
-                    <img src="/img/bocconi-campus.png" alt="Bocconi University Campus" class="w-full h-full object-cover">
+                    <img src="" alt="Bocconi University Campus" class="w-full h-full object-cover" id="bocconi-img">
                     <div class="absolute inset-0 bg-black/30"></div>
                 </div>
             </div>
@@ -468,12 +468,35 @@
 
     <!-- Scripts -->
     <script>
-        // Load SVG logo inline for animation support
+        // Determine base path dynamically
+        function getBasePath() {
+            const path = window.location.pathname;
+            // Remove filename and trailing slash
+            const basePath = path.substring(0, path.lastIndexOf('/') + 1);
+            return basePath || '/';
+        }
+        
+        const basePath = getBasePath();
+        
+        // Set image paths dynamically
         (function() {
+            // Set hero background image
+            const heroSection = document.querySelector('[data-hero-bg]');
+            if (heroSection) {
+                heroSection.style.backgroundImage = `url('${basePath}img/hero.jpg')`;
+            }
+            
+            // Set bocconi campus image
+            const bocconiImg = document.getElementById('bocconi-img');
+            if (bocconiImg) {
+                bocconiImg.src = basePath + 'img/bocconi-campus.png';
+            }
+            
+            // Load SVG logo inline for animation support
             const logoContainer = document.getElementById('logo-container');
             if (!logoContainer) return;
             
-            fetch('/img/logo.svg')
+            fetch(basePath + 'img/logo.svg')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);

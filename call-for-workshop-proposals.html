@@ -554,12 +554,22 @@
 
     <!-- Scripts -->
     <script>
+        // Determine base path dynamically
+        function getBasePath() {
+            const path = window.location.pathname;
+            // Remove filename and trailing slash
+            const basePath = path.substring(0, path.lastIndexOf('/') + 1);
+            return basePath || '/';
+        }
+        
+        const basePath = getBasePath();
+        
         // Load SVG logo inline for animation support
         (function() {
             const logoContainer = document.getElementById('logo-container');
             if (!logoContainer) return;
             
-            fetch('/img/logo.svg')
+            fetch(basePath + 'img/logo.svg')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
