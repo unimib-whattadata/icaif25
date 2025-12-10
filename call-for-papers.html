@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for Papers - ICAIF '26 Milan</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Merriweather"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e', // Navy blue
+                        },
+                        accent: {
+                            DEFAULT: '#D25D1F', // Orange/Terracotta
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-accent: #D25D1F;
+            --color-brand-50: #f0f9ff;
+            --color-brand-100: #e0f2fe;
+            --color-brand-500: #0ea5e9;
+            --color-brand-600: #0284c7;
+            --color-brand-800: #075985;
+            --color-brand-900: #0c4a6e;
+        }
+        body {
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+        }
+        /* Logo orange arc animation */
+        #orange-arc {
+            fill: #D15B22;
+            stroke: #D15B22;
+            stroke-width: 5;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: arcAppear 2.5s ease-out 0.5s forwards;
+        }
+        @keyframes arcAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 2000;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- --- NAVIGATION --- -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+                    <div id="logo-container" class="h-8 sm:h-10 w-auto"></div>
+                    <div class="leading-tight">
+                        <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
+                        <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan, Italy</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                    <a href="important-dates.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important Dates</a>
+                    <!-- Calls Dropdown -->
+                    <div class="relative">
+                        <button id="calls-dropdown-btn" class="text-xs xl:text-sm font-medium text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Calls
+                            <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                        </div>
+                    </div>
+                    <a href="index.html#programme" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Programme</a>
+                    <a href="index.html#attending" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Attending</a>
+                    <a href="index.html#sponsors" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Sponsors</a>
+                    <a href="index.html#organization" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
+                    <a href="#" class="px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs xl:text-sm font-semibold transition-colors shadow-sm whitespace-nowrap ml-2">
+                        Register
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2" aria-label="Toggle menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
+            <div class="px-4 py-4 space-y-3">
+                <a href="important-dates.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important Dates</a>
+                <!-- Mobile Calls Dropdown -->
+                <div>
+                    <button id="mobile-calls-btn" class="block w-full text-left text-base font-medium text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Calls
+                        <i data-lucide="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                    </div>
+                </div>
+                <a href="index.html#programme" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Programme</a>
+                <a href="index.html#attending" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Attending</a>
+                <a href="index.html#sponsors" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Sponsors</a>
+                <a href="index.html#organization" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
+                <a href="#" class="block text-base font-medium text-brand-600 font-bold py-2">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --- PAGE HEADER --- -->
+    <section class="bg-brand-900 text-white py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Call for Papers</h1>
+                <p class="text-lg sm:text-xl text-brand-100 leading-relaxed">
+                    The Association for Computing Machinery (ACM) International Conference on AI in Finance (ICAIF) is an International peer-reviewed conference that aims to bring together researchers from academia, government, and industry to share challenges, advances, and insights on the impact of Artificial Intelligence and Machine Learning on Finance. ICAIF'26 will take place in Milan between 14-17 November 2026.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- INTRODUCTION --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-slate-700 leading-relaxed text-base sm:text-lg mb-6">
+                    We invite participation from academia, government, regulatory agencies, financial institutions, NGOs, and other stakeholders in the AI and Finance community.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                    ICAIF '26 invites high-quality research paper submissions that connect AI and Finance from both methodological and applicational perspectives. Details on paper submission are outlined below, including important dates, topic areas, submission guidelines (including templates & formatting), paper review, and policies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- IMPORTANT DATES --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Important Dates</h2>
+                <p class="text-sm text-slate-600 mb-8 italic">
+                    <strong>AOE = Anywhere on Earth (UTC-12)</strong>
+                </p>
+                <div class="space-y-5">
+                    <div class="flex flex-col sm:flex-row sm:items-start">
+                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Paper submission deadline:</div>
+                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">TBD</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-start">
+                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Author notification:</div>
+                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">TBD</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-start">
+                        <div class="font-semibold text-slate-900 text-base sm:text-lg mb-2 sm:mb-0 sm:w-1/3">Main conference:</div>
+                        <div class="text-slate-600 text-base sm:text-lg sm:w-2/3">14-17 November 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- TOPIC AREAS --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Topic Areas</h2>
+                <p class="text-slate-700 mb-10 sm:mb-12 leading-relaxed text-base sm:text-lg">
+                    ICAIF '26 invites high-quality research paper submissions that connect AI and Finance from both methodological and applicational perspectives.
+                </p>
+
+                <!-- Methodologies -->
+                <div class="mb-12 sm:mb-16">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Methodologies</h3>
+                    <p class="text-slate-600 mb-6 text-base sm:text-lg">
+                        Methodologies should be relevant to general financial problems that may include but are not limited to:
+                    </p>
+                    <ul class="space-y-3 text-slate-700 text-base sm:text-lg">
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Generative AI, simulation, and synthetic data generation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Foundation models for financial decision-making</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>AI agents and multi-agent systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Reinforcement learning and sequential decision-making</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>NLP and Multimodal financial data analysis (text, image, time series, audio)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Trustworthy and responsible AI in finance — explainability, ethics, fairness, security, and privacy of AI & ML systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>AI governance, computational regulation, and compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>AI-driven risk management and fraud detection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Meta-learning and transfer learning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Federated learning and decentralized finance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Robustness and uncertainty quantification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Validation and calibration of financial models</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Quantum computing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Graph theory and network analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Applications -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Potential Applications</h3>
+                    <p class="text-slate-600 mb-6 text-base sm:text-lg">
+                        Potential applications of interest may include, but are not limited to:
+                    </p>
+                    <ul class="space-y-3 text-slate-700 text-base sm:text-lg">
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Fraud detection for credit cards and mortgages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Early detection of firm defaults</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Blockchain and cryptocurrency</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Risk modeling and risk management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Trading (for example, optimal execution, market making, smart order routing, and hedging)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Asset pricing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Robot-advising and investment recommendations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Forecasting of financial scenarios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Financial time series analysis and factor models</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Understanding customer behaviour for credit decisioning, servicing and recommendations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>AI-Driven Financial Inclusion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-600 mr-3 mt-1">•</span>
+                            <span>Environmental, Social, and Governance (ESG) Investing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PAPER SUBMISSION & TEMPLATES --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Paper Submission & Templates</h2>
+                
+                <div class="space-y-8 sm:space-y-10">
+                    <div>
+                        <p class="text-slate-700 mb-4 leading-relaxed text-base sm:text-lg">
+                            Papers must be submitted via CMT. For submission information, please visit <a href="https://cmt3.research.microsoft.com/ICAIF2025" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-800 underline">https://cmt3.research.microsoft.com/ICAIF2025</a>.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                            Papers must be formatted according to ACM guidelines (see below) and must be no longer than eight (8) pages in total (when in two-column signconf format), including all figures and references. Authors are required to submit their electronic papers in PDF format. Over-length papers will be rejected without review. Submissions must be self-contained. ICAIF '26 will not accept any supplementary materials/appendices.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Additional Information</h3>
+                        <ul class="space-y-4 text-slate-700 text-base sm:text-lg">
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>To ensure papers receive sufficient quantity and quality of reviews, all authors of all submissions agree to undertake a light reviewing load if requested. We reserve the right to desk reject submissions from qualified authors who do not participate in the reviews.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>The author list cannot be modified after initial submission on CMT. Be sure to correctly include all authors, in the correct order, when submitting a paper.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Reviews are double blind. Submitted papers should not reveal the authors in any way. When citing your own work, use the third person, e.g. "Byrd et al. [cite] found that…" rather than "In our previous work [cite], we found that…"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Authors should register an ORCID if they do not have one. This is required by ACM for all authors of accepted papers when preparing camera ready publication.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Papers may be accepted for oral or poster presentation. All accepted papers will appear in the ACM conference proceedings.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Templates</h3>
+                        <ul class="space-y-4 text-slate-700 text-base sm:text-lg">
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Papers must use the latest ACM article template from <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-800 underline">https://www.acm.org/publications/proceedings-template</a></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Direct link to latest LaTeX template: <a href="https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-800 underline">https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip</a></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>The LaTeX template is also available on Overleaf: <a href="https://www.overleaf.com/gallery/tagged/acm-official" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-800 underline">https://www.overleaf.com/gallery/tagged/acm-official</a></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>ACM provides both LaTeX and Word templates. Authors are recommended to use LaTeX if possible. LaTeX submissions must use the ACM template's sigconf two-column format. When using ACM Latex template, please use "sigconf" class and use "anonymous" parameter.</span>
+                            </li>
+                        </ul>
+                        <p class="text-slate-600 mt-6 text-sm sm:text-base italic">
+                            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PAPER REVIEW --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Paper Review</h2>
+                <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                    ICAIF '26 will follow a double-blind review process (authors' identities will not be known to the reviewers, and the reviewers' identities will not be known to the authors). Accordingly, submitted papers should not reveal the identity of the authors, either by citation or other obvious mention of previous work. Self-citation is permitted in the third person, e.g. "Balch et al. [cite] identified…", but not "In our prior work [cite], we identified…" There will be no rebuttal period.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SUBMISSION POLICIES --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Submission Policies</h2>
+                <div class="space-y-6">
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                        Each individual author is limited to no more than six(6) submissions to ICAIF. The list of authors provided at submission time is final. Authors may not be added to, or removed from, papers following submission. Authors are also expected to participate as reviewers if asked.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                        For full paper submissions, ICAIF is a peer-reviewed archival venue. ICAIF will not accept any paper that, at the time of submission, is under review for, already published in, or already accepted for publication in, a journal or other archival publication. Questions about submission eligibility should be referred to the Program Chairs in advance of the submission deadline.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                        Additionally, authors should not submit their papers to other archival venues during the ICAIF review period. Multiple submissions are grounds for immediate rejection of the submitted paper and referral for ethical review.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                        <strong>Permissible pre-publication:</strong> Submitted papers may have appeared previously as technical reports or in other non-archival venues. Specific examples of permissible venues include arXiv or the workshops at AAAI, KDD, ICML, or NeurIPS. In order to preserve anonymity for review, however, authors must not cite such papers. Questions concerning acceptable pre-publication venues should be directed to the Program Chairs.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                        All submissions will be treated with strict confidentiality until published.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- IN-PERSON PRESENTATION POLICY --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">In-person Presentation Policy</h2>
+                <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                    ICAIF'26 is an in-person conference. All accepted papers to the main track and workshops are expected to be presented in-person. We anticipate that at least one author from each accepted paper will attend the conference in person to deliver the paper and address audience questions during the Q&A session. No pre-recorded videos will be accepted.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- GET IN TOUCH --- -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Get in Touch</h2>
+                <div class="space-y-4 text-slate-700 text-base sm:text-lg">
+                    <div>
+                        <strong class="text-slate-900">General chair:</strong> 
+                        <a href="mailto:andrea.maurino@unimib.it" class="text-brand-600 hover:text-brand-800 underline">andrea.maurino@unimib.it</a>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900">Program chairs:</strong> TBD
+                    </div>
+                    <div>
+                        <strong class="text-slate-900">Contact us about sponsorship opportunities:</strong> TBD
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer class="bg-slate-900 text-slate-400 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+                <div class="col-span-1 sm:col-span-2">
+                    <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
+                    <p class="max-w-sm mb-6 text-sm sm:text-base">
+                        The International Conference on Artificial Intelligence in Finance is a premier forum for sharing research and innovation at the intersection of AI and Finance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                            <i data-lucide="twitter" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
+                        <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
+                        <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
+                        <li><a href="index.html#organization" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail" class="w-4 h-4 mr-2 shrink-0"></i> info@icaif26.org</li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
+                <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
+                <div class="flex space-x-4 sm:space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Load SVG logo inline for animation support
+        (function() {
+            const logoContainer = document.getElementById('logo-container');
+            if (!logoContainer) return;
+            
+            fetch('img/logo.svg')
+                .then(response => response.text())
+                .then(svg => {
+                    logoContainer.innerHTML = svg;
+                })
+                .catch(err => {
+                    console.error('Error loading logo:', err);
+                });
+        })();
+
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Desktop Calls Dropdown Toggle
+        const callsDropdownBtn = document.getElementById('calls-dropdown-btn');
+        const callsDropdown = document.getElementById('calls-dropdown');
+        const callsChevron = document.getElementById('calls-chevron');
+        
+        if (callsDropdownBtn && callsDropdown) {
+            callsDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                callsDropdown.classList.toggle('hidden');
+                if (callsChevron) {
+                    callsChevron.classList.toggle('rotate-180');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!callsDropdownBtn.contains(e.target) && !callsDropdown.contains(e.target)) {
+                    callsDropdown.classList.add('hidden');
+                    if (callsChevron) {
+                        callsChevron.classList.remove('rotate-180');
+                    }
+                }
+            });
+        }
+
+        // Mobile Calls Dropdown Toggle
+        const mobileCallsBtn = document.getElementById('mobile-calls-btn');
+        const mobileCallsDropdown = document.getElementById('mobile-calls-dropdown');
+        const mobileCallsChevron = document.getElementById('mobile-calls-chevron');
+        
+        if (mobileCallsBtn && mobileCallsDropdown) {
+            mobileCallsBtn.addEventListener('click', () => {
+                mobileCallsDropdown.classList.toggle('hidden');
+                if (mobileCallsChevron) {
+                    mobileCallsChevron.classList.toggle('rotate-180');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

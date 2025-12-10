@@ -63,6 +63,32 @@
         .card-shadow:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
+        /* Logo orange arc animation */
+        #orange-arc {
+            fill: #D15B22;
+            stroke: #D15B22;
+            stroke-width: 5;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: arcAppear 2.5s ease-out 0.5s forwards;
+        }
+        @keyframes arcAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 2000;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 0;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -73,7 +99,7 @@
             <div class="flex justify-between h-16 sm:h-20 items-center">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 sm:gap-3">
-                    <img src="img/logo.png" alt="ICAIF Logo" class="h-8 sm:h-10 w-auto">
+                    <div id="logo-container" class="h-8 sm:h-10 w-auto"></div>
                     <div class="leading-tight">
                         <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
                         <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan, Italy</span>
@@ -83,7 +109,22 @@
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
                     <a href="index.html#important-dates" class="text-xs xl:text-sm font-medium text-brand-600 transition-colors whitespace-nowrap">Important Dates</a>
-                    <a href="index.html#calls" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Calls</a>
+                    <!-- Calls Dropdown -->
+                    <div class="relative">
+                        <button id="calls-dropdown-btn" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Calls
+                            <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="index.html#calls" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                        </div>
+                    </div>
                     <a href="index.html#programme" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Programme</a>
                     <a href="index.html#attending" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Attending</a>
                     <a href="index.html#sponsors" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Sponsors</a>
@@ -106,7 +147,19 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
             <div class="px-4 py-4 space-y-3">
                 <a href="index.html#important-dates" class="block text-base font-medium text-brand-600 transition-colors py-2">Important Dates</a>
-                <a href="index.html#calls" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Calls</a>
+                <!-- Mobile Calls Dropdown -->
+                <div>
+                    <button id="mobile-calls-btn" class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Calls
+                        <i data-lucide="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                        <a href="index.html#calls" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                    </div>
+                </div>
                 <a href="index.html#programme" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Programme</a>
                 <a href="index.html#attending" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Attending</a>
                 <a href="index.html#sponsors" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Sponsors</a>
@@ -234,7 +287,7 @@
                     <ul class="space-y-2 sm:space-y-3">
                         <li><a href="index.html" class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
                         <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
-                        <li><a href="index.html#calls" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
+                        <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
                         <li><a href="index.html#organization" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
                     </ul>
                 </div>
@@ -260,6 +313,21 @@
 
     <!-- Scripts -->
     <script>
+        // Load SVG logo inline for animation support
+        (function() {
+            const logoContainer = document.getElementById('logo-container');
+            if (!logoContainer) return;
+            
+            fetch('img/logo.svg')
+                .then(response => response.text())
+                .then(svg => {
+                    logoContainer.innerHTML = svg;
+                })
+                .catch(err => {
+                    console.error('Error loading logo:', err);
+                });
+        })();
+
         lucide.createIcons();
 
         // Mobile Menu Toggle
@@ -269,6 +337,45 @@
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        // Desktop Calls Dropdown Toggle
+        const callsDropdownBtn = document.getElementById('calls-dropdown-btn');
+        const callsDropdown = document.getElementById('calls-dropdown');
+        const callsChevron = document.getElementById('calls-chevron');
+        
+        if (callsDropdownBtn && callsDropdown) {
+            callsDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                callsDropdown.classList.toggle('hidden');
+                if (callsChevron) {
+                    callsChevron.classList.toggle('rotate-180');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!callsDropdownBtn.contains(e.target) && !callsDropdown.contains(e.target)) {
+                    callsDropdown.classList.add('hidden');
+                    if (callsChevron) {
+                        callsChevron.classList.remove('rotate-180');
+                    }
+                }
+            });
+        }
+
+        // Mobile Calls Dropdown Toggle
+        const mobileCallsBtn = document.getElementById('mobile-calls-btn');
+        const mobileCallsDropdown = document.getElementById('mobile-calls-dropdown');
+        const mobileCallsChevron = document.getElementById('mobile-calls-chevron');
+        
+        if (mobileCallsBtn && mobileCallsDropdown) {
+            mobileCallsBtn.addEventListener('click', () => {
+                mobileCallsDropdown.classList.toggle('hidden');
+                if (mobileCallsChevron) {
+                    mobileCallsChevron.classList.toggle('rotate-180');
+                }
+            });
+        }
     </script>
 </body>
 </html>
