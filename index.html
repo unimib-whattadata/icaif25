@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ICAIF '26 - The 7th ACM International Conference on AI in Finance. Join researchers, practitioners, and innovators in Milan, Italy, November 14-17, 2026 to explore the frontiers of AI in Finance.">
+    <meta name="description"
+        content="ICAIF '26 - The 7th ACM International Conference on AI in Finance. Join researchers, practitioners, and innovators in Milan, Italy, November 14-17, 2026 to explore the frontiers of AI in Finance.">
     <title>ICAIF '26 Milan</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -53,10 +57,14 @@
             --color-brand-800: #075985;
             --color-brand-900: #0c4a6e;
         }
+
         body {
-            background-color: #f8fafc; /* slate-50 */
-            color: #1e293b; /* slate-800 */
+            background-color: #f8fafc;
+            /* slate-50 */
+            color: #1e293b;
+            /* slate-800 */
         }
+
         /* Screen reader only class for accessibility */
         .sr-only {
             position: absolute;
@@ -69,6 +77,7 @@
             white-space: nowrap;
             border-width: 0;
         }
+
         .focus\:not-sr-only:focus {
             position: static;
             width: auto;
@@ -79,50 +88,63 @@
             clip: auto;
             white-space: normal;
         }
+
         /* Soft shadow for cards */
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
+
         .card-shadow:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
+
         /* Announcement bar animation */
         @keyframes slideDownFadeIn {
             from {
                 opacity: 0;
                 transform: translateY(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .announcement-animate {
             animation: slideDownFadeIn 0.6s ease-out;
         }
+
         /* Submit Paper button effect */
         @keyframes pulseGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 20px rgba(210, 93, 31, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             }
+
             50% {
                 box-shadow: 0 0 30px rgba(210, 93, 31, 0.6), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             }
         }
+
         .submit-paper-btn {
             animation: pulseGlow 2s ease-in-out infinite;
         }
+
         .submit-paper-btn:hover {
             animation: none;
             box-shadow: 0 0 40px rgba(210, 93, 31, 0.8), 0 10px 15px -3px rgba(0, 0, 0, 0.2);
             transform: translateY(-2px) scale(1.02);
         }
+
         /* Logo orange arc animation */
         #orange-arc {
             fill: #D15B22;
             clip-path: inset(0 100% 0 0);
             animation: revealArcLeftToRight 2.5s ease-in 0.5s forwards;
         }
+
         @keyframes revealArcLeftToRight {
             to {
                 clip-path: inset(0 0% 0 0);
@@ -130,9 +152,12 @@
         }
     </style>
 </head>
+
 <body class="font-sans antialiased">
     <!-- Skip to main content link for accessibility -->
-    <a href="#about" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip to main content</a>
+    <a href="#about"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip
+        to main content</a>
 
     <!-- --- ANNOUNCEMENT BAR --- -->
     <div class="announcement-animate bg-brand-900 text-white text-xs py-2 px-4 text-center font-medium tracking-wide">
@@ -148,41 +173,61 @@
                     <div id="logo-container" class="h-8 sm:h-10 w-auto"></div>
                     <div class="leading-tight">
                         <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
-                        <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan, Italy</span>
+                        <span
+                            class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan,
+                            Italy</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
-                    <a href="important-dates.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important Dates</a>
+                    <a href="important-dates.html"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important
+                        Dates</a>
                     <!-- Calls Dropdown -->
                     <div class="relative">
-                        <button id="calls-dropdown-btn" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                        <button id="calls-dropdown-btn"
+                            class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Calls
                             <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
-                        <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
-                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                        <div id="calls-dropdown"
+                            class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="call-for-papers.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Papers</a>
                             <div class="border-t border-slate-100 my-1"></div>
-                            <a href="call-for-workshop-proposals.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                            <a href="call-for-workshop-proposals.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Workshop Proposals</a>
                             <div class="border-t border-slate-100 my-1"></div>
-                            <a href="call-for-tutorials.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                            <a href="call-for-tutorials.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Tutorials</a>
                             <div class="border-t border-slate-100 my-1"></div>
-                            <a href="call-for-competitions.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                            <a href="call-for-competitions.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Competitions</a>
                         </div>
                     </div>
-                    <a href="#programme" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Programme</a>
-                    <a href="#attending" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Attending</a>
-                    <a href="#sponsors" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Sponsors</a>
-                    <a href="#organization" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
-                    <a href="#" class="px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs xl:text-sm font-semibold transition-colors shadow-sm whitespace-nowrap ml-2">
+                    <a href="#programme"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Programme</a>
+                    <a href="#attending"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Attending</a>
+                    <a href="#sponsors"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Sponsors</a>
+                    <a href="#organization"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
+                    <a href="#"
+                        class="px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs xl:text-sm font-semibold transition-colors shadow-sm whitespace-nowrap ml-2">
                         Register
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2" aria-label="Toggle menu">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2"
+                        aria-label="Toggle menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -190,56 +235,80 @@
         </div>
 
         <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
             <div class="px-4 py-4 space-y-3">
-                <a href="important-dates.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important Dates</a>
+                <a href="important-dates.html"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important
+                    Dates</a>
                 <!-- Mobile Calls Dropdown -->
                 <div>
-                    <button id="mobile-calls-btn" class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                    <button id="mobile-calls-btn"
+                        class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Calls
-                        <i data-lucide="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
+                        <i data-lucide="chevron-down" id="mobile-calls-chevron"
+                            class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
-                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
-                        <a href="call-for-workshop-proposals.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
-                        <a href="call-for-tutorials.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
-                        <a href="call-for-competitions.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                        <a href="call-for-papers.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Papers</a>
+                        <a href="call-for-workshop-proposals.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Workshop Proposals</a>
+                        <a href="call-for-tutorials.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Tutorials</a>
+                        <a href="call-for-competitions.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Competitions</a>
                     </div>
                 </div>
-                <a href="#programme" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Programme</a>
-                <a href="#attending" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Attending</a>
-                <a href="#sponsors" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Sponsors</a>
-                <a href="#organization" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
+                <a href="#programme"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Programme</a>
+                <a href="#attending"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Attending</a>
+                <a href="#sponsors"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Sponsors</a>
+                <a href="#organization"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
                 <a href="#" class="block text-base font-medium text-brand-600 font-bold py-2">Register</a>
             </div>
         </div>
     </nav>
 
     <!-- --- HERO SECTION --- -->
-    <section class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]" id="about" data-hero-bg>
+    <section
+        class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
+        id="about" data-hero-bg>
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black/50"></div>
         <!-- Background Pattern -->
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-end pb-16 sm:pb-24 relative z-10">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-end pb-16 sm:pb-24 relative z-10">
             <div class="w-full lg:w-2/3">
                 <p class="text-white text-xs sm:text-sm font-medium uppercase tracking-wider mb-4 sm:mb-6">
                     7th <strong>ACM International Conference on AI in Finance</strong>
                 </p>
-                
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-6">
+
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-6">
                     The Future of<br>
                     <span class="text-accent">Artificial Intelligence</span><br>
                     in Global Finance
                 </h1>
-                
+
                 <p class="text-lg sm:text-xl text-slate-200 mb-6 sm:mb-10 max-w-2xl font-serif italic leading-relaxed">
-                    Join researchers, practitioners, and innovators in Milan to explore the frontiers of AI, from Deep Learning to Computational Economics.
+                    Join researchers, practitioners, and innovators in Milan to explore the frontiers of AI, from Deep
+                    Learning to Computational Economics.
                 </p>
-                
+
                 <div>
-                    <button class="submit-paper-btn px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold transition-all duration-300">
+                    <button
+                        class="submit-paper-btn px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold transition-all duration-300">
                         Submit Paper
                     </button>
                 </div>
@@ -247,17 +316,21 @@
         </div>
     </section>
 
-    <!-- --- BOCCONI LOGO BAR --- -->
+    <!-- --- UNIVERSITY LOGOS BAR --- -->
     <section class="bg-brand-900 p-0 m-0">
-        <div class="flex items-center justify-center p-0 m-0">
-            <img src="img/loghi/bocconi.svg" alt="Bocconi University" class="block h-28 sm:h-40 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity p-0 m-0">
+        <div class="flex items-center justify-center gap-8 sm:gap-16 p-4 sm:p-0 m-0">
+            <img src="img/loghi/bocconi.svg" alt="Bocconi University"
+                class="block h-16 sm:h-24 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity mt-4 sm:mt-6">
+            <img src="img/loghi/unimib.svg" alt="University of Milano-Bicocca"
+                class="block h-16 sm:h-24 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity mt-4 sm:mt-6">
         </div>
     </section>
 
     <!-- --- KEY DATES & STATS --- -->
     <section class="bg-brand-900 text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center md:text-left">
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center md:text-left">
                 <div class="pt-4 md:pt-0 pl-0 md:pl-4 col-span-2 md:col-span-1">
                     <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">DATE</p>
                     <p class="text-xl sm:text-2xl font-bold">Nov <span class="text-accent">14-17</span>, 2026</p>
@@ -271,7 +344,8 @@
                     <p class="text-xl sm:text-2xl font-bold">May 15</p>
                 </div>
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
-                    <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">PREVIOUS ATTENDEES</p>
+                    <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">PREVIOUS
+                        ATTENDEES</p>
                     <p class="text-xl sm:text-2xl font-bold"><span id="attendees-counter">0</span>+</p>
                 </div>
             </div>
@@ -284,106 +358,142 @@
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
                 <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">Areas of Interest</h2>
                 <p class="text-sm sm:text-base text-slate-600 px-4">
-                    ICAIF '26 welcomes high-quality submissions demonstrating the application of AI techniques to real-world financial problems.
+                    ICAIF '26 welcomes high-quality submissions demonstrating the application of AI techniques to
+                    real-world financial problems.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="sparkles" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-95 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="sparkles"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-95 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI & Foundation Models</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI & Foundation
+                            Models</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Generative AI, simulation, synthetic data generation, and foundation models for financial decision-making.
+                            Generative AI, simulation, synthetic data generation, and foundation models for financial
+                            decision-making.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="users" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="users"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">AI Agents & Reinforcement Learning</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">AI Agents & Reinforcement
+                            Learning</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            AI agents, multi-agent systems, reinforcement learning, sequential decision-making, meta-learning, and transfer learning.
+                            AI agents, multi-agent systems, reinforcement learning, sequential decision-making,
+                            meta-learning, and transfer learning.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="file-text" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="file-text"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">NLP & Multimodal Analysis</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">NLP & Multimodal Analysis
+                        </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Natural language processing and multimodal financial data analysis including text, image, time series, and audio.
+                            Natural language processing and multimodal financial data analysis including text, image,
+                            time series, and audio.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="shield-check" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="shield-check"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trustworthy & Responsible AI</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trustworthy & Responsible
+                            AI</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Explainability, ethics, fairness, security, privacy, AI governance, computational regulation, and compliance.
+                            Explainability, ethics, fairness, security, privacy, AI governance, computational
+                            regulation, and compliance.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="alert-triangle" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="alert-triangle"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Risk Management & Fraud Detection</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Risk Management & Fraud
+                            Detection</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            AI-driven risk management, fraud detection, robustness, uncertainty quantification, and model validation and calibration.
+                            AI-driven risk management, fraud detection, robustness, uncertainty quantification, and
+                            model validation and calibration.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="bar-chart-2" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="bar-chart-2"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trading & Asset Management</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trading & Asset Management
+                        </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Trading strategies, asset pricing, robot-advising, investment recommendations, financial time series analysis, and factor models.
+                            Trading strategies, asset pricing, robot-advising, investment recommendations, financial
+                            time series analysis, and factor models.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 7 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="credit-card" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="credit-card"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Credit & Customer Analytics</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Credit & Customer Analytics
+                        </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Customer behavior analysis, credit decisioning, fraud detection for credit cards and mortgages, and early detection of firm defaults.
+                            Customer behavior analysis, credit decisioning, fraud detection for credit cards and
+                            mortgages, and early detection of firm defaults.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 8 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="globe" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="globe"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Blockchain & DeFi</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Blockchain technology, cryptocurrency, federated learning, and decentralized finance applications.
+                            Blockchain technology, cryptocurrency, federated learning, and decentralized finance
+                            applications.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 9 -->
-                <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                    <i data-lucide="leaf" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                    <i data-lucide="leaf"
+                        class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Financial Inclusion & ESG</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Financial Inclusion & ESG
+                        </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            AI-driven financial inclusion initiatives and Environmental, Social, and Governance (ESG) investing applications.
+                            AI-driven financial inclusion initiatives and Environmental, Social, and Governance (ESG)
+                            investing applications.
                         </p>
                     </div>
                 </div>
@@ -396,12 +506,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-                    <span class="text-brand-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-2">The Host City</span>
+                    <span class="text-brand-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-2">The Host
+                        City</span>
                     <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Welcome to Milan</h2>
                     <p class="text-slate-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-                        Milan is Italy's financial center and a rapidly growing hub for European technology. The conference will be held at Bocconi University, one of Europe's leading institutions for economics, management, and finance.
+                        Milan is Italy's financial center and a rapidly growing hub for European technology. The
+                        conference will be held at Bocconi University, one of Europe's leading institutions for
+                        economics, management, and finance.
                     </p>
-                    
+
                     <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                         <li class="flex items-start">
                             <i data-lucide="map-pin" class="w-5 h-5 text-brand-600 mt-1 mr-3 shrink-0"></i>
@@ -409,11 +522,13 @@
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="plane" class="w-5 h-5 text-brand-600 mt-1 mr-3 shrink-0"></i>
-                            <span class="text-slate-700 text-sm sm:text-base"><strong>Airports:</strong> Malpensa (MXP), Linate (LIN), Bergamo (BGY)</span>
+                            <span class="text-slate-700 text-sm sm:text-base"><strong>Airports:</strong> Malpensa (MXP),
+                                Linate (LIN), Bergamo (BGY)</span>
                         </li>
                     </ul>
-                    
-                    <button class="text-brand-600 font-semibold hover:text-brand-800 self-start border-b-2 border-brand-100 hover:border-brand-600 transition-colors text-sm sm:text-base">
+
+                    <button
+                        class="text-brand-600 font-semibold hover:text-brand-800 self-start border-b-2 border-brand-100 hover:border-brand-600 transition-colors text-sm sm:text-base">
                         Hotel & Travel Information
                     </button>
                 </div>
@@ -432,22 +547,27 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Get in Touch</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     <!-- General Chair Card -->
-                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                        <i data-lucide="user" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                        <i data-lucide="user"
+                            class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                         <div class="relative z-10">
                             <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">General Chair</h3>
                             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
                                 For general inquiries about the conference.
                             </p>
-                            <a href="mailto:andrea.maurino@unimib.it" class="text-brand-600 hover:text-brand-800 underline text-sm sm:text-base font-medium">
+                            <a href="mailto:andrea.maurino@unimib.it"
+                                class="text-brand-600 hover:text-brand-800 underline text-sm sm:text-base font-medium">
                                 andrea.maurino@unimib.it
                             </a>
                         </div>
                     </div>
 
                     <!-- Program Chairs Card -->
-                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
-                        <i data-lucide="users" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden">
+                        <i data-lucide="users"
+                            class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                         <div class="relative z-10">
                             <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Program Chairs</h3>
                             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
@@ -458,8 +578,10 @@
                     </div>
 
                     <!-- Sponsorship Card -->
-                    <div class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden sm:col-span-2 lg:col-span-1">
-                        <i data-lucide="handshake" class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-xl card-shadow border border-slate-100 group transition-all duration-300 relative overflow-hidden sm:col-span-2 lg:col-span-1">
+                        <i data-lucide="handshake"
+                            class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                         <div class="relative z-10">
                             <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Sponsorship</h3>
                             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3">
@@ -480,38 +602,48 @@
                 <div class="col-span-1 sm:col-span-2">
                     <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
                     <p class="max-w-sm mb-6 text-sm sm:text-base">
-                        The International Conference on Artificial Intelligence in Finance is a premier forum for sharing research and innovation at the intersection of AI and Finance.
+                        The International Conference on Artificial Intelligence in Finance is a premier forum for
+                        sharing research and innovation at the intersection of AI and Finance.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
                             <i data-lucide="twitter" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         </a>
-                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
                             <i data-lucide="linkedin" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h4>
                     <ul class="space-y-2 sm:space-y-3">
-                        <li><a href="index.html" class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
-                        <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
-                        <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
-                        <li><a href="index.html#organization" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
+                        <li><a href="index.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
+                        <li><a href="important-dates.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
+                        <li><a href="call-for-papers.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
+                        <li><a href="index.html#organization"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
                     <ul class="space-y-2 sm:space-y-3">
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail" class="w-4 h-4 mr-2 shrink-0"></i> info@icaif26.org</li>
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail"
+                                class="w-4 h-4 mr-2 shrink-0"></i> info@icaif26.org</li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin"
+                                class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
+
+            <div
+                class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
                 <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
                 <div class="flex space-x-4 sm:space-x-6">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -530,27 +662,27 @@
             const basePath = path.substring(0, path.lastIndexOf('/') + 1);
             return basePath || '/';
         }
-        
+
         const basePath = getBasePath();
-        
+
         // Set image paths dynamically
-        (function() {
+        (function () {
             // Set hero background image
             const heroSection = document.querySelector('[data-hero-bg]');
             if (heroSection) {
                 heroSection.style.backgroundImage = `url('${basePath}img/hero.jpg')`;
             }
-            
+
             // Set bocconi campus image
             const bocconiImg = document.getElementById('bocconi-img');
             if (bocconiImg) {
                 bocconiImg.src = basePath + 'img/bocconi-campus.jpg';
             }
-            
+
             // Load SVG logo inline for animation support
             const logoContainer = document.getElementById('logo-container');
             if (!logoContainer) return;
-            
+
             fetch(basePath + 'img/logo.svg')
                 .then(response => {
                     if (!response.ok) {
@@ -574,7 +706,7 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
@@ -585,7 +717,7 @@
         const callsDropdownBtn = document.getElementById('calls-dropdown-btn');
         const callsDropdown = document.getElementById('calls-dropdown');
         const callsChevron = document.getElementById('calls-chevron');
-        
+
         if (callsDropdownBtn && callsDropdown) {
             callsDropdownBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -610,7 +742,7 @@
         const mobileCallsBtn = document.getElementById('mobile-calls-btn');
         const mobileCallsDropdown = document.getElementById('mobile-calls-dropdown');
         const mobileCallsChevron = document.getElementById('mobile-calls-chevron');
-        
+
         if (mobileCallsBtn && mobileCallsDropdown) {
             mobileCallsBtn.addEventListener('click', () => {
                 mobileCallsDropdown.classList.toggle('hidden');
@@ -657,4 +789,5 @@
         });
     </script>
 </body>
+
 </html>
