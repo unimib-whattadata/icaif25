@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Privacy Policy for ICAIF '26. Information on how personal data may be processed when you browse icaif2026.org or contact the conference organizers.">
+    <title>Privacy Policy - ICAIF '26 Milan</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Merriweather:ital,wght@0,300;0,700;1,300&amp;display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Merriweather"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            DEFAULT: '#D25D1F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-accent: #D25D1F;
+            --color-brand-50: #f0f9ff;
+            --color-brand-100: #e0f2fe;
+            --color-brand-500: #0ea5e9;
+            --color-brand-600: #0284c7;
+            --color-brand-800: #075985;
+            --color-brand-900: #0c4a6e;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .card-shadow:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        }
+
+        #orange-arc {
+            fill: #D15B22;
+            clip-path: inset(0 100% 0 0);
+            animation: revealArcLeftToRight 2.5s ease-in 0.5s forwards;
+        }
+
+        @keyframes revealArcLeftToRight {
+            to {
+                clip-path: inset(0 0% 0 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+    <a href="#page-header"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip
+        to main content</a>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+                    <div id="logo-container" class="h-8 sm:h-10 w-auto"></div>
+                    <div class="leading-tight">
+                        <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
+                        <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan, Italy</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                    <a href="important-dates.html"
+                        class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important
+                        Dates</a>
+                    <div class="relative">
+                        <button id="calls-dropdown-btn"
+                            class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Calls
+                            <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="calls-dropdown"
+                            class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="call-for-papers.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Papers</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-workshop-proposals.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Workshop Proposals</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-tutorials.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Tutorials</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-competitions.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                                for Competitions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2"
+                        aria-label="Toggle menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
+            <div class="px-4 py-4 space-y-3">
+                <a href="important-dates.html"
+                    class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important
+                    Dates</a>
+                <div>
+                    <button id="mobile-calls-btn"
+                        class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Calls
+                        <i data-lucide="chevron-down" id="mobile-calls-chevron"
+                            class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="call-for-papers.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Papers</a>
+                        <a href="call-for-workshop-proposals.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Workshop Proposals</a>
+                        <a href="call-for-tutorials.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Tutorials</a>
+                        <a href="call-for-competitions.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call
+                            for Competitions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="page-header" class="bg-brand-900 text-white py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Privacy Policy</h1>
+                <p class="text-lg sm:text-xl text-brand-100 leading-relaxed">
+                    This Privacy Policy explains how personal data may be processed when you visit
+                    <strong>icaif2026.org</strong>, use the ICAIF '26 website, or contact the conference organizers.
+                    This notice is intended to provide the information required by Article 13 of Regulation (EU)
+                    2016/679 (GDPR).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-slate-50 rounded-xl card-shadow border border-slate-100 p-6 sm:p-8 mb-10 sm:mb-12">
+                    <p class="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-3">Last Updated</p>
+                    <p class="text-slate-900 text-lg font-semibold">March 30, 2026</p>
+                    <p class="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                        This notice reflects the current implementation of the ICAIF '26 website as reviewed on March
+                        30, 2026. If the website adds new forms, tracking tools, registration features, or integrations,
+                        this notice should be updated accordingly.
+                    </p>
+                </div>
+
+                <div class="space-y-10 sm:space-y-12">
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Data Controller</h2>
+                        <p class="text-slate-700 leading-relaxed text-base sm:text-lg mb-4">
+                            For the purposes of this website, the data controller is the <strong>ICAIF '26 Organizing
+                                Committee</strong>, reachable at <a href="mailto:info@icaif26.org"
+                                class="text-brand-600 hover:text-brand-800 underline">info@icaif26.org</a>.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                            General conference contact details currently published on the website include <a
+                                href="mailto:andrea.maurino@unimib.it"
+                                class="text-brand-600 hover:text-brand-800 underline">Andrea Maurino</a>.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Personal Data We May Process</h2>
+                        <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <p>
+                                Depending on how you use the website, the following categories of personal data may be
+                                processed:
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Browsing and technical data:</strong> IP address, date and time of the
+                                        request, requested URL, browser and device information, referrer URL, and similar
+                                        technical metadata generated when pages are loaded.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Contact data you provide voluntarily:</strong> your name, email
+                                        address, message content, attachments, and any other information you include when
+                                        you contact the organizers by email.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>External platform data:</strong> if you follow links to third-party
+                                        services such as Microsoft CMT, those services may collect and process personal
+                                        data under their own privacy notices.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Purposes and Legal Bases</h2>
+                        <div class="overflow-x-auto bg-slate-50 rounded-xl card-shadow border border-slate-100">
+                            <table class="w-full">
+                                <thead class="bg-brand-50">
+                                    <tr>
+                                        <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-slate-700">Purpose</th>
+                                        <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-slate-700">Legal Basis</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 text-sm sm:text-base text-slate-700">
+                                    <tr>
+                                        <td class="px-6 py-4 align-top">Deliver website pages, maintain performance, protect the site, and prevent abuse or technical misuse.</td>
+                                        <td class="px-6 py-4 align-top">Legitimate interest under Article 6(1)(f) GDPR.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 align-top">Respond to questions, conference-related requests, or organizational communications sent by email.</td>
+                                        <td class="px-6 py-4 align-top">Legitimate interest under Article 6(1)(f) GDPR and, where applicable, steps taken at your request before registration or participation under Article 6(1)(b) GDPR.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 align-top">Comply with legal obligations, handle disputes, and protect legal rights.</td>
+                                        <td class="px-6 py-4 align-top">Article 6(1)(c) and/or Article 6(1)(f) GDPR, as applicable.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Third-Party Services and External Links</h2>
+                        <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <p>
+                                The website currently loads certain third-party technical resources directly from
+                                external providers. When pages are opened, your browser may connect to these providers,
+                                which may receive technical request data such as your IP address and browser metadata.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Google Fonts</strong> via <code>fonts.googleapis.com</code> and
+                                        <code>fonts.gstatic.com</code> for web fonts.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Tailwind CDN</strong> via <code>cdn.tailwindcss.com</code> for CSS
+                                        framework delivery.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Lucide Icons</strong> via <code>unpkg.com</code> for icon loading.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-600 mr-3 mt-1">•</span>
+                                    <span><strong>Microsoft CMT</strong> when users follow submission or proposal links
+                                        published on the site.</span>
+                                </li>
+                            </ul>
+                            <p>
+                                These third-party providers act under their own privacy notices and terms. The ICAIF '26
+                                website does not control the privacy practices of external sites and services reached via
+                                outbound links.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Cookies, Analytics, and Similar Technologies</h2>
+                        <p class="text-slate-700 leading-relaxed text-base sm:text-lg mb-4">
+                            Based on the current implementation reviewed on March 30, 2026, this website does
+                            <strong>not intentionally use first-party analytics tools, advertising tags, or profiling
+                                cookies</strong>.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed text-base sm:text-lg">
+                            The site is static and does not include registration forms, newsletter sign-ups, or user
+                            accounts. However, third-party providers used to deliver fonts, scripts, and linked external
+                            services may independently process technical request data under their own policies.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Recipients and International Transfers</h2>
+                        <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <p>
+                                Personal data may be made available, where necessary, to hosting and infrastructure
+                                providers, website maintenance providers, and third-party technical services involved in
+                                delivering the website. Data may also be disclosed where required by law or to protect
+                                legal rights.
+                            </p>
+                            <p>
+                                Because this website uses third-party resources and external services that may operate
+                                globally, some technical data may be processed outside the European Economic Area. Where
+                                this occurs, the processing is governed by the privacy notice and transfer mechanisms
+                                adopted by the relevant provider.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Retention</h2>
+                        <div class="space-y-4 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <p>
+                                Technical logs and browsing data are retained only for the period strictly necessary to
+                                ensure website operation, security, troubleshooting, and abuse prevention, unless a
+                                longer retention period is required by law or imposed by the relevant service provider.
+                            </p>
+                            <p>
+                                Email correspondence is retained for the time necessary to handle the request, manage
+                                any follow-up, and meet organizational, legal, or defensive retention needs.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Your Rights</h2>
+                        <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <p>
+                                Under the GDPR, you may have the right to request access to your personal data, rectification,
+                                erasure, restriction of processing, objection to processing, and, where applicable, data
+                                portability.
+                            </p>
+                            <p>
+                                To exercise these rights, please contact the organizers at <a href="mailto:info@icaif26.org"
+                                    class="text-brand-600 hover:text-brand-800 underline">info@icaif26.org</a>. You may
+                                also lodge a complaint with the Italian supervisory authority, the <strong>Garante per la
+                                    protezione dei dati personali</strong>, if you believe that your data has been
+                                processed unlawfully.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Contact</h2>
+                        <div class="bg-slate-50 rounded-xl card-shadow border border-slate-100 p-6 sm:p-8">
+                            <div class="space-y-4 text-slate-700 text-base sm:text-lg leading-relaxed">
+                                <p><strong>General contact:</strong> <a href="mailto:info@icaif26.org"
+                                        class="text-brand-600 hover:text-brand-800 underline">info@icaif26.org</a></p>
+                                <p><strong>Conference contact listed on the website:</strong> <a
+                                        href="mailto:andrea.maurino@unimib.it"
+                                        class="text-brand-600 hover:text-brand-800 underline">andrea.maurino@unimib.it</a></p>
+                                <p><strong>Website domain:</strong> icaif2026.org</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Useful References</h2>
+                        <ul class="space-y-3 text-slate-700 text-base sm:text-lg leading-relaxed">
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>GDPR, Article 13: <a href="https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A02016R0679-20160504"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-brand-600 hover:text-brand-800 underline">EUR-Lex official text</a></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Data subject rights under the GDPR: <a
+                                        href="https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-brand-600 hover:text-brand-800 underline">European Commission guidance</a></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-600 mr-3 mt-1">•</span>
+                                <span>Complaint forms and information: <a
+                                        href="https://www.garanteprivacy.it/garante/doc.jsp?ID=2014184"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-brand-600 hover:text-brand-800 underline">Garante Privacy official page</a></span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+                <div class="col-span-1 sm:col-span-2">
+                    <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
+                    <p class="max-w-sm mb-6 text-sm sm:text-base">
+                        The International Conference on Artificial Intelligence in Finance is a premier forum for
+                        sharing research and innovation at the intersection of AI and Finance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                            <i data-lucide="twitter" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
+                        <li><a href="important-dates.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
+                        <li><a href="call-for-papers.html"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
+                        <li><a href="index.html#organization"
+                                class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail"
+                                class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:info@icaif26.org"
+                                class="hover:text-white transition-colors">General Contact</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin"
+                                class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
+                <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
+                <div class="flex space-x-4 sm:space-x-6">
+                    <a href="privacy-policy.html" class="text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function getBasePath() {
+            const path = window.location.pathname;
+            const basePath = path.substring(0, path.lastIndexOf('/') + 1);
+            return basePath || '/';
+        }
+
+        const basePath = getBasePath();
+
+        (function () {
+            const logoContainer = document.getElementById('logo-container');
+            if (!logoContainer) return;
+
+            fetch(basePath + 'img/logo.svg')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(svg => {
+                    logoContainer.innerHTML = svg;
+                })
+                .catch(err => {
+                    console.error('Error loading logo:', err);
+                });
+        })();
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        const callsDropdownBtn = document.getElementById('calls-dropdown-btn');
+        const callsDropdown = document.getElementById('calls-dropdown');
+        const callsChevron = document.getElementById('calls-chevron');
+
+        if (callsDropdownBtn && callsDropdown) {
+            callsDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                callsDropdown.classList.toggle('hidden');
+                if (callsChevron) {
+                    callsChevron.classList.toggle('rotate-180');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!callsDropdownBtn.contains(e.target) && !callsDropdown.contains(e.target)) {
+                    callsDropdown.classList.add('hidden');
+                    if (callsChevron) {
+                        callsChevron.classList.remove('rotate-180');
+                    }
+                }
+            });
+        }
+
+        const mobileCallsBtn = document.getElementById('mobile-calls-btn');
+        const mobileCallsDropdown = document.getElementById('mobile-calls-dropdown');
+        const mobileCallsChevron = document.getElementById('mobile-calls-chevron');
+
+        if (mobileCallsBtn && mobileCallsDropdown) {
+            mobileCallsBtn.addEventListener('click', () => {
+                mobileCallsDropdown.classList.toggle('hidden');
+                if (mobileCallsChevron) {
+                    mobileCallsChevron.classList.toggle('rotate-180');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
