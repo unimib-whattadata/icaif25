@@ -166,9 +166,24 @@
                             <a href="call-for-competitions.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
                         </div>
                     </div>
+                    <!-- Sponsors Dropdown -->
+                    <div class="relative">
+                        <button id="sponsors-dropdown-btn"
+                            class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Sponsors
+                            <i data-lucide="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="sponsors-dropdown"
+                            class="hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="sponsors-and-supporters.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="become-a-sponsor.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
+                        </div>
+                    </div>
                     <a href="index.html#programme" class="hidden text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Programme</a>
                     <a href="index.html#attending" class="hidden text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Attending</a>
-                    <a href="index.html#sponsors" class="hidden text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Sponsors</a>
                     <a href="index.html#organization" class="hidden text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
                     <a href="#" class="hidden px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs xl:text-sm font-semibold transition-colors shadow-sm whitespace-nowrap ml-2">
                         Register
@@ -201,9 +216,23 @@
                         <a href="call-for-competitions.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
                     </div>
                 </div>
+                <!-- Mobile Sponsors Dropdown -->
+                <div>
+                    <button id="mobile-sponsors-btn"
+                        class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Sponsors
+                        <i data-lucide="chevron-down" id="mobile-sponsors-chevron"
+                            class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-sponsors-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="sponsors-and-supporters.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
+                        <a href="become-a-sponsor.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
+                    </div>
+                </div>
                 <a href="index.html#programme" class="hidden block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Programme</a>
                 <a href="index.html#attending" class="hidden block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Attending</a>
-                <a href="index.html#sponsors" class="hidden block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Sponsors</a>
                 <a href="index.html#organization" class="hidden block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
                 <a href="#" class="hidden block text-base font-medium text-brand-600 font-bold py-2">Register</a>
             </div>
@@ -567,6 +596,42 @@
                 if (mobileCallsChevron) {
                     mobileCallsChevron.classList.toggle('rotate-180');
                 }
+            });
+        }
+
+        // Desktop Sponsors Dropdown Toggle
+        const sponsorsDropdownBtn = document.getElementById('sponsors-dropdown-btn');
+        const sponsorsDropdown = document.getElementById('sponsors-dropdown');
+        const sponsorsChevron = document.getElementById('sponsors-chevron');
+
+        if (sponsorsDropdownBtn && sponsorsDropdown) {
+            sponsorsDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                sponsorsDropdown.classList.toggle('hidden');
+                if (sponsorsChevron) sponsorsChevron.classList.toggle('rotate-180');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!callsDropdownBtn.contains(e.target) && !callsDropdown.contains(e.target)) {
+                    callsDropdown.classList.add('hidden');
+                    if (callsChevron) callsChevron.classList.remove('rotate-180');
+                }
+                if (sponsorsDropdownBtn && !sponsorsDropdownBtn.contains(e.target) && sponsorsDropdown && !sponsorsDropdown.contains(e.target)) {
+                    sponsorsDropdown.classList.add('hidden');
+                    if (sponsorsChevron) sponsorsChevron.classList.remove('rotate-180');
+                }
+            });
+        }
+
+        // Mobile Sponsors Dropdown Toggle
+        const mobileSponsorsBtn = document.getElementById('mobile-sponsors-btn');
+        const mobileSponsorsDropdown = document.getElementById('mobile-sponsors-dropdown');
+        const mobileSponsorsChevron = document.getElementById('mobile-sponsors-chevron');
+
+        if (mobileSponsorsBtn && mobileSponsorsDropdown) {
+            mobileSponsorsBtn.addEventListener('click', () => {
+                mobileSponsorsDropdown.classList.toggle('hidden');
+                if (mobileSponsorsChevron) mobileSponsorsChevron.classList.toggle('rotate-180');
             });
         }
     </script>
