@@ -335,8 +335,8 @@
 
                 <div>
                     <a href="https://cmt3.research.microsoft.com/ICAIF2026/" target="_blank" rel="noopener noreferrer"
-                        class="inline-block submit-paper-btn px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold transition-all duration-300">
-                        Submit Paper
+                        class="inline-block text-center submit-paper-btn px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-brand-800 hover:bg-brand-900 text-white text-sm sm:text-base font-semibold transition-all duration-300">
+                        Make a submission
                     </a>
                 </div>
             </div>
@@ -369,7 +369,7 @@
                     <p class="text-xl sm:text-2xl font-bold">Milan, Italy</p>
                 </div>
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
-                    <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">SUBMISSION</p>
+                    <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">PAPER SUBMISSION DEADLINE</p>
                     <p class="text-xl sm:text-2xl font-bold">Aug 2</p>
                 </div>
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
@@ -845,7 +845,7 @@
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            animateCounter('attendees-counter', 200, 2000);
+                            animateCounter('attendees-counter', 600, 2000);
                             observer.unobserve(entry.target);
                         }
                     });
