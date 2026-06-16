@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 0;
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+#logo-container svg {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
+#mobile-menu {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+@media (min-width: 1024px) {
+    #calls-dropdown,
+    #sponsors-dropdown {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (min-width: 640px) {
+    #mobile-menu {
+        max-height: calc(100vh - 5rem);
+    }
+}
+
+a[href^="http"],
+a[href^="mailto"] {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+@media (max-width: 480px) {
+    .card-shadow {
+        padding: 1.5rem;
+    }
+
+    .card-shadow > svg.absolute {
+        top: -1rem;
+        right: -1rem;
+        width: 6rem;
+        height: 6rem;
+    }
+}
