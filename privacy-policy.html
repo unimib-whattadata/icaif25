@@ -119,8 +119,8 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Heroicons -->
+    <script src="js/heroicons.js" defer></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,7 +243,7 @@
                         <button id="calls-dropdown-btn"
                             class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Calls
-                            <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                            <i data-heroicon="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
                         <div id="calls-dropdown"
                             class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
@@ -269,7 +269,7 @@
                         <button id="sponsors-dropdown-btn"
                             class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Sponsors
-                            <i data-lucide="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
+                            <i data-heroicon="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
                         <div id="sponsors-dropdown"
                             class="hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
@@ -285,7 +285,7 @@
                 <div class="lg:hidden">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2"
                         aria-label="Toggle menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                        <i data-heroicon="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
@@ -303,7 +303,7 @@
                     <button id="mobile-calls-btn"
                         class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Calls
-                        <i data-lucide="chevron-down" id="mobile-calls-chevron"
+                        <i data-heroicon="chevron-down" id="mobile-calls-chevron"
                             class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
@@ -326,7 +326,7 @@
                     <button id="mobile-sponsors-btn"
                         class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Sponsors
-                        <i data-lucide="chevron-down" id="mobile-sponsors-chevron"
+                        <i data-heroicon="chevron-down" id="mobile-sponsors-chevron"
                             class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-sponsors-dropdown" class="hidden pl-4 mt-2 space-y-1">
@@ -461,7 +461,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-brand-600 mr-3 mt-1">•</span>
-                                    <span><strong>Lucide Icons</strong> via <code>unpkg.com</code> for icon loading.</span>
+                                    <span><strong>Heroicons</strong> via <code>unpkg.com</code> for icon loading.</span>
                                 </li>
                                 <li class="flex items-start">
                                     <span class="text-brand-600 mr-3 mt-1">•</span>
@@ -617,10 +617,11 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
                     <ul class="space-y-2 sm:space-y-3">
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail"
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail"
                                 class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:info@icaif26.org"
                                 class="hover:text-white transition-colors">General Contact</a></li>
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin"
+                        <li class="flex items-center text-sm sm:text-base"><a href="https://www.linkedin.com/company/icaif/" target="_blank" rel="noopener noreferrer" aria-label="ICAIF on LinkedIn" class="flex items-center hover:text-white transition-colors"><i data-heroicon="linkedin" class="w-4 h-4 mr-2 shrink-0"></i> LinkedIn</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin"
                                 class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
                     </ul>
                 </div>

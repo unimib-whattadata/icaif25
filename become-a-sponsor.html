@@ -118,8 +118,8 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Heroicons -->
+    <script src="js/heroicons.js" defer></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -235,7 +235,7 @@
                     <div class="relative">
                         <button id="calls-dropdown-btn" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Calls
-                            <i data-lucide="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                            <i data-heroicon="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
                         <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
@@ -251,7 +251,7 @@
                     <div class="relative">
                         <button id="sponsors-dropdown-btn" class="text-xs xl:text-sm font-medium text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Sponsors
-                            <i data-lucide="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
+                            <i data-heroicon="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
                         </button>
                         <div id="sponsors-dropdown" class="hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="sponsors-and-supporters.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
@@ -264,7 +264,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2" aria-label="Toggle menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                        <i data-heroicon="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div>
                     <button id="mobile-calls-btn" class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Calls
-                        <i data-lucide="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
+                        <i data-heroicon="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
@@ -293,7 +293,7 @@
                 <div>
                     <button id="mobile-sponsors-btn" class="block w-full text-left text-base font-medium text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Sponsors
-                        <i data-lucide="chevron-down" id="mobile-sponsors-chevron" class="w-5 h-5 transition-transform"></i>
+                        <i data-heroicon="chevron-down" id="mobile-sponsors-chevron" class="w-5 h-5 transition-transform"></i>
                     </button>
                     <div id="mobile-sponsors-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="sponsors-and-supporters.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
@@ -327,15 +327,15 @@
                     </p>
                     <ul class="space-y-4 text-slate-700 text-base sm:text-lg mb-8">
                         <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
+                            <i data-heroicon="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
                             <span><strong>Recruit top talent:</strong> Connect with world-class researchers and highly skilled practitioners in AI and financial services.</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
+                            <i data-heroicon="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
                             <span><strong>Enhance brand visibility:</strong> Showcase your organization's commitment to innovation and thought leadership to a targeted, global audience.</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
+                            <i data-heroicon="check-circle" class="w-6 h-6 text-brand-600 mr-3 shrink-0 mt-0.5"></i>
                             <span><strong>Network with leaders:</strong> Build relationships with key decision-makers from academia, industry, and regulatory agencies.</span>
                         </li>
                     </ul>
@@ -355,14 +355,14 @@
                                 <p class="text-4xl font-extrabold text-slate-900 my-4">€25,000</p>
                                 <p class="text-slate-600 text-sm mb-6">Maximum visibility and engagement.</p>
                                 <ul class="space-y-4 text-slate-700 text-sm">
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Premium</strong> logo placement on website</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Exhibition booth in a prime location</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5 complimentary conference passes</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5-minute spotlight</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Resume book for interested attendees</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Branded materials in conference welcome packets</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Premium</strong> logo placement on website</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Exhibition booth in a prime location</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5 complimentary conference passes</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5-minute spotlight</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Resume book for interested attendees</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Branded materials in conference welcome packets</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -376,13 +376,13 @@
                                 <p class="text-4xl font-extrabold text-slate-900 my-4">€18,000</p>
                                 <p class="text-slate-600 text-sm mb-6">Excellent visibility and networking.</p>
                                 <ul class="space-y-4 text-slate-700 text-sm">
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Gold</strong> logo placement on website</span></li>
-                                       <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Exhibition booth in a prime location</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>3 complimentary conference passes</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5-minute spotlight</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Resume book for interested attendees</span></li>    
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Gold</strong> logo placement on website</span></li>
+                                       <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Exhibition booth in a prime location</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>3 complimentary conference passes</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>5-minute spotlight</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Resume book for interested attendees</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -396,10 +396,10 @@
                                 <p class="text-4xl font-extrabold text-slate-900 my-4">€10,000</p>
                                 <p class="text-slate-600 text-sm mb-6">Great value for brand exposure.</p>
                                 <ul class="space-y-4 text-slate-700 text-sm">
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Silver</strong> logo placement on website</span></li>
-                                       <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>2 complimentary conference passes</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Silver</strong> logo placement on website</span></li>
+                                       <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>2 complimentary conference passes</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Logo placement on select materials</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -412,9 +412,9 @@
                                 <p class="text-4xl font-extrabold text-slate-900 my-4">€5,000</p>
                                 <p class="text-slate-600 text-sm mb-6">Great value for brand exposure.</p>
                                 <ul class="space-y-4 text-slate-700 text-sm">
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Bronze</strong> logo placement on website</span></li>
-                                       <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>1 complimentary conference pass</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span><strong>Bronze</strong> logo placement on website</span></li>
+                                       <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>Verbal acknowledgement in opening/closing remarks</span></li>
+                                    <li class="flex items-start"><i data-heroicon="check" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"></i><span>1 complimentary conference pass</span></li>
                                     
                                 </ul>
                             </div>
@@ -471,7 +471,7 @@ organization’s goals</p>
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="ICAIF sponsor Booklet.pptx.pdf" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-colors">
-                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                            <i data-heroicon="download" class="w-5 h-5 mr-2"></i>
                             Download Prospectus (PDF)
                         </a>
                     </div>
@@ -483,7 +483,7 @@ organization’s goals</p>
                         To secure your sponsorship or discuss custom partnership opportunities, please contact our sponsorship team.
                     </p>
                     <a href="mailto:sponsor@icaif2026.org" class="inline-flex items-center text-xl font-semibold text-brand-600 hover:text-brand-800 transition-colors">
-                        <i data-lucide="mail" class="w-6 h-6 mr-2"></i>
+                        <i data-heroicon="mail" class="w-6 h-6 mr-2"></i>
                         sponsor@icaif2026.org
                     </a>
                 </div>
@@ -522,8 +522,9 @@ organization’s goals</p>
                 <div>
                     <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
                     <ul class="space-y-2 sm:space-y-3">
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="mail" class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:info@icaif26.org" class="hover:text-white transition-colors">General Contact</a></li>
-                        <li class="flex items-center text-sm sm:text-base"><i data-lucide="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail" class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:info@icaif26.org" class="hover:text-white transition-colors">General Contact</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><a href="https://www.linkedin.com/company/icaif/" target="_blank" rel="noopener noreferrer" aria-label="ICAIF on LinkedIn" class="flex items-center hover:text-white transition-colors"><i data-heroicon="linkedin" class="w-4 h-4 mr-2 shrink-0"></i> LinkedIn</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
                     </ul>
                 </div>
             </div>

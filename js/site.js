@@ -42,8 +42,8 @@
     }
 
     function initIcons() {
-        if (window.lucide) {
-            window.lucide.createIcons();
+        if (window.heroicons) {
+            window.heroicons.createIcons();
         }
     }
 
