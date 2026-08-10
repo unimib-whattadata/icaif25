@@ -8,16 +8,17 @@ body {
     min-width: 0;
 }
 
+.hero-background {
+    background-image: url("../img/hero-v4.jpg");
+    background-image: image-set(
+        url("../img/hero-v4.webp") type("image/webp"),
+        url("../img/hero-v4.jpg") type("image/jpeg")
+    );
+}
+
 img,
 video,
 svg {
-    max-width: 100%;
-}
-
-#logo-container svg {
-    display: block;
-    width: auto;
-    height: 100%;
     max-width: 100%;
 }
 
@@ -25,6 +26,14 @@ svg {
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
     overscroll-behavior: contain;
+}
+
+.committee-photo-placeholder {
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    color: #075985;
 }
 
 @media (min-width: 1024px) {

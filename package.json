@@ -1,0 +1,14 @@
+{
+  "name": "icaif-2026-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.min.css --minify",
+    "check:html": "html-validate '*.html'",
+    "check:js": "node --check js/site.js && node --check js/heroicons.js",
+    "check": "npm run check:js && npm run check:html"
+  },
+  "devDependencies": {
+    "html-validate": "10.0.0",
+    "tailwindcss": "3.4.17"
+  }
+}

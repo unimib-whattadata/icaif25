@@ -12,6 +12,7 @@
     <link rel="alternate" hreflang="x-default" href="https://icaif2026.org/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0c4a6e">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
     <meta name="author" content="ICAIF '26 Organizing Committee">
     <meta property="og:site_name" content="ICAIF '26">
     <meta property="og:type" content="website">
@@ -48,7 +49,7 @@
                             "description": "The 7th ACM International Conference on AI in Finance, held in Milan, Italy, November 14-17, 2026.",
                             "startDate": "2026-11-14",
                             "endDate": "2026-11-17",
-                            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
                             "eventStatus": "https://schema.org/EventScheduled",
                             "url": "https://icaif2026.org/",
                             "image": [
@@ -67,7 +68,7 @@
                                     "@type": "Organization",
                                     "name": "ACM ICAIF",
                                     "url": "https://icaif2026.org",
-                                    "email": "info@icaif26.org"
+                                    "email": "andrea.maurino@unimib.it"
                             }
                     },
                     {
@@ -80,7 +81,7 @@
                                     "@id": "https://icaif2026.org/#website"
                             },
                             "inLanguage": "en",
-                            "dateModified": "2026-06-15",
+                            "dateModified": "2026-08-10",
                             "breadcrumb": {
                                     "@id": "https://icaif2026.org/#breadcrumb"
                             },
@@ -109,54 +110,16 @@
             ]
     }
     </script>
-    <link rel="preload" as="image" href="img/hero-v4.jpg">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-
+    <link rel="preload" as="image" href="img/hero-v4.webp" type="image/webp" fetchpriority="high">
     <!-- Heroicons -->
-    <script src="js/heroicons.js" defer></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap"
-        rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Inter"', 'sans-serif'],
-                        serif: ['"Merriweather"', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9', // Sky blue
-                            600: '#0284c7',
-                            800: '#075985',
-                            900: '#0c4a6e', // Navy blue
-                        },
-                        accent: {
-                            DEFAULT: '#D25D1F', // Orange/Terracotta
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
+    <script src="js/heroicons.js?v=20260810" defer></script>
     <style>
         :root {
-            --color-accent: #D25D1F;
+            --color-accent: #b9470d;
             --color-brand-50: #f0f9ff;
             --color-brand-100: #e0f2fe;
             --color-brand-500: #0ea5e9;
-            --color-brand-600: #0284c7;
+            --color-brand-600: #0369a1;
             --color-brand-800: #075985;
             --color-brand-900: #0c4a6e;
         }
@@ -254,12 +217,14 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/fonts.css?v=20260810">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=20260810">
+    <link rel="stylesheet" href="css/responsive.css?v=20260810">
 </head>
 
 <body class="font-sans antialiased">
     <!-- Skip to main content link for accessibility -->
-    <a href="#about"
+    <a href="#main-content"
         class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip
         to main content</a>
 
@@ -269,12 +234,12 @@
     </div>
 
     <!-- --- NAVIGATION --- -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <nav aria-label="Primary" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 sm:h-20 items-center">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 sm:gap-3">
-                    <div id="logo-container" class="h-8 sm:h-10 w-auto"></div>
+                    <img src="img/logo.svg" alt="" width="2401" height="1482" class="h-8 sm:h-10 w-auto" aria-hidden="true">
                     <div class="leading-tight">
                         <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
                         <span
@@ -288,11 +253,11 @@
                     <a href="important-dates.html"
                         class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important
                         Dates</a>
-                    <a href="organisation.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organisation</a>
+                    <a href="organisation.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
                     <a href="registration.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Registration</a>
                     <!-- Calls Dropdown -->
                     <div class="relative">
-                        <button id="calls-dropdown-btn"
+                        <button type="button" id="calls-dropdown-btn"
                             class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Calls
                             <i data-heroicon="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
@@ -318,7 +283,7 @@
                     </div>
                     <!-- Sponsors Dropdown -->
                     <div class="relative">
-                        <button id="sponsors-dropdown-btn"
+                        <button type="button" id="sponsors-dropdown-btn"
                             class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Sponsors
                             <i data-heroicon="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
@@ -326,7 +291,7 @@
                         <div id="sponsors-dropdown"
                             class="hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="sponsors-and-supporters.html"
-                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors &amp; Supporters</a>
                             <div class="border-t border-slate-100 my-1"></div>
                             <a href="become-a-sponsor.html"
                                 class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
@@ -336,7 +301,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2"
+                    <button type="button" id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2"
                         aria-label="Toggle menu">
                         <i data-heroicon="menu" class="w-6 h-6"></i>
                     </button>
@@ -351,11 +316,11 @@
                 <a href="important-dates.html"
                     class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important
                     Dates</a>
-                <a href="organisation.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organisation</a>
+                <a href="organisation.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
                 <a href="registration.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Registration</a>
                 <!-- Mobile Calls Dropdown -->
                 <div>
-                    <button id="mobile-calls-btn"
+                    <button type="button" id="mobile-calls-btn"
                         class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Calls
                         <i data-heroicon="chevron-down" id="mobile-calls-chevron"
@@ -378,7 +343,7 @@
                 </div>
                 <!-- Mobile Sponsors Dropdown -->
                 <div>
-                    <button id="mobile-sponsors-btn"
+                    <button type="button" id="mobile-sponsors-btn"
                         class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
                         Sponsors
                         <i data-heroicon="chevron-down" id="mobile-sponsors-chevron"
@@ -386,7 +351,7 @@
                     </button>
                     <div id="mobile-sponsors-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="sponsors-and-supporters.html"
-                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors & Supporters</a>
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors &amp; Supporters</a>
                         <a href="become-a-sponsor.html"
                             class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
                     </div>
@@ -395,15 +360,13 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- --- HERO SECTION --- -->
     <section
-        class="relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
-        id="about" data-hero-bg style="background-image: url('img/hero-v4.jpg')">
+        class="hero-background relative bg-white overflow-hidden bg-cover bg-center bg-no-repeat min-h-[500px] sm:min-h-[600px] lg:min-h-[700px]"
+        id="about">
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black/50"></div>
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
-        </div>
 
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-end pb-16 sm:pb-24 relative z-10">
@@ -415,7 +378,7 @@
                 <h1
                     class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-6">
                     The Future of<br>
-                    <span class="text-accent">Artificial Intelligence</span><br>
+                    <span class="text-accent-light">Artificial Intelligence</span><br>
                     in Global Finance
                 </h1>
 
@@ -439,39 +402,41 @@
         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-16 p-4 sm:py-6 m-0">
             <div class="flex flex-col items-center justify-end">
                 <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
-                <img src="img/loghi/bocconi.svg" alt="Bocconi University"
+                <img src="img/loghi/bocconi.svg" alt="Bocconi University" width="320" height="112"
                     class="block h-14 sm:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="flex flex-col items-center justify-end">
                 <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
-                <img src="img/loghi/unimib.svg" alt="University of Milano-Bicocca"
+                <img src="img/loghi/unimib.svg" alt="University of Milano-Bicocca" width="1027" height="1108"
                     class="block h-14 sm:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="flex flex-col items-center justify-end">
                 <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
-                <img src="img/loghi/politecnico.svg?v=2" alt="Politecnico di Milano"
+                <img src="img/loghi/politecnico.svg?v=2" alt="Politecnico di Milano" width="282" height="91"
                     class="block h-14 sm:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="flex flex-col items-start justify-end">
                 <p class="mb-2 h-3 sm:h-4 text-[11px] sm:text-xs font-medium leading-none text-white/70 tracking-wide whitespace-nowrap">
                     With the support of
                 </p>
-                <img src="img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo.png"
-                    alt="Intesa Sanpaolo IMI Corporate & Investment Banking"
-                    loading="lazy" decoding="async"
+                <img src="img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo.webp"
+                    srcset="img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo-240.webp 240w, img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo.webp 576w"
+                    sizes="(min-width: 640px) 256px, 192px"
+                    alt="Intesa Sanpaolo IMI Corporate &amp; Investment Banking"
+                    width="576" height="181" loading="lazy" decoding="async"
                     class="block h-14 sm:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </section>
 
-    <!-- --- KEY DATES & STATS --- -->
+    <!-- --- KEY DATES &amp; STATS --- -->
     <section class="bg-brand-900 text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
                 class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center md:text-left">
                 <div class="pt-4 md:pt-0 pl-0 md:pl-4 col-span-2 md:col-span-1">
                     <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">DATE</p>
-                    <p class="text-xl sm:text-2xl font-bold">Nov <span class="text-accent">14-17</span>, 2026</p>
+                    <p class="text-xl sm:text-2xl font-bold">Nov <span class="text-accent-light">14-17</span>, 2026</p>
                 </div>
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
                     <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">LOCATION</p>
@@ -484,7 +449,7 @@
                 <div class="pt-4 md:pt-0 pl-0 md:pl-8 col-span-2 md:col-span-1">
                     <p class="text-brand-100 text-xs uppercase font-bold tracking-widest mb-1 sm:mb-2">PREVIOUS
                         ATTENDEES</p>
-                    <p class="text-xl sm:text-2xl font-bold"><span id="attendees-counter">0</span>+</p>
+                    <p class="text-xl sm:text-2xl font-bold">550+</p>
                 </div>
             </div>
         </div>
@@ -508,7 +473,7 @@
                     <i data-heroicon="sparkles"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-95 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI & Foundation
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Generative AI &amp; Foundation
                             Models</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Generative AI, simulation, synthetic data generation, and foundation models for financial
@@ -523,7 +488,7 @@
                     <i data-heroicon="users"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">AI Agents & Reinforcement
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">AI Agents &amp; Reinforcement
                             Learning</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             AI agents, multi-agent systems, reinforcement learning, sequential decision-making,
@@ -538,7 +503,7 @@
                     <i data-heroicon="file-text"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">NLP & Multimodal Analysis
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">NLP &amp; Multimodal Analysis
                         </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Natural language processing and multimodal financial data analysis including text, image,
@@ -553,7 +518,7 @@
                     <i data-heroicon="shield-check"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trustworthy & Responsible
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trustworthy &amp; Responsible
                             AI</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Explainability, ethics, fairness, security, privacy, AI governance, computational
@@ -568,7 +533,7 @@
                     <i data-heroicon="alert-triangle"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Risk Management & Fraud
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Risk Management &amp; Fraud
                             Detection</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             AI-driven risk management, fraud detection, robustness, uncertainty quantification, and
@@ -583,7 +548,7 @@
                     <i data-heroicon="bar-chart-2"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trading & Asset Management
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Trading &amp; Asset Management
                         </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Trading strategies, asset pricing, robo-advising, investment recommendations, financial
@@ -598,7 +563,7 @@
                     <i data-heroicon="credit-card"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Credit & Customer Analytics
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Credit &amp; Customer Analytics
                         </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Customer behavior analysis, credit decisioning, fraud detection for credit cards and
@@ -613,7 +578,7 @@
                     <i data-heroicon="globe"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Blockchain & DeFi</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Blockchain &amp; DeFi</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             Blockchain technology, cryptocurrency, federated learning, and decentralized finance
                             applications.
@@ -627,7 +592,7 @@
                     <i data-heroicon="leaf"
                         class="absolute -top-8 -right-8 w-32 h-32 text-slate-200 group-hover:text-brand-300 group-hover:opacity-100 transition-all duration-300 opacity-85 z-0"></i>
                     <div class="relative z-10">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Financial Inclusion & ESG
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Financial Inclusion &amp; ESG
                         </h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                             AI-driven financial inclusion initiatives and environmental, social, and governance (ESG)
@@ -665,13 +630,16 @@
                         </li>
                     </ul>
 
-                    <button
+                    <a href="mailto:andrea.maurino@unimib.it?subject=ICAIF%202026%20hotel%20and%20travel%20information"
                         class="text-brand-600 font-semibold hover:text-brand-800 self-start border-b-2 border-brand-100 hover:border-brand-600 transition-colors text-sm sm:text-base">
-                        Hotel & Travel Information
-                    </button>
+                        Hotel &amp; Travel Information
+                    </a>
                 </div>
                 <div class="lg:w-1/2 bg-slate-200 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
-                    <img src="img/bocconi-campus.jpg" alt="Bocconi University Campus"
+                    <img src="img/bocconi-campus.webp"
+                        srcset="img/bocconi-campus-400.webp 400w, img/bocconi-campus.webp 620w"
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        alt="Bocconi University Campus" width="620" height="350"
                         class="w-full h-full object-cover" id="bocconi-img" loading="lazy" decoding="async">
                     <div class="absolute inset-0 bg-black/30"></div>
                 </div>
@@ -713,7 +681,7 @@
                                 For questions about paper submissions and the program.
                             </p>
                             <div class="space-y-2 text-sm sm:text-base">
-                                <a href="mailto:viki@google.com" class="block text-brand-600 hover:text-brand-800 underline font-medium">Vikram Agarwal</a>
+                                <a href="mailto:viki@google.com" class="block text-brand-600 hover:text-brand-800 underline font-medium">Vikram Aggarwal</a>
                                 <a href="mailto:svitlana@outsampler.com" class="block text-brand-600 hover:text-brand-800 underline font-medium">Svitlana Vyetrenko</a>
                                 <a href="mailto:riccardo.zecchina@unibocconi.it" class="block text-brand-600 hover:text-brand-800 underline font-medium">Riccardo Zecchina</a>
                             </div>
@@ -745,6 +713,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- --- FOOTER --- -->
     <footer class="bg-slate-900 text-slate-400 py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -758,27 +728,27 @@
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h4>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h2>
                     <ul class="space-y-2 sm:space-y-3">
                         <li><a href="index.html" class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
                         <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
-                        <li><a href="organisation.html" class="hover:text-white transition-colors text-sm sm:text-base">Organisation</a></li>
+                        <li><a href="organisation.html" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
                         <li><a href="registration.html" class="hover:text-white transition-colors text-sm sm:text-base">Registration</a></li>
                         <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
                         <li><a href="call-for-workshop-proposals.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Workshop Proposals</a></li>
                         <li><a href="call-for-tutorials.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Tutorials</a></li>
                         <li><a href="call-for-competitions.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Competitions</a></li>
-                        <li><a href="sponsors-and-supporters.html" class="hover:text-white transition-colors text-sm sm:text-base">Sponsors & Supporters</a></li>
+                        <li><a href="sponsors-and-supporters.html" class="hover:text-white transition-colors text-sm sm:text-base">Sponsors &amp; Supporters</a></li>
                         <li><a href="become-a-sponsor.html" class="hover:text-white transition-colors text-sm sm:text-base">Become a Sponsor</a></li>
                         <li><a href="index.html#contact" class="hover:text-white transition-colors text-sm sm:text-base">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h4>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h2>
                     <ul class="space-y-2 sm:space-y-3">
                         <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail"
-                                class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:info@icaif26.org"
+                                class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:andrea.maurino@unimib.it"
                                 class="hover:text-white transition-colors">General Contact</a></li>
                         <li class="flex items-center text-sm sm:text-base"><a href="https://www.linkedin.com/company/icaif/" target="_blank" rel="noopener noreferrer" aria-label="ICAIF on LinkedIn" class="flex items-center hover:text-white transition-colors"><i data-heroicon="linkedin" class="w-4 h-4 mr-2 shrink-0"></i> LinkedIn</a></li>
                         <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin"
@@ -798,7 +768,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/site.js" defer></script>
+    <script src="js/site.js?v=20260810" defer></script>
 </body>
 
 </html>

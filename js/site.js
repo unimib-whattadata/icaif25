@@ -1,43 +1,9 @@
 (function () {
     'use strict';
 
-    const assetUrl = (path) => new URL(path, document.baseURI).href;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     function setExpanded(button, isExpanded) {
         if (button) {
             button.setAttribute('aria-expanded', String(isExpanded));
-        }
-    }
-
-    function initLogo() {
-        const logoContainer = document.getElementById('logo-container');
-        if (!logoContainer) return;
-
-        fetch(assetUrl('img/logo.svg'))
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`Unable to load logo: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then((svg) => {
-                logoContainer.innerHTML = svg;
-            })
-            .catch(() => {
-                logoContainer.setAttribute('aria-hidden', 'true');
-            });
-    }
-
-    function initDynamicAssets() {
-        const heroSection = document.querySelector('[data-hero-bg]');
-        if (heroSection && !heroSection.style.backgroundImage) {
-            heroSection.style.backgroundImage = `url("${assetUrl('img/hero.jpg')}")`;
-        }
-
-        const bocconiImg = document.getElementById('bocconi-img');
-        if (bocconiImg && !bocconiImg.getAttribute('src')) {
-            bocconiImg.src = assetUrl('img/bocconi-campus.jpg');
         }
     }
 
@@ -116,13 +82,26 @@
             }
         });
 
-        createDisclosure('mobile-calls-btn', 'mobile-calls-dropdown', 'mobile-calls-chevron');
-        createDisclosure('mobile-sponsors-btn', 'mobile-sponsors-dropdown', 'mobile-sponsors-chevron');
+        const mobileDisclosures = [
+            createDisclosure('mobile-calls-btn', 'mobile-calls-dropdown', 'mobile-calls-chevron'),
+            createDisclosure('mobile-sponsors-btn', 'mobile-sponsors-dropdown', 'mobile-sponsors-chevron'),
+        ];
+
+        const closeMobileNavigation = () => {
+            mobileDisclosures.forEach((disclosure) => disclosure.close());
+            mobileMenu.close();
+        };
+
+        mobileMenu.button?.addEventListener('click', () => {
+            if (mobileMenu.panel?.classList.contains('hidden')) {
+                mobileDisclosures.forEach((disclosure) => disclosure.close());
+            }
+        });
 
         if (mobileMenu.panel) {
             mobileMenu.panel.addEventListener('click', (event) => {
                 if (event.target.closest('a')) {
-                    mobileMenu.close();
+                    closeMobileNavigation();
                 }
             });
         }
@@ -130,7 +109,7 @@
         const desktopBreakpoint = window.matchMedia('(min-width: 1024px)');
         const closeMobileAtDesktop = (event) => {
             if (event.matches) {
-                mobileMenu.close();
+                closeMobileNavigation();
             }
         };
 
@@ -150,61 +129,19 @@
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
+                const mobileWasOpen = mobileMenu.panel && !mobileMenu.panel.classList.contains('hidden');
                 closeDesktopDisclosures();
-                mobileMenu.close();
+                closeMobileNavigation();
+                if (mobileWasOpen) {
+                    mobileMenu.button?.focus();
+                }
             }
         });
     }
 
-    function animateCounter(element, target, duration) {
-        if (prefersReducedMotion) {
-            element.textContent = String(target);
-            return;
-        }
-
-        const startTime = performance.now();
-
-        function update(now) {
-            const progress = Math.min((now - startTime) / duration, 1);
-            element.textContent = String(Math.floor(progress * target));
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
-        }
-
-        requestAnimationFrame(update);
-    }
-
-    function initCounters() {
-        const counter = document.getElementById('attendees-counter');
-        if (!counter) return;
-
-        const startCounter = () => animateCounter(counter, 600, 2000);
-
-        if (!('IntersectionObserver' in window)) {
-            startCounter();
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    startCounter();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(counter.closest('section') || counter);
-    }
-
     function init() {
-        initDynamicAssets();
-        initLogo();
         initIcons();
         initNavigation();
-        initCounters();
     }
 
     if (document.readyState === 'loading') {
