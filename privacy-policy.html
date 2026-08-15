@@ -206,6 +206,18 @@
                     <a href="organisation.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
                     <a href="registration.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Registration</a>
                     <div class="relative">
+                        <button type="button" id="programme-dropdown-btn"
+                            class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Programme
+                            <i data-heroicon="chevron-down" id="programme-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="programme-dropdown"
+                            class="hidden absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="workshop.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                        </div>
+                    </div>
+                    <div class="relative">
                         <button type="button" id="calls-dropdown-btn"
                             class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
                             Calls
@@ -265,6 +277,17 @@
                     Dates</a>
                 <a href="organisation.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
                 <a href="registration.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Registration</a>
+                <div>
+                    <button type="button" id="mobile-programme-btn"
+                        class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Programme
+                        <i data-heroicon="chevron-down" id="mobile-programme-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-programme-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="workshop.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                    </div>
+                </div>
                 <div>
                     <button type="button" id="mobile-calls-btn"
                         class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
@@ -579,7 +602,7 @@
 
     <footer class="bg-slate-900 text-slate-400 py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
                 <div class="col-span-1 sm:col-span-2">
                     <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
                     <p class="max-w-sm mb-0 text-sm sm:text-base">
@@ -602,6 +625,18 @@
                         <li><a href="sponsors-and-supporters.html" class="hover:text-white transition-colors text-sm sm:text-base">Sponsors &amp; Supporters</a></li>
                         <li><a href="become-a-sponsor.html" class="hover:text-white transition-colors text-sm sm:text-base">Become a Sponsor</a></li>
                         <li><a href="index.html#contact" class="hover:text-white transition-colors text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Previous Editions</h2>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="https://icaif25.org/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '25</a></li>
+                        <li><a href="https://icaif2024.org/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '24</a></li>
+                        <li><a href="https://ai-finance.org/icaif-23/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '23</a></li>
+                        <li><a href="https://ai-finance.org/icaif22/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '22</a></li>
+                        <li><a href="https://ai-finance.org/icaif21/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '21</a></li>
+                        <li><a href="https://aifin2020.wordpress.com/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '20</a></li>
                     </ul>
                 </div>
 

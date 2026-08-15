@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the ten accepted workshops at ICAIF '26 in Milan, with detailed descriptions, formats, and organizers across current research in AI and finance.">
+    <title>Workshops | ICAIF '26 Milan</title>
+    <link rel="canonical" href="https://icaif2026.org/workshop.html">
+    <link rel="alternate" hreflang="en" href="https://icaif2026.org/workshop.html">
+    <link rel="alternate" hreflang="x-default" href="https://icaif2026.org/workshop.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0c4a6e">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <meta name="author" content="ICAIF '26 Organizing Committee">
+    <meta property="og:site_name" content="ICAIF '26">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Workshops | ICAIF '26 Milan">
+    <meta property="og:description" content="Explore the ten accepted workshops at ICAIF '26 in Milan, with detailed descriptions, formats, and organizers across current research in AI and finance.">
+    <meta property="og:url" content="https://icaif2026.org/workshop.html">
+    <meta property="og:image" content="https://icaif2026.org/img/hero-v4.jpg">
+    <meta property="og:image:alt" content="ICAIF '26 in Milan, Italy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Workshops | ICAIF '26 Milan">
+    <meta name="twitter:description" content="Explore the ten accepted workshops at ICAIF '26 in Milan, with detailed descriptions, formats, and organizers across current research in AI and finance.">
+    <meta name="twitter:image" content="https://icaif2026.org/img/hero-v4.jpg">
+    <script src="js/heroicons.js?v=20260810" defer></script>
+    <style>
+        :root {
+            --color-accent: #b9470d;
+            --color-brand-50: #f0f9ff;
+            --color-brand-100: #e0f2fe;
+            --color-brand-500: #0ea5e9;
+            --color-brand-600: #0369a1;
+            --color-brand-800: #075985;
+            --color-brand-900: #0c4a6e;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+    <link rel="stylesheet" href="css/fonts.css?v=20260810">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=20260810">
+    <link rel="stylesheet" href="css/responsive.css?v=20260810">
+</head>
+<body class="font-sans antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-md">Skip to main content</a>
+
+    <nav aria-label="Primary" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3">
+                    <img src="img/logo.svg" alt="" width="2401" height="1482" class="h-8 sm:h-10 w-auto" aria-hidden="true">
+                    <div class="leading-tight">
+                        <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight">ICAIF '26</span>
+                        <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider hidden sm:block">Milan, Italy</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                    <a href="important-dates.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Important Dates</a>
+                    <a href="organisation.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Organization</a>
+                    <a href="registration.html" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap">Registration</a>
+                    <div class="relative">
+                        <button type="button" id="programme-dropdown-btn" class="text-xs xl:text-sm font-medium text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Programme
+                            <i data-heroicon="chevron-down" id="programme-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="programme-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="workshop.html" aria-current="page" class="block px-4 py-3 text-sm font-medium text-brand-600 bg-brand-50">Workshop</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button type="button" id="calls-dropdown-btn" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Calls
+                            <i data-heroicon="chevron-down" id="calls-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="calls-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="call-for-papers.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-workshop-proposals.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-tutorials.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="call-for-competitions.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button type="button" id="sponsors-dropdown-btn" class="text-xs xl:text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors whitespace-nowrap flex items-center gap-1">
+                            Sponsors
+                            <i data-heroicon="chevron-down" id="sponsors-chevron" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="sponsors-dropdown" class="hidden absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
+                            <a href="sponsors-and-supporters.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors &amp; Supporters</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="become-a-sponsor.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2" aria-label="Toggle menu">
+                        <i data-heroicon="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
+            <div class="px-4 py-4 space-y-3">
+                <a href="important-dates.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Important Dates</a>
+                <a href="organisation.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Organization</a>
+                <a href="registration.html" class="block text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2">Registration</a>
+                <div>
+                    <button type="button" id="mobile-programme-btn" class="block w-full text-left text-base font-medium text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Programme
+                        <i data-heroicon="chevron-down" id="mobile-programme-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-programme-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="workshop.html" aria-current="page" class="block py-2 px-4 text-sm font-medium text-brand-600 bg-brand-50">Workshop</a>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" id="mobile-calls-btn" class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Calls
+                        <i data-heroicon="chevron-down" id="mobile-calls-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-calls-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="call-for-papers.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Papers</a>
+                        <a href="call-for-workshop-proposals.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Workshop Proposals</a>
+                        <a href="call-for-tutorials.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Tutorials</a>
+                        <a href="call-for-competitions.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Call for Competitions</a>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" id="mobile-sponsors-btn" class="block w-full text-left text-base font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 flex items-center justify-between">
+                        Sponsors
+                        <i data-heroicon="chevron-down" id="mobile-sponsors-chevron" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-sponsors-dropdown" class="hidden pl-4 mt-2 space-y-1">
+                        <a href="sponsors-and-supporters.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Sponsors &amp; Supporters</a>
+                        <a href="become-a-sponsor.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Become a Sponsor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="bg-brand-900 text-white py-12 sm:py-16 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="text-brand-100 text-xs sm:text-sm font-bold uppercase tracking-widest mb-4">Programme</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Workshops</h1>
+                    <p class="text-lg sm:text-xl text-brand-100 leading-relaxed">Ten workshops bring focused communities together to explore emerging research and practice in AI and finance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 sm:py-16 lg:py-24 bg-slate-50" aria-labelledby="accepted-workshops-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-8 sm:mb-12">
+                    <p class="text-brand-600 text-xs sm:text-sm font-bold uppercase tracking-widest mb-3">ICAIF '26 Programme</p>
+                    <h2 id="accepted-workshops-heading" class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Accepted Workshops</h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed">Workshop websites, calls for papers, and detailed schedules will be added as they become available.</p>
+                </div>
+
+                <div class="space-y-6 sm:space-y-8">
+                    <article id="reinforcement-learning-llm-agents" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>Large language models are increasingly deployed as autonomous agents in financial services, where they must reason, plan, explore, and adapt to dynamic environments. RL4LLM-Agents examines how reinforcement learning can move these systems beyond supervised fine-tuning, enabling them to optimize long-horizon objectives and learn from interaction in complex financial settings.</p>
+                                <p>The workshop covers RLHF, RLAIF, GRPO, PPO, reward modelling, multi-agent market simulation, agentic retrieval, tool use, and sequential decision-making. It also emphasizes sample efficiency, safety, alignment, robustness, and the benchmarks and datasets needed to evaluate RL-trained financial agents under realistic, high-stakes conditions.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizer</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Bhaskarjit Sarmah</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Domyn</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="responsible-ai-operations-finance" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">RAIOps4Fin — Applied Responsible AI Operations for Finance</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>Responsible-AI research has advanced rapidly, but turning principles such as fairness, transparency, reliability, privacy, and accountability into production-grade financial systems remains difficult. RAIOps4Fin creates an interdisciplinary forum for the practical operationalization of responsible AI across the complete lifecycle of financial applications.</p>
+                                <p>Contributions will emphasize empirical validation, deployment experience, and lessons from real-world systems. Topics include lifecycle monitoring and governance, model-risk management, validation, auditability, human oversight, regulatory implementation, responsible deployment of agentic AI, operational trade-offs, and energy-efficient and environmentally sustainable AI.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Francesca Del Bonifro</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Intesa Sanpaolo</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Vita Catapano</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Accenture</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Eliana Pastor</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Politecnico di Torino</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Francesca Naretto</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Pisa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="ai-market-microstructure" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Full-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">AI-Driven Market Microstructure in Centralized and Decentralized Finance</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>This workshop studies how artificial intelligence is reshaping market microstructure in both traditional and decentralized finance. It brings together work on trading, liquidity provision, price formation, and market design, with particular attention to methods that combine financial insight with machine learning, reinforcement learning, and agent-based modelling.</p>
+                                <p>Topics include optimal execution, market making, trading under partial information, multi-agent models of strategic interaction, order-book dynamics, price discovery, decentralized exchanges, automated market makers, and on-chain liquidity. The programme also welcomes simulation, digital twins, generative market models, and data-driven approaches to fairness and regulation.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Manuel Naviglio</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Scuola Normale Superiore</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Ioanna-Yvonni Tsaknaki</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Scuola Normale Superiore</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Andrea Macrì</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Scuola Normale Superiore</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Francesco Tarantelli</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Bologna</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Fabrizio Lillo</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Scuola Normale Superiore</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="women-ai-finance" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Two-hour event</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Seventh edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">Women in AI and Finance</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>Women in AI and Finance supports early-career professionals navigating a field in which women continue to encounter barriers to participation and advancement. The workshop combines practical learning, mentorship, and community building, drawing on the experiences of women leaders working across artificial intelligence and financial services.</p>
+                                <p>Sessions will examine AI's impact on finance, career opportunities and challenges, mentorship strategies, and the value of diverse professional networks. Interactive discussions and mentor–mentee networking are designed to help participants form lasting connections while contributing to a more inclusive and collaborative future for financial AI.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Tingting (Rachel) Chung</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">William &amp; Mary; incoming faculty, Carnegie Mellon University</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Hao Ni</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University College London (UCL)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Candice You</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">FTI Consulting</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Huanhuan Zheng</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">City University of Hong Kong</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Lizi Liao</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Singapore Management University</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Zhen Zeng</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">J.P. Morgan AI Research</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="financial-ai-security" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">Financial AI Security, Privacy, and Safety: Securing Real-World Financial AI Systems for Mission-critical Services including Fraud Detection, Anti-Money Laundering, Payments, and Bank Transfers</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>Financial AI is rapidly moving from prediction-oriented models toward foundation models, large language models, and autonomous agents supporting mission-critical services such as fraud detection, anti-money laundering, payments, and bank transfers.</p>
+                                <p>The workshop treats security, privacy, and safety as interconnected requirements. It brings together researchers, practitioners, regulators, and financial institutions to discuss adversarial robustness, AI red teaming, privacy-preserving learning, governance, evaluation, and lessons from real-world deployments. Contributions may address secure LLMs and agents, financial-crime detection, federated learning, differential privacy, synthetic data, benchmarking, and operational case studies.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Dae-Young Park</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Financial Security Institute (FSI)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Yongjae Lee</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Ulsan National Institute of Science and Technology (UNIST)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Youngjun Kwak</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">kakaobank</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Yan Gao</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Flower Labs; University of Cambridge</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Seonkyu Lim</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Korea Financial Telecommunications &amp; Clearings Institute (KFTC)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Edoardo Vittori</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Intesa Sanpaolo</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Dhagash Mehta</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">BlackRock</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Saurabh Nagrecha</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Google</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="multimodal-foundation-models-banking" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">First Workshop on Multimodal and Foundation Models in Banking (MFMB)</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>MFMB explores how multimodal and foundation models can combine tabular, time-series, text, image, and transactional data to address consequential banking problems such as credit scoring, fraud detection, pricing, and automated auditing.</p>
+                                <p>The workshop focuses on the full deployment lifecycle: architectures and fusion strategies, trustworthy AI and regulation, efficient adaptation, privacy, evaluation under real operating conditions, causal reasoning, simulation, and synthetic data. It treats adoption as an end-to-end methodological problem rather than simply a model-architecture challenge. The programme will include keynote talks, contributed papers, and a panel discussion.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">María Óskarsdóttir</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Southampton; Reykjavik University</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Cristián Bravo</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Western University</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Stefan Lessmann</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Humboldt University of Berlin</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Anton Repushko</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Revolut</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Amey Baokar</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Revolut</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Alexander Statnikov</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Affirm</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="ai-private-markets" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">Structuring the Unstructured: AI in Private Markets</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>This workshop examines emerging AI applications across private equity, private credit, venture capital, real assets, and other alternative investments, bringing together researchers, practitioners, asset managers, allocators, data providers, and technology experts.</p>
+                                <p>Its themes include agentic and multi-agent investment workflows, foundation models for diligence and document intelligence, fragmented and delayed private-market data, trustworthy AI for high-stakes illiquid decisions, and the impact of AI on portfolio companies and investment risk. Particular attention is given to evaluation with proprietary data, delayed outcomes, uncertain valuations, and limited comparables.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Dhagash Mehta</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">BlackRock</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Tianjiao Zhao</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">BlackRock</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Jason Mather</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Apollo Global Management</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Deepika Sharma</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Northern Trust Asset Management</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="quantum-enhanced-ai" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">Quantum-Enhanced AI for Financial Decision-Making</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>The workshop brings together AI researchers, financial machine-learning practitioners, quantum-ML specialists, and model-risk and governance experts to examine hybrid quantum-classical and quantum-inspired methods for financial services.</p>
+                                <p>Its emphasis is rigorous evidence rather than unsupported claims of quantum advantage: reproducible benchmarks, strong classical baselines, decision relevance, model validation, and regulatory acceptability. Applications include trading, execution, hedging, credit, fraud, portfolio construction, risk forecasting, and scenario generation across tabular, time-series, graph, and multimodal data. The format will include invited talks, selected papers, posters, and a structured debate.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Samuel Yen-Chi Chen</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Wells Fargo</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Rudy Raymond</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">JPMorgan Chase</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Thilanka Munasinghe</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Rensselaer Polytechnic Institute</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Malik Magdon-Ismail</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Rensselaer Polytechnic Institute</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Nouhaila Innan</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">NYU Abu Dhabi</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Alberto Marchisio</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">NYU Abu Dhabi</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Muhammad Shafique</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">NYU Abu Dhabi</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Jun Qi</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Hong Kong Baptist University</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Yun-Cheng Tsai</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">PecuLab LLC</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="llms-generative-ai-finance" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Full-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Third edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">3rd Workshop on LLMs and Generative AI for Finance (AI for Finance Summit)</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>The third edition builds on the 2024 and 2025 ICAIF workshops and focuses on the next generation of agentic, tool-augmented, retrieval-grounded, and governance-aware generative AI systems for high-stakes financial workflows.</p>
+                                <p>The workshop moves beyond isolated model capabilities toward reliable institutional systems, covering agent orchestration, harness engineering, workflow-level evaluation, red teaming, retrieval and tool use, governance, auditability, model-risk management, and human-agent collaboration. Applications span investment research, compliance, credit, risk, ESG, reporting, surveillance, and quantitative strategies, supported by new datasets, benchmarks, and infrastructure.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Chanyeol Choi</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">LinqAlpha</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Yoon Kim</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Massachusetts Institute of Technology (MIT)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Álvaro Cartea</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Oxford</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Sotirios Sabanis</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Edinburgh</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Alejandro Lopez-Lira</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">University of Florida</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Yongjae Lee</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Ulsan National Institute of Science and Technology (UNIST)</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Edward Tong</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Google</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Sina Molavipour</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">SEB</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Alireza Javid</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">SEB</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Didier Rodrigues Lopes</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">OpenBB</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Fayssal El Mofatiche</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Flowistic</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="interpretability-alignment-financial-models" class="scroll-mt-24 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 card-shadow">
+                        <div class="flex flex-wrap items-center gap-2 mb-5">
+                            <span class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider">Half-day workshop</span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">First edition</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight mb-6">IAFM'26: Interpretability and Alignment of Financial Models</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10">
+                            <div class="space-y-4 text-slate-700 leading-relaxed">
+                                <p>IAFM'26 addresses interpretability and alignment across financial decision-making, from credit scoring, fraud and AML detection, trading, and risk to large language models and agentic systems used in research, compliance, and client interaction.</p>
+                                <p>The workshop bridges the established financial-XAI community with mechanistic interpretability and AI safety. Topics include post-hoc and concept-based explanations, interpretability of financial foundation models, generative-AI safety, faithful evaluation, regulatory compliance, model-risk governance, fairness, and production case studies. The programme combines peer-reviewed talks with a closing cross-sector panel involving research, industry, and regulatory perspectives.</p>
+                            </div>
+                            <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 sm:p-6">
+                                <h4 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-800 mb-3"><i data-heroicon="users" class="w-4 h-4"></i> Organizers</h4>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Alan Perotti</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Intesa Sanpaolo AI Research</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">André Panisson</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Intesa Sanpaolo AI Research</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-sm font-semibold text-slate-700">Francesco Bonchi</p>
+                                        <p class="mt-0.5 text-xs text-slate-500 leading-snug">Intesa Sanpaolo AI Research</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
+                <div class="col-span-1 sm:col-span-2">
+                    <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
+                    <p class="max-w-sm mb-0 text-sm sm:text-base">The International Conference on Artificial Intelligence in Finance is a premier forum for sharing research and innovation at the intersection of AI and Finance.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h2>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition-colors text-sm sm:text-base">Home</a></li>
+                        <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
+                        <li><a href="organisation.html" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
+                        <li><a href="registration.html" class="hover:text-white transition-colors text-sm sm:text-base">Registration</a></li>
+                        <li><a href="workshop.html" class="hover:text-white transition-colors text-sm sm:text-base">Workshop</a></li>
+                        <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
+                        <li><a href="sponsors-and-supporters.html" class="hover:text-white transition-colors text-sm sm:text-base">Sponsors &amp; Supporters</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Previous Editions</h2>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="https://icaif25.org/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '25</a></li>
+                        <li><a href="https://icaif2024.org/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '24</a></li>
+                        <li><a href="https://ai-finance.org/icaif-23/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '23</a></li>
+                        <li><a href="https://ai-finance.org/icaif22/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '22</a></li>
+                        <li><a href="https://ai-finance.org/icaif21/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '21</a></li>
+                        <li><a href="https://aifin2020.wordpress.com/" class="hover:text-white transition-colors text-sm sm:text-base">ICAIF '20</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h2>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail" class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:andrea.maurino@unimib.it" class="hover:text-white transition-colors">General Contact</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><a href="https://www.linkedin.com/company/icaif/" target="_blank" rel="noopener noreferrer" aria-label="ICAIF on LinkedIn" class="flex items-center hover:text-white transition-colors"><i data-heroicon="linkedin" class="w-4 h-4 mr-2 shrink-0"></i> LinkedIn</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
+                <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
+                <div class="flex space-x-4 sm:space-x-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js?v=20260810" defer></script>
+</body>
+</html>

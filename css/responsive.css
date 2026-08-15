@@ -37,6 +37,7 @@ svg {
 }
 
 @media (min-width: 1024px) {
+    #programme-dropdown,
     #calls-dropdown,
     #sponsors-dropdown {
         right: 0;

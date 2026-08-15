@@ -67,6 +67,10 @@
             });
         };
 
+        const programmeDisclosure = createDisclosure('programme-dropdown-btn', 'programme-dropdown', 'programme-chevron', {
+            stopPropagation: true,
+            beforeOpen: () => closeDesktopDisclosures(programmeDisclosure),
+        });
         const callsDisclosure = createDisclosure('calls-dropdown-btn', 'calls-dropdown', 'calls-chevron', {
             stopPropagation: true,
             beforeOpen: () => closeDesktopDisclosures(callsDisclosure),
@@ -76,13 +80,14 @@
             beforeOpen: () => closeDesktopDisclosures(sponsorsDisclosure),
         });
 
-        [callsDisclosure, sponsorsDisclosure].forEach((disclosure) => {
+        [programmeDisclosure, callsDisclosure, sponsorsDisclosure].forEach((disclosure) => {
             if (disclosure.button && disclosure.panel) {
                 desktopDisclosures.push(disclosure);
             }
         });
 
         const mobileDisclosures = [
+            createDisclosure('mobile-programme-btn', 'mobile-programme-dropdown', 'mobile-programme-chevron'),
             createDisclosure('mobile-calls-btn', 'mobile-calls-dropdown', 'mobile-calls-chevron'),
             createDisclosure('mobile-sponsors-btn', 'mobile-sponsors-dropdown', 'mobile-sponsors-chevron'),
         ];
