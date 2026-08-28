@@ -132,6 +132,143 @@ a[href^="mailto"] {
     word-break: break-word;
 }
 
+.workshops-shell {
+    max-width: 72rem;
+}
+
+.workshops-intro {
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.workshop-list {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.workshop-list > * + * {
+    margin-top: 0;
+}
+
+.workshop-list > article {
+    padding: clamp(1.5rem, 3vw, 2.75rem);
+    border-color: #dbe3ec;
+    box-shadow:
+        0 1px 2px rgb(15 23 42 / 4%),
+        0 14px 34px rgb(15 23 42 / 6%);
+}
+
+.workshop-list > article > div:first-child {
+    margin-bottom: 1rem;
+}
+
+.workshop-list > article > h3 {
+    max-width: 60rem;
+    margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
+    letter-spacing: -0.02em;
+}
+
+.workshop-list > article > .grid {
+    gap: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.workshop-list > article > .grid > div:first-child {
+    max-width: 72ch;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.workshop-list > article > .grid > div:last-child {
+    align-self: start;
+    padding: clamp(1.25rem, 2vw, 1.5rem);
+    border-color: #cdeafb;
+    background: linear-gradient(145deg, #f0f9ff 0%, #f8fcff 100%);
+}
+
+.workshop-submission {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: clamp(1.75rem, 3vw, 2.25rem);
+    padding: 1.25rem 1.375rem;
+    border: 1px solid #dbe3ec;
+    border-radius: 0.875rem;
+    background: #f8fafc;
+}
+
+.workshop-submission-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0369a1;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+.workshop-submission-track {
+    margin-top: 0.5rem;
+    color: #334155;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.workshop-submission-track span {
+    display: inline-block;
+    margin-right: 0.35rem;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.workshop-submit-button {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 0.75rem 1.125rem;
+    border-radius: 0.625rem;
+    background: #0369a1;
+    box-shadow: 0 4px 12px rgb(3 105 161 / 18%);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.workshop-submit-button:hover {
+    background: #075985;
+    box-shadow: 0 6px 16px rgb(3 105 161 / 24%);
+    transform: translateY(-1px);
+}
+
+.workshop-submit-button:focus-visible {
+    outline: 3px solid rgb(14 165 233 / 35%);
+    outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+    .workshop-submission {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1.125rem;
+    }
+
+    .workshop-submit-button {
+        width: 100%;
+        white-space: normal;
+    }
+}
+
 @media (max-width: 480px) {
     .card-shadow {
         padding: 1.5rem;
