@@ -226,6 +226,14 @@ a[href^="mailto"] {
     text-transform: uppercase;
 }
 
+.workshop-submission-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.workshop-website-link,
 .workshop-submit-button {
     display: inline-flex;
     min-height: 2.75rem;
@@ -234,15 +242,30 @@ a[href^="mailto"] {
     gap: 0.625rem;
     padding: 0.75rem 1.125rem;
     border-radius: 0.625rem;
-    background: #0369a1;
-    box-shadow: 0 4px 12px rgb(3 105 161 / 18%);
-    color: #fff;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.25rem;
     text-align: center;
     white-space: nowrap;
-    transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.workshop-website-link {
+    border: 1px solid #bae6fd;
+    background: #fff;
+    color: #0369a1;
+}
+
+.workshop-website-link:hover {
+    border-color: #7dd3fc;
+    background: #f0f9ff;
+    color: #075985;
+}
+
+.workshop-submit-button {
+    background: #0369a1;
+    box-shadow: 0 4px 12px rgb(3 105 161 / 18%);
+    color: #fff;
 }
 
 .workshop-submit-button:hover {
@@ -251,6 +274,7 @@ a[href^="mailto"] {
     transform: translateY(-1px);
 }
 
+.workshop-website-link:focus-visible,
 .workshop-submit-button:focus-visible {
     outline: 3px solid rgb(14 165 233 / 35%);
     outline-offset: 3px;
@@ -263,6 +287,12 @@ a[href^="mailto"] {
         padding: 1.125rem;
     }
 
+    .workshop-submission-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .workshop-website-link,
     .workshop-submit-button {
         width: 100%;
         white-space: normal;
