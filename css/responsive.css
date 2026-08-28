@@ -80,7 +80,7 @@ body {
 .submit-proposal-btn,
 .submit-tutorial-btn,
 .submit-competition-btn {
-    animation: pulseGlow 2s ease-in-out infinite;
+    animation: pulseGlow 1.2s ease-in-out 0.65s 1 both;
 }
 
 .submit-paper-btn:hover,
@@ -92,6 +92,93 @@ body {
         0 0 40px rgb(210 93 31 / 80%),
         0 10px 15px -3px rgb(0 0 0 / 20%);
     transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-reveal {
+    animation: heroReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-reveal-1 {
+    animation-delay: 80ms;
+}
+
+.hero-reveal-2 {
+    animation-delay: 180ms;
+}
+
+.hero-reveal-3 {
+    animation-delay: 290ms;
+}
+
+.hero-reveal-4 {
+    animation-delay: 400ms;
+}
+
+.reveal-enabled .reveal-item {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+        opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal-enabled .reveal-item.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+.disclosure-panel {
+    opacity: 0;
+    transform: translateY(-0.375rem) scale(0.985);
+    transform-origin: top;
+    pointer-events: none;
+    transition:
+        opacity 150ms ease-out,
+        transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disclosure-panel.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+#tracks .card-shadow {
+    transition:
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#tracks .card-shadow:hover,
+.reveal-enabled #tracks .card-shadow.reveal-visible:hover {
+    transform: translateY(-0.25rem);
+}
+
+#tracks .card-shadow > svg.absolute {
+    transition:
+        color 300ms ease,
+        opacity 300ms ease,
+        transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#tracks .card-shadow:hover > svg.absolute {
+    transform: translate(-0.2rem, 0.2rem) rotate(2deg) scale(1.035);
 }
 
 .committee-photo {
@@ -450,5 +537,10 @@ a[href^="mailto"] {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+
+    .reveal-enabled .reveal-item {
+        opacity: 1;
+        transform: none;
     }
 }
