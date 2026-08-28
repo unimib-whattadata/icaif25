@@ -169,6 +169,12 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
 
+        .past-date {
+            color: #94a3b8 !important;
+            text-decoration-line: line-through;
+            text-decoration-thickness: 1.5px;
+        }
+
         /* Announcement bar animation */
         @keyframes slideDownFadeIn {
             from {
@@ -422,43 +428,43 @@
                         <tbody class="divide-y divide-slate-100">
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Paper Submission Deadline</td>
-                                <td class="px-6 py-4 text-sm text-slate-600"><del class="text-slate-400">August 2, 2026</del><span class="ml-2 font-semibold text-brand-800">Extended deadline: August 9, 2026</span></td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-08-02" data-auto-strike>August 2, 2026</time><time datetime="2026-08-09" data-auto-strike class="ml-2 font-semibold text-brand-800">Extended deadline: August 9, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Author Notification</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">September 27, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-09-27" data-auto-strike>September 27, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Workshop Proposal Submission</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">July 19, 2026 23:59 AoE</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-07-19" data-auto-strike>July 19, 2026 23:59 AoE</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Workshop Proposal Acceptance Notification</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">August 3-9, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-08-03" data-end-date="2026-08-09" data-auto-strike>August 3-9, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Tutorial Proposal Submission</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">August 22, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-08-22" data-auto-strike>August 22, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Tutorial Proposal Notification</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">September 5, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-09-05" data-auto-strike>September 5, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Workshop Paper Submission</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">October 1, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-10-01" data-auto-strike>October 1, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-4 text-sm font-medium text-slate-900">Workshop Paper Notification</td>
-                                <td class="px-6 py-4 text-sm text-slate-600">October 15, 2026</td>
+                                <td class="px-6 py-4 text-sm text-slate-600"><time datetime="2026-10-15" data-auto-strike>October 15, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors bg-brand-50/30">
                                 <td class="px-6 py-4 text-sm font-bold text-slate-900">Tutorials and Workshops</td>
-                                <td class="px-6 py-4 text-sm font-semibold text-brand-800">November 14-15, 2026</td>
+                                <td class="px-6 py-4 text-sm font-semibold text-brand-800"><time datetime="2026-11-14" data-end-date="2026-11-15" data-auto-strike>November 14-15, 2026</time></td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors bg-brand-50/30">
                                 <td class="px-6 py-4 text-sm font-bold text-slate-900">Main Conference</td>
-                                <td class="px-6 py-4 text-sm font-semibold text-brand-800">November 14-17, 2026</td>
+                                <td class="px-6 py-4 text-sm font-semibold text-brand-800"><time datetime="2026-11-14" data-end-date="2026-11-17" data-auto-strike>November 14-17, 2026</time></td>
                             </tr>
                         </tbody>
                     </table>
@@ -605,6 +611,7 @@
 
     <!-- Scripts -->
     <script src="js/site.js?v=20260810" defer></script>
+    <script src="js/important-dates.js?v=20260828" defer></script>
 </body>
 
 </html>
