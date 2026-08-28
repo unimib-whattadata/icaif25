@@ -1,3 +1,13 @@
+:root {
+    --color-accent: #b9470d;
+    --color-brand-50: #f0f9ff;
+    --color-brand-100: #e0f2fe;
+    --color-brand-500: #0ea5e9;
+    --color-brand-600: #0369a1;
+    --color-brand-800: #075985;
+    --color-brand-900: #0c4a6e;
+}
+
 *,
 *::before,
 *::after {
@@ -5,7 +15,123 @@
 }
 
 body {
+    background-color: #f8fafc;
+    color: #1e293b;
     min-width: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+.card-shadow {
+    box-shadow:
+        0 4px 6px -1px rgb(0 0 0 / 5%),
+        0 2px 4px -1px rgb(0 0 0 / 3%);
+}
+
+.card-shadow:hover {
+    box-shadow:
+        0 10px 15px -3px rgb(0 0 0 / 5%),
+        0 4px 6px -2px rgb(0 0 0 / 2.5%);
+}
+
+.past-date {
+    color: #94a3b8 !important;
+    text-decoration-line: line-through;
+    text-decoration-thickness: 1.5px;
+}
+
+@keyframes pulseGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgb(210 93 31 / 40%),
+            0 4px 6px -1px rgb(0 0 0 / 10%);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgb(210 93 31 / 60%),
+            0 4px 6px -1px rgb(0 0 0 / 10%);
+    }
+}
+
+.submit-paper-btn,
+.submit-proposal-btn,
+.submit-tutorial-btn,
+.submit-competition-btn {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.submit-paper-btn:hover,
+.submit-proposal-btn:hover,
+.submit-tutorial-btn:hover,
+.submit-competition-btn:hover {
+    animation: none;
+    box-shadow:
+        0 0 40px rgb(210 93 31 / 80%),
+        0 10px 15px -3px rgb(0 0 0 / 20%);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.committee-photo {
+    width: 100%;
+    height: 152px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(172px, 192px));
+    gap: 1.5rem;
+}
+
+.committee-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 280px;
+}
+
+.committee-card > div {
+    flex: 1;
+}
+
+.committee-card h3 {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.committee-card > div > p:first-child {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.committee-card h3 + p {
+    font-size: 0.875rem;
+    line-height: 1.25;
 }
 
 .hero-background {
@@ -309,5 +435,20 @@ a[href^="mailto"] {
         right: -1rem;
         width: 6rem;
         height: 6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }

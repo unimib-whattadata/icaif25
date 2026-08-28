@@ -117,70 +117,11 @@
     }
     </script>
     <!-- Heroicons -->
-    <script src="js/heroicons.js?v=20260810" defer></script>
+    <script src="js/heroicons.js?v=20260828" defer></script>
 
-    <style>
-        :root {
-            --color-accent: #b9470d;
-            --color-brand-50: #f0f9ff;
-            --color-brand-100: #e0f2fe;
-            --color-brand-500: #0ea5e9;
-            --color-brand-600: #0369a1;
-            --color-brand-800: #075985;
-            --color-brand-900: #0c4a6e;
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        .focus\:not-sr-only:focus {
-            position: static;
-            width: auto;
-            height: auto;
-            padding: inherit;
-            margin: inherit;
-            overflow: visible;
-            clip: auto;
-            white-space: normal;
-        }
-
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-
-        .card-shadow:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-        }
-
-        #orange-arc {
-            fill: #D15B22;
-            clip-path: inset(0 100% 0 0);
-            animation: revealArcLeftToRight 2.5s ease-in 0.5s forwards;
-        }
-
-        @keyframes revealArcLeftToRight {
-            to {
-                clip-path: inset(0 0% 0 0);
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="css/fonts.css?v=20260810">
-    <link rel="stylesheet" href="css/tailwind.min.css?v=20260810">
-    <link rel="stylesheet" href="css/responsive.css?v=20260810">
+    <link rel="stylesheet" href="css/fonts.css?v=20260828">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=20260828">
+    <link rel="stylesheet" href="css/responsive.css?v=20260828">
 </head>
 
 <body class="font-sans antialiased">
@@ -215,6 +156,9 @@
                             class="hidden absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="workshop.html"
                                 class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="competitions.html"
+                                class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Competitions</a>
                         </div>
                     </div>
                     <div class="relative">
@@ -286,6 +230,8 @@
                     <div id="mobile-programme-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="workshop.html"
                             class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                        <a href="competitions.html"
+                            class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Competitions</a>
                     </div>
                 </div>
                 <div>
@@ -618,6 +564,8 @@
                         <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
                         <li><a href="organisation.html" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
                         <li><a href="registration.html" class="hover:text-white transition-colors text-sm sm:text-base">Registration</a></li>
+                        <li><a href="workshop.html" class="hover:text-white transition-colors text-sm sm:text-base">Workshops</a></li>
+                        <li><a href="competitions.html" class="hover:text-white transition-colors text-sm sm:text-base">Competitions</a></li>
                         <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
                         <li><a href="call-for-workshop-proposals.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Workshop Proposals</a></li>
                         <li><a href="call-for-tutorials.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Tutorials</a></li>
@@ -657,13 +605,13 @@
                 class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
                 <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
                 <div class="flex space-x-4 sm:space-x-6">
-                    <a href="privacy-policy.html" class="text-white transition-colors">Privacy Policy</a>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/site.js?v=20260810" defer></script>
+    <script src="js/site.js?v=20260828" defer></script>
 </body>
 
 </html>

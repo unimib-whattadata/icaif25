@@ -116,96 +116,10 @@
     }
     </script>
     <!-- Heroicons -->
-    <script src="js/heroicons.js?v=20260810" defer></script>
-    <style>
-        :root {
-            --color-accent: #b9470d;
-            --color-brand-50: #f0f9ff;
-            --color-brand-100: #e0f2fe;
-            --color-brand-500: #0ea5e9;
-            --color-brand-600: #0369a1;
-            --color-brand-800: #075985;
-            --color-brand-900: #0c4a6e;
-        }
-        body {
-            background-color: #f8fafc; /* slate-50 */
-            color: #1e293b; /* slate-800 */
-        }
-        /* Screen reader only class for accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        .focus\:not-sr-only:focus {
-            position: static;
-            width: auto;
-            height: auto;
-            padding: inherit;
-            margin: inherit;
-            overflow: visible;
-            clip: auto;
-            white-space: normal;
-        }
-        /* Soft shadow for cards */
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-        .card-shadow:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-        }
-        /* Announcement bar animation */
-        @keyframes slideDownFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .announcement-animate {
-            animation: slideDownFadeIn 0.6s ease-out;
-        }
-        /* Submit Paper button effect */
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(210, 93, 31, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(210, 93, 31, 0.6), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            }
-        }
-        .submit-paper-btn {
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-        .submit-paper-btn:hover {
-            animation: none;
-            box-shadow: 0 0 40px rgba(210, 93, 31, 0.8), 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-            transform: translateY(-2px) scale(1.02);
-        }
-        /* Logo orange arc animation */
-        #orange-arc {
-            fill: #D15B22;
-            clip-path: inset(0 100% 0 0);
-            animation: revealArcLeftToRight 2.5s ease-in 0.5s forwards;
-        }
-        @keyframes revealArcLeftToRight {
-            to {
-                clip-path: inset(0 0% 0 0);
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="css/fonts.css?v=20260810">
-    <link rel="stylesheet" href="css/tailwind.min.css?v=20260810">
-    <link rel="stylesheet" href="css/responsive.css?v=20260810">
+    <script src="js/heroicons.js?v=20260828" defer></script>
+    <link rel="stylesheet" href="css/fonts.css?v=20260828">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=20260828">
+    <link rel="stylesheet" href="css/responsive.css?v=20260828">
 </head>
 <body class="font-sans antialiased">
     <!-- Skip to main content link for accessibility -->
@@ -237,6 +151,8 @@
                         </button>
                         <div id="programme-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50">
                             <a href="workshop.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                            <div class="border-t border-slate-100 my-1"></div>
+                            <a href="competitions.html" class="block px-4 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Competitions</a>
                         </div>
                     </div>
                     <!-- Calls Dropdown -->
@@ -296,6 +212,7 @@
                     </button>
                     <div id="mobile-programme-dropdown" class="hidden pl-4 mt-2 space-y-1">
                         <a href="workshop.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Workshop</a>
+                        <a href="competitions.html" class="block py-2 px-4 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors">Competitions</a>
                     </div>
                 </div>
                 <!-- Mobile Calls Dropdown -->
@@ -734,7 +651,8 @@
                 <div class="col-span-1 sm:col-span-2">
                     <span class="text-xl sm:text-2xl font-bold text-white block mb-4">ICAIF '26</span>
                     <p class="max-w-sm mb-0 text-sm sm:text-base">
-                        The International Conference on Artificial Intelligence in Finance is a premier forum for sharing research and innovation at the intersection of AI and Finance.
+                        The International Conference on Artificial Intelligence in Finance is a premier forum for
+                        sharing research and innovation at the intersection of AI and Finance.
                     </p>
                 </div>
 
@@ -745,6 +663,8 @@
                         <li><a href="important-dates.html" class="hover:text-white transition-colors text-sm sm:text-base">Important Dates</a></li>
                         <li><a href="organisation.html" class="hover:text-white transition-colors text-sm sm:text-base">Organization</a></li>
                         <li><a href="registration.html" class="hover:text-white transition-colors text-sm sm:text-base">Registration</a></li>
+                        <li><a href="workshop.html" class="hover:text-white transition-colors text-sm sm:text-base">Workshops</a></li>
+                        <li><a href="competitions.html" class="hover:text-white transition-colors text-sm sm:text-base">Competitions</a></li>
                         <li><a href="call-for-papers.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Papers</a></li>
                         <li><a href="call-for-workshop-proposals.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Workshop Proposals</a></li>
                         <li><a href="call-for-tutorials.html" class="hover:text-white transition-colors text-sm sm:text-base">Call for Tutorials</a></li>
@@ -770,14 +690,18 @@
                 <div>
                     <h2 class="text-white font-bold mb-4 sm:mb-6 text-sm sm:text-base">Contact</h2>
                     <ul class="space-y-2 sm:space-y-3">
-                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail" class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:andrea.maurino@unimib.it" class="hover:text-white transition-colors">General Contact</a></li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="mail"
+                                class="w-4 h-4 mr-2 shrink-0"></i> <a href="mailto:andrea.maurino@unimib.it"
+                                class="hover:text-white transition-colors">General Contact</a></li>
                         <li class="flex items-center text-sm sm:text-base"><a href="https://www.linkedin.com/company/icaif/" target="_blank" rel="noopener noreferrer" aria-label="ICAIF on LinkedIn" class="flex items-center hover:text-white transition-colors"><i data-heroicon="linkedin" class="w-4 h-4 mr-2 shrink-0"></i> LinkedIn</a></li>
-                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin" class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
+                        <li class="flex items-center text-sm sm:text-base"><i data-heroicon="map-pin"
+                                class="w-4 h-4 mr-2 shrink-0"></i> Milan, Italy</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
+            <div
+                class="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
                 <p class="mb-4 md:mb-0 text-center md:text-left">&copy; 2026 ICAIF Conference. All rights reserved.</p>
                 <div class="flex space-x-4 sm:space-x-6">
                     <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -787,6 +711,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/site.js?v=20260810" defer></script>
+    <script src="js/site.js?v=20260828" defer></script>
 </body>
 </html>

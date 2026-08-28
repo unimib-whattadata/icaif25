@@ -42,3 +42,6 @@ build/
 
 # Others
 .history/
+.codex-artifacts/
+output/
+tmp/
