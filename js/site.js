@@ -84,6 +84,7 @@
         const revealGroups = [
             { selector: '#tracks .card-shadow', stagger: 70, columns: 3 },
             { selector: '#updates', stagger: 0, columns: 1 },
+            { selector: '#linkedin .linkedin-embed', stagger: 90, columns: 3 },
             { selector: '.workshop-list > article', stagger: 80, columns: 2 },
             { selector: '#contact .card-shadow', stagger: 70, columns: 3 },
         ];

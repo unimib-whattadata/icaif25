@@ -544,3 +544,14 @@ a[href^="mailto"] {
         transform: none;
     }
 }
+.linkedin-embed {
+    min-width: 0;
+    box-shadow: 0 12px 30px -18px rgb(15 23 42 / 0.35);
+}
+
+.linkedin-embed iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+}
