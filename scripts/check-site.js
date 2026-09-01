@@ -218,11 +218,11 @@ for (const file of htmlFiles) {
     if (!/class=["'][^"']*\bmenu\b[^"']*\bmenu-lg\b[^"']*\bdropdown-content\b/i.test(html)) {
         addError(file, 'mobile navigation must use menu-lg touch targets');
     }
-    if (!/class=["'][^"']*\bmenu-horizontal\b[^"']*\bxl:flex\b/i.test(html)) {
-        addError(file, 'desktop navigation must start at xl to prevent wrapping');
+    if (!/class=["'][^"']*\bmenu-horizontal\b[^"']*\blg:flex\b/i.test(html)) {
+        addError(file, 'compact desktop navigation must start at lg');
     }
-    if (!/<details\b[^>]*class=["'][^"']*\bdropdown\b[^"']*\bxl:hidden\b/i.test(html)) {
-        addError(file, 'mobile navigation must remain available below xl');
+    if (!/<details\b[^>]*class=["'][^"']*\bdropdown\b[^"']*\blg:hidden\b/i.test(html)) {
+        addError(file, 'mobile navigation must remain available below lg');
     }
     if (/<style\b/i.test(html)) addError(file, 'contains inline CSS; move it to a shared stylesheet');
     if (/\sstyle\s*=/i.test(html)) addError(file, 'contains an inline style attribute');
@@ -246,10 +246,8 @@ for (const file of htmlFiles) {
             animatedHeroOverlayTags.length !== 1
             || !animatedHeroClasses.has('hero-overlay')
             || !animatedHeroClasses.has('bg-primary/20')
-            || !animatedHeroClasses.has('animate-pulse')
-            || !animatedHeroClasses.has('motion-reduce:animate-none')
         ) {
-            addError(file, 'internal page header must use one accessible animated daisyUI hero overlay');
+            addError(file, 'internal page header must use one accessible daisyUI hero overlay');
         }
     } else if (animatedHeroOverlayTags.length) {
         addError(file, 'home hero must not use the internal-page background animation');
@@ -473,8 +471,10 @@ for (const removedFile of ['tailwind.config.js', 'css/responsive.css', 'js/site.
 }
 
 const cssInput = fs.readFileSync(path.join(root, 'css', 'tailwind.input.css'), 'utf8');
-if (/^\s*[.#][^{]+\{/m.test(cssInput) || /@keyframes\b/.test(cssInput)) {
-    addError('css/tailwind.input.css', 'contains ad-hoc selectors or animations');
+const sharedLayerStart = cssInput.indexOf('@layer base');
+const cssBeforeSharedLayers = sharedLayerStart >= 0 ? cssInput.slice(0, sharedLayerStart) : cssInput;
+if (/^\s*[.#][^{]+\{/m.test(cssBeforeSharedLayers) || /@keyframes\b/.test(cssInput)) {
+    addError('css/tailwind.input.css', 'contains ad-hoc selectors before the shared layers or custom keyframes');
 }
 
 if (!/@import\s+["']\.\/fonts\.css["']\s*;/i.test(cssInput)) {

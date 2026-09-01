@@ -2,7 +2,7 @@
 <html lang="en" data-theme="icaif" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta
       name="description"
       content="Meet the sponsors and supporters of ICAIF '26 and learn how their contributions support the ACM International Conference on AI in Finance."
@@ -150,9 +150,9 @@
     </script>
     <!-- Heroicons -->
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026082908">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026090101">
   </head>
-  <body class="font-sans antialiased min-w-0">
+  <body data-page="sponsors-and-supporters" class="font-sans antialiased min-w-0">
     <!-- Skip to main content link for accessibility -->
     <a
       href="#main-content"
@@ -188,7 +188,7 @@
         </div>
         <div class="navbar-end">
           <ul
-            class="menu menu-horizontal menu-sm hidden items-center gap-1 xl:flex"
+            class="menu menu-horizontal menu-xs hidden items-center gap-0 lg:flex xl:menu-sm xl:gap-1"
           >
             <li><a href="important-dates.html">Important Dates</a></li>
             <li><a href="organisation.html">Organization</a></li>
@@ -246,8 +246,8 @@
               </details>
             </li>
           </ul>
-          <details class="dropdown dropdown-end xl:hidden">
-            <summary class="btn" aria-label="Navigation menu">
+          <details class="dropdown dropdown-end lg:hidden">
+            <summary class="btn min-h-12 min-w-12" aria-label="Navigation menu">
               <i data-heroicon="menu" class="size-6"></i>
             </summary>
             <ul
@@ -316,10 +316,10 @@
         <div
           aria-hidden="true"
           data-animated-hero-overlay
-          class="hero-overlay bg-primary/20 animate-pulse motion-reduce:animate-none"
+          class="hero-overlay bg-primary/20"
         ></div>
         <div
-          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
         >
           <div class="max-w-3xl">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
@@ -395,7 +395,7 @@
             </div>
           </div>
 
-          <div class="card mx-auto mt-16 max-w-3xl bg-base-100 text-center">
+          <div class="card mx-auto mt-10 max-w-3xl bg-base-100 text-center">
             <div class="card-body items-center">
               <h3 class="text-xl sm:text-2xl font-bold text-base-content mb-4">
                 Interested in Sponsoring?
@@ -423,7 +423,7 @@
     <!-- --- FOOTER --- -->
     <footer class="bg-neutral text-neutral-content">
       <div
-        class="footer footer-vertical mx-auto max-w-7xl gap-10 px-4 py-12 sm:footer-horizontal sm:px-6 lg:px-8"
+        class="footer footer-vertical mx-auto max-w-7xl gap-8 px-4 py-10 sm:px-6 md:footer-horizontal lg:px-8"
       >
         <aside class="max-w-sm">
           <span class="text-2xl font-bold">ICAIF '26</span>
@@ -490,5 +490,6 @@
         <a href="privacy-policy.html" class="link">Privacy Policy</a>
       </div>
     </footer>
+    <script src="js/site-layout.js?v=2026090102" defer></script>
   </body>
 </html>

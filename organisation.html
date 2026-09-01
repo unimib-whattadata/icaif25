@@ -2,7 +2,7 @@
 <html lang="en" data-theme="icaif" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta
       name="description"
       content="Meet the conference leadership and organizing committee behind ICAIF '26 in Milan, Italy."
@@ -69,10 +69,10 @@
       }
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026082908">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026090101">
   </head>
 
-  <body class="font-sans antialiased min-w-0">
+  <body data-page="organisation" class="font-sans antialiased min-w-0">
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-content focus:rounded-field"
@@ -106,7 +106,7 @@
         </div>
         <div class="navbar-end">
           <ul
-            class="menu menu-horizontal menu-sm hidden items-center gap-1 xl:flex"
+            class="menu menu-horizontal menu-xs hidden items-center gap-0 lg:flex xl:menu-sm xl:gap-1"
           >
             <li><a href="important-dates.html">Important Dates</a></li>
             <li>
@@ -168,8 +168,8 @@
               </details>
             </li>
           </ul>
-          <details class="dropdown dropdown-end xl:hidden">
-            <summary class="btn" aria-label="Navigation menu">
+          <details class="dropdown dropdown-end lg:hidden">
+            <summary class="btn min-h-12 min-w-12" aria-label="Navigation menu">
               <i data-heroicon="menu" class="size-6"></i>
             </summary>
             <ul
@@ -241,10 +241,10 @@
         <div
           aria-hidden="true"
           data-animated-hero-overlay
-          class="hero-overlay bg-primary/20 animate-pulse motion-reduce:animate-none"
+          class="hero-overlay bg-primary/20"
         ></div>
         <div
-          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
         >
           <div class="max-w-3xl">
             <p
@@ -282,7 +282,7 @@
 
           <section
             aria-labelledby="general-chair-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="general-chair-heading"
@@ -315,7 +315,7 @@
 
           <section
             aria-labelledby="program-chairs-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="program-chairs-heading"
@@ -382,7 +382,7 @@
 
           <section
             aria-labelledby="workshop-chairs-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="workshop-chairs-heading"
@@ -455,7 +455,7 @@
 
           <section
             aria-labelledby="tutorial-chairs-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="tutorial-chairs-heading"
@@ -505,7 +505,7 @@
 
           <section
             aria-labelledby="sponsorship-chairs-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="sponsorship-chairs-heading"
@@ -587,7 +587,7 @@
 
           <section
             aria-labelledby="local-chairs-heading"
-            class="mb-14 sm:mb-20"
+            class="mb-10 sm:mb-14"
           >
             <h2
               id="local-chairs-heading"
@@ -745,7 +745,7 @@
 
     <footer class="bg-neutral text-neutral-content">
       <div
-        class="footer footer-vertical mx-auto max-w-7xl gap-10 px-4 py-12 sm:footer-horizontal sm:px-6 lg:px-8"
+        class="footer footer-vertical mx-auto max-w-7xl gap-8 px-4 py-10 sm:px-6 md:footer-horizontal lg:px-8"
       >
         <aside class="max-w-sm">
           <span class="text-2xl font-bold">ICAIF '26</span>
@@ -812,5 +812,6 @@
         <a href="privacy-policy.html" class="link">Privacy Policy</a>
       </div>
     </footer>
+    <script src="js/site-layout.js?v=2026090102" defer></script>
   </body>
 </html>

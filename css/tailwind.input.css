@@ -44,7 +44,7 @@
   --color-primary-content: #ffffff;
   --color-secondary: #075985;
   --color-secondary-content: #ffffff;
-  --color-accent: #d15b22;
+  --color-accent: #bf4c16;
   --color-accent-content: #ffffff;
   --color-neutral: #0f172a;
   --color-neutral-content: #f8fafc;
@@ -69,4 +69,338 @@
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-serif: "Merriweather", serif;
+}
+
+@layer base {
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 28%, transparent);
+    color: var(--color-base-content);
+  }
+
+  :focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--color-accent) 78%, white);
+    outline-offset: 3px;
+  }
+
+  html {
+    scroll-padding-top: 9rem;
+  }
+}
+
+@layer components {
+  .page-index {
+    position: sticky;
+    top: 4rem;
+    z-index: 30;
+    border-bottom: 1px solid var(--color-base-300);
+    background: color-mix(in oklab, var(--color-base-100) 96%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .page-index-inner {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .page-index-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .page-index-desktop {
+    display: none;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .footer-disclosure > summary {
+    cursor: pointer;
+    min-height: 2.75rem;
+    align-content: center;
+    list-style: none;
+  }
+
+  .footer-disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .footer-disclosure > summary::after {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.75rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-0.2rem) rotate(45deg);
+    transition: transform 160ms ease-out;
+  }
+
+  .footer-disclosure[open] > summary::after {
+    transform: translateY(0.1rem) rotate(225deg);
+  }
+
+  .footer-disclosure-content {
+    display: grid;
+    gap: 0.45rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .responsive-details-toggle {
+    display: none;
+  }
+
+  .responsive-details-icon {
+    display: block;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-0.15rem) rotate(45deg);
+    transition: transform 160ms ease-out;
+  }
+
+  .responsive-details-toggle[aria-expanded="true"] .responsive-details-icon {
+    transform: translateY(0.15rem) rotate(225deg);
+  }
+
+  .registration-fee-cards {
+    display: none;
+  }
+
+  .requirement-grid > * {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-base-300);
+  }
+
+  .document-sections > section {
+    scroll-margin-top: 9rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .page-index {
+    top: 5rem;
+  }
+
+  .page-index-inner {
+    padding-inline: 1.5rem;
+  }
+
+  .footer-disclosure > summary {
+    pointer-events: none;
+  }
+
+  .footer-disclosure > summary::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-index-mobile {
+    display: none;
+  }
+
+  .page-index-desktop {
+    display: block;
+  }
+
+  .requirement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 2.5rem;
+  }
+
+  .requirement-grid > * {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-index-inner {
+    padding-inline: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  [data-page="workshop"] .program-card,
+  [data-page="competitions"] .program-card {
+    scroll-margin-top: 8rem;
+  }
+
+  .responsive-details-toggle {
+    display: inline-flex;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    margin-top: 0.25rem;
+    align-self: flex-start;
+  }
+
+  .is-collapsed .responsive-details {
+    display: none;
+  }
+
+  [data-page="workshop"] .program-card > .card-body,
+  [data-page="competitions"] .program-card > .card-body {
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  [data-page="workshop"] .program-card .card-title,
+  [data-page="competitions"] .program-card .card-title {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  [data-page="organisation"] main article.card {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    min-height: 7rem;
+  }
+
+  [data-page="organisation"] main article.card > figure,
+  [data-page="organisation"] main article.card > img {
+    width: 7rem;
+    height: 100%;
+    min-height: 7rem;
+  }
+
+  [data-page="organisation"] main article.card img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  [data-page="organisation"] main article.card .card-body {
+    min-width: 0;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 1rem;
+  }
+
+  [data-page="organisation"] main article.card .card-title {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  [data-page="organisation"] main article.card .card-body p {
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+  }
+
+  [data-page="become-a-sponsor"] .sponsor-tier-card {
+    padding: 1.25rem;
+  }
+
+  [data-page="become-a-sponsor"] .sponsor-tier-card .text-4xl {
+    margin-block: 0.5rem;
+    font-size: 1.75rem;
+  }
+
+  .table-mobile-rows {
+    display: block;
+    min-width: 0;
+  }
+
+  .table-mobile-rows thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .table-mobile-rows tbody,
+  .table-mobile-rows tr,
+  .table-mobile-rows td,
+  .table-mobile-rows th {
+    display: block;
+    width: 100%;
+  }
+
+  .table-mobile-rows tr {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--color-base-300);
+  }
+
+  .table-mobile-rows tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table-mobile-rows td,
+  .table-mobile-rows th {
+    padding: 0;
+    border: 0;
+    text-align: left;
+  }
+
+  .table-mobile-rows td + td,
+  .table-mobile-rows th + td {
+    margin-top: 0.35rem;
+    color: var(--color-primary);
+  }
+
+  [data-page="registration"] .registration-table-card {
+    display: none;
+  }
+
+  [data-page="registration"] .registration-fee-cards {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  [data-page="registration"] [role="note"].lg\:hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  [data-page^="call-for-"] main > section:not(#page-header),
+  [data-page="privacy-policy"] main > section:not(#page-header),
+  [data-page="registration"] main > section:not(#page-header) {
+    padding-block: 2.5rem;
+  }
+
+  [data-page^="call-for-"] main h2,
+  [data-page="privacy-policy"] main h2,
+  [data-page="registration"] main h2 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+}
+
+[data-page="organisation"] main section[aria-labelledby] {
+  scroll-margin-top: 9rem;
+}
+
+[data-page="workshop"] main > section:not(#page-header),
+[data-page="competitions"] main > section:not(#page-header) {
+  padding-block: clamp(2.75rem, 5vw, 5rem);
+}
+
+[data-page="sponsors-and-supporters"] main .card {
+  border: 1px solid var(--color-base-300);
+}
+
+[data-page="sponsors-and-supporters"] main img {
+  max-height: 5rem;
+  object-fit: contain;
+}
+
+footer > :last-child {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
