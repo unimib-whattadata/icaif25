@@ -85,7 +85,7 @@
       }
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026090103">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026090201">
   </head>
   <body data-page="workshop" class="font-sans antialiased min-w-0">
     <a
@@ -305,13 +305,61 @@
             </p>
           </div>
 
-          <div role="alert" class="alert mb-8 sm:mb-12">
-            <i data-heroicon="info" class="size-5"></i>
-            <p>
-              For workshops using Microsoft CMT, sign in to the ICAIF 2026
-              Author Console, choose <strong>Create new submission</strong>,
-              and select the track named in the workshop card below.
-            </p>
+          <div
+            role="alert"
+            aria-labelledby="workshop-paper-dates-heading"
+            data-emphasis-alert
+            class="alert alert-info alert-soft alert-vertical mb-8 sm:alert-horizontal sm:mb-12"
+          >
+            <i
+              data-heroicon="calendar-clock"
+              class="size-6 shrink-0"
+            ></i>
+            <div class="w-full">
+              <h3 id="workshop-paper-dates-heading" class="font-bold">
+                Workshop paper dates
+              </h3>
+              <p class="mt-1 text-sm opacity-80">
+                These dates apply to workshops accepting paper submissions.
+              </p>
+              <dl class="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-6">
+                <div>
+                  <dt
+                    class="text-xs font-bold uppercase tracking-wider opacity-70"
+                  >
+                    Paper submission
+                  </dt>
+                  <dd class="mt-1 font-semibold">
+                    <time datetime="2026-10-01T23:59:00-07:00"
+                      >October 1, 2026</time
+                    >
+                    <span class="block text-sm font-normal opacity-80"
+                      >11:59 PM Pacific Time</span
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    class="text-xs font-bold uppercase tracking-wider opacity-70"
+                  >
+                    Paper notification
+                  </dt>
+                  <dd class="mt-1 font-semibold">
+                    <time datetime="2026-10-15T23:59:00-07:00"
+                      >October 15, 2026</time
+                    >
+                    <span class="block text-sm font-normal opacity-80"
+                      >11:59 PM Pacific Time</span
+                    >
+                  </dd>
+                </div>
+              </dl>
+              <p class="mt-4 text-sm leading-relaxed opacity-90">
+                For workshops using Microsoft CMT, sign in to the ICAIF 2026
+                Author Console, choose <strong>Create new submission</strong>,
+                and select the track named in the workshop card below.
+              </p>
+            </div>
           </div>
 
           <div class="grid gap-5 sm:gap-6">
@@ -1596,6 +1644,6 @@
         <a href="privacy-policy.html" class="link">Privacy Policy</a>
       </div>
     </footer>
-    <script src="js/site-layout.js?v=2026090102" defer></script>
+    <script src="js/site-layout.js?v=2026090201" defer></script>
   </body>
 </html>

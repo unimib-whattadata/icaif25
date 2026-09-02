@@ -162,7 +162,8 @@
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "btn btn-ghost btn-sm responsive-details-toggle";
+    button.className =
+      "btn btn-ghost btn-sm responsive-details-toggle md:hidden";
     button.setAttribute("aria-controls", id);
     button.setAttribute("aria-expanded", String(!mobileQuery.matches));
     button.setAttribute("aria-label", anchor.textContent.trim());
