@@ -71,6 +71,41 @@
   --font-serif: "Merriweather", serif;
 }
 
+@utility hero-secondary-action {
+  --btn-color: var(--color-neutral);
+  --btn-bg: var(--color-neutral);
+  --btn-fg: var(--color-neutral-content);
+  --btn-border: color-mix(
+    in oklab,
+    var(--color-primary) 58%,
+    var(--color-neutral-content)
+  );
+  border-color: var(--btn-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+
+  &:hover {
+    --btn-bg: color-mix(
+      in oklab,
+      var(--color-neutral) 82%,
+      var(--color-primary)
+    );
+    --btn-border: color-mix(
+      in oklab,
+      var(--color-primary) 42%,
+      var(--color-neutral-content)
+    );
+  }
+
+  &:active {
+    --btn-bg: color-mix(
+      in oklab,
+      var(--color-neutral) 72%,
+      var(--color-primary)
+    );
+  }
+}
+
 @layer base {
   ::selection {
     background: color-mix(in oklab, var(--color-primary) 28%, transparent);

@@ -17,6 +17,11 @@ Thumbs.db
 .settings/
 .classpath
 
+# Local agent/tool files
+.codex/
+.impeccable/
+.agents/skills/impeccable/
+
 # Logs
 *.log
 npm-debug.log*
