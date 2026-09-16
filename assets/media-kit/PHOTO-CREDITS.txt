@@ -1,0 +1,60 @@
+ICAIF '26 — PHOTOGRAPHY CREDITS
+
+Source title: Piazza del Duomo
+Photographer: kuhnmi (Michael Kuhn)
+Date: July 15, 2016
+Source: https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg
+Original Flickr page: https://www.flickr.com/photos/31176607@N05/30771153280
+Original photograph license: Creative Commons Attribution 2.0 Generic (CC BY 2.0)
+https://creativecommons.org/licenses/by/2.0/
+Legal code: https://creativecommons.org/licenses/by/2.0/legalcode
+
+ORIGINAL
+File: piazza-duomo-kuhnmi-original.jpg
+Resolution: 5032 x 3355 pixels
+The unaltered original file supplied via Wikimedia Commons.
+Suggested credit:
+“Piazza del Duomo” by kuhnmi, via Wikimedia Commons, CC BY 2.0.
+Include the source and license links above when publishing the credit.
+
+DAY-CYCLE ADAPTATIONS
+Files (each supplied as PNG and JPG):
+- piazza-duomo-alba: dawn
+- piazza-duomo-giorno: daytime
+- piazza-duomo-tramonto: sunset
+- piazza-duomo-notte: night
+Resolution: 1536 x 1024 pixels
+Adapted for ICAIF '26 with AI on September 16, 2026, using the original
+photograph as the edit target. The approved sunset was also used as a visual
+reference for the other three variants. People and birds removed; sky,
+time-of-day lighting, colors and image details modified. These are AI-edited
+illustrations, not unaltered photographs of the scene.
+Source credit:
+Based on “Piazza del Duomo” by kuhnmi, via Wikimedia Commons.
+Original photograph: CC BY 2.0 (source and license links above).
+AI adaptation for ICAIF '26: people removed; lighting, sky, and colors modified.
+
+REUSE
+CC BY 2.0 identifies the license of kuhnmi's original photograph, not a
+separate license grant for the AI edits. No additional license for those
+edits is specified here. The source photograph's attribution requirements
+remain relevant when distributing adaptations: retain the original author's
+credit, title and source link, and identify the use of the original work.
+Do not imply endorsement by the original photographer.
+
+The website uses compressed WebP previews; the original JPG download is
+byte-for-byte identical to the Wikimedia Commons original. Each adapted JPG
+is a compressed export of its PNG master, with the same pixel dimensions.
+Website previews may be cropped to fit their layout.
+
+WEBSITE TIME BANDS
+The homepage selects one adaptation using Europe/Rome time (Milan), including
+daylight-saving changes: dawn 06:00–09:00; daytime 09:00–17:00; sunset
+17:00–20:00; night 20:00–06:00. These are fixed editorial time bands, not a live
+camera or an astronomical sunrise/sunset calculation. Without JavaScript the
+homepage displays the approved sunset image.
+
+The CC BY 2.0 notice identifies the original photograph only; it does not
+license the ICAIF logos or other conference identity assets. It does not imply the photographer's
+affiliation with or endorsement of the conference. See the linked license
+for its complete terms; other rights may apply to your intended use.

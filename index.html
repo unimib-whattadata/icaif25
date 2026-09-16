@@ -28,13 +28,13 @@
       content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026."
    >
     <meta property="og:url" content="https://icaif2026.org/">
-    <meta property="og:image" content="https://icaif2026.org/img/hero-v4.jpg">
+    <meta property="og:image" content="https://icaif2026.org/img/piazza-duomo-tramonto.jpg">
     <meta
       property="og:image:secure_url"
-      content="https://icaif2026.org/img/hero-v4.jpg"
+      content="https://icaif2026.org/img/piazza-duomo-tramonto.jpg"
    >
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1280">
+    <meta property="og:image:width" content="1536">
+    <meta property="og:image:height" content="1024">
     <meta property="og:image:alt" content="ICAIF '26 in Milan, Italy">
     <meta name="twitter:card" content="summary_large_image">
     <meta
@@ -47,7 +47,7 @@
    >
     <meta
       name="twitter:image"
-      content="https://icaif2026.org/img/hero-v4.jpg"
+      content="https://icaif2026.org/img/piazza-duomo-tramonto.jpg"
    >
     <meta name="twitter:image:alt" content="ICAIF '26 in Milan, Italy">
     <script type="application/ld+json">
@@ -72,7 +72,7 @@
             "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "url": "https://icaif2026.org/",
-            "image": ["https://icaif2026.org/img/hero-v4.jpg"],
+            "image": ["https://icaif2026.org/img/piazza-duomo-tramonto.jpg"],
             "location": {
               "@type": "Place",
               "name": "Bocconi University",
@@ -105,9 +105,15 @@
             },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://icaif2026.org/img/hero-v4.jpg",
-              "width": 1920,
-              "height": 1280
+              "url": "https://icaif2026.org/img/piazza-duomo-tramonto.jpg",
+              "width": 1536,
+              "height": 1024,
+              "creditText": "Based on Piazza del Duomo by kuhnmi (original photograph: CC BY 2.0). AI-edited for ICAIF 2026: people removed; lighting, sky and colors modified.",
+              "isBasedOn": {
+                "@type": "ImageObject",
+                "url": "https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg",
+                "license": "https://creativecommons.org/licenses/by/2.0/"
+              }
             },
             "about": {
               "@id": "https://icaif2026.org/#event"
@@ -128,16 +134,10 @@
         ]
       }
     </script>
-    <link
-      rel="preload"
-      as="image"
-      href="img/hero-v4.webp"
-      type="image/webp"
-      fetchpriority="high"
-   >
+    <script src="js/hero-time.js?v=2026091601" defer></script>
     <!-- Heroicons -->
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026090201">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026091602">
   </head>
 
   <body data-page="index" class="font-sans antialiased min-w-0">
@@ -234,6 +234,7 @@
                     >
                   </li>
                   <li><a href="become-a-sponsor.html">Become a Sponsor</a></li>
+                  <li><a href="media-kit.html">Media Kit</a></li>
                 </ul>
               </details>
             </li>
@@ -293,6 +294,7 @@
                     <li>
                       <a href="become-a-sponsor.html">Become a Sponsor</a>
                     </li>
+                  <li><a href="media-kit.html">Media Kit</a></li>
                   </ul>
                 </details>
               </li>
@@ -308,17 +310,21 @@
         class="hero relative min-h-[480px] overflow-hidden sm:min-h-[560px] lg:min-h-[620px]"
         id="about"
       >
-        <picture class="absolute inset-0 z-0 size-full">
-          <source srcset="img/hero-v4.webp" type="image/webp">
-          <img
-            src="img/hero-v4.jpg"
-            alt="Milan Cathedral and city centre at sunset"
-            width="1920"
-            height="1280"
-            class="size-full object-cover"
-            fetchpriority="high"
-         >
-        </picture>
+        <div data-time-hero class="absolute inset-0 z-0 size-full bg-neutral">
+          <noscript>
+            <picture class="absolute inset-0 size-full">
+              <source srcset="img/piazza-duomo-tramonto.webp" type="image/webp">
+              <img
+                src="img/piazza-duomo-tramonto.jpg"
+                alt="AI-edited view of an empty Piazza del Duomo at sunset"
+                width="1536"
+                height="1024"
+                class="size-full object-cover"
+                fetchpriority="high"
+             >
+            </picture>
+          </noscript>
+        </div>
         <div class="hero-overlay z-10 bg-black/60"></div>
         <div
           class="hero-content relative z-20 min-h-[480px] w-full max-w-7xl items-end justify-start px-4 py-10 sm:min-h-[560px] sm:px-6 sm:py-14 lg:min-h-[620px] lg:px-8 lg:py-16"
@@ -328,19 +334,19 @@
               class="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-neutral-content sm:text-4xl md:text-5xl lg:text-6xl"
             >
               The Future of<br class="hidden sm:block">
-              <span class="text-accent">Artificial Intelligence</span
+              <span class="hero-heading-accent">Artificial Intelligence</span
               ><br class="hidden sm:block">
               in Global Finance
             </h1>
 
             <p
-              class="mt-5 max-w-2xl text-xs font-semibold uppercase leading-snug tracking-wide text-neutral-content/85 sm:mt-6 sm:text-sm"
+              class="mt-5 max-w-2xl text-xs font-semibold uppercase leading-snug tracking-wide text-neutral-content/90 sm:mt-6 sm:text-sm"
             >
               7th <strong>ACM International Conference on AI in Finance</strong>
             </p>
 
             <p
-              class="mt-3 max-w-2xl font-serif text-base leading-relaxed text-neutral-content/80 sm:text-lg lg:text-xl"
+              class="mt-3 max-w-2xl font-serif text-base leading-relaxed text-neutral-content/90 sm:text-lg lg:text-xl"
             >
               Join researchers, practitioners, and innovators in Milan to
               explore the frontiers of AI in finance, from deep learning to
@@ -359,7 +365,7 @@
                 Main paper submissions closed
               </span>
               <span
-                class="text-sm font-medium leading-relaxed text-neutral-content/80"
+                class="text-sm font-medium leading-relaxed text-neutral-content/90"
                 data-next-milestone-summary
                 aria-live="polite"
               >
@@ -1065,6 +1071,7 @@
             >Sponsors &amp; Supporters</a
           >
           <a href="become-a-sponsor.html" class="link">Become a Sponsor</a>
+          <a href="media-kit.html" class="link">Media Kit</a>
           <a href="index.html#contact" class="link">Contact</a>
         </nav>
         <nav aria-label="Previous editions">

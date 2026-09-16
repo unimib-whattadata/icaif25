@@ -71,6 +71,11 @@
   --font-serif: "Merriweather", serif;
 }
 
+@utility hero-heading-accent {
+  /* Lighten the brand copper so it remains readable over every time-of-day image. */
+  color: color-mix(in oklab, var(--color-accent) 40%, var(--color-accent-content));
+}
+
 @utility hero-secondary-action {
   --btn-color: var(--color-neutral);
   --btn-bg: var(--color-neutral);
