@@ -137,7 +137,7 @@
     <script src="js/hero-time.js?v=2026091601" defer></script>
     <!-- Heroicons -->
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026091602">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026092102">
   </head>
 
   <body data-page="index" class="font-sans antialiased min-w-0">
@@ -151,7 +151,7 @@
     <!-- --- NAVIGATION --- -->
     <nav
       aria-label="Primary"
-      class="sticky inset-x-0 top-0 z-40 bg-neutral/95 text-neutral-content backdrop-blur"
+      class="site-nav sticky inset-x-0 top-0 z-40 bg-neutral/95 text-neutral-content backdrop-blur"
     >
       <div
         class="navbar mx-auto min-h-16 max-w-7xl px-4 sm:min-h-20 sm:px-6 lg:px-8"
@@ -399,12 +399,10 @@
       </section>
 
       <!-- --- UNIVERSITY LOGOS BAR --- -->
-      <section class="relative isolate bg-neutral text-neutral-content">
+      <section aria-label="Universities" class="relative isolate bg-neutral text-neutral-content">
         <div
-          class="m-0 grid grid-cols-2 items-end justify-items-center gap-x-5 gap-y-5 px-4 py-5 sm:gap-x-10 sm:px-6 lg:grid-cols-4 lg:px-8 lg:py-6"
+          class="site-container grid grid-cols-3 items-center justify-items-center gap-4 py-6 sm:gap-10"
         >
-          <div class="flex flex-col items-center justify-end">
-            <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
             <img
               src="img/loghi/bocconi.svg"
               alt="Bocconi University"
@@ -412,9 +410,6 @@
               height="112"
               class="block h-10 w-auto max-w-full object-contain sm:h-14 lg:h-16"
            >
-          </div>
-          <div class="flex flex-col items-center justify-end">
-            <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
             <img
               src="img/loghi/unimib.svg"
               alt="University of Milano-Bicocca"
@@ -422,9 +417,6 @@
               height="1108"
               class="block h-10 w-auto max-w-full object-contain sm:h-14 lg:h-16"
            >
-          </div>
-          <div class="flex flex-col items-center justify-end">
-            <span class="mb-2 h-3 sm:h-4" aria-hidden="true"></span>
             <img
               src="img/loghi/politecnico.svg?v=2026082902"
               alt="Politecnico di Milano"
@@ -432,28 +424,6 @@
               height="91"
               class="block h-10 w-auto max-w-full object-contain sm:h-14 lg:h-16"
            >
-          </div>
-          <div class="flex flex-col items-start justify-end">
-            <p
-              class="mb-2 h-3 sm:h-4 text-[11px] sm:text-xs font-medium leading-none text-neutral-content/70 tracking-wide whitespace-nowrap"
-            >
-              With the support of
-            </p>
-            <img
-              src="img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo.webp"
-              srcset="
-                img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo-240.webp 240w,
-                img/loghi/logo%20intesa/marchio-imi-intesa-sanpaolo-negativo.webp     576w
-              "
-              sizes="(min-width: 640px) 256px, 192px"
-              alt="Intesa Sanpaolo IMI Corporate &amp; Investment Banking"
-              width="576"
-              height="181"
-              loading="lazy"
-              decoding="async"
-              class="block h-10 w-auto max-w-full object-contain sm:h-14 lg:h-16"
-           >
-          </div>
         </div>
       </section>
 
@@ -497,13 +467,82 @@
         </div>
       </section>
 
+      <!-- --- SPONSORS BAR --- -->
+      <section id="sponsors" aria-labelledby="home-sponsors-title" class="border-b border-base-300 bg-base-100">
+        <div class="site-container grid gap-6 py-8 md:grid-cols-2 md:gap-8 lg:grid-cols-[0.7fr_1.4fr_1.4fr] lg:items-center">
+          <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 md:col-span-2 lg:col-span-1 lg:block">
+            <h2 id="home-sponsors-title" class="text-2xl font-bold text-base-content">Our sponsors</h2>
+            <a href="sponsors-and-supporters.html" class="link inline-flex min-h-11 items-center gap-2 text-sm font-medium underline-offset-4">
+              All sponsors
+              <i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="min-w-0">
+            <h3 class="text-sm font-semibold text-base-content/70">Platinum sponsors</h3>
+            <ul class="mt-3 grid grid-cols-[1.4fr_1fr] items-center justify-items-center gap-6">
+              <li class="flex min-h-24 min-w-0 items-center sm:min-h-28">
+                <img
+                  src="img/loghi/logo%20intesa/Marchio_IMI+INTESA_SANPAOLO_Materiali%20terzi.webp"
+                  alt="Intesa Sanpaolo IMI Corporate &amp; Investment Banking"
+                  width="576"
+                  height="181"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-auto w-64 max-w-full object-contain"
+                >
+              </li>
+              <li class="flex min-h-24 min-w-0 items-center sm:min-h-28">
+                <img
+                  src="img/loghi/qrt-quantitative-research-technologies.svg"
+                  alt="QRT — Quantitative Research &amp; Technologies"
+                  width="295"
+                  height="337"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-24 w-auto max-w-full object-contain sm:h-28"
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="min-w-0 border-t border-base-300 pt-6 md:border-t-0 md:border-l md:pt-0 md:pl-8">
+            <h3 class="text-sm font-semibold text-base-content/70">Silver sponsors</h3>
+            <ul class="mt-3 grid grid-cols-2 items-center justify-items-center gap-6">
+              <li class="flex min-h-24 min-w-0 items-center sm:min-h-28">
+                <img
+                  src="img/loghi/bloomberg/bloomberg-engineering-black.webp"
+                  alt="Bloomberg Engineering"
+                  width="1200"
+                  height="483"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-auto w-48 max-w-full object-contain"
+                >
+              </li>
+              <li class="flex min-h-24 min-w-0 items-center sm:min-h-28">
+                <img
+                  src="img/loghi/standard-chartered/sc-lock-up-english-grey-rgb.svg"
+                  alt="Standard Chartered"
+                  width="3828"
+                  height="2010"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-auto w-56 max-w-full object-contain"
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- --- CURRENT PATHS --- -->
-      <section id="next-steps" class="bg-base-100 py-10 sm:py-14 lg:py-16">
+      <section id="next-steps" class="section-space bg-base-100">
         <div
-          class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.5fr] lg:items-start lg:gap-14 lg:px-8"
+          class="site-container grid gap-8 lg:grid-cols-[0.75fr_1.5fr] lg:items-start lg:gap-14"
         >
           <div class="max-w-xl">
-            <h2 class="text-3xl font-bold text-base-content sm:text-4xl">
+            <h2 class="section-title text-base-content">
               Choose your next step
             </h2>
             <p class="mt-4 text-base-content/70 sm:text-lg">
@@ -573,10 +612,10 @@
       </section>
 
       <!-- --- RESEARCH AREAS --- -->
-      <section id="tracks" class="bg-base-200 py-10 sm:py-14 lg:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="tracks" class="section-space bg-base-200">
+        <div class="site-container">
           <div class="mb-10 max-w-3xl sm:mb-12">
-            <h2 class="text-3xl font-bold text-base-content sm:text-4xl">
+            <h2 class="section-title text-base-content">
               Research at ICAIF '26
             </h2>
             <p class="mt-4 text-base-content/70 sm:text-lg">
@@ -593,7 +632,7 @@
                   class="size-6 text-primary"
                   aria-hidden="true"
                 ></i>
-                <h3 class="text-xl font-bold text-base-content">
+                <h3 class="subsection-title text-base-content">
                   Emerging AI methods
                 </h3>
               </div>
@@ -633,7 +672,7 @@
                   class="size-6 text-primary"
                   aria-hidden="true"
                 ></i>
-                <h3 class="text-xl font-bold text-base-content">
+                <h3 class="subsection-title text-base-content">
                   Trust, risk &amp; customers
                 </h3>
               </div>
@@ -674,7 +713,7 @@
                   class="size-6 text-primary"
                   aria-hidden="true"
                 ></i>
-                <h3 class="text-xl font-bold text-base-content">
+                <h3 class="subsection-title text-base-content">
                   Markets &amp; societal impact
                 </h3>
               </div>
@@ -714,17 +753,17 @@
       <!-- --- LATEST UPDATES --- -->
       <section
         id="linkedin"
-        class="bg-base-100 py-10 sm:py-14 lg:py-20"
+        class="section-space bg-base-100"
         aria-labelledby="updates-title"
       >
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="site-container">
           <div
             class="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between"
           >
             <div class="max-w-2xl">
               <h2
                 id="updates-title"
-                class="text-3xl font-bold text-base-content sm:text-4xl"
+                class="section-title text-base-content"
               >
                 Latest from ICAIF
               </h2>
@@ -833,18 +872,14 @@
       </section>
 
       <!-- --- VENUE --- -->
-      <section id="venue" class="bg-base-200 py-10 sm:py-14 lg:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="venue" class="section-space bg-base-200">
+        <div class="site-container">
           <div class="card overflow-hidden bg-base-100 lg:card-side">
             <div
               class="lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center"
             >
-              <span
-                class="text-primary font-bold uppercase tracking-wider text-xs sm:text-sm mb-2"
-                >The Host City</span
-              >
               <h2
-                class="text-3xl sm:text-4xl font-bold text-base-content mb-4 sm:mb-6"
+                class="section-title text-base-content mb-4 sm:mb-6"
               >
                 Welcome to Milan
               </h2>
@@ -912,11 +947,11 @@
       </section>
 
       <!-- --- GET IN TOUCH --- -->
-      <section id="contact" class="bg-base-100 py-10 sm:py-14 lg:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" class="section-space bg-base-100">
+        <div class="site-container">
           <div class="max-w-4xl mx-auto">
             <h2
-              class="text-3xl sm:text-4xl font-bold text-base-content mb-6 sm:mb-8"
+              class="section-title text-base-content mb-4 sm:mb-6"
             >
               Get in Touch
             </h2>
@@ -1003,14 +1038,14 @@
 
       <!-- --- CLOSING ACTION --- -->
       <section
-        class="bg-primary py-12 text-primary-content sm:py-16"
+        class="section-space bg-primary text-primary-content"
         aria-labelledby="plan-milan-title"
       >
         <div
-          class="mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8"
+          class="site-container flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between"
         >
           <div class="max-w-2xl">
-            <h2 id="plan-milan-title" class="text-3xl font-bold sm:text-4xl">
+            <h2 id="plan-milan-title" class="section-title">
               Start planning for Milan
             </h2>
             <p class="mt-4 text-primary-content/80 sm:text-lg">
@@ -1124,6 +1159,6 @@
       </div>
     </footer>
     <script src="js/home-stats.js?v=2026090101" defer></script>
-    <script src="js/site-layout.js?v=2026090201" defer></script>
+    <script src="js/site-layout.js?v=2026092102" defer></script>
   </body>
 </html>

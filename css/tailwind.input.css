@@ -71,6 +71,45 @@
   --font-serif: "Merriweather", serif;
 }
 
+/* Shared layout and typography for the conference pages. */
+@utility site-container {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility section-space {
+  @apply py-10 sm:py-14 lg:py-16;
+}
+
+@utility page-header-content {
+  @apply w-full max-w-7xl items-start justify-start px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16;
+}
+
+@utility page-title {
+  @apply mb-4 text-3xl font-bold leading-tight tracking-tight sm:mb-6 sm:text-4xl lg:text-5xl;
+  text-wrap: balance;
+}
+
+@utility page-lead {
+  @apply max-w-3xl text-base leading-relaxed text-neutral-content/80 sm:text-lg lg:text-xl;
+}
+
+@utility section-title {
+  @apply text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl;
+  text-wrap: balance;
+}
+
+@utility subsection-title {
+  @apply text-xl font-bold leading-snug tracking-tight sm:text-2xl;
+}
+
+@utility site-nav {
+  & .navbar-end > .menu > li > a[aria-current="page"],
+  & .navbar-end > .menu > li > details > summary.menu-active {
+    background-color: color-mix(in oklab, var(--color-neutral-content) 15%, transparent);
+    color: var(--color-neutral-content);
+  }
+}
+
 @utility hero-heading-accent {
   /* Lighten the brand copper so it remains readable over every time-of-day image. */
   color: color-mix(in oklab, var(--color-accent) 40%, var(--color-accent-content));
@@ -125,9 +164,30 @@
   html {
     scroll-padding-top: 9rem;
   }
+
+  .link {
+    text-underline-offset: 0.2em;
+  }
 }
 
 @layer components {
+  .document-sections {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  main .btn {
+    min-height: 2.75rem;
+    height: auto;
+    padding-block: 0.75rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  main .aura {
+    max-width: 100%;
+  }
+
   .page-index {
     position: sticky;
     top: 4rem;
@@ -229,12 +289,8 @@
     padding-inline: 1.5rem;
   }
 
-  .footer-disclosure > summary {
-    pointer-events: none;
-  }
-
-  .footer-disclosure > summary::after {
-    display: none;
+  .document-sections {
+    gap: 3.5rem;
   }
 }
 
@@ -245,6 +301,15 @@
 
   .page-index-desktop {
     display: block;
+  }
+
+  .footer-disclosure > summary {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .footer-disclosure > summary::after {
+    display: none;
   }
 
   .requirement-grid {
@@ -397,37 +462,8 @@
   }
 }
 
-@media (max-width: 639px) {
-  [data-page^="call-for-"] main > section:not(#page-header),
-  [data-page="privacy-policy"] main > section:not(#page-header),
-  [data-page="registration"] main > section:not(#page-header) {
-    padding-block: 2.5rem;
-  }
-
-  [data-page^="call-for-"] main h2,
-  [data-page="privacy-policy"] main h2,
-  [data-page="registration"] main h2 {
-    font-size: 1.65rem;
-    line-height: 1.2;
-  }
-}
-
 [data-page="organisation"] main section[aria-labelledby] {
   scroll-margin-top: 9rem;
-}
-
-[data-page="workshop"] main > section:not(#page-header),
-[data-page="competitions"] main > section:not(#page-header) {
-  padding-block: clamp(2.75rem, 5vw, 5rem);
-}
-
-[data-page="sponsors-and-supporters"] main .card {
-  border: 1px solid var(--color-base-300);
-}
-
-[data-page="sponsors-and-supporters"] main img {
-  max-height: 5rem;
-  object-fit: contain;
 }
 
 footer > :last-child {

@@ -85,7 +85,7 @@
       }
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026091602">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026092102">
   </head>
   <body data-page="workshop" class="font-sans antialiased min-w-0">
     <a
@@ -94,7 +94,7 @@
       >Skip to main content</a
     >
 
-    <nav aria-label="Primary" class="sticky top-0 z-50 bg-base-100">
+    <nav aria-label="Primary" class="site-nav sticky inset-x-0 top-0 z-40 bg-neutral/95 text-neutral-content backdrop-blur">
       <div
         class="navbar mx-auto min-h-16 max-w-7xl px-4 sm:min-h-20 sm:px-6 lg:px-8"
       >
@@ -113,7 +113,7 @@
                 >ICAIF '26</span
               >
               <span
-                class="hidden text-xs font-medium uppercase tracking-wider text-base-content/70 sm:block"
+                class="hidden text-xs font-medium uppercase tracking-wider text-neutral-content/70 sm:block"
                 >Milan, Italy</span
               >
             </span>
@@ -130,7 +130,7 @@
               <details class="dropdown">
                 <summary class="menu-active">Programme</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-52 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-52 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li>
                     <a
@@ -148,7 +148,7 @@
               <details class="dropdown dropdown-end">
                 <summary>Calls</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-72 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-72 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li><a href="call-for-papers.html">Call for Papers</a></li>
                   <li>
@@ -171,7 +171,7 @@
               <details class="dropdown dropdown-end">
                 <summary>Sponsors</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-64 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-64 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li>
                     <a href="sponsors-and-supporters.html"
@@ -189,7 +189,7 @@
               <i data-heroicon="menu" class="size-6"></i>
             </summary>
             <ul
-              class="menu menu-lg dropdown-content z-50 mt-3 [&_a]:min-h-11 [&_summary]:min-h-11 max-h-[calc(100vh-6rem)] w-80 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm"
+              class="menu menu-lg dropdown-content z-50 mt-3 [&_a]:min-h-11 [&_summary]:min-h-11 max-h-[calc(100vh-6rem)] w-80 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm text-base-content"
             >
               <li><a href="important-dates.html">Important Dates</a></li>
               <li><a href="organisation.html">Organization</a></li>
@@ -261,19 +261,14 @@
           class="hero-overlay bg-primary/20"
         ></div>
         <div
-          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+          class="hero-content page-header-content"
         >
           <div class="max-w-3xl">
-            <p
-              class="text-neutral-content/80 text-xs sm:text-sm font-bold uppercase tracking-widest mb-4"
-            >
-              Programme
-            </p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h1 class="page-title">
               Workshops
             </h1>
             <p
-              class="text-lg sm:text-xl text-neutral-content/80 leading-relaxed"
+              class="page-lead"
             >
               Ten workshops bring focused communities together to explore
               emerging research and practice in AI and finance.
@@ -283,19 +278,14 @@
       </section>
 
       <section
-        class="py-12 sm:py-16 lg:py-24 bg-base-200"
+        class="section-space bg-base-200"
         aria-labelledby="accepted-workshops-heading"
       >
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="site-container">
           <div class="max-w-3xl mb-8 sm:mb-12">
-            <p
-              class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest mb-3"
-            >
-              ICAIF '26 Programme
-            </p>
             <h2
               id="accepted-workshops-heading"
-              class="text-3xl sm:text-4xl font-bold text-base-content mb-4"
+              class="section-title text-base-content mb-4 sm:mb-6"
             >
               Accepted Workshops
             </h2>
@@ -373,7 +363,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="RL4LLM-Agents">
                   Workshop on Reinforcement Learning for LLM-based Agents
                   (RL4LLM-Agents)
                 </h3>
@@ -485,7 +475,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="RAIOps4Fin">
                   RAIOps4Fin — Applied Responsible AI Operations for Finance
                 </h3>
                 <div
@@ -613,7 +603,7 @@
                   <span class="badge">First edition</span>
                   <span class="badge">Half-day</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="Market Microstructure">
                   AI-Driven Market Microstructure in Centralized and
                   Decentralized Finance
                 </h3>
@@ -741,7 +731,7 @@
                   <span class="badge">Two-hour event</span>
                   <span class="badge">Seventh edition</span>
                 </div>
-                <h3 class="card-title">Women in AI and Finance</h3>
+                <h3 class="card-title" data-index-label="Women in AI and Finance">Women in AI and Finance</h3>
                 <div
                   class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-7 lg:gap-10"
                 >
@@ -827,7 +817,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="Financial AI Security">
                   Financial AI Security, Privacy, and Safety: Securing
                   Real-World Financial AI Systems for Mission-critical Services
                   including Fraud Detection, Anti-Money Laundering, Payments,
@@ -979,7 +969,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="MFMB">
                   First Workshop on Multimodal and Foundation Models in Banking
                   (MFMB)
                 </h3>
@@ -1111,7 +1101,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="AI in Private Markets">
                   Structuring the Unstructured: AI in Private Markets
                 </h3>
                 <div
@@ -1236,7 +1226,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="Quantum-Enhanced AI">
                   Quantum-Enhanced AI for Financial Decision-Making
                 </h3>
                 <div
@@ -1392,7 +1382,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">Third edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="LLMs and Generative AI">
                   The 3rd Workshop on LLMs and Generative AI for Finance
                 </h3>
                 <div
@@ -1553,7 +1543,7 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                   <span class="badge">First edition</span>
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title" data-index-label="IAFM’26">
                   IAFM'26: Interpretability and Alignment of Financial Models
                 </h3>
                 <div
@@ -1729,6 +1719,6 @@
         <a href="privacy-policy.html" class="link">Privacy Policy</a>
       </div>
     </footer>
-    <script src="js/site-layout.js?v=2026090201" defer></script>
+    <script src="js/site-layout.js?v=2026092102" defer></script>
   </body>
 </html>

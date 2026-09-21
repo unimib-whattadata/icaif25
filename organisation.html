@@ -69,7 +69,7 @@
       }
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026091602">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026092102">
   </head>
 
   <body data-page="organisation" class="font-sans antialiased min-w-0">
@@ -79,7 +79,7 @@
       >Skip to main content</a
     >
 
-    <nav aria-label="Primary" class="sticky top-0 z-50 bg-base-100">
+    <nav aria-label="Primary" class="site-nav sticky inset-x-0 top-0 z-40 bg-neutral/95 text-neutral-content backdrop-blur">
       <div
         class="navbar mx-auto min-h-16 max-w-7xl px-4 sm:min-h-20 sm:px-6 lg:px-8"
       >
@@ -98,7 +98,7 @@
                 >ICAIF '26</span
               >
               <span
-                class="hidden text-xs font-medium uppercase tracking-wider text-base-content/70 sm:block"
+                class="hidden text-xs font-medium uppercase tracking-wider text-neutral-content/70 sm:block"
                 >Milan, Italy</span
               >
             </span>
@@ -122,7 +122,7 @@
               <details class="dropdown">
                 <summary>Programme</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-52 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-52 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li><a href="workshop.html">Workshops</a></li>
                   <li><a href="competitions.html">Competitions</a></li>
@@ -133,7 +133,7 @@
               <details class="dropdown dropdown-end">
                 <summary>Calls</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-72 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-72 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li><a href="call-for-papers.html">Call for Papers</a></li>
                   <li>
@@ -156,7 +156,7 @@
               <details class="dropdown dropdown-end">
                 <summary>Sponsors</summary>
                 <ul
-                  class="menu dropdown-content z-50 mt-2 w-64 rounded-box bg-base-100 p-2 shadow-sm"
+                  class="menu dropdown-content z-50 mt-2 w-64 rounded-box bg-base-100 p-2 shadow-sm text-base-content"
                 >
                   <li>
                     <a href="sponsors-and-supporters.html"
@@ -174,7 +174,7 @@
               <i data-heroicon="menu" class="size-6"></i>
             </summary>
             <ul
-              class="menu menu-lg dropdown-content z-50 mt-3 [&_a]:min-h-11 [&_summary]:min-h-11 max-h-[calc(100vh-6rem)] w-80 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm"
+              class="menu menu-lg dropdown-content z-50 mt-3 [&_a]:min-h-11 [&_summary]:min-h-11 max-h-[calc(100vh-6rem)] w-80 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm text-base-content"
             >
               <li><a href="important-dates.html">Important Dates</a></li>
               <li>
@@ -246,19 +246,14 @@
           class="hero-overlay bg-primary/20"
         ></div>
         <div
-          class="hero-content w-full max-w-7xl items-start justify-start px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+          class="hero-content page-header-content"
         >
           <div class="max-w-3xl">
-            <p
-              class="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-content/80 mb-4"
-            >
-              ICAIF '26
-            </p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h1 class="page-title">
               Organizing Committee
             </h1>
             <p
-              class="text-lg sm:text-xl text-neutral-content/80 leading-relaxed"
+              class="page-lead"
             >
               Meet the academic and industry leaders organizing the ACM
               International Conference on AI in Finance in Milan.
@@ -267,10 +262,10 @@
         </div>
       </section>
 
-      <section class="py-12 sm:py-16 lg:py-24 bg-base-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section class="section-space bg-base-200">
+        <div class="site-container">
           <div class="max-w-3xl mb-12 sm:mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-base-content mb-4">
+            <h2 class="section-title text-base-content mb-4 sm:mb-6">
               Conference leadership
             </h2>
             <p
@@ -288,7 +283,7 @@
           >
             <h2
               id="general-chair-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               General Chair
             </h2>
@@ -321,7 +316,7 @@
           >
             <h2
               id="program-chairs-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Program Chairs
             </h2>
@@ -388,14 +383,14 @@
           >
             <h2
               id="workshop-chairs-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Workshop Chairs
             </h2>
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <article class="relative card overflow-hidden bg-base-100">
                 <span
-                  class="absolute top-3.5 -right-10 z-10 w-36 py-[0.3rem] pl-3 rotate-45 bg-error text-center text-[0.625rem] leading-3.5 font-extrabold tracking-[0.07em] text-error-content uppercase shadow-[0_2px_0_rgb(127_29_29_/_35%),0_4px_8px_rgb(15_23_42_/_28%)]"
+                  class="absolute top-3.5 -right-10 z-10 w-36 py-[0.3rem] pl-3 rotate-45 bg-error text-center text-xs leading-4 font-extrabold tracking-[0.07em] text-error-content uppercase shadow-[0_2px_0_rgb(127_29_29_/_35%),0_4px_8px_rgb(15_23_42_/_28%)]"
                   >Web Chair</span
                 >
                 <img
@@ -461,7 +456,7 @@
           >
             <h2
               id="tutorial-chairs-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Tutorial Chairs
             </h2>
@@ -511,7 +506,7 @@
           >
             <h2
               id="sponsorship-chairs-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Sponsorship Chairs
             </h2>
@@ -593,7 +588,7 @@
           >
             <h2
               id="local-chairs-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Local Chairs
             </h2>
@@ -642,7 +637,7 @@
           <section aria-labelledby="committee-roles-heading">
             <h2
               id="committee-roles-heading"
-              class="text-2xl sm:text-3xl font-bold text-base-content mb-6 sm:mb-8"
+              class="subsection-title text-base-content mb-4 sm:mb-6"
             >
               Committee Chairs
             </h2>
@@ -815,6 +810,6 @@
         <a href="privacy-policy.html" class="link">Privacy Policy</a>
       </div>
     </footer>
-    <script src="js/site-layout.js?v=2026090201" defer></script>
+    <script src="js/site-layout.js?v=2026092102" defer></script>
   </body>
 </html>

@@ -5,6 +5,33 @@
   const page = body.dataset.page || "";
   const mobileQuery = window.matchMedia("(max-width: 767px)");
 
+  const enhanceNavigation = () => {
+    const navigation = document.querySelector('nav[aria-label="Primary"]');
+    if (!navigation) return;
+    const disclosures = Array.from(navigation.querySelectorAll("details"));
+    navigation.addEventListener("click", (event) => {
+      const summary = event.target.closest("summary");
+      if (!summary) return;
+      const current = summary.parentElement;
+      disclosures.forEach((details) => {
+        if (details !== current && !details.contains(current)) details.open = false;
+      });
+    });
+    document.addEventListener("click", (event) => {
+      if (!navigation.contains(event.target)) {
+        disclosures.forEach((details) => (details.open = false));
+      }
+    });
+    navigation.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      const current = event.target.closest("details[open]");
+      if (!current) return;
+      current.open = false;
+      current.querySelector(":scope > summary")?.focus();
+      event.preventDefault();
+    });
+  };
+
   const slugify = (value) =>
     value
       .trim()
@@ -58,7 +85,7 @@
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.href = `#${heading.id}`;
-      link.textContent = heading.textContent.trim();
+      link.textContent = heading.dataset.indexLabel || heading.textContent.trim();
       link.dataset.sectionLink = heading.id;
       item.append(link);
       return item;
@@ -74,7 +101,11 @@
     mobile.className = "dropdown dropdown-bottom page-index-mobile";
     const summary = document.createElement("summary");
     summary.className = "btn min-h-11 w-full justify-between";
-    summary.textContent = title.textContent.trim();
+    summary.textContent = "On this page";
+    const indexIcon = document.createElement("span");
+    indexIcon.className = "responsive-details-icon";
+    indexIcon.setAttribute("aria-hidden", "true");
+    summary.append(indexIcon);
     const mobileList = document.createElement("ul");
     mobileList.className =
       "menu menu-sm dropdown-content z-40 mt-2 max-h-[min(70vh,30rem)] w-full overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm";
@@ -83,7 +114,7 @@
 
     const desktop = document.createElement("nav");
     desktop.className = "page-index-desktop";
-    desktop.setAttribute("aria-label", title.textContent.trim());
+    desktop.setAttribute("aria-label", "On this page");
     const desktopList = document.createElement("ul");
     desktopList.className =
       "menu menu-horizontal menu-xs flex-nowrap gap-1 whitespace-nowrap";
@@ -98,10 +129,24 @@
       if (event.target.closest("a")) mobile.open = false;
     });
 
+    wrapper.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobile.open) {
+        mobile.open = false;
+        summary.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!wrapper.contains(event.target)) mobile.open = false;
+    });
+
     const observed = headings.map((heading) => heading);
     const setActive = (id) => {
       wrapper.querySelectorAll("[data-section-link]").forEach((link) => {
-        link.classList.toggle("menu-active", link.dataset.sectionLink === id);
+        const active = link.dataset.sectionLink === id;
+        link.classList.toggle("menu-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
       });
     };
 
@@ -131,6 +176,10 @@
       const summary = document.createElement("summary");
       summary.className = "footer-title";
       summary.textContent = title.textContent.trim();
+      summary.tabIndex = mobileQuery.matches ? 0 : -1;
+      summary.addEventListener("click", (event) => {
+        if (!mobileQuery.matches) event.preventDefault();
+      });
       const content = document.createElement("nav");
       content.className = "footer-disclosure-content";
       const label = navigation.getAttribute("aria-label");
@@ -146,11 +195,10 @@
     });
 
     mobileQuery.addEventListener("change", (event) => {
-      if (!event.matches) {
-        footerGrid
-          .querySelectorAll(".footer-disclosure")
-          .forEach((details) => (details.open = true));
-      }
+      footerGrid.querySelectorAll(".footer-disclosure").forEach((details) => {
+        details.open = !event.matches;
+        details.querySelector("summary").tabIndex = event.matches ? 0 : -1;
+      });
     });
   };
 
@@ -163,10 +211,9 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className =
-      "btn btn-ghost btn-sm responsive-details-toggle md:hidden";
+      "btn responsive-details-toggle md:hidden";
     button.setAttribute("aria-controls", id);
     button.setAttribute("aria-expanded", String(!mobileQuery.matches));
-    button.setAttribute("aria-label", anchor.textContent.trim());
     const icon = document.createElement("span");
     icon.className = "responsive-details-icon";
     icon.setAttribute("aria-hidden", "true");
@@ -176,6 +223,10 @@
     const setExpanded = (expanded) => {
       container.classList.toggle("is-collapsed", !expanded);
       button.setAttribute("aria-expanded", String(expanded));
+      button.setAttribute(
+        "aria-label",
+        `${expanded ? "Hide" : "Show"} details: ${anchor.textContent.trim()}`,
+      );
     };
     setExpanded(!mobileQuery.matches);
 
@@ -254,7 +305,7 @@
       if (!type) return;
 
       const card = document.createElement("article");
-      card.className = "card card-border bg-base-100";
+      card.className = "card bg-base-100";
       const cardBody = document.createElement("div");
       cardBody.className = "card-body gap-4 p-4";
       const periodLabel = document.createElement("p");
@@ -287,6 +338,7 @@
     tableCard?.after(cards);
   };
 
+  enhanceNavigation();
   buildPageIndex();
   buildFooterDisclosure();
   enhanceProgrammeCards();
