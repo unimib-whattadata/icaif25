@@ -18,6 +18,8 @@ The user confirmed the Venue page location as Bocconi University, Via Röntgen 1
 
 ## Brand Commitments
 
+The Venue page also includes a concise English introduction to the Röntgen building, based on the Bocconi campus exhibition, a colour-adapted official building photograph, and links to the exhibition and Bocconi virtual tour.
+
 Preserve the existing ICAIF colors and site identity. The reference map is the Viterie Orobiche contact page in /Users/marco/Sites/viterieorobiche.
 
 ## Evidence on Hand

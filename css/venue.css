@@ -73,6 +73,17 @@
 .venue-airports dt { font-weight: 600; }
 .venue-airports dt span { margin-left: .375rem; font-size: .75rem; font-weight: 500; color: var(--color-primary); }
 .venue-map-figure [hidden] { display: none; }
+.venue-building-section { margin-top: 2rem; padding-block: 4rem; }
+.venue-building-layout { display: grid; align-items: center; gap: 2rem; }
+.venue-building-photo { min-width: 0; }
+.venue-building-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; border: 1px solid color-mix(in oklab,var(--color-neutral-content) 18%,transparent); border-radius: var(--radius-box); }
+.venue-building-photo figcaption { margin-top: .75rem; font-size: .75rem; line-height: 1.6; color: color-mix(in oklab,var(--color-neutral-content) 72%,var(--color-neutral)); }
+.venue-building-copy p { max-width: 55ch; margin-top: 1.25rem; line-height: 1.8; color: color-mix(in oklab,var(--color-neutral-content) 85%,var(--color-neutral)); }
+.venue-building-copy p + p { margin-top: .75rem; }
+.venue-building-links { display: flex; align-items: flex-start; flex-direction: column; gap: 1.25rem; margin-top: 1.75rem; }
+.venue-building-links .btn { min-height: 3rem; background-color: var(--color-neutral-content); border-color: var(--color-neutral-content); color: var(--color-neutral); }
+.venue-building-links .btn:hover { background-color: var(--color-base-200); border-color: var(--color-base-200); }
+.venue-building-links .link { display: inline-flex; align-items: center; gap: .5rem; color: var(--color-neutral-content); font-size: .875rem; }
 @media (min-width: 640px) {
   .venue-airports > div { grid-template-columns: 9rem 1fr; }
   .venue-route-steps { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
@@ -81,6 +92,7 @@
   .venue-route-steps li:not(:last-child)::after { top: .8125rem; left: 2.125rem; width: calc(100% - .625rem); height: 1px; }
 }
 @media (min-width: 1024px) {
+  .venue-building-layout { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 3.5rem; }
   .venue-layout,
   .venue-travel-layout { grid-template-columns: minmax(0,.8fr) minmax(0,2fr); gap: 3.5rem; }
 }

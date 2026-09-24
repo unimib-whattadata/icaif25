@@ -143,9 +143,8 @@ function renderVenueMap(d3, data, mode, mobile, route) {
   const barMetres = campus ? 100 : 500;
   const lonDelta = barMetres/(111320*Math.cos(center[1]*Math.PI/180));
   const barWidth = projection([center[0]+lonDelta,center[1]])[0] - projection(center)[0];
-  const calloutW = mobile ? 222 : 246;
-  const calloutX = Math.max(18, Math.min(width-calloutW-18,mx-calloutW/2));
-  const calloutY = my + 22;
+  const venueLabelX = Math.max(98, Math.min(width-98, mx));
+  const venueLabelY = Math.min(height-27, my+48);
   const markup = `<svg class="venue-cartography" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
 <title id="title">ICAIF ’26 at Bocconi University, Via Röntgen 1</title>
 <desc id="desc">${route ? `Illustrated route from ${escape(route.label)} to Bocconi. M2 is green, M3 is yellow, trams are blue. Copper footprints mark walking sections.` : `${campus?'Bocconi campus':'Central Milan'} locator map.`} Copper marks the Röntgen building. North is up. Map data © OpenStreetMap contributors.</desc>
@@ -171,14 +170,9 @@ ${routeMarkup}
 <g class="map-marker" transform="translate(${mx.toFixed(1)} ${my.toFixed(1)})">
 <circle class="map-pulse" r="${campus?36:31}" fill="#bf4c16" fill-opacity=".09"/><circle r="${campus?23:20}" fill="none" stroke="#bf4c16" stroke-opacity=".22"/>
 <g class="map-pin-icon"><path d="M0 0C-5-8-16-16-16-28a16 16 0 1 1 32 0C16-16 5-8 0 0Z" fill="#bf4c16" stroke="#fff" stroke-width="3"/><circle cy="-28" r="5" fill="#fff"/></g>
-<path d="M0 3V22" stroke="#bf4c16" stroke-width="1.5"/>
 </g>
-<g class="map-callout" transform="translate(${calloutX.toFixed(1)} ${calloutY.toFixed(1)})">
-<rect width="${calloutW}" height="76" rx="8" fill="#0f2c42"/>
-${text(calloutW/2,26,'ICAIF ’26 · BOCCONI','pin-title')}
-${text(calloutW/2,49,'Via Röntgen 1','pin-address')}
-</g>
-<style>.pin-title{fill:#fff;font-size:15px;font-weight:700;letter-spacing:.4px}.pin-address{fill:#cee0ec;font-size:13px}.route-origin{font-size:${mobile?18:20}px;font-weight:700;fill:#075985;paint-order:stroke;stroke:#f3f7fa;stroke-width:7;stroke-linejoin:round}</style>
+${text(venueLabelX,venueLabelY,'Röntgen building','venue-label')}
+<style>.venue-label{fill:#0f2c42;font-size:${mobile?18:19}px;font-weight:700;paint-order:stroke;stroke:#f3f7fa;stroke-width:6;stroke-linejoin:round}.route-origin{font-size:${mobile?18:20}px;font-weight:700;fill:#075985;paint-order:stroke;stroke:#f3f7fa;stroke-width:7;stroke-linejoin:round}</style>
 <g transform="translate(${width-31} 35)" fill="none" stroke="#43687f" stroke-width="1.4"><path d="M0 28V3M-5 11 0 3 5 11"/>${text(0,-5,'N','small')}</g>
 <g transform="translate(26 ${height-28})" stroke="#57788d" stroke-width="1.5"><path d="M0-5V0H${barWidth.toFixed(1)}V-5" fill="none"/>${text(barWidth/2,-11,`${barMetres} m`,'small')}</g>
 </svg>`;

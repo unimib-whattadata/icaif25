@@ -86,7 +86,7 @@
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
     <link rel="stylesheet" href="css/tailwind.min.css?v=2026092406">
-    <link rel="stylesheet" href="css/venue.css?v=2026092406">
+    <link rel="stylesheet" href="css/venue.css?v=2026092410">
   </head>
   <body data-page="venue" class="font-sans antialiased min-w-0">
     <a
@@ -310,8 +310,8 @@
             <p id="venue-route-hint" class="venue-route-hint" hidden>Select a station or the Duomo to trace your route to the venue.</p>
             <div id="venue-map-canvas" class="venue-map-canvas" hidden></div>
             <picture id="venue-map-picture">
-              <source media="(max-width: 639px)" srcset="assets/venue/map-city-mobile.svg">
-              <img id="venue-map-image" src="assets/venue/map-city.svg" width="900" height="720" alt="Map of central Milan showing the ICAIF venue at Bocconi University, Via Röntgen 1, south of the Duomo and east of the Navigli." decoding="async" fetchpriority="high">
+              <source media="(max-width: 639px)" srcset="assets/venue/map-city-mobile.svg?v=2026092411">
+              <img id="venue-map-image" src="assets/venue/map-city.svg?v=2026092411" width="900" height="720" alt="Map of central Milan showing the ICAIF venue at Bocconi University, Via Röntgen 1, south of the Duomo and east of the Navigli." decoding="async" fetchpriority="high">
             </picture>
             <div class="venue-map-tools" role="group" aria-label="Map controls" hidden>
               <button type="button" class="btn" data-map-zoom="in" aria-label="Zoom in"><span aria-hidden="true">+</span></button>
@@ -343,6 +343,24 @@
             </figcaption>
           </figure>
           <p id="map-status" class="sr-only" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="venue-building-section bg-neutral text-neutral-content" aria-labelledby="building-heading">
+        <div class="site-container venue-building-layout">
+          <figure class="venue-building-photo">
+            <img src="assets/venue/rontgen-building.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="Photograph of the Röntgen building at dusk, with its sculptural stone façade and illuminated Aula Magna.">
+            <figcaption>Röntgen 1, seen from Viale Bligny. Image: Bocconi campus exhibition.</figcaption>
+          </figure>
+          <div class="venue-building-copy">
+            <h2 id="building-heading" data-index-label="The building" class="section-title">The Röntgen building</h2>
+            <p>Designed by Grafton Architects’ Yvonne Farrell and Shelley McNamara, the building opened in 2008 and received the World Building of the Year award that same year.</p>
+            <p>Its sculptural stone volumes, light-filled spaces and landmark Aula Magna connect university life with the city.</p>
+            <div class="venue-building-links">
+              <a class="btn" href="https://www.campusvr.unibocconi.it/it/Tour/Detail?id=1" target="_blank" rel="noopener noreferrer">Take the virtual tour<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+              <a class="link" href="https://virtualexhibitions.unibocconi.it/campus/en/77/rontgen-1" target="_blank" rel="noopener noreferrer">Explore the building’s story<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -460,7 +478,7 @@
     <script src="js/site-layout.js?v=2026092102" defer></script>
     <script src="js/vendor/d3-array-3.2.4.min.js" defer></script>
     <script src="js/vendor/d3-geo-3.1.1.min.js" defer></script>
-    <script src="js/venue-map-renderer.js?v=2026092407" defer></script>
+    <script src="js/venue-map-renderer.js?v=2026092411" defer></script>
     <script src="js/venue-map.js?v=2026092407" defer></script>
   </body>
 </html>

@@ -2,6 +2,12 @@
 
 The venue is the Bocconi Röntgen building, Via Guglielmo Röntgen 1, Milan, confirmed by the site owner. The pin is inside OpenStreetMap building way 35780519 at longitude 9.18782, latitude 45.45068. It identifies the building, not a separately verified doorway.
 
+## Building section and photograph
+
+The short building section uses the history supplied by [Bocconi’s campus exhibition](https://virtualexhibitions.unibocconi.it/campus/en/77/rontgen-1), checked on 24 September 2026. It links to that English-language exhibition and the owner-requested [Röntgen virtual tour](https://www.campusvr.unibocconi.it/it/Tour/Detail?id=1).
+
+`rontgen-building.jpg` is a colour-adapted version of the exhibition’s photograph titled “Edificio di Via Roentgen, veduta da Viale Bligny”: [source photograph](https://virtualexhibitions.unibocconi.it/campus/getImage.php?id=22), supplied by Università Bocconi. The source’s building geometry and composition are retained. The built-in ImageGen tool applied a restrained navy/amber colour grade to match ICAIF. The exact editing prompt is in `rontgen-building.prompt.txt` and embedded in the image metadata. The visible caption credits the exhibition. The photograph is separate from the OSM database and its licence.
+
 ## Implementation
 
 As in Viterie Orobiche, D3 Array 3 and D3 Geo 3 render real OpenStreetMap geometry with a Mercator projection. Pinned local distributions and ISC licenses are in `js/vendor/`. No map service, API key, tracking, remote tiles, or CDN is used by the page.
