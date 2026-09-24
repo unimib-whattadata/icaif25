@@ -6,9 +6,10 @@
     "build:css": "tailwindcss -i ./css/tailwind.input.css -o ./css/tailwind.min.css --minify",
     "build:media-kit": "node scripts/build-media-kit.js",
     "check:html": "html-validate '*.html'",
-    "check:js": "node --check js/heroicons.js && node --check js/home-stats.js && node --check js/hero-time.js && node --check js/important-dates.js && node --check js/site-layout.js && node --check scripts/check-site.js && node --test scripts/hero-time.test.js",
+    "check:js": "node --check js/heroicons.js && node --check js/home-stats.js && node --check js/hero-time.js && node --check js/important-dates.js && node --check js/venue-map.js && node --check js/venue-map-renderer.js && node --check scripts/build-venue-map.js && node --check js/site-layout.js && node --check scripts/check-site.js && node --test scripts/hero-time.test.js",
     "check:site": "node scripts/check-site.js",
-    "check": "npm run check:js && npm run check:html && npm run check:site"
+    "check": "npm run check:js && npm run check:html && npm run check:site",
+    "build:venue-map": "node scripts/build-venue-map.js"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",

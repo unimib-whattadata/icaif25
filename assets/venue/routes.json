@@ -1,0 +1,647 @@
+{
+  "checked": "2026-09-24",
+  "geometry": "Illustrative, authored from station locations and OpenStreetMap streets; not a Google Maps route polyline.",
+  "routes": [
+    {
+      "id": "centrale",
+      "label": "Milano Centrale",
+      "origin": "Milano Centrale, Piazza Duca d’Aosta 1, Milano",
+      "travelmode": "transit",
+      "segments": [
+        {
+          "mode": "transit",
+          "coordinates": [
+            [
+              9.20482,
+              45.48714
+            ],
+            [
+              9.2032,
+              45.4847
+            ],
+            [
+              9.2025,
+              45.4831
+            ],
+            [
+              9.19735,
+              45.4802
+            ],
+            [
+              9.19499,
+              45.47661
+            ],
+            [
+              9.19475,
+              45.4745
+            ],
+            [
+              9.19491,
+              45.47055
+            ],
+            [
+              9.195,
+              45.4686
+            ],
+            [
+              9.19315,
+              45.46648
+            ],
+            [
+              9.18984,
+              45.46446
+            ],
+            [
+              9.1884,
+              45.46108
+            ],
+            [
+              9.1888,
+              45.46031
+            ],
+            [
+              9.19218,
+              45.4586
+            ],
+            [
+              9.19534,
+              45.45693
+            ],
+            [
+              9.19868,
+              45.4541
+            ],
+            [
+              9.2023,
+              45.4516
+            ]
+          ],
+          "line": "M3"
+        },
+        {
+          "mode": "transit",
+          "coordinates": [
+            [
+              9.2023,
+              45.4516
+            ],
+            [
+              9.20218,
+              45.4512
+            ],
+            [
+              9.20197,
+              45.45104
+            ],
+            [
+              9.2017,
+              45.45094
+            ],
+            [
+              9.1988,
+              45.45094
+            ],
+            [
+              9.19665,
+              45.45094
+            ],
+            [
+              9.1927,
+              45.45094
+            ],
+            [
+              9.1905,
+              45.45094
+            ],
+            [
+              9.18998,
+              45.45099
+            ],
+            [
+              9.18905,
+              45.45124
+            ],
+            [
+              9.1876,
+              45.45162
+            ],
+            [
+              9.18722,
+              45.45166
+            ]
+          ],
+          "line": "9"
+        },
+        {
+          "mode": "walk",
+          "coordinates": [
+            [
+              9.18722,
+              45.45166
+            ],
+            [
+              9.1877,
+              45.45153
+            ],
+            [
+              9.18759,
+              45.45133
+            ],
+            [
+              9.18743,
+              45.45105
+            ],
+            [
+              9.18725,
+              45.45069
+            ],
+            [
+              9.18782,
+              45.45068
+            ]
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "label": "Milano Centrale",
+          "coordinates": [
+            9.20482,
+            45.48714
+          ]
+        },
+        {
+          "label": "Porta Romana",
+          "coordinates": [
+            9.2023,
+            45.4516
+          ]
+        },
+        {
+          "label": "",
+          "coordinates": [
+            9.18722,
+            45.45166
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "title": "M3 · towards San Donato",
+          "detail": "Centrale FS → Porta Romana."
+        },
+        {
+          "title": "Tram 9 · towards Porta Genova",
+          "detail": "Porta Romana → Porta Lodovica."
+        },
+        {
+          "title": "Walk to the venue",
+          "detail": "From Porta Lodovica, follow Bligny Avenue to Röntgen Street. The building is at no. 1."
+        }
+      ],
+      "source": "https://www.google.com/maps/dir/?api=1&origin=Milano%20Centrale%2C%20Piazza%20Duca%20d%E2%80%99Aosta%201%2C%20Milano&destination=Via+Guglielmo+R%C3%B6ntgen+1+Milano&travelmode=transit"
+    },
+    {
+      "id": "cadorna",
+      "label": "Milano Cadorna",
+      "origin": "Milano Cadorna, Piazzale Luigi Cadorna, Milano",
+      "travelmode": "transit",
+      "segments": [
+        {
+          "mode": "transit",
+          "coordinates": [
+            [
+              9.17554,
+              45.46843
+            ],
+            [
+              9.17417,
+              45.4658
+            ],
+            [
+              9.17346,
+              45.46298
+            ],
+            [
+              9.17248,
+              45.46138
+            ],
+            [
+              9.17024,
+              45.45825
+            ],
+            [
+              9.1697,
+              45.4566
+            ],
+            [
+              9.1701,
+              45.45322
+            ]
+          ],
+          "line": "M2"
+        },
+        {
+          "mode": "transit",
+          "coordinates": [
+            [
+              9.1701,
+              45.45322
+            ],
+            [
+              9.1707,
+              45.45349
+            ],
+            [
+              9.1727,
+              45.45468
+            ],
+            [
+              9.17307,
+              45.45467
+            ],
+            [
+              9.1741,
+              45.45402
+            ],
+            [
+              9.17618,
+              45.45268
+            ],
+            [
+              9.17674,
+              45.45241
+            ],
+            [
+              9.17748,
+              45.45223
+            ],
+            [
+              9.1782,
+              45.45225
+            ],
+            [
+              9.1803,
+              45.45252
+            ],
+            [
+              9.18085,
+              45.4524
+            ],
+            [
+              9.1813,
+              45.45225
+            ],
+            [
+              9.1837,
+              45.45207
+            ],
+            [
+              9.18573,
+              45.4519
+            ],
+            [
+              9.18662,
+              45.45184
+            ],
+            [
+              9.18722,
+              45.45166
+            ]
+          ],
+          "line": "9"
+        },
+        {
+          "mode": "walk",
+          "coordinates": [
+            [
+              9.18722,
+              45.45166
+            ],
+            [
+              9.1877,
+              45.45153
+            ],
+            [
+              9.18759,
+              45.45133
+            ],
+            [
+              9.18743,
+              45.45105
+            ],
+            [
+              9.18725,
+              45.45069
+            ],
+            [
+              9.18782,
+              45.45068
+            ]
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "label": "Milano Cadorna",
+          "coordinates": [
+            9.17554,
+            45.46843
+          ]
+        },
+        {
+          "label": "Porta Genova",
+          "coordinates": [
+            9.1701,
+            45.45322
+          ]
+        },
+        {
+          "label": "",
+          "coordinates": [
+            9.18722,
+            45.45166
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "title": "M2 · southbound",
+          "detail": "Cadorna FN → Porta Genova FS."
+        },
+        {
+          "title": "Tram 9 · towards Centrale",
+          "detail": "Porta Genova → Porta Lodovica."
+        },
+        {
+          "title": "Walk to the venue",
+          "detail": "From Porta Lodovica, follow Bligny Avenue to Röntgen Street. The building is at no. 1."
+        }
+      ],
+      "source": "https://www.google.com/maps/dir/?api=1&origin=Milano%20Cadorna%2C%20Piazzale%20Luigi%20Cadorna%2C%20Milano&destination=Via+Guglielmo+R%C3%B6ntgen+1+Milano&travelmode=transit"
+    },
+    {
+      "id": "genova",
+      "label": "Porta Genova",
+      "origin": "Porta Genova FS, Milano",
+      "travelmode": "transit",
+      "segments": [
+        {
+          "mode": "transit",
+          "coordinates": [
+            [
+              9.1701,
+              45.45322
+            ],
+            [
+              9.1707,
+              45.45349
+            ],
+            [
+              9.1727,
+              45.45468
+            ],
+            [
+              9.17307,
+              45.45467
+            ],
+            [
+              9.1741,
+              45.45402
+            ],
+            [
+              9.17618,
+              45.45268
+            ],
+            [
+              9.17674,
+              45.45241
+            ],
+            [
+              9.17748,
+              45.45223
+            ],
+            [
+              9.1782,
+              45.45225
+            ],
+            [
+              9.1803,
+              45.45252
+            ],
+            [
+              9.18085,
+              45.4524
+            ],
+            [
+              9.1813,
+              45.45225
+            ],
+            [
+              9.1837,
+              45.45207
+            ],
+            [
+              9.18573,
+              45.4519
+            ],
+            [
+              9.18662,
+              45.45184
+            ],
+            [
+              9.18722,
+              45.45166
+            ]
+          ],
+          "line": "9"
+        },
+        {
+          "mode": "walk",
+          "coordinates": [
+            [
+              9.18722,
+              45.45166
+            ],
+            [
+              9.1877,
+              45.45153
+            ],
+            [
+              9.18759,
+              45.45133
+            ],
+            [
+              9.18743,
+              45.45105
+            ],
+            [
+              9.18725,
+              45.45069
+            ],
+            [
+              9.18782,
+              45.45068
+            ]
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "label": "Porta Genova",
+          "coordinates": [
+            9.1701,
+            45.45322
+          ]
+        },
+        {
+          "label": "",
+          "coordinates": [
+            9.18722,
+            45.45166
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tram 9 · towards Centrale",
+          "detail": "Porta Genova → Porta Lodovica."
+        },
+        {
+          "title": "Walk to the venue",
+          "detail": "From Porta Lodovica, follow Bligny Avenue to Röntgen Street. The building is at no. 1."
+        }
+      ],
+      "source": "https://www.google.com/maps/dir/?api=1&origin=Porta%20Genova%20FS%2C%20Milano&destination=Via+Guglielmo+R%C3%B6ntgen+1+Milano&travelmode=transit"
+    },
+    {
+      "id": "duomo",
+      "label": "Duomo",
+      "origin": "Duomo di Milano, Piazza del Duomo, Milano",
+      "travelmode": "walking",
+      "segments": [
+        {
+          "mode": "walk",
+          "coordinates": [
+            [
+              9.19004,
+              45.46392
+            ],
+            [
+              9.18999,
+              45.4637
+            ],
+            [
+              9.18992,
+              45.46271
+            ],
+            [
+              9.18971,
+              45.46271
+            ],
+            [
+              9.18977,
+              45.46203
+            ],
+            [
+              9.18872,
+              45.46131
+            ],
+            [
+              9.18849,
+              45.46122
+            ],
+            [
+              9.18829,
+              45.46085
+            ],
+            [
+              9.18825,
+              45.46038
+            ],
+            [
+              9.1878,
+              45.4587
+            ],
+            [
+              9.18755,
+              45.45739
+            ],
+            [
+              9.18742,
+              45.45606
+            ],
+            [
+              9.1873,
+              45.45557
+            ],
+            [
+              9.18709,
+              45.45446
+            ],
+            [
+              9.18693,
+              45.45333
+            ],
+            [
+              9.18678,
+              45.4524
+            ],
+            [
+              9.18694,
+              45.45172
+            ],
+            [
+              9.18722,
+              45.45166
+            ],
+            [
+              9.1877,
+              45.45153
+            ],
+            [
+              9.18759,
+              45.45133
+            ],
+            [
+              9.18743,
+              45.45105
+            ],
+            [
+              9.18725,
+              45.45069
+            ],
+            [
+              9.18782,
+              45.45068
+            ]
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "label": "Duomo",
+          "coordinates": [
+            9.19004,
+            45.46392
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "title": "Walk through the city centre",
+          "detail": "Follow Marconi Street, Diaz Square and Gonzaga Street to Missori."
+        },
+        {
+          "title": "Continue along Corso Italia",
+          "detail": "Walk south to Porta Lodovica, then turn onto Bligny Avenue."
+        },
+        {
+          "title": "Arrive at Bocconi",
+          "detail": "Turn onto Röntgen Street and continue to no. 1. About 1.7 km in total."
+        }
+      ],
+      "source": "https://www.google.com/maps/dir/?api=1&origin=Duomo%20di%20Milano%2C%20Piazza%20del%20Duomo%2C%20Milano&destination=Via+Guglielmo+R%C3%B6ntgen+1+Milano&travelmode=walking"
+    }
+  ]
+}

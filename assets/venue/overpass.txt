@@ -1,0 +1,12 @@
+[out:json][timeout:45];
+(
+way[highway~"^(primary|secondary|tertiary|residential|unclassified|pedestrian|living_street)$"](45.438,9.171,45.474,9.211);
+way[waterway~"^(river|canal)$"](45.438,9.171,45.474,9.211);
+way[natural=water](45.438,9.171,45.474,9.211);
+way[leisure=park](45.438,9.171,45.474,9.211);
+way[building](45.445,9.182,45.456,9.197);
+way[amenity=university](45.445,9.182,45.456,9.197);
+node[railway=station](45.438,9.171,45.474,9.211);
+way[highway~"^(primary|secondary|tertiary)$"](45.47,9.17,45.493,9.212);
+);
+out geom;

@@ -25,6 +25,7 @@
     list,
     menu,
     navbar,
+    select,
     stat,
     steps,
     table,
@@ -479,4 +480,10 @@ footer > :last-child {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+@media (min-width: 1024px) {
+  .site-nav .navbar-start { width: auto; }
+  .site-nav .navbar-end { width: auto; flex: 1; }
+  .site-nav .navbar-end > .menu { flex-wrap: nowrap; }
 }
