@@ -1,0 +1,45 @@
+/* Trace the registration milestones once as they enter the viewport. */
+@media (prefers-reduced-motion: no-preference) {
+  .registration-timeline.is-tracing > li:nth-child(1) { --trace-delay: 0ms; }
+  .registration-timeline.is-tracing > li:nth-child(2) { --trace-delay: 240ms; }
+  .registration-timeline.is-tracing > li:nth-child(3) { --trace-delay: 480ms; }
+  .registration-timeline.is-tracing > li:nth-child(4) { --trace-delay: 720ms; }
+
+  .registration-timeline.is-tracing .timeline-middle > span {
+    animation: registration-marker-in 300ms cubic-bezier(.16, 1, .3, 1) both;
+    animation-delay: var(--trace-delay);
+  }
+
+  .registration-timeline.is-tracing > li > hr {
+    animation: registration-line-down 160ms cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  .registration-timeline.is-tracing > li > hr:first-child {
+    animation-delay: calc(var(--trace-delay) - 100ms);
+  }
+
+  .registration-timeline.is-tracing > li > hr:last-child {
+    animation-delay: calc(var(--trace-delay) + 40ms);
+  }
+
+  @media (min-width: 1024px) {
+    .registration-timeline.is-tracing > li > hr {
+      animation-name: registration-line-across;
+    }
+  }
+}
+
+@keyframes registration-marker-in {
+  from { opacity: .65; transform: scale(.72); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes registration-line-down {
+  from { transform: scaleY(0); transform-origin: center top; }
+  to { transform: scaleY(1); transform-origin: center top; }
+}
+
+@keyframes registration-line-across {
+  from { transform: scaleX(0); transform-origin: left center; }
+  to { transform: scaleX(1); transform-origin: left center; }
+}
