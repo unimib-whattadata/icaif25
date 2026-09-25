@@ -29,6 +29,7 @@
     stat,
     steps,
     table,
+    timeline,
     radius;
 }
 
@@ -279,6 +280,10 @@
   .document-sections > section {
     scroll-margin-top: 9rem;
   }
+}
+
+.registration-timeline.timeline > li {
+  --timeline-row-start: 0;
 }
 
 @media (min-width: 640px) {
