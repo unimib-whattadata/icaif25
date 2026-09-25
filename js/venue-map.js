@@ -289,7 +289,7 @@
     renderDetails();
   }
 
-  fetch("assets/venue/milan.geojson?v=2026092404")
+  fetch("/assets/venue/milan.geojson?v=2026092404")
     .then(response => { if (!response.ok) throw new Error("Map data unavailable"); return response.json(); })
     .then(data => {
       mapData = data;
@@ -298,7 +298,7 @@
       picture.hidden = true;
       controls.hidden = false;
       zoomControls.hidden = false;
-      fetch("assets/venue/routes.json?v=2026092406")
+      fetch("/assets/venue/routes.json?v=2026092406")
         .then(response => { if (!response.ok) throw new Error("Routes unavailable"); return response.json(); })
         .then(data => {
           routes = data.routes;

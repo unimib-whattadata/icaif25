@@ -7,6 +7,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith('.html')).sort();
+const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const errors = [];
 const usedIcons = new Set();
 const navigationSignatures = new Map();
@@ -156,7 +157,7 @@ function getLocalTarget(url) {
         target += 'index.html';
     }
 
-    return path.resolve(root, target);
+    return path.resolve(root, target.replace(/^\//, ''));
 }
 
 function getLocalFragment(url, currentFile) {
@@ -176,7 +177,7 @@ function getLocalFragment(url, currentFile) {
 
     return {
         fragment: decodeURIComponent(fragmentPart),
-        target: path.resolve(root, target),
+        target: path.resolve(root, target.replace(/^\//, '')),
     };
 }
 
@@ -202,6 +203,19 @@ function recordSignature(collection, signature, file) {
 
 for (const file of htmlFiles) {
     const html = fs.readFileSync(path.join(root, file), 'utf8');
+    const expectedCanonical = file === 'index.html'
+        ? 'https://icaif2026.org/'
+        : `https://icaif2026.org/${file.slice(0, -5)}/`;
+    const canonicalTag = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*>/i)?.[0] || '';
+    if (getAttributes(canonicalTag).href !== expectedCanonical) {
+        addError(file, `canonical URL must be ${expectedCanonical}`);
+    }
+    if (!sitemap.includes(`<loc>${expectedCanonical}</loc>`)) {
+        addError(file, `sitemap is missing ${expectedCanonical}`);
+    }
+    if (/\bhref=["']\/?[a-z0-9-]+\.html(?:[?#][^"']*)?["']/i.test(html)) {
+        addError(file, 'internal links must use clean URLs');
+    }
     const animatedHeroOverlayTags = Array.from(
         html.matchAll(/<div\b[^>]*\bdata-animated-hero-overlay\b[^>]*>/gi),
         (match) => match[0]
