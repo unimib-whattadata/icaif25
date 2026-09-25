@@ -25,8 +25,20 @@
 #venue-map-picture,
 #venue-map-image { display: block; width: 100%; }
 #venue-map-image { height: auto; aspect-ratio: 5 / 4; }
-.venue-map-canvas { overflow: hidden; aspect-ratio: 5 / 4; touch-action: pan-y; border-top: 1px solid var(--color-base-300); }
+.venue-map-canvas { position: relative; overflow: hidden; aspect-ratio: 5 / 4; touch-action: pan-y; border-top: 1px solid var(--color-base-300); }
 .venue-map-canvas > svg { display: block; width: 100%; height: 100%; }
+.venue-map-canvas .map-hotel-marker { cursor: pointer; }
+.venue-map-canvas .map-hotel-symbol { transform-box: fill-box; transform-origin: center; transition: transform 180ms cubic-bezier(.16,1,.3,1); }
+.venue-map-canvas .map-hotel-marker:is(:hover,:focus-visible) .map-hotel-symbol { transform: translateY(-2px) scale(1.08); }
+.venue-map-canvas .map-hotel-marker:is(:focus-visible,.is-active) .map-hotel-disc { stroke: #bf4c16; stroke-width: 4; }
+.venue-hotel-popover { position: absolute; z-index: 3; width: min(18rem,calc(100% - 1rem)); background: var(--color-base-100); color: var(--color-base-content); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
+.venue-hotel-popover .card-body { display: block; padding: 1.125rem; }
+.venue-hotel-popover .card-title { max-width: calc(100% - 2rem); font-size: .9375rem; line-height: 1.35; }
+.venue-hotel-meta { margin-top: .375rem; font-size: .75rem; line-height: 1.55; color: color-mix(in oklab,var(--color-base-content) 76%,var(--color-base-100)); }
+.venue-hotel-popover .card-actions { margin-top: .875rem; }
+.venue-hotel-popover .card-actions .btn { min-height: 2.75rem; width: 100%; font-size: .75rem; }
+.venue-hotel-close { position: absolute; top: .5rem; right: .5rem; min-height: 2rem; height: 2rem; width: 2rem; padding: .375rem; }
+.venue-hotel-close svg { display: block; width: 100%; height: 100%; }
 .venue-map-tools { display: flex; align-items: center; gap: .5rem; padding: .75rem 1.25rem 1.25rem; background: #f3f7fa; }
 .venue-map-tools .btn { min-height: 2.75rem; height: 2.75rem; background: var(--color-base-100); box-shadow: none; }
 .venue-map-tools .btn:hover { background: var(--color-base-200); border-color: var(--color-primary); }
@@ -63,6 +75,8 @@
 .venue-map-caption a { text-decoration: underline; text-underline-offset: 3px; }
 .venue-map-key { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; }
 .venue-map-key > span { width: .5rem; height: .5rem; border-radius: 50%; background: var(--color-accent); }
+.venue-hotel-key { display: inline-flex; align-items: center; gap: .5rem; }
+.venue-hotel-key > span { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: #0f2c42; color: #fff; font-size: .625rem; font-weight: 800; }
 .venue-travel-list > article { padding-block: 2rem; border-bottom: 1px solid var(--color-base-300); }
 .venue-travel-list > article:first-child { padding-top: 0; }
 .venue-travel-list > article:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -84,6 +98,31 @@
 .venue-building-links .btn { min-height: 3rem; background-color: var(--color-neutral-content); border-color: var(--color-neutral-content); color: var(--color-neutral); }
 .venue-building-links .btn:hover { background-color: var(--color-base-200); border-color: var(--color-base-200); }
 .venue-building-links .link { display: inline-flex; align-items: center; gap: .5rem; color: var(--color-neutral-content); font-size: .875rem; }
+.venue-hotels-layout { display: grid; gap: 2rem; }
+.venue-hotels-intro { display: grid; align-items: end; gap: 1.5rem 3.5rem; }
+.venue-hotels-lead { max-width: 42ch; margin-top: 1rem; font-size: 1.0625rem; line-height: 1.7; color: color-mix(in oklab,var(--color-base-content) 82%,var(--color-base-100)); }
+.venue-hotels-map-link { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .5rem; margin-top: 1rem; font-size: .875rem; font-weight: 600; }
+.venue-hotels-map-link svg { color: var(--color-accent); }
+.venue-hotels-note { display: flex; align-items: start; gap: .75rem; max-width: 32rem; padding: 1.125rem 1.25rem; border-radius: .75rem; background: var(--color-base-200); }
+.venue-hotels-note svg { flex: none; color: var(--color-primary); }
+.venue-hotels-note p { font-size: .8125rem; line-height: 1.65; color: color-mix(in oklab,var(--color-base-content) 88%,var(--color-base-100)); }
+.venue-hotels-list { display: grid; gap: 0 3.5rem; padding: 0; background: transparent; }
+.venue-hotels-list .venue-hotel-row { display: grid; grid-auto-flow: row; grid-template-columns: 5.75rem minmax(0,1fr); align-content: start; align-items: start; gap: .25rem 1rem; min-width: 0; padding: 1.25rem 0; border-bottom: 1px solid var(--color-base-300); border-radius: 0; }
+.venue-hotels-list .venue-hotel-row::after { display: none; }
+.venue-hotels-list .venue-hotel-distance { grid-column: 1; grid-row: 1 / span 2; }
+.venue-hotels-list .venue-hotel-info { grid-column: 2; grid-row: 1; }
+.venue-hotels-list .venue-hotel-directions { grid-column: 2; grid-row: 2; justify-self: start; margin-top: .25rem; }
+.venue-hotel-distance data { display: block; color: var(--color-accent); font-size: 1.125rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.venue-hotel-distance span { display: block; margin-top: .25rem; color: color-mix(in oklab,var(--color-base-content) 72%,var(--color-base-100)); font-size: .75rem; white-space: nowrap; }
+.venue-hotel-info { min-width: 0; }
+.venue-hotel-info h3 { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+.venue-hotel-info .link { text-decoration-color: color-mix(in oklab,var(--color-base-content) 35%,transparent); transition: color 160ms ease,text-decoration-color 160ms ease; }
+.venue-hotel-info .link:hover { color: var(--color-primary); text-decoration-color: currentColor; }
+.venue-hotel-info p { margin-top: .25rem; color: color-mix(in oklab,var(--color-base-content) 72%,var(--color-base-100)); font-size: .8125rem; }
+.venue-hotel-directions { display: inline-flex; min-height: 2.25rem; align-items: center; gap: .375rem; font-size: .8125rem; font-weight: 600; white-space: nowrap; }
+.venue-hotel-directions svg { transition: transform 160ms ease; }
+.venue-hotel-directions:hover svg { transform: translateX(.2rem); }
+.venue-hotels-list a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
 @media (min-width: 640px) {
   .venue-airports > div { grid-template-columns: 9rem 1fr; }
   .venue-route-steps { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
@@ -91,10 +130,15 @@
   .venue-route-steps li::before { margin-bottom: .875rem; }
   .venue-route-steps li:not(:last-child)::after { top: .8125rem; left: 2.125rem; width: calc(100% - .625rem); height: 1px; }
 }
+@media (min-width: 768px) {
+  .venue-hotels-intro { grid-template-columns: minmax(0,1fr) minmax(16rem,30rem); }
+  .venue-hotels-list { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: repeat(5,auto); grid-auto-flow: column; column-gap: 2rem; }
+}
 @media (min-width: 1024px) {
   .venue-building-layout { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 3.5rem; }
   .venue-layout,
   .venue-travel-layout { grid-template-columns: minmax(0,.8fr) minmax(0,2fr); gap: 3.5rem; }
+  .venue-hotels-list { column-gap: 3.5rem; }
 }
 @media (min-width: 1024px) and (min-height: 750px) {
   .venue-details { position: sticky; top: 10rem; align-self: start; }
@@ -121,7 +165,14 @@
   .venue-route-actions { width: 100%; justify-content: space-between; }
   .venue-route-steps { margin-block: 1.5rem; }
   .venue-map-caption { padding: 1rem; }
+  .venue-hotels-layout { gap: 1.5rem; }
+  .venue-hotels-intro { gap: 1.25rem; }
+  .venue-hotels-note { max-width: none; }
+  .venue-hotels-list .venue-hotel-row { grid-template-columns: 5rem minmax(0,1fr); gap: .25rem .875rem; padding: 1.125rem 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .venue-map-switch .btn { transition: none; }
+  .venue-map-canvas .map-hotel-symbol { transition: none; }
+  .venue-hotel-info .link,
+  .venue-hotel-directions svg { transition: none; }
 }

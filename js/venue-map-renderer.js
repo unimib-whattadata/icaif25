@@ -1,6 +1,19 @@
 /* D3 cartography shared by the browser and the static fallback generator. */
 'use strict';
 const HOME = [9.18782, 45.45068]; // Within OSM building way 35780519 (Edificio Roentgen).
+// Hotel entrances, checked against their published addresses and Google Maps.
+const VENUE_HOTELS = [
+  {id:'qc-room',name:'QC room Milano Porta Romana',address:'Viale Bligny 23',walk:7,coordinates:[9.1920867,45.4512265],url:'https://www.qcterme.com/destinations/milano/hotel-qc-room-milano'},
+  {id:'la-vignetta',name:'Hotel La Vignetta',address:'Via Pietro Custodi 2',walk:9,coordinates:[9.181752,45.4516929],url:'https://www.hotellavignetta.it/en/'},
+  {id:'jr-bocconi',name:'JR Hotels Bocconi Milano',address:'Viale Bligny 56',walk:9,coordinates:[9.1947854,45.4508108],url:'https://jr-hotels.com/en/collection/jr-hotels-bocconi-milano'},
+  {id:'radisson-santa-sofia',name:'Radisson Collection Santa Sofia',address:'Via Santa Sofia 37',walk:10,coordinates:[9.1876701,45.4559547],url:'https://www.radissonhotels.com/en-us/hotels/radisson-collection-santa-sofia-milan'},
+  {id:'milano-navigli',name:'Hotel Milano Navigli',address:"Piazza Sant'Eustorgio 2",walk:11,coordinates:[9.1805158,45.4531747],url:'https://www.hotelmilanonavigli.it/'},
+  {id:'house-of-stories',name:'21 House of Stories Navigli',address:'Via Ascanio Sforza 7',walk:13,coordinates:[9.1780581,45.4510284],url:'https://21houseofstories.com/en/milano-navigli/'},
+  {id:'petit-palais',name:'Petit Palais Hotel de Charme',address:'Via Molino delle Armi 1',walk:13,coordinates:[9.1843037,45.4566201],url:'https://www.petitpalaismilano.com/en/4-star-hotel-milan'},
+  {id:'hotel-canada',name:'Hotel Canada',address:'Via Santa Sofia 16',walk:14,coordinates:[9.1911542,45.4574123],url:'https://canadahotel.it/en/'},
+  {id:'crivis',name:"Hotel Crivi's",address:'Corso di Porta Vigentina 46',walk:15,coordinates:[9.1962081,45.4529603],url:'https://www.hotelcrivis.com/'},
+  {id:'palladio',name:'Hotel Palladio',address:'Via Andrea Palladio 8',walk:17,coordinates:[9.1987404,45.4480108],url:'https://www.hotelpalladio.net/en/hotel-milan/'}
+];
 const escape = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const VENUE_FOOTPRINT = 'M-2.6-1.8C-4-3.4-3.4-7-1.4-8.5C.5-9.8 3-8 2.7-5.4C2.5-3.7 1.4-2-.2-1.5C-1.1-1.2-2-1.3-2.6-1.8ZM-1.8.4C-.8-.2.8-.1 1.5.6L1.4 3.2C.6 4.2-1.2 4.2-2 3.3Z';
 function venueRouteStyle(segment) {
@@ -45,7 +58,7 @@ function venueMapGeometry(d3, mode, mobile, route) {
   return {width, height, center: projection.invert([width/2,height/2]), scale: projection.scale(), projection};
 }
 
-function renderVenueMap(d3, data, mode, mobile, route) {
+function renderVenueMap(d3, data, mode, mobile, route, showHotels = false) {
   const campus = mode === 'campus';
   const {width,height,center,projection} = venueMapGeometry(d3,mode,mobile,route);
   const geoPath = d3.geoPath(projection).digits(1);
@@ -145,11 +158,16 @@ function renderVenueMap(d3, data, mode, mobile, route) {
   const barWidth = projection([center[0]+lonDelta,center[1]])[0] - projection(center)[0];
   const venueLabelX = Math.max(98, Math.min(width-98, mx));
   const venueLabelY = Math.min(height-27, my+48);
+  const hotelMarkup = showHotels && !route ? VENUE_HOTELS.map(hotel => {
+    const [x,y] = projection(hotel.coordinates);
+    if (x < 22 || x > width-22 || y < 36 || y > height-42) return '';
+    return `<g class="map-hotel-marker" data-hotel-id="${hotel.id}" role="button" tabindex="0" aria-label="Show ${escape(hotel.name)} details" aria-controls="venue-hotel-tooltip" aria-expanded="false" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><title>${escape(hotel.name)}</title><circle class="map-hotel-hit" r="22" fill="transparent"/><g class="map-hotel-symbol"><circle class="map-hotel-disc" r="14" fill="#0f2c42" stroke="#fff" stroke-width="3"/><text class="map-hotel-letter" text-anchor="middle" y="4" fill="#fff" font-size="11" font-weight="800">H</text></g></g>`;
+  }).join('') : '';
   const markup = `<svg class="venue-cartography" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
 <title id="title">ICAIF ’26 at Bocconi University, Via Röntgen 1</title>
-<desc id="desc">${route ? `Illustrated route from ${escape(route.label)} to Bocconi. M2 is green, M3 is yellow, trams are blue. Copper footprints mark walking sections.` : `${campus?'Bocconi campus':'Central Milan'} locator map.`} Copper marks the Röntgen building. North is up. Map data © OpenStreetMap contributors.</desc>
+<desc id="desc">${route ? `Illustrated route from ${escape(route.label)} to Bocconi. M2 is green, M3 is yellow, trams are blue. Copper footprints mark walking sections.` : `${campus?'Bocconi campus':'Central Milan'} locator map.${showHotels?' Select an H marker for hotel details.':''}`} Copper marks the Röntgen building. North is up. Map data © OpenStreetMap contributors.</desc>
 <style>
-text{font-family:Inter,Arial,sans-serif;fill:#24475e}.label,.landmark,.street,.district,.park-label,.water-label{paint-order:stroke;stroke:#f3f7fa;stroke-width:5;stroke-linejoin:round}.label{font-size:15px;font-weight:600}.landmark{font-size:${mobile?19:22}px;font-weight:700;fill:#075985}.street{font-size:${mobile?12:15}px;fill:#46657a;stroke-width:4}.district{font-size:${mobile?13:16}px;letter-spacing:2px;font-weight:600;fill:#557386}.park-label{font-size:13px;fill:#54766c;stroke:#edf4f1;stroke-width:4}.water-label{font-size:15px;font-style:italic;fill:#39728e}.small{font-size:11px;font-weight:600;fill:#47677c;paint-order:stroke;stroke:#f3f7fa;stroke-width:4}.metro{font-size:11px;fill:#493d10;font-weight:700}.park{fill:#e3eeea}.water{fill:#b5d4e2;stroke:#8fb7cc;stroke-width:1}.waterway{fill:none;stroke:#a5c9dc;stroke-width:7;stroke-linecap:round}.campus{fill:#e1edf4}.building{fill:#d0dde7;stroke:#f3f7fa;stroke-width:.8}.venue{fill:#c26a41;stroke:#a33d0e;stroke-width:1.5}.road{fill:none;stroke-linecap:round;stroke-linejoin:round}.minor{stroke:#dbe5ec;stroke-width:${campus?4:1.6}}.secondary-case{stroke:#fff;stroke-width:${campus?11:6}}.secondary{stroke:#b8cfdd;stroke-width:${campus?5:2.6}}.major-case{stroke:#fff;stroke-width:${campus?15:8}}.major{stroke:#9fbfD1;stroke-width:${campus?7:3.8}}
+text{font-family:Inter,Arial,sans-serif;fill:#24475e}.map-hotel-letter{fill:#fff}.label,.landmark,.street,.district,.park-label,.water-label{paint-order:stroke;stroke:#f3f7fa;stroke-width:5;stroke-linejoin:round}.label{font-size:15px;font-weight:600}.landmark{font-size:${mobile?19:22}px;font-weight:700;fill:#075985}.street{font-size:${mobile?12:15}px;fill:#46657a;stroke-width:4}.district{font-size:${mobile?13:16}px;letter-spacing:2px;font-weight:600;fill:#557386}.park-label{font-size:13px;fill:#54766c;stroke:#edf4f1;stroke-width:4}.water-label{font-size:15px;font-style:italic;fill:#39728e}.small{font-size:11px;font-weight:600;fill:#47677c;paint-order:stroke;stroke:#f3f7fa;stroke-width:4}.metro{font-size:11px;fill:#493d10;font-weight:700}.park{fill:#e3eeea}.water{fill:#b5d4e2;stroke:#8fb7cc;stroke-width:1}.waterway{fill:none;stroke:#a5c9dc;stroke-width:7;stroke-linecap:round}.campus{fill:#e1edf4}.building{fill:#d0dde7;stroke:#f3f7fa;stroke-width:.8}.venue{fill:#c26a41;stroke:#a33d0e;stroke-width:1.5}.road{fill:none;stroke-linecap:round;stroke-linejoin:round}.minor{stroke:#dbe5ec;stroke-width:${campus?4:1.6}}.secondary-case{stroke:#fff;stroke-width:${campus?11:6}}.secondary{stroke:#b8cfdd;stroke-width:${campus?5:2.6}}.major-case{stroke:#fff;stroke-width:${campus?15:8}}.major{stroke:#9fbfD1;stroke-width:${campus?7:3.8}}
 </style>
 <defs>
 ${routeMask}
@@ -167,6 +185,7 @@ ${paths(kind('venue'),'venue')}
 <rect width="${width}" height="${height}" fill="url(#fade-x)"/><rect width="${width}" height="${height}" fill="url(#fade-y)"/>
 ${points.join('')}
 ${routeMarkup}
+${hotelMarkup}
 <g class="map-marker" transform="translate(${mx.toFixed(1)} ${my.toFixed(1)})">
 <circle class="map-pulse" r="${campus?36:31}" fill="#bf4c16" fill-opacity=".09"/><circle r="${campus?23:20}" fill="none" stroke="#bf4c16" stroke-opacity=".22"/>
 <g class="map-pin-icon"><path d="M0 0C-5-8-16-16-16-28a16 16 0 1 1 32 0C16-16 5-8 0 0Z" fill="#bf4c16" stroke="#fff" stroke-width="3"/><circle cy="-28" r="5" fill="#fff"/></g>

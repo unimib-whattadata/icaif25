@@ -86,7 +86,7 @@
     </script>
     <script src="js/heroicons.js?v=2026082908" defer></script>
     <link rel="stylesheet" href="css/tailwind.min.css?v=2026092406">
-    <link rel="stylesheet" href="css/venue.css?v=2026092410">
+    <link rel="stylesheet" href="css/venue.css?v=2026092503">
   </head>
   <body data-page="venue" class="font-sans antialiased min-w-0">
     <a
@@ -286,11 +286,11 @@
             <a class="link mt-5 inline-flex items-center gap-2 text-sm" href="#getting-here">Plan your journey<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
           </div>
 
-          <figure class="venue-map-figure" aria-labelledby="map-caption">
+          <figure id="venue-map" class="venue-map-figure scroll-mt-24" aria-labelledby="map-caption">
             <div class="venue-map-toolbar">
               <div class="venue-map-title">
                 <h3>Find your way to Bocconi</h3>
-                <p>Choose a starting point. Follow the journey.</p>
+                <p>Choose a starting point or explore nearby hotels.</p>
               </div>
               <div class="venue-map-switch" role="group" aria-label="Map area" hidden>
                 <button type="button" class="btn" data-map-view="city" aria-pressed="true">City</button>
@@ -339,6 +339,7 @@
             </div>
             <figcaption id="map-caption" class="venue-map-caption">
               <span class="venue-map-key"><span aria-hidden="true"></span>ICAIF ’26 · Via Röntgen 1</span>
+              <span id="venue-hotel-key" class="venue-hotel-key" hidden><span aria-hidden="true">H</span>Select a hotel marker to see its website</span>
               <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>
             </figcaption>
           </figure>
@@ -390,6 +391,74 @@
               <p class="mt-3 text-sm">Check <a class="link" href="https://www.atm.it/en/" target="_blank" rel="noopener noreferrer">ATM</a> for current routes and service updates before travelling.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="nearby-hotels" class="section-space scroll-mt-24" aria-labelledby="hotels-heading">
+        <div class="site-container venue-hotels-layout">
+          <div class="venue-hotels-intro">
+            <div>
+              <h2 id="hotels-heading" data-index-label="Hotels" class="section-title">Nearby hotels</h2>
+              <p class="venue-hotels-lead">Ten places to stay near the Röntgen building, ordered by walking distance.</p>
+              <a class="link venue-hotels-map-link" href="#venue-map"><i data-heroicon="map-pin" class="size-4" aria-hidden="true"></i>Explore hotels on the map</a>
+            </div>
+            <div class="venue-hotels-note">
+              <i data-heroicon="info" class="size-5" aria-hidden="true"></i>
+              <p>The conference has no affiliation with these hotels; they are listed solely for their proximity to the venue. Walking distances and times are approximate. Check Google Maps for current directions.</p>
+            </div>
+          </div>
+          <ul class="list venue-hotels-list">
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="500">500 m</data><span>7 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.qcterme.com/destinations/milano/hotel-qc-room-milano" target="_blank" rel="noopener noreferrer">QC room Milano Porta Romana</a></h3><p>Viale Bligny 23</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Viale+Bligny+23%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from QC room Milano Porta Romana to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="650">650 m</data><span>9 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.hotellavignetta.it/en/" target="_blank" rel="noopener noreferrer">Hotel La Vignetta</a></h3><p>Via Pietro Custodi 2</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Pietro+Custodi+2%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Hotel La Vignetta to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="700">700 m</data><span>9 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://jr-hotels.com/en/collection/jr-hotels-bocconi-milano" target="_blank" rel="noopener noreferrer">JR Hotels Bocconi Milano</a></h3><p>Viale Bligny 56</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Viale+Bligny+56%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from JR Hotels Bocconi Milano to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="700">700 m</data><span>10 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.radissonhotels.com/en-us/hotels/radisson-collection-santa-sofia-milan" target="_blank" rel="noopener noreferrer">Radisson Collection Santa Sofia</a></h3><p>Via Santa Sofia 37</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Santa+Sofia+37%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Radisson Collection Santa Sofia to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="750">750 m</data><span>11 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.hotelmilanonavigli.it/" target="_blank" rel="noopener noreferrer">Hotel Milano Navigli</a></h3><p>Piazza Sant'Eustorgio 2</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazza+Sant%27Eustorgio+2%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Hotel Milano Navigli to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="900">900 m</data><span>13 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.petitpalaismilano.com/en/4-star-hotel-milan" target="_blank" rel="noopener noreferrer">Petit Palais Hotel de Charme</a></h3><p>Via Molino delle Armi 1</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Molino+delle+Armi+1%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Petit Palais Hotel de Charme to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="1000">1 km</data><span>13 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://21houseofstories.com/en/milano-navigli/" target="_blank" rel="noopener noreferrer">21 House of Stories Navigli</a></h3><p>Via Ascanio Sforza 7</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Ascanio+Sforza+7%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from 21 House of Stories Navigli to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="1000">1 km</data><span>14 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://canadahotel.it/en/" target="_blank" rel="noopener noreferrer">Hotel Canada</a></h3><p>Via Santa Sofia 16</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Santa+Sofia+16%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Hotel Canada to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="1000">1 km</data><span>15 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.hotelcrivis.com/" target="_blank" rel="noopener noreferrer">Hotel Crivi's</a></h3><p>Corso di Porta Vigentina 46</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Corso+di+Porta+Vigentina+46%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Hotel Crivi's to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+            <li class="list-row venue-hotel-row">
+              <div class="venue-hotel-distance"><data value="1200">1.2 km</data><span>17 min walk</span></div>
+              <div class="list-col-grow venue-hotel-info"><h3><a class="link" href="https://www.hotelpalladio.net/en/hotel-milan/" target="_blank" rel="noopener noreferrer">Hotel Palladio</a></h3><p>Via Andrea Palladio 8</p></div>
+              <a class="link venue-hotel-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Andrea+Palladio+8%2C+Milano&amp;destination=Via+Guglielmo+R%C3%B6ntgen+1%2C+Milano&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking route from Hotel Palladio to the venue in Google Maps">Walking route<i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></a>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -478,7 +547,7 @@
     <script src="js/site-layout.js?v=2026092102" defer></script>
     <script src="js/vendor/d3-array-3.2.4.min.js" defer></script>
     <script src="js/vendor/d3-geo-3.1.1.min.js" defer></script>
-    <script src="js/venue-map-renderer.js?v=2026092411" defer></script>
-    <script src="js/venue-map.js?v=2026092407" defer></script>
+    <script src="js/venue-map-renderer.js?v=2026092501" defer></script>
+    <script src="js/venue-map.js?v=2026092501" defer></script>
   </body>
 </html>

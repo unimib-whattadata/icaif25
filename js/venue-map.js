@@ -15,10 +15,40 @@
   const routeDetails = document.getElementById("venue-route-details");
   const routeHint = document.getElementById("venue-route-hint");
   const replay = document.getElementById("venue-route-replay");
+  const hotelKey = document.getElementById("venue-hotel-key");
+  const hotelPopup = document.createElement("div");
+  hotelPopup.id = "venue-hotel-tooltip";
+  hotelPopup.className = "card card-sm venue-hotel-popover";
+  hotelPopup.setAttribute("role", "group");
+  hotelPopup.setAttribute("aria-labelledby", "venue-hotel-name");
+  hotelPopup.hidden = true;
+  const hotelBody = document.createElement("div");
+  hotelBody.className = "card-body";
+  const hotelClose = document.createElement("button");
+  hotelClose.type = "button";
+  hotelClose.className = "btn btn-ghost btn-sm btn-square venue-hotel-close";
+  hotelClose.setAttribute("aria-label", "Close hotel details");
+  hotelClose.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19"/></svg>';
+  const hotelName = document.createElement("h3");
+  hotelName.id = "venue-hotel-name";
+  hotelName.className = "card-title";
+  const hotelMeta = document.createElement("p");
+  hotelMeta.className = "venue-hotel-meta";
+  const hotelActions = document.createElement("div");
+  hotelActions.className = "card-actions";
+  const hotelLink = document.createElement("a");
+  hotelLink.className = "btn btn-sm";
+  hotelLink.target = "_blank";
+  hotelLink.rel = "noopener noreferrer";
+  hotelLink.textContent = "Visit hotel website";
+  hotelActions.append(hotelLink);
+  hotelBody.append(hotelClose, hotelName, hotelMeta, hotelActions);
+  hotelPopup.append(hotelBody);
   let view = "city", zoom = 1, frame = 0;
   let mapData, drawnGeometry;
   let routes = [], route = null;
   let mapVisible = false, motionPaused = false, journeyRunning = false;
+  let activeHotelMarker = null;
   const easeOut = t => 1-Math.pow(1-t,3);
   const canMove = () => !reducedMotion.matches && !motionPaused && !document.hidden && mapVisible;
   const geometry = () => venueMapGeometry(d3,view,compact.matches,route);
@@ -141,11 +171,55 @@
     frame = requestAnimationFrame(step);
   }
 
+  function closeHotel(restoreFocus = false) {
+    if (activeHotelMarker) {
+      activeHotelMarker.classList.remove("is-active");
+      activeHotelMarker.setAttribute("aria-expanded", "false");
+      if (restoreFocus && activeHotelMarker.isConnected) activeHotelMarker.focus();
+    }
+    activeHotelMarker = null;
+    hotelPopup.hidden = true;
+  }
+
+  function placeHotelPopup(marker) {
+    const mapRect = canvas.getBoundingClientRect();
+    const markerRect = marker.querySelector(".map-hotel-disc").getBoundingClientRect();
+    const x = markerRect.left + markerRect.width / 2 - mapRect.left;
+    const y = markerRect.top + markerRect.height / 2 - mapRect.top;
+    const left = Math.max(8, Math.min(mapRect.width - hotelPopup.offsetWidth - 8, x - hotelPopup.offsetWidth / 2));
+    const above = y - hotelPopup.offsetHeight - 23;
+    const top = above >= 8 ? above : Math.min(mapRect.height - hotelPopup.offsetHeight - 8, y + 23);
+    hotelPopup.style.left = `${left}px`;
+    hotelPopup.style.top = `${Math.max(8, top)}px`;
+  }
+
+  function openHotel(marker, fromKeyboard = false) {
+    const hotel = VENUE_HOTELS.find(item => item.id === marker.dataset.hotelId);
+    if (!hotel) return;
+    if (marker === activeHotelMarker) { closeHotel(fromKeyboard); return; }
+    closeHotel();
+    activeHotelMarker = marker;
+    marker.classList.add("is-active");
+    marker.setAttribute("aria-expanded", "true");
+    hotelName.textContent = hotel.name;
+    hotelMeta.textContent = `${hotel.address} · about ${hotel.walk} min walk to the venue`;
+    hotelLink.href = hotel.url;
+    hotelLink.setAttribute("aria-label", `Visit ${hotel.name} website (new tab)`);
+    hotelPopup.hidden = false;
+    placeHotelPopup(marker);
+    if (fromKeyboard) hotelLink.focus({preventScroll:true});
+    status.textContent = `${hotel.name}. ${hotel.address}. About ${hotel.walk} minutes on foot to the venue. Visit hotel website link available.`;
+  }
+
   function draw(previousCamera, trace = false) {
+    closeHotel();
     stopMotion();
     drawnGeometry = geometry();
-    canvas.innerHTML = renderVenueMap(d3,mapData,view,compact.matches,route);
+    canvas.innerHTML = renderVenueMap(d3,mapData,view,compact.matches,route,true);
+    canvas.append(hotelPopup);
     const svg = canvas.querySelector("svg");
+    svg.setAttribute("role", "group");
+    hotelKey.hidden = !!route;
     const target = zoomBox();
     updateButtons();
     const move = canMove();
@@ -231,7 +305,7 @@
           routePicker.hidden = false;
           routeHint.hidden = false;
           routeSelect.value = "";
-          routeSelect.addEventListener("change",selectRoute);
+      routeSelect.addEventListener("change",selectRoute);
         })
         .catch(() => {
           routeHint.textContent = "Route previews are unavailable. Use Get directions to plan your journey in Google Maps.";
@@ -245,6 +319,28 @@
         },{threshold:.15}).observe(canvas);
       } else { mapVisible = true; idlePin(); }
       compact.addEventListener("change",() => draw());
+      window.addEventListener("resize",() => {
+        if (activeHotelMarker) placeHotelPopup(activeHotelMarker);
+      });
+      canvas.addEventListener("click",event => {
+        const marker = event.target.closest?.(".map-hotel-marker");
+        if (marker) openHotel(marker);
+        else if (!hotelPopup.contains(event.target)) closeHotel();
+      });
+      canvas.addEventListener("keydown",event => {
+        const marker = event.target.closest?.(".map-hotel-marker");
+        if (marker && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          openHotel(marker,true);
+        } else if (event.key === "Escape" && activeHotelMarker) {
+          event.preventDefault();
+          closeHotel(true);
+        }
+      });
+      hotelClose.addEventListener("click",() => closeHotel(true));
+      document.addEventListener("pointerdown",event => {
+        if (activeHotelMarker && !canvas.contains(event.target)) closeHotel();
+      });
       reducedMotion.addEventListener("change",() => draw());
       document.addEventListener("visibilitychange",() => { if (document.hidden) draw(); else idlePin(); });
       motionToggle.addEventListener("click",() => {
@@ -278,6 +374,7 @@
       zoomControls.addEventListener("click",event => {
         const button = event.target.closest("button[data-map-zoom]");
         if (!button) return;
+        closeHotel();
         stopMotion();
         const action = button.dataset.mapZoom;
         zoom = action === "reset" ? 1 : Math.max(1,Math.min(2,zoom+(action === "in" ? .25 : -.25)));
