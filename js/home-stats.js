@@ -3,7 +3,6 @@
 
   const AOE_UTC_OFFSET_HOURS = 12;
   const UPDATE_INTERVAL_MS = 60 * 1000;
-  const PAPER_SUBMISSION_DEADLINE = "2026-08-09";
   const CONFERENCE_END_DATE = "2026-11-17";
 
   const milestones = [
@@ -11,8 +10,8 @@
     { date: "2026-08-09", label: "Extended paper submission deadline" },
     { date: "2026-08-22", label: "Tutorial proposal submission" },
     { date: "2026-09-05", label: "Tutorial proposal notification" },
-    { date: "2026-09-27", label: "Paper notification" },
     { date: "2026-10-01", label: "Workshop paper submission" },
+    { date: "2026-10-01", label: "Paper notification" },
     { date: "2026-10-15", label: "Workshop paper notification" },
     { date: "2026-10-18", label: "Author registration deadline" },
     { date: "2026-10-25", label: "Early Bird registration deadline" },
@@ -63,15 +62,6 @@
     const statTitle = stat?.querySelector(".stat-title");
     const statDate = stat?.querySelector("[data-next-milestone-date]");
     const statLabel = stat?.querySelector("[data-next-milestone-label]");
-    const paperStatus = document.querySelector("[data-paper-submission-status]");
-
-    if (paperStatus) {
-      paperStatus.textContent =
-        now <= getEndOfAoE(PAPER_SUBMISSION_DEADLINE)
-          ? "Main paper submissions open"
-          : "Main paper submissions closed";
-    }
-
     if (!summary && !stat) return;
 
     const milestone = getNextMilestone(now);
@@ -120,7 +110,23 @@
 
   updateHomeMilestone();
   window.setInterval(updateHomeMilestone, UPDATE_INTERVAL_MS);
+
+  const paperNotice = document.querySelector("[data-paper-notification-notice]");
+  let noticeInView = false;
+  const syncNoticeAnimation = () => {
+    paperNotice?.classList.toggle("is-visible", noticeInView && !document.hidden);
+  };
+
+  if (paperNotice && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      noticeInView = entry.isIntersecting;
+      syncNoticeAnimation();
+    });
+    observer.observe(paperNotice);
+  }
+
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) updateHomeMilestone();
+    syncNoticeAnimation();
   });
 })();
