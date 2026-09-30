@@ -9,58 +9,70 @@
     const navigation = document.querySelector('nav[aria-label="Primary"]');
     if (!navigation) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const desktopQuery = window.matchMedia("(min-width: 1024px)");
-    const mobileMenu = navigation.querySelector('summary[aria-label="Navigation menu"]')?.parentElement;
-    const animateBadge = (badge) => {
-      if (reducedMotion || !badge.animate) return;
-      badge.animate(
-        [
-          { transform: "scale(1)" },
-          { transform: "scale(1.12)" },
-          { transform: "scale(1)" },
-        ],
-        { duration: 650, easing: "ease-in-out", iterations: 2 },
-      );
+    const updatedPages = new Map([
+      ["/important-dates/", "Paper notification extended to October 1, 2026"],
+      ["/registration/", "Registration reopened with clarified VAT pricing"],
+      ["/venue/", "Nearby hotels and travel information added"],
+      ["/qrt-student-travel-awards/", "Travel award applications are open"],
+      ["/competitions/", "Qube-RT startup competition link added"],
+      ["/call-for-papers/", "Paper notification extended to October 1, 2026"],
+    ]);
+    const markers = [];
+
+    navigation.querySelectorAll("a[href]").forEach((link) => {
+      const update = updatedPages.get(link.getAttribute("href"));
+      if (!update) return;
+
+      const marker = document.createElement("span");
+      marker.className = "inline-grid shrink-0 *:[grid-area:1/1]";
+      marker.setAttribute("aria-hidden", "true");
+      const ping = document.createElement("span");
+      ping.className = "status status-accent status-md";
+      const dot = document.createElement("span");
+      dot.className = "status status-accent status-md";
+      marker.append(ping, dot);
+
+      const updateText = document.createElement("span");
+      updateText.className = "sr-only";
+      updateText.textContent = ` — updated: ${update}`;
+
+      link.classList.add("gap-1.5");
+      link.title = `Updated: ${update}`;
+      link.append(marker, updateText);
+      markers.push({ marker, ping });
+    });
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const desktopMenu = window.matchMedia("(min-width: 1024px)");
+    const onscreenMarkers = new Set();
+
+    const syncMarkerAnimation = () => {
+      markers.forEach(({ marker, ping }) => {
+        const visible =
+          !reducedMotion.matches &&
+          !document.hidden &&
+          !marker.closest("details:not([open])") &&
+          onscreenMarkers.has(marker);
+        ping.classList.toggle("motion-safe:animate-ping", visible);
+      });
     };
 
-    navigation.querySelectorAll('a[href="/important-dates/"]').forEach((link) => {
-      const badge = document.createElement("span");
-      badge.className =
-        "badge shrink-0 border-warning bg-warning p-1 text-warning-content";
-      badge.setAttribute("role", "img");
-      badge.setAttribute(
-        "aria-label",
-        "Updated: paper notification extended to October 1, 2026",
-      );
-      badge.title = "Paper notification extended to October 1, 2026";
-      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      icon.setAttribute("class", "size-4");
-      icon.setAttribute("viewBox", "0 0 24 24");
-      icon.setAttribute("fill", "none");
-      icon.setAttribute("stroke", "currentColor");
-      icon.setAttribute("stroke-width", "1.5");
-      icon.setAttribute("aria-hidden", "true");
-      const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      iconPath.setAttribute("stroke-linecap", "round");
-      iconPath.setAttribute("stroke-linejoin", "round");
-      iconPath.setAttribute(
-        "d",
-        "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z",
-      );
-      icon.append(iconPath);
-      badge.append(icon);
-      link.classList.add("gap-2");
-      link.append(badge);
-
-      if (link.closest("details") === mobileMenu) {
-        mobileMenu.addEventListener("toggle", () => {
-          if (mobileMenu.open) animateBadge(badge);
-        });
-      } else if (desktopQuery.matches) {
-        animateBadge(badge);
-      }
+    const markerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) onscreenMarkers.add(entry.target);
+        else onscreenMarkers.delete(entry.target);
+      });
+      syncMarkerAnimation();
     });
+    markers.forEach(({ marker }) => markerObserver.observe(marker));
+
+    reducedMotion.addEventListener("change", syncMarkerAnimation);
+    desktopMenu.addEventListener("change", syncMarkerAnimation);
+    navigation.querySelectorAll("details").forEach((details) => {
+      details.addEventListener("toggle", syncMarkerAnimation);
+    });
+    document.addEventListener("visibilitychange", syncMarkerAnimation);
+    syncMarkerAnimation();
 
     const disclosures = Array.from(navigation.querySelectorAll("details"));
     navigation.addEventListener("click", (event) => {
