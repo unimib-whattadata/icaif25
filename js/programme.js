@@ -33,6 +33,27 @@
     });
   };
 
+  // Parallel sessions share one stop; ordering does not depend on source rows.
+  const groupTimelineStops = (sessions) => {
+    const groups = new Map();
+    sessions.forEach((session) => {
+      const key = `${session.date}-${session.start}`;
+      if (!groups.has(key)) groups.set(key, { key, date: session.date, start: session.start, sessionIds: [] });
+      groups.get(key).sessionIds.push(session.id);
+    });
+    return [...groups.values()].sort((a, b) => a.key.localeCompare(b.key));
+  };
+
+  // Before the schedule, select its first stop; below it, retain the last stop.
+  const timelineIndexAtPosition = (headingTops, threshold) => {
+    if (!headingTops.length) return -1;
+    let index = 0;
+    headingTops.forEach((top, candidate) => {
+      if (top <= threshold) index = candidate;
+    });
+    return index;
+  };
+
   // The strict interval boundaries let a visitor save consecutive sessions.
   // Registration, refreshment breaks and social events do not occupy a track.
   const findConflicts = (sessions, savedIds) => {
@@ -188,7 +209,7 @@
   };
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme };
+    module.exports = { filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
   }
   if (typeof document === "undefined") return;
 
@@ -206,6 +227,7 @@
 
   const staticFallback = () => {
     [...articles, ...slots, ...days].forEach((element) => { element.hidden = false; });
+    slots.forEach((element) => { element.removeAttribute("aria-current"); });
     [...controls, ...saveButtons].forEach((element) => { element.hidden = true; });
     selectAll("[data-programme-conflict]").forEach((element) => { element.hidden = true; });
     if (storageNote) storageNote.hidden = true;
@@ -271,6 +293,186 @@
     const announce = (message) => {
       if (feedback) feedback.textContent = message;
     };
+
+    const timeline = document.querySelector("[data-programme-timeline]");
+    const timelineDay = timeline && timeline.querySelector("select[data-timeline-day]");
+    const timelineRange = timeline && timeline.querySelector("[data-timeline-range]");
+    const timelinePrevious = timeline && timeline.querySelector("[data-timeline-previous]");
+    const timelineNext = timeline && timeline.querySelector("[data-timeline-next]");
+    const timelineTime = timeline && timeline.querySelector("[data-timeline-time]");
+    const timelinePosition = timeline && timeline.querySelector("[data-timeline-position]");
+    const timelineStart = timeline && timeline.querySelector("[data-timeline-start]");
+    const timelineEnd = timeline && timeline.querySelector("[data-timeline-end]");
+    const timelineEmpty = timeline && timeline.querySelector("[data-timeline-empty]");
+    if (timeline && [timelineDay, timelineRange, timelinePrevious, timelineNext,
+      timelineTime, timelinePosition, timelineStart, timelineEnd, timelineEmpty].some((element) => !element)) {
+      throw new Error("Timeline controls are unavailable.");
+    }
+    const slotByKey = new Map(slotGroups.map((group) => [
+      `${group.element.dataset.timelineDay}-${group.element.dataset.timelineTime}`, group.element,
+    ]));
+    if (timeline && groupTimelineStops(sessions).some((stop) => !slotByKey.has(stop.key))) {
+      throw new Error("Timeline markup does not match its data.");
+    }
+    const shortDayFormatter = new Intl.DateTimeFormat("en-GB", {
+      weekday: "short", day: "numeric", month: "short", timeZone: "UTC",
+    });
+    let visibleStops = [];
+    let activeStopKey = null;
+    let dayOptionsKey = null;
+    let scrollFrame = null;
+    let pendingScroll = null;
+    let pendingTimer = null;
+    let draggingRange = false;
+    const scrollY = () => window.scrollY || window.pageYOffset || 0;
+    const navigationHeight = () => {
+      const navigation = document.querySelector(".site-nav");
+      return navigation ? navigation.getBoundingClientRect().height : 0;
+    };
+    const preserveTimelineFocus = (focused) => {
+      if (!timeline || !focused || !timeline.contains(focused) || !focused.disabled) return;
+      const target = [timelineRange, timelineDay].find((element) => !element.disabled) || timeline;
+      if (target === timeline) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+    };
+    const updateTimeline = (stop) => {
+      if (!timeline) return;
+      const focused = document.activeElement;
+      const availableDays = [...new Set(visibleStops.map((item) => item.date))];
+      const optionsKey = availableDays.join(",");
+      if (optionsKey !== dayOptionsKey) {
+        // Reuse the select itself so changing matches never discards its focus.
+        timelineDay.replaceChildren(...availableDays.map((date) => {
+          const option = document.createElement("option");
+          option.value = date;
+          option.textContent = shortDayFormatter.format(new Date(`${date}T12:00:00Z`));
+          return option;
+        }));
+        dayOptionsKey = optionsKey;
+      }
+      const index = stop ? visibleStops.findIndex((item) => item.key === stop.key) : -1;
+      const dayStops = stop ? visibleStops.filter((item) => item.date === stop.date) : [];
+      activeStopKey = stop ? stop.key : null;
+      slots.forEach((element) => {
+        if (stop && slotByKey.get(stop.key) === element) element.setAttribute("aria-current", "step");
+        else element.removeAttribute("aria-current");
+      });
+      timelineDay.disabled = !stop;
+      if (stop) timelineDay.value = stop.date;
+      timelineRange.min = "0";
+      timelineRange.max = String(Math.max(1, dayStops.length - 1));
+      timelineRange.value = String(stop ? dayStops.findIndex((item) => item.key === stop.key) : 0);
+      timelineRange.disabled = dayStops.length < 2;
+      timelineRange.setAttribute("aria-valuetext", stop
+        ? `${dayLabels.get(stop.date)}, ${stop.start} CET, time ${Number(timelineRange.value) + 1} of ${dayStops.length}`
+        : "No sessions match these filters");
+      timelinePrevious.disabled = index <= 0;
+      timelineNext.disabled = index < 0 || index === visibleStops.length - 1;
+      timelineTime.textContent = stop ? stop.start : "—";
+      timelinePosition.textContent = stop ? `${index + 1} / ${visibleStops.length}` : "0 / 0";
+      timelineStart.textContent = dayStops.length ? dayStops[0].start : "—";
+      timelineEnd.textContent = dayStops.length ? dayStops[dayStops.length - 1].start : "—";
+      timelineEmpty.hidden = Boolean(stop);
+      preserveTimelineFocus(focused);
+    };
+    const clearPendingScroll = () => {
+      pendingScroll = null;
+      window.clearTimeout(pendingTimer);
+      pendingTimer = null;
+    };
+    const syncTimelineToScroll = () => {
+      scrollFrame = null;
+      if (!timeline || !visibleStops.length || draggingRange) return;
+      if (pendingScroll) {
+        if (Math.abs(scrollY() - pendingScroll.top) > 3) return;
+        clearPendingScroll();
+        // Keep the chosen stop through the final frame of an intentional jump.
+        return;
+      }
+      const index = timelineIndexAtPosition(visibleStops.map((stop) => {
+        const element = slotByKey.get(stop.key);
+        return (element.querySelector("h3") || element).getBoundingClientRect().top;
+      }), navigationHeight() + 32);
+      const stop = visibleStops[index];
+      if (stop.key !== activeStopKey) updateTimeline(stop);
+    };
+    const scheduleTimelineSync = () => {
+      if (timeline && scrollFrame === null) scrollFrame = window.requestAnimationFrame(syncTimelineToScroll);
+    };
+    const navigateTimeline = (stop) => {
+      if (!stop) return;
+      clearPendingScroll();
+      updateTimeline(stop);
+      const element = slotByKey.get(stop.key);
+      const destination = element.getBoundingClientRect().top + scrollY() - navigationHeight() - 16;
+      const maximum = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      pendingScroll = { top: Math.min(maximum, Math.max(0, destination)) };
+      pendingTimer = window.setTimeout(() => {
+        clearPendingScroll();
+        scheduleTimelineSync();
+      }, 900);
+      const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: pendingScroll.top, behavior: reducedMotion ? "auto" : "smooth" });
+      const index = visibleStops.findIndex((item) => item.key === stop.key);
+      announce(`${dayLabels.get(stop.date)}, ${stop.start} CET. Time ${index + 1} of ${visibleStops.length}.`);
+      scheduleTimelineSync();
+    };
+    const renderTimeline = (visible) => {
+      if (!timeline) return;
+      const nextStops = groupTimelineStops(visible);
+      if (nextStops.map((stop) => stop.key).join(",") !== visibleStops.map((stop) => stop.key).join(",")) {
+        clearPendingScroll();
+        visibleStops = nextStops;
+      }
+      updateTimeline(visibleStops.find((stop) => stop.key === activeStopKey) || visibleStops[0]);
+      scheduleTimelineSync();
+    };
+    if (timeline) {
+      timelineDay.addEventListener("change", () => {
+        navigateTimeline(visibleStops.find((stop) => stop.date === timelineDay.value));
+      });
+      timelineRange.addEventListener("input", () => {
+        const dayStops = visibleStops.filter((stop) => stop.date === timelineDay.value);
+        navigateTimeline(dayStops[Number(timelineRange.value)]);
+      });
+      timelinePrevious.addEventListener("click", () => {
+        const index = visibleStops.findIndex((stop) => stop.key === activeStopKey);
+        navigateTimeline(visibleStops[index - 1]);
+      });
+      timelineNext.addEventListener("click", () => {
+        const index = visibleStops.findIndex((stop) => stop.key === activeStopKey);
+        navigateTimeline(visibleStops[index + 1]);
+      });
+      const endDrag = () => {
+        draggingRange = false;
+        scheduleTimelineSync();
+      };
+      if ("PointerEvent" in window) {
+        timelineRange.addEventListener("pointerdown", () => { draggingRange = true; });
+        window.addEventListener("pointerup", endDrag);
+        window.addEventListener("pointercancel", endDrag);
+      } else {
+        timelineRange.addEventListener("mousedown", () => { draggingRange = true; });
+        timelineRange.addEventListener("touchstart", () => { draggingRange = true; }, { passive: true });
+        window.addEventListener("mouseup", endDrag);
+        window.addEventListener("touchend", endDrag);
+        window.addEventListener("touchcancel", endDrag);
+      }
+      window.addEventListener("scroll", scheduleTimelineSync, { passive: true });
+      window.addEventListener("resize", scheduleTimelineSync);
+      if ("onscrollend" in window) window.addEventListener("scrollend", () => {
+        clearPendingScroll();
+        scheduleTimelineSync();
+      });
+      window.addEventListener("wheel", () => {
+        clearPendingScroll();
+        scheduleTimelineSync();
+      }, { passive: true });
+      window.addEventListener("touchstart", (event) => {
+        if (!timeline.contains(event.target)) clearPendingScroll();
+      }, { passive: true });
+      document.addEventListener("toggle", scheduleTimelineSync, true);
+    }
 
     const persistSavedIds = () => {
       if (!storageAvailable) return;
@@ -348,6 +550,7 @@
             ? `No ${state.saved ? "saved " : ""}sessions match on this day. Try all days or clear the filters.`
             : `No ${state.saved ? "saved " : ""}sessions match these filters. Clear them to see the programme.`;
       }
+      renderTimeline(visible);
     };
 
     const writeUrl = (method = "replace", preserveHash = false) => {

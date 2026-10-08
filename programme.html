@@ -150,10 +150,10 @@
       }
     </script>
     <!-- Heroicons -->
-    <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026100804">
-      <link rel="stylesheet" href="css/programme.css?v=2026100802">
-    <script src="js/programme.js?v=2026100803" defer></script>
+    <script src="js/heroicons.js?v=2026100801" defer></script>
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026100805">
+      <link rel="stylesheet" href="css/programme.css?v=2026100803">
+    <script src="js/programme.js?v=2026100804" defer></script>
   </head>
   <body data-page="programme" class="font-sans antialiased min-w-0">
     <!-- Skip to main content link for accessibility -->
@@ -417,7 +417,7 @@
         </div>
       </div>
 
-      <div class="site-container programme-content">
+      <div id="programme-timeline" class="site-container programme-content">
         <noscript><p class="programme-source-note">The complete programme is shown below. Enable JavaScript to use search, filters and a personal agenda.</p></noscript>
         <div class="programme-results-toolbar">
           <div>
@@ -446,12 +446,14 @@
             <h2 id="programme-2026-11-14">Saturday, November 14</h2>
             <p>Workshops &amp; tutorials</p>
           </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T08:15:00+01:00">08:15</time></h3>
+          <ol class="timeline timeline-vertical programme-timeline">
+          <li id="programme-slot-2026-11-14-0815" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="08:15">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T08:15:00+01:00">08:15</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-0815-d6a256c1" class="programme-session" data-programme-session="session-2026-11-14-0815-d6a256c1" data-type="registration">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -468,13 +470,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T08:30:00+01:00">08:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-0830" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="08:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T08:30:00+01:00">08:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-0830-4510e643" class="programme-session" data-programme-session="session-2026-11-14-0830-4510e643" data-type="workshop">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -536,13 +540,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T10:30:00+01:00">10:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1030" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="10:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T10:30:00+01:00">10:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1030-b3f353e4" class="programme-session" data-programme-session="session-2026-11-14-1030-b3f353e4" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -559,13 +565,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T11:00:00+01:00">11:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1100" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="11:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T11:00:00+01:00">11:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1100-5bbbca80" class="programme-session" data-programme-session="session-2026-11-14-1100-5bbbca80" data-type="workshop">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -627,13 +635,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T13:00:00+01:00">13:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1300" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="13:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T13:00:00+01:00">13:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1300-4ac57637" class="programme-session" data-programme-session="session-2026-11-14-1300-4ac57637" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -650,13 +660,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T14:00:00+01:00">14:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1400" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="14:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T14:00:00+01:00">14:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1400-4b28d345" class="programme-session" data-programme-session="session-2026-11-14-1400-4b28d345" data-type="workshop">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -718,13 +730,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T16:00:00+01:00">16:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1600" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="16:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T16:00:00+01:00">16:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1600-8396b7fd" class="programme-session" data-programme-session="session-2026-11-14-1600-8396b7fd" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -741,13 +755,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-14T16:30:00+01:00">16:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-14-1630" class="programme-slot" data-programme-slot data-timeline-day="2026-11-14" data-timeline-time="16:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-14T16:30:00+01:00">16:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-14-1630-29530011" class="programme-session" data-programme-session="session-2026-11-14-1630-29530011" data-type="workshop">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -809,19 +825,23 @@
                 </div>
               </article>
             </div>
-          </div>
+            <hr aria-hidden="true">
+          </li>
+          </ol>
         </section>
         <section class="programme-day" data-programme-day="2026-11-15" aria-labelledby="programme-2026-11-15">
           <div class="programme-day-heading">
             <h2 id="programme-2026-11-15">Sunday, November 15</h2>
             <p>Workshops, tutorials &amp; industry</p>
           </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T08:15:00+01:00">08:15</time></h3>
+          <ol class="timeline timeline-vertical programme-timeline">
+          <li id="programme-slot-2026-11-15-0815" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="08:15">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T08:15:00+01:00">08:15</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-0815-50c92879" class="programme-session" data-programme-session="session-2026-11-15-0815-50c92879" data-type="registration">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -838,13 +858,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T08:30:00+01:00">08:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-0830" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="08:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T08:30:00+01:00">08:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-0830-203ab15f" class="programme-session" data-programme-session="session-2026-11-15-0830-203ab15f" data-type="industry">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -906,13 +928,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T10:30:00+01:00">10:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1030" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="10:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T10:30:00+01:00">10:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1030-e9979a58" class="programme-session" data-programme-session="session-2026-11-15-1030-e9979a58" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -929,13 +953,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T11:00:00+01:00">11:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1100" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="11:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T11:00:00+01:00">11:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1100-45f5794e" class="programme-session" data-programme-session="session-2026-11-15-1100-45f5794e" data-type="competition">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -997,13 +1023,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T13:00:00+01:00">13:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1300" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="13:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T13:00:00+01:00">13:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1300-4f2dcd7f" class="programme-session" data-programme-session="session-2026-11-15-1300-4f2dcd7f" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1020,13 +1048,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T14:00:00+01:00">14:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1400" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="14:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T14:00:00+01:00">14:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1400-9a3ba770" class="programme-session" data-programme-session="session-2026-11-15-1400-9a3ba770" data-type="industry">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1088,13 +1118,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T16:00:00+01:00">16:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1600" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="16:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T16:00:00+01:00">16:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1600-b70e54ff" class="programme-session" data-programme-session="session-2026-11-15-1600-b70e54ff" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1111,13 +1143,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T16:30:00+01:00">16:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1630" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="16:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T16:30:00+01:00">16:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1630-b7767d9f" class="programme-session" data-programme-session="session-2026-11-15-1630-b7767d9f" data-type="competition">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1179,13 +1213,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-15T19:00:00+01:00">19:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-15-1900" class="programme-slot" data-programme-slot data-timeline-day="2026-11-15" data-timeline-time="19:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-15T19:00:00+01:00">19:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-15-1900-36beb319" class="programme-session" data-programme-session="session-2026-11-15-1900-36beb319" data-type="social">
                 <div class="programme-session-meta">
                   <p class="programme-room">Università statale di Milano</p>
@@ -1202,19 +1238,23 @@
                 </div>
               </article>
             </div>
-          </div>
+            <hr aria-hidden="true">
+          </li>
+          </ol>
         </section>
         <section class="programme-day" data-programme-day="2026-11-16" aria-labelledby="programme-2026-11-16">
           <div class="programme-day-heading">
             <h2 id="programme-2026-11-16">Monday, November 16</h2>
             <p>Main conference</p>
           </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T08:00:00+01:00">08:00</time></h3>
+          <ol class="timeline timeline-vertical programme-timeline">
+          <li id="programme-slot-2026-11-16-0800" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="08:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T08:00:00+01:00">08:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-0800-fa377091" class="programme-session" data-programme-session="session-2026-11-16-0800-fa377091" data-type="registration">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1231,13 +1271,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T08:30:00+01:00">08:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-0830" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="08:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T08:30:00+01:00">08:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-0830-527b37eb" class="programme-session" data-programme-session="session-2026-11-16-0830-527b37eb" data-type="opening">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1254,13 +1296,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T09:00:00+01:00">09:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-0900" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="09:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T09:00:00+01:00">09:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-0900-6927e0f4" class="programme-session" data-programme-session="session-2026-11-16-0900-6927e0f4" data-type="keynote">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1277,13 +1321,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T09:40:00+01:00">09:40</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-0940" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="09:40">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T09:40:00+01:00">09:40</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-0940-8f01d4db" class="programme-session" data-programme-session="session-2026-11-16-0940-8f01d4db" data-type="panel">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1300,13 +1346,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T10:30:00+01:00">10:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1030" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="10:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T10:30:00+01:00">10:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1030-2cdf9065" class="programme-session" data-programme-session="session-2026-11-16-1030-2cdf9065" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1323,13 +1371,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T11:00:00+01:00">11:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1100" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="11:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T11:00:00+01:00">11:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1100-fa6e1e7b" class="programme-session" data-programme-session="session-2026-11-16-1100-fa6e1e7b" data-type="oral-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1391,13 +1441,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T13:00:00+01:00">13:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1300" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="13:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T13:00:00+01:00">13:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1300-cc7b4be2" class="programme-session" data-programme-session="session-2026-11-16-1300-cc7b4be2" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1414,13 +1466,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T14:00:00+01:00">14:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1400" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="14:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T14:00:00+01:00">14:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1400-e841c9f8" class="programme-session" data-programme-session="session-2026-11-16-1400-e841c9f8" data-type="panel">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1437,13 +1491,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T15:00:00+01:00">15:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1500" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="15:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T15:00:00+01:00">15:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1500-3ad031f7" class="programme-session" data-programme-session="session-2026-11-16-1500-3ad031f7" data-type="oral-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1505,13 +1561,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T16:00:00+01:00">16:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1600" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="16:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T16:00:00+01:00">16:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1600-b11f9a03" class="programme-session" data-programme-session="session-2026-11-16-1600-b11f9a03" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1528,13 +1586,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T16:30:00+01:00">16:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1630" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="16:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T16:30:00+01:00">16:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1630-e8c7e402" class="programme-session" data-programme-session="session-2026-11-16-1630-e8c7e402" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1596,13 +1656,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-16T19:00:00+01:00">19:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-16-1900" class="programme-slot" data-programme-slot data-timeline-day="2026-11-16" data-timeline-time="19:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-16T19:00:00+01:00">19:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-16-1900-9e880812" class="programme-session" data-programme-session="session-2026-11-16-1900-9e880812" data-type="banquet">
                 <div class="programme-session-meta">
                   <p class="programme-room">Museo della Scienza e della Tecnica</p>
@@ -1619,19 +1681,23 @@
                 </div>
               </article>
             </div>
-          </div>
+            <hr aria-hidden="true">
+          </li>
+          </ol>
         </section>
         <section class="programme-day" data-programme-day="2026-11-17" aria-labelledby="programme-2026-11-17">
           <div class="programme-day-heading">
             <h2 id="programme-2026-11-17">Tuesday, November 17</h2>
             <p>Main conference</p>
           </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T08:30:00+01:00">08:30</time></h3>
+          <ol class="timeline timeline-vertical programme-timeline">
+          <li id="programme-slot-2026-11-17-0830" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="08:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T08:30:00+01:00">08:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-0830-4e8f7db5" class="programme-session" data-programme-session="session-2026-11-17-0830-4e8f7db5" data-type="registration">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1648,13 +1714,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T09:00:00+01:00">09:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-0900" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="09:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T09:00:00+01:00">09:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-0900-047a62eb" class="programme-session" data-programme-session="session-2026-11-17-0900-047a62eb" data-type="keynote">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1671,13 +1739,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T10:00:00+01:00">10:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1000" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="10:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T10:00:00+01:00">10:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1000-73c00cdc" class="programme-session" data-programme-session="session-2026-11-17-1000-73c00cdc" data-type="oral-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1739,13 +1809,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T11:00:00+01:00">11:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1100" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="11:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T11:00:00+01:00">11:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1100-04fc1ec0" class="programme-session" data-programme-session="session-2026-11-17-1100-04fc1ec0" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1762,13 +1834,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T11:30:00+01:00">11:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1130" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="11:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T11:30:00+01:00">11:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1130-c272ddcd" class="programme-session" data-programme-session="session-2026-11-17-1130-c272ddcd" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1830,13 +1904,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T13:10:00+01:00">13:10</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1310" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="13:10">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T13:10:00+01:00">13:10</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1310-47b98b3c" class="programme-session" data-programme-session="session-2026-11-17-1310-47b98b3c" data-type="break">
                 <div class="programme-session-meta">
                   <p class="programme-room">Foyer</p>
@@ -1853,13 +1929,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T14:00:00+01:00">14:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1400" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="14:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T14:00:00+01:00">14:00</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1400-005044df" class="programme-session" data-programme-session="session-2026-11-17-1400-005044df" data-type="keynote">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1876,13 +1954,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T14:30:00+01:00">14:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1430" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="14:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T14:30:00+01:00">14:30</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1430-232a33f0" class="programme-session" data-programme-session="session-2026-11-17-1430-232a33f0" data-type="oral-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -1944,13 +2024,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T15:30:00+01:00">15:30</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1530" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="15:30">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T15:30:00+01:00">15:30</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1530-4e2fb9a9" class="programme-session" data-programme-session="session-2026-11-17-1530-4e2fb9a9" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">To be confirmed</p>
@@ -1967,13 +2049,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T16:00:00+01:00">16:00</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1600" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="16:00">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T16:00:00+01:00">16:00</time></h3>
               <p>4 parallel sessions</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1600-fd612ee9" class="programme-session" data-programme-session="session-2026-11-17-1600-fd612ee9" data-type="poster-session">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -2035,13 +2119,15 @@
                 </div>
               </article>
             </div>
-          </div>
-          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="2026-11-17T17:40:00+01:00">17:40</time></h3>
+            <hr aria-hidden="true">
+          </li>
+          <li id="programme-slot-2026-11-17-1740" class="programme-slot" data-programme-slot data-timeline-day="2026-11-17" data-timeline-time="17:40">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="2026-11-17T17:40:00+01:00">17:40</time></h3>
               <p>Scheduled session</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
               <article id="session-2026-11-17-1740-e48fc3b9" class="programme-session" data-programme-session="session-2026-11-17-1740-e48fc3b9" data-type="closing">
                 <div class="programme-session-meta">
                   <p class="programme-room">Main Hall</p>
@@ -2058,10 +2144,36 @@
                 </div>
               </article>
             </div>
-          </div>
+            <hr aria-hidden="true">
+          </li>
+          </ol>
         </section>
         <p class="programme-closing-note">Looking for workshop calls and organizing teams? <a class="link" href="/workshop/">Explore the workshops</a>.</p>
       </div>
+      <nav class="programme-navigator" aria-label="Timeline navigator" aria-controls="programme-timeline" data-programme-timeline data-programme-controls hidden>
+        <div class="programme-navigator-title">
+          <p>Timeline</p>
+          <span data-timeline-position aria-hidden="true">1 / 40</span>
+        </div>
+        <label class="sr-only" for="programme-timeline-day">Timeline day</label>
+        <select id="programme-timeline-day" class="select programme-navigator-day" data-timeline-day>
+          <option value="2026-11-14">Sat 14 November</option>
+          <option value="2026-11-15">Sun 15 November</option>
+          <option value="2026-11-16">Mon 16 November</option>
+          <option value="2026-11-17">Tue 17 November</option>
+        </select>
+        <div class="programme-navigator-stepper">
+          <button type="button" class="btn" aria-label="Previous time slot" data-timeline-previous><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i></button>
+          <p class="programme-navigator-time"><span data-timeline-time>08:15</span> <small>CET</small></p>
+          <button type="button" class="btn" aria-label="Next time slot" data-timeline-next><i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></button>
+        </div>
+        <div class="programme-navigator-slider">
+          <label class="sr-only" for="programme-timeline-position">Scroll the timeline</label>
+          <input id="programme-timeline-position" type="range" class="range" min="0" max="1" value="0" step="1" aria-controls="programme-timeline" data-timeline-range>
+          <div class="programme-navigator-limits" aria-hidden="true"><span data-timeline-start>08:15</span><span data-timeline-end>16:30</span></div>
+        </div>
+        <p class="programme-navigator-empty" data-timeline-empty hidden>No sessions match. Adjust the filters above.</p>
+      </nav>
       <script id="programme-data" type="application/json">{"version":1,"updated":"2026-10-08","timezone":"Europe/Rome","days":[{"date":"2026-11-14","label":"Saturday","subtitle":"Workshops & tutorials"},{"date":"2026-11-15","label":"Sunday","subtitle":"Workshops, tutorials & industry"},{"date":"2026-11-16","label":"Monday","subtitle":"Main conference"},{"date":"2026-11-17","label":"Tuesday","subtitle":"Main conference"}],"sessions":[{"id":"session-2026-11-14-0815-d6a256c1","date":"2026-11-14","start":"08:15","end":"17:00","title":"Registration","type":"registration","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-0830-4510e643","date":"2026-11-14","start":"08:30","end":"10:30","title":"The 3rd Workshop on LLMs and Generative AI for Finance","type":"workshop","room":"Main Hall","detail":"","pending":false,"href":"/workshop/#llms-generative-ai-finance"},{"id":"session-2026-11-14-0830-17fbd276","date":"2026-11-14","start":"08:30","end":"10:30","title":"Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#reinforcement-learning-llm-agents"},{"id":"session-2026-11-14-0830-3b5f3844","date":"2026-11-14","start":"08:30","end":"10:30","title":"RAIOps4Fin - Applied Responsible AI Operations for Finance","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#responsible-ai-operations-finance"},{"id":"session-2026-11-14-0830-89ea7c38","date":"2026-11-14","start":"08:30","end":"10:30","title":"Trustworthy Document Intelligence in Finance","type":"tutorial","room":"Room 3","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1030-b3f353e4","date":"2026-11-14","start":"10:30","end":"11:00","title":"Coffee Break","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1100-bb66de44","date":"2026-11-14","start":"11:00","end":"13:00","title":"Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#reinforcement-learning-llm-agents"},{"id":"session-2026-11-14-1100-5bbbca80","date":"2026-11-14","start":"11:00","end":"13:00","title":"The 3rd Workshop on LLMs and Generative AI for Finance","type":"workshop","room":"Main Hall","detail":"","pending":false,"href":"/workshop/#llms-generative-ai-finance"},{"id":"session-2026-11-14-1100-204308b0","date":"2026-11-14","start":"11:00","end":"13:00","title":"RAIOps4Fin - Applied Responsible AI Operations for Finance","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#responsible-ai-operations-finance"},{"id":"session-2026-11-14-1100-6193b532","date":"2026-11-14","start":"11:00","end":"13:00","title":"Amortized Bayesian Calibration of Volatility Models","type":"tutorial","room":"Room 3","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1300-4ac57637","date":"2026-11-14","start":"13:00","end":"14:00","title":"Buffet Lunch","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1400-c356c179","date":"2026-11-14","start":"14:00","end":"16:00","title":"AI-Driven Market Microstructure in Centralized and Decentralized Finance","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#ai-market-microstructure"},{"id":"session-2026-11-14-1400-4b28d345","date":"2026-11-14","start":"14:00","end":"16:00","title":"The 3rd Workshop on LLMs and Generative AI for Finance","type":"workshop","room":"Main Hall","detail":"","pending":false,"href":"/workshop/#llms-generative-ai-finance"},{"id":"session-2026-11-14-1400-d1b15a2a","date":"2026-11-14","start":"14:00","end":"16:00","title":"Women in AI and Finance","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#women-ai-finance"},{"id":"session-2026-11-14-1400-b647c461","date":"2026-11-14","start":"14:00","end":"16:00","title":"Knowing When to Trust the Model: Confidence, Calibration, and Selective Prediction for LLMs in Finance","type":"tutorial","room":"Room 3","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1600-8396b7fd","date":"2026-11-14","start":"16:00","end":"16:30","title":"Coffee Break","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-14-1630-d5016ead","date":"2026-11-14","start":"16:30","end":"18:00","title":"AI-Driven Market Microstructure in Centralized and Decentralized Finance","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#ai-market-microstructure"},{"id":"session-2026-11-14-1630-29530011","date":"2026-11-14","start":"16:30","end":"18:00","title":"The 3rd Workshop on LLMs and Generative AI for Finance","type":"workshop","room":"Main Hall","detail":"","pending":false,"href":"/workshop/#llms-generative-ai-finance"},{"id":"session-2026-11-14-1630-28c2961d","date":"2026-11-14","start":"16:30","end":"18:00","title":"Women in AI and Finance","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#women-ai-finance"},{"id":"session-2026-11-14-1630-3bc07a3b","date":"2026-11-14","start":"16:30","end":"18:00","title":"Trading Agent Competition awards","type":"competition","room":"Room 3","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-0815-50c92879","date":"2026-11-15","start":"08:15","end":"09:00","title":"Registration","type":"registration","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-0830-203ab15f","date":"2026-11-15","start":"08:30","end":"10:30","title":"FINOS demo & panel","type":"industry","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-0830-a97e0ee8","date":"2026-11-15","start":"08:30","end":"10:30","title":"Financial AI Security, Privacy, and Safety","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#financial-ai-security"},{"id":"session-2026-11-15-0830-f9b91f91","date":"2026-11-15","start":"08:30","end":"10:30","title":"First Workshop on Multimodal and Foundation Models in Banking (MFMB)","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#multimodal-foundation-models-banking"},{"id":"session-2026-11-15-0830-86fdc679","date":"2026-11-15","start":"08:30","end":"10:30","title":"Financial Agents in the Wild: Architectures, Evaluation, and Open Challenges","type":"tutorial","room":"Room 3","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1030-e9979a58","date":"2026-11-15","start":"10:30","end":"11:00","title":"Coffee Break","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1100-45f5794e","date":"2026-11-15","start":"11:00","end":"13:00","title":"DXC session + Perpetual Alpha Competition awards","type":"competition","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1100-de4273d4","date":"2026-11-15","start":"11:00","end":"13:00","title":"Financial AI Security, Privacy, and Safety","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#financial-ai-security"},{"id":"session-2026-11-15-1100-0898293f","date":"2026-11-15","start":"11:00","end":"13:00","title":"First Workshop on Multimodal and Foundation Models in Banking (MFMB)","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#multimodal-foundation-models-banking"},{"id":"session-2026-11-15-1100-62ef29b2","date":"2026-11-15","start":"11:00","end":"13:00","title":"Session to be confirmed","type":"tbc","room":"Room 3","detail":"","pending":true,"href":""},{"id":"session-2026-11-15-1300-4f2dcd7f","date":"2026-11-15","start":"13:00","end":"14:00","title":"Buffet Lunch","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1400-ead6c463","date":"2026-11-15","start":"14:00","end":"16:00","title":"IAFM'26: Interpretability and Alignment of Financial Models.","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#interpretability-alignment-financial-models"},{"id":"session-2026-11-15-1400-0b0c32d3","date":"2026-11-15","start":"14:00","end":"16:00","title":"Structuring the Unstructured: AI in Private Markets","type":"workshop","room":"Room 3","detail":"","pending":false,"href":"/workshop/#ai-private-markets"},{"id":"session-2026-11-15-1400-9a3ba770","date":"2026-11-15","start":"14:00","end":"16:00","title":"ADIA Session","type":"industry","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1400-bcb048d0","date":"2026-11-15","start":"14:00","end":"16:00","title":"Quantum-Enhanced AI for Financial Decision-Making","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#quantum-enhanced-ai"},{"id":"session-2026-11-15-1600-b70e54ff","date":"2026-11-15","start":"16:00","end":"16:30","title":"Coffee Break","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1630-b7767d9f","date":"2026-11-15","start":"16:30","end":"18:00","title":"QubeRT Startup Pitch Session","type":"competition","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-15-1630-2bca2dec","date":"2026-11-15","start":"16:30","end":"18:00","title":"Quantum-Enhanced AI for Financial Decision-Making","type":"workshop","room":"Room 1","detail":"","pending":false,"href":"/workshop/#quantum-enhanced-ai"},{"id":"session-2026-11-15-1630-5de22243","date":"2026-11-15","start":"16:30","end":"18:00","title":"IAFM'26: Interpretability and Alignment of Financial Models.","type":"workshop","room":"Room 2","detail":"","pending":false,"href":"/workshop/#interpretability-alignment-financial-models"},{"id":"session-2026-11-15-1630-8c3b9441","date":"2026-11-15","start":"16:30","end":"18:00","title":"Structuring the Unstructured: AI in Private Markets","type":"workshop","room":"Room 3","detail":"","pending":false,"href":"/workshop/#ai-private-markets"},{"id":"session-2026-11-15-1900-36beb319","date":"2026-11-15","start":"19:00","end":"22:00","title":"Welcome Reception","type":"social","room":"Università statale di Milano","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-0800-fa377091","date":"2026-11-16","start":"08:00","end":"11:30","title":"Registration","type":"registration","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-0830-527b37eb","date":"2026-11-16","start":"08:30","end":"09:00","title":"Conference Opening","type":"opening","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-0900-6927e0f4","date":"2026-11-16","start":"09:00","end":"09:40","title":"Keynote: Magazzeni","type":"keynote","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-0940-8f01d4db","date":"2026-11-16","start":"09:40","end":"10:30","title":"Panel discussion: Intesa, Domyn, Bloomberg & CFM","type":"panel","room":"Main Hall","detail":"Moderator: QRT.","pending":false,"href":""},{"id":"session-2026-11-16-1030-2cdf9065","date":"2026-11-16","start":"10:30","end":"11:00","title":"Coffee Break","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-1100-fa6e1e7b","date":"2026-11-16","start":"11:00","end":"13:00","title":"Oral Session 1","type":"oral-session","room":"Main Hall","detail":"6 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1100-84bb611c","date":"2026-11-16","start":"11:00","end":"13:00","title":"Oral Session 2","type":"oral-session","room":"Room 1","detail":"6 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1100-e3c6ae03","date":"2026-11-16","start":"11:00","end":"13:00","title":"Oral Session 3","type":"oral-session","room":"Room 2","detail":"6 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1100-baf4f8c4","date":"2026-11-16","start":"11:00","end":"13:00","title":"Oral Session 4","type":"oral-session","room":"Room 3","detail":"6 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1300-cc7b4be2","date":"2026-11-16","start":"13:00","end":"14:00","title":"Buffet Lunch","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-16-1400-e841c9f8","date":"2026-11-16","start":"14:00","end":"15:00","title":"Panel discussion","type":"panel","room":"Main Hall","detail":"Participants and moderator to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-16-1500-3ad031f7","date":"2026-11-16","start":"15:00","end":"16:00","title":"Oral Session 5","type":"oral-session","room":"Main Hall","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1500-6ce13ccb","date":"2026-11-16","start":"15:00","end":"16:00","title":"Oral Session 6","type":"oral-session","room":"Room 1","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1500-4b60594c","date":"2026-11-16","start":"15:00","end":"16:00","title":"Oral Session 7","type":"oral-session","room":"Room 2","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1500-4bedb909","date":"2026-11-16","start":"15:00","end":"16:00","title":"Oral Session 8","type":"oral-session","room":"Room 3","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-16-1600-b11f9a03","date":"2026-11-16","start":"16:00","end":"16:30","title":"Coffee Break + Poster Session 1","type":"poster-session","room":"Foyer","detail":"40 posters","pending":false,"href":""},{"id":"session-2026-11-16-1630-2a7abbbc","date":"2026-11-16","start":"16:30","end":"18:00","title":"Poster session","type":"poster-session","room":"Room 1","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-16-1630-d3cb279a","date":"2026-11-16","start":"16:30","end":"18:00","title":"Poster session","type":"poster-session","room":"Room 2","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-16-1630-8691dc79","date":"2026-11-16","start":"16:30","end":"18:00","title":"Poster session","type":"poster-session","room":"Room 3","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-16-1630-e8c7e402","date":"2026-11-16","start":"16:30","end":"18:00","title":"Poster session","type":"poster-session","room":"Main Hall","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-16-1900-9e880812","date":"2026-11-16","start":"19:00","end":"22:00","title":"Banquet dinner & awards","type":"banquet","room":"Museo della Scienza e della Tecnica","detail":"Speech by Marc Mézard.","pending":false,"href":""},{"id":"session-2026-11-17-0830-4e8f7db5","date":"2026-11-17","start":"08:30","end":"09:00","title":"Registration","type":"registration","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-17-0900-047a62eb","date":"2026-11-17","start":"09:00","end":"10:00","title":"Fireside chat: Savi + Micillo + Pasquali","type":"keynote","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-17-1000-73c00cdc","date":"2026-11-17","start":"10:00","end":"11:00","title":"Oral Session 5","type":"oral-session","room":"Main Hall","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1000-8f035608","date":"2026-11-17","start":"10:00","end":"11:00","title":"Oral Session 6","type":"oral-session","room":"Room 1","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1000-f1f08be7","date":"2026-11-17","start":"10:00","end":"11:00","title":"Oral Session 7","type":"oral-session","room":"Room 2","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1000-df7b25ee","date":"2026-11-17","start":"10:00","end":"11:00","title":"Oral Session 8","type":"oral-session","room":"Room 3","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1100-04fc1ec0","date":"2026-11-17","start":"11:00","end":"11:30","title":"Coffee Break + Poster Session 2","type":"poster-session","room":"Foyer","detail":"40 posters","pending":false,"href":""},{"id":"session-2026-11-17-1130-c272ddcd","date":"2026-11-17","start":"11:30","end":"13:00","title":"Poster session","type":"poster-session","room":"Main Hall","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1130-6c35cbdb","date":"2026-11-17","start":"11:30","end":"13:00","title":"Poster session","type":"poster-session","room":"Room 1","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1130-d33cd5de","date":"2026-11-17","start":"11:30","end":"13:00","title":"Poster session","type":"poster-session","room":"Room 2","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1130-552a69aa","date":"2026-11-17","start":"11:30","end":"13:00","title":"Poster session","type":"poster-session","room":"Room 3","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1310-47b98b3c","date":"2026-11-17","start":"13:10","end":"14:00","title":"Buffet Lunch","type":"break","room":"Foyer","detail":"","pending":false,"href":""},{"id":"session-2026-11-17-1400-005044df","date":"2026-11-17","start":"14:00","end":"14:30","title":"Keynote Pasquali","type":"keynote","room":"Main Hall","detail":"","pending":false,"href":""},{"id":"session-2026-11-17-1430-232a33f0","date":"2026-11-17","start":"14:30","end":"15:30","title":"Oral Session 9","type":"oral-session","room":"Main Hall","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1430-bb86f4ea","date":"2026-11-17","start":"14:30","end":"15:30","title":"Oral Session 10","type":"oral-session","room":"Room 2","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1430-7d128ef8","date":"2026-11-17","start":"14:30","end":"15:30","title":"Oral Session 11","type":"oral-session","room":"Room 3","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1430-97e6b91f","date":"2026-11-17","start":"14:30","end":"15:30","title":"Oral Session 12","type":"oral-session","room":"Room 1","detail":"3 presentations","pending":false,"href":""},{"id":"session-2026-11-17-1530-4e2fb9a9","date":"2026-11-17","start":"15:30","end":"16:00","title":"Coffee Break + Poster Session 3","type":"poster-session","room":"To be confirmed","detail":"40 posters","pending":true,"href":""},{"id":"session-2026-11-17-1600-fd612ee9","date":"2026-11-17","start":"16:00","end":"17:40","title":"Poster session","type":"poster-session","room":"Main Hall","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1600-83b11baa","date":"2026-11-17","start":"16:00","end":"17:40","title":"Poster session","type":"poster-session","room":"Room 2","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1600-e3a1df3b","date":"2026-11-17","start":"16:00","end":"17:40","title":"Poster session","type":"poster-session","room":"Room 3","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1600-0733ee69","date":"2026-11-17","start":"16:00","end":"17:40","title":"Poster session","type":"poster-session","room":"Room 1","detail":"Title and presentation details to be confirmed.","pending":true,"href":""},{"id":"session-2026-11-17-1740-e48fc3b9","date":"2026-11-17","start":"17:40","end":"18:00","title":"Farewell","type":"closing","room":"Main Hall","detail":"","pending":false,"href":""}]}</script>
     </main>
 

@@ -44,22 +44,26 @@ function renderDay(day) {
   const starts = [...new Set(sessions.map(session => session.start))].sort();
   const blocks = starts.map(start => {
     const current = sessions.filter(session => session.start === start).sort((a,b) => roomRank(a.room)-roomRank(b.room));
-    return `          <div class="programme-slot" data-programme-slot>
-            <div class="programme-slot-heading">
-              <h3><time datetime="${day.date}T${start}:00+01:00">${start}</time></h3>
+    return `          <li id="programme-slot-${day.date}-${start.replace(':','')}" class="programme-slot" data-programme-slot data-timeline-day="${day.date}" data-timeline-time="${start}">
+            <div class="timeline-start programme-slot-heading">
+              <h3 tabindex="-1"><time datetime="${day.date}T${start}:00+01:00">${start}</time></h3>
               <p>${current.length > 1 ? `${current.length} parallel sessions` : 'Scheduled session'}</p>
             </div>
-            <div class="programme-sessions">
+            <div class="timeline-middle" aria-hidden="true"><span class="programme-timeline-point"></span></div>
+            <div class="timeline-end programme-sessions">
 ${current.map(renderSession).join('\n')}
             </div>
-          </div>`;
+            <hr aria-hidden="true">
+          </li>`;
   });
   return `        <section class="programme-day" data-programme-day="${day.date}" aria-labelledby="programme-${day.date}">
           <div class="programme-day-heading">
             <h2 id="programme-${day.date}">${dateLabel(day.date)}</h2>
             <p>${escape(day.subtitle)}</p>
           </div>
+          <ol class="timeline timeline-vertical programme-timeline">
 ${blocks.join('\n')}
+          </ol>
         </section>`;
 }
 
@@ -116,7 +120,7 @@ ${roomOptions}
         </div>
       </div>
 
-      <div class="site-container programme-content">
+      <div id="programme-timeline" class="site-container programme-content">
         <noscript><p class="programme-source-note">The complete programme is shown below. Enable JavaScript to use search, filters and a personal agenda.</p></noscript>
         <div class="programme-results-toolbar">
           <div>
@@ -143,6 +147,27 @@ ${roomOptions}
 ${data.days.map(renderDay).join('\n')}
         <p class="programme-closing-note">Looking for workshop calls and organizing teams? <a class="link" href="/workshop/">Explore the workshops</a>.</p>
       </div>
+      <nav class="programme-navigator" aria-label="Timeline navigator" aria-controls="programme-timeline" data-programme-timeline data-programme-controls hidden>
+        <div class="programme-navigator-title">
+          <p>Timeline</p>
+          <span data-timeline-position aria-hidden="true">1 / ${new Set(data.sessions.map(session=>`${session.date}|${session.start}`)).size}</span>
+        </div>
+        <label class="sr-only" for="programme-timeline-day">Timeline day</label>
+        <select id="programme-timeline-day" class="select programme-navigator-day" data-timeline-day>
+${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,3)} ${Number(day.date.slice(-2))} November</option>`).join('\n')}
+        </select>
+        <div class="programme-navigator-stepper">
+          <button type="button" class="btn" aria-label="Previous time slot" data-timeline-previous><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i></button>
+          <p class="programme-navigator-time"><span data-timeline-time>08:15</span> <small>CET</small></p>
+          <button type="button" class="btn" aria-label="Next time slot" data-timeline-next><i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></button>
+        </div>
+        <div class="programme-navigator-slider">
+          <label class="sr-only" for="programme-timeline-position">Scroll the timeline</label>
+          <input id="programme-timeline-position" type="range" class="range" min="0" max="1" value="0" step="1" aria-controls="programme-timeline" data-timeline-range>
+          <div class="programme-navigator-limits" aria-hidden="true"><span data-timeline-start>08:15</span><span data-timeline-end>16:30</span></div>
+        </div>
+        <p class="programme-navigator-empty" data-timeline-empty hidden>No sessions match. Adjust the filters above.</p>
+      </nav>
       <script id="programme-data" type="application/json">${json}</script>
     </main>`;
 
@@ -160,7 +185,7 @@ if (fs.existsSync(destination)) {
     .replace(/\sclass="menu-active"/g,'').replace(/\saria-current="page"/g,'')
     .replace(/\n\s*<link[^>]*registration-timeline\.css[^>]*>/,'')
     .replace(/\n\s*<script[^>]*registration-timeline\.js[^>]*><\/script>/,'')
-    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100802">\n    <script src="js/programme.js?v=2026100801" defer></script>\n  </head>');
+    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100803">\n    <script src="js/programme.js?v=2026100804" defer></script>\n  </head>');
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 if (process.argv.includes('--check')) {

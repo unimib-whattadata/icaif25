@@ -93,7 +93,7 @@ components:
 
 This record preserves the identity already implemented in the ICAIF website. Navy navigation and internal page headers frame white and slate content surfaces; Inter supplies the interface hierarchy, and copper identifies a priority action or a saved programme choice. Merriweather remains the home introduction's established exception.
 
-The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological session cells. The programme is an extension of this system, with its detailed usage recorded in `.impeccable/surfaces/programme-html.md`.
+The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological timeline with parallel session cells. The programme is an extension of this system, with its detailed usage recorded in `.impeccable/surfaces/programme-html.md`.
 
 The October 8 whole-site audit preserves this identity. Its coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
 
@@ -113,7 +113,7 @@ The palette combines cool navy and slate with a warm copper action accent. Front
 ### Primary
 
 - **Conference blue** (`primary`, `primary-content`): the existing semantic primary color, used by links, interface emphasis and the internal header overlay.
-- **Copper** (`accent`, `accent-content`): the established priority-action color. The programme also uses it for saved-session buttons and targeted-session outlines.
+- **Copper** (`accent`, `accent-content`): the established priority-action color. The programme also uses it for saved-session buttons, targeted-session outlines and the current timeline point/heading.
 
 ### Neutral
 
@@ -150,6 +150,8 @@ The home hero has its existing larger headline scale. The programme's compact he
 The shared content container is centered with an 80rem maximum width. Gutters use `container-gutter`, `container-gutter-sm` from 640px, and `container-gutter-lg` from 1024px. Reading columns align with the page heading and use a 48rem maximum width.
 
 Main section padding uses the `section-space` family. Long reading pages use the `document-gap` family, increasing at 640px. The shared footer and programme disclosures switch at 768px; the navigation's desktop arrangement begins at 1024px. The home university, statistics and sponsor bands retain their compact spacing.
+
+The programme's persistent navigator is a local layout extension: 240px wide on desktop, with reserved space in its content and tools from 1024–1799px, and compact below 640px. Its detailed stop, focus and responsive behavior belongs in the programme surface record.
 
 **The Content Layout Rule.** Keep tables, programme sessions, sponsor tiers and portraits in the layouts suited to their content, while preserving the shared alignment.
 
@@ -192,6 +194,10 @@ Shared keyboard focus CSS uses an offset outline, and native controls also suppl
 ### Reading Tables
 
 Keep column and row headers meaningful when tables stack on mobile. Registration periods use three separate row groups, and their mobile cards retain every category and amount. Expired and superseded dates stay at readable contrast, with textual or strike-through status rather than reduced opacity.
+
+### Programme Timeline
+
+Ordered daily timelines connect the time headings and parallel session cells with a slate rail. Copper marks the current point and heading. A navy navigator combines named native day/range controls and previous/next actions, all 44px high. It follows visible filtered stops and manual scrolling, preserves control focus through jumps and uses immediate scrolling under reduced motion. The static schedule remains readable without JavaScript; print hides the navigator.
 
 ### Interactive Venue Map
 

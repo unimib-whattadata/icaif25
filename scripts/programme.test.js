@@ -6,6 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {
   filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme,
+  groupTimelineStops, timelineIndexAtPosition,
 } = require("../js/programme.js");
 
 const session = (id, overrides = {}) => ({
@@ -46,6 +47,45 @@ test("My agenda filters saved IDs across all days and still respects a chosen da
   assert.deepEqual(ids(filterSessions(sessions, { day: "all", saved: true }, saved)), ["a", "c"]);
   assert.deepEqual(ids(filterSessions(sessions, { day: "2026-11-15", saved: true }, saved)), ["c"]);
   assert.deepEqual(ids(filterSessions(sessions, { saved: true })), []);
+});
+
+test("timeline groups parallel starts and sorts stops across days without changing source order", () => {
+  const source = [
+    session("tomorrow", { date: "2026-11-15", start: "09:00" }),
+    session("late", { start: "10:00", end: "11:00" }),
+    session("early"),
+    session("parallel", { room: "Room 2", end: "09:00" }),
+  ];
+  assert.deepEqual(groupTimelineStops(source), [
+    { key: "2026-11-14-08:30", date: "2026-11-14", start: "08:30", sessionIds: ["early", "parallel"] },
+    { key: "2026-11-14-10:00", date: "2026-11-14", start: "10:00", sessionIds: ["late"] },
+    { key: "2026-11-15-09:00", date: "2026-11-15", start: "09:00", sessionIds: ["tomorrow"] },
+  ]);
+  assert.deepEqual(ids(source), ["tomorrow", "late", "early", "parallel"]);
+});
+
+test("timeline stops reflect the intersection of filters and saved sessions, including empty days", () => {
+  const source = [
+    ...sessions,
+    session("late", { start: "11:00", end: "12:00", room: "Room 2" }),
+  ];
+  assert.deepEqual(groupTimelineStops(filterSessions(source, { day: "all", type: "tutorial", saved: true }, ["b", "c", "d"]))
+    .map((stop) => [stop.date, stop.start, stop.sessionIds]), [
+    ["2026-11-14", "08:30", ["b"]], ["2026-11-15", "08:30", ["d"]],
+  ]);
+  assert.deepEqual(groupTimelineStops(filterSessions(source, { room: "Room 2", q: "11:00" }))
+    .map((stop) => stop.sessionIds), [["late"]]);
+  assert.deepEqual(groupTimelineStops(filterSessions(source, { saved: true }, [])), []);
+  assert.deepEqual(groupTimelineStops(filterSessions(source, { day: "2026-11-15", saved: true }, ["b"])), []);
+});
+
+test("scroll position selects the latest reached heading and clamps before and after the timeline", () => {
+  assert.equal(timelineIndexAtPosition([], 96), -1);
+  assert.equal(timelineIndexAtPosition([120, 240, 400], 96), 0);
+  assert.equal(timelineIndexAtPosition([20, 96, 220], 96), 1);
+  assert.equal(timelineIndexAtPosition([-100, -10, 90], 96), 2);
+  assert.equal(timelineIndexAtPosition([-100, -10, 100], 96), 1);
+  assert.equal(timelineIndexAtPosition([400], 96), 0);
 });
 
 test("overlaps flag both competing sessions but permit consecutive sessions and different dates", () => {
@@ -135,4 +175,8 @@ test("the checked-in programme is valid and every scheduled event can be exporte
   const calendar = buildCalendar(data.sessions);
   assert.equal((calendar.match(/BEGIN:VEVENT/g) || []).length, data.sessions.length);
   assert.equal(new Set(data.sessions.map((item) => item.id)).size, data.sessions.length);
+  const stops = groupTimelineStops(data.sessions);
+  assert.equal(stops.reduce((total, stop) => total + stop.sessionIds.length, 0), data.sessions.length);
+  assert.equal(new Set(stops.map((stop) => stop.key)).size, stops.length);
+  assert.deepEqual([...new Set(stops.map((stop) => stop.date))], data.days.map((day) => day.date));
 });
