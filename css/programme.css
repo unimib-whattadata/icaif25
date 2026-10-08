@@ -55,7 +55,21 @@
 .programme-session:has(.programme-save[aria-pressed="true"]) { background: color-mix(in srgb, var(--color-accent) 5%, var(--color-base-100)); }
 .programme-session-meta { display: flex; align-items: flex-start; flex-wrap: wrap; justify-content: space-between; gap: .625rem; margin-bottom: .875rem; }
 .programme-room { font-size: .8125rem; font-weight: 700; line-height: 1.5; }
-.programme-type { height: auto; min-height: 1.5rem; padding: .2rem .5rem; font-size: .6875rem; line-height: 1.3; background: var(--color-base-100); border-color: var(--color-base-300); color: var(--color-base-content); }
+.programme-type { height: auto; min-height: 1.5rem; padding: .2rem .5rem; font-size: .6875rem; line-height: 1.3; color: var(--programme-type-color); background: var(--programme-type-bg); border-color: var(--programme-type-border); }
+/* Local categorical colors: the written type remains the primary label. */
+.programme-session { --programme-type-color: #334155; --programme-type-bg: #e2e8f0; --programme-type-border: #cbd5e1; }
+.programme-session[data-type="workshop"] { --programme-type-color: #075985; --programme-type-bg: #e0f2fe; --programme-type-border: #7dd3fc; }
+.programme-session[data-type="tutorial"] { --programme-type-color: #115e59; --programme-type-bg: #ccfbf1; --programme-type-border: #5eead4; }
+.programme-session[data-type="competition"] { --programme-type-color: #6b21a8; --programme-type-bg: #f3e8ff; --programme-type-border: #d8b4fe; }
+.programme-session[data-type="industry"] { --programme-type-color: #9a3412; --programme-type-bg: #ffedd5; --programme-type-border: #fdba74; }
+.programme-session[data-type="keynote"] { --programme-type-color: #854d0e; --programme-type-bg: #fef9c3; --programme-type-border: #facc15; }
+.programme-session[data-type="panel"] { --programme-type-color: #86198f; --programme-type-bg: #fae8ff; --programme-type-border: #e879f9; }
+.programme-session[data-type="oral-session"] { --programme-type-color: #166534; --programme-type-bg: #dcfce7; --programme-type-border: #86efac; }
+.programme-session[data-type="poster-session"] { --programme-type-color: #3730a3; --programme-type-bg: #e0e7ff; --programme-type-border: #a5b4fc; }
+.programme-session[data-type="social"], .programme-session[data-type="banquet"] { --programme-type-color: #9f1239; --programme-type-bg: #ffe4e6; --programme-type-border: #fda4af; }
+.programme-session[data-type="break"] { --programme-type-color: #475569; --programme-type-bg: #f1f5f9; --programme-type-border: #cbd5e1; }
+.programme-session[data-type="tbc"] { --programme-type-color: #52525b; --programme-type-bg: #fafafa; --programme-type-border: #a1a1aa; }
+.programme-session[data-type="tbc"] .programme-type { border-style: dashed; }
 .programme-session-title { font-size: 1rem; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere; }
 .programme-session-title > .link { text-decoration-thickness: 1px; text-underline-offset: .2em; }
 .programme-session-time { margin-top: .75rem; font-size: .8125rem; font-variant-numeric: tabular-nums; color: var(--color-base-content); }
@@ -63,9 +77,12 @@
 .programme-pending { color: var(--color-base-content); font-style: italic; }
 .programme-conflict { color: var(--color-error); font-weight: 600; }
 .programme-session-actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: .625rem; margin-top: auto; padding-top: 1rem; }
-.programme-save { min-height: 2.75rem; padding: .5rem .75rem; font-size: .75rem; box-shadow: none; background: var(--color-base-100); border-color: var(--color-base-300); }
+.programme-save { width: 100%; min-height: 2.75rem; padding: .5rem .75rem; gap: .5rem; font-size: .8125rem; font-weight: 600; line-height: 1.4; box-shadow: none; background: var(--color-base-100); border-color: var(--color-primary); color: var(--color-primary); transition: none; }
+.programme-save [data-save-label] { min-width: 0; white-space: normal; }
+.programme-save [data-agenda-add-icon], .programme-save [data-agenda-added-icon] { display: inline-flex; flex-shrink: 0; }
+.programme-save:hover { background: color-mix(in srgb, var(--color-primary) 6%, var(--color-base-100)); }
 .programme-save[aria-pressed="true"] { background: var(--color-accent); color: var(--color-accent-content); border-color: var(--color-accent); }
-.programme-permalink { font-size: .6875rem; min-height: 2.75rem; display: inline-flex; align-items: center; text-underline-offset: .2em; }
+.programme-save[aria-pressed="true"]:hover { background: color-mix(in srgb, var(--color-accent) 94%, black); }
 .programme-empty { padding: 3rem 1.5rem; margin-top: 1.5rem; text-align: center; background: var(--color-base-200); border-radius: var(--radius-box); }
 .programme-empty h2 { font-size: 1.375rem; font-weight: 700; }
 .programme-empty p { margin-top: .75rem; line-height: 1.6; }

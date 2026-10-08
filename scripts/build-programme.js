@@ -33,8 +33,7 @@ function renderSession(session) {
                 ${session.pending ? '<p class="programme-pending">Details to be confirmed</p>' : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 <div class="programme-session-actions">
-                  <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Save ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-save-label>Save</span></button>
-                  <a class="link programme-permalink" href="/programme/?day=${session.date}#${session.id}" aria-label="Session link: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}">Session link</a>
+                  <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>
                 </div>
               </article>`;
 }
@@ -134,7 +133,7 @@ ${roomOptions}
             <button type="button" class="btn programme-reset" data-programme-reset>Reset filters</button>
           </div>
         </div>
-        <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Saved in this browser. Save sessions to export your calendar.</p>
+        <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Add sessions to My agenda, then review your choices or export your calendar. Your agenda is kept in this browser.</p>
         <p class="sr-only" data-programme-feedback aria-live="polite" aria-atomic="true"></p>
         <div class="programme-empty" data-programme-empty hidden>
           <h2>No sessions match your view</h2>
@@ -185,7 +184,7 @@ if (fs.existsSync(destination)) {
     .replace(/\sclass="menu-active"/g,'').replace(/\saria-current="page"/g,'')
     .replace(/\n\s*<link[^>]*registration-timeline\.css[^>]*>/,'')
     .replace(/\n\s*<script[^>]*registration-timeline\.js[^>]*><\/script>/,'')
-    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100803">\n    <script src="js/programme.js?v=2026100804" defer></script>\n  </head>');
+    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100804">\n    <script src="js/programme.js?v=2026100805" defer></script>\n  </head>');
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 if (process.argv.includes('--check')) {

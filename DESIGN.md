@@ -13,6 +13,42 @@ colors:
   neutral: "#0f172a"
   neutral-content: "#f8fafc"
   error: "#dc2626"
+  programme-type-neutral-text: "#334155"
+  programme-type-neutral-bg: "#e2e8f0"
+  programme-type-neutral-border: "#cbd5e1"
+  programme-type-workshop-text: "#075985"
+  programme-type-workshop-bg: "#e0f2fe"
+  programme-type-workshop-border: "#7dd3fc"
+  programme-type-tutorial-text: "#115e59"
+  programme-type-tutorial-bg: "#ccfbf1"
+  programme-type-tutorial-border: "#5eead4"
+  programme-type-competition-text: "#6b21a8"
+  programme-type-competition-bg: "#f3e8ff"
+  programme-type-competition-border: "#d8b4fe"
+  programme-type-industry-text: "#9a3412"
+  programme-type-industry-bg: "#ffedd5"
+  programme-type-industry-border: "#fdba74"
+  programme-type-keynote-text: "#854d0e"
+  programme-type-keynote-bg: "#fef9c3"
+  programme-type-keynote-border: "#facc15"
+  programme-type-panel-text: "#86198f"
+  programme-type-panel-bg: "#fae8ff"
+  programme-type-panel-border: "#e879f9"
+  programme-type-oral-text: "#166534"
+  programme-type-oral-bg: "#dcfce7"
+  programme-type-oral-border: "#86efac"
+  programme-type-poster-text: "#3730a3"
+  programme-type-poster-bg: "#e0e7ff"
+  programme-type-poster-border: "#a5b4fc"
+  programme-type-social-text: "#9f1239"
+  programme-type-social-bg: "#ffe4e6"
+  programme-type-social-border: "#fda4af"
+  programme-type-break-text: "#475569"
+  programme-type-break-bg: "#f1f5f9"
+  programme-type-break-border: "#cbd5e1"
+  programme-type-tbc-text: "#52525b"
+  programme-type-tbc-bg: "#fafafa"
+  programme-type-tbc-border: "#a1a1aa"
 typography:
   body:
     fontFamily: "Inter, sans-serif"
@@ -85,6 +121,25 @@ components:
   navigation:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.neutral-content}"
+  button-programme-agenda-add:
+    backgroundColor: "{colors.base-100}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.field}"
+    padding: "0.5rem 0.75rem"
+    height: "auto"
+    width: "100%"
+  button-programme-agenda-remove:
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.accent-content}"
+    rounded: "{rounded.field}"
+    padding: "0.5rem 0.75rem"
+    height: "auto"
+    width: "100%"
+  badge-programme-type-workshop:
+    backgroundColor: "{colors.programme-type-workshop-bg}"
+    textColor: "{colors.programme-type-workshop-text}"
+    rounded: "{rounded.selector}"
+    padding: "0.2rem 0.5rem"
 ---
 
 # Design System: ICAIF '26
@@ -95,7 +150,7 @@ This record preserves the identity already implemented in the ICAIF website. Nav
 
 The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological timeline with parallel session cells. The programme and Tutorials reading page extend this system, with their detailed usage recorded in `.impeccable/surfaces/programme-html.md` and `.impeccable/surfaces/tutorials-html.md`.
 
-The October 8 whole-site audit and later programme/Tutorials extensions preserve this identity. Their coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
+The October 8 whole-site audit and later programme/Tutorials extensions preserve this identity. The agenda clarification adds local categorical badge colors at the user's request. Coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
 
 **Key Characteristics:**
 
@@ -104,11 +159,11 @@ The October 8 whole-site audit and later programme/Tutorials extensions preserve
 - Native daisyUI controls using the `icaif` semantic theme.
 - Shared alignment and responsive gutters, with content-specific layouts.
 
-Recorded from `css/tailwind.input.css`, `css/fonts.css`, `css/tailwind.min.css`, `docs/ui-conventions.md`, `index.html`, `workshop.html`, `programme.html`, `css/programme.css`, `tutorials.html` and `scripts/build-tutorials.js`. Frontmatter colors and radii retain the theme's existing names and values; typography and spacing entries describe the shared utilities' mobile defaults. This documentation does not change the runtime tokens. Only the used palette sampled here is listed; the source theme also defines other semantic status colors.
+Recorded from `css/tailwind.input.css`, `css/fonts.css`, `css/tailwind.min.css`, `docs/ui-conventions.md`, `index.html`, `workshop.html`, `programme.html`, `css/programme.css`, `tutorials.html` and the programme/Tutorials builders. Incumbent theme colors, radii, typography and spacing retain their existing values. The `programme-type-*` additions record the fixed foreground, fill and border roles implemented locally in `css/programme.css`; they do not replace global theme tokens. Only the used palette sampled here is listed; the source theme also defines other semantic status colors.
 
 ## Colors
 
-The palette combines cool navy and slate with a warm copper action accent. Frontmatter owns the recorded values; `css/tailwind.input.css` remains the implementation source.
+The palette combines cool navy and slate with a warm copper action accent. Frontmatter owns the recorded values; `css/tailwind.input.css` remains the global implementation source, with programme category roles in `css/programme.css`.
 
 ### Primary
 
@@ -126,6 +181,8 @@ The palette combines cool navy and slate with a warm copper action accent. Front
 The existing **error red** (`error`) identifies saved-session overlaps in the programme. It remains a status color.
 
 **The Existing Identity Rule.** Extend the `icaif` semantic palette and established font assignments when adding a surface.
+
+The programme's local `programme-type-*` roles pair dark text with a pale fill and matching border. Workshop uses blue, Tutorial teal, Competition purple, Industry orange, Keynote amber, Panel magenta, Oral session green, Poster session indigo, and Social event/Banquet rose. Registration, Opening and Closing share the neutral default; Break uses lighter slate, and To be confirmed uses a neutral dashed border. These colors support the written type labels, which remain the primary identifier. The recorded text/fill pairs clear 6.38:1; they are category cues rather than global status or action colors.
 
 ## Typography
 
@@ -177,9 +234,11 @@ Native daisyUI actions use the field radius and semantic color pairs. Main-conte
 
 Accessible names retain visible words, adding context for repeated downloads and hotel links. Symbolic map zoom controls use the functional names “Zoom in” and “Zoom out”. Closed calls show their status beside neutral portal links; a past submission action does not remain a priority action.
 
+Programme agenda actions span their cell action area and retain the 44px minimum. “Add to My agenda” uses conference-blue text/border on white with a calendar icon; the selected state uses a copper fill, white check icon and “Remove from agenda”. Visible words, title, contextual accessible name and `aria-pressed` update together. Color changes are immediate to avoid an intermediate low-contrast blend. Both labels wrap where needed.
+
 ### Badges
 
-Badges carry short metadata or status labels. The programme uses a white badge with a slate border for session type and an outlined light badge for its preliminary status on the navy header. These labels have no invented interactive behavior.
+Badges carry short metadata or status labels. Programme session-type badges use the local category text/fill/border pairs described in Colors, while the preliminary badge retains its outlined light treatment on the navy header. All 15 type labels remain visible and non-interactive; color does not carry the category alone.
 
 ### Cards / Containers
 
@@ -206,6 +265,8 @@ Dated sections alternate the existing white and pale-slate surfaces. Full titles
 ### Programme Timeline
 
 Ordered daily timelines connect the time headings and parallel session cells with a slate rail. Copper marks the current point and heading. A navy navigator combines named native day/range controls and previous/next actions, all 44px high. It follows visible filtered stops and manual scrolling, preserves control focus through jumps and uses immediate scrolling under reduced motion. The static schedule remains readable without JavaScript; print hides the navigator.
+
+The session action row now contains the agenda button without a repeated “Session link”. Stable article IDs, precise tutorial return paths and calendar URLs continue to support direct navigation. Removing a visible saved session from My agenda returns focus to its visible agenda control.
 
 ### Interactive Venue Map
 

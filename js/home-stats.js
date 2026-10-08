@@ -62,8 +62,6 @@
     const statTitle = stat?.querySelector(".stat-title");
     const statDate = stat?.querySelector("[data-next-milestone-date]");
     const statLabel = stat?.querySelector("[data-next-milestone-label]");
-    const workshopNotice = document.querySelector("[data-workshop-deadline-notice]");
-    if (workshopNotice) workshopNotice.hidden = now > getEndOfAoE("2026-10-12");
     if (!summary && !stat) return;
 
     const milestone = getNextMilestone(now);
@@ -113,22 +111,7 @@
   updateHomeMilestone();
   window.setInterval(updateHomeMilestone, UPDATE_INTERVAL_MS);
 
-  const paperNotice = document.querySelector("[data-workshop-deadline-notice]");
-  let noticeInView = false;
-  const syncNoticeAnimation = () => {
-    paperNotice?.classList.toggle("is-visible", noticeInView && !document.hidden);
-  };
-
-  if (paperNotice && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(([entry]) => {
-      noticeInView = entry.isIntersecting;
-      syncNoticeAnimation();
-    });
-    observer.observe(paperNotice);
-  }
-
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) updateHomeMilestone();
-    syncNoticeAnimation();
   });
 })();

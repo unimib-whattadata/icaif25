@@ -515,9 +515,15 @@
         if (!session) { button.hidden = true; return; }
         const saved = savedIds.has(id);
         button.setAttribute("aria-pressed", String(saved));
-        button.setAttribute("aria-label", `${saved ? "Saved — remove" : "Save"} ${session.title}, ${dayLabels.get(session.date)} at ${session.start}, ${session.room}, ${saved ? "from" : "to"} My agenda`);
+        const action = saved ? "Remove from agenda" : "Add to My agenda";
+        button.setAttribute("aria-label", `${action}: ${session.title}, ${dayLabels.get(session.date)} at ${session.start}, ${session.room}`);
+        button.title = saved ? "Remove this session from My agenda" : "Add this session to your personal schedule";
         const label = button.querySelector("[data-save-label]");
-        if (label) label.textContent = saved ? "Saved" : "Save";
+        if (label) label.textContent = action;
+        const addIcon = button.querySelector("[data-agenda-add-icon]");
+        const addedIcon = button.querySelector("[data-agenda-added-icon]");
+        if (addIcon) addIcon.hidden = saved;
+        if (addedIcon) addedIcon.hidden = !saved;
       });
       dateButtons.forEach((button) => {
         button.setAttribute("aria-pressed", String(button.dataset.programmeDate === state.day));
@@ -531,9 +537,9 @@
       if (storageNote) {
         storageNote.hidden = false;
         const storageMessage = storageAvailable
-          ? "Saved in this browser."
-          : "Saved for this visit; browser storage is unavailable.";
-        storageNote.textContent = `${storageMessage} Save sessions to export your calendar.`;
+          ? "Your agenda is kept in this browser."
+          : "Your agenda lasts for this visit; browser storage is unavailable.";
+        storageNote.textContent = `Add sessions to My agenda, then review your choices or export your calendar. ${storageMessage}`;
       }
       const dateLabel = state.day === "all" ? "All days" : dayLabels.get(state.day);
       if (status) {
@@ -545,7 +551,7 @@
       allDaysButtons.forEach((button) => { button.hidden = !canExpandDays; });
       if (emptyDescription) {
         emptyDescription.textContent = state.saved && savedIds.size === 0
-          ? "Your agenda is empty. Save a session to add it here."
+          ? "Your agenda is empty. Use Add to My agenda on a session to include it here."
           : canExpandDays
             ? `No ${state.saved ? "saved " : ""}sessions match on this day. Try all days or clear the filters.`
             : `No ${state.saved ? "saved " : ""}sessions match these filters. Clear them to see the programme.`;
@@ -639,7 +645,7 @@
     if (exportButton) exportButton.addEventListener("click", () => {
       const selected = sessions.filter((session) => savedIds.has(session.id));
       if (!selected.length) {
-        announce("Save a session to download your agenda as a calendar.");
+        announce("Add a session to My agenda to download your calendar.");
         return;
       }
       let objectUrl;

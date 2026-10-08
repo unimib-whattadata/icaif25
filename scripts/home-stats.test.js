@@ -8,12 +8,11 @@ const source = fs.readFileSync(path.join(__dirname,'../js/home-stats.js'),'utf8'
 
 function loadAt(isoDate) {
   const now=Date.parse(isoDate);
-  const notice={hidden:false,classList:{toggle(){}}};
   const window={setInterval(){}};
-  const document={hidden:false,querySelector:selector=>selector==='[data-workshop-deadline-notice]'?notice:null,addEventListener(){}};
+  const document={hidden:false,querySelector(){return null;},addEventListener(){}};
   class ClockDate extends Date { static now(){return now;} }
   vm.runInNewContext(source,{window,document,Date:ClockDate,Intl});
-  return {next:window.ICAIFMilestones.getNextMilestone(now),notice};
+  return {next:window.ICAIFMilestones.getNextMilestone(now)};
 }
 
 test('home follows the extended workshop dates also at AoE boundaries',()=>{
@@ -27,9 +26,4 @@ test('home follows the extended workshop dates also at AoE boundaries',()=>{
   ];
   for(const [now,expected] of cases)assert.equal(loadAt(now).next.date,expected,now);
   assert.equal(loadAt('2026-11-18T12:00:00Z').next,null);
-});
-
-test('expired workshop notice stops displaying after its actual AoE deadline',()=>{
-  assert.equal(loadAt('2026-10-13T11:59:59.999Z').notice.hidden,false);
-  assert.equal(loadAt('2026-10-13T12:00:00Z').notice.hidden,true);
 });

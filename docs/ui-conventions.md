@@ -18,6 +18,8 @@ The site uses the existing `icaif` daisyUI theme in `css/tailwind.input.css`: na
 
 The home hero keeps its larger display typography. Its university, statistics and sponsor bands stay compact; their order is universities, dates/statistics, sponsors. These are intentional exceptions to `section-space`.
 
+The home hero action is “Explore the program” and links to `/programme/`. The yellow workshop-paper deadline alert has been removed; the next-milestone summary/stat and AoE deadline behavior remain.
+
 Align reading columns with the page heading and limit their width with `max-w-3xl`. Keep tables, programme lists, sponsor tiers and committee portraits in their appropriate layouts. Do not force different content types into identical cards. Sponsor logos retain their colors and intrinsic proportions, with visible Platinum/Silver grouping.
 
 ## Interaction
@@ -38,7 +40,7 @@ Keep expired and superseded dates legible. Use strike-through and a status cue r
 
 ## Validation
 
-Run `npm run build` after source changes. It runs `build:tutorials` before `build:programme`, then rebuilds SEO metadata, shared CSS and clean-URL copies, and runs JavaScript tests/syntax, HTML validation and site checks. The current site has 18 canonical pages and 35 physical HTML files; the Tutorials extension's build passed 32 tests. Keep CSS/JS cache versions aligned across all HTML files. Check desktop and mobile, plus the 768px disclosure and 1024px navigation boundaries when changing shared navigation. Dense tables, programme, venue, tutorial titles and download labels also need a 320px spot check.
+Run `npm run build` after source changes. It runs `build:tutorials` before `build:programme`, then rebuilds SEO metadata, shared CSS and clean-URL copies, and runs JavaScript tests/syntax, HTML validation and site checks. The current site has 18 canonical pages and 35 physical HTML files. The agenda/home clarification passed 31 tests after removal of the obsolete banner-expiry test; the Tutorials extension's earlier 32-test result remains historical evidence. Keep CSS/JS cache versions aligned across all HTML files. Check desktop and mobile, plus the 768px disclosure and 1024px navigation boundaries when changing shared navigation. Dense tables, programme, venue, tutorial titles and download labels also need a 320px spot check.
 
 Use one batched desktop/mobile inspection and one confirmation round for an audit; confirm additional changes with targeted evidence. The static Impeccable detector can misread inherited colors, image overlays, responsive padding and padding on child containers. Verify findings against computed styles and visible states, and document genuine corrections separately from false positives. Existing broad detector ignores limit detector coverage; a quiet detector is not a contrast verdict. The incumbent fonts, official workshop titles, factual copy, sponsor brands and functional table labels are intentional; do not rewrite them solely to silence a heuristic.
 
@@ -54,7 +56,11 @@ The builder's stored update date is October 8, 2026. For a later significant con
 
 ## Programme
 
-`programme.html` extends the shared identity with four daily ordered timelines, 40 date/time groups, a connected rail and flat adjacent session cells. Date buttons and My agenda use navy for selection; saved-session buttons and the current timeline point/heading use copper. Use the existing room/type labels and explicit pending details. Search, day/type/location filters, saved-session overlap markers, session links, calendar export and print supplement the complete static schedule. Saved choices stay in the visitor's browser, or in memory for the current visit when storage is unavailable.
+`programme.html` extends the shared identity with four daily ordered timelines, 40 date/time groups, a connected rail and flat adjacent session cells. Date buttons and My agenda use navy for selection; selected agenda buttons and the current timeline point/heading use copper. Use the existing room/type labels and explicit pending details. Search, day/type/location filters, saved-session overlap markers, stable session anchors, calendar export and print supplement the complete static schedule. Saved choices stay in the visitor's browser, or in memory for the current visit when storage is unavailable.
+
+Agenda buttons use the full available action width and a 44px minimum. The blue outline/calendar state says “Add to My agenda”; copper/check selection says “Remove from agenda”. Update `aria-pressed`, icon, title and visible/contextual accessible wording from the same membership; accessible names retain the action prefix and full title/day/time/room. Switch state colors immediately. Use the same vocabulary in storage instructions, empty states and announcements. Removing a session in My agenda returns focus to the visible agenda control. Preserve the existing storage key/schema and stable session IDs. The repeated visible “Session link” was removed, while article IDs, tutorial return anchors and calendar URLs remain.
+
+Programme type badges use local fixed text/fill/border roles in `css/programme.css`, recorded as `programme-type-*` in `DESIGN.md`. Workshop is blue, Tutorial teal, Competition purple, Industry orange, Keynote amber, Panel magenta, Oral session green, Poster session indigo and Social event/Banquet rose. Registration/Opening/Closing share neutral slate, Break uses lighter slate and To be confirmed has a dashed neutral border. All 15 written labels remain visible and non-interactive; colors supplement them. Preserve the global semantic theme and do not reuse category colors as global status/action colors.
 
 Keep native input/select controls, visible labels and 16px field text below 640px. Maintain readable placeholder contrast and leave space for native select chevrons when checking labels at narrow widths. Programme cells stack below 640px; the selected day, action row and parallel time groups retain their local responsive rules in `css/programme.css`.
 
