@@ -184,7 +184,7 @@ if (fs.existsSync(destination)) {
     .replace(/\sclass="menu-active"/g,'').replace(/\saria-current="page"/g,'')
     .replace(/\n\s*<link[^>]*registration-timeline\.css[^>]*>/,'')
     .replace(/\n\s*<script[^>]*registration-timeline\.js[^>]*><\/script>/,'')
-    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100804">\n    <script src="js/programme.js?v=2026100805" defer></script>\n  </head>');
+    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100805">\n    <script src="js/programme.js?v=2026100805" defer></script>\n  </head>');
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 if (process.argv.includes('--check')) {

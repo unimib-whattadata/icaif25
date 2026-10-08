@@ -87,13 +87,12 @@
   const sectionHeadings = () => {
     const main = document.querySelector("main");
     if (!main || page === "index" || page === "programme") return [];
-    if (page === "tutorials") return Array.from(main.querySelectorAll("h3[data-index-label]"));
 
     const headings = Array.from(main.querySelectorAll("h2")).filter(
       (heading) => !heading.closest(".card, .alert"),
     );
 
-    if (page === "workshop" || page === "competitions") {
+    if (["workshop", "competitions", "tutorials"].includes(page)) {
       headings.push(
         ...main.querySelectorAll(
           "article.card.scroll-mt-24 > .card-body > h3.card-title",
@@ -272,7 +271,7 @@
   };
 
   const enhanceProgrammeCards = () => {
-    if (page !== "workshop" && page !== "competitions") return;
+    if (!["workshop", "competitions", "tutorials"].includes(page)) return;
     document
       .querySelectorAll("main article.card.scroll-mt-24")
       .forEach((article) => {

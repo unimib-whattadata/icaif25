@@ -150,7 +150,7 @@ This record preserves the identity already implemented in the ICAIF website. Nav
 
 The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological timeline with parallel session cells. The programme and Tutorials reading page extend this system, with their detailed usage recorded in `.impeccable/surfaces/programme-html.md` and `.impeccable/surfaces/tutorials-html.md`.
 
-The October 8 whole-site audit and later programme/Tutorials extensions preserve this identity. The agenda clarification adds local categorical badge colors at the user's request. Coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
+The October 8 whole-site audit and later programme/Tutorials extensions preserve this identity. The agenda clarification adds local categorical badge colors at the user's request. The user's later Tutorials refinement adopts the existing workshop card and nested organizer/presenter pattern within the same visual world. Coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
 
 **Key Characteristics:**
 
@@ -202,7 +202,7 @@ The hierarchy uses bold, tightly tracked headings and relaxed introductory text.
 
 The home hero has its existing larger headline scale. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
 
-Tutorial titles retain the shared subsection hierarchy, while presenter names use bold body text and affiliations remain alongside them. The full abstracts use relaxed leading and a local 72ch maximum reading measure; these are reading-surface choices rather than new typography tokens.
+Tutorial titles now retain the workshop's native card-title hierarchy: 18px at weight 600, with the shared 16.8px/1.4 mobile treatment below 768px. Presenter names use semibold list text with smaller affiliations beneath them, matching workshop organizers. Full abstracts use relaxed leading and a local 72ch maximum reading measure; these are reading-surface choices rather than new typography tokens.
 
 ## Layout
 
@@ -212,7 +212,7 @@ Main section padding uses the `section-space` family. Long reading pages use the
 
 The programme's persistent navigator is a local layout extension: 240px wide on desktop, with reserved space in its content and tools from 1024–1799px, and compact below 640px. Its detailed stop, focus and responsive behavior belongs in the programme surface record.
 
-Tutorials groups the four articles under dated headings. From 1024px, an article's title spans its 12rem schedule column and flexible reading column; below that breakpoint metadata and reading content stack. Native description lists retain time/room relationships, and the abstract column keeps its local 72ch limit. All supplied reading content remains visible.
+Tutorials follows the workshop page composition: the navy header and shared index precede one pale-slate Accepted Tutorials section, a 48rem introduction and four white native cards. Date, time/CET and room badges precede each full title. From 1024px, the abstract's flexible 72ch reading column sits beside a 22rem pale-slate Presenters card; below that breakpoint the columns stack. The shared mobile card disclosure below 768px preserves the title and metadata while toggling the abstract, presenters and programme action. Every paragraph remains in static HTML and is visible without JavaScript.
 
 **The Content Layout Rule.** Keep tables, programme sessions, sponsor tiers and portraits in the layouts suited to their content, while preserving the shared alignment.
 
@@ -242,7 +242,7 @@ Badges carry short metadata or status labels. Programme session-type badges use 
 
 ### Cards / Containers
 
-Native cards use the box radius and a body padding default of 24px; existing mobile workshop and committee layouts provide their own overrides. Cards do not replace every content format. Programme sessions use flat adjacent cells, preserving parallel choices within a time group.
+Native cards use the box radius and a body padding default of 24px; existing mobile workshop, tutorial and committee layouts provide their own overrides. Workshop/tutorial cards use the same nested pale-slate organizer/presenter card and list rows. Cards do not replace every content format. Programme sessions use flat adjacent cells, preserving parallel choices within a time group.
 
 ### Inputs / Fields
 
@@ -258,9 +258,11 @@ Shared keyboard focus CSS uses an offset outline, and native controls also suppl
 
 Keep column and row headers meaningful when tables stack on mobile. Registration periods use three separate row groups, and their mobile cards retain every category and amount. Expired and superseded dates stay at readable contrast, with textual or strike-through status rather than reduced opacity.
 
-### Tutorial Reading Articles
+### Workshop / Tutorial Cards
 
-Dated sections alternate the existing white and pale-slate surfaces. Full titles, presenter/affiliation lists and complete abstract paragraphs remain in static HTML, separated by slate rules. A native supporting button links each article to its precise programme session; the header links to all tutorial sessions. The shared section index uses short topic labels while preserving full headings and target IDs. Its Tutorials mobile links retain the 44px minimum. This surface introduces no new palette, font, global component token, animation or raster asset.
+White cards on a pale-slate section use the existing box radius, full native card titles and visible metadata badges. The flexible text column and 22rem organizer/presenter card sit side by side from 1024px; names and affiliations use native list rows. Tutorials retains the complete abstract paragraphs and a supporting button to each precise programme session, with the all-tutorials programme link in the Accepted Tutorials introduction. The shared index includes that section and four short topic labels while preserving full headings and target IDs.
+
+Below 768px, the existing native button enhancement collapses only content after each title. The title and date/time/room badges remain visible; contextual “Show details”/“Hide details” names, `aria-expanded` and `aria-controls` follow the disclosure state. Buttons and Tutorials mobile index links retain the 44px minimum. Without JavaScript all static card content stays visible. This refinement adds no palette, font, global component token, custom runtime, animation or raster asset.
 
 ### Programme Timeline
 

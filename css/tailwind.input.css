@@ -113,6 +113,14 @@
     background-color: color-mix(in oklab, var(--color-neutral-content) 15%, transparent);
     color: var(--color-neutral-content);
   }
+
+  & .navbar-end > .menu > li > a:focus-visible,
+  & .navbar-end > .menu > li > details > summary:focus-visible {
+    background-color: color-mix(in oklab, var(--color-neutral-content) 15%, transparent);
+    color: var(--color-neutral-content);
+    outline: 2px solid var(--color-neutral-content);
+    outline-offset: 2px;
+  }
 }
 
 @utility hero-heading-accent {
@@ -370,6 +378,7 @@
   }
 
   [data-page="workshop"] .program-card,
+  [data-page="tutorials"] .program-card,
   [data-page="competitions"] .program-card {
     scroll-margin-top: 8rem;
   }
@@ -387,12 +396,14 @@
   }
 
   [data-page="workshop"] .program-card > .card-body,
+  [data-page="tutorials"] .program-card > .card-body,
   [data-page="competitions"] .program-card > .card-body {
     gap: 0.75rem;
     padding: 1.25rem;
   }
 
   [data-page="workshop"] .program-card .card-title,
+  [data-page="tutorials"] .program-card .card-title,
   [data-page="competitions"] .program-card .card-title {
     font-size: 1.05rem;
     line-height: 1.4;
