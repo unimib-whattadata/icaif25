@@ -304,8 +304,19 @@
     const timelineStart = timeline && timeline.querySelector("[data-timeline-start]");
     const timelineEnd = timeline && timeline.querySelector("[data-timeline-end]");
     const timelineEmpty = timeline && timeline.querySelector("[data-timeline-empty]");
+    const timelineOpen = timeline && timeline.querySelector("[data-timeline-open]");
+    const timelineMobileDay = timeline && timeline.querySelector("[data-timeline-mobile-day]");
+    const timelineMobileTime = timeline && timeline.querySelector("[data-timeline-mobile-time]");
+    const timelineReturn = timeline && timeline.querySelector("[data-timeline-return]");
+    const timePicker = document.getElementById("programme-time-picker");
+    const pickerDays = timePicker && timePicker.querySelector("[data-timeline-picker-days]");
+    const pickerTimes = timePicker && timePicker.querySelector("[data-timeline-picker-times]");
+    const pickerPreview = timePicker && timePicker.querySelector("[data-timeline-picker-preview]");
+    const pickerGo = timePicker && timePicker.querySelector("[data-timeline-go]");
     if (timeline && [timelineDay, timelineRange, timelinePrevious, timelineNext,
-      timelineTime, timelinePosition, timelineStart, timelineEnd, timelineEmpty].some((element) => !element)) {
+      timelineTime, timelinePosition, timelineStart, timelineEnd, timelineEmpty,
+      timelineOpen, timelineMobileDay, timelineMobileTime, timelineReturn,
+      timePicker, pickerDays, pickerTimes, pickerPreview, pickerGo].some((element) => !element)) {
       throw new Error("Timeline controls are unavailable.");
     }
     const slotByKey = new Map(slotGroups.map((group) => [
@@ -324,6 +335,9 @@
     let pendingScroll = null;
     let pendingTimer = null;
     let draggingRange = false;
+    let draftStopKey = null;
+    let returnPosition = null;
+    const mobileTimeline = window.matchMedia("(max-width: 767px)");
     const scrollY = () => window.scrollY || window.pageYOffset || 0;
     const navigationHeight = () => {
       const navigation = document.querySelector(".site-nav");
@@ -331,7 +345,8 @@
     };
     const preserveTimelineFocus = (focused) => {
       if (!timeline || !focused || !timeline.contains(focused) || !focused.disabled) return;
-      const target = [timelineRange, timelineDay].find((element) => !element.disabled) || timeline;
+      const candidates = mobileTimeline.matches ? [timelineOpen] : [timelineRange, timelineDay];
+      const target = candidates.find((element) => !element.disabled) || timeline;
       if (target === timeline) target.setAttribute("tabindex", "-1");
       target.focus({ preventScroll: true });
     };
@@ -369,11 +384,48 @@
       timelinePrevious.disabled = index <= 0;
       timelineNext.disabled = index < 0 || index === visibleStops.length - 1;
       timelineTime.textContent = stop ? stop.start : "—";
+      timelineOpen.disabled = !stop;
+      timelineMobileDay.textContent = stop
+        ? shortDayFormatter.format(new Date(`${stop.date}T12:00:00Z`)) : "No sessions";
+      timelineMobileTime.textContent = stop ? stop.start : "—";
       timelinePosition.textContent = stop ? `${index + 1} / ${visibleStops.length}` : "0 / 0";
       timelineStart.textContent = dayStops.length ? dayStops[0].start : "—";
       timelineEnd.textContent = dayStops.length ? dayStops[dayStops.length - 1].start : "—";
       timelineEmpty.hidden = Boolean(stop);
       preserveTimelineFocus(focused);
+    };
+    const selectPickerStop = (stop) => {
+      draftStopKey = stop ? stop.key : null;
+      [...pickerTimes.children].forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.timelinePickerStop === draftStopKey));
+      });
+      pickerPreview.replaceChildren(...(stop ? stop.sessionIds : []).map((id) => {
+        const item = document.createElement("li");
+        item.textContent = sessionById.get(id).title;
+        return item;
+      }));
+      pickerGo.disabled = !stop;
+      pickerGo.textContent = stop ? `Go to ${stop.start}` : "Go to time";
+    };
+    const renderTimePicker = (stop) => {
+      const focusedKey = document.activeElement && document.activeElement.dataset.timelinePickerStop;
+      [...pickerDays.children].forEach((button) => {
+        button.hidden = !visibleStops.some((item) => item.date === button.dataset.timelinePickerDay);
+        button.setAttribute("aria-pressed", String(Boolean(stop) && button.dataset.timelinePickerDay === stop.date));
+      });
+      pickerTimes.replaceChildren(...visibleStops.filter((item) => stop && item.date === stop.date).map((item) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "btn";
+        button.dataset.timelinePickerStop = item.key;
+        button.textContent = item.start;
+        const count = item.sessionIds.length;
+        button.setAttribute("aria-label", `${item.start} CET, ${count} ${count === 1 ? "session" : "parallel sessions"}`);
+        return button;
+      }));
+      selectPickerStop(stop);
+      const focused = [...pickerTimes.children].find((button) => button.dataset.timelinePickerStop === focusedKey);
+      if (focused) focused.focus({ preventScroll: true });
     };
     const clearPendingScroll = () => {
       pendingScroll = null;
@@ -382,7 +434,7 @@
     };
     const syncTimelineToScroll = () => {
       scrollFrame = null;
-      if (!timeline || !visibleStops.length || draggingRange) return;
+      if (!timeline || !visibleStops.length || draggingRange || timePicker.open) return;
       if (pendingScroll) {
         if (Math.abs(scrollY() - pendingScroll.top) > 3) return;
         clearPendingScroll();
@@ -399,35 +451,88 @@
     const scheduleTimelineSync = () => {
       if (timeline && scrollFrame === null) scrollFrame = window.requestAnimationFrame(syncTimelineToScroll);
     };
-    const navigateTimeline = (stop) => {
-      if (!stop) return;
+    const scrollTimelineTo = (top) => {
       clearPendingScroll();
-      updateTimeline(stop);
-      const element = slotByKey.get(stop.key);
-      const destination = element.getBoundingClientRect().top + scrollY() - navigationHeight() - 16;
       const maximum = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-      pendingScroll = { top: Math.min(maximum, Math.max(0, destination)) };
+      pendingScroll = { top: Math.min(maximum, Math.max(0, top)) };
       pendingTimer = window.setTimeout(() => {
         clearPendingScroll();
         scheduleTimelineSync();
       }, 900);
       const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       window.scrollTo({ top: pendingScroll.top, behavior: reducedMotion ? "auto" : "smooth" });
+      scheduleTimelineSync();
+    };
+    const navigateTimeline = (stop) => {
+      if (!stop) return;
+      if (mobileTimeline.matches) {
+        returnPosition = { top: scrollY(), key: activeStopKey };
+        timelineReturn.hidden = false;
+      }
+      updateTimeline(stop);
+      const element = slotByKey.get(stop.key);
+      const heading = element.querySelector("h3") || element;
+      const destination = heading.getBoundingClientRect().top + scrollY() - navigationHeight() - 24;
+      scrollTimelineTo(destination);
       const index = visibleStops.findIndex((item) => item.key === stop.key);
       announce(`${dayLabels.get(stop.date)}, ${stop.start} CET. Time ${index + 1} of ${visibleStops.length}.`);
-      scheduleTimelineSync();
     };
     const renderTimeline = (visible) => {
       if (!timeline) return;
       const nextStops = groupTimelineStops(visible);
-      if (nextStops.map((stop) => stop.key).join(",") !== visibleStops.map((stop) => stop.key).join(",")) {
+      if (JSON.stringify(nextStops) !== JSON.stringify(visibleStops)) {
         clearPendingScroll();
         visibleStops = nextStops;
+        returnPosition = null;
+        timelineReturn.hidden = true;
       }
       updateTimeline(visibleStops.find((stop) => stop.key === activeStopKey) || visibleStops[0]);
+      if (timePicker.open) {
+        if (!visibleStops.length) timePicker.close();
+        else renderTimePicker(visibleStops.find((stop) => stop.key === draftStopKey) || visibleStops[0]);
+      }
       scheduleTimelineSync();
     };
     if (timeline) {
+      timelineOpen.addEventListener("click", () => {
+        clearPendingScroll();
+        renderTimePicker(visibleStops.find((stop) => stop.key === activeStopKey) || visibleStops[0]);
+        timePicker.showModal();
+        timelineOpen.setAttribute("aria-expanded", "true");
+        timePicker.querySelector(".programme-time-picker-content").scrollTop = 0;
+      });
+      timePicker.addEventListener("close", () => {
+        timelineOpen.setAttribute("aria-expanded", "false");
+        const target = mobileTimeline.matches ? timelineOpen : timelineDay;
+        if (!target.disabled) target.focus({ preventScroll: true });
+        else preserveTimelineFocus(timelineOpen);
+      });
+      pickerDays.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-timeline-picker-day]");
+        if (button) renderTimePicker(visibleStops.find((stop) => stop.date === button.dataset.timelinePickerDay));
+      });
+      pickerTimes.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-timeline-picker-stop]");
+        if (button) selectPickerStop(visibleStops.find((stop) => stop.key === button.dataset.timelinePickerStop));
+      });
+      pickerGo.addEventListener("click", () => {
+        const stop = visibleStops.find((item) => item.key === draftStopKey);
+        timePicker.close();
+        navigateTimeline(stop);
+      });
+      timelineReturn.addEventListener("click", () => {
+        if (!returnPosition) return;
+        const previous = returnPosition;
+        returnPosition = null;
+        timelineReturn.hidden = true;
+        timelineOpen.focus({ preventScroll: true });
+        updateTimeline(visibleStops.find((stop) => stop.key === previous.key) || visibleStops[0]);
+        scrollTimelineTo(previous.top);
+        announce("Returned to your previous programme position.");
+      });
+      mobileTimeline.addEventListener("change", () => {
+        if (!mobileTimeline.matches && timePicker.open) timePicker.close();
+      });
       timelineDay.addEventListener("change", () => {
         navigateTimeline(visibleStops.find((stop) => stop.date === timelineDay.value));
       });

@@ -133,6 +133,14 @@ The refinement passed **31/31 tests** (six hero-time, fifteen programme, six sit
 
 No new detector run or ignore was added for this refinement. The automatic hook remains active but suppresses repeated hints after six session edits; existing ignores still limit detector coverage. All earlier scan counts and wildcard masking limits above remain historical evidence, with no clean-detector claim. Pre-existing configuration/build-path/token drift was not repaired. Hardware screen-reader/VoiceOver, JavaScript-disabled browser and print-browser coverage were not added; this bounded refinement does not certify WCAG conformance.
 
+## Mobile timeline navigation — 8 October 2026
+
+Below 768px, the programme now uses a compact “Choose time” control and a native daisyUI dialog. Day/time choices preview the matching sessions; only confirmation moves the page. Closing preserves the reading position, and “Back to previous position” restores the exact position before the latest mobile jump. Changing visible session membership refreshes previews and invalidates that return position, including when two saved parallel sessions become one without changing the time slot.
+
+Installed Chrome with touch emulation passed position/URL preservation, confirmation, return, dismissal and 44px-target checks at 320×740, 390×844, 639×800, 740×390 and 767×900. Desktop day/range controls passed at 768, 1024 and 1440px. Additional checks covered filtered and single-stop agendas, parallel membership changes, native keyboard focus, resize closure, normal/reduced motion, the 85-session no-JavaScript fallback and print. No horizontal overflow or JavaScript errors were observed in these checks. Captures, scripts and results are in `.impeccable/review/programme-mobile-timeline/`. This is browser emulation evidence, not a physical-device or complete accessibility certification.
+
+The refinement passed 31 tests, all 35 HTML files, 18-page site checks, generated-route/source parity and `git diff --check`. The targeted deterministic design detector reported no findings. Self-review disposition: **ship at this scope**.
+
 Run `npm run build` after future edits. Its checks cover local resources/fragments, generated-route parity, programme fallback/data and metadata/schema/sitemap consistency alongside syntax, tests and HTML validation.
 
 For future audits, inspect all canonical routes in one desktop/mobile batch, fix the verified findings together and use one confirmation round. Add targeted keyboard, narrow-width, table-value and motion/fallback checks when those components change. Keep dates, source decisions and audit evidence current. Preserve the incumbent palette and document detector exceptions only with current source/rendered evidence.

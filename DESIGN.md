@@ -266,7 +266,7 @@ Below 768px, the existing native button enhancement collapses only content after
 
 ### Programme Timeline
 
-Ordered daily timelines connect the time headings and parallel session cells with a slate rail. Copper marks the current point and heading. A navy navigator combines named native day/range controls and previous/next actions, all 44px high. It follows visible filtered stops and manual scrolling, preserves control focus through jumps and uses immediate scrolling under reduced motion. The static schedule remains readable without JavaScript; print hides the navigator.
+Ordered daily timelines connect the time headings and parallel session cells with a slate rail. Copper marks the current point and heading. From 768px, a navy navigator combines named native day/range controls and previous/next actions, all at least 44px high. Below 768px, its compact “Choose time” button opens a native daisyUI dialog with day/time buttons and session previews. Choosing or dismissing preserves the page position; confirmation makes the jump. A mobile return action restores the previous reading position. The dialog keeps its confirmation visible, contains scrolling and returns focus on closure. The navigator follows visible filtered stops and manual scrolling, preserves control focus through jumps and uses immediate scrolling under reduced motion. The static schedule remains readable without JavaScript; print hides the navigator and picker.
 
 The session action row now contains the agenda button without a repeated “Session link”. Stable article IDs, precise tutorial return paths and calendar URLs continue to support direct navigation. Removing a visible saved session from My agenda returns focus to its visible agenda control.
 

@@ -109,6 +109,27 @@ body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bo
 .programme-navigator-limits { display: flex; justify-content: space-between; font-size: .6875rem; font-variant-numeric: tabular-nums; }
 .programme-navigator-empty { font-size: .8125rem; line-height: 1.5; }
 .programme-navigator :is(.btn, .select, .range):focus-visible { outline: 2px solid var(--color-neutral-content); outline-offset: 3px; }
+.programme-navigator-stepper .programme-navigator-picker, .programme-navigator-return { display: none; }
+.programme-time-picker-box { display: flex; flex-direction: column; max-height: min(42rem, calc(100dvh - 1rem)); padding: 1.25rem; padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); color: var(--color-base-content); }
+.programme-time-picker-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-shrink: 0; }
+.programme-time-picker-header h2 { font-size: 1.375rem; font-weight: 700; }
+.programme-time-picker-content { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: .75rem .25rem .25rem; }
+.programme-time-picker-content > p { font-size: .875rem; line-height: 1.6; }
+.programme-time-picker-content fieldset { margin-top: 1.25rem; }
+.programme-time-picker-content legend { margin-bottom: .5rem; font-weight: 650; }
+.programme-time-picker-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(3.5rem, 1fr)); gap: .5rem; }
+.programme-time-picker-times { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+.programme-time-picker-content .btn { min-width: 0; min-height: 2.75rem; padding: .625rem .25rem; font-size: 1rem; }
+.programme-time-picker-days .btn { height: auto; flex-direction: column; gap: 0; font-size: .875rem; line-height: 1.4; }
+.programme-time-picker-days .btn span { white-space: nowrap; }
+.programme-time-picker-content .btn[aria-pressed="true"], .programme-time-picker-action .btn { background: var(--color-neutral); color: var(--color-neutral-content); border-color: var(--color-neutral); }
+.programme-time-picker-content .btn[aria-pressed="true"]:hover, .programme-time-picker-action .btn:hover { background: color-mix(in srgb, var(--color-neutral-content) 15%, var(--color-neutral)); }
+.programme-time-picker-preview { margin-top: 1.25rem; padding-left: 1.25rem; list-style: disc; font-size: .875rem; line-height: 1.6; }
+.programme-time-picker-preview li + li { margin-top: .5rem; }
+.programme-time-picker-action { flex-shrink: 0; margin-top: 1rem; }
+@media (prefers-reduced-motion: reduce) {
+  .programme-time-picker, .programme-time-picker-box { transition: none; }
+}
 @media (min-width: 1024px) and (max-width: 1799px) {
   .programme-content, .programme-datebar-inner, .programme-filter-container { padding-right: 18rem; }
   .programme-sessions { grid-template-columns: repeat(auto-fit,minmax(min(100%,12rem),1fr)); }
@@ -147,15 +168,15 @@ body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bo
   .programme-slot-heading p { margin-top: 0; font-size: .75rem; }
   .programme-session { padding: 1rem; }
 }
-@media (max-width: 639px) {
-  .programme-navigator { width: 25rem; right: max(.75rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); max-width: calc(100vw - 1.5rem); grid-template-columns: minmax(0,1fr) minmax(9.25rem,1fr); gap: .35rem .5rem; padding: .75rem; }
-  .programme-navigator-day { padding-inline: .5rem 1.5rem; }
-  .programme-navigator-title, .programme-navigator-slider, .programme-navigator-empty { grid-column: 1 / -1; }
-  .programme-navigator-stepper { grid-template-columns: 2.75rem minmax(0,1fr) 2.75rem; gap: .2rem; }
-  .programme-navigator-time { font-size: 1.125rem; }
-  .programme-navigator-time small { display: none; }
-  body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bottom: calc(11rem + env(safe-area-inset-bottom)); }
-  [data-page="programme"] :is(.programme-session-actions a, .programme-session-actions button, footer a) { scroll-margin-bottom: 12rem; }
+@media (max-width: 767px) {
+  .programme-navigator { width: 25rem; right: max(.75rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); max-width: calc(100vw - 1.5rem); gap: .5rem; padding: .5rem; }
+  .programme-navigator-title, .programme-navigator-day, .programme-navigator-slider, .programme-navigator-time { display: none; }
+  .programme-navigator-stepper { grid-template-columns: 2.75rem minmax(0,1fr) 2.75rem; gap: .5rem; }
+  .programme-navigator-stepper .programme-navigator-picker { display: flex; flex-direction: column; gap: .125rem; width: 100%; height: auto; min-height: 3.25rem; border: 0; font-size: .75rem; line-height: 1.5; }
+  .programme-navigator-picker strong { font-size: .875rem; font-weight: 650; }
+  .programme-navigator-return { display: flex; min-height: 2.75rem; padding: .5rem; background: var(--color-neutral); color: var(--color-neutral-content); border-color: color-mix(in srgb, var(--color-neutral-content) 65%, var(--color-neutral)); font-size: .8125rem; }
+  body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bottom: calc(9rem + env(safe-area-inset-bottom)); }
+  [data-page="programme"] :is(.programme-session-actions a, .programme-session-actions button, footer a) { scroll-margin-bottom: 10rem; }
 }
 @media (forced-colors: active) {
   .programme-navigator { border: 1px solid CanvasText; }
@@ -163,7 +184,7 @@ body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bo
   .programme-slot[aria-current="step"] .programme-timeline-point { background: Highlight; }
 }
 @media print {
-  .site-nav, body > footer, .programme-tools, .programme-actions, .programme-storage-note, .programme-session-actions, .programme-closing-note, .programme-preliminary, .programme-navigator { display: none !important; }
+  .site-nav, body > footer, .programme-tools, .programme-actions, .programme-storage-note, .programme-session-actions, .programme-closing-note, .programme-preliminary, .programme-navigator, .programme-time-picker { display: none !important; }
   body[data-page="programme"]:has(.programme-navigator:not([hidden])) { padding-bottom: 0; }
   .programme-header { padding-block: 1rem !important; }
   #page-header, #page-header * { color: #000 !important; background: #fff !important; }

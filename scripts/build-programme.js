@@ -158,6 +158,10 @@ ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,
         <div class="programme-navigator-stepper">
           <button type="button" class="btn" aria-label="Previous time slot" data-timeline-previous><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i></button>
           <p class="programme-navigator-time"><span data-timeline-time>08:15</span> <small>CET</small></p>
+          <button type="button" class="btn programme-navigator-picker" aria-haspopup="dialog" aria-controls="programme-time-picker" aria-expanded="false" data-timeline-open>
+            <span>Choose time</span>
+            <strong><span data-timeline-mobile-day>Sat 14 Nov</span> · <span data-timeline-mobile-time>08:15</span></strong>
+          </button>
           <button type="button" class="btn" aria-label="Next time slot" data-timeline-next><i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></button>
         </div>
         <div class="programme-navigator-slider">
@@ -165,8 +169,35 @@ ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,
           <input id="programme-timeline-position" type="range" class="range" min="0" max="1" value="0" step="1" aria-controls="programme-timeline" data-timeline-range>
           <div class="programme-navigator-limits" aria-hidden="true"><span data-timeline-start>08:15</span><span data-timeline-end>16:30</span></div>
         </div>
+        <button type="button" class="btn programme-navigator-return" data-timeline-return hidden><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i>Back to previous position</button>
         <p class="programme-navigator-empty" data-timeline-empty hidden>No sessions match. Adjust the filters above.</p>
       </nav>
+      <dialog id="programme-time-picker" class="modal modal-bottom sm:modal-middle programme-time-picker" aria-labelledby="programme-time-picker-title" aria-describedby="programme-time-picker-description" data-programme-controls hidden>
+        <div class="modal-box programme-time-picker-box">
+          <div class="programme-time-picker-header">
+            <h2 id="programme-time-picker-title">Choose a time</h2>
+            <form method="dialog"><button type="submit" class="btn" autofocus>Close</button></form>
+          </div>
+          <div class="programme-time-picker-content">
+            <p id="programme-time-picker-description">Choose a day and time, then confirm to move the programme. Times follow your current filters.</p>
+            <fieldset>
+              <legend>Day</legend>
+              <div class="programme-time-picker-days" data-timeline-picker-days>
+${data.days.map(day=>`                <button type="button" class="btn" data-timeline-picker-day="${day.date}" aria-pressed="false"><span>${day.label.slice(0,3)} ${Number(day.date.slice(-2))}</span><span>Nov</span></button>`).join('\n')}
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Time (CET)</legend>
+              <div class="programme-time-picker-times" data-timeline-picker-times></div>
+            </fieldset>
+            <ul class="programme-time-picker-preview" aria-live="polite" data-timeline-picker-preview></ul>
+          </div>
+          <div class="modal-action programme-time-picker-action">
+            <button type="button" class="btn w-full" data-timeline-go>Go to time</button>
+          </div>
+        </div>
+        <form method="dialog" class="modal-backdrop"><button type="submit">Close time picker</button></form>
+      </dialog>
       <script id="programme-data" type="application/json">${json}</script>
     </main>`;
 
@@ -184,7 +215,7 @@ if (fs.existsSync(destination)) {
     .replace(/\sclass="menu-active"/g,'').replace(/\saria-current="page"/g,'')
     .replace(/\n\s*<link[^>]*registration-timeline\.css[^>]*>/,'')
     .replace(/\n\s*<script[^>]*registration-timeline\.js[^>]*><\/script>/,'')
-    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100805">\n    <script src="js/programme.js?v=2026100805" defer></script>\n  </head>');
+    .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100810">\n    <script src="js/programme.js?v=2026100810" defer></script>\n  </head>');
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 if (process.argv.includes('--check')) {
