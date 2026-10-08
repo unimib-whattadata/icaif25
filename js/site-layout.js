@@ -119,7 +119,7 @@
 
   const sectionHeadings = () => {
     const main = document.querySelector("main");
-    if (!main || page === "index") return [];
+    if (!main || page === "index" || page === "programme") return [];
 
     const headings = Array.from(main.querySelectorAll("h2")).filter(
       (heading) => !heading.closest(".card, .alert"),

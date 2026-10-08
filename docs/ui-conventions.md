@@ -31,3 +31,11 @@ Use `btn` for actions and `link` for text links. A page's priority action uses `
 Rebuild `css/tailwind.min.css` after changes and keep the CSS/JS cache versions aligned across all HTML files. Run the package's HTML, JavaScript and site checks. Check desktop and mobile, plus the 640–768px footer breakpoint when changing shared navigation.
 
 The static Impeccable detector can misread inherited colors, responsive padding and padding on child containers. Verify these findings against computed browser styles. The incumbent fonts, official workshop titles, factual copy, sponsor brands and functional table labels are intentional; do not rewrite them solely to silence a heuristic.
+
+## Programme
+
+`programme.html` extends the shared identity with chronological time groups and flat adjacent session cells. Date buttons and My agenda use navy for selection; saved-session buttons use copper. Use the existing room/type labels and explicit pending details. Search, day/type/location filters, saved-session overlap markers, session links, calendar export and print supplement the complete static schedule. Saved choices stay in the visitor's browser, or in memory for the current visit when storage is unavailable.
+
+Keep native input/select controls, visible labels and 16px field text below 640px. Maintain readable placeholder contrast and leave space for native select chevrons when checking labels at narrow widths. Programme cells stack below 640px; the selected day, action row and parallel time groups retain their local responsive rules in `css/programme.css`.
+
+`data/programme.json` is the public schedule source. Follow `docs/programme-source.md` to import an updated external workbook with `scripts/import-programme.py`, then run `npm run build`. This rebuilds the programme's static fallback and embedded data, shared CSS and clean-URL pages, and runs the package checks. Generated `programme.html` content belongs in `scripts/build-programme.js`; preserve pending fields and source times rather than filling gaps. The root `DESIGN.md` records the sampled incumbent system; detailed programme decisions live in `.impeccable/surfaces/programme-html.md`.
