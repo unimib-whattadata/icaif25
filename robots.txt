@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /scripts/
+Disallow: /docs/
+Disallow: /data/
+Disallow: /DESIGN.md
 
 Sitemap: https://icaif2026.org/sitemap.xml

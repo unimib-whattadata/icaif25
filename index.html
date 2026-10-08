@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <script src="/js/clean-url.js?v=2026092501"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta
-      name="description"
-      content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026."
-   >
+    <meta name="description" content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026.">
     <title>ICAIF '26 Milan | ACM International Conference on AI in Finance</title>
     <!-- SEO -->
     <link rel="canonical" href="https://icaif2026.org/">
@@ -20,14 +17,8 @@
     <meta property="og:site_name" content="ICAIF '26">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
-    <meta
-      property="og:title"
-      content="ICAIF '26 Milan | ACM International Conference on AI in Finance"
-   >
-    <meta
-      property="og:description"
-      content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026."
-   >
+    <meta property="og:title" content="ICAIF '26 Milan | ACM International Conference on AI in Finance">
+    <meta property="og:description" content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026.">
     <meta property="og:url" content="https://icaif2026.org/">
     <meta property="og:image" content="https://icaif2026.org/img/piazza-duomo-tramonto.jpg">
     <meta
@@ -36,21 +27,15 @@
    >
     <meta property="og:image:width" content="1536">
     <meta property="og:image:height" content="1024">
-    <meta property="og:image:alt" content="ICAIF '26 in Milan, Italy">
+    <meta property="og:image:alt" content="Milan Cathedral and Piazza del Duomo at sunset">
     <meta name="twitter:card" content="summary_large_image">
-    <meta
-      name="twitter:title"
-      content="ICAIF '26 Milan | ACM International Conference on AI in Finance"
-   >
-    <meta
-      name="twitter:description"
-      content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026."
-   >
+    <meta name="twitter:title" content="ICAIF '26 Milan | ACM International Conference on AI in Finance">
+    <meta name="twitter:description" content="ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026.">
     <meta
       name="twitter:image"
       content="https://icaif2026.org/img/piazza-duomo-tramonto.jpg"
    >
-    <meta name="twitter:image:alt" content="ICAIF '26 in Milan, Italy">
+    <meta name="twitter:image:alt" content="Milan Cathedral and Piazza del Duomo at sunset">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -60,34 +45,58 @@
             "@id": "https://icaif2026.org/#website",
             "url": "https://icaif2026.org/",
             "name": "ICAIF '26",
-            "description": "Official website of ICAIF '26, the ACM International Conference on AI in Finance.",
-            "inLanguage": "en"
+            "description": "Official website of the ACM International Conference on AI in Finance, Milan, November 14–17, 2026.",
+            "inLanguage": "en",
+            "publisher": {
+              "@id": "https://icaif2026.org/#organizer"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://icaif2026.org/#organizer",
+            "name": "ACM ICAIF",
+            "url": "https://icaif2026.org/",
+            "email": "andrea.maurino@unimib.it"
           },
           {
             "@type": "Event",
             "@id": "https://icaif2026.org/#event",
-            "name": "ICAIF '26 - ACM International Conference on AI in Finance",
-            "description": "The 7th ACM International Conference on AI in Finance, held in Milan, Italy, November 14-17, 2026.",
+            "name": "ICAIF '26 — 7th ACM International Conference on AI in Finance",
+            "description": "The 7th ACM International Conference on AI in Finance in Milan, Italy, November 14–17, 2026. Workshops and tutorials on November 14–15; main conference on November 16–17.",
             "startDate": "2026-11-14",
             "endDate": "2026-11-17",
             "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "url": "https://icaif2026.org/",
-            "image": ["https://icaif2026.org/img/piazza-duomo-tramonto.jpg"],
+            "image": {
+              "@id": "https://icaif2026.org/#conference-image"
+            },
             "location": {
               "@type": "Place",
               "name": "Bocconi University",
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Via Röntgen 1",
                 "addressLocality": "Milan",
                 "addressCountry": "IT"
               }
             },
             "organizer": {
-              "@type": "Organization",
-              "name": "ACM ICAIF",
-              "url": "https://icaif2026.org",
-              "email": "andrea.maurino@unimib.it"
+              "@id": "https://icaif2026.org/#organizer"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://icaif2026.org/#conference-image",
+            "url": "https://icaif2026.org/img/piazza-duomo-tramonto.jpg",
+            "width": 1536,
+            "height": 1024,
+            "caption": "Milan Cathedral and Piazza del Duomo at sunset",
+            "creditText": "Based on Piazza del Duomo by kuhnmi (original photograph: CC BY 2.0). AI-edited for ICAIF 2026: people removed; lighting, sky and colors modified.",
+            "isBasedOn": {
+              "@type": "ImageObject",
+              "url": "https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg",
+              "license": "https://creativecommons.org/licenses/by/2.0/"
             }
           },
           {
@@ -96,41 +105,17 @@
             "url": "https://icaif2026.org/",
             "name": "ICAIF '26 Milan | ACM International Conference on AI in Finance",
             "description": "ICAIF '26 is the 7th ACM International Conference on AI in Finance, bringing researchers, practitioners, and innovators to Milan, Italy, November 14-17, 2026.",
+            "inLanguage": "en",
+            "dateModified": "2026-10-08",
             "isPartOf": {
               "@id": "https://icaif2026.org/#website"
             },
-            "inLanguage": "en",
-            "dateModified": "2026-10-01",
-            "breadcrumb": {
-              "@id": "https://icaif2026.org/#breadcrumb"
-            },
-            "primaryImageOfPage": {
-              "@type": "ImageObject",
-              "url": "https://icaif2026.org/img/piazza-duomo-tramonto.jpg",
-              "width": 1536,
-              "height": 1024,
-              "creditText": "Based on Piazza del Duomo by kuhnmi (original photograph: CC BY 2.0). AI-edited for ICAIF 2026: people removed; lighting, sky and colors modified.",
-              "isBasedOn": {
-                "@type": "ImageObject",
-                "url": "https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg",
-                "license": "https://creativecommons.org/licenses/by/2.0/"
-              }
-            },
             "about": {
               "@id": "https://icaif2026.org/#event"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://icaif2026.org/#conference-image"
             }
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://icaif2026.org/#breadcrumb",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://icaif2026.org/"
-              }
-            ]
           }
         ]
       }
@@ -138,7 +123,7 @@
     <script src="js/hero-time.js?v=2026091601" defer></script>
     <!-- Heroicons -->
     <script src="js/heroicons.js?v=2026082908" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026100801">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026100804">
     <link rel="stylesheet" href="css/paper-notice.css?v=2026092801">
   </head>
 
@@ -328,7 +313,7 @@
       </div>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <!-- --- HERO SECTION --- -->
       <section
         class="hero relative min-h-[480px] overflow-hidden sm:min-h-[560px] lg:min-h-[620px]"
@@ -385,17 +370,17 @@
               <div
                 class="alert paper-notice w-fit max-w-full gap-2 border-warning bg-warning text-sm font-semibold leading-snug text-warning-content"
                 role="alert"
-                data-paper-notification-notice
+                data-workshop-deadline-notice
               >
                 <i data-heroicon="calendar-clock" class="size-5 shrink-0" aria-hidden="true"></i>
-                <span>Paper notification extended to October 1, 2026</span>
+                <span>Workshop paper submission extended to October 12, 2026</span>
               </div>
               <span
                 class="text-sm font-medium leading-relaxed text-neutral-content/90"
                 data-next-milestone-summary
                 aria-live="polite"
               >
-                Next milestone: tutorial proposal notification · September 5
+                Next milestone: workshop paper submission · October 12
               </span>
             </div>
 
@@ -475,12 +460,12 @@
               <div class="stat-title text-base-content/80">Next milestone</div>
               <time
                 class="stat-value text-2xl text-accent"
-                datetime="2026-09-05"
+                datetime="2026-10-12"
                 data-next-milestone-date
-                >Sep 5</time
+                >Oct 12</time
               >
               <div class="stat-desc text-base-content/80" data-next-milestone-label>
-                Tutorial proposal notification
+                Workshop paper submission
               </div>
             </div>
             <div class="stat">
@@ -523,7 +508,7 @@
               <li class="flex min-h-28 min-w-0 items-center sm:min-h-32">
                 <img
                   src="img/loghi/qrt-quantitative-research-technologies.svg"
-                  alt="QRT — Quantitative Research &amp; Technologies"
+                  alt="QRT — Qube Research &amp; Technologies"
                   width="295"
                   height="337"
                   loading="lazy"
@@ -584,11 +569,12 @@
               <span class="badge w-24 justify-center">Authors</span>
               <div class="list-col-grow">
                 <h3 class="font-bold text-base-content">
-                  Submit to an ICAIF workshop
+                  Explore ICAIF workshop papers
                 </h3>
                 <p class="mt-1 text-sm text-base-content/70">
-                  Main paper submissions are closed. Workshop paper submissions
-                  remain available until October 1.
+                  Main paper submissions are closed. The extended workshop
+                  paper submission deadline is October 12, 2026, 23:59 AoE.
+                  Check each workshop's call for submission details.
                 </p>
               </div>
               <a
@@ -834,7 +820,7 @@
                   <p class="mt-4 max-w-xl text-neutral-content/70">
                     Discover the workshop programme, organizing teams,
                     submission tracks, and paper submission deadline
-                    <time datetime="2026-10-01" class="line-through opacity-50">October 1, 2026</time>
+                    <time datetime="2026-10-01" class="line-through ">October 1, 2026</time>
                     <time datetime="2026-10-12T23:59:00-12:00" class="ml-2 font-semibold text-neutral-content">Extended to October 12, 2026</time>.
                   </p>
                 </div>
@@ -862,7 +848,7 @@
                     Accepted competitions announced
                   </h3>
                   <p class="mt-1 text-sm text-base-content/70">
-                    Meet the two ICAIF '26 trading competitions and their
+                    Explore the accepted ICAIF '26 competitions and their
                     organizing teams.
                   </p>
                 </div>
@@ -965,7 +951,7 @@
                 alt="Bocconi University Campus"
                 width="620"
                 height="350"
-                class="w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover"
                 id="bocconi-img"
                 loading="lazy"
                 decoding="async"
@@ -1078,7 +1064,7 @@
             <h2 id="plan-milan-title" class="section-title">
               Start planning for Milan
             </h2>
-            <p class="mt-4 text-primary-content/80 sm:text-lg">
+            <p class="mt-4 text-primary-content/90 sm:text-lg">
               Registration is open. Review the fee schedule, travel grants, and
               key dates before booking your place.
             </p>
@@ -1153,7 +1139,7 @@
           >
           <a href="https://ai-finance.org/icaif22/" class="link">ICAIF '22</a>
           <a href="https://ai-finance.org/icaif21/" class="link">ICAIF '21</a>
-          <a href="https://aifin2020.wordpress.com/" class="link"
+          <a href="https://ai-finance.org/2020home/" class="link"
             >ICAIF '20</a
           >
         </nav>
@@ -1193,7 +1179,7 @@
         <a href="/privacy-policy/" class="link">Privacy Policy</a>
       </div>
     </footer>
-    <script src="js/home-stats.js?v=2026092801" defer></script>
-    <script src="js/site-layout.js?v=2026100801" defer></script>
+    <script src="js/home-stats.js?v=2026100803" defer></script>
+    <script src="js/site-layout.js?v=2026100803" defer></script>
   </body>
 </html>

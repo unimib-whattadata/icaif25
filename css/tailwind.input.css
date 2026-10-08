@@ -155,6 +155,10 @@
 }
 
 @layer base {
+  [hidden]:not([hidden="until-found"]) {
+    display: none !important;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--color-primary) 28%, transparent);
     color: var(--color-base-content);
@@ -175,6 +179,12 @@
 }
 
 @layer components {
+  /* Priority actions remain visible without perpetual decorative motion. */
+  .aura::before,
+  .aura::after {
+    animation: none !important;
+  }
+
   .document-sections {
     display: grid;
     gap: 2.5rem;
@@ -217,6 +227,19 @@
     min-width: 0;
     overflow-x: auto;
     scrollbar-width: thin;
+  }
+
+  .page-index-desktop .menu > li > a,
+  .site-nav .menu > li > a,
+  .site-nav .menu > li > details > summary {
+    min-height: 2.75rem;
+  }
+
+  footer nav > a,
+  .footer-disclosure-content > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
   }
 
   .footer-disclosure > summary {
@@ -338,6 +361,13 @@
 }
 
 @media (max-width: 767px) {
+  .footer-disclosure-content > a,
+  footer > :last-child a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
   [data-page="workshop"] .program-card,
   [data-page="competitions"] .program-card {
     scroll-margin-top: 8rem;
@@ -479,13 +509,20 @@ footer > :last-child {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  html,
+  * {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  }
+
+  .footer-disclosure > summary::after,
+  .responsive-details-icon {
+    transition: none;
+  }
+
+  .aura::before,
+  .aura::after,
+  .site-nav .status {
+    animation: none !important;
   }
 }
 
@@ -493,4 +530,14 @@ footer > :last-child {
   .site-nav .navbar-start { width: auto; }
   .site-nav .navbar-end { width: auto; flex: 1; }
   .site-nav .navbar-end > .menu { flex-wrap: nowrap; }
+}
+
+/* Keep editable field boundaries distinguishable on light content surfaces. */
+main :is(.input, .select) {
+  border-color: color-mix(in srgb, var(--color-base-content) 65%, var(--color-base-100));
+}
+
+main .input::placeholder {
+  color: var(--color-base-content);
+  opacity: 0.75;
 }

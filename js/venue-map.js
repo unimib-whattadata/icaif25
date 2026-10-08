@@ -47,11 +47,35 @@
   let view = "city", zoom = 1, frame = 0;
   let mapData, drawnGeometry;
   let routes = [], route = null;
+  let hotelMarkers = [];
   let mapVisible = false, motionPaused = false, journeyRunning = false;
   let activeHotelMarker = null;
   const easeOut = t => 1-Math.pow(1-t,3);
   const canMove = () => !reducedMotion.matches && !motionPaused && !document.hidden && mapVisible;
   const geometry = () => venueMapGeometry(d3,view,compact.matches,route);
+
+  function focusMapControl() {
+    controls.querySelector(`[data-map-view="${view}"]`)?.focus({preventScroll:true});
+  }
+
+  function syncHotelVisibility(viewBox) {
+    hotelMarkers.forEach(item => {
+      const visible = venueHotelMarkerVisible(item.x, item.y, viewBox);
+      if (visible === item.visible) return;
+      item.visible = visible;
+      // Coordinates are cached after drawing: no layout measurements, and
+      // attributes change only when a marker crosses the viewport boundary.
+      if (!visible && document.activeElement === item.marker) focusMapControl();
+      item.marker.setAttribute("tabindex", visible ? "0" : "-1");
+      if (visible) item.marker.removeAttribute("aria-hidden");
+      else item.marker.setAttribute("aria-hidden", "true");
+    });
+  }
+
+  function setMapViewBox(viewBox) {
+    canvas.querySelector("svg").setAttribute("viewBox", viewBox.join(" "));
+    syncHotelVisibility(viewBox);
+  }
 
   function updateButtons() {
     zoomControls.querySelector('[data-map-zoom="in"]').disabled = zoom >= 2;
@@ -120,13 +144,13 @@
 
   function animateBox(target, duration, done) {
     const svg = canvas.querySelector("svg");
-    if (!canMove()) { svg.setAttribute("viewBox",target.join(" ")); done?.(); return; }
+    if (!canMove()) { setMapViewBox(target); done?.(); return; }
     const initial = svg.getAttribute("viewBox").split(/\s+/).map(Number);
     const start = performance.now();
     canvas.dataset.motion = "camera";
     function step(now) {
       const progress = Math.min(1,(now-start)/duration);
-      svg.setAttribute("viewBox",initial.map((value,i) => value+(target[i]-value)*easeOut(progress)).join(" "));
+      setMapViewBox(initial.map((value,i) => value+(target[i]-value)*easeOut(progress)));
       if (progress < 1) frame = requestAnimationFrame(step);
       else { frame = 0; canvas.dataset.motion = "idle"; done?.(); }
     }
@@ -175,7 +199,11 @@
     if (activeHotelMarker) {
       activeHotelMarker.classList.remove("is-active");
       activeHotelMarker.setAttribute("aria-expanded", "false");
-      if (restoreFocus && activeHotelMarker.isConnected) activeHotelMarker.focus();
+      if (restoreFocus) {
+        if (activeHotelMarker.isConnected && activeHotelMarker.getAttribute("aria-hidden") !== "true") {
+          activeHotelMarker.focus({preventScroll:true});
+        } else focusMapControl();
+      }
     }
     activeHotelMarker = null;
     hotelPopup.hidden = true;
@@ -204,7 +232,7 @@
     hotelName.textContent = hotel.name;
     hotelMeta.textContent = `${hotel.address} · about ${hotel.walk} min walk to the venue`;
     hotelLink.href = hotel.url;
-    hotelLink.setAttribute("aria-label", `Visit ${hotel.name} website (new tab)`);
+    hotelLink.setAttribute("aria-label", `Visit hotel website: ${hotel.name} (opens in a new tab)`);
     hotelPopup.hidden = false;
     placeHotelPopup(marker);
     if (fromKeyboard) hotelLink.focus({preventScroll:true});
@@ -212,6 +240,10 @@
   }
 
   function draw(previousCamera, trace = false) {
+    const focused = document.activeElement;
+    const focusedHotelId = focused.closest?.(".map-hotel-marker")?.dataset.hotelId ||
+      (hotelPopup.contains(focused) ? activeHotelMarker?.dataset.hotelId : null);
+    const focusedControlWillHide = reducedMotion.matches && (focused === motionToggle || focused === replay);
     closeHotel();
     stopMotion();
     drawnGeometry = geometry();
@@ -219,6 +251,9 @@
     canvas.append(hotelPopup);
     const svg = canvas.querySelector("svg");
     svg.setAttribute("role", "group");
+    hotelMarkers = [...canvas.querySelectorAll(".map-hotel-marker")].map(marker => ({
+      marker, x: Number(marker.dataset.mapX), y: Number(marker.dataset.mapY), visible: true,
+    }));
     hotelKey.hidden = !!route;
     const target = zoomBox();
     updateButtons();
@@ -231,12 +266,17 @@
       const {width,height,projection,scale} = drawnGeometry;
       const [x,y] = projection(previousCamera.center);
       const ratio = scale/previousCamera.scale;
-      svg.setAttribute("viewBox",[x-width*ratio/2,y-height*ratio/2,width*ratio,height*ratio].join(" "));
+      setMapViewBox([x-width*ratio/2,y-height*ratio/2,width*ratio,height*ratio]);
       animateBox(target,420,trace ? traceRoute : idlePin);
     } else {
-      svg.setAttribute("viewBox",target.join(" "));
+      setMapViewBox(target);
       if (trace) traceRoute(); else idlePin();
     }
+    if (focusedHotelId) {
+      const replacement = hotelMarkers.find(item => item.marker.dataset.hotelId === focusedHotelId && item.visible);
+      if (replacement) replacement.marker.focus({preventScroll:true});
+      else focusMapControl();
+    } else if (focusedControlWillHide) focusMapControl();
   }
 
   function renderDetails() {
@@ -310,12 +350,13 @@
         .catch(() => {
           routeHint.textContent = "Route previews are unavailable. Use Get directions to plan your journey in Google Maps.";
           routeHint.hidden = false;
+          status.textContent = routeHint.textContent;
         });
       if ("IntersectionObserver" in window) {
         new IntersectionObserver(entries => {
           mapVisible = entries[0].isIntersecting;
           if (mapVisible) idlePin();
-          else { stopMotion(); canvas.querySelector("svg").setAttribute("viewBox",zoomBox().join(" ")); }
+          else { stopMotion(); setMapViewBox(zoomBox()); }
         },{threshold:.15}).observe(canvas);
       } else { mapVisible = true; idlePin(); }
       compact.addEventListener("change",() => draw());
@@ -348,7 +389,7 @@
         motionToggle.textContent = motionPaused ? "Play animation" : "Pause animation";
         motionToggle.setAttribute("aria-pressed",String(motionPaused));
         stopMotion();
-        canvas.querySelector("svg").setAttribute("viewBox",zoomBox().join(" "));
+        setMapViewBox(zoomBox());
         updateButtons();
         idlePin();
         status.textContent = motionPaused ? "Map animation paused." : "Map animation playing.";
@@ -384,9 +425,16 @@
       });
     })
     .catch(() => {
+      closeHotel();
       canvas.hidden = true;
       picture.hidden = false;
       controls.hidden = true;
       zoomControls.hidden = true;
+      routePicker.hidden = true;
+      routeDetails.hidden = true;
+      hotelKey.hidden = true;
+      routeHint.textContent = "Interactive map unavailable. Use the location map or Get directions to plan your journey.";
+      routeHint.hidden = false;
+      status.textContent = routeHint.textContent;
     });
 })();

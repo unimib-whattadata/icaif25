@@ -220,6 +220,11 @@
     const sessions = programme.sessions;
     const sessionById = new Map(sessions.map((session) => [session.id, session]));
     const articleById = new Map(articles.map((article) => [article.dataset.programmeSession, article]));
+    const slotGroups = slots.map((element) => ({
+      element,
+      articles: [...element.querySelectorAll("[data-programme-session]")],
+      caption: element.querySelector(".programme-slot-heading p"),
+    }));
     const dayFormatter = new Intl.DateTimeFormat("en-GB", {
       weekday: "long", day: "numeric", month: "long", timeZone: "UTC",
     });
@@ -288,7 +293,17 @@
         const conflict = article.querySelector("[data-programme-conflict]");
         if (conflict) conflict.hidden = !conflicts.has(id);
       });
-      [...slots, ...days].forEach((element) => {
+      slotGroups.forEach((group) => {
+        const count = group.articles.filter((article) => visibleIds.has(article.dataset.programmeSession)).length;
+        const total = group.articles.length;
+        group.element.hidden = count === 0;
+        if (group.caption) {
+          group.caption.textContent = total === 1 ? "Scheduled session"
+            : count === total ? `${total} parallel sessions`
+              : `${count} of ${total} parallel sessions`;
+        }
+      });
+      days.forEach((element) => {
         element.hidden = ![...element.querySelectorAll("[data-programme-session]")]
           .some((article) => visibleIds.has(article.dataset.programmeSession));
       });
@@ -298,7 +313,7 @@
         if (!session) { button.hidden = true; return; }
         const saved = savedIds.has(id);
         button.setAttribute("aria-pressed", String(saved));
-        button.setAttribute("aria-label", `${saved ? "Remove" : "Save"} ${session.title}, ${dayLabels.get(session.date)} at ${session.start}, ${session.room}, ${saved ? "from" : "to"} My agenda`);
+        button.setAttribute("aria-label", `${saved ? "Saved — remove" : "Save"} ${session.title}, ${dayLabels.get(session.date)} at ${session.start}, ${session.room}, ${saved ? "from" : "to"} My agenda`);
         const label = button.querySelector("[data-save-label]");
         if (label) label.textContent = saved ? "Saved" : "Save";
       });

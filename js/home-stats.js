@@ -10,9 +10,9 @@
     { date: "2026-08-09", label: "Extended paper submission deadline" },
     { date: "2026-08-22", label: "Tutorial proposal submission" },
     { date: "2026-09-05", label: "Tutorial proposal notification" },
-    { date: "2026-10-01", label: "Workshop paper submission" },
     { date: "2026-10-01", label: "Paper notification" },
-    { date: "2026-10-15", label: "Workshop paper notification" },
+    { date: "2026-10-12", label: "Workshop paper submission" },
+    { date: "2026-10-16", label: "Workshop paper notification" },
     { date: "2026-10-18", label: "Author registration deadline" },
     { date: "2026-10-25", label: "Early Bird registration deadline" },
     { date: "2026-11-14", label: "Tutorials and workshops" },
@@ -62,6 +62,8 @@
     const statTitle = stat?.querySelector(".stat-title");
     const statDate = stat?.querySelector("[data-next-milestone-date]");
     const statLabel = stat?.querySelector("[data-next-milestone-label]");
+    const workshopNotice = document.querySelector("[data-workshop-deadline-notice]");
+    if (workshopNotice) workshopNotice.hidden = now > getEndOfAoE("2026-10-12");
     if (!summary && !stat) return;
 
     const milestone = getNextMilestone(now);
@@ -111,7 +113,7 @@
   updateHomeMilestone();
   window.setInterval(updateHomeMilestone, UPDATE_INTERVAL_MS);
 
-  const paperNotice = document.querySelector("[data-paper-notification-notice]");
+  const paperNotice = document.querySelector("[data-workshop-deadline-notice]");
   let noticeInView = false;
   const syncNoticeAnimation = () => {
     paperNotice?.classList.toggle("is-visible", noticeInView && !document.hidden);

@@ -95,6 +95,8 @@ This record preserves the identity already implemented in the ICAIF website. Nav
 
 The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological session cells. The programme is an extension of this system, with its detailed usage recorded in `.impeccable/surfaces/programme-html.md`.
 
+The October 8 whole-site audit preserves this identity. Its coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
+
 **Key Characteristics:**
 
 - Navy framing with white and slate content surfaces.
@@ -155,7 +157,7 @@ Main section padding uses the `section-space` family. Long reading pages use the
 
 The site combines tonal surfaces with restrained native component depth. Light navigation dropdowns use the existing small shadow; native buttons and fields retain daisyUI depth where their surface does not override it. The programme deliberately removes button shadows and separates flat session cells with slate rules. This local treatment does not prohibit shadows elsewhere in the incumbent site.
 
-The sidecar records the sampled dropdown shadow and native state motion. Shared reduced-motion CSS disables prolonged transitions and animations when the visitor requests reduced motion.
+The sidecar records the sampled dropdown shadow and native state motion. Update dots and priority-action accents remain static. Reduced-motion rules remove smooth scrolling and disclosure rotation; the venue map uses a static camera/route while short color and opacity feedback remains available.
 
 ## Shapes
 
@@ -167,6 +169,8 @@ Fields and buttons use the `field` radius, badges use `selector`, and native car
 
 Native daisyUI actions use the field radius and semantic color pairs. Main-content buttons have at least 44px height, automatic height, 12px vertical padding and wrapping labels. A page's priority action uses `btn btn-accent btn-lg` and `data-priority-action`; supporting actions use native `btn` variants. Native hover, active and focus rules remain in effect unless a surface supplies an explicit override.
 
+Accessible names retain visible words, adding context for repeated downloads and hotel links. Symbolic map zoom controls use the functional names “Zoom in” and “Zoom out”. Closed calls show their status beside neutral portal links; a past submission action does not remain a priority action.
+
 ### Badges
 
 Badges carry short metadata or status labels. The programme uses a white badge with a slate border for session type and an outlined light badge for its preliminary status on the navy header. These labels have no invented interactive behavior.
@@ -177,13 +181,21 @@ Native cards use the box radius and a body padding default of 24px; existing mob
 
 ### Inputs / Fields
 
-The programme uses native daisyUI `input` and `select` controls with visible labels. Fields are 46px high; their text is 14px on larger screens and 16px below 640px. Placeholder text uses `base-content` at 75% opacity. Inputs retain native focus treatment; labels and placeholder text serve different roles.
+The programme uses native daisyUI `input` and `select` controls with visible labels. Fields are 46px high; their text is 14px on larger screens and 16px below 640px. The venue select also uses 16px text below 640px. Editable fields have a visible boundary mixed from `base-content` and `base-100`; placeholder text uses `base-content` at 75% opacity. Inputs retain native focus treatment; labels and placeholder text serve different roles.
 
 ### Navigation
 
-The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Mobile navigation keeps reachable controls with at least 44px height and closes with Escape or an outside click through the shared script.
+The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
-Shared keyboard focus CSS uses an offset outline, and native controls also supply their component focus rules. Text links retain offset underlines.
+Shared keyboard focus CSS uses an offset outline, and native controls also supply their component focus rules. Text links retain offset underlines. The skip link targets a focusable main region. Hidden content is removed from layout and keyboard interaction.
+
+### Reading Tables
+
+Keep column and row headers meaningful when tables stack on mobile. Registration periods use three separate row groups, and their mobile cards retain every category and amount. Expired and superseded dates stay at readable contrast, with textual or strike-through status rather than reduced opacity.
+
+### Interactive Venue Map
+
+The map retains a textual hotel list and a static image fallback. Hotel markers outside the painted viewport leave the tab order; redraws and popup closure preserve focus on a visible marker or map control. Camera and route motion respects the visitor's motion preference and the explicit pause control.
 
 ## Do's and Don'ts
 
@@ -193,9 +205,11 @@ Shared keyboard focus CSS uses an offset outline, and native controls also suppl
 - **Do** align new content with the shared container and responsive gutters.
 - **Do** keep visible keyboard focus, wrapping button labels and the established 44px action minimum.
 - **Do** retain content-specific layouts and the incumbent home-page exceptions.
+- **Do** preserve readable dates, meaningful table relationships and focus through dynamic updates.
 
 ### Don't:
 
 - **Don't** replace the established navy, white, slate, copper or Inter identity when extending the site.
 - **Don't** force tables, programme sessions, sponsor groups and portraits into identical cards.
 - **Don't** rewrite factual titles, sponsor brands or functional labels solely to satisfy a static design heuristic.
+- **Don't** erase useful state feedback when reducing motion or infer a contrast verdict without the rendered background and state.

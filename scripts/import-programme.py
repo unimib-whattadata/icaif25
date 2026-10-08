@@ -123,6 +123,12 @@ def public_title(title, session_type):
         return "Session to be confirmed", "tbc", "", True
     if title.upper() == "TBD":
         return "Session to be confirmed", "tbc", "", True
+    # The title explicitly identifies these formats even where the source Type
+    # column is inconsistent. Keep the source's time, room, and title unchanged.
+    if title == "Keynote Pasquali":
+        session_type = "keynote"
+    elif "poster session" in title.casefold() and session_type == "break":
+        session_type = "poster-session"
     title = title.replace("The 3nd Workshop", "The 3rd Workshop")
     if title == "Financial AI Security, Privacy, and Safety:":
         title = title[:-1]
@@ -135,7 +141,7 @@ def public_title(title, session_type):
         pending = True
     elif title == "Banquet Dinner - Awards + speech Marc Mezard confermato":
         title = "Banquet dinner & awards"
-        detail = "Speech by Marc Mezard."
+        detail = "Speech by Marc Mézard."
     elif title == "FINOS (demo+panel) 1h":
         title = "FINOS demo & panel"
     return title, session_type, detail, pending

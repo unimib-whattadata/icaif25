@@ -23,7 +23,7 @@
             const isPast = now > getEndOfAoE(endDate);
 
             dateElement.classList.toggle('line-through', isPast);
-            dateElement.classList.toggle('opacity-50', isPast);
+            dateElement.classList.remove('opacity-50');
 
             if (isPast) {
                 dateElement.setAttribute('aria-label', `${dateElement.textContent.trim()} (past)`);

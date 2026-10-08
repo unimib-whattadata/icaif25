@@ -23,12 +23,12 @@ The October 8 import contains **85 sessions**: 20 on Saturday, 21 on Sunday, 21 
 - Twelve poster rows have no title and a zero in the source's Subsessions column. They remain on the programme as “Poster session”, with title/presentation details pending. Zero is not interpreted as cancellation or as a public poster count.
 - Sunday 11:00–13:00, Room 3 is TBD. It is shown as “Session to be confirmed” and marked pending.
 - Tuesday 15:30–16:00 has no room or type. The title explicitly identifies a poster session, so it uses `poster-session`; its room is “To be confirmed” and it is marked pending.
-- Tuesday 11:00–11:30 identifies a poster session in its title but has source type BREAK. Its type remains `break`. The source's positive poster count is retained as “40 posters”.
-- Tuesday 14:00–14:30 is titled “Keynote Pasquali” but has source type ORAL SESSION. Its type remains `oral-session` until the organizers correct the workbook.
+- Tuesday 11:00–11:30 identifies a poster session in its title but has source type BREAK. Its public type is normalized to `poster-session` so poster filtering includes it. The title, time, room, and “40 posters” count are preserved.
+- Tuesday 14:00–14:30 is titled “Keynote Pasquali” but has source type ORAL SESSION. Its public type is normalized to `keynote` to agree with that explicit title; the title, time, room, and stable session ID are preserved. These display corrections do not modify the workbook.
 - Oral Session 5–8 labels appear on both Monday and Tuesday; the importer preserves both sets with distinct session IDs.
 - Sunday's FINOS title includes a one-hour annotation, but its scheduled interval is 08:30–10:30. The public title is “FINOS demo & panel”; the importer preserves the scheduled two-hour interval.
 - The Monday afternoon panel contains draft organizational details. Its public title is “Panel discussion”, with participants and moderator to be confirmed. Those draft details are not published.
-- The Monday morning panel is presented as “Panel discussion: Intesa, Domyn, Bloomberg & CFM”, with “Moderator: QRT.” as its detail. The banquet is “Banquet dinner & awards”, with “Speech by Marc Mezard.” as its detail. Organizational annotations are removed from public titles.
+- The Monday morning panel is presented as “Panel discussion: Intesa, Domyn, Bloomberg & CFM”, with “Moderator: QRT.” as its detail. The banquet is “Banquet dinner & awards”, with “Speech by Marc Mézard.” as its detail, using the spelling already published on the organizing committee page. Organizational annotations are removed from public titles.
 - The workshop ordinal typo is corrected from “3nd” to “3rd”; the abbreviated security workshop title's trailing colon is removed. Other titles, including “QubeRT Startup Pitch Session”, are retained without adding names or claims.
 - Positive Subsessions values appear publicly only as presentation/poster counts. Totals and other non-session rows are excluded.
 

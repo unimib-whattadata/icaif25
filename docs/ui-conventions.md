@@ -22,15 +22,35 @@ Align reading columns with the page heading and limit their width with `max-w-3x
 
 ## Interaction
 
-Use `btn` for actions and `link` for text links. A page's priority action uses `data-priority-action` and `btn btn-accent btn-lg`. Buttons wrap long labels and have at least 44px height. Keep visible keyboard focus and offset link underlines.
+Use `btn` for actions and `link` for text links. A page's priority action uses `data-priority-action` and `btn btn-accent btn-lg`. Buttons wrap long labels and have at least 44px height. Navigation, section-index controls, mobile footer links and hotel popup controls follow the same height convention. Keep visible keyboard focus and offset link underlines.
 
-`js/site-layout.js` shares navigation, section indexes, programme disclosures, sponsor disclosures and responsive fee tables. Section indexes use `data-index-label` when a full heading would be too long; the heading and target remain intact. Navigation closes with Escape or an outside click. Footer disclosures and programme details use the same 768px breakpoint as their CSS. Footer sections are open on desktop and individually expandable on mobile.
+The main-content skip link targets `main#main-content` with `tabindex="-1"`. Accessible names retain visible wording, adding context to repeated downloads, save/remove actions and hotel links. Symbolic zoom buttons use “Zoom in” and “Zoom out”. Keep `[hidden]` authoritative so hidden panels cannot remain displayed or reachable.
+
+`js/site-layout.js` shares navigation, section indexes, programme disclosures, sponsor disclosures and responsive fee tables. Section indexes use `data-index-label` when a full heading would be too long; the heading and target remain intact. Navigation closes with Escape or an outside click; Escape returns focus to the matching summary, including nested mobile disclosures. Footer disclosures and programme details use the same 768px breakpoint as their CSS. Footer sections are open on desktop and individually expandable on mobile.
+
+Update dots and priority-action accents remain static. Reduced motion disables smooth scrolling and disclosure rotation while preserving useful color/opacity feedback. Venue camera/route motion uses a static presentation under reduced motion, with a pause control for ordinary motion. On map redraw, zoom and popup closure, focus stays on a visible hotel marker or returns to a visible map control. Failed map data reveals the static map and directions; failed route data leaves the map usable and announces the route limitation.
+
+## Tables and factual content
+
+Retain row/column relationships when reading tables stack below 768px. Enhancement supplies explicit table roles; meaningful first cells use row headers. Registration fees use three `tbody` row groups for Early Bird, Standard and Late / Onsite. Traverse every body when generating the nine mobile fee cards, and preserve all 45 amounts. Without JavaScript, the source table remains visible.
+
+Keep expired and superseded dates legible. Use strike-through and a status cue rather than reduced opacity. Closed calls retain their requirements with a clear closed status and supporting portal link. When changing dates or policy, reconcile the home fallback, runtime milestones, important dates, relevant calls and registration copy against the same confirmed source. Main conference author registration and Workshop Days registration for workshop papers are distinct policies; do not broaden one to cover the other.
 
 ## Validation
 
-Rebuild `css/tailwind.min.css` after changes and keep the CSS/JS cache versions aligned across all HTML files. Run the package's HTML, JavaScript and site checks. Check desktop and mobile, plus the 640–768px footer breakpoint when changing shared navigation.
+Run `npm run build` after source changes. It rebuilds programme markup, SEO metadata, shared CSS and clean-URL copies, then runs JavaScript tests/syntax, HTML validation and site checks. Keep CSS/JS cache versions aligned across all HTML files. Check desktop and mobile, plus the 768px disclosure and 1024px navigation boundaries when changing shared navigation. Dense tables, programme, venue and download labels also need a 320px spot check.
 
-The static Impeccable detector can misread inherited colors, responsive padding and padding on child containers. Verify these findings against computed browser styles. The incumbent fonts, official workshop titles, factual copy, sponsor brands and functional table labels are intentional; do not rewrite them solely to silence a heuristic.
+Use one batched desktop/mobile inspection and one confirmation round for an audit; confirm additional changes with targeted evidence. The static Impeccable detector can misread inherited colors, image overlays, responsive padding and padding on child containers. Verify findings against computed styles and visible states, and document genuine corrections separately from false positives. Existing broad detector ignores limit detector coverage; a quiet detector is not a contrast verdict. The incumbent fonts, official workshop titles, factual copy, sponsor brands and functional table labels are intentional; do not rewrite them solely to silence a heuristic.
+
+The October 8 audit and its limits are recorded in [site-audit.md](site-audit.md). These checks support maintenance; they do not establish full WCAG conformance or guarantee search presentation.
+
+## Search metadata
+
+Root HTML files are the editable page sources. `scripts/build-seo.js` aligns each page's search/social metadata, shared structured-data graph and canonical sitemap; `scripts/build-clean-urls.js` produces the clean-URL copies. Keep titles and descriptions unique across the 17 canonical pages. Canonical, Open Graph URL, WebPage URL and sitemap URL must agree; `.html` aliases and programme query variants use the canonical route.
+
+Use the same factual Event identity across pages, including known conference dates, mixed attendance and the Bocconi street address. Internal pages use Home/current-page breadcrumbs; home has no one-item breadcrumb. JSON-LD uses decoded text, stable IDs and resolved references. Preserve photography provenance and do not invent virtual delivery URLs, pending programme facts or expired submission claims.
+
+The builder's stored update date is October 8, 2026. For a later significant content update, pass its actual date with `node scripts/build-seo.js --updated YYYY-MM-DD` and keep that date in the builder for subsequent builds. Merely rebuilding assets does not justify a fresh `dateModified` or sitemap `lastmod`.
 
 ## Programme
 
@@ -38,4 +58,4 @@ The static Impeccable detector can misread inherited colors, responsive padding 
 
 Keep native input/select controls, visible labels and 16px field text below 640px. Maintain readable placeholder contrast and leave space for native select chevrons when checking labels at narrow widths. Programme cells stack below 640px; the selected day, action row and parallel time groups retain their local responsive rules in `css/programme.css`.
 
-`data/programme.json` is the public schedule source. Follow `docs/programme-source.md` to import an updated external workbook with `scripts/import-programme.py`, then run `npm run build`. This rebuilds the programme's static fallback and embedded data, shared CSS and clean-URL pages, and runs the package checks. Generated `programme.html` content belongs in `scripts/build-programme.js`; preserve pending fields and source times rather than filling gaps. The root `DESIGN.md` records the sampled incumbent system; detailed programme decisions live in `.impeccable/surfaces/programme-html.md`.
+`data/programme.json` is the public schedule source. Follow `docs/programme-source.md` to import an updated external workbook with `scripts/import-programme.py`, then run `npm run build`. Generated `programme.html` content belongs in `scripts/build-programme.js`; preserve pending fields, stable IDs and source times rather than filling gaps. Keep the visible preliminary status in search/social descriptions. The root `DESIGN.md` records the sampled incumbent system; detailed programme decisions live in `.impeccable/surfaces/programme-html.md`.

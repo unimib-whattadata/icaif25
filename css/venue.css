@@ -18,7 +18,7 @@
 .venue-map-switch .btn[aria-pressed="true"] { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-primary-content); }
 .venue-route-picker { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: 1rem; padding: 1.125rem 1.5rem; background: var(--color-base-100); }
 .venue-route-picker label { font-size: .8125rem; font-weight: 600; }
-.venue-route-picker .select { width: 100%; min-height: 3rem; height: 3rem; font-size: .875rem; border-color: var(--color-base-300); background-color: var(--color-base-200); box-shadow: none; }
+.venue-route-picker .select { width: 100%; min-height: 3rem; height: 3rem; font-size: .875rem; border-color: color-mix(in srgb,var(--color-base-content) 65%,var(--color-base-100)); background-color: var(--color-base-200); box-shadow: none; }
 .venue-route-picker .select:hover { border-color: var(--color-primary); }
 .venue-map-figure :is(.btn,.select,a):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
 .venue-route-hint { padding: 0 1.5rem 1rem; font-size: .8125rem; line-height: 1.6; background: var(--color-base-100); color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
@@ -33,11 +33,11 @@
 .venue-map-canvas .map-hotel-marker:is(:focus-visible,.is-active) .map-hotel-disc { stroke: #bf4c16; stroke-width: 4; }
 .venue-hotel-popover { position: absolute; z-index: 3; width: min(18rem,calc(100% - 1rem)); background: var(--color-base-100); color: var(--color-base-content); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
 .venue-hotel-popover .card-body { display: block; padding: 1.125rem; }
-.venue-hotel-popover .card-title { max-width: calc(100% - 2rem); font-size: .9375rem; line-height: 1.35; }
+.venue-hotel-popover .card-title { max-width: calc(100% - 3rem); font-size: .9375rem; line-height: 1.35; }
 .venue-hotel-meta { margin-top: .375rem; font-size: .75rem; line-height: 1.55; color: color-mix(in oklab,var(--color-base-content) 76%,var(--color-base-100)); }
 .venue-hotel-popover .card-actions { margin-top: .875rem; }
 .venue-hotel-popover .card-actions .btn { min-height: 2.75rem; width: 100%; font-size: .75rem; }
-.venue-hotel-close { position: absolute; top: .5rem; right: .5rem; min-height: 2rem; height: 2rem; width: 2rem; padding: .375rem; }
+.venue-hotel-close { position: absolute; top: .5rem; right: .5rem; min-height: 2.75rem; height: 2.75rem; width: 2.75rem; padding: .625rem; }
 .venue-hotel-close svg { display: block; width: 100%; height: 100%; }
 .venue-map-tools { display: flex; align-items: center; gap: .5rem; padding: .75rem 1.25rem 1.25rem; background: #f3f7fa; }
 .venue-map-tools .btn { min-height: 2.75rem; height: 2.75rem; background: var(--color-base-100); box-shadow: none; }
@@ -119,7 +119,7 @@
 .venue-hotel-info .link { text-decoration-color: color-mix(in oklab,var(--color-base-content) 35%,transparent); transition: color 160ms ease,text-decoration-color 160ms ease; }
 .venue-hotel-info .link:hover { color: var(--color-primary); text-decoration-color: currentColor; }
 .venue-hotel-info p { margin-top: .25rem; color: color-mix(in oklab,var(--color-base-content) 72%,var(--color-base-100)); font-size: .8125rem; }
-.venue-hotel-directions { display: inline-flex; min-height: 2.25rem; align-items: center; gap: .375rem; font-size: .8125rem; font-weight: 600; white-space: nowrap; }
+.venue-hotel-directions { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .375rem; font-size: .8125rem; font-weight: 600; white-space: nowrap; }
 .venue-hotel-directions svg { transition: transform 160ms ease; }
 .venue-hotel-directions:hover svg { transform: translateX(.2rem); }
 .venue-hotels-list a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
@@ -144,6 +144,7 @@
   .venue-details { position: sticky; top: 10rem; align-self: start; }
 }
 @media (max-width: 639px) {
+  .venue-route-picker .select { font-size: 1rem; }
   .venue-layout { gap: 2rem; }
   .venue-facts { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; margin-block: 1.5rem; padding-block: 1.25rem; }
   .venue-facts > div + div { margin-top: 0; }

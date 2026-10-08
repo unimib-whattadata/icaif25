@@ -10,14 +10,15 @@
     if (!navigation) return;
 
     const updatedPages = new Map([
-      ["/important-dates/", "Paper notification extended to October 1, 2026"],
+      ["/important-dates/", "Workshop deadlines: October 12 and October 16, 2026"],
+      ["/workshop/", "Workshop paper submission extended to October 12, 2026"],
+      ["/programme/", "Preliminary conference programme available"],
       ["/registration/", "Registration reopened with clarified VAT pricing"],
       ["/venue/", "Nearby hotels and travel information added"],
       ["/qrt-student-travel-awards/", "Travel award applications are open"],
       ["/competitions/", "Qube-RT startup competition link added"],
-      ["/call-for-papers/", "Paper notification extended to October 1, 2026"],
+      ["/call-for-papers/", "Paper submissions closed; author registration deadline October 18, 2026"],
     ]);
-    const markers = [];
 
     navigation.querySelectorAll("a[href]").forEach((link) => {
       const update = updatedPages.get(link.getAttribute("href"));
@@ -26,11 +27,9 @@
       const marker = document.createElement("span");
       marker.className = "inline-grid shrink-0 *:[grid-area:1/1]";
       marker.setAttribute("aria-hidden", "true");
-      const ping = document.createElement("span");
-      ping.className = "status status-accent status-md";
       const dot = document.createElement("span");
       dot.className = "status status-accent status-md";
-      marker.append(ping, dot);
+      marker.append(dot);
 
       const updateText = document.createElement("span");
       updateText.className = "sr-only";
@@ -39,40 +38,7 @@
       link.classList.add("gap-1.5");
       link.title = `Updated: ${update}`;
       link.append(marker, updateText);
-      markers.push({ marker, ping });
     });
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const desktopMenu = window.matchMedia("(min-width: 1024px)");
-    const onscreenMarkers = new Set();
-
-    const syncMarkerAnimation = () => {
-      markers.forEach(({ marker, ping }) => {
-        const visible =
-          !reducedMotion.matches &&
-          !document.hidden &&
-          !marker.closest("details:not([open])") &&
-          onscreenMarkers.has(marker);
-        ping.classList.toggle("motion-safe:animate-ping", visible);
-      });
-    };
-
-    const markerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) onscreenMarkers.add(entry.target);
-        else onscreenMarkers.delete(entry.target);
-      });
-      syncMarkerAnimation();
-    });
-    markers.forEach(({ marker }) => markerObserver.observe(marker));
-
-    reducedMotion.addEventListener("change", syncMarkerAnimation);
-    desktopMenu.addEventListener("change", syncMarkerAnimation);
-    navigation.querySelectorAll("details").forEach((details) => {
-      details.addEventListener("toggle", syncMarkerAnimation);
-    });
-    document.addEventListener("visibilitychange", syncMarkerAnimation);
-    syncMarkerAnimation();
 
     const disclosures = Array.from(navigation.querySelectorAll("details"));
     navigation.addEventListener("click", (event) => {
@@ -342,6 +308,16 @@
     document.querySelectorAll("main table").forEach((table) => {
       if (table.tHead?.rows[0]?.cells.length === 2) {
         table.classList.add("table-mobile-rows");
+        table.setAttribute("role", "table");
+        table.tHead.setAttribute("role", "rowgroup");
+        Array.from(table.tBodies).forEach((group) => group.setAttribute("role", "rowgroup"));
+        Array.from(table.rows).forEach((row) => {
+          row.setAttribute("role", "row");
+          Array.from(row.cells).forEach((cell, index) => {
+            cell.setAttribute("role", row.parentElement === table.tHead
+              ? "columnheader" : index === 0 ? "rowheader" : "cell");
+          });
+        });
       }
     });
 
@@ -362,7 +338,7 @@
     cards.className = "registration-fee-cards";
     let period = "";
 
-    Array.from(table.tBodies[0].rows).forEach((row) => {
+    Array.from(table.tBodies).flatMap((group) => Array.from(group.rows)).forEach((row) => {
       const cells = Array.from(row.cells);
       if (cells[0]?.getAttribute("scope") === "rowgroup") {
         period = cells.shift().textContent.trim();
@@ -375,11 +351,14 @@
       const cardBody = document.createElement("div");
       cardBody.className = "card-body gap-4 p-4";
       const periodLabel = document.createElement("p");
+      periodLabel.id = uniqueId(`registration-${slugify(period)}-${slugify(type)}-period`);
       periodLabel.className = "text-xs font-bold uppercase tracking-wider text-primary";
       periodLabel.textContent = period;
       const title = document.createElement("h3");
+      title.id = uniqueId(`registration-${slugify(period)}-${slugify(type)}-type`);
       title.className = "card-title text-base";
       title.textContent = type;
+      card.setAttribute("aria-labelledby", `${periodLabel.id} ${title.id}`);
       const list = document.createElement("dl");
       list.className = "grid gap-2";
 

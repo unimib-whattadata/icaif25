@@ -58,6 +58,15 @@ function venueMapGeometry(d3, mode, mobile, route) {
   return {width, height, center: projection.invert([width/2,height/2]), scale: projection.scale(), projection};
 }
 
+// The painted hotel disc has radius 14 plus its 3px stroke. Keep partially
+// visible markers available, but exclude completely clipped ones from focus.
+function venueHotelMarkerVisible(x, y, viewBox) {
+  const [left, top, width, height] = viewBox;
+  const nearestX = Math.max(left, Math.min(left + width, x));
+  const nearestY = Math.max(top, Math.min(top + height, y));
+  return Math.hypot(x - nearestX, y - nearestY) <= 15.5;
+}
+
 function renderVenueMap(d3, data, mode, mobile, route, showHotels = false) {
   const campus = mode === 'campus';
   const {width,height,center,projection} = venueMapGeometry(d3,mode,mobile,route);
@@ -161,7 +170,7 @@ function renderVenueMap(d3, data, mode, mobile, route, showHotels = false) {
   const hotelMarkup = showHotels && !route ? VENUE_HOTELS.map(hotel => {
     const [x,y] = projection(hotel.coordinates);
     if (x < 22 || x > width-22 || y < 36 || y > height-42) return '';
-    return `<g class="map-hotel-marker" data-hotel-id="${hotel.id}" role="button" tabindex="0" aria-label="Show ${escape(hotel.name)} details" aria-controls="venue-hotel-tooltip" aria-expanded="false" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><title>${escape(hotel.name)}</title><circle class="map-hotel-hit" r="22" fill="transparent"/><g class="map-hotel-symbol"><circle class="map-hotel-disc" r="14" fill="#0f2c42" stroke="#fff" stroke-width="3"/><text class="map-hotel-letter" text-anchor="middle" y="4" fill="#fff" font-size="11" font-weight="800">H</text></g></g>`;
+    return `<g class="map-hotel-marker" data-hotel-id="${hotel.id}" data-map-x="${x.toFixed(1)}" data-map-y="${y.toFixed(1)}" role="button" tabindex="0" aria-label="Show ${escape(hotel.name)} details" aria-controls="venue-hotel-tooltip" aria-expanded="false" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><title>${escape(hotel.name)}</title><circle class="map-hotel-hit" r="22" fill="transparent"/><g class="map-hotel-symbol"><circle class="map-hotel-disc" r="14" fill="#0f2c42" stroke="#fff" stroke-width="3"/><text class="map-hotel-letter" text-anchor="middle" y="4" fill="#fff" font-size="11" font-weight="800">H</text></g></g>`;
   }).join('') : '';
   const markup = `<svg class="venue-cartography" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
 <title id="title">ICAIF ’26 at Bocconi University, Via Röntgen 1</title>

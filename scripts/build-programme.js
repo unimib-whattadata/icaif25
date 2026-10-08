@@ -34,7 +34,7 @@ function renderSession(session) {
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 <div class="programme-session-actions">
                   <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Save ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-save-label>Save</span></button>
-                  <a class="link programme-permalink" href="/programme/?day=${session.date}#${session.id}" aria-label="Link to ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}">Session link</a>
+                  <a class="link programme-permalink" href="/programme/?day=${session.date}#${session.id}" aria-label="Session link: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}">Session link</a>
                 </div>
               </article>`;
 }
@@ -68,7 +68,7 @@ const roomOptions = [...rooms, ...extraRooms].map(room=>`<option value="${escape
 const typeOptions = Object.entries(typeLabels).filter(([type])=>data.sessions.some(session=>session.type===type)).map(([type,label])=>`<option value="${type}">${label}</option>`).join('\n');
 const dayButtons = data.days.map(day=>`          <button type="button" class="btn programme-date" data-programme-date="${day.date}" aria-pressed="false"><span>${day.label.slice(0,3)}</span><strong>${Number(day.date.slice(-2))} Nov</strong></button>`).join('\n');
 const json = JSON.stringify(data).replace(/</g,'\\u003c');
-const main = `    <main id="main-content">
+const main = `    <main id="main-content" tabindex="-1">
       <section id="page-header" class="hero bg-neutral text-neutral-content">
         <div aria-hidden="true" data-animated-hero-overlay class="hero-overlay bg-primary/20"></div>
         <div class="hero-content page-header-content programme-header">
@@ -125,12 +125,12 @@ ${roomOptions}
           </div>
           <div class="programme-actions" data-programme-actions hidden>
             <button type="button" class="btn programme-agenda-button" aria-pressed="false" data-programme-saved-only>My agenda <span class="badge" data-saved-count>0</span></button>
-            <button type="button" class="btn" data-programme-export disabled><i data-heroicon="download" class="size-4" aria-hidden="true"></i> Export calendar</button>
+            <button type="button" class="btn" data-programme-export aria-describedby="programme-storage-note" disabled><i data-heroicon="download" class="size-4" aria-hidden="true"></i> Export calendar</button>
             <button type="button" class="btn" data-programme-print>Print</button>
             <button type="button" class="btn programme-reset" data-programme-reset>Reset filters</button>
           </div>
         </div>
-        <p class="programme-storage-note" data-programme-storage-note hidden>Saved in this browser. Save sessions to export your calendar.</p>
+        <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Saved in this browser. Save sessions to export your calendar.</p>
         <p class="sr-only" data-programme-feedback aria-live="polite" aria-atomic="true"></p>
         <div class="programme-empty" data-programme-empty hidden>
           <h2>No sessions match your view</h2>
@@ -162,7 +162,7 @@ if (fs.existsSync(destination)) {
     .replace(/\n\s*<script[^>]*registration-timeline\.js[^>]*><\/script>/,'')
     .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100802">\n    <script src="js/programme.js?v=2026100801" defer></script>\n  </head>');
 }
-html = html.replace(/    <main id="main-content">[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
+html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');
