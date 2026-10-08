@@ -149,6 +149,8 @@ def public_title(title, session_type):
 
 def import_workbook(input_path, updated):
     links = workshop_links()
+    tutorial_data = json.loads((ROOT / "data/tutorials.json").read_text(encoding="utf-8"))
+    tutorials = {tutorial["title"]: tutorial for tutorial in tutorial_data["tutorials"]}
     workbook = openpyxl.load_workbook(input_path, data_only=True, read_only=True)
     sessions = []
     seen_days = set()
@@ -195,6 +197,17 @@ def import_workbook(input_path, updated):
                         detail = " ".join(part for part in (detail, f"{int(count)} {unit}") if part)
                 identity = json.dumps([session_date, start, room, title], ensure_ascii=False)
                 identity_hash = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:8]
+                href = links.get(title_key(title), "") if session_type == "workshop" else ""
+                if session_type == "tutorial" and title in tutorials:
+                    tutorial = tutorials[title]
+                    actual = (session_date, start, end, room)
+                    expected = tuple(tutorial[key] for key in ("date", "start", "end", "room"))
+                    if actual != expected:
+                        raise ValueError("Tutorial schedule differs from the supplied tutorial page data")
+                    names = [presenter["name"] for presenter in tutorial["presenters"]]
+                    joined = ", ".join(names[:-1]) + " and " + names[-1] if len(names) > 1 else names[0]
+                    detail = " ".join(part for part in (detail, f"Presenters: {joined}.") if part)
+                    href = f"/tutorials/#{tutorial['id']}"
                 sessions.append({
                     "id": f"session-{session_date}-{start.replace(':', '')}-{identity_hash}",
                     "date": session_date,
@@ -205,7 +218,7 @@ def import_workbook(input_path, updated):
                     "room": room,
                     "detail": detail,
                     "pending": pending,
-                    "href": links.get(title_key(title), "") if session_type == "workshop" else "",
+                    "href": href,
                 })
                 seen_days.add(session_date)
             except ValueError as error:

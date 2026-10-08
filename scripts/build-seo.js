@@ -26,6 +26,7 @@ const descriptions = {
   'call-for-tutorials.html': "Tutorial proposal requirements, selection criteria and deadlines for ICAIF '26. Tutorials take place in Milan, Italy, November 14–15, 2026.",
   'call-for-competitions.html': "Competition proposal requirements and selection criteria for ICAIF '26. Explore the accepted competitions and preliminary schedule in Milan.",
   'programme.html': "Preliminary ICAIF '26 programme, Milan, November 14–17, 2026. Browse sessions by day, room and type, and save a personal agenda.",
+  'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
 };
 const image = {
   '@type': 'ImageObject', '@id': `${origin}/#conference-image`,

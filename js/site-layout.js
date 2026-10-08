@@ -13,6 +13,7 @@
       ["/important-dates/", "Workshop deadlines: October 12 and October 16, 2026"],
       ["/workshop/", "Workshop paper submission extended to October 12, 2026"],
       ["/programme/", "Preliminary conference programme available"],
+      ["/tutorials/", "Tutorial abstracts and presenters available"],
       ["/registration/", "Registration reopened with clarified VAT pricing"],
       ["/venue/", "Nearby hotels and travel information added"],
       ["/qrt-student-travel-awards/", "Travel award applications are open"],
@@ -86,6 +87,7 @@
   const sectionHeadings = () => {
     const main = document.querySelector("main");
     if (!main || page === "index" || page === "programme") return [];
+    if (page === "tutorials") return Array.from(main.querySelectorAll("h3[data-index-label]"));
 
     const headings = Array.from(main.querySelectorAll("h2")).filter(
       (heading) => !heading.closest(".card, .alert"),
@@ -141,6 +143,7 @@
     const mobileList = document.createElement("ul");
     mobileList.className =
       "menu menu-sm dropdown-content z-40 mt-2 max-h-[min(70vh,30rem)] w-full overflow-y-auto rounded-box bg-base-100 p-2 shadow-sm";
+    if (page === "tutorials") mobileList.classList.add("[&_a]:min-h-11");
     links.forEach((item) => mobileList.append(item.cloneNode(true)));
     mobile.append(summary, mobileList);
 

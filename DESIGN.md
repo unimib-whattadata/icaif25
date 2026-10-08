@@ -93,9 +93,9 @@ components:
 
 This record preserves the identity already implemented in the ICAIF website. Navy navigation and internal page headers frame white and slate content surfaces; Inter supplies the interface hierarchy, and copper identifies a priority action or a saved programme choice. Merriweather remains the home introduction's established exception.
 
-The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological timeline with parallel session cells. The programme is an extension of this system, with its detailed usage recorded in `.impeccable/surfaces/programme-html.md`.
+The shared styles define the reusable system. Individual surfaces retain the layout their content needs: reading columns, tables, sponsor groups, committee portraits and the programme's chronological timeline with parallel session cells. The programme and Tutorials reading page extend this system, with their detailed usage recorded in `.impeccable/surfaces/programme-html.md` and `.impeccable/surfaces/tutorials-html.md`.
 
-The October 8 whole-site audit preserves this identity. Its coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
+The October 8 whole-site audit and later programme/Tutorials extensions preserve this identity. Their coverage, content sources and verification limits are recorded in `docs/site-audit.md`; shared implementation rules remain in `docs/ui-conventions.md`.
 
 **Key Characteristics:**
 
@@ -104,7 +104,7 @@ The October 8 whole-site audit preserves this identity. Its coverage, content so
 - Native daisyUI controls using the `icaif` semantic theme.
 - Shared alignment and responsive gutters, with content-specific layouts.
 
-Recorded from `css/tailwind.input.css`, `css/fonts.css`, `css/tailwind.min.css`, `docs/ui-conventions.md`, `index.html`, `workshop.html`, `programme.html` and `css/programme.css`. Frontmatter colors and radii retain the theme's existing names and values; typography and spacing entries describe the shared utilities' mobile defaults. This documentation does not change the runtime tokens. Only the used palette sampled here is listed; the source theme also defines other semantic status colors.
+Recorded from `css/tailwind.input.css`, `css/fonts.css`, `css/tailwind.min.css`, `docs/ui-conventions.md`, `index.html`, `workshop.html`, `programme.html`, `css/programme.css`, `tutorials.html` and `scripts/build-tutorials.js`. Frontmatter colors and radii retain the theme's existing names and values; typography and spacing entries describe the shared utilities' mobile defaults. This documentation does not change the runtime tokens. Only the used palette sampled here is listed; the source theme also defines other semantic status colors.
 
 ## Colors
 
@@ -145,6 +145,8 @@ The hierarchy uses bold, tightly tracked headings and relaxed introductory text.
 
 The home hero has its existing larger headline scale. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
 
+Tutorial titles retain the shared subsection hierarchy, while presenter names use bold body text and affiliations remain alongside them. The full abstracts use relaxed leading and a local 72ch maximum reading measure; these are reading-surface choices rather than new typography tokens.
+
 ## Layout
 
 The shared content container is centered with an 80rem maximum width. Gutters use `container-gutter`, `container-gutter-sm` from 640px, and `container-gutter-lg` from 1024px. Reading columns align with the page heading and use a 48rem maximum width.
@@ -152,6 +154,8 @@ The shared content container is centered with an 80rem maximum width. Gutters us
 Main section padding uses the `section-space` family. Long reading pages use the `document-gap` family, increasing at 640px. The shared footer and programme disclosures switch at 768px; the navigation's desktop arrangement begins at 1024px. The home university, statistics and sponsor bands retain their compact spacing.
 
 The programme's persistent navigator is a local layout extension: 240px wide on desktop, with reserved space in its content and tools from 1024–1799px, and compact below 640px. Its detailed stop, focus and responsive behavior belongs in the programme surface record.
+
+Tutorials groups the four articles under dated headings. From 1024px, an article's title spans its 12rem schedule column and flexible reading column; below that breakpoint metadata and reading content stack. Native description lists retain time/room relationships, and the abstract column keeps its local 72ch limit. All supplied reading content remains visible.
 
 **The Content Layout Rule.** Keep tables, programme sessions, sponsor tiers and portraits in the layouts suited to their content, while preserving the shared alignment.
 
@@ -194,6 +198,10 @@ Shared keyboard focus CSS uses an offset outline, and native controls also suppl
 ### Reading Tables
 
 Keep column and row headers meaningful when tables stack on mobile. Registration periods use three separate row groups, and their mobile cards retain every category and amount. Expired and superseded dates stay at readable contrast, with textual or strike-through status rather than reduced opacity.
+
+### Tutorial Reading Articles
+
+Dated sections alternate the existing white and pale-slate surfaces. Full titles, presenter/affiliation lists and complete abstract paragraphs remain in static HTML, separated by slate rules. A native supporting button links each article to its precise programme session; the header links to all tutorial sessions. The shared section index uses short topic labels while preserving full headings and target IDs. Its Tutorials mobile links retain the 44px minimum. This surface introduces no new palette, font, global component token, animation or raster asset.
 
 ### Programme Timeline
 

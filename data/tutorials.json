@@ -1,0 +1,74 @@
+{
+  "updated": "2026-10-08",
+  "source": "Tutorial titles, presenters and abstracts supplied for publication on 8 October 2026; rooms checked against the conference programme.",
+  "tutorials": [
+    {
+      "id": "trustworthy-document-intelligence",
+      "indexLabel": "Document intelligence",
+      "date": "2026-11-14",
+      "start": "08:30",
+      "end": "10:30",
+      "room": "Room 3",
+      "title": "Trustworthy Document Intelligence in Finance",
+      "presenters": [
+        { "name": "Yaxuan Kong", "affiliation": "University of Oxford" },
+        { "name": "Yichen Li", "affiliation": "FinHorizons Foundation" },
+        { "name": "Stefan Zohren", "affiliation": "University of Oxford" }
+      ],
+      "abstract": [
+        "Question answering over filings, earnings calls, and research documents is the most widely deployed LLM use case in financial institutions, and the one where hallucination is least tolerable. This hands-on tutorial teaches participants to build a grounded document intelligence pipeline end to end: structure-aware parsing of filings including tables and figures, hybrid retrieval-augmented generation with structured citations, numeric grounding that traces every figure in an answer to its source, and systematic faithfulness evaluation with claim-level verification. Participants build a working question-answering system over real SEC filings and earnings-call transcripts, measure its faithfulness, and improve it. The session closes with production concerns: point-in-time corpora, incremental indexing, cost, and audit trails. All materials are open source and remain available after the conference."
+      ]
+    },
+    {
+      "id": "bayesian-volatility-calibration",
+      "indexLabel": "Bayesian calibration",
+      "date": "2026-11-14",
+      "start": "11:00",
+      "end": "13:00",
+      "room": "Room 3",
+      "title": "Amortized Bayesian Calibration of Volatility Models",
+      "presenters": [
+        { "name": "Francesco Muia", "affiliation": "PyMC Labs" },
+        { "name": "Alexander Fengler", "affiliation": "Brown University" },
+        { "name": "Stefan T. Radev", "affiliation": "Rensselaer Polytechnic Institute" },
+        { "name": "Jerry M. Huang", "affiliation": "Rensselaer Polytechnic Institute" }
+      ],
+      "abstract": [
+        "Calibrating stochastic volatility models is essential for financial forecasting and risk management, yet traditional methods struggle to combine computational efficiency with reliable uncertainty quantification. This tutorial introduces Amortized Bayesian Inference (ABI), a simulation-based approach that uses generative neural networks to enable near-instantaneous estimation of full parameter posterior distributions. Using volatility models such as Heston, GARCH, and rough volatility, we introduce neural posterior estimation, normalizing flows, and flow matching, with particular emphasis on parameter identifiability, posterior validation, and model misspecification. Through hands-on exercises with the open-source BayesFlow framework, participants will learn to calibrate models, assess inference reliability, and propagate parameter uncertainty into volatility forecasts and risk measures such as Value-at-Risk.",
+        "The tutorial provides practical tools for scalable, interpretable, and uncertainty-aware Bayesian calibration in quantitative finance."
+      ]
+    },
+    {
+      "id": "confidence-calibration-selective-prediction",
+      "indexLabel": "Confidence & calibration",
+      "date": "2026-11-14",
+      "start": "14:00",
+      "end": "16:00",
+      "room": "Room 3",
+      "title": "Knowing When to Trust the Model: Confidence, Calibration, and Selective Prediction for LLMs in Finance",
+      "presenters": [
+        { "name": "Shikhar Dave", "affiliation": "Domyn" },
+        { "name": "Bhaskarjit Sarmah", "affiliation": "Domyn" }
+      ],
+      "abstract": [
+        "Large language models are moving from chat into financial workflows where they are translating an analyst’s question into SQL over trading and reference data, reading filings, and drafting risk summaries. In these settings, a fluent, confident, wrong answer is worse than no answer: it silently misinforms a trade, a disclosure, or a compliance decision. This 2-hour, hands-on tutorial teaches practitioners how to attach a trustworthy, calibrated confidence to an LLM’s output, how to turn that confidence into a risk-controlled decision (answer vs. abstain) with distribution-free guarantees, and how to evaluate and govern the result under existing model risk frameworks. We use natural-language-to-SQL over financial data as a concrete running example and a browser-based lab, but the methods of confidence estimation, calibration, and conformal selective prediction transfer to any LLM application in finance. Everything is taught vendor-neutrally on open benchmarks and open-source tooling."
+      ]
+    },
+    {
+      "id": "financial-agents-in-the-wild",
+      "indexLabel": "Financial agents",
+      "date": "2026-11-15",
+      "start": "08:30",
+      "end": "10:30",
+      "room": "Room 3",
+      "title": "Financial Agents in the Wild: Architectures, Evaluation, and Open Challenges",
+      "presenters": [
+        { "name": "Enrico Santus", "affiliation": "Bloomberg" },
+        { "name": "Ioana Baldini", "affiliation": "Bloomberg" }
+      ],
+      "abstract": [
+        "This tutorial provides a structured introduction to agentic systems and a critical overview of recent research on agents in finance. We first introduce the foundations and architectural patterns of modern agentic systems and then examine financial agent architectures, automated research pipelines for quantitative finance, and emerging approaches to benchmarking and live evaluation. The tutorial builds toward an expert panel bringing together researchers and practitioners to discuss open problems in evaluation, reliability, governance, reproducibility, and the appropriate limits of agent autonomy in finance. By connecting recent advances in agentic systems with methodological challenges specific to finance, the tutorial aims to help participants identify promising research questions and pursue new work at the intersection of agents and finance."
+      ]
+    }
+  ]
+}

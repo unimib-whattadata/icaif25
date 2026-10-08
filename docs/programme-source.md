@@ -16,6 +16,16 @@ The default output is `data/programme.json`. Pass `--output /path/to/programme.j
 
 Keep the raw workbook outside the repository. The public JSON excludes notes, totals, and organizational statistics. Workshop links are matched against titles and anchor IDs already present in `workshop.html`; an unmatched title is displayed without a detail link.
 
+## Tutorial publication source
+
+The tutorial content supplied by the user for publication on 8 October 2026 is stored separately in `data/tutorials.json`: four full English titles/abstracts, eleven presenter names and affiliations, and the supplied dates/times. Presentation-only wrapped author lines were joined; the Bayesian calibration abstract retains its two paragraphs. Dates and Room 3 assignments agree with the existing workbook-derived programme for all four tutorials. The JSON's `source` note describes this separate publication source; it supplies presenter metadata and reading copy, which are not attributed to the original Excel cells.
+
+The accepted slots are Saturday 14 November 08:30–10:30, 11:00–13:00 and 14:00–16:00, then Sunday 15 November 08:30–10:30, all in Room 3 and all CET (UTC+1). The Tutorials builder requires exactly one programme tutorial matching each title, date, start, end and room. It preserves complete supplied copy, synchronizes that matched session's presenter `detail` and article `href`, and derives its return link from the stable session ID. Its `--check` mode rejects stale page copy or programme presenter metadata without writing.
+
+On reimport, `scripts/import-programme.py` loads the same tutorial JSON. For a matching tutorial title, it compares date, start, end and room before adding presenter names to `detail` and the article anchor to `href`; a mismatch fails before output is written. The October 8 publication extension changes only eight session fields: four `detail` values and four `href` values. All 85 session IDs, dates, start/end times, rooms, public titles, types and pending flags remain exactly as previously imported. The source workbook is read-only and is never rewritten for this enrichment. Search can now find each of the eleven tutorial presenters through the corresponding programme detail.
+
+For a presenter or abstract update, edit `data/tutorials.json` and run `npm run build`; no Excel reimport is needed. `build:tutorials` synchronizes the page and matching programme metadata before programme rendering, SEO, CSS and clean-route generation. Confirmed title/date/time/room changes still require reconciling the schedule source and publication data before building. Do not hand-edit generated main content in `tutorials.html` or `programme.html`. Presenter images, institutional links and material URLs were not supplied; none are inferred from names or abstract claims.
+
 ## Source decisions and anomalies
 
 The October 8 import contains **85 sessions**: 20 on Saturday, 21 on Sunday, 21 on Monday, and 23 on Tuesday. All start/end times and room assignments are preserved exactly, including Saturday registration ending at 17:00, Sunday's early registration slot, Tuesday lunch starting at 13:10, and Tuesday sessions ending at 17:40.

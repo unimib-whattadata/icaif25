@@ -81,9 +81,9 @@
       "title": "Trustworthy Document Intelligence in Finance",
       "type": "tutorial",
       "room": "Room 3",
-      "detail": "",
+      "detail": "Presenters: Yaxuan Kong, Yichen Li and Stefan Zohren.",
       "pending": false,
-      "href": ""
+      "href": "/tutorials/#trustworthy-document-intelligence"
     },
     {
       "id": "session-2026-11-14-1030-b3f353e4",
@@ -141,9 +141,9 @@
       "title": "Amortized Bayesian Calibration of Volatility Models",
       "type": "tutorial",
       "room": "Room 3",
-      "detail": "",
+      "detail": "Presenters: Francesco Muia, Alexander Fengler, Stefan T. Radev and Jerry M. Huang.",
       "pending": false,
-      "href": ""
+      "href": "/tutorials/#bayesian-volatility-calibration"
     },
     {
       "id": "session-2026-11-14-1300-4ac57637",
@@ -201,9 +201,9 @@
       "title": "Knowing When to Trust the Model: Confidence, Calibration, and Selective Prediction for LLMs in Finance",
       "type": "tutorial",
       "room": "Room 3",
-      "detail": "",
+      "detail": "Presenters: Shikhar Dave and Bhaskarjit Sarmah.",
       "pending": false,
-      "href": ""
+      "href": "/tutorials/#confidence-calibration-selective-prediction"
     },
     {
       "id": "session-2026-11-14-1600-8396b7fd",
@@ -321,9 +321,9 @@
       "title": "Financial Agents in the Wild: Architectures, Evaluation, and Open Challenges",
       "type": "tutorial",
       "room": "Room 3",
-      "detail": "",
+      "detail": "Presenters: Enrico Santus and Ioana Baldini.",
       "pending": false,
-      "href": ""
+      "href": "/tutorials/#financial-agents-in-the-wild"
     },
     {
       "id": "session-2026-11-15-1030-e9979a58",
