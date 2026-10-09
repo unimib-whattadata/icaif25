@@ -1,0 +1,319 @@
+/* Programme-only print edition. Screen styles and filtering remain independent. */
+@page programme {
+  size: A4 portrait;
+  margin: 12mm 12mm 15mm;
+
+  @bottom-left {
+    content: "ICAIF ’26  ·  Milan  ·  14–17 November 2026";
+    font: 8pt "Inter", sans-serif;
+    color: #475569;
+    border-top: .5pt solid #cbd5e1;
+    padding-top: 2mm;
+    vertical-align: top;
+  }
+
+  @bottom-right {
+    content: "icaif2026.org  ·  " counter(page) " / " counter(pages);
+    font: 8pt "Inter", sans-serif;
+    color: #475569;
+    border-top: .5pt solid #cbd5e1;
+    padding-top: 2mm;
+    vertical-align: top;
+  }
+}
+
+@media print {
+  html[data-theme="icaif"] {
+    color-scheme: light;
+    background: #fff;
+    scroll-behavior: auto;
+  }
+
+  body[data-page="programme"],
+  body[data-page="programme"]:has(.programme-navigator:not([hidden])) {
+    page: programme;
+    margin: 0;
+    padding: 0;
+    color: var(--color-base-content);
+    background: #fff;
+    font-size: 10pt;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  [data-page="programme"] :is(.site-nav, footer, .skip-link, #page-header,
+    .programme-tools, .programme-actions, .programme-storage-note,
+    .programme-session-actions, .programme-closing-note, .programme-navigator,
+    .programme-time-picker, .programme-empty-actions, .sr-only, noscript) {
+    display: none !important;
+  }
+
+  [data-page="programme"] main,
+  [data-page="programme"] .programme-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .programme-print-day-header {
+    display: block;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  [data-page="programme"] main:has([data-programme-empty]:not([hidden])) > .programme-print-empty-header {
+    display: block;
+  }
+
+  .programme-print-masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5mm;
+    height: 17mm;
+    margin-bottom: 3mm;
+    padding-bottom: 2mm;
+    border-bottom: 1pt solid var(--color-accent);
+  }
+
+  .programme-print-brand {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+  }
+
+  .programme-print-brand > img {
+    width: 19mm;
+    height: 12mm;
+    object-fit: contain;
+  }
+
+  .programme-print-brand > div > p:last-child {
+    max-width: 68mm;
+    margin-top: 1mm;
+    font-size: 7.5pt;
+    line-height: 1.4;
+  }
+
+  .programme-print-wordmark {
+    font-size: 16pt;
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+    white-space: nowrap;
+  }
+
+  .programme-print-wordmark > span {
+    margin-left: 3mm;
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .programme-print-universities {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 3mm;
+  }
+
+  .programme-print-universities > img {
+    width: 23mm;
+    height: 8mm;
+    object-fit: contain;
+    /* Existing university marks are white versions; print them in black. */
+    filter: brightness(0);
+  }
+
+  .programme-print-universities > img:nth-child(2) { width: 8mm; }
+  .programme-print-universities > img:nth-child(4) { width: 25mm; }
+
+  .programme-print-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 5mm;
+    margin-bottom: 1.5mm;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  .programme-print-title > p:first-child {
+    font-size: 20pt;
+    font-weight: 750;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+  }
+
+  .programme-print-title > p:last-child {
+    font-size: 8pt;
+  }
+
+  .programme-print-note { margin-bottom: 3mm; font-size: 7.5pt; line-height: 1.35; }
+
+  .programme-results-toolbar {
+    display: none;
+  }
+
+  .programme-status { font-size: 9pt; font-weight: 650; }
+  .programme-source-note { margin-top: 1mm; font-size: 8pt; line-height: 1.4; }
+  .programme-print-filters { display: block; margin: 0 0 3mm; font-size: 8pt; overflow-wrap: anywhere; }
+  .programme-print-filters:empty { display: none; }
+
+  .programme-day {
+    padding: 0;
+    break-before: page;
+  }
+
+  /* Hidden days must never introduce blank pages in a filtered printout. */
+  .programme-day:not([hidden]):not(.programme-day:not([hidden]) ~ .programme-day) {
+    break-before: auto;
+  }
+
+  /* A filtered view or agenda can share sheets instead of spending one per day. */
+  [data-programme-print-compact="true"] .programme-day { break-before: auto; }
+  [data-programme-print-compact="true"] .programme-day:not([hidden]) ~ .programme-day {
+    padding-top: 5mm;
+  }
+  [data-programme-print-compact="true"] .programme-day:not([hidden]) ~ .programme-day .programme-print-day-header {
+    display: none;
+  }
+
+  .programme-day-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2mm 5mm;
+    margin: 0 0 2.5mm;
+    padding: 0 0 2mm;
+    border-bottom: 1pt solid var(--color-base-content);
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  .programme-day-heading > h2 {
+    font-size: 15pt;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+  }
+
+  .programme-day-heading > p { font-size: 8pt; line-height: 1.4; }
+
+  .programme-timeline { display: block; margin: 0; padding: 0; list-style: none; }
+
+  .programme-timeline > .programme-slot {
+    display: grid;
+    grid-template-columns: 15mm minmax(0, 1fr);
+    grid-template-rows: auto;
+    align-items: start;
+    gap: 3mm;
+    margin: 0 0 2mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .programme-timeline .timeline-start {
+    grid-area: 1 / 1;
+    display: block;
+    padding-top: 2mm;
+    margin: 0;
+  }
+
+  .programme-slot-heading h3,
+  .programme-slot[aria-current="step"] .programme-slot-heading h3 {
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-base-content);
+  }
+
+  .programme-slot-heading p { display: none; }
+  .programme-timeline :is(.timeline-middle, hr) { display: none; }
+
+  .programme-timeline .timeline-end {
+    grid-area: 1 / 2;
+    place-self: stretch;
+    width: 100%;
+    margin: 0;
+  }
+
+  .programme-sessions {
+    display: grid;
+    grid-template-columns: repeat(var(--programme-print-columns, 4), minmax(0, 1fr));
+    gap: 0;
+    background: #fff;
+    border: .5pt solid #cbd5e1;
+  }
+
+  .programme-slot[data-programme-print-columns="1"] { --programme-print-columns: 1; }
+  .programme-slot[data-programme-print-columns="2"] { --programme-print-columns: 2; }
+  .programme-slot[data-programme-print-columns="3"] { --programme-print-columns: 3; }
+
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .programme-session,
+  .programme-session[data-type="registration"] {
+    display: block;
+    padding: 2mm;
+    border: .25pt solid #e2e8f0;
+    background: #fff;
+    break-inside: avoid;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .programme-session:has(.programme-save[aria-pressed="true"]) { background: #fff; }
+  .programme-session[data-type="break"], .programme-session[data-type="registration"] { background: #f8fafc; }
+  .programme-session-meta { align-items: baseline; margin: 0 0 1.5mm; gap: 1mm 1.5mm; }
+  .programme-room { font-size: 8pt; font-weight: 700; line-height: 1.3; }
+
+  .programme-type {
+    height: auto;
+    min-height: 0;
+    padding: .4mm 1mm;
+    border-width: .5pt;
+    border-radius: 1mm;
+    font-size: 6.5pt;
+    line-height: 1.2;
+  }
+
+  .programme-session-title { font-size: 9.5pt; font-weight: 650; line-height: 1.3; overflow-wrap: anywhere; }
+  .programme-session-title > .link { color: inherit; text-decoration: none; }
+  .programme-session-time,
+  .programme-session[data-type="registration"] .programme-session-time { margin-top: 1mm; font-size: 7.5pt; line-height: 1.3; }
+  .programme-detail, .programme-pending { margin-top: 1mm; font-size: 7.5pt; line-height: 1.3; }
+  .programme-conflict { margin-top: 1.5mm; padding: 0; font-size: 8pt; line-height: 1.4; }
+  .programme-empty { margin: 5mm 0; padding: 5mm; }
+  .programme-empty h2 { font-size: 15pt; }
+  .programme-empty p { font-size: 10pt; }
+
+  /* One visible event gets a compact horizontal row, including breaks. */
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) > .programme-session {
+    display: grid;
+    grid-template-columns: minmax(27mm, auto) minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 1mm 3mm;
+    padding-block: 2mm;
+  }
+
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) .programme-session-meta {
+    display: block;
+    margin: 0;
+  }
+
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) .programme-type {
+    display: none;
+  }
+
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) .programme-session-time { margin: 0; white-space: nowrap; }
+  .programme-sessions:not(:has(> .programme-session:not([hidden]) ~ .programme-session:not([hidden]))) :is(.programme-detail, .programme-pending, .programme-conflict) {
+    grid-column: 2 / -1;
+    margin: 0;
+  }
+}

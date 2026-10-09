@@ -142,6 +142,8 @@ def public_title(title, session_type):
     elif title == "Banquet Dinner - Awards + speech Marc Mezard confermato":
         title = "Banquet dinner & awards"
         detail = "Speech by Marc Mézard."
+    elif title == "ADIA Session":
+        title = "ADIA Lab"
     elif title == "FINOS (demo+panel) 1h":
         title = "FINOS demo & panel"
     return title, session_type, detail, pending

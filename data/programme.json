@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -422,11 +422,11 @@
       "href": "/workshop/#ai-private-markets"
     },
     {
-      "id": "session-2026-11-15-1400-9a3ba770",
+      "id": "session-2026-11-15-1400-d9635511",
       "date": "2026-11-15",
       "start": "14:00",
       "end": "16:00",
-      "title": "ADIA Session",
+      "title": "ADIA Lab",
       "type": "industry",
       "room": "Main Hall",
       "detail": "",

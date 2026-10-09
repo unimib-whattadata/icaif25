@@ -295,6 +295,7 @@
     };
 
     const timeline = document.querySelector("[data-programme-timeline]");
+    const timelineBoundary = timeline && timeline.closest("main");
     const timelineDay = timeline && timeline.querySelector("select[data-timeline-day]");
     const timelineRange = timeline && timeline.querySelector("[data-timeline-range]");
     const timelinePrevious = timeline && timeline.querySelector("[data-timeline-previous]");
@@ -434,6 +435,9 @@
     };
     const syncTimelineToScroll = () => {
       scrollFrame = null;
+      if (timelineBoundary) {
+        timeline.classList.toggle("programme-navigator-bounded", timelineBoundary.getBoundingClientRect().bottom <= window.innerHeight);
+      }
       if (!timeline || !visibleStops.length || draggingRange || timePicker.open) return;
       if (pendingScroll) {
         if (Math.abs(scrollY() - pendingScroll.top) > 3) return;
@@ -604,6 +608,7 @@
         const count = group.articles.filter((article) => visibleIds.has(article.dataset.programmeSession)).length;
         const total = group.articles.length;
         group.element.hidden = count === 0;
+        group.element.dataset.programmePrintColumns = String(Math.min(count, 4));
         if (group.caption) {
           group.caption.textContent = total === 1 ? "Scheduled session"
             : count === total ? `${total} parallel sessions`
@@ -650,6 +655,18 @@
       if (status) {
         status.textContent = `${visible.length} ${state.saved ? "saved " : ""}${visible.length === 1 ? "session" : "sessions"} · ${dateLabel}`;
       }
+      document.body.dataset.programmePrintCompact = String(state.saved || state.type !== "all" || state.room !== "all" || Boolean(state.q.trim()));
+      selectAll("[data-programme-print-title]").forEach((title) => {
+        title.textContent = state.saved ? "My agenda" : "Conference programme";
+      });
+      const printLabels = [];
+      if (state.type !== "all" && typeSelect) printLabels.push(typeSelect.selectedOptions[0].textContent);
+      if (state.room !== "all") printLabels.push(state.room);
+      if (state.q.trim()) printLabels.push(`Search: “${state.q.trim()}”`);
+      selectAll("[data-programme-print-filters]").forEach((filters) => {
+        filters.textContent = printLabels.length ? `Filtered programme · ${printLabels.join(" · ")}` : "";
+        filters.hidden = printLabels.length === 0;
+      });
       if (empty) empty.hidden = visible.length > 0;
       const matchesAcrossDays = filterSessions(sessions, { ...state, day: "all" }, savedIds).length;
       const canExpandDays = !visible.length && state.day !== "all" && matchesAcrossDays > 0;

@@ -17,6 +17,7 @@ const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp
 const rooms = ['Main Hall', 'Room 1', 'Room 2', 'Room 3', 'Foyer'];
 const roomRank = room => rooms.includes(room) ? rooms.indexOf(room) : rooms.length;
 const dateLabel = date => new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome', weekday:'long', day:'numeric', month:'long'}).format(new Date(`${date}T12:00:00+01:00`));
+const updatedLabel = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${data.updated}T12:00:00+01:00`));
 
 function renderSession(session) {
   const title = session.href
@@ -38,12 +39,36 @@ function renderSession(session) {
               </article>`;
 }
 
+const printHeader = `    <div class="programme-print-day-header">
+      <div class="programme-print-masthead" role="group" aria-label="ICAIF conference print header">
+        <div class="programme-print-brand">
+          <img src="/img/logo.svg" alt="" width="2401" height="1482">
+          <div>
+            <p class="programme-print-wordmark">ICAIF ’26 <span>Milan, Italy</span></p>
+            <p>7th ACM International Conference on AI in Finance</p>
+          </div>
+        </div>
+        <div class="programme-print-universities" role="group" aria-label="Universities">
+          <img src="/img/loghi/bocconi.svg" alt="Bocconi University" width="320" height="112">
+          <img src="/img/loghi/unimib.svg" alt="University of Milano-Bicocca" width="1027" height="1108">
+          <img src="/img/loghi/politecnico.svg" alt="Politecnico di Milano" width="282" height="91">
+          <img src="/img/loghi/unimi.png" alt="Università degli Studi di Milano — La Statale" width="356" height="122">
+        </div>
+      </div>
+      <div class="programme-print-title">
+        <p data-programme-print-title>Conference programme</p>
+        <p>14–17 November 2026 · Milan</p>
+      </div>
+      <p class="programme-print-note">Preliminary schedule · updated ${updatedLabel} · All times CET (UTC+1) · Subject to change</p>
+      <p class="programme-print-filters" data-programme-print-filters></p>
+    </div>`;
+
 function renderDay(day) {
   const sessions = data.sessions.filter(session => session.date === day.date);
   const starts = [...new Set(sessions.map(session => session.start))].sort();
   const blocks = starts.map(start => {
     const current = sessions.filter(session => session.start === start).sort((a,b) => roomRank(a.room)-roomRank(b.room));
-    return `          <li id="programme-slot-${day.date}-${start.replace(':','')}" class="programme-slot" data-programme-slot data-timeline-day="${day.date}" data-timeline-time="${start}">
+    return `          <li id="programme-slot-${day.date}-${start.replace(':','')}" class="programme-slot" data-programme-slot data-programme-print-columns="${Math.min(current.length, 4)}" data-timeline-day="${day.date}" data-timeline-time="${start}">
             <div class="timeline-start programme-slot-heading">
               <h3 tabindex="-1"><time datetime="${day.date}T${start}:00+01:00">${start}</time></h3>
               <p>${current.length > 1 ? `${current.length} parallel sessions` : 'Scheduled session'}</p>
@@ -56,6 +81,7 @@ ${current.map(renderSession).join('\n')}
           </li>`;
   });
   return `        <section class="programme-day" data-programme-day="${day.date}" aria-labelledby="programme-${day.date}">
+${printHeader}
           <div class="programme-day-heading">
             <h2 id="programme-${day.date}">${dateLabel(day.date)}</h2>
             <p>${escape(day.subtitle)}</p>
@@ -72,6 +98,7 @@ const typeOptions = Object.entries(typeLabels).filter(([type])=>data.sessions.so
 const dayButtons = data.days.map(day=>`          <button type="button" class="btn programme-date" data-programme-date="${day.date}" aria-pressed="false"><span>${day.label.slice(0,3)}</span><strong>${Number(day.date.slice(-2))} Nov</strong></button>`).join('\n');
 const json = JSON.stringify(data).replace(/</g,'\\u003c');
 const main = `    <main id="main-content" tabindex="-1">
+      <div class="programme-print-empty-header">${printHeader}</div>
       <section id="page-header" class="hero bg-neutral text-neutral-content">
         <div aria-hidden="true" data-animated-hero-overlay class="hero-overlay bg-primary/20"></div>
         <div class="hero-content page-header-content programme-header">
@@ -124,7 +151,7 @@ ${roomOptions}
         <div class="programme-results-toolbar">
           <div>
             <p data-programme-status role="status" aria-live="polite" aria-atomic="true" class="programme-status">${data.sessions.length} sessions across four days</p>
-            <p class="programme-source-note">Preliminary schedule · updated 8 October 2026 · subject to change</p>
+            <p class="programme-source-note">Preliminary schedule · updated ${updatedLabel} · subject to change</p>
           </div>
           <div class="programme-actions" data-programme-actions hidden>
             <button type="button" class="btn programme-agenda-button" aria-pressed="false" data-programme-saved-only>My agenda <span class="badge" data-saved-count>0</span></button>
@@ -218,6 +245,11 @@ if (fs.existsSync(destination)) {
     .replace('</head>','    <link rel="stylesheet" href="css/programme.css?v=2026100810">\n    <script src="js/programme.js?v=2026100810" defer></script>\n  </head>');
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
+// Keep the dedicated print sheet after the screen CSS and version it independently.
+html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026100907')
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026100907');
+html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
+html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');

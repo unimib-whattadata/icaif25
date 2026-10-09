@@ -1,5 +1,7 @@
 # ICAIF '26 whole-site audit
 
+The latest complete rerun is documented in [the 9 October 2026 site verification](site-audit-2026-10-09.md). It covers all 18 current pages at six widths, uses the current website as the publication reference, and excludes PDF contents at the user's instruction. The October 8 evidence below remains historical.
+
 Audit date: **8 October 2026**, Europe/Rome. This audit covers the 17 canonical pages, their 16 generated clean-URL copies, shared components, programme data/runtime, venue map, metadata, sitemap and links. It preserves the incumbent design, fees, source schedule times and pending details.
 
 The 17-page/33-file and 26-test figures below record the original whole-site audit. Later programme timeline, Tutorials, agenda/home and tutorial workshop-style evidence is recorded separately. The current site contains **18 canonical pages and 35 physical HTML files**. The latest tutorial refinement build passed **31 tests**, retaining the agenda/home count after removal of an obsolete banner-expiry test; the original Tutorials extension's 32-test result remains historical evidence. These extensions do not claim a new full audit of every page body.

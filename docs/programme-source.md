@@ -26,6 +26,10 @@ On reimport, `scripts/import-programme.py` loads the same tutorial JSON. For a m
 
 For a presenter or abstract update, edit `data/tutorials.json` and run `npm run build`; no Excel reimport is needed. `build:tutorials` synchronizes the page and matching programme metadata before programme rendering, SEO, CSS and clean-route generation. Confirmed title/date/time/room changes still require reconciling the schedule source and publication data before building. Do not hand-edit generated main content in `tutorials.html` or `programme.html`. Presenter images, institutional links and material URLs were not supplied; none are inferred from names or abstract claims.
 
+## Organizer correction — October 9, 2026
+
+At the organizers’ request, the Sunday November 15 session at 14:00–16:00 in Main Hall is titled “ADIA Lab”. The importer maps the previous workbook title to this corrected public title so future imports retain the change. Its session ID is recomputed using the existing title-based identity rule.
+
 ## Source decisions and anomalies
 
 The October 8 import contains **85 sessions**: 20 on Saturday, 21 on Sunday, 21 on Monday, and 23 on Tuesday. All start/end times and room assignments are preserved exactly, including Saturday registration ending at 17:00, Sunday's early registration slot, Tuesday lunch starting at 13:10, and Tuesday sessions ending at 17:40.
