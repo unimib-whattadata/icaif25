@@ -124,6 +124,14 @@
   }
 }
 
+/* Menu actions are grids: centre their rows inside the full touch target. */
+@utility menu {
+  & li > :is(a, button),
+  & li > details > summary {
+    align-content: center;
+  }
+}
+
 @utility hero-heading-accent {
   /* Lighten the brand copper so it remains readable over every time-of-day image. */
   color: color-mix(in oklab, var(--color-accent) 40%, var(--color-accent-content));

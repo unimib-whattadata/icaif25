@@ -14,8 +14,8 @@ const extractMeta = (html,key,name) => {
   return decode(tag.match(/content="([^"]*)"/)[1]);
 };
 
-test('all 18 canonical pages have unique coherent search and social metadata',()=>{
-  assert.equal(pages.length,18);
+test('all 19 canonical pages have unique coherent search and social metadata',()=>{
+  assert.equal(pages.length,19);
   assert.ok(pages.includes('tutorials.html'));
   const titles = new Set(),descriptions = new Set();
   for(const file of pages) {
