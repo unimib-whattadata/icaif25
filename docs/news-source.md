@@ -37,3 +37,9 @@ The user also requested the same closing notice on Registration and QRT Student 
 ## Editorial copy revision
 
 At the user's request, all sixteen News entries and the page introduction were tightened on October 14, 2026. The revised headings state the update once; paragraphs add deadlines, subjects, eligibility or participation details rather than repeating the heading or conference name. Link labels are shorter, with the external form's accessible name aligned to its visible label. Publication dates, deadline dates, AoE times, sponsor tiers, tutorial/workshop counts, eligibility conditions, provisional-programme wording, destinations and article anchors are retained. The table above records the original historical announcement labels; revised display titles do not change their sources or dates.
+
+## Needlestack sponsorship — October 16, 2026
+
+The user requested the website changes described in the email “Fw: Sponsorship inquiry” received on October 16, 2026, plus a News update. The message explicitly requests Needlestack Technologies in a dedicated à la carte sponsors section, below the existing sponsorship tiers, with its logo linking to `https://www.needlestacktech.com/`. The new first announcement, “Needlestack Technologies joins as an "à la carte sponsor"”, is dated October 16 and links to `/sponsors-and-supporters/#a-la-carte-sponsors`. The archive now contains seventeen entries. The date records this editorial addition, not the date the sponsorship agreement was signed or a verified deployment time.
+
+The Sponsors page uses the logo supplied in the email attachment; at the user's subsequent request, Needlestack is excluded from the Home sponsor band; its provenance is recorded in [sponsorship-source.md](sponsorship-source.md). Only the public company name, sponsorship category, logo and website are published. Commercial terms and email correspondence are excluded.

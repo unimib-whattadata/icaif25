@@ -20,7 +20,7 @@ The home hero keeps its larger display typography. Its university, statistics an
 
 The home hero action is “Explore the program” and links to `/programme/`. The yellow workshop-paper deadline alert has been removed; the next-milestone summary/stat and AoE deadline behavior remain.
 
-Align reading columns with the page heading and limit their width with `max-w-3xl`. Keep tables, programme lists, sponsor tiers and committee portraits in their appropriate layouts. Do not force different content types into identical cards. Sponsor logos retain their colors and intrinsic proportions, with visible Platinum/Silver grouping.
+Align reading columns with the page heading and limit their width with `max-w-3xl`. Keep tables, programme lists, sponsor tiers and committee portraits in their appropriate layouts. Do not force different content types into identical cards. Sponsor logos retain their colors and intrinsic proportions, with visible Platinum/Silver grouping. The Sponsors page additionally includes the smaller À la carte sponsors group; Home retains only the Platinum and Silver groups.
 
 ## Interaction
 
@@ -54,7 +54,7 @@ Root HTML files supply the page shells; programme and Tutorials main content is 
 
 Use the same factual Event identity across pages, including known conference dates, mixed attendance and the Bocconi street address. Internal pages use Home/current-page breadcrumbs; home has no one-item breadcrumb. JSON-LD uses decoded text, stable IDs and resolved references. Preserve photography provenance and do not invent virtual delivery URLs, pending programme facts or expired submission claims.
 
-The builder's stored update date is October 14, 2026, for the News archive and shared navigation update. For a later significant content update, pass its actual date with `node scripts/build-seo.js --updated YYYY-MM-DD` and keep that date in the builder for subsequent builds. Merely rebuilding assets does not justify a fresh `dateModified` or sitemap `lastmod`.
+The builder's stored update date is October 16, 2026, for the Needlestack sponsorship and News update. For a later significant content update, pass its actual date with `node scripts/build-seo.js --updated YYYY-MM-DD` and keep that date in the builder for subsequent builds. Merely rebuilding assets does not justify a fresh `dateModified` or sitemap `lastmod`.
 
 ## News
 

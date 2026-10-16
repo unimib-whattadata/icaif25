@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const origin = 'https://icaif2026.org';
 const dateFlag = process.argv.indexOf('--updated');
-const updated = dateFlag >= 0 ? process.argv[dateFlag + 1] : '2026-10-14';
+const updated = dateFlag >= 0 ? process.argv[dateFlag + 1] : '2026-10-16';
 if (!/^\d{4}-\d{2}-\d{2}$/.test(updated) || new Date(`${updated}T12:00:00Z`).toISOString().slice(0,10) !== updated) {
   throw new Error('Use --updated YYYY-MM-DD with the date of a significant content update.');
 }
@@ -27,7 +27,7 @@ const descriptions = {
   'call-for-competitions.html': "Competition proposal requirements and selection criteria for ICAIF '26. Explore the accepted competitions and preliminary schedule in Milan.",
   'programme.html': "Preliminary ICAIF '26 programme, Milan, November 14–17, 2026. Browse sessions by day, room and type, and save a personal agenda.",
   'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
-  'news.html': "Latest ICAIF '26 news: preliminary programme, tutorials, deadline extensions, registration, competitions and travel awards for the Milan conference.",
+  'news.html': "Latest ICAIF '26 news: sponsors, preliminary programme, tutorials, deadline updates, registration, competitions and travel awards for the Milan conference.",
 };
 const image = {
   '@type': 'ImageObject', '@id': `${origin}/#conference-image`,
