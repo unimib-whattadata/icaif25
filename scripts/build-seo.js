@@ -27,7 +27,7 @@ const descriptions = {
   'call-for-competitions.html': "Competition proposal requirements and selection criteria for ICAIF '26. Explore the accepted competitions and preliminary schedule in Milan.",
   'programme.html': "Preliminary ICAIF '26 programme, Milan, November 14–17, 2026. Browse sessions by day, room and type, and save a personal agenda.",
   'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
-  'news.html': "Latest ICAIF '26 news: sponsors, preliminary programme, tutorials, deadline updates, registration, competitions and travel awards for the Milan conference.",
+  'news.html': "Latest ICAIF '26 news: student volunteers, sponsors, programme, tutorials, registration deadlines, competitions and travel awards in Milan.",
 };
 const image = {
   '@type': 'ImageObject', '@id': `${origin}/#conference-image`,
