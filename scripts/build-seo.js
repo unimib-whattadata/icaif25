@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const origin = 'https://icaif2026.org';
 const dateFlag = process.argv.indexOf('--updated');
-const updated = dateFlag >= 0 ? process.argv[dateFlag + 1] : '2026-10-16';
+const updated = dateFlag >= 0 ? process.argv[dateFlag + 1] : '2026-10-17';
 if (!/^\d{4}-\d{2}-\d{2}$/.test(updated) || new Date(`${updated}T12:00:00Z`).toISOString().slice(0,10) !== updated) {
   throw new Error('Use --updated YYYY-MM-DD with the date of a significant content update.');
 }
