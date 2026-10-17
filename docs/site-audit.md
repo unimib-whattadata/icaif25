@@ -146,3 +146,32 @@ The refinement passed 31 tests, all 35 HTML files, 18-page site checks, generate
 Run `npm run build` after future edits. Its checks cover local resources/fragments, generated-route parity, programme fallback/data and metadata/schema/sitemap consistency alongside syntax, tests and HTML validation.
 
 For future audits, inspect all canonical routes in one desktop/mobile batch, fix the verified findings together and use one confirmation round. Add targeted keyboard, narrow-width, table-value and motion/fallback checks when those components change. Keep dates, source decisions and audit evidence current. Preserve the incumbent palette and document detector exceptions only with current source/rendered evidence.
+
+## Date consistency audit — 17 October 2026
+
+Reviewed the date-bearing copy across all 19 canonical pages, including News, the Home fallback and runtime milestones, registration, calls, workshops, tutorials, competitions, travel awards, venue copy and shared event metadata. Publication dates and superseded deadlines were distinguished from current deadlines. The organizer's latest clarification is authoritative for author registration:
+
+| Milestone | Current date in 2026 |
+| --- | --- |
+| Workshop proposal submission / notification | July 19 / August 3–9 |
+| Main paper submission / notification | August 9 / October 1 |
+| Tutorial proposal submission / notification | August 22 / September 5 |
+| Competition proposal submission / notification | August 9 / August 17–20 |
+| Workshop paper submission / notification | October 12 / October 16 |
+| Main conference and all other author registration | October 18, 23:59 AoE |
+| Accepted workshop paper author registration only | October 23, 23:59 AoE |
+| Travel grant and QRT award applications closed | October 15 |
+| Early Bird registration | Through October 25 |
+| Standard registration | October 26 – November 13 |
+| Late / onsite registration | November 14–17 |
+| Workshops, tutorials and competition sessions | November 14–15 |
+| Main conference | November 16–17 |
+| Welcome Reception / Conference Banquet | November 15 / November 16 |
+
+Corrected Perpetual Alpha practice from October 5–18 to October 5–16 to agree with the [organizer's official schedule](https://perpetual-alpha26.github.io/schedule), checked on October 17. Its September 20 registration deadline, October 19 – November 6 scored trading and November 6 report deadline agree with that source. The Trading Agent Competition's October 8–9 validation, October 12–30 official phase and October 11, 11:59 PM ET registration cutoff agree with the [official starter kit](https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/README.md). Competition deadlines retain their organizer's timezone rather than inheriting conference AoE.
+
+Home and the workshop proposal call now describe the October 12 workshop paper submission deadline as closed. The October 1 and September 25 historical News announcements retain their publication dates and earlier deadlines in the past tense, with a dated October 17 update that links to the latest workshop-only registration extension. The LinkedIn summaries and their original publication dates remain intact.
+
+A read-only consistency check validated all 19 shared event ranges, 289 machine-readable time attributes, 70 displayed date labels, the cross-month registration range, four weekday labels, all 85 programme intervals and all four tutorial slots against the current repository schedule. Reception and banquet dates match Registration. `npm run build` passed all 32 tests, JavaScript syntax checks, validation of 37 HTML files, 19-page site checks, source/generated-route parity, all 85 programme sessions and all four tutorial sources. `git diff --check` passed.
+
+The local Browser confirmed the corrected competition copy, both historical News updates, Home and the workshop proposal introduction. The News capture is `/private/tmp/icaif-date-audit-news.png`. This is a date/content audit against confirmed organizer instructions and the existing preliminary schedule, not a new workbook import or a full responsive/accessibility review. PDFs remain outside the website-copy audit, as previously requested.
