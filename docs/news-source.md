@@ -57,3 +57,5 @@ The new October 17 News entry announces that travel grant and QRT award applicat
 ## Workshop paper notification extension — October 17, 2026
 
 The user requested a further extension of the workshop paper notification deadline from October 16 to October 23, 2026, followed by a News announcement. The new first entry, “Workshop paper notification deadline extended”, is dated October 17 and links to `/important-dates/`. It preserves the established 23:59 AoE time and agrees with Important Dates, Workshops, the workshop proposal call and the Home milestone schedule. October 17 is the announcement date; October 23 is the notification deadline. The archive now contains nineteen entries. The October 1 announcement remains a record of the earlier extension.
+
+At the user's follow-up request, Home's “Latest from ICAIF” now features this deadline extension with a link to the News entry. The supporting rows show the October 17 travel grant closure announcement and the October 8 preliminary programme release, retaining the programme's provisional status. The existing card/list layout and LinkedIn follow link remain.
