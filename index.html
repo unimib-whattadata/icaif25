@@ -123,7 +123,7 @@
     <script src="js/hero-time.js?v=2026091601" defer></script>
     <!-- Heroicons -->
     <script src="js/heroicons.js?v=2026100801" defer></script>
-    <link rel="stylesheet" href="css/tailwind.min.css?v=2026101701">
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026101702">
   </head>
 
   <body data-page="index" class="font-sans antialiased min-w-0">
@@ -375,7 +375,7 @@
                 data-next-milestone-summary
                 aria-live="polite"
               >
-                Next milestone: workshop paper submission · October 12
+                Next milestone: author registration deadline · October 23
               </span>
             </div>
 
@@ -460,12 +460,12 @@
               <div class="stat-title text-base-content/80">Next milestone</div>
               <time
                 class="stat-value text-2xl text-accent"
-                datetime="2026-10-12"
+                datetime="2026-10-23"
                 data-next-milestone-date
-                >Oct 12</time
+                >Oct 23</time
               >
               <div class="stat-desc text-base-content/80" data-next-milestone-label>
-                Workshop paper submission
+                Author registration deadline
               </div>
             </div>
             <div class="stat min-w-0 px-4 sm:px-6">
@@ -803,7 +803,20 @@
           <div
             class="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.25fr_1fr] lg:items-stretch"
           >
-            <article class="card bg-neutral text-neutral-content">
+            <article class="card image-full overflow-hidden bg-neutral text-neutral-content">
+              <figure class="pointer-events-none absolute inset-0" aria-hidden="true">
+                <img
+                  src="img/news/record-submissions-background.webp"
+                  srcset="img/news/record-submissions-background-640.webp 640w, img/news/record-submissions-background.webp 1200w"
+                  sizes="(min-width: 1024px) 556px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
+                  alt=""
+                  width="1200"
+                  height="900"
+                  class="h-full w-full object-cover object-right-bottom brightness-75"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </figure>
               <div class="card-body justify-between gap-8 sm:p-10">
                 <div>
                   <div class="flex flex-wrap items-center gap-3">
@@ -817,7 +830,7 @@
                   <h3 class="mt-5 text-2xl font-bold sm:text-3xl">
                     Record paper submissions
                   </h3>
-                  <p class="mt-4 max-w-xl text-neutral-content/70">
+                  <p class="mt-4 max-w-xl text-neutral-content/90">
                     More than 1,000 papers were submitted, with around 22%
                     accepted for the main conference. Thank you to the authors,
                     reviewers and programme committee.
@@ -847,12 +860,15 @@
                     >October 12, 2026</time
                   >
                   <h3 class="mt-1 font-bold text-base-content">
-                    Author registration deadline: October 18
+                    Author registration reminder
                   </h3>
                   <p class="mt-1 text-sm text-base-content/70">
                     Each accepted main conference paper needs at least one
                     in-person Main Conference or Passport registration at the
                     ACM member or non-member rate.
+                  </p>
+                  <p class="mt-2 text-sm font-medium text-base-content">
+                    <a href="/registration/#registration-dates" class="link">Update: deadline extended to October 23, 2026.</a>
                   </p>
                 </div>
                 <a
@@ -1192,7 +1208,7 @@
         <a href="/privacy-policy/" class="link">Privacy Policy</a>
       </div>
     </footer>
-    <script src="js/home-stats.js?v=2026101701" defer></script>
+    <script src="js/home-stats.js?v=2026101702" defer></script>
     <script src="js/site-layout.js?v=2026101701" defer></script>
   </body>
 </html>

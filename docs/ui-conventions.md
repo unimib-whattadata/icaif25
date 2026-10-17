@@ -22,6 +22,10 @@ The home hero action is “Explore the program” and links to `/programme/`. Th
 
 Home's “Latest from ICAIF” is curated from the most recent original posts on the ICAIF LinkedIn page, ordered by publication date. Use concise summaries and direct links to each original LinkedIn post. Keep LinkedIn publication dates distinct from website News announcement dates; record source links in `docs/news-source.md`.
 
+When a factual deadline changes after a LinkedIn post, retain the post's source and date but add a clearly marked “Update” linking to the current conference information. The current author registration deadline is October 23, 2026, 23:59 AoE; workshop paper notifications remain October 16, and Early Bird registration remains October 25.
+
+The featured “Record paper submissions” card uses a flat manuscript/Duomo illustration within the native daisyUI `image-full` card. Keep it decorative (`alt=""`, hidden figure), lazy loaded with the 640/1200px responsive sources, cropped toward the lower right and darkened to 75%. Its supporting paragraph uses neutral-content at 90% opacity for readable contrast over the illustration. Keep copy and the original LinkedIn destination in HTML; the asset is a local Home treatment, with provenance and verification in [the Home surface record](../.impeccable/surfaces/index-html.md).
+
 Align reading columns with the page heading and limit their width with `max-w-3xl`. Keep tables, programme lists, sponsor tiers and committee portraits in their appropriate layouts. Do not force different content types into identical cards. Sponsor logos retain their colors and intrinsic proportions, with visible Platinum/Silver grouping. The Sponsors page additionally includes the smaller À la carte sponsors group; Home retains only the Platinum and Silver groups.
 
 ## Interaction

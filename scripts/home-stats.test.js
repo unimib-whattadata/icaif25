@@ -15,18 +15,20 @@ function loadAt(isoDate) {
   return {next:window.ICAIFMilestones.getNextMilestone(now)};
 }
 
-test('home follows the extended workshop dates also at AoE boundaries',()=>{
+test('home follows workshop notifications and extended author registration at AoE boundaries',()=>{
   const cases=[
     ['2026-10-08T12:00:00Z','2026-10-12'],
     ['2026-10-13T11:59:59.999Z','2026-10-12'],
-    ['2026-10-13T12:00:00Z','2026-10-18'],
-    ['2026-10-17T11:59:59.999Z','2026-10-18'],
-    ['2026-10-17T12:00:00Z','2026-10-18'],
-    ['2026-10-19T11:59:59.999Z','2026-10-18'],
+    ['2026-10-13T12:00:00Z','2026-10-16'],
+    ['2026-10-17T11:59:59.999Z','2026-10-16'],
+    ['2026-10-17T12:00:00Z','2026-10-23'],
+    ['2026-10-19T11:59:59.999Z','2026-10-23'],
     ['2026-10-19T12:00:00Z','2026-10-23'],
     ['2026-10-24T11:59:59.999Z','2026-10-23'],
     ['2026-10-24T12:00:00Z','2026-10-25'],
   ];
   for(const [now,expected] of cases)assert.equal(loadAt(now).next.date,expected,now);
+  assert.equal(loadAt('2026-10-17T11:59:59.999Z').next.label,'Workshop paper notification');
+  assert.equal(loadAt('2026-10-17T12:00:00Z').next.label,'Author registration deadline');
   assert.equal(loadAt('2026-11-18T12:00:00Z').next,null);
 });
