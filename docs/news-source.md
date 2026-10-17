@@ -58,4 +58,12 @@ The new October 17 News entry announces that travel grant and QRT award applicat
 
 The user requested a further extension of the workshop paper notification deadline from October 16 to October 23, 2026, followed by a News announcement. The new first entry, “Workshop paper notification deadline extended”, is dated October 17 and links to `/important-dates/`. It preserves the established 23:59 AoE time and agrees with Important Dates, Workshops, the workshop proposal call and the Home milestone schedule. October 17 is the announcement date; October 23 is the notification deadline. The archive now contains nineteen entries. The October 1 announcement remains a record of the earlier extension.
 
-At the user's follow-up request, Home's “Latest from ICAIF” now features this deadline extension with a link to the News entry. The supporting rows show the October 17 travel grant closure announcement and the October 8 preliminary programme release, retaining the programme's provisional status. The existing card/list layout and LinkedIn follow link remain.
+The user clarified that Home's “Latest from ICAIF” must be based on posts from the ICAIF LinkedIn page. This section is curated from the three most recent original posts shown in the live feed sorted by “Recenti” on October 17, 2026. It retains the existing card/list layout and links directly to the original LinkedIn posts. The website News archive retains the workshop notification extension.
+
+| LinkedIn post date (Europe/Rome) | Home update | Source |
+| --- | --- | --- |
+| 2026-10-16 | Record paper submissions: over 1,000 papers submitted, around 22% accepted for the main conference | [Original LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7516800279342907392/) |
+| 2026-10-12 | Author registration deadline: October 18; in-person Main Conference or Passport registration at ACM member or non-member rates | [Original LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7515356035847438336/) |
+| 2026-10-09 | Preliminary programme now online; workshops, tutorials, keynotes, panels, research sessions, competitions and startup pitches | [Original LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7514320128835026944/) |
+
+The post texts and public activity URNs were read from the rendered LinkedIn feed. Absolute publication dates are inferred from the timestamp encoded in each activity ID and agree with the feed's relative labels (one day, five days and one week). They are distinct from website announcement dates and event deadlines. The public web-search snapshot was older than the live feed and was not used to select these updates.

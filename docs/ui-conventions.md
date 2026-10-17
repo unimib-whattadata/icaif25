@@ -20,6 +20,8 @@ The home hero keeps its larger display typography. Its university, statistics an
 
 The home hero action is “Explore the program” and links to `/programme/`. The yellow workshop-paper deadline alert has been removed; the next-milestone summary/stat and AoE deadline behavior remain.
 
+Home's “Latest from ICAIF” is curated from the most recent original posts on the ICAIF LinkedIn page, ordered by publication date. Use concise summaries and direct links to each original LinkedIn post. Keep LinkedIn publication dates distinct from website News announcement dates; record source links in `docs/news-source.md`.
+
 Align reading columns with the page heading and limit their width with `max-w-3xl`. Keep tables, programme lists, sponsor tiers and committee portraits in their appropriate layouts. Do not force different content types into identical cards. Sponsor logos retain their colors and intrinsic proportions, with visible Platinum/Silver grouping. The Sponsors page additionally includes the smaller À la carte sponsors group; Home retains only the Platinum and Silver groups.
 
 ## Interaction
