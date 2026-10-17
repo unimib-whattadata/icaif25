@@ -47,3 +47,9 @@ The Sponsors page uses the logo supplied in the email attachment; at the user's 
 ## Sponsor announcement copy — October 16, 2026
 
 At the user's request, the Needlestack Technologies, QRT and Standard Chartered announcements now simply state that each company has joined as a sponsor, including its category. The factual headings and destination links supply the complete announcement; the gratitude paragraphs have been removed. Needlestack's quoted “à la carte sponsor” wording, all dates, anchors and sponsorship tiers are preserved.
+
+## Travel grant applications closed — October 17, 2026
+
+The user confirmed publication of the closed application status after the shared Google Form was verified to state that it is no longer accepting responses. Registration and QRT Student Travel Awards now display “Applications closed”, retain the October 15 deadline in the past tense, and remove application buttons. Eligibility and assessment information remain available for reference. The QRT page's search/social description also reflects the closed status.
+
+The new October 17 News entry announces that travel grant and QRT award applications are closed; October 17 is the announcement date, while October 15 remains the application deadline. The archive now contains eighteen entries. Historical announcements retain their dates and anchors, with their text and links updated to show the current status instead of inviting new applications. No selection-result date or reopening date has been supplied.
