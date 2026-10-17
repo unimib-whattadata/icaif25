@@ -112,3 +112,15 @@ test('author registration policy distinguishes main conference and workshop pape
   assert.ok(text.includes('For an accepted workshop paper, a Workshop Days registration is sufficient.'));
   assert.ok(!text.includes('Each accepted paper must be associated with one in-person Passport'));
 });
+
+test('workshop registration extension does not change other author or notification deadlines',()=>{
+  const rows=[...read('important-dates.html').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)].map(match=>match[1]);
+  const deadlineFor=subject=>{
+    const row=rows.find(row=>row.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').includes(subject));
+    assert.ok(row,subject);
+    return [...row.matchAll(/<time\b[^>]*datetime="([^"]+)"/g)].at(-1)[1].slice(0,10);
+  };
+  assert.equal(deadlineFor('Author Registration Deadline (Main Conference)'),'2026-10-18');
+  assert.equal(deadlineFor('Author Registration Deadline (Workshop Papers)'),'2026-10-23');
+  assert.equal(deadlineFor('Workshop Paper Notification'),'2026-10-16');
+});
