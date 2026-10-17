@@ -9,36 +9,18 @@
     const navigation = document.querySelector('nav[aria-label="Primary"]');
     if (!navigation) return;
 
-    const updatedPages = new Map([
-      ["/important-dates/", "Workshop deadlines: October 12 and October 16, 2026"],
-      ["/workshop/", "Workshop paper submission extended to October 12, 2026"],
-      ["/programme/", "Preliminary conference programme available"],
-      ["/tutorials/", "Tutorial abstracts and presenters available"],
-      ["/registration/", "Registration reopened with clarified VAT pricing"],
-      ["/venue/", "Nearby hotels and travel information added"],
-      ["/qrt-student-travel-awards/", "Travel award applications are open"],
-      ["/competitions/", "Qube-RT startup competition link added"],
-      ["/call-for-papers/", "Paper submissions closed; author registration deadline October 18, 2026"],
-    ]);
-
-    navigation.querySelectorAll("a[href]").forEach((link) => {
-      const update = updatedPages.get(link.getAttribute("href"));
-      if (!update) return;
-
-      const marker = document.createElement("span");
-      marker.className = "inline-grid shrink-0 *:[grid-area:1/1]";
-      marker.setAttribute("aria-hidden", "true");
+    navigation.querySelectorAll('a[href="/news/"]').forEach((link) => {
       const dot = document.createElement("span");
-      dot.className = "status status-accent status-md";
-      marker.append(dot);
+      dot.className = "status status-accent status-md motion-safe:animate-pulse";
+      dot.setAttribute("aria-hidden", "true");
 
       const updateText = document.createElement("span");
       updateText.className = "sr-only";
-      updateText.textContent = ` — updated: ${update}`;
+      updateText.textContent = " — latest updates";
 
       link.classList.add("gap-1.5");
-      link.title = `Updated: ${update}`;
-      link.append(marker, updateText);
+      link.title = "Latest conference announcements";
+      link.append(dot, updateText);
     });
 
     const disclosures = Array.from(navigation.querySelectorAll("details"));

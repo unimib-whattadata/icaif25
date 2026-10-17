@@ -220,7 +220,7 @@ Tutorials follows the workshop page composition: the navy header and shared inde
 
 The site combines tonal surfaces with restrained native component depth. Light navigation dropdowns use the existing small shadow; native buttons and fields retain daisyUI depth where their surface does not override it. The programme deliberately removes button shadows and separates flat session cells with slate rules. This local treatment does not prohibit shadows elsewhere in the incumbent site.
 
-The sidecar records the sampled dropdown shadow and native state motion. Update dots and priority-action accents remain static. Reduced-motion rules remove smooth scrolling and disclosure rotation; the venue map uses a static camera/route while short color and opacity feedback remains available.
+The sidecar records the sampled dropdown shadow and native state motion. News is the only primary-navigation item with an orange update dot, in both desktop and mobile menus. At the user's request, it blinks slowly with the native two-second opacity pulse and remains static under reduced motion. Priority-action accents remain static. Reduced-motion rules remove smooth scrolling and disclosure rotation; the venue map uses a static camera/route while short color and opacity feedback remains available.
 
 ## Shapes
 
