@@ -83,3 +83,9 @@ Applications are due October 21, 2026 at 17:00 Milan time (CEST, UTC+2); selecte
 The application form URL has not been supplied. The page and announcement say that the link will be available soon; no dummy URL or alternative submission method is offered. Replace the notice at `#application-form` with the supplied link and update the overview and News availability notes when it arrives.
 
 “Student Volunteers” is under Attending in the desktop and mobile menus, alongside Venue and QRT Student Travel Awards, and in shared footer links. The new first News entry is dated October 17, 2026 (website announcement date, distinct from the email date and application deadline); the archive now contains twenty entries. Home’s LinkedIn-curated updates remain governed by their existing source policy.
+
+## Student volunteer applications open — October 19, 2026
+
+The user requested the new application link on the volunteer call and a News announcement that applications are open. Google Forms was verified to be published, accepting responses and available to anyone with the link. Its observed responder URL is `https://docs.google.com/forms/d/e/1FAIpQLSdDsj7Qg2bMadrc9pPSyrbg4ypAAqMTzhovkR_pDNYB__3e6Q/viewform`; the editor URL is not used on the public site.
+
+The call now links to the form from the application dates card and `#application-form`, with a note that Google sign-in is required for document uploads. The new first announcement, “Student volunteer applications are open”, is dated October 19, 2026 and retains the October 21, 17:00 CEST (UTC+2) deadline. The earlier call announcement no longer carries the superseded pending-link notice. The archive now contains twenty-one entries. This supersedes the missing-URL note above; Home’s LinkedIn-curated updates are unchanged.

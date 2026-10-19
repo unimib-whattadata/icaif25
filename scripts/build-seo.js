@@ -29,7 +29,7 @@ const descriptions = {
   'programme.html': "Preliminary ICAIF '26 programme, Milan, November 14–17, 2026. Browse sessions by day, room and type, and save a personal agenda.",
   'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
   'news.html': "Latest ICAIF '26 news: student volunteers, sponsors, programme, tutorials, registration deadlines, competitions and travel awards in Milan.",
-  'call-for-student-volunteers.html': 'Join 30 student volunteers at ICAIF 2026 in Milan, November 14–17. See eligibility and benefits. Apply by October 21 at 17:00 CEST; form link coming soon.',
+  'call-for-student-volunteers.html': 'Applications are open for 30 student volunteers at ICAIF 2026 in Milan, November 14–17. See eligibility and benefits. Apply by October 21 at 17:00 CEST.',
   'registration.html': 'ICAIF 2026 registration fees, attendance options and author requirements. Early bird rates through October 25 for the November 14–17 conference in Milan.',
   'important-dates.html': 'ICAIF 2026 deadlines for papers, workshops, student volunteers and registration. Conference in Milan: November 14–17, 2026.',
   'venue.html': 'ICAIF 2026 at Bocconi University, Via Röntgen 1, Milan, November 14–17. Find the venue map, transport routes, nearby hotels and travel information.',
