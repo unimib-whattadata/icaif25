@@ -1,0 +1,9 @@
+{
+  "generatedWith": "Built-in image_gen",
+  "generatedOn": "2026-10-19",
+  "prompt": "Edit this existing circular ICAIF startup competition badge to remove its background.\nMake ALL of the dark navy face/background completely transparent, BOTH inside the circular rings and outside the emblem. The interior must have genuine alpha zero, so an underlying website photograph is clearly visible through every previously navy area.\nPreserve only the existing opaque warm-copper and off-white artwork: concentric perimeter rings, the upper \"ICAIF '26\" lettering and arc accents, the large white \"STARTUP\" and \"COMPETITION\" lettering, the lower curved \"AI FOR FINANCIAL MARKETS\" lettering, and the copper rule and dot. Preserve exact typography, spelling, positions, proportions, shapes, colors and clean antialiased edges. Do not add a QRT logo; the original QRT vector logo is layered separately by the website.\nDo not replace navy with black or gray. No fake checkerboard, no matte, no disc, no background glow or shadows. This should be an elegant open transparent line-and-letter seal. Entire badge visible, same square framing.",
+  "source": "/Users/marco/.codex/generated_images/01a15612-2296-7652-b995-9fa7abe311b8/exec-75444ed1-6ce5-4f93-af31-b7ea617f16b8.png",
+  "officialLogo": "https://www.qube-rt.com/img/qrt.svg",
+  "competition": "https://www.qube-rt.com/startupcompetition",
+  "implementation": "640px WebP retaining alpha throughout the interior and exterior. Exact QRT SVG overlaid separately. 1100ms damped entrance settling at 6 degrees, 260ms hover and keyboard focus response; movement disabled with reduced motion. Clickable seal without a separate text link."
+}
