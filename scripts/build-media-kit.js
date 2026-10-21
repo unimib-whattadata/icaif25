@@ -24,6 +24,7 @@ for (const file of [...photos, ...logos]) {
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "icaif-media-kit-"));
 try {
   for (const [name, files] of [
+    ["icaif-2026-logos.zip", logos],
     ["icaif-2026-hero-images.zip", photos],
     ["icaif-2026-media-kit.zip", [...logos, ...photos]],
   ]) {
