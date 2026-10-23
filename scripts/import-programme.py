@@ -144,6 +144,14 @@ def public_title(title, session_type):
         detail = "Speech by Marc Mézard."
     elif title == "ADIA Session":
         title = "ADIA Lab"
+    elif title in ("Keynote: Magazzeni", "Keynote: Daniele Magazzeni"):
+        title = "Keynote: Daniele Magazzeni"
+        detail = "Group Chief AI Officer at UBS."
+    elif title in ("Fireside chat: Savi + Micillo + Pasquali", "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"):
+        title = "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"
+        detail = ("Raffaele Savi — Global Head of BlackRock Systematic; "
+                  "Mauro Micillo — Head of Corporate & Investment Banking at Intesa Sanpaolo; "
+                  "Stefano Pasquali — Executive VP at Domyn.")
     elif title == "FINOS (demo+panel) 1h":
         title = "FINOS demo & panel"
     return title, session_type, detail, pending

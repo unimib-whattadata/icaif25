@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-09",
+  "updated": "2026-10-23",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -542,14 +542,14 @@
       "href": ""
     },
     {
-      "id": "session-2026-11-16-0900-6927e0f4",
+      "id": "session-2026-11-16-0900-d5719161",
       "date": "2026-11-16",
       "start": "09:00",
       "end": "09:40",
-      "title": "Keynote: Magazzeni",
+      "title": "Keynote: Daniele Magazzeni",
       "type": "keynote",
       "room": "Main Hall",
-      "detail": "",
+      "detail": "Group Chief AI Officer at UBS.",
       "pending": false,
       "href": ""
     },
@@ -782,14 +782,14 @@
       "href": ""
     },
     {
-      "id": "session-2026-11-17-0900-047a62eb",
+      "id": "session-2026-11-17-0900-c8abcb8e",
       "date": "2026-11-17",
       "start": "09:00",
       "end": "10:00",
-      "title": "Fireside chat: Savi + Micillo + Pasquali",
+      "title": "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali",
       "type": "keynote",
       "room": "Main Hall",
-      "detail": "",
+      "detail": "Raffaele Savi — Global Head of BlackRock Systematic; Mauro Micillo — Head of Corporate & Investment Banking at Intesa Sanpaolo; Stefano Pasquali — Executive VP at Domyn.",
       "pending": false,
       "href": ""
     },

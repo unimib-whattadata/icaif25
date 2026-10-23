@@ -30,6 +30,10 @@ For a presenter or abstract update, edit `data/tutorials.json` and run `npm run 
 
 At the organizers’ request, the Sunday November 15 session at 14:00–16:00 in Main Hall is titled “ADIA Lab”. The importer maps the previous workbook title to this corrected public title so future imports retain the change. Its session ID is recomputed using the existing title-based identity rule.
 
+## Organizer correction — October 21, 2026 (published October 23)
+
+Andrea Maurino's email “programma confrenza”, sent October 21 at 17:06, supplies the full names and roles for the Monday November 16, 09:00 keynote and Tuesday November 17, 09:00 fireside chat. The keynote now names Daniele Magazzeni, with “Group Chief AI Officer at UBS” in its detail. The fireside chat names Raffaele Savi, Mauro Micillo and Stefano Pasquali, with their supplied BlackRock Systematic, Intesa Sanpaolo and Domyn roles in its detail. Spelling and capitalization are normalized for publication. The importer retains these corrections on future workbook imports; session IDs are recomputed using the existing title-based rule. The public update date is October 23. Dates, start/end times, rooms and session types retain their existing values. The email anticipates later changes to the central-bank panels but supplies no details, so those panels retain their existing copy.
+
 ## Source decisions and anomalies
 
 The October 8 import contains **85 sessions**: 20 on Saturday, 21 on Sunday, 21 on Monday, and 23 on Tuesday. All start/end times and room assignments are preserved exactly, including Saturday registration ending at 17:00, Sunday's early registration slot, Tuesday lunch starting at 13:10, and Tuesday sessions ending at 17:40.
