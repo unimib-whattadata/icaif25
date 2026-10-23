@@ -60,6 +60,7 @@ const allowedRegistrationPhaseBadgeClasses = new Set([
 ]);
 const allowedPositiveStatusBadgeClasses = new Set(['badge-success']);
 const allowedWorkshopSubmissionBadgeClasses = new Set(['badge-info']);
+const allowedKeynoteDateBadgeClasses = new Set(['badge-accent', 'badge-lg']);
 const requiredDaisyModules = new Set([
     'alert',
     'aura',
@@ -327,6 +328,9 @@ for (const file of htmlFiles) {
         const isRegistrationPhase = /\bdata-registration-phase\b/i.test(match[0]);
         const isPositiveStatus = /\bdata-positive-status\b/i.test(match[0]);
         const isWorkshopSubmission = /\bdata-workshop-submission\b/i.test(match[0]);
+        const isKeynoteDate = file === 'index.html'
+            && /^<time\b/i.test(match[0])
+            && /\bdata-keynote-date\b/i.test(match[0]);
 
         if (componentRoots.length > 1) {
             addError(file, `combines daisyUI component roots on one element: ${componentRoots.join(', ')}`);
@@ -347,6 +351,7 @@ for (const file of htmlFiles) {
                 && !(isRegistrationPhase && allowedRegistrationPhaseBadgeClasses.has(className))
                 && !(isPositiveStatus && allowedPositiveStatusBadgeClasses.has(className))
                 && !(isWorkshopSubmission && allowedWorkshopSubmissionBadgeClasses.has(className))
+                && !(isKeynoteDate && allowedKeynoteDateBadgeClasses.has(className))
             ) {
                 addError(file, `uses non-default daisyUI component styling ${className}`);
             }
