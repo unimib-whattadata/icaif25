@@ -202,6 +202,12 @@ def import_workbook(input_path, updated):
                 if not room:
                     room = "To be confirmed"
                     pending = True
+                # Rachel Chung requested 16:30–18:00 on October 17 and confirmed
+                # it on October 18. The earlier workbook block is cancelled.
+                if (title == "Women in AI and Finance"
+                        and (session_date, start, end, room)
+                        == ("2026-11-14", "14:00", "16:00", "Room 2")):
+                    continue
                 count = value("subsessions")
                 if isinstance(count, (int, float)) and count > 0:
                     if not float(count).is_integer():
@@ -238,6 +244,13 @@ def import_workbook(input_path, updated):
             except ValueError as error:
                 raise ValueError(f"{sheet.title}, row {row_number}: {error}") from error
     workbook.close()
+    women_sessions = [session for session in sessions
+                      if session["title"] == "Women in AI and Finance"]
+    if (len(women_sessions) != 1
+            or tuple(women_sessions[0][key] for key in ("date", "start", "end", "room"))
+            != ("2026-11-14", "16:30", "18:00", "Room 2")):
+        raise ValueError("Women in AI and Finance must retain only the confirmed "
+                         "November 14, 16:30–18:00 Room 2 session")
     if seen_days != DAY_SUBTITLES.keys():
         raise ValueError("Workbook does not contain every conference day")
     if len({session["id"] for session in sessions}) != len(sessions):
