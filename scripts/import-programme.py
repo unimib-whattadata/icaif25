@@ -147,6 +147,10 @@ def public_title(title, session_type):
     elif title in ("Keynote: Magazzeni", "Keynote: Daniele Magazzeni"):
         title = "Keynote: Daniele Magazzeni"
         detail = "Group Chief AI Officer at UBS."
+    elif title in ("Keynote Pasquali", "Keynote: Stefano Pasquali"):
+        title = "Keynote: Stefano Pasquali"
+        session_type = "keynote"
+        detail = "Executive VP at Domyn."
     elif title in ("Fireside chat: Savi + Micillo + Pasquali", "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"):
         title = "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"
         detail = ("Raffaele Savi — Global Head of BlackRock Systematic; "

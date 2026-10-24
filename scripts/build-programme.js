@@ -106,6 +106,7 @@ const main = `    <main id="main-content" tabindex="-1">
             <h1 class="page-title">Conference programme</h1>
             <p class="page-lead">Four days of ideas, conversations and research in Milan.<br>Find your sessions and build your own ICAIF '26 agenda.</p>
             <p class="programme-header-meta">14–17 November 2026 <span aria-hidden="true">·</span> All times CET (UTC+1)</p>
+            <p class="mt-4 text-base leading-relaxed text-neutral-content/80"><strong>Michael Barr, Governor of the Federal Reserve,</strong> is also announced for Monday, November 16. His keynote session time and room are to be confirmed.</p>
           </div>
           <span class="badge programme-preliminary">Preliminary programme</span>
         </div>

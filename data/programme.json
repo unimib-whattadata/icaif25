@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -914,14 +914,14 @@
       "href": ""
     },
     {
-      "id": "session-2026-11-17-1400-005044df",
+      "id": "session-2026-11-17-1400-230e8289",
       "date": "2026-11-17",
       "start": "14:00",
       "end": "14:30",
-      "title": "Keynote Pasquali",
+      "title": "Keynote: Stefano Pasquali",
       "type": "keynote",
       "room": "Main Hall",
-      "detail": "",
+      "detail": "Executive VP at Domyn.",
       "pending": false,
       "href": ""
     },

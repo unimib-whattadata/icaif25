@@ -51,3 +51,9 @@ The October 8 import contains **85 sessions**: 20 on Saturday, 21 on Sunday, 21 
 - Positive Subsessions values appear publicly only as presentation/poster counts. Totals and other non-session rows are excluded.
 
 The schedule remains preliminary. No missing speaker names, venues, talk titles, or durations are invented.
+
+## Programme consistency update — October 24, 2026
+
+The November 17, 14:00–14:30 Main Hall keynote now names Stefano Pasquali in full, with “Executive VP at Domyn” in its detail, matching the role supplied for the morning fireside chat. Its session ID is recomputed using the existing title-based rule, and the importer retains the correction on future imports. All 85 session dates, times, rooms and types are preserved. The data update date is October 24, aligned with the programme WebPage metadata and sitemap date.
+
+The programme builder also shows the approved announcement of Michael Barr, Governor of the Federal Reserve, for Monday November 16. This is a page-header note, explicitly awaiting session time and room, not an invented timed session or calendar event. The targeted Gmail search for ICAIF/Barr on October 24 found the already-known brochure/website thread and no additional confirmed schedule. The existing afternoon panel is not assumed to be his slot. The Home brochure source remains recorded in `docs/speakers-source.md`.
