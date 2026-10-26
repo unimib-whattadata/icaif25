@@ -384,15 +384,16 @@
             </p>
           </div>
 
-          <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div class="min-w-0 border-b border-base-300 pb-8">
+          <!-- Full-width tier rows preserve Platinum > Gold > Silver logo prominence. -->
+          <div class="grid gap-8">
+            <div class="grid min-w-0 gap-6 border-b border-base-300 pb-8 lg:grid-cols-[12rem_1fr] lg:gap-12">
               <h3
-                class="subsection-title text-base-content mb-6"
+                class="subsection-title text-base-content"
               >
                 Platinum Sponsors
               </h3>
-              <ul class="grid grid-cols-2 items-center gap-6 sm:gap-12">
-                <li class="flex min-h-28 min-w-0 items-center justify-center">
+              <ul class="grid max-w-2xl grid-cols-[1.6fr_1fr] items-center gap-6 sm:flex sm:flex-wrap sm:gap-16">
+                <li class="flex min-h-24 min-w-0 items-center sm:min-h-40">
                   <img
                       src="img/loghi/logo%20intesa/Marchio_IMI+INTESA_SANPAOLO_Materiali%20terzi.webp"
                       alt="Intesa Sanpaolo IMI Corporate &amp; Investment Banking"
@@ -400,10 +401,10 @@
                       height="181"
                       loading="lazy"
                       decoding="async"
-                      class="block h-auto w-64 max-w-full object-contain"
+                      class="block h-auto w-48 max-w-full object-contain sm:w-80"
                     >
                 </li>
-                <li class="flex min-h-28 min-w-0 items-center justify-center">
+                <li class="flex min-h-24 min-w-0 items-center sm:min-h-40">
                   <img
                       src="img/loghi/qrt-quantitative-research-technologies.svg"
                       alt="QRT — Qube Research &amp; Technologies"
@@ -411,20 +412,41 @@
                       height="337"
                       loading="lazy"
                       decoding="async"
-                      class="block h-28 w-auto max-w-full object-contain"
+                      class="block h-24 w-auto max-w-full object-contain sm:h-40"
                     >
                 </li>
               </ul>
             </div>
 
-            <div class="min-w-0 border-b border-base-300 pb-8">
+            <div class="grid min-w-0 gap-6 border-b border-base-300 pb-8 lg:grid-cols-[12rem_1fr] lg:gap-12">
               <h3
-                class="subsection-title text-base-content mb-6"
+                class="subsection-title text-base-content"
+              >
+                Gold Sponsors
+              </h3>
+              <ul class="flex flex-wrap items-center gap-6 sm:gap-12">
+                <li class="flex min-h-20 min-w-0 items-center sm:min-h-28">
+                  <img
+                      src="img/loghi/domyn/domyn-main-logo-primary-color.jpg"
+                      alt="Domyn"
+                      width="1745"
+                      height="422"
+                      loading="lazy"
+                      decoding="async"
+                      class="block h-auto w-40 max-w-full object-contain sm:w-64"
+                    >
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid min-w-0 gap-6 border-b border-base-300 pb-8 lg:grid-cols-[12rem_1fr] lg:gap-12">
+              <h3
+                class="subsection-title text-base-content"
               >
                 Silver Sponsors
               </h3>
-              <ul class="grid grid-cols-2 items-center gap-6 sm:gap-12">
-                <li class="flex min-h-28 min-w-0 items-center justify-center">
+              <ul class="flex flex-wrap items-center gap-6 sm:gap-12">
+                <li class="flex min-h-16 min-w-0 items-center sm:min-h-24">
                   <img
                       src="img/loghi/bloomberg/bloomberg-engineering-black.webp"
                       alt="Bloomberg Engineering"
@@ -432,10 +454,10 @@
                       height="483"
                       loading="lazy"
                       decoding="async"
-                      class="block h-auto w-56 max-w-full object-contain"
+                      class="block h-auto w-28 max-w-full object-contain sm:w-40"
                     >
                 </li>
-                <li class="flex min-h-28 min-w-0 items-center justify-center">
+                <li class="flex min-h-16 min-w-0 items-center sm:min-h-24">
                   <img
                       src="img/loghi/standard-chartered/sc-lock-up-english-grey-rgb.svg"
                       alt="Standard Chartered"
@@ -443,15 +465,15 @@
                       height="2010"
                       loading="lazy"
                       decoding="async"
-                      class="block h-auto w-64 max-w-full object-contain"
+                      class="block h-auto w-24 max-w-full object-contain sm:w-36"
                    >
                 </li>
               </ul>
             </div>
           </div>
 
-          <div id="a-la-carte-sponsors" class="mt-8 scroll-mt-36 border-b border-base-300 pb-8">
-            <h3 class="subsection-title text-base-content mb-6">À la carte sponsors</h3>
+          <div id="a-la-carte-sponsors" class="mt-8 grid scroll-mt-36 gap-6 border-b border-base-300 pb-8 lg:grid-cols-[12rem_1fr] lg:gap-12">
+            <h3 class="subsection-title text-base-content">À la carte sponsors</h3>
             <ul class="flex flex-wrap items-center gap-6 sm:gap-12">
               <li class="min-w-0">
                 <a href="https://www.needlestacktech.com/" target="_blank" rel="noopener noreferrer" aria-label="Needlestack Technologies website (opens in a new tab)" class="link inline-flex min-h-11 max-w-full items-center">
@@ -462,7 +484,7 @@
                     height="164"
                     loading="lazy"
                     decoding="async"
-                    class="block h-auto w-48 max-w-full object-contain"
+                    class="block h-auto w-24 max-w-full object-contain sm:w-32"
                   >
                 </a>
               </li>
