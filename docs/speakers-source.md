@@ -23,7 +23,7 @@ Public photographs are resized proportionally, saved locally as WebP and cropped
 
 ## Current scope
 
-Following Marco’s correction, the current homepage displays only the five keynote speakers from the brochure. The six additional participants are omitted for now, and the five new external portrait files were removed. The table above records prior sourcing work, not current homepage content.
+Following Marco’s correction on October 23, the homepage displayed only the five keynote speakers from the brochure. The six additional participants were omitted and the five new external portrait files were removed. The table above records prior sourcing work. Agostino Capponi has since been added as a keynote speaker at Marco’s request on October 26; the other five additional participants remain omitted.
 
 ## Approved studio treatment — October 23, 2026
 
@@ -32,3 +32,13 @@ Marco approved the navy/slate photographic studio backdrop with a restrained cop
 ## Speaker roles — October 23, 2026
 
 At Marco’s request, speaker descriptions now include the roles from slide 4: Chief AI Officer at UBS (Magazzeni); Chief of IMI Corporate & Investment Banking Division (Micillo); Senior Managing Director and Global Head of BlackRock Systematic (Savi); Executive Vice President, Domyn SpA (Pasquali). Barr uses “Governor of the Federal Reserve” because the [official Federal Reserve biography](https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm), checked October 23, 2026, states that his Vice Chair for Supervision role ended February 28, 2025. This supersedes the earlier omission of role titles.
+
+## Agostino Capponi — October 26, 2026
+
+Marco requested Capponi’s addition to the keynote speakers and completion of his profile based on Claudio Tebaldi’s emails. [Claudio’s email with Capponi’s details](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a17767776af4c7b) supplies: Professor; Department of Industrial Engineering & Operations Research and Columbia Business School; Columbia University; personal website <https://www.columbia.edu/~ac3827/>. The homepage reproduces these details and links the November 15 date to his programme entry. The proposed 11:00 time remains subject to agreement with DXC, so the homepage gives only the confirmed date and does not invent a talk title or biography.
+
+At Marco's request, the “Personal website” link and the department/business-school detail were removed from Capponi's homepage card on October 26. The card retains “Professor, Columbia University”; the full affiliation and URL above are retained as source documentation.
+
+At Marco's request, the initials avatar was replaced on October 26 by the portrait from his [official Columbia IEOR profile](https://ieor.columbia.edu/content/agostino-capponi), using the [original image](https://ieor.columbia.edu/sites/ieor.columbia.edu/files/content/images/capponi-headshot.jpg). The original 300px JPEG is retained at `img/speakers/agostino-capponi-original.jpg`. The built-in image generator matched the approved navy/slate backdrop, restrained copper accent, lighting, color and head-and-shoulders framing of the other keynote portraits, with instructions to preserve Capponi's facial features, expression and head tilt. The generated square portrait is saved as a 640px WebP at `img/speakers/studio/agostino-capponi-v1.webp`, with the same circular crop, display size and loading behavior as the other five speakers. The exact prompt and source provenance are saved in its JSON sidecar and `docs/keynote-studio-prompts.json`.
+
+The six keynote cards use a responsive grid with three columns from the small breakpoint and six from the extra-large breakpoint. The user's removals of the personal website link and department paragraph remain in place.

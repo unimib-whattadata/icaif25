@@ -27,7 +27,7 @@
       if (!terms.length) return true;
       const text = normalizeSearch([
         session.title, session.detail, session.room,
-        session.type.replace(/-/g, " "), session.start, session.end,
+        session.type.replace(/-/g, " "), session.start, session.end, session.timeLabel,
       ].join(" "));
       return terms.every((term) => text.includes(term));
     });
@@ -170,6 +170,21 @@
       }
       ids.add(session.id);
     }
+    if (programme.announcements !== undefined && !Array.isArray(programme.announcements)) {
+      throw new Error("Invalid programme announcements.");
+    }
+    for (const announcement of programme.announcements || []) {
+      if (!announcement || typeof announcement.id !== "string" || !/^[a-zA-Z0-9_-]+$/.test(announcement.id) ||
+          ids.has(announcement.id) || !dates.has(announcement.date) ||
+          [announcement.title, announcement.type, announcement.room, announcement.timeLabel]
+            .some((value) => typeof value !== "string" || !value.trim()) ||
+          (announcement.detail !== undefined && typeof announcement.detail !== "string") ||
+          (announcement.href !== undefined && typeof announcement.href !== "string") ||
+          announcement.start !== undefined || announcement.end !== undefined) {
+        throw new Error("Invalid programme announcement.");
+      }
+      ids.add(announcement.id);
+    }
     return programme;
   };
 
@@ -177,8 +192,9 @@
     const address = new URL(url, SITE_URL);
     const params = address.searchParams;
     const dates = new Set(programme.days.map((day) => day.date));
-    const types = new Set(programme.sessions.map((session) => session.type));
-    const rooms = new Set(programme.sessions.map((session) => session.room));
+    const items = [...programme.sessions, ...(programme.announcements || [])];
+    const types = new Set(items.map((session) => session.type));
+    const rooms = new Set(items.map((session) => session.room));
     const saved = params.get("saved") === "1" || params.get("saved") === "true";
     const day = params.get("day");
     const type = params.get("type");
@@ -216,6 +232,8 @@
   const selectAll = (selector) => [...document.querySelectorAll(selector)];
   const controls = selectAll("[data-programme-controls], [data-programme-actions]");
   const articles = selectAll("[data-programme-session]");
+  const announcementArticles = selectAll("[data-programme-announcement]");
+  const announcementGroups = selectAll("[data-programme-announcements]");
   if (!articles.length) return;
   const days = selectAll("[data-programme-day]");
   const slots = selectAll("[data-programme-slot]");
@@ -226,22 +244,27 @@
   const empty = document.querySelector("[data-programme-empty]");
 
   const staticFallback = () => {
-    [...articles, ...slots, ...days].forEach((element) => { element.hidden = false; });
+    [...articles, ...announcementArticles, ...announcementGroups, ...slots, ...days]
+      .forEach((element) => { element.hidden = false; });
     slots.forEach((element) => { element.removeAttribute("aria-current"); });
     [...controls, ...saveButtons].forEach((element) => { element.hidden = true; });
     selectAll("[data-programme-conflict]").forEach((element) => { element.hidden = true; });
     if (storageNote) storageNote.hidden = true;
     if (empty) empty.hidden = true;
     if (feedback) feedback.textContent = "";
-    if (status) status.textContent = `${articles.length} sessions across four days`;
+    if (status) status.textContent = `${articles.length} scheduled sessions${announcementArticles.length ? ` and ${announcementArticles.length} announced keynotes` : ""} across four days`;
   };
 
   const initializeProgramme = () => {
     const dataNode = document.getElementById("programme-data");
     const programme = validateProgramme(JSON.parse(dataNode ? dataNode.textContent : "null"));
     const sessions = programme.sessions;
+    const announcements = programme.announcements || [];
+    const items = [...sessions, ...announcements];
     const sessionById = new Map(sessions.map((session) => [session.id, session]));
     const articleById = new Map(articles.map((article) => [article.dataset.programmeSession, article]));
+    const announcementById = new Map(announcementArticles.map((article) => [article.dataset.programmeAnnouncement, article]));
+    const itemArticleById = new Map([...articleById, ...announcementById]);
     const slotGroups = slots.map((element) => ({
       element,
       articles: [...element.querySelectorAll("[data-programme-session]")],
@@ -255,7 +278,9 @@
     ]));
     // Fail open to the static schedule if the data and published markup drift.
     if (articleById.size !== sessions.length || articles.length !== sessions.length ||
-        sessions.some((session) => !articleById.has(session.id))) {
+        sessions.some((session) => !articleById.has(session.id)) ||
+        announcementById.size !== announcements.length || announcementArticles.length !== announcements.length ||
+        announcements.some((announcement) => !announcementById.has(announcement.id))) {
       throw new Error("Programme markup does not match its data.");
     }
 
@@ -596,6 +621,9 @@
     const render = () => {
       const visible = filterSessions(sessions, state, savedIds);
       const visibleIds = new Set(visible.map((session) => session.id));
+      const visibleAnnouncements = state.saved ? [] : filterSessions(announcements, state);
+      const visibleAnnouncementIds = new Set(visibleAnnouncements.map((announcement) => announcement.id));
+      const visibleCount = visible.length + visibleAnnouncements.length;
       const conflicts = findConflicts(sessions, savedIds);
       articles.forEach((article) => {
         const id = article.dataset.programmeSession;
@@ -603,6 +631,13 @@
         article.dataset.saved = String(savedIds.has(id));
         const conflict = article.querySelector("[data-programme-conflict]");
         if (conflict) conflict.hidden = !conflicts.has(id);
+      });
+      announcementArticles.forEach((article) => {
+        article.hidden = !visibleAnnouncementIds.has(article.dataset.programmeAnnouncement);
+      });
+      announcementGroups.forEach((group) => {
+        group.hidden = ![...group.querySelectorAll("[data-programme-announcement]")]
+          .some((article) => visibleAnnouncementIds.has(article.dataset.programmeAnnouncement));
       });
       slotGroups.forEach((group) => {
         const count = group.articles.filter((article) => visibleIds.has(article.dataset.programmeSession)).length;
@@ -616,8 +651,9 @@
         }
       });
       days.forEach((element) => {
-        element.hidden = ![...element.querySelectorAll("[data-programme-session]")]
-          .some((article) => visibleIds.has(article.dataset.programmeSession));
+        element.hidden = ![...element.querySelectorAll("[data-programme-session], [data-programme-announcement]")]
+          .some((article) => visibleIds.has(article.dataset.programmeSession) ||
+            visibleAnnouncementIds.has(article.dataset.programmeAnnouncement));
       });
       saveButtons.forEach((button) => {
         const id = button.dataset.programmeSave;
@@ -653,7 +689,14 @@
       }
       const dateLabel = state.day === "all" ? "All days" : dayLabels.get(state.day);
       if (status) {
-        status.textContent = `${visible.length} ${state.saved ? "saved " : ""}${visible.length === 1 ? "session" : "sessions"} · ${dateLabel}`;
+        const summaries = [];
+        if (visible.length || !visibleAnnouncements.length) {
+          summaries.push(`${visible.length} ${state.saved ? "saved " : ""}${visible.length === 1 ? "session" : "sessions"}`);
+        }
+        if (visibleAnnouncements.length) {
+          summaries.push(`${visibleAnnouncements.length} announced ${visibleAnnouncements.length === 1 ? "keynote" : "keynotes"}`);
+        }
+        status.textContent = `${summaries.join(" · ")} · ${dateLabel}`;
       }
       document.body.dataset.programmePrintCompact = String(state.saved || state.type !== "all" || state.room !== "all" || Boolean(state.q.trim()));
       selectAll("[data-programme-print-title]").forEach((title) => {
@@ -667,9 +710,9 @@
         filters.textContent = printLabels.length ? `Filtered programme · ${printLabels.join(" · ")}` : "";
         filters.hidden = printLabels.length === 0;
       });
-      if (empty) empty.hidden = visible.length > 0;
-      const matchesAcrossDays = filterSessions(sessions, { ...state, day: "all" }, savedIds).length;
-      const canExpandDays = !visible.length && state.day !== "all" && matchesAcrossDays > 0;
+      if (empty) empty.hidden = visibleCount > 0;
+      const matchesAcrossDays = filterSessions(items, { ...state, day: "all" }, savedIds).length;
+      const canExpandDays = !visibleCount && state.day !== "all" && matchesAcrossDays > 0;
       allDaysButtons.forEach((button) => { button.hidden = !canExpandDays; });
       if (emptyDescription) {
         emptyDescription.textContent = state.saved && savedIds.size === 0
@@ -679,6 +722,7 @@
             : `No ${state.saved ? "saved " : ""}sessions match these filters. Clear them to see the programme.`;
       }
       renderTimeline(visible);
+      if (timeline) timeline.hidden = visible.length === 0 && visibleAnnouncements.length > 0;
     };
 
     const writeUrl = (method = "replace", preserveHash = false) => {
@@ -714,13 +758,13 @@
 
     const readLocation = () => {
       const resolved = resolveHashFilters(window.location.href,
-        readFiltersFromUrl(window.location.href, programme), sessions, savedIds);
+        readFiltersFromUrl(window.location.href, programme), items, savedIds);
       state = resolved.filters;
       render();
       writeUrl("replace", true);
       if (resolved.session) {
         window.requestAnimationFrame(() => {
-          articleById.get(resolved.session.id).scrollIntoView({ block: "start" });
+          itemArticleById.get(resolved.session.id).scrollIntoView({ block: "start" });
         });
       }
     };

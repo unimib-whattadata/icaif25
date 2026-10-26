@@ -135,10 +135,14 @@ def public_title(title, session_type):
     elif title == "Panel Discussion: Intesa, Domyn, Bloomberg, CFM, modera QRT":
         title = "Panel discussion: Intesa, Domyn, Bloomberg & CFM"
         detail = "Moderator: QRT."
-    elif title == "Panel Discussion: Banca D'Italia, Bundesbank, CEPR, ex FED tbd: ECB, BOE: modera Elena":
-        title = "Panel discussion"
-        detail = "Participants and moderator to be confirmed."
-        pending = True
+    elif title in ("Panel Discussion: Banca D'Italia, Bundesbank, CEPR, ex FED tbd: ECB, BOE: modera Elena",
+                   "AI, Systemic Risks and Central Banking"):
+        title = "AI, Systemic Risks and Central Banking"
+        session_type = "panel"
+        detail = ("Participants: Kartik Anand (Bundesbank), Celso Brunetti "
+                  "(Università di Roma Tor Vergata), Andrea Coletta (Bank of Italy), "
+                  "and Jonas Fisher (Federal Reserve Bank of Chicago). "
+                  "Moderator: Elena Carletti (Università Bocconi, Dean for Research).")
     elif title == "Banquet Dinner - Awards + speech Marc Mezard confermato":
         title = "Banquet dinner & awards"
         detail = "Speech by Marc Mézard."
@@ -198,6 +202,15 @@ def import_workbook(input_path, updated):
                 if session_type not in TYPES:
                     raise ValueError(f"Unknown session type: {session_type}")
                 title, session_type, detail, pending = public_title(title, session_type)
+                # Claudio Tebaldi confirmed the 14:15 start on October 26.
+                # Retain the workbook's 15:00 end; do not move the oral sessions.
+                if title == "AI, Systemic Risks and Central Banking":
+                    if (session_date, start, end, text(value("room"))) not in (
+                            ("2026-11-16", "14:00", "15:00", "Main Hall"),
+                            ("2026-11-16", "14:15", "15:00", "Main Hall")):
+                        raise ValueError("Central banking panel schedule needs reconciliation "
+                                         "with the October 26 organizer confirmation")
+                    start = "14:15"
                 room = text(value("room"))
                 if not room:
                     room = "To be confirmed"

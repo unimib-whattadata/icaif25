@@ -5,6 +5,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'data/programme.json'), 'utf8'));
+data.announcements = JSON.parse(fs.readFileSync(path.join(root, 'data/programme-announcements.json'), 'utf8'));
+require('../js/programme.js').validateProgramme(data);
 const destination = path.join(root, 'programme.html');
 const typeLabels = {
   workshop: 'Workshop', tutorial: 'Tutorial', keynote: 'Keynote', panel: 'Panel',
@@ -39,6 +41,21 @@ function renderSession(session) {
               </article>`;
 }
 
+function renderAnnouncement(announcement) {
+  const title = announcement.href
+    ? `<a class="link" href="${escape(announcement.href)}">${escape(announcement.title)}</a>`
+    : escape(announcement.title);
+  return `            <article id="${escape(announcement.id)}" class="programme-session" data-programme-announcement="${escape(announcement.id)}" data-type="${escape(announcement.type)}">
+              <div class="programme-session-meta">
+                <p class="programme-room">${escape(announcement.room === 'To be confirmed' ? 'Room to be confirmed' : announcement.room)}</p>
+                <span class="badge programme-type">${escape(typeLabels[announcement.type])}</span>
+              </div>
+              <h3 class="programme-session-title">${title}</h3>
+              <p class="programme-session-time">${escape(announcement.timeLabel)}</p>
+              <p class="programme-detail">${escape(announcement.detail)}</p>
+            </article>`;
+}
+
 const printHeader = `    <div class="programme-print-day-header">
       <div class="programme-print-masthead" role="group" aria-label="ICAIF conference print header">
         <div class="programme-print-brand">
@@ -65,6 +82,7 @@ const printHeader = `    <div class="programme-print-day-header">
 
 function renderDay(day) {
   const sessions = data.sessions.filter(session => session.date === day.date);
+  const announcements = data.announcements.filter(announcement => announcement.date === day.date);
   const starts = [...new Set(sessions.map(session => session.start))].sort();
   const blocks = starts.map(start => {
     const current = sessions.filter(session => session.start === start).sort((a,b) => roomRank(a.room)-roomRank(b.room));
@@ -86,15 +104,19 @@ ${printHeader}
             <h2 id="programme-${day.date}">${dateLabel(day.date)}</h2>
             <p>${escape(day.subtitle)}</p>
           </div>
+${announcements.length ? `          <div class="programme-sessions mb-6" data-programme-announcements>
+${announcements.map(renderAnnouncement).join('\n')}
+          </div>` : ''}
           <ol class="timeline timeline-vertical programme-timeline">
 ${blocks.join('\n')}
           </ol>
         </section>`;
 }
 
-const extraRooms = [...new Set(data.sessions.map(session=>session.room))].filter(room=>!rooms.includes(room)).sort();
+const programmeEntries = [...data.sessions, ...data.announcements];
+const extraRooms = [...new Set(programmeEntries.map(session=>session.room))].filter(room=>!rooms.includes(room)).sort();
 const roomOptions = [...rooms, ...extraRooms].map(room=>`<option value="${escape(room)}">${escape(room)}</option>`).join('\n');
-const typeOptions = Object.entries(typeLabels).filter(([type])=>data.sessions.some(session=>session.type===type)).map(([type,label])=>`<option value="${type}">${label}</option>`).join('\n');
+const typeOptions = Object.entries(typeLabels).filter(([type])=>programmeEntries.some(session=>session.type===type)).map(([type,label])=>`<option value="${type}">${label}</option>`).join('\n');
 const dayButtons = data.days.map(day=>`          <button type="button" class="btn programme-date" data-programme-date="${day.date}" aria-pressed="false"><span>${day.label.slice(0,3)}</span><strong>${Number(day.date.slice(-2))} Nov</strong></button>`).join('\n');
 const json = JSON.stringify(data).replace(/</g,'\\u003c');
 const main = `    <main id="main-content" tabindex="-1">
@@ -106,7 +128,6 @@ const main = `    <main id="main-content" tabindex="-1">
             <h1 class="page-title">Conference programme</h1>
             <p class="page-lead">Four days of ideas, conversations and research in Milan.<br>Find your sessions and build your own ICAIF '26 agenda.</p>
             <p class="programme-header-meta">14–17 November 2026 <span aria-hidden="true">·</span> All times CET (UTC+1)</p>
-            <p class="mt-4 text-base leading-relaxed text-neutral-content/80"><strong>Michael Barr, Governor of the Federal Reserve,</strong> is also announced for Monday, November 16. His keynote session time and room are to be confirmed.</p>
           </div>
           <span class="badge programme-preliminary">Preliminary programme</span>
         </div>
@@ -151,7 +172,7 @@ ${roomOptions}
         <noscript><p class="programme-source-note">The complete programme is shown below. Enable JavaScript to use search, filters and a personal agenda.</p></noscript>
         <div class="programme-results-toolbar">
           <div>
-            <p data-programme-status role="status" aria-live="polite" aria-atomic="true" class="programme-status">${data.sessions.length} sessions across four days</p>
+            <p data-programme-status role="status" aria-live="polite" aria-atomic="true" class="programme-status">${data.sessions.length} scheduled sessions and ${data.announcements.length} announced keynotes across four days</p>
             <p class="programme-source-note">Preliminary schedule · updated ${updatedLabel} · subject to change</p>
           </div>
           <div class="programme-actions" data-programme-actions hidden>
@@ -248,7 +269,8 @@ if (fs.existsSync(destination)) {
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
 html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026100907')
-  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026100907');
+  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102601')
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102601');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');
 if (process.argv.includes('--check')) {

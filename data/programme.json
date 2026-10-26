@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-26",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -626,15 +626,15 @@
       "href": ""
     },
     {
-      "id": "session-2026-11-16-1400-e841c9f8",
+      "id": "session-2026-11-16-1415-2b3c69fb",
       "date": "2026-11-16",
-      "start": "14:00",
+      "start": "14:15",
       "end": "15:00",
-      "title": "Panel discussion",
+      "title": "AI, Systemic Risks and Central Banking",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Participants and moderator to be confirmed.",
-      "pending": true,
+      "detail": "Participants: Kartik Anand (Bundesbank), Celso Brunetti (Università di Roma Tor Vergata), Andrea Coletta (Bank of Italy), and Jonas Fisher (Federal Reserve Bank of Chicago). Moderator: Elena Carletti (Università Bocconi, Dean for Research).",
+      "pending": false,
       "href": ""
     },
     {
