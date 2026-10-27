@@ -17,6 +17,12 @@ Pending: thematic oral/poster session labels and paper-to-session assignments; B
 
 Verification: the full build passed 41 existing tests, JavaScript and HTML validation, and source/route checks for all 20 canonical pages. A temporary workbook with the legacy titles and removed placeholder was imported successfully: the five corrected events retained their IDs and copy, and the undefined Sunday slot stayed omitted. All remaining dates, times and rooms match the pulled programme. Browser checks at 1280px and 390px found no horizontal overflow on the edited surfaces; all twelve portraits and the LinqAlpha logo loaded. Evidence is under `.codex-artifacts/updates-20261027/`. These checks cover the source build and local preview; hosting deployment is a separate step.
 
+## Programme usability update — October 27, 2026
+
+The programme builder now labels the generic numbered oral sessions with “Session themes, papers and authors to be announced.” This describes the missing scientific detail; it does not change the supplied timetable, presentation counts, stable IDs or pending flags. Poster entries whose detail already says “to be confirmed” no longer repeat a second generic pending sentence.
+
+The desktop timeline navigator is integrated as a sticky horizontal bar, recovering the former side gutter for session comparison. Four parallel sessions reflow to one, two or four columns according to available space. On mobile the dock appears only after the timeline is reached and provides direct day and My agenda controls; returning to the opening tools hides it. Day changes retain the other filters, while My agenda opens saved choices across all days. Confirming a mobile time jump focuses its time heading; dismissing returns focus to the opener. The intro and filter defaults use shorter interface copy without changing programme facts.
+
 
 The preliminary programme is imported from the organizers' [Google Sheets workbook](https://docs.google.com/spreadsheets/d/1Of-L2sAzCzUeFET04vbvnbRgRBaNiTuk/edit?gid=1954323401#gid=1954323401). The source has four tabs, covering November 14–17, 2026. The initial export was read on October 8, 2026; the source modification timestamp was `2026-10-08T07:16:30Z`.
 

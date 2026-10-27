@@ -25,6 +25,9 @@ function renderSession(session) {
   const title = session.href
     ? `<a class="link" href="${escape(session.href)}">${escape(session.title)}</a>`
     : escape(session.title);
+  const pendingMessage = session.type === 'oral-session' && /^Oral Session \d+$/.test(session.title)
+    ? 'Session themes, papers and authors to be announced.'
+    : session.pending && !/to be confirmed/i.test(session.detail) ? 'Details to be confirmed' : '';
   return `              <article id="${escape(session.id)}" class="programme-session" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">
                 <div class="programme-session-meta">
                   <p class="programme-room">${escape(session.room)}</p>
@@ -33,7 +36,7 @@ function renderSession(session) {
                 <h4 class="programme-session-title">${title}</h4>
                 <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
                 ${session.detail ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
-                ${session.pending ? '<p class="programme-pending">Details to be confirmed</p>' : ''}
+                ${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 <div class="programme-session-actions">
                   <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>
@@ -126,7 +129,7 @@ const main = `    <main id="main-content" tabindex="-1">
         <div class="hero-content page-header-content programme-header">
           <div class="max-w-3xl">
             <h1 class="page-title">Conference programme</h1>
-            <p class="page-lead">Four days of ideas, conversations and research in Milan.<br>Find your sessions and build your own ICAIF '26 agenda.</p>
+            <p class="page-lead">Find your sessions and build your ICAIF '26 agenda.</p>
             <p class="programme-header-meta">14–17 November 2026 <span aria-hidden="true">·</span> All times CET (UTC+1)</p>
           </div>
           <span class="badge programme-preliminary">Preliminary programme</span>
@@ -147,12 +150,12 @@ ${dayButtons}
           <form data-programme-filters class="programme-filters" role="search" aria-label="Filter the conference programme">
             <div class="programme-search-field">
               <label for="programme-search">Search the programme</label>
-              <input id="programme-search" type="search" class="input w-full" placeholder="Session title, topic or speaker…" autocomplete="off" data-programme-search>
+              <input id="programme-search" type="search" class="input w-full" placeholder="Title, topic or speaker…" autocomplete="off" data-programme-search>
             </div>
             <div>
               <label for="programme-type">Session type</label>
               <select id="programme-type" class="select w-full" data-programme-type>
-                <option value="all">All session types</option>
+                <option value="all">All types</option>
 ${typeOptions}
               </select>
             </div>
@@ -185,24 +188,18 @@ ${roomOptions}
         <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Add sessions to My agenda, then review your choices or export your calendar. Your agenda is kept in this browser.</p>
         <p class="sr-only" data-programme-feedback aria-live="polite" aria-atomic="true"></p>
         <div class="programme-empty" data-programme-empty hidden>
-          <h2>No sessions match your view</h2>
+          <h2 tabindex="-1">No sessions match your view</h2>
           <p data-programme-empty-description>Try another day, room or search term.</p>
           <div class="programme-empty-actions">
             <button type="button" class="btn" data-programme-all-days>Search all days</button>
             <button type="button" class="btn" data-programme-reset>Reset filters</button>
           </div>
         </div>
-${data.days.map(renderDay).join('\n')}
-        <p class="programme-closing-note">Looking for workshop calls and organizing teams? <a class="link" href="/workshop/">Explore the workshops</a>.</p>
-      </div>
       <nav class="programme-navigator" aria-label="Timeline navigator" aria-controls="programme-timeline" data-programme-timeline data-programme-controls hidden>
-        <div class="programme-navigator-title">
-          <p>Timeline</p>
-          <span data-timeline-position aria-hidden="true">1 / ${new Set(data.sessions.map(session=>`${session.date}|${session.start}`)).size}</span>
-        </div>
-        <label class="sr-only" for="programme-timeline-day">Timeline day</label>
+        <label class="sr-only" for="programme-timeline-day">Choose a programme day</label>
         <select id="programme-timeline-day" class="select programme-navigator-day" data-timeline-day>
 ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,3)} ${Number(day.date.slice(-2))} November</option>`).join('\n')}
+          <option value="all">All days</option>
         </select>
         <div class="programme-navigator-stepper">
           <button type="button" class="btn" aria-label="Previous time slot" data-timeline-previous><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i></button>
@@ -218,9 +215,12 @@ ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,
           <input id="programme-timeline-position" type="range" class="range" min="0" max="1" value="0" step="1" aria-controls="programme-timeline" data-timeline-range>
           <div class="programme-navigator-limits" aria-hidden="true"><span data-timeline-start>08:15</span><span data-timeline-end>16:30</span></div>
         </div>
+        <button type="button" class="btn programme-agenda-button programme-navigator-agenda" aria-pressed="false" data-programme-saved-only data-timeline-agenda>My agenda <span class="badge" data-saved-count>0</span></button>
         <button type="button" class="btn programme-navigator-return" data-timeline-return hidden><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i>Back to previous position</button>
-        <p class="programme-navigator-empty" data-timeline-empty hidden>No sessions match. Adjust the filters above.</p>
       </nav>
+${data.days.map(renderDay).join('\n')}
+        <p class="programme-closing-note">Looking for workshop calls and organizing teams? <a class="link" href="/workshop/">Explore the workshops</a>.</p>
+      </div>
       <dialog id="programme-time-picker" class="modal modal-bottom sm:modal-middle programme-time-picker" aria-labelledby="programme-time-picker-title" aria-describedby="programme-time-picker-description" data-programme-controls hidden>
         <div class="modal-box programme-time-picker-box">
           <div class="programme-time-picker-header">
@@ -229,7 +229,7 @@ ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,
           </div>
           <div class="programme-time-picker-content">
             <p id="programme-time-picker-description">Choose a day and time, then confirm to move the programme. Times follow your current filters.</p>
-            <fieldset>
+            <fieldset data-timeline-picker-day-field>
               <legend>Day</legend>
               <div class="programme-time-picker-days" data-timeline-picker-days>
 ${data.days.map(day=>`                <button type="button" class="btn" data-timeline-picker-day="${day.date}" aria-pressed="false"><span>${day.label.slice(0,3)} ${Number(day.date.slice(-2))}</span><span>Nov</span></button>`).join('\n')}
@@ -268,9 +268,9 @@ if (fs.existsSync(destination)) {
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
-html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026100907')
+html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026102702')
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102701')
-  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102601');
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102702');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');
 if (process.argv.includes('--check')) {
