@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "source": "img/speakers/anastasia-borovykh.webp",
+  "backdrop": "assets/speakers/studio-backdrop-v1.png",
+  "styleReference": "img/speakers/studio/daniele-magazzeni-v1.webp",
+  "prompt": "Use case: identity-preserve. Asset type: ICAIF conference website speaker photograph. Image 1 is the EDIT TARGET: the existing photograph of Anastasia Borovykh. Image 2 is the approved EMPTY BACKDROP. Image 3 is ONLY a STYLE REFERENCE showing the already published navy/slate ICAIF studio background and framing, NOT a source of identity or clothing. Replace the original background of image 1 completely with the same dark navy/slate textured photographic backdrop from image 2, using the restrained muted copper near the lower edge and the same dark exposure and background scale visible in image 3. Remove the original office, wall, furniture or scenery behind the person. Keep the person themselves unchanged: preserve the exact facial identity, facial geometry, apparent age, skin texture and natural skin tone, eyes, nose, lips, teeth, smile or neutral expression, gaze, glasses, hair, facial hair, pose, head turn and tilt, and their existing clothing including collar, jacket, tie and accessories. No beautification, smoothing, face reshaping, changing the expression, inventing facial details or transferring any trait from the person in image 3. Do not turn an off-camera gaze toward the camera. Change ONLY the background and use uniform scale/translation to fit the existing head and shoulders naturally in a square frame consistent with image 3. Keep the original illumination on the face. Center the head horizontally, aim for eyes around 38% of the canvas height and a crown margin around 8–10%, without warping the subject or cutting hair. Continue the background to all four edges. Natural clean hair and shoulder edges, no bright halos, no old background fringes. One opaque square photorealistic portrait, head and shoulders with upper chest at the bottom, no hands. No baked circular crop, text, border, logos, props, visible equipment or other people. The result must remain recognizably the SAME source photograph of Anastasia Borovykh, with only the specified background/framing edit.",
+  "createdAt": "2026-10-27",
+  "aiEdited": true,
+  "treatment": "Background replacement and uniform-scale square framing. Original facial identity, expression, clothing and illumination requested unchanged.",
+  "sourcePage": "https://abrvkh.github.io/",
+  "sourceUrl": "https://abrvkh.github.io/square_photo.png"
+}

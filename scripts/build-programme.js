@@ -32,7 +32,7 @@ function renderSession(session) {
                 </div>
                 <h4 class="programme-session-title">${title}</h4>
                 <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
-                ${session.detail ? `<p class="programme-detail">${escape(session.detail)}</p>` : ''}
+                ${session.detail ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
                 ${session.pending ? '<p class="programme-pending">Details to be confirmed</p>' : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 <div class="programme-session-actions">
@@ -269,7 +269,7 @@ if (fs.existsSync(destination)) {
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
 html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026100907')
-  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102601')
+  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102701')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102601');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');

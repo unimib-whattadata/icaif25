@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -270,7 +270,7 @@
       "date": "2026-11-15",
       "start": "08:30",
       "end": "10:30",
-      "title": "FINOS demo & panel",
+      "title": "Industry day: AI Governance & DXC spotlight",
       "type": "industry",
       "room": "Main Hall",
       "detail": "",
@@ -330,7 +330,7 @@
       "date": "2026-11-15",
       "start": "11:00",
       "end": "13:00",
-      "title": "DXC session + Perpetual Alpha Competition awards",
+      "title": "Agostino Capponi Keynote & Perpetual Alpha Competition awards",
       "type": "competition",
       "room": "Main Hall",
       "detail": "",
@@ -360,18 +360,6 @@
       "detail": "",
       "pending": false,
       "href": "/workshop/#multimodal-foundation-models-banking"
-    },
-    {
-      "id": "session-2026-11-15-1100-62ef29b2",
-      "date": "2026-11-15",
-      "start": "11:00",
-      "end": "13:00",
-      "title": "Session to be confirmed",
-      "type": "tbc",
-      "room": "Room 3",
-      "detail": "",
-      "pending": true,
-      "href": ""
     },
     {
       "id": "session-2026-11-15-1300-4f2dcd7f",
@@ -450,7 +438,7 @@
       "date": "2026-11-15",
       "start": "16:30",
       "end": "18:00",
-      "title": "QubeRT Startup Pitch Session",
+      "title": "QRT Startup Pitch Session",
       "type": "competition",
       "room": "Main Hall",
       "detail": "",
@@ -546,10 +534,10 @@
       "date": "2026-11-16",
       "start": "09:40",
       "end": "10:30",
-      "title": "Panel discussion: Intesa, Domyn, Bloomberg & CFM",
+      "title": "From AI Scientific Discovery to Profitable Trading Strategies: What works, what transfers and what Falls Short?",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Moderator: QRT.",
+      "detail": "Participants: Andrea Prampolini (Intesa Sanpaolo), Stefano Pasquali (Domyn), Anastasia Borovykh (CFM), Fabio Mercurio (Bloomberg).\nModerator: Georgios Papaioannou (QRT).",
       "pending": false,
       "href": ""
     },
@@ -633,7 +621,7 @@
       "title": "AI, Systemic Risks and Central Banking",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Participants: Kartik Anand (Bundesbank), Celso Brunetti (Università di Roma Tor Vergata), Andrea Coletta (Bank of Italy), and Jonas Fisher (Federal Reserve Bank of Chicago). Moderator: Elena Carletti (Università Bocconi, Dean for Research).",
+      "detail": "Participants: Kartik Anand (Bundesbank), Celso Brunetti (Università di Roma Tor Vergata), Andrea Coletta (Bank of Italy), and Jonas Fisher (Federal Reserve Bank of Chicago).\nModerator: Elena Carletti (Università Bocconi, Dean for Research).",
       "pending": false,
       "href": ""
     },
@@ -774,10 +762,10 @@
       "date": "2026-11-17",
       "start": "09:00",
       "end": "10:00",
-      "title": "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali",
+      "title": "Fireside chat",
       "type": "keynote",
       "room": "Main Hall",
-      "detail": "Raffaele Savi — Global Head of BlackRock Systematic; Mauro Micillo — Head of Corporate & Investment Banking at Intesa Sanpaolo; Stefano Pasquali — Executive VP at Domyn.",
+      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo), Stefano Pasquali (Domyn).",
       "pending": false,
       "href": ""
     },

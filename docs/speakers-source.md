@@ -1,5 +1,34 @@
 # Home speaker portraits
 
+## Our speakers — October 27, 2026
+
+Marco authorized the changes requested in Andrea Prampolini's October 27 email. The homepage section is now “Our speakers”, covering all twelve named participants without classifying every person as a keynote. The six existing speakers, their approved studio portraits and dates are retained. Six additional participants have portraits and verified affiliations; no unconfirmed speaking dates are assigned.
+
+| Addition | Affiliation and portrait evidence |
+| --- | --- |
+| Anastasia Borovykh | Executive Director, Capital Fund Management, from her [professional page](https://abrvkh.github.io/); `square_photo.png` converted proportionally to WebP. |
+| Marc Mézard | Professor of Theoretical Physics, Bocconi University, from his [official faculty profile](https://cs.unibocconi.eu/faculty/marc-mezard). The existing committee studio portrait is reused. |
+| Fabio Mercurio | Global Head of Quantitative Analytics, Bloomberg. His supplied LinkedIn profile was unavailable; the current [QuantMinds speaker profile](https://informaconnect.com/quantminds-international/speakers/fabio-mercurio/) supplies the role and original photograph recorded below. The LinkedIn URL supplied in the email is retained as source documentation. |
+| Rama Cont | Professor of Mathematics, University of Oxford, with portrait from the [official Oxford profile](https://www.maths.ox.ac.uk/people/rama.cont). |
+| Charles-Albert Lehalle | Professor, École Polytechnique, with photograph from his [official professional page](https://www.cmap.polytechnique.fr/~charles-albert.lehalle/). |
+| Huyên Pham | Professor of Applied Mathematics, École Polytechnique. The supplied finance.math.upmc.fr page timed out; the [official applied mathematics faculty directory](https://www.polytechnique.edu/node/147) confirms the appointment and provides `photo_pham.jpg`. |
+
+Five downloaded source photographs remain in `img/speakers/`, with source URLs in adjacent JSON sidecars. Their initial conversion only resized proportionally and encoded WebP. The subsequent studio background update below supplies the versions now served on Home. Circular cropping follows the existing homepage CSS. These instructions supersede the earlier keynotes-only preview scope below.
+
+At Marco’s subsequent request, all six added speaker names are plain H3 text, matching the existing names. External profile URLs are retained only as source documentation.
+
+## Uniform speaker backgrounds — October 27, 2026
+
+Marco requested that the six additional portraits use the same background as the existing speaker photographs. The built-in image generator edited each target separately, using `assets/speakers/studio-backdrop-v1.png` as the approved backdrop and the existing Daniele Magazzeni studio portrait solely as a background/framing reference. The prompts request background replacement and uniform-scale square framing while preserving identity, facial geometry, expression, gaze, head turn, clothing and original facial illumination.
+
+The six served assets are `img/speakers/studio/{anastasia-borovykh,marc-mezard,fabio-mercurio,rama-cont,charles-albert-lehalle,huyen-pham}-v1.webp`, each 640 × 640 pixels. The source photographs, existing keynote assets and committee copy of Mézard are preserved. Full-resolution outputs are copied into `output/keynote-studio/full-resolution/`; exact per-image prompts and source paths are recorded in `docs/keynote-studio-prompts.json` and adjacent JSON sidecars.
+
+The portraits were visually compared with their sources and approved backdrop before replacing the Home references. The smaller Rama Cont and Huyên Pham originals limit fine-detail comparisons. No new speaker copy, dates, global styles or layout changes are part of this background update.
+
+## Session-date context — October 27, 2026
+
+At Marco's request to clarify what the dates refer to, each existing dated badge now combines the confirmed appearance format and day: Keynote for Capponi, Magazzeni, Barr and Pasquali; Fireside chat for Micillo and Savi. These formats follow the current programme or the confirmed Barr announcement. The dates retain their existing brochure/organizer sources and machine-readable datetime attributes. A badge highlights one confirmed appearance rather than enumerating every contribution by that person. No date is inferred for any additional participant. The native orange badge treatment remains, and Capponi's existing programme link now has a 58px touch target.
+
 Requested by Marco on October 23, 2026, based on Andrea Prampolini's email “ICAIF web site”, received October 23, 18:53 Europe/Rome. The request names Mézard, Capponi, Mercurio, Borovykh, Rama Cont and Lehalle as additions to the brochure-style keynote section.
 
 ## Keynote group

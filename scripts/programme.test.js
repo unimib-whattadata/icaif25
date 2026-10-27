@@ -247,7 +247,10 @@ test("the checked-in programme is valid and every scheduled event can be exporte
 test("organizer updates retain confirmed keynote days and one Monday central-banking panel", () => {
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme.json"), "utf8"));
   const announcements = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme-announcements.json"), "utf8"));
-  assert.equal(announcements.find((item) => item.id === "keynote-agostino-capponi").date, "2026-11-15");
+  const capponi = data.sessions.find((item) => item.title.includes("Agostino Capponi Keynote"));
+  assert.equal(capponi.date, "2026-11-15");
+  assert.equal(capponi.start, "11:00");
+  assert.ok(!announcements.some((item) => item.id === "keynote-agostino-capponi"));
   assert.equal(announcements.find((item) => item.id === "keynote-michael-barr").date, "2026-11-16");
   const afternoonPanels = data.sessions.filter((item) =>
     item.date === "2026-11-16" && item.type === "panel" && item.start >= "12:00");

@@ -1,5 +1,23 @@
 # Programme data
 
+## Current organizer corrections — October 27, 2026
+
+Marco authorized the website changes in Andrea Prampolini's and Edoardo Vittori's October 27 emails, subject “ICAIF '26: block of 100 registrations for the AI4F workshop (14 November)”. These corrections supersede the earlier provisional copy below. The requested pull first brought in the October 26 Capponi and central-banking panel updates; those additions are retained.
+
+- November 15, 08:30: “Industry day: AI Governance & DXC spotlight”. The existing interval and room remain unchanged.
+- November 15, 11:00: “Agostino Capponi Keynote & Perpetual Alpha Competition awards”, in the existing 11:00–13:00 Main Hall block. This is the combined block, not a claim that the keynote itself lasts two hours. Capponi's separate provisional announcement is removed, and his homepage date links to this scheduled block.
+- The undefined November 15, 11:00–13:00 Room 3 placeholder is omitted until its content is defined, leaving three parallel sessions. There are now **83 timed sessions**, with daily counts **19/20/21/23**.
+- November 15, 16:30: “QRT Startup Pitch Session”.
+- November 16, 09:40: the full “From AI Scientific Discovery to Profitable Trading Strategies: What works, what transfers and what Falls Short?” title and all four supplied names/affiliations, with Georgios Papaioannou (QRT) as moderator. Both Monday panels show participants and moderator in separate paragraphs. The confirmed 14:15 central-banking panel and its participants are retained from the pulled version.
+- November 17, 09:00: the generic “Fireside chat” title above Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo), and Stefano Pasquali (Domyn). A thematic title was not supplied.
+
+The title corrections preserve existing session IDs so agenda selections and inbound links remain valid. The importer uses explicit identity-title aliases for these same events and applies the copy corrections and placeholder removal on refresh; future date/room/time changes still need schedule reconciliation. Details remain plain text in JSON, with newline-separated paragraphs rendered safely by the builder and retained in calendar descriptions.
+
+Pending: thematic oral/poster session labels and paper-to-session assignments; Barr's duration/end time, room and replacement oral-session times for the requested Monday 11:00 move; an optional thematic title for the fireside chat; and content/format for the removed Sunday Room 3 session. Barr remains a separate untimed announcement until the full schedule can be reconciled. No oral-session times or presentation counts were inferred.
+
+Verification: the full build passed 41 existing tests, JavaScript and HTML validation, and source/route checks for all 20 canonical pages. A temporary workbook with the legacy titles and removed placeholder was imported successfully: the five corrected events retained their IDs and copy, and the undefined Sunday slot stayed omitted. All remaining dates, times and rooms match the pulled programme. Browser checks at 1280px and 390px found no horizontal overflow on the edited surfaces; all twelve portraits and the LinqAlpha logo loaded. Evidence is under `.codex-artifacts/updates-20261027/`. These checks cover the source build and local preview; hosting deployment is a separate step.
+
+
 The preliminary programme is imported from the organizers' [Google Sheets workbook](https://docs.google.com/spreadsheets/d/1Of-L2sAzCzUeFET04vbvnbRgRBaNiTuk/edit?gid=1954323401#gid=1954323401). The source has four tabs, covering November 14–17, 2026. The initial export was read on October 8, 2026; the source modification timestamp was `2026-10-08T07:16:30Z`.
 
 `data/programme.json` is the public source used by the programme page. Its timezone is `Europe/Rome`; November conference times are CET (UTC+1). Each source row with a valid date, start, and end becomes one session. Repeated workshop blocks and simultaneous room sessions remain separate entries. Session IDs combine the date/start with a hash of date, start, room, and public title, so row reordering does not associate saved-session references with a different event. Changes to a session's title, room, date, or start time give it a new ID.

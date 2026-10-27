@@ -1,5 +1,13 @@
 # Sponsorship content sources
 
+## LinqAlpha — October 27, 2026
+
+Marco authorized Andrea Prampolini's October 27 request to list LinqAlpha as a Platinum Sponsor. Its logo appears in the Platinum groups on Home and Sponsors & Supporters, linking to `https://linqalpha.com`. The October 26 Domyn Gold sponsorship from the requested pull is retained, along with existing sponsor tiers.
+
+The supplied, unmodified black PNG from the email is `img/loghi/linqalpha/linqalpha-black.png` (2839 × 660 pixels). The Gmail attachment reader could not retrieve the SVG despite initially advertising support, so the supplied PNG was used. No logo was redrawn. Both links have meaningful accessible names, a new-tab notice, preserved image proportions and a 44px minimum target.
+
+The separate conference poster/rollup request is outside this website edit; its final sponsor roster and print dimensions/artwork are still needed. Existing website sponsor listings remain in place.
+
 ## Needlestack Technologies
 
 The user's October 16, 2026 instruction authorizes the website changes requested in the email “Fw: Sponsorship inquiry” received that morning: add Needlestack Technologies to a dedicated à la carte sponsors section and link its logo to `https://www.needlestacktech.com/`. The HTTPS destination was successfully retrieved on October 16. Existing Platinum and Silver groups retain priority; the new category follows them on the Sponsors page, using a smaller logo. The user's subsequent instruction removes Needlestack and the à la carte group from Home while retaining the Sponsors listing and News announcement.

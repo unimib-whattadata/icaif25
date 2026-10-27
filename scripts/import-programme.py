@@ -32,6 +32,20 @@ DAY_SUBTITLES = {
     "2026-11-17": "Main conference",
 }
 
+MORNING_PANEL_TITLE = (
+    "From AI Scientific Discovery to Profitable Trading Strategies: "
+    "What works, what transfers and what Falls Short?"
+)
+# Copy corrections keep the identity of the existing event and its saved links.
+IDENTITY_TITLES = {
+    "Industry day: AI Governance & DXC spotlight": "FINOS demo & panel",
+    "Agostino Capponi Keynote & Perpetual Alpha Competition awards":
+        "DXC session + Perpetual Alpha Competition awards",
+    "QRT Startup Pitch Session": "QubeRT Startup Pitch Session",
+    MORNING_PANEL_TITLE: "Panel discussion: Intesa, Domyn, Bloomberg & CFM",
+    "Fireside chat": "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali",
+}
+
 
 def text(value):
     return " ".join(str(value).split()) if value is not None else ""
@@ -132,16 +146,19 @@ def public_title(title, session_type):
     title = title.replace("The 3nd Workshop", "The 3rd Workshop")
     if title == "Financial AI Security, Privacy, and Safety:":
         title = title[:-1]
-    elif title == "Panel Discussion: Intesa, Domyn, Bloomberg, CFM, modera QRT":
-        title = "Panel discussion: Intesa, Domyn, Bloomberg & CFM"
-        detail = "Moderator: QRT."
+    elif title in ("Panel Discussion: Intesa, Domyn, Bloomberg, CFM, modera QRT",
+                   "Panel discussion: Intesa, Domyn, Bloomberg & CFM", MORNING_PANEL_TITLE):
+        title = MORNING_PANEL_TITLE
+        detail = ("Participants: Andrea Prampolini (Intesa Sanpaolo), Stefano Pasquali (Domyn), "
+                  "Anastasia Borovykh (CFM), Fabio Mercurio (Bloomberg).\n"
+                  "Moderator: Georgios Papaioannou (QRT).")
     elif title in ("Panel Discussion: Banca D'Italia, Bundesbank, CEPR, ex FED tbd: ECB, BOE: modera Elena",
                    "AI, Systemic Risks and Central Banking"):
         title = "AI, Systemic Risks and Central Banking"
         session_type = "panel"
         detail = ("Participants: Kartik Anand (Bundesbank), Celso Brunetti "
                   "(Università di Roma Tor Vergata), Andrea Coletta (Bank of Italy), "
-                  "and Jonas Fisher (Federal Reserve Bank of Chicago). "
+                  "and Jonas Fisher (Federal Reserve Bank of Chicago).\n"
                   "Moderator: Elena Carletti (Università Bocconi, Dean for Research).")
     elif title == "Banquet Dinner - Awards + speech Marc Mezard confermato":
         title = "Banquet dinner & awards"
@@ -155,13 +172,17 @@ def public_title(title, session_type):
         title = "Keynote: Stefano Pasquali"
         session_type = "keynote"
         detail = "Executive VP at Domyn."
-    elif title in ("Fireside chat: Savi + Micillo + Pasquali", "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"):
-        title = "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali"
-        detail = ("Raffaele Savi — Global Head of BlackRock Systematic; "
-                  "Mauro Micillo — Head of Corporate & Investment Banking at Intesa Sanpaolo; "
-                  "Stefano Pasquali — Executive VP at Domyn.")
-    elif title == "FINOS (demo+panel) 1h":
-        title = "FINOS demo & panel"
+    elif title in ("Fireside chat: Savi + Micillo + Pasquali",
+                   "Fireside chat: Raffaele Savi, Mauro Micillo & Stefano Pasquali", "Fireside chat"):
+        title = "Fireside chat"
+        detail = ("Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo), "
+                  "Stefano Pasquali (Domyn).")
+    elif title in ("FINOS (demo+panel) 1h", "FINOS demo & panel"):
+        title = "Industry day: AI Governance & DXC spotlight"
+    elif title == "DXC session + Perpetual Alpha Competition awards":
+        title = "Agostino Capponi Keynote & Perpetual Alpha Competition awards"
+    elif title == "QubeRT Startup Pitch Session":
+        title = "QRT Startup Pitch Session"
     return title, session_type, detail, pending
 
 
@@ -221,6 +242,11 @@ def import_workbook(input_path, updated):
                         and (session_date, start, end, room)
                         == ("2026-11-14", "14:00", "16:00", "Room 2")):
                     continue
+                # October 27: omit this placeholder until the organizers define it.
+                if (title == "Session to be confirmed"
+                        and (session_date, start, end, room)
+                        == ("2026-11-15", "11:00", "13:00", "Room 3")):
+                    continue
                 count = value("subsessions")
                 if isinstance(count, (int, float)) and count > 0:
                     if not float(count).is_integer():
@@ -228,7 +254,7 @@ def import_workbook(input_path, updated):
                     unit = "posters" if session_type == "poster-session" or "poster session" in title.casefold() else "presentations" if session_type == "oral-session" else ""
                     if unit:
                         detail = " ".join(part for part in (detail, f"{int(count)} {unit}") if part)
-                identity = json.dumps([session_date, start, room, title], ensure_ascii=False)
+                identity = json.dumps([session_date, start, room, IDENTITY_TITLES.get(title, title)], ensure_ascii=False)
                 identity_hash = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:8]
                 href = links.get(title_key(title), "") if session_type == "workshop" else ""
                 if session_type == "tutorial" and title in tutorials:
