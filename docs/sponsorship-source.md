@@ -1,5 +1,13 @@
 # Sponsorship content sources
 
+## DXC Technology — October 28, 2026
+
+The user's October 28 instruction authorizes adding DXC Technology as a Gold Sponsor using the supplied `transfer-01a16862` folder. Its logo appears alongside Domyn in the Gold groups on Home and Sponsors & Supporters.
+
+The supplied RGB SVG, `DXC Logo/Brand Mark/Full Color/RGB/DXC-Full-Color.svg`, is copied unchanged to `img/loghi/dxc/dxc-full-color.svg` (860 × 240; SHA-256 `fe78f845587bad242cda0e7d093a709474cf2aadd8fb0e656e4b6fb5a90438d7`). The supplied visual identity guidelines inform the artwork selection: the full-color mark appears on white, the compact placements use the version without tagline, and the original clear space, colors and proportions are retained. Both placements keep the visible mark wider than the 100px digital minimum and use descriptive alternative text.
+
+Verification: `npm run check` passed (41 existing tests, JavaScript syntax, HTML validation, source synchronization and checks for all 20 canonical pages). The clean Sponsors route was regenerated. Chromium inspection at 1280px, 390px and 320px confirmed both DXC placements load, retain their aspect ratio and introduce no horizontal overflow. The visible mark remains at least 123px wide. Screenshots are saved in `.codex-artifacts/sponsorship-dxc-20261028/`. Static Impeccable warnings were verified against rendered colors and spacing; the CTA contrast is 4.93:1, tier bottom padding is 32px, Inter is the documented site font, the page background is white and no repeating-gradient decoration renders. File-scoped exceptions record those false positives without changing the UI.
+
 ## LinqAlpha — October 27, 2026
 
 Marco authorized Andrea Prampolini's October 27 request to list LinqAlpha as a Platinum Sponsor. Its logo appears in the Platinum groups on Home and Sponsors & Supporters, linking to `https://linqalpha.com`. The October 26 Domyn Gold sponsorship from the requested pull is retained, along with existing sponsor tiers.
