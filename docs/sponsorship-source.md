@@ -1,5 +1,27 @@
 # Sponsorship content sources
 
+## Home sponsor layout and links — October 28, 2026
+
+The user approved all three findings from the Home sponsor critique: compact tablet/mobile layout, optical logo balance and consistent sponsor links. The change is scoped to the Home sponsor band. Desktop retains the three tier columns; at 640–1023px the three Platinum marks share a centered row, and Gold/Silver use two-logo rows below 1024px. Below 640px LinqAlpha is 176px wide and Standard Chartered is 112px wide. Sponsor tiers and supplied artwork are preserved.
+
+All seven Home logos are native external links with a contextual accessible name, a new-tab notice, `noopener noreferrer`, a minimum 44px target height and the site's existing focus treatment. Official destinations checked on October 28:
+
+| Sponsor | Destination |
+|---|---|
+| Intesa Sanpaolo IMI CIB | https://imi.intesasanpaolo.com/en/ |
+| QRT | https://www.qube-rt.com/ |
+| LinqAlpha | https://linqalpha.com |
+| Domyn | https://www.domyn.com/ |
+| DXC Technology | https://dxc.com/ |
+| Bloomberg Engineering | https://www.bloomberg.com/company/values/tech-at-bloomberg/ |
+| Standard Chartered | https://www.sc.com/en/ |
+
+The public web reader retrieved the six other destinations. Bloomberg's official Tech at Bloomberg page was confirmed through the official indexed page and by clicking the Home logo in the native browser: it opened the expected page title in a new tab. The web reader's direct fetch returned an automated-access error; this was not treated as a broken destination.
+
+Native IAB checks at 320, 390, 640, 768, 1024, 1280 and 1440px found all seven logos loaded, intact proportions, correct tier order, no horizontal overflow and target heights of at least 44px. The narrowest DXC mark remains approximately 116px wide, above its 100px digital minimum. Section height decreased from 887px to about 602px at 768px, from 823px to 643px at 390px and from 859px to 679px at 320px; desktop is 369px. Keyboard traversal follows the seven logos in DOM order, with a visible 2px outline on each. Tests use browser viewports, not physical-device touch testing. Screenshots are under `.codex-artifacts/home-sponsors-20261028/`.
+
+The independent design reviewer returned **SHIP** after reviewing desktop, tablet, mobile and narrow screenshots and the source, confirming all three critique priorities were addressed. Final `npm run build` passed 41 tests, JavaScript syntax, HTML validation and site/source checks for all 20 canonical pages. The shared CSS cache version is consistently `2026102801`, including the programme builder and generated clean routes. No new CSS tokens, JavaScript, animation or artwork were added; no detector exclusions changed. Existing out-of-scope detector advisories remain outside this local layout refinement.
+
 ## DXC Technology — October 28, 2026
 
 The user's October 28 instruction authorizes adding DXC Technology as a Gold Sponsor using the supplied `transfer-01a16862` folder. Its logo appears alongside Domyn in the Gold groups on Home and Sponsors & Supporters.
