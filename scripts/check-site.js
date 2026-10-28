@@ -30,7 +30,6 @@ const daisyComponentRoots = new Set([
     'menu',
     'modal',
     'navbar',
-    'stats',
     'steps',
     'table',
 ]);
@@ -82,7 +81,6 @@ const requiredDaisyModules = new Set([
     'rootscrollgutter',
     'rootscrolllock',
     'scrollbar',
-    'stat',
     'steps',
     'svg',
     'table',
@@ -103,7 +101,6 @@ const requiredCompiledCssSelectors = [
     '.menu{',
     '.modal{',
     '.navbar{',
-    '.stats{',
     '.steps{',
     '.table{',
 ];
@@ -445,7 +442,7 @@ for (const file of htmlFiles) {
         }
     }
 
-    for (const match of html.matchAll(/(?:css\/tailwind\.min\.css|js\/(?:heroicons|home-stats|important-dates)\.js)\?v=([0-9]+)/g)) {
+    for (const match of html.matchAll(/(?:css\/tailwind\.min\.css|js\/(?:heroicons|important-dates)\.js)\?v=([0-9]+)/g)) {
         const asset = match[0].split('?')[0];
         if (!assetVersions.has(asset)) assetVersions.set(asset, new Set());
         assetVersions.get(asset).add(match[1]);

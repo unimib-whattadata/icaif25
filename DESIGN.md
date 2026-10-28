@@ -200,7 +200,7 @@ The hierarchy uses bold, tightly tracked headings and relaxed introductory text.
 - **Subsection heading:** the `subsection-title` token increases to 24px at 640px. Native card titles retain their component role.
 - **Body:** the `body` token records the shared base text. Existing pages select smaller native control and supporting-text sizes where needed.
 
-The home hero has its existing larger headline scale. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
+The home hero has its existing larger headline scale, with the conference date above it in the existing light copper accent. Home's sponsor and speaker headings both use the shared `section-title` hierarchy. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
 
 Tutorial titles now retain the workshop's native card-title hierarchy: 18px at weight 600, with the shared 16.8px/1.4 mobile treatment below 768px. Presenter names use semibold list text with smaller affiliations beneath them, matching workshop organizers. Full abstracts use relaxed leading and a local 72ch maximum reading measure; these are reading-surface choices rather than new typography tokens.
 
@@ -208,7 +208,7 @@ Tutorial titles now retain the workshop's native card-title hierarchy: 18px at w
 
 The shared content container is centered with an 80rem maximum width. Gutters use `container-gutter`, `container-gutter-sm` from 640px, and `container-gutter-lg` from 1024px. Reading columns align with the page heading and use a 48rem maximum width.
 
-Main section padding uses the `section-space` family. Long reading pages use the `document-gap` family, increasing at 640px. The shared footer and programme disclosures switch at 768px; the navigation's desktop arrangement begins at 1024px. The home university, statistics and sponsor bands retain their compact spacing.
+Main section padding uses the `section-space` family. Long reading pages use the `document-gap` family, increasing at 640px. The shared footer and programme disclosures switch at 768px; the navigation's desktop arrangement begins at 1024px. The home university and sponsor bands retain their compact spacing and follow each other directly; the date/statistics band and hero milestone summary have been removed.
 
 The programme's persistent navigator is a local layout extension: a horizontal sticky bar above the timeline from 768px, without a reserved side gutter. Below 768px, a compact bottom dock appears only after the visitor reaches the timeline and stays clear of the opening tools. Four parallel sessions use one, two or four columns according to the time group's available width.
 

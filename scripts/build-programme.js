@@ -269,7 +269,7 @@ if (fs.existsSync(destination)) {
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
 html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026102702')
-  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102801')
+  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026102802')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102702');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');

@@ -16,9 +16,9 @@ The site uses the existing `icaif` daisyUI theme in `css/tailwind.input.css`: na
 | `subsection-title` | Secondary headings: 20/24px. Card titles retain the native `card-title` role. |
 | `document-sections` | Long reading pages: 40/56px between sections. |
 
-The home hero keeps its larger display typography. Its university, statistics and sponsor bands stay compact; their order is universities, dates/statistics, sponsors. These are intentional exceptions to `section-space`.
+The home hero keeps its larger display typography, with “14–17 November 2026” above the main heading using the existing light copper accent. Its university and sponsor bands stay compact and appear consecutively. These are intentional exceptions to `section-space`. “Our sponsors” and “Our speakers” share the responsive `section-title` hierarchy.
 
-The home hero action is “Explore the program” and links to `/programme/`. The yellow workshop-paper deadline alert has been removed; the next-milestone summary/stat and AoE deadline behavior remain.
+The home hero action is “Explore the program” and links to `/programme/`. The workshop-paper deadline alert, next-milestone summary and date/statistics band have been removed at the user's request. Home no longer loads the milestone updater; deadline behavior on Important Dates remains.
 
 Home's “Latest from ICAIF” is curated from the most recent original posts on the ICAIF LinkedIn page, ordered by publication date. Use concise summaries and direct links to each original LinkedIn post. Keep LinkedIn publication dates distinct from website News announcement dates; record source links in `docs/news-source.md`.
 
@@ -44,7 +44,7 @@ News is the only primary-navigation item with an orange update dot, in both desk
 
 Retain row/column relationships when reading tables stack below 768px. Enhancement supplies explicit table roles; meaningful first cells use row headers. Registration fees use three `tbody` row groups for Early Bird, Standard and Late / Onsite. Traverse every body when generating the nine mobile fee cards, and preserve all 45 amounts. Without JavaScript, the source table remains visible.
 
-Keep expired and superseded dates legible. Use strike-through and a status cue rather than reduced opacity. Closed calls retain their requirements with a clear closed status and supporting portal link. When changing dates or policy, reconcile the home fallback, runtime milestones, important dates, relevant calls and registration copy against the same confirmed source. Main conference author registration and Workshop Days registration for workshop papers are distinct policies; do not broaden one to cover the other.
+Keep expired and superseded dates legible. Use strike-through and a status cue rather than reduced opacity. Closed calls retain their requirements with a clear closed status and supporting portal link. When changing dates or policy, reconcile Important Dates, relevant calls, registration copy and any Home announcements against the same confirmed source. Main conference author registration and Workshop Days registration for workshop papers are distinct policies; do not broaden one to cover the other.
 
 ## Validation
 
