@@ -21,6 +21,7 @@ const meta = (html,key,value) => [...html.matchAll(/<meta\b[^>]*>/g)].map(m=>att
 const setMeta = (html,key,name,value) => html.replace(/<meta\b[^>]*>/g,tag=>attrs(tag)[key]===name
   ? `<meta ${key}="${name}" content="${escape(value)}">` : tag);
 const descriptions = {
+  'accepted-papers.html': 'Browse the 215 accepted ICAIF 2026 papers: oral presentations, poster presentations and proceedings only, with titles, authors and affiliations.',
   'index.html': 'ICAIF 2026, the 7th ACM International Conference on AI in Finance, takes place in Milan on November 14–17. Explore the programme, venue and registration.',
   'call-for-papers.html': "Requirements, research topics and review policies for the ICAIF '26 paper call. Main conference in Milan, Italy, November 16–17, 2026.",
   'call-for-workshop-proposals.html': "Workshop proposal requirements and paper deadlines for ICAIF '26. Explore the accepted workshops in Milan, Italy, November 14–15, 2026.",
@@ -35,6 +36,7 @@ const descriptions = {
   'venue.html': 'ICAIF 2026 at Bocconi University, Via Röntgen 1, Milan, November 14–17. Find the venue map, transport routes, nearby hotels and travel information.',
 };
 const titles = {
+  'accepted-papers.html': 'Accepted Papers | ICAIF 2026 Milan',
   'index.html': 'ICAIF 2026 Milan | ACM Conference on AI in Finance',
   'registration.html': 'Registration & Fees | ICAIF 2026 Milan',
   'important-dates.html': 'Important Dates & Deadlines | ICAIF 2026 Milan',

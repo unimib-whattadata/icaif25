@@ -105,3 +105,9 @@ Below 768px, reuse the workshop's shared native button disclosure and mobile car
 Home keynote dates use the user-requested orange `badge badge-accent badge-lg` treatment on semantic `time` elements marked `data-keynote-date`. The site checker permits these two component variants only for the marked Home dates. Dates retain bottom alignment within each portrait row.
 
 The Home date badges now show the confirmed session format above the day within the same badge. Use the existing `h-auto`, column layout and compact padding so both lines fit narrow portrait columns; retain the original ISO datetime. Capponi's programme anchor uses inline-flex and a 44px minimum target. Do not add unconfirmed dates or imply that one badge lists every appearance by a participant.
+
+## Accepted papers
+
+`/accepted-papers/` lists all 215 main conference papers in three groups: 52 oral presentations, 114 poster presentations and 49 proceedings only. The Programme dropdowns and shared footer link to the page. Keep the navy hero, shared section index and flat native daisyUI lists. Each row has a stable `#paper-ID` anchor, the supplied title and authors/affiliations. Rows stack their ID above the title on phones and align it to the left from 640px. Keep every paper in static HTML; optional search matches paper IDs, titles, authors and affiliations and announces the result count. Hidden search results must remain hidden despite component display rules. The Whova presentation-link note is public copy supplied for publication.
+
+`data/accepted-papers.json` owns the publication fields. Follow `docs/accepted-papers-source.md` for source provenance and workbook import, and run `npm run build` to regenerate the list and canonical route. This addition brings the site to 21 canonical pages and 41 physical HTML files. Do not publish the original organizer workbook, contact details, reviewer data or availability notes.

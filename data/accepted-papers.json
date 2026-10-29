@@ -1,0 +1,1098 @@
+{
+  "updated": "2026-10-29",
+  "groups": [
+    {
+      "id": "oral",
+      "label": "Oral presentations",
+      "papers": [
+        {
+          "id": 134,
+          "title": "Mind the Shift: Decoding Monetary Policy Stance from FOMC Statements with Large Language Models",
+          "authors": "Yixuan Tang (Hong Kong University of Science and Technology); Yi Yang (Hong Kong University of Science and Technology)"
+        },
+        {
+          "id": 178,
+          "title": "Structure Before Scale: Package-Aware Bitcoin Volatility Forecasting from Multi-Leg Option Blocks",
+          "authors": "Liu Haoran (Renmin University of China); Zhou Mingyao (Renmin University of China); Yu Hao (Renmin University of China); Guo Qi (Renmin University of China)"
+        },
+        {
+          "id": 244,
+          "title": "DeepUSO: Finance-Informed Temporal–Relational Operators for Non-Stationary Cross-Sectional Stock Ranking",
+          "authors": "Liu Bowen (University of Rochester)"
+        },
+        {
+          "id": 250,
+          "title": "Public-Disclosure Recoverability in Fund Allocation Recommendations",
+          "authors": "Tenghan Zhong (University of Southern California); Keyuan Wu (Shanghai Jiao Tong University); Yuxuan Ouyang (Georgia Institute of Technology)"
+        },
+        {
+          "id": 271,
+          "title": "Quantifying Repair Risk in Crypto Option Surfaces",
+          "authors": "Tenghan Zhong (University of Southern California)"
+        },
+        {
+          "id": 290,
+          "title": "Access Is Not Use: The Reconstruction–Use Gap in Language-Model Financial Agents",
+          "authors": "Zejia Duan (University of Chicago); Jiashen Ren (University of Illinois Urbana-Champaign)"
+        },
+        {
+          "id": 329,
+          "title": "Signature Methods for Optimal Market Making",
+          "authors": "Francesca Primavera (École Polytechnique); Thibaut Mastrolia (University of California, Berkeley ); Alberto Gennaro (University of California, Berkeley )"
+        },
+        {
+          "id": 382,
+          "title": "CARGO: Credit Action Recourse via Regulation-Bounded, Graph-Constrained Ordered Planning",
+          "authors": "JIHWAN KIM (PFCT); Yejun Soun (PFCT); Byunggyu Ahn (PFCT); Jeongin Lee (PFCT); Ji Hoon Yoo (PFCT); Daesung Lee (PFCT); Seungho Lee (PFCT); Seokjung Hong (PFCT)"
+        },
+        {
+          "id": 392,
+          "title": "Agreement Without Information: Spurious Directional Priors in Foundation Models",
+          "authors": "Fernando Moreno-Pino (University of Bristol)"
+        },
+        {
+          "id": 397,
+          "title": "Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs",
+          "authors": "Junyi Ye (New Jersey Institute of Technology); Mengjia Yu (Montclair State University); Debapriya Hazra (Montclair State University); Guiling Wang (New Jersey Institute of Technology)"
+        },
+        {
+          "id": 399,
+          "title": "AlphaLeak: What `Blind' LLM Trading Benchmarks Still See",
+          "authors": "Minsuk Sung (Korea University); Doohwi Cha (Mirae Asset Securities); Juyeong Lee (EY Consulting); Minjae Lee (Independent Researcher); Donghwa Seo (DS Investment & Securities); Seunghan Son (Independent Researcher); Yoontae Hwang (Graduate School of Data Science, Pusan National University )"
+        },
+        {
+          "id": 401,
+          "title": "No Universal Comparable: Adaptive Peer Selection for Private-Company Valuation",
+          "authors": "Ahsan Alvi (Bloomberg); Thomas Fonlladosa (Bloomberg); Ching-Yu Lin (Bloomberg); Ashwin Bhola (Bloomberg); Chelvi Paramanathan (Bloomberg); Minh Duc Nguyen (Bloomberg); Saher Esmeir (Bloomberg)"
+        },
+        {
+          "id": 417,
+          "title": "Deep Hedging Under Non-Convexity: Geometry and Search-Based Diagnostics",
+          "authors": "Matteo Maggiolo (Vigilant Analytics); Giuseppe Nuti (UBS Investment Bank); Miroslav Strupl (IDSIA the Swiss AI Lab USI-SUPSI); Oleg Szehr (IDSIA the Swiss AI Lab USI-SUPSI)"
+        },
+        {
+          "id": 428,
+          "title": "FairCreditLens: Consumption-Aware Fair Credit Risk Modeling for Default Prediction",
+          "authors": "Lei Zhu (University of Macau)"
+        },
+        {
+          "id": 467,
+          "title": "What Prediction-Market Contracts Reveal at Launch: Trading Volume and Dispute Risk",
+          "authors": "Ahmed Mahrous (KAUST); Roberto Di Pietro (KAUST)"
+        },
+        {
+          "id": 512,
+          "title": "Arbitrage-Free Conformal Prediction Sets and Scenarios for Option Surfaces",
+          "authors": "Tue Herlau (Technical University of Denmark); Henrik Herlau (Copenhagen Business School)"
+        },
+        {
+          "id": 531,
+          "title": "Nightly Bayesian Tail-Risk Forecasting with Parallel MCMC on One GPU",
+          "authors": "Tue Herlau (Technical University of Denmark); Henrik Herlau (Copenhagen Business School)"
+        },
+        {
+          "id": 589,
+          "title": "Anti-TOXIN: Signed Directed Graph Learning for Toxic Flow",
+          "authors": "Elif Hucumenoglu (Imperial College London); Tony G. Constantinides (Imperial College London); Danilo P. Mandic (Imperial College London)"
+        },
+        {
+          "id": 591,
+          "title": "Model Diversity Is Not Decision Diversity: Correlated Misses and Policy Monoculture in LLM Sanctions Matching",
+          "authors": "Fabian Karst (Standard Chartered)"
+        },
+        {
+          "id": 592,
+          "title": "Min-Max Schrödinger Bridge: consistent generation of Open-High-Low-Close quotes",
+          "authors": "Marius Chevallier (Ecole Polytechnique); Davide Zanni (Ecole Polytechnique); Stefano De Marco (Ecole Polytechnique)"
+        },
+        {
+          "id": 609,
+          "title": "METT: High-Frequency Return Forecasting from Event Streams",
+          "authors": "Shengkun Wang (Virginia Tech); Linhan Wang (Virginia Tech); Sattar Mansi ( Virginia Tech); Chang-Tien Lu (Virginia Tech); Yinlin Chen (Virginia Tech)"
+        },
+        {
+          "id": 662,
+          "title": "Beyond Anonymous Order Flow: Wallet Identity as a Feature for Short-Horizon Return Prediction",
+          "authors": "Daojing Zhai (Baruch College, City University of New York); Jingqiu Ding (ETH Zurich)"
+        },
+        {
+          "id": 682,
+          "title": "CallRank: Isolating What Changed in Earnings-Call Q&A for Sector Ranking and Cost-Adjusted Alpha",
+          "authors": "Doohwi Cha (MiraeAsset Securities); Minsuk Sung (Department of Artificial Intelligence, Korea University); Seunghan Son (Independent Researcher); Juyeong Lee (EY Consulting); Donghwa Seo (DS Investment & Securities); Minjae Lee (Independent Researcher); Hyeonjun Yeo (Department of Physics and Astronomy, Seoul National University); Yoontae Hwang (Graduate School of Data Science, Pusan National University)"
+        },
+        {
+          "id": 690,
+          "title": "BPS-cGAN: Generating American Option Data at a Prescribed Exercise Proximity",
+          "authors": "Wei Wei (University of Bristol); Jin Zheng (University of Bristol)"
+        },
+        {
+          "id": 696,
+          "title": "Reinforcement Learning with Hawkes-Structured Networks for Market Making",
+          "authors": "Fernando Acero (J.P. Morgan AI Research); Philipp Plank (Imperial College London); Yufei Zhang (Imperial College London)"
+        },
+        {
+          "id": 697,
+          "title": "Decision-Focused Learning of the Gerber Threshold",
+          "authors": "Juyeong Lee (EY Consulting); Donghwa Seo (DS Investment & Securities); Minjae Lee (Independent Researcher); Seunghan Son (Independent Researcher); Minsuk Sung (Department of Artificial Intelligence, Korea University); Doohwi Cha (Mirae Asset Securities); Yoontae Hwang (Graduate School of Data Science, Pusan National University )"
+        },
+        {
+          "id": 702,
+          "title": "Same Market, Different Pixels: Can Invariance Training Repair Financial Vision Models?",
+          "authors": "Jeffrey Zhou (California Institute of Technology)"
+        },
+        {
+          "id": 707,
+          "title": "Coverage Beats Chronology: Distilling Tabular Foundation Models for Drifting, Rare-Event Financial Risk",
+          "authors": "Tian Qin (Lehigh University)"
+        },
+        {
+          "id": 732,
+          "title": "Accuracy Is Not Enough: A Framework for Bias Detection in AI-Driven Investment Workflows",
+          "authors": "fabrizio dimino (Domyn); Abhinav Arun (Domyn); Mahesh Kumar (Domyn); Bhaskarjit Sarmah (Domyn); Stefano Pasquali (Domyn)"
+        },
+        {
+          "id": 757,
+          "title": "Long-Horizon Forecasting of Complete Financial Statements with Forma",
+          "authors": "Travis Johnson (University of Texas at Austin); Jiannan Jiang (University of Texas at Austin); Soumyabrata Chaudhuri (University of Texas at Austin); Yihao Chen (University of Texas at Austin); Lauren Falvey (University of Texas at Austin); Donal O'Cofaigh (University of Texas at Austin)"
+        },
+        {
+          "id": 762,
+          "title": "Regime-Aware Interpretable Ranking for Sector Rotation",
+          "authors": "Kelvin Koa (National University of Singapore ); Ziling Liu (National University of Singapore); Xinyang Li (National University of Singapore); Shuowei Feng (National University of Singapore); Ruoyu Liang (National University of Singapore); Mathieu Giroux (Manulife Investment Management); Eugene Y. Wen (Manulife); Xuan Yao (National University of Singapore); Ke-Wei Huang (National University of Singapore); Hugo Lamarre (Manulife Investment Management)"
+        },
+        {
+          "id": 772,
+          "title": "FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching",
+          "authors": "Zhuohan Wang (Simudyne); Andreea Bacalum (Simudyne); Ollie Olby (Simudyne); Carmine Ventre (King's College London); Namid Stillman (Simudyne)"
+        },
+        {
+          "id": 776,
+          "title": "When Does a Crypto Limit Order Book Model Look Predictive? Target Semantics and Oracle-Population Pipeline Specialization",
+          "authors": "Jiawei Shuai (University of Edinburgh); Ke Yang (New York University)"
+        },
+        {
+          "id": 841,
+          "title": "Agentic Quantitative Trading: A Survey of Workflows, Systems, and Evaluation",
+          "authors": "Fengrui Hua (The Hong Kong University of Science and Technology (Guangzhou)); Hengyi Yang (HSBC Business School, Peking University ); Xinlei Hao (HSBC Business School, Peking University); Haohan Zhang (The Hong Kong University of Science and Technology (Guangzhou)); Bokai Cao (The Hong Kong University of Science and Technology (Guangzhou)); Yiyan Qi (International Digital Economy Academy); Jia Li (The Hong Kong University of Science and Technology (Guangzhou)); Jian Guo (International Digital Economy Academy)"
+        },
+        {
+          "id": 938,
+          "title": "Shape Beyond Level: Event-Type News Persistence in Volatility Forecasting",
+          "authors": "Bo Guo (Texas A&M University-Texarkana)"
+        },
+        {
+          "id": 941,
+          "title": "From Curriculum to Rehearsal Learning: Towards Small Financial Chart VLMs",
+          "authors": "Varad Srivastava (Barclays); Abhay Shukla (Barclays); Victor Casas Hernandez (Barclays)"
+        },
+        {
+          "id": 949,
+          "title": "Between the Lines: Multi-turn Contextual Investment Advice Detection",
+          "authors": "Mingshu Li (BlackRock, Inc.); Adam Boncz (BlackRock, Inc.); Mate Toth (BlackRock, Inc.); Justin Williams (BlackRock, Inc.); Justin Chan (BlackRock, Inc.); Dhagash Mehta (BlackRock, Inc.)"
+        },
+        {
+          "id": 959,
+          "title": "From Simulator Labels to Real Markets: Crumble-Aware Reinforcement Learning for Trade Execution",
+          "authors": "Haohan Xu (Stony Brook University, Bloomberg); Jason Bohne (Bloomberg); Pawel Polak (Stony Brook University, Bloomberg); Gary Kazantsev (Bloomberg); David Rosenberg (Bloomberg); Ajay Alva (Bloomberg); Yurij Baransky (Bloomberg)"
+        },
+        {
+          "id": 973,
+          "title": "Generative Limit Order Book Modeling with a Shared Token Vocabulary for Book State and Order Flow",
+          "authors": "Haohan Zhang (The Hong Kong University of Science and Technology (Guangzhou)); Saizhuo Wang (The Hong Kong University of Science and Technology); Bokai Cao (The Hong Kong University of Science and Technology (Guangzhou)); Fengrui Hua ( The Hong Kong University of Science and Technology (Guangzhou)); Lionel Ni ( The Hong Kong University of Science and Technology (Guangzhou)); Jian Guo (IDEA Research)"
+        },
+        {
+          "id": 974,
+          "title": "Faithfulness Under Pressure: Evaluating Hallucination Detectors for Financial RAG",
+          "authors": "Mingshu Li (BlackRock, Inc.); Jingrao Lyu (BlackRock, Inc.); Nathalia Castellanos (BlackRock, Inc.); Kriti Dutta (BlackRock, Inc.); Adam Boncz (BlackRock, Inc.); Anna Grigoryan (BlackRock, Inc.); Mate Toth (BlackRock, Inc.); Dhagash Mehta (BlackRock, Inc.)"
+        },
+        {
+          "id": 986,
+          "title": "Adaptive Financial Time Series Tokenization with Bilevel Optimization",
+          "authors": "Haohan Xu (Stony Brook University, Bloomberg); Jason Bohne (Bloomberg); Pawel Polak (Stony Brook University, Bloomberg); Gary Kazantsev (Bloomberg); David Rosenberg (Bloomberg); Ajay Alva (Bloomberg); James Jarvis (Bloomberg)"
+        },
+        {
+          "id": 994,
+          "title": "Lead–Lag or Reversal? A Cross-versus-Self Test of Sparse-Attention Models for Cryptocurrency Return Ranking",
+          "authors": "Ethan Geng (Del Norte High School); Shubhay Choubey (UCLA); Manas Goel (Del Norte High School)"
+        },
+        {
+          "id": 1010,
+          "title": "When Answers Surprise: Sequential Tone Residualization and Abnormal Returns in Earnings Calls",
+          "authors": "Jerrold Huang (University of Toronto); Nathan Zhang (University of British Columbia)"
+        },
+        {
+          "id": 1016,
+          "title": "When and How Order-Flow Interventions Work After Dealers Adapt",
+          "authors": "Guanghao Wu (university of technology sydney); Zhuo Cai (university of technology sydney); Zhidong Li (university of technology sydney); Shoujin Wang (university of technology sydney)"
+        },
+        {
+          "id": 1034,
+          "title": "Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage",
+          "authors": "Minkey Chang (None)"
+        },
+        {
+          "id": 1039,
+          "title": "CGGS: Confidence-Guided Graph Sampling for Scalable GNN Fraud Detection on Imbalanced Financial Networks",
+          "authors": "Subham Singh (Mastercard ); Kamna Meena (Mastercard); Adarsh Kumar (Mastercard); Kamal Kant (Mastercard); Siddhartha Asthana (Mastercard)"
+        },
+        {
+          "id": 1043,
+          "title": "Auditing Automated ESG Disclosure Measurement from Web Archives",
+          "authors": "Tristan Till (Technical University of Munich); Niklas Till (Ecole des Hautes Etudes Commerciales du Nord); Gianfranco Gianfrate (Ecole des Hautes Etudes Commerciales du Nord); Florian Matthes (Technical University of Munich)"
+        },
+        {
+          "id": 1060,
+          "title": "Neural Estimation of Irreversibility in Real and Simulated Limit Order Book Paths",
+          "authors": "Hyeonjun Yeo (Department of Physics and Astronomy, Seoul National University); Doohwi Cha (Mirae Asset Securities); Yoontae Hwang (Graduate School of Data Science, Pusan National University)"
+        },
+        {
+          "id": 1067,
+          "title": "Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models",
+          "authors": "Moshu Xu (Tsinghua University); Junyu Chen (University of Groningen); Lijian Yang (Tsinghua University); Franklin Liu (University of Chicago)"
+        },
+        {
+          "id": 1079,
+          "title": "A Decaying Buffer: How Median-of-Three Mark Pricing Retimes Liquidation on a Decentralized Perpetual Exchange",
+          "authors": "Yihan Guo (Nanyang Technological University)"
+        },
+        {
+          "id": 1095,
+          "title": "LOB-Impact Benchmark: Emergent Market Impact in Generative Limit Order Book Models",
+          "authors": "George Nigmatulin (University of Oxford); Valentin Mohl (University of Oxford); Sascha Frey (University of Oxford); Kang Li (University of Oxford); Aramis Marti-Shahandeh (University of Oxford); Mihai Cucuringu (University of Oxford, University of California Los Angeles); Anisoara Calinescu (University of Oxford); Jakob Foerster (University of Oxford); Stefan Zohren (University of Oxford)"
+        },
+        {
+          "id": 1102,
+          "title": "ACE-RL: Counterfactual Audit Signals for Policy-Level Governance of Autonomous Market Makers",
+          "authors": "Guanghao Wu (university of technology sydney); Zhuo Cai (university of technology sydney); Shoujin Wang (university of technology sydney)"
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "label": "Poster presentations",
+      "papers": [
+        {
+          "id": 70,
+          "title": "Predicting Decision-Time Reliability of Equity Market Risk under Delayed Inputs and Non-Stationary Conditions",
+          "authors": "Medha Kumar (SVNIT)"
+        },
+        {
+          "id": 92,
+          "title": "Linguistic Passiveness in Earnings Calls and Stock Returns",
+          "authors": "Lynn Tao (University of Toronto); Yuntao Wu (University of Toronto); Charles Martineau (University of Toronto); Vincent Grégoire (HEC Montréal); Andreas Veneris (University of Toronto)"
+        },
+        {
+          "id": 121,
+          "title": "Catch Alpha: Testing the Evaluator Before Testing the Trading Strategy",
+          "authors": "Joris Viaud (Quant AI Lab)"
+        },
+        {
+          "id": 136,
+          "title": "FAAB: A Benchmark for Fault Detection and Responsibility Attribution in Financial Multi-Agent Workflows",
+          "authors": "ShinSheng Chiou (Nanjing University); Ziyao Zhan (Nanjing University)"
+        },
+        {
+          "id": 182,
+          "title": "Nonlinear Multi-Scale Tokenization with Gated Attention for Financial Time-Series Forecasting",
+          "authors": "Sirui Zhu (University of Essex); Hao Zhou (Nanchang University); Panagiotis Kanellopoulos (University of Essex); John O'Hara (University of Essex)"
+        },
+        {
+          "id": 198,
+          "title": "VerifiQuant: Governance-by-Execution for Financial LLM Workflows",
+          "authors": "Yu-Chi Ko (National Taiwan University); Mi-Yen Yeh (Institute of Information Science, Academia Sinica); Shou-De Lin (National Taiwan University)"
+        },
+        {
+          "id": 208,
+          "title": "Same Mean, Opposite Outcomes: Parameter Sharing among Heterogeneous Traders in Multi-Agent Reinforcement Learning",
+          "authors": "Jan Lisicki (University of Warsaw)"
+        },
+        {
+          "id": 223,
+          "title": "A Trustworthy Conjecture–Certification System for Martingale Optimal Transport",
+          "authors": "Ziyao Wang (Texas Tech University)"
+        },
+        {
+          "id": 227,
+          "title": "Velocity- and Regime-Aware Detection of Intraday Options Market Manipulation, with Explainable Attribution",
+          "authors": "Alexander Chen (University of Georgia); Maria Hybinette (University of Georgia)"
+        },
+        {
+          "id": 251,
+          "title": "FNUG: Factor-Neutral Update Gating for Anchored Option Hedging",
+          "authors": "Tenghan Zhong (University of Southern California); Yuxuan Ouyang (Georgia Institute of Technology); Keyuan Wu (Shanghai Jiao Tong University)"
+        },
+        {
+          "id": 269,
+          "title": "Candidate Date Ranking for Multi-Horizon Corporate Event Prediction",
+          "authors": "Ching-yu Lin (Bloomberg LP); Thomas Fonlladosa (Bloomberg LP); Ahsan Alvi (Bloomberg LP); Duc Nguyen (Bloomberg LP); Saher Esmeir (Bloomberg LP)"
+        },
+        {
+          "id": 300,
+          "title": "Auditing Completed-Channel Classification Beyond the Multi-Leg Shortcut: Evidence from Crypto Option RFQs",
+          "authors": "Liu Haoran (Renmin University of China); FU XIAONAN (The University of Hong kong)"
+        },
+        {
+          "id": 302,
+          "title": "JaxMARL-BC: Multi-Agent Reinforcement Learning for Macroeconomic Modelling, in Seconds",
+          "authors": "Daniele Montagnani (Università di Pavia); Andrea Coletta (Banca d'Italia); Antonietta Mira (Banca d'Italia); Aldo Glielmo (Bank of Italy)"
+        },
+        {
+          "id": 307,
+          "title": "Cross-Market Sentiment Propagation via Firm-Level Knowledge Graphs: A Two-Tier Hierarchical Scoring System for Taiwan–U.S. Equities",
+          "authors": "Tung-Li Chen (National Taiwan University); Jyh-Shing Roger Jang (National Taiwan University)"
+        },
+        {
+          "id": 311,
+          "title": "Inverse Learning of Latent Risk-Neutral Densities from Irregular Option Quotes",
+          "authors": "Lennon Shikhman (Georgia Institute of Technology); Michael Galarnyk (Georgia Institute of Technology); Aadi Dash (Georgia Institute of Technology); Nicholas Welsh (Florida Institute of Technology)"
+        },
+        {
+          "id": 318,
+          "title": "GuidedRec: Behaviourally Constrained Portfolio Recommendation with Certified Slate Optimisation",
+          "authors": "Ezekiel Young (Singapore Management University); Hady Lauw (Singapore Management University)"
+        },
+        {
+          "id": 338,
+          "title": "Fair Contracts in Principal-Agent Games with Heterogeneous Types",
+          "authors": "Jakub Tłuczek (Université de Neuchâtel); Victor Villin (Université de Neuchâtel); Christos Dimitrakakis (Université de Neuchâtel)"
+        },
+        {
+          "id": 348,
+          "title": "Memory × Self-Evolution: When Agents with Cognitive Frameworks Meet Market Paradigm Shifts in Investment",
+          "authors": "Daren Wang (CUHK); Kin Hang Sew (CUHK); Jiawen Xian (Evolution AI Lab); Hong Xu (CUHK)"
+        },
+        {
+          "id": 352,
+          "title": "Diffusion models for dynamic volatility surface generation and data-driven hedging",
+          "authors": "Yinbin Han (Stanford University); Jack Zhang (Stanford University); Manuel Torres (J.P. Morgan); Fernando Acero (J.P. Morgan); Renyuan Xu (Stanford University)"
+        },
+        {
+          "id": 379,
+          "title": "PropertyLM-UK: Deterministically Adjudicated Neural Address Resolution for the Identity Layer of Property Finance",
+          "authors": "Nataliya Tkachenko (Lloyds Banking Group); Sophie Adams (Lloyds Banking Group); Andrew Torr (Lloyds Banking Group)"
+        },
+        {
+          "id": 405,
+          "title": "Dependence-Informed Sparse Neural Architecture for Stock Return Prediction",
+          "authors": "Hongyu Lin (UCL); Yulin Chen (UCL); Yuanrong Wang (UCL); Antonio Briola (UCL); Tomaso Aste (UCL)"
+        },
+        {
+          "id": 418,
+          "title": "Sylvester: A Benchmark and Empirical Study of Lifecycle-Aware Entity Resolution on Open Financial Data",
+          "authors": "Sheng Chang Li (University of Western Ontario)"
+        },
+        {
+          "id": 437,
+          "title": "Collapse-Resistant Preference Optimization for Financial Marketing Channel Selection",
+          "authors": "Yealim Park (Korea University); Kyungjae Lee (Korea University)"
+        },
+        {
+          "id": 441,
+          "title": "ML-Optimized Finalization Timing Accelerates Purchasing Power Restoration: Evidence from a Randomized Experiment in BNPL Lending",
+          "authors": "Ajay Poppur Suresh (Affirm); Chencheng Guo (Affirm); Chinmay Raval (Affirm); Alexander Statnikov (Affirm)"
+        },
+        {
+          "id": 449,
+          "title": "More Mentions, Less Information? Diagnosing Identity and Alignment in Reddit Embeddings for Volatility Forecasting",
+          "authors": "Zhiyu Zheng (University of Chicago)"
+        },
+        {
+          "id": 455,
+          "title": "Climate-Dyna Deep Hedging for XVAs: Model-Based Reinforcement Learning, Residual Climate HVA, and Hedge-Instrument Discovery",
+          "authors": "Xiaozhen Wang (CEREMADE, Université Paris Dauphine-PSL); Francois Buet-Golfouse (AIML Global Markets, Barclays)"
+        },
+        {
+          "id": 464,
+          "title": "Latent Flow Matching for Arbitrage-Aware Implied Volatility Surface Generation",
+          "authors": "Dusica Bajalica (Université Paris Dauphine-PSL); Oscar Brooks (Université Paris Dauphine-PSL); Imen Ben Tahar (Université Paris Dauphine-PSL); Yating Liu (Université Paris Dauphine-PSL)"
+        },
+        {
+          "id": 470,
+          "title": "Memory as Replay: Reinforcement Learning in a Liquidity-Trap Economy",
+          "authors": "Asako Chiba (Keio University)"
+        },
+        {
+          "id": 477,
+          "title": "Multi-Horizon Cross-Sectional Return Prediction with Feature Tokenizer Transformer",
+          "authors": "Xueying Zhu (National university of Singapore); Amirhassan Monajemi (National university of Singapore)"
+        },
+        {
+          "id": 490,
+          "title": "Spreads Don't Price a Rival Market Maker's Information",
+          "authors": "Oliver Oberle (ETH Zurich); Damien Berriaud (ETH Zurich); Roger Wattenhofer (ETH Zurich)"
+        },
+        {
+          "id": 491,
+          "title": "Lead-Lag Origination for Prioritizing Financial KOL Narratives",
+          "authors": "Yuncong Liu (National University of Singapore); Yao Lu (National University of Singapore)"
+        },
+        {
+          "id": 493,
+          "title": "What Do Foundation Models for Market Microstructure Learn? A Controlled Study with Synthetic Limit Order Books",
+          "authors": "Fernando Acero (J.P. Morgan AI Research)"
+        },
+        {
+          "id": 494,
+          "title": "Household Portfolio Choice under Trade Policy Uncertainty with a Deep Operator Network",
+          "authors": "Siwon Lee (Washington University in St.Louis)"
+        },
+        {
+          "id": 497,
+          "title": "NarrativeRL: Narrative-Conditioned Reinforcement Learning for Anticipatory Commodity Hedging",
+          "authors": "Romina Hashami (University of Essex); Felipe Maldonado (University of Essex)"
+        },
+        {
+          "id": 513,
+          "title": "Local Weak Limits and Transferable GNN Policies for Economic Network Intervention",
+          "authors": "Zhecheng Wu (university of florida); Hamed Amini (University of Florida)"
+        },
+        {
+          "id": 514,
+          "title": "History-Conditioned Routing for Shadow Ratings: Evidence from Municipal Bonds",
+          "authors": "Parigya Singh (Bloomberg)"
+        },
+        {
+          "id": 516,
+          "title": "OSCAR: Certified Online Learning forAuditable Financial Screening under Selective and Delayed Labels",
+          "authors": "Yuko Kuroki (Intesa Sanpaolo AI Research); André Panisson (Intesa Sanpaolo AI Research); Alberto Rumi (ntesa Sanpaolo AI Research); Francesco Bonchi (Intesa Sanpaolo AI Research)"
+        },
+        {
+          "id": 533,
+          "title": "Structural Sensitivity in Supply Chain Networks for Financial Downside Cascade Prediction",
+          "authors": "Amirmohammad Ebrahimi (University of Florida); Hamed Amini (University of Florida)"
+        },
+        {
+          "id": 551,
+          "title": "FinLifeBench: Exhaustive Life-Event History and Financial-State Reconstruction from Longitudinal Banking Dialogue",
+          "authors": "Hangyeul Lee (Seoul National University); Juyoung Oh (KakaoBank, Financial Tech Lab); Jaeyong Ko (Seoul National University); Sunmin Kim (Seoul National University); Jaeik Park (Seoul National University); Hyunkyu Kim (KakaoBank, Financial Tech Lab); Jungmin Son (KakaoBank, Financial Tech Lab); Pilsung Kang (Seoul National University)"
+        },
+        {
+          "id": 557,
+          "title": "From Features to Circuits: Mechanistic Interpretability for Financial Tabular Transformers",
+          "authors": "Arco van Breda (Universiteit van Amsterdam); Saba Amiri (Universiteit van Amsterdam); Ana Oprescu (Universiteit van Amsterdam); Sander Klous (Universiteit van Amsterdam); Erman Acar (Universiteit van Amsterdam)"
+        },
+        {
+          "id": 566,
+          "title": "Safe screening rules for portfolio optimization with linear and cardinality constraints",
+          "authors": "Nanari Wada (University of Tsukuba); Shunnosuke Ikeda (University of Tsukuba); Yuichi Takano (University of Tsukuba); Jun-ya Gotoh (Chuo University)"
+        },
+        {
+          "id": 567,
+          "title": "QBX: A Compiler for Well-Formed, Auditable Alpha Programs",
+          "authors": "Yichong Bai (PolyU HK); Kaigui Bian (PKU)"
+        },
+        {
+          "id": 568,
+          "title": "Conformal Trust Control for Learned Sequential Policies under Regime Shift",
+          "authors": "Jiajun Li (Imperial College London); Ce Guo (Imperial College London); Wayne Luk (Imperial College London)"
+        },
+        {
+          "id": 577,
+          "title": "HAR-CEV: Probabilistic Volatility Forecasting with Adaptive Mean Reversion under Distribution Shift",
+          "authors": "Yosep Na (Hanyang University); Namhyoung Kim (RiskX); Joon Ho Jun (Hanyang University); Jae Wook Song (Hanyang University)"
+        },
+        {
+          "id": 588,
+          "title": "Relational Factor Diffusion for Controllable Market Simulation",
+          "authors": "Bokai CAO (The Hong Kong University of Science and Technology (Guangzhou) ); Haohan Zhang (The Hong Kong University of Science and Technology (Guangzhou)); Fengrui Hua (The Hong Kong University of Science and Technology (Guangzhou)); Jiaqi Liu (The Hong Kong University of Science and Technology (Guangzhou)); Lionel Ni (The Hong Kong University of Science and Technology (Guangzhou)); Bin Mu (Shanghai Jiao Tong University); Jian Guo (International Digital Economy Academy)"
+        },
+        {
+          "id": 595,
+          "title": "One Backtest Can Reject a Strategy but Cannot Validate a Model Swap: LLM-Stack Sensitivity in Multi-Agent Black–Litterman Asset Allocation",
+          "authors": "Ivan Lee (National University of Singapore); Yen Teik Lee (National University of Singapore); Anand Bhojan (National University of Singapore)"
+        },
+        {
+          "id": 602,
+          "title": "ConfFiNE: A Confusion-Based Financial Neighborhood Estimator with Directed and Validated Peer Similarity",
+          "authors": "Silu Li (Princeton University); Siyu Li (Westlake University); John Mulvey (Princeton University)"
+        },
+        {
+          "id": 607,
+          "title": "When Should Humans Intervene? Capacity-Aware Oversight for Financial AI Agents",
+          "authors": "Brindha Jeyaraman (Aethryx)"
+        },
+        {
+          "id": 616,
+          "title": "Learning the Exact SABR Model",
+          "authors": "Marco Bianchetti (Intesa Sanpaolo and University of Bologna); Giorgia Rensi (University of Bologna); Pietro Rossi (University of Bologna)"
+        },
+        {
+          "id": 626,
+          "title": "QuantDiffusion: Deep Generation of Multivariate Financial Scenarios for Portfolio Risk Assessment",
+          "authors": "Juhwan Kim (Hanyang University); Soobeen Kim (Hanyang University); Jae Wook Song (Hanyang University)"
+        },
+        {
+          "id": 627,
+          "title": "A Pooled Exceedance Rate Hides Two Failures in Firm Earnings-at-Risk Under Trade Policy Uncertainty",
+          "authors": "Siwon Lee (Washington University in St.Louis)"
+        },
+        {
+          "id": 633,
+          "title": "One Basket, Many Experts: Decorrelated Re-ranking for Financial Asset Recommendation",
+          "authors": "Ryuki Unno (Hokkaido University); Keigo Sakurai (Hokkaido University); Koshi Watanabe (Hokkaido University); Keisuke Maeda (Hokkaido University); Takahiro Ogawa (Hokkaido University); Miki Haseyama (Hokkaido University)"
+        },
+        {
+          "id": 639,
+          "title": "Neural Realized Measures: Forecast-Supervised Intraday Aggregation for Volatility Forecasting",
+          "authors": "Brian Sing Fan Chan (School of Mathematics and Statistics, The University of Sydney); Jennifer So Kuen Chan (School of Mathematics and Statistics, University of Sydney)"
+        },
+        {
+          "id": 641,
+          "title": "DDSL: Iterative Self-Labeling for Financial Market States",
+          "authors": "Xianbin Gu (NYU Shanghai); Qingyue Zhu (NYU Shanghai); Yuhong Geng (NYU Shanghai)"
+        },
+        {
+          "id": 642,
+          "title": "Latent Oscillator Thompson Sampling for Recurrent Nonstationary Bandits",
+          "authors": "Michael Rottoli (Università degli Studi di Bergamo)"
+        },
+        {
+          "id": 644,
+          "title": "Not Which Ratio, but in What Form: Trend–Transient Decomposition for Interpretable Variable Selection in Granular Corporate Rating",
+          "authors": "Mikio Kofune (Heisei International University; Aoyama Gakuin University); Suguru Yamanaka (Aoyama Gakuin University); Akiko Kaneshiro (Trust Co., Ltd.)"
+        },
+        {
+          "id": 645,
+          "title": "Where Selection Bias Can and Cannot Be Corrected: A Partial-Identification View of Solicited Credit Ratings across the Listed-Firm Universe",
+          "authors": "Mikio Kofune (Heisei International University; Aoyama Gakuin University); Suguru Yamanaka (Aoyama Gakuin University); Akiko Kaneshiro (Trust Co., Ltd.)"
+        },
+        {
+          "id": 647,
+          "title": "Beyond Co-Movement: Locality by Exposures Enables a Joint Factor–Graph Framework for Portfolio Diversification",
+          "authors": "Sara Chehab (Imperial College London); Giorgos Iacovides (Imperial College London); Parisa Yazdanparast (Beaufort Bridges); Danilo Mandic (Imperial College London)"
+        },
+        {
+          "id": 649,
+          "title": "Conformal Kelly: Conformal Prediction Intervals as the Scale in Fractional Kelly Position Sizing",
+          "authors": "Robert Ryan (ACS Athens)"
+        },
+        {
+          "id": 654,
+          "title": "Amortized Interventional Forecasting for Multivariate CIR Processes",
+          "authors": "Andreas Sauter (VU Amsterdam); Sumit Sourabh (ING); Drona Kandhai (UvA/ING); Erman Acar (UvA)"
+        },
+        {
+          "id": 656,
+          "title": "Temporal-Context Edge Enrichment for Financial Crime Detection",
+          "authors": "Danae Savvidi (Delft University of Technology); Çağrı Bilgi (Delft University of Technology); Kubilay Atasu (Delft University of Technology); Arie van Deursen (Delft University of Technology)"
+        },
+        {
+          "id": 669,
+          "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting",
+          "authors": "Junyi Ye (Montclair State University); Ivy Wanjiku (Montclair State University)"
+        },
+        {
+          "id": 670,
+          "title": "Actionable Signals in Prediction Markets: Evaluating Public and Private Information through Systematic Trading",
+          "authors": "Oriol Saguillo Gonzalez (IMDEA Networks); Lucianna Kiffer (IMDEA Networks); Fabio Giacomelli (Uni Roma)"
+        },
+        {
+          "id": 672,
+          "title": "Regime-Gated Residual Mixture-of-Experts for Cross-Sectional Volatility Forecasting",
+          "authors": "Junyi Ye (Montclair State University); Gargi Vijay Borde (Montclair State University)"
+        },
+        {
+          "id": 680,
+          "title": "Semantic Credibility Cold-Start Priors for Novel Insurance Claim Codes with LLM Embeddings",
+          "authors": "Yejin Kim (Meritz Fire & Marine Insurance); Junhyung Kim (Meritz Fire & Marine Insurance); Youngbin Lee (Elice); Yoontae Hwang (graduate school of data science, pusan national university)"
+        },
+        {
+          "id": 683,
+          "title": "MLP-Initialized Reinforcement Learning for Exit Timing in SPX Short-Straddle Portfolios",
+          "authors": "Jianning Wang (Nanyang Technological University); Robert Ślepaczuk (University of Warsaw); Paweł Sakowski (University of Warsaw)"
+        },
+        {
+          "id": 685,
+          "title": "Magnitude, Not Shape: Volatility Beats Downside- and Tail-Risk Metrics at Forecasting Drawdown",
+          "authors": "Meghanadh Pulivarthi (IBM); Hareen Venigalla (Atlassian)"
+        },
+        {
+          "id": 698,
+          "title": "Beyond Holdout Error: A Layered Framework for Evaluating Estimators under Selective Labels",
+          "authors": "Ashwin Bhola (Bloomberg LP); Saher Esmeir (Bloomberg LP); George Tillisch (Bloomberg LP); Georgios Giannakoulias (Bloomberg LP); Houda Sabri (Bloomberg LP); Serge Yaskevich (Bloomberg LP)"
+        },
+        {
+          "id": 722,
+          "title": "On-Chain Behavioral Signatures for Classifying Centralized Exchange Addresses on Ethereum Using Proof-of-Reserves",
+          "authors": "Seongchan Park (Dunamu); Hyunho Jeon (Dunamu); Byungsoo Kang (Dunamu); Gaeun Kim (Dunamu); Minseob So (Dunamu); Seongyong Kim (Dunamu)"
+        },
+        {
+          "id": 734,
+          "title": "Generative Adversarial Regression (GAR): Learning Conditional Risk Scenarios",
+          "authors": "Saeed Asadi (University of Ottawa); Jonathan Yu-Meng Li (University of Ottawa)"
+        },
+        {
+          "id": 742,
+          "title": "ThemeFlow: From News Headlines to Investable Theme Signals with Contrastive Narrative Geometry",
+          "authors": "Chloe Vuong (University College London); Miguel Rodrigues (University College London)"
+        },
+        {
+          "id": 753,
+          "title": "Interventional Evaluation of a Generative Limit Order Book Model",
+          "authors": "Jess Carr (Oxford University ); Jakob Foerster (Oxford University ); Ani Calinescu (Oxford University)"
+        },
+        {
+          "id": 756,
+          "title": "Conditional Deep Lévy Models for Exotic Derivatives: History-Aware Path Generation and P-Q Payoff Diagnostics",
+          "authors": "Helin Zhao (Johns Hopkins University); Junchi Shen (University of Washington)"
+        },
+        {
+          "id": 773,
+          "title": "Auditable Financial Knowledge Graphs: Schema-Driven Construction and Intrinsic Quality Evaluation",
+          "authors": "Samarth Sarin (BlackRock); Lovepreet Singh (BlackRock); Dhagash Mehta (BlackRock)"
+        },
+        {
+          "id": 775,
+          "title": "Metropolitan Housing Signals for Treasury Duration Risk Management",
+          "authors": "Doohwi Cha (Mirae Asset Securities); Hyeonjun Yeo (Department of Physics and Astronomy, Seoul National University); Gyuil Jung (Mirae Asset Securities); Jeongkyoo You (Mirae Asset Securities); Minsuk Sung (Department of Artificial Intelligence, Korea University); Donghwa Seo (DS Investment & Securities); Minjae Lee (Independent Researcher); Seunghan Son (Independent Researcher); Juyeong Lee (EY Consulting); Yoontae Hwang (Graduate School of Data Science, Pusan National University)"
+        },
+        {
+          "id": 777,
+          "title": "FinCN-QA: Auditing Issuer-Cue Confounding in Open-Corpus Financial RAG",
+          "authors": "Zheyi Xu (Central South University); Yanjun Yang (Central South University); Xiang Chen (Hunan Kuaile Tongbao Technology Microfinance )"
+        },
+        {
+          "id": 778,
+          "title": "Simpler Is Sometimes Better: A Statistical Baseline Beats Neural Models and the Case for Shared-Condition Evaluation",
+          "authors": "Leander Klinger (University of Lancashire)"
+        },
+        {
+          "id": 788,
+          "title": "Measuring the Causal Validity of Macro-Conditioned Market Simulators",
+          "authors": "Marco Gervatini (Politecnico di Milano); Francesco Puoti (Politecnico di Milano); Fabrizio Pittorino (Politecnico di Milano)"
+        },
+        {
+          "id": 797,
+          "title": "SAiFE-gym: Model-based Environments for Automated Market Making with Concentrated Liquidity",
+          "authors": "Georgios Chionas (University of Liverpool); Charalampos Kleitsikas (King's College London); Stefanos Leonardos (King's College London); Leandro Sánchez-Betancourt (University of Oxford); Carmine Ventre (King's College London)"
+        },
+        {
+          "id": 815,
+          "title": "Auditing and Repairing Modal Causal Extraction in Financial Text",
+          "authors": "Kwangje Baeg (KT); Janaina Villacis (KDI School of Public Policy and Management)"
+        },
+        {
+          "id": 820,
+          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
+          "authors": "Wilmer Henao (Invesco)"
+        },
+        {
+          "id": 827,
+          "title": "Uncertainty-Conditioned Hierarchical Specialist Routing for Dynamic Long-Short Portfolio Allocation",
+          "authors": "Isaac Jia Wei Lim (NTU); Siyuan Liu (NTU)"
+        },
+        {
+          "id": 834,
+          "title": "When the Facts Run Out: Measuring and Steering Identity Substitution in Large Language Model Investment Advice",
+          "authors": "Saanvi Khetan (The International School, Bangalore); Sankar B (Indian Institute of Science, Bangalore)"
+        },
+        {
+          "id": 836,
+          "title": "DOiT: Better Money-Flow Ranking Can Coexist with Worse Account Selection in Anti-Money Laundering Review",
+          "authors": "Gwangui Hong (KFTC); Seonkyu Lim (KFTC); Min-Soo Kim (KAIST)"
+        },
+        {
+          "id": 837,
+          "title": "Validating Financial-Reporting Models with Delayed Labels and Distinct Regulatory and Reporting Outcomes",
+          "authors": "Tuoyuan Cheng (National University of Singapore); Wilbur Xinyuan Chen (HKUST Business School); Kan Chen (National University of Singapore)"
+        },
+        {
+          "id": 850,
+          "title": "Arbitrage‐Aware Multi‐Step Forecasting of Implied Volatility Surfaces",
+          "authors": "Dominik Buchegger (University of St.Gallen); Lukas Gonon (University of St.Gallen)"
+        },
+        {
+          "id": 869,
+          "title": "From Hindsight to Foresight: Adapting Reusable Reasoning Structures from Recurring Financial Events",
+          "authors": "Sangjin Jin (Ulsan National Institute of Science and Technology); Junhyeong Lee (Ulsan National Institute of Science and Technology); Daehee Han (KakaoBank); Kangmin Kim (Ulsan National Institute of Science and Technology); Suhwan Park (Ulsan National Institute of Science and Technology); Seonghun Jeong ( KakaoBank); Daekyung Park (LinqAlpha); Lukasz Szpruch (University of Edinburgh); Zhangyang Wang (The University of Texas at Austin); Chanyeol Choi ( LinqAlpha); Youngjun Kwak (KakaoBank); Yongjae Lee ( Ulsan National Institute of Science and Technology)"
+        },
+        {
+          "id": 870,
+          "title": "FAP-Bench: A Matched-Control Benchmark for Horizontal Federated Cross-Sectional Equity-Return Prediction",
+          "authors": "Ke Yang (New York University); Jiawei Shuai (University of Edinburgh)"
+        },
+        {
+          "id": 873,
+          "title": "Making Tail Constraints Bind: Two Silent Failure Modes in CVaR-Constrained Portfolio RL",
+          "authors": "Nigel Li (HSBC); Yutong Han (Columbia Uni)"
+        },
+        {
+          "id": 875,
+          "title": "From Extraction Error to Decision Cost: Stress-Testing Financial LLM Extraction Pipelines",
+          "authors": "YUE WANG (King's College London); JIN JIANG (JINGDONG)"
+        },
+        {
+          "id": 880,
+          "title": "Reasoning More, Knowing No Better? Epistemic Calibration in Financial Reasoning Tasks",
+          "authors": "Mingshu Li (BlackRock, Inc.); David Mark Borbely (BlackRock, Inc.); Hunor Ferenc Balint (BlackRock, Inc.); Sai Anusha Meesala (BlackRock, Inc.); Aditya Singh (BlackRock, Inc.); Devender Saini (BlackRock, Inc.); Tianjiao Zhao (BlackRock, Inc.); Máté Tóth (BlackRock, Inc.); Dhagash Mehta (BlackRock, Inc.)"
+        },
+        {
+          "id": 897,
+          "title": "Inference-Time Fairness Layers for Deployed Credit Models: Audit Requirements and Failure Modes",
+          "authors": "Deepanshu Aggarwal (Mastercard); Puspita Majumdar (Mastercard)"
+        },
+        {
+          "id": 898,
+          "title": "Rule Forest: Interpretable Ensembles of LLM-Generated Questions for Rare-Outcome Prediction",
+          "authors": "Ben Griffin (University of Oxford); Aaron Ontoyin Yin (Vela Partners); Diego Vidaurre (Centre de Recerca Matemàtica); Ugur Koyluoglu (Oliver Wyman); Joseph Ternasky (Vela Partners); Fuat Alican (Vela Partners); Yigit Ihlamur (Vela Partners)"
+        },
+        {
+          "id": 899,
+          "title": "From Communities to Trades: Network-Guided Pair Selection and Adaptive Thresholding for Cryptocurrency Statistical Arbitrage",
+          "authors": "Alexandros du Perez (QuantiFi); Mehul Verma (QuantiFi); Erman Acar (University of Amsterdam)"
+        },
+        {
+          "id": 909,
+          "title": "FinMFT: Multi-Source Fine-Tuning of Language Models for Financial News",
+          "authors": "Silu Li (Princeton University); Wenhui Sophia Lu (Stanford University); John Mulvey (Princeton University); Siyu Li (Westlake University)"
+        },
+        {
+          "id": 917,
+          "title": "A Standardized Training and Evaluation Protocol for Sequential Fraud Detection",
+          "authors": "Michaela Mašková (Faculty of Electrical Engineering, Czech Technical University in Prague); Václav Šmídl (Faculty of Electrical Engineering, Czech Technical University in Prague)"
+        },
+        {
+          "id": 918,
+          "title": "DBSCAN+K: Cost-Aware Marker Detection for Intraday Trading",
+          "authors": "Luyu Niu (Baylor University); Henry Han (Baylor University)"
+        },
+        {
+          "id": 927,
+          "title": "Understanding the Inner Workings of a State-Space Foundation Model for Limit Order Books",
+          "authors": "Valentin Mohl (University of Oxford); Alexandre Bismuth (University of Oxford); Aramis Marti-Shahandeh (University of Oxford); George Nigmatulin (University of Oxford); Kang Li (University of Oxford); Stefan Zohren (University of Oxford); Jakob Foerster ( University of Oxford); Mihai Cucuringu (University of Oxford, University of California Los Angeles); Anisoara Calinescu (University of Oxford)"
+        },
+        {
+          "id": 935,
+          "title": "Algorithmic Collusion Without Deterrence: Auditing the Punishment Mechanism in Q-Learning Pricing Agents",
+          "authors": "Kauê de Moraes (University of Sao Paulo); Rodrigo De Losso (University of São Paulo)"
+        },
+        {
+          "id": 939,
+          "title": "Machine-Learned Conditional Trading of TP2 Violations in SPY American Call Options",
+          "authors": "Jyotir Patel (Stony Brook University); Pawel Polak (Stony Brook University); Omkar Lashkare (Stony Brook University )"
+        },
+        {
+          "id": 950,
+          "title": "An Application of Invariant Operator Learning to Implied Volatility Forecasting",
+          "authors": "Jongho Park (Pohang University of Science and Technology); Youngju Ahn (Pohang University of Science and Technology); Bong-Gyu Jang (Pohang University of Science and Technology)"
+        },
+        {
+          "id": 961,
+          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
+          "authors": "Junyi Ye (Montclair State University)"
+        },
+        {
+          "id": 972,
+          "title": "Ordinal Gates, Cardinal Bets: Matching LLM Confidence to the Financial Decision Operator",
+          "authors": "Rayansh Singh (Michigan State University); Sara Rezaeimanesh (Michigan State University)"
+        },
+        {
+          "id": 984,
+          "title": "LegalLOB: Generating Structurally Valid Level-2 Limit Order Book Trajectories with Diffusion Models",
+          "authors": "Guanghao Wu (university of technology sydney); Yixuan Xu (Australian National University); Shoujin Wang (university of technology sydney)"
+        },
+        {
+          "id": 985,
+          "title": "Market Impact Estimation via Causal Foundation Models",
+          "authors": "Dennis Thumm (National University of Singapore)"
+        },
+        {
+          "id": 998,
+          "title": "How Much Does the Hint Matter? Scope Conditions for Hindsight Self-Distillation in Financial Reasoning",
+          "authors": "Johnny Yu (UC Berkeley)"
+        },
+        {
+          "id": 1007,
+          "title": "When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting",
+          "authors": "Jacqueline PANG (Cornell University)"
+        },
+        {
+          "id": 1027,
+          "title": "Accurate Networks, Wrong Banks: Reconstruction Quality Depends on the Decision It Informs",
+          "authors": "Daria Godorozha (London School of Economics); Samuel Inman-Altass (London School of Economics); Nourhan Hashish (European Economics)"
+        },
+        {
+          "id": 1044,
+          "title": "A Production-Deployed Financial Education Assistant with Interpretable Retrieval over Expert-Curated Knowledge",
+          "authors": "Marco Cremaschi (University of Milan-Bicocca); Fabio D'adda (University of Milan-Bicocca); Monica Rossolini (University of Milan-Bicocca); Paola Agnese Bongini (University of Milan-Bicocca); Michele Latrofa (Associazione Italiana Educatori Finanziari); Giancarlo Straub (Associazione Italiana Educatori Finanziari)"
+        },
+        {
+          "id": 1050,
+          "title": "BookDiT: Reducing Autoregressive Rollout Drift in Limit Order Book World Models",
+          "authors": "Griffin Galimi (University of California, Los Angeles); Kang Li (University of Oxford); Mihai Cucuringu (University of California, Los Angeles)"
+        },
+        {
+          "id": 1061,
+          "title": "When a Correct Reward Is Not Enough: Diagnosing and Guiding PPO in an Analytically Solved Broker-Trader Game",
+          "authors": "Siu Tung Wong (University College London); Carlo Campajola (University College London)"
+        },
+        {
+          "id": 1074,
+          "title": "Don’t Trust, Verify: Adaptive Multi-Agent Feature Engineering for Financial Fraud Detection",
+          "authors": "Rishit Jakharia (Mastercard); Subhajit Tarafdar (Mastercard); Anand Vir Singh Chauhan (Mastercard); Anubha Pandey (Mastercard)"
+        },
+        {
+          "id": 1092,
+          "title": "Adversarial Post-Training of Foundation Models for High-Frequency Trading",
+          "authors": "Alexandre Bismuth (BOLD, University of Oxford); Kang Li (University of Oxford); Aramis Marti-Shahandeh (University of Oxford); Valentin Mohl (University of Oxford); Jakob Foerster (University of Oxford); Anisoara Calinescu (University of Oxford)"
+        },
+        {
+          "id": 1106,
+          "title": "Do Large Language Models Understand Financial Fraud?",
+          "authors": "Kinjalk Srivastava (University of St. Gallen); Fabian Karst (University of St. Gallen); Mahei Manhai Li (University of St. Gallen)"
+        }
+      ]
+    },
+    {
+      "id": "proceedings-only",
+      "label": "Proceedings only",
+      "papers": [
+        {
+          "id": 80,
+          "title": "Multi-Horizon Prediction of Financial Technical Indicators via Ticker-Aware Deep Learning and Ensemble Optimization",
+          "authors": "Ahmed AYOUBI (UFR De Mathématiques-Université Clermont Auvergne)"
+        },
+        {
+          "id": 90,
+          "title": "RATE: A Regime-Adaptive Temporal Ensemble for Accurate Retail Credit Default Prediction",
+          "authors": "yejun soun (PFCT); Ji Hoon Yoo (PFCT); Seungho Lee (PFCT); Jeongin Lee (PFCT); Byunggyu Ahn (PFCT); Seokjung Hong (PFCT); Jihwan Kim (PFCT); Daesung Lee (PFCT)"
+        },
+        {
+          "id": 96,
+          "title": "The Alert-Feedback Trap: Why Drift-Adaptive Fraud Detectors Fail Under Realistic Label Feedback, and How Much Exploration It Takes to Escape",
+          "authors": "Sankeerth Latheesh (Amity School of Engineering & Technology, Amity University); Dhruv Sharma (Amity Centre for Artificial Intelligence, Amity University )"
+        },
+        {
+          "id": 137,
+          "title": "Confidently Wrong: Detecting Hallucinations in Financial Question Answering from LLM Internal States",
+          "authors": "Zhe Wang (St. John Fisher University)"
+        },
+        {
+          "id": 220,
+          "title": "Sparse Autoencoders as Implicit Diversification Regularisers for Cross-Sectional Cryptocurrency Returns",
+          "authors": "Weijia Han (University of Washington); Lisha Qu (University of Washington)"
+        },
+        {
+          "id": 242,
+          "title": "Differentially-Private Diffusion in Schema-Aware Latent Space",
+          "authors": "Akihiro Takemura (Japan Digital Design, Inc.)"
+        },
+        {
+          "id": 324,
+          "title": "CARTA: Self-Supervised Reusable Transaction Embeddings via Heterogeneous Tokenization and Cross-Attention",
+          "authors": "Shreyas Chandrahas (Visa); Jose M Munoz (MIT); Satish Babu Bellapu (Visa)"
+        },
+        {
+          "id": 332,
+          "title": "Time-Inhomogeneity in Risk Averse Objectives for Financial Applications of Reinforcement Learning",
+          "authors": "Federico Cacciamani (Intesa Sanpaolo); Roberto Daluiso (Intesa Sanpaolo); Marco Pinciroli (Intesa Sanpaolo); Michele Trapletti (Intesa Sanpaolo); Edoardo Vittori (Intesa Sanpaolo)"
+        },
+        {
+          "id": 337,
+          "title": "When Drift Does Not Warrant Retraining: A Held-Out Test for In-Context Adaptation versus Retraining in Markets",
+          "authors": "Wilfried Mulyawan (Nanyang Technological University); Mengzhong Ma ( Nanyang Technological University); Lin William Cong (Nanyang Technological University)"
+        },
+        {
+          "id": 343,
+          "title": "Train Often, Deploy Selectively: Forward-Gated Model Replacement in Crypto Markets",
+          "authors": "Aditya Dutta (Emory University)"
+        },
+        {
+          "id": 346,
+          "title": "Oracle Latency and Algorithmic Concentration in DeFi Lending",
+          "authors": "Wilfried Mulyawan (Nanyang Technological University); Mengzhong Ma (Nanyang Technological University); Lin William Cong ( Nanyang Technological University)"
+        },
+        {
+          "id": 391,
+          "title": "Lead-Lag Relationships in Financial Markets: A Comparison of Multiple Clustering Algorithms",
+          "authors": "Ruichen Deng (Nankai University); Yichi Zhang (University of Oxford)"
+        },
+        {
+          "id": 411,
+          "title": "Recovering Pre-Event Crowd Beliefs in Prediction Markets with a Risk-Calibrated Mixture of Inverse Experts",
+          "authors": "Idrees Aziz (middle east technical university)"
+        },
+        {
+          "id": 413,
+          "title": "FinEntropyBench: What Does Entropy Tell Us About Market Efficiency?",
+          "authors": "Idrees Aziz (middle east technical university)"
+        },
+        {
+          "id": 422,
+          "title": "Market Decompression: Learning Latent-State Inverse Maps for Cold-Start Financial Prediction",
+          "authors": "Idrees Aziz (middle east technical university)"
+        },
+        {
+          "id": 468,
+          "title": "Diversification Across Predictors: Heterogeneous Ensemble Learning for Cross-Sectional Return Prediction",
+          "authors": "Danning Li (The Hong Kong University of Science and Technology (Guangzhou))"
+        },
+        {
+          "id": 523,
+          "title": "Can We Stop the Backtest Yet? Anytime-Valid Promotion Tests for Adaptive Financial Research Agents",
+          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (Ai For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)"
+        },
+        {
+          "id": 544,
+          "title": "TAPES: Terminal Adjoint-Propagated Error Scheduling for Financial Diffusion Samplers",
+          "authors": "Yilie Huang (Columbia University)"
+        },
+        {
+          "id": 564,
+          "title": "Observational Policy Ranking for SMB Financial Guidance from Multi-Action Accounting Logs",
+          "authors": "shrutendra harsola (Intuit); Vignesh Subrahmaniam (Intuit); Vikas Raturi (Intuit); kamalika das (intuit); Xiang Gao (intuit); Kratika Gupta (intuit); Ruocheng Guo (Intuit); Padmaja Jonnalagedda (Intuit); Ananya Pramod (intuit); Sricharan Kumar (Intuit)"
+        },
+        {
+          "id": 565,
+          "title": "Lie-DCC: Gated Lie-Algebraic Residual Learning for Reliable Dynamic Covariance Forecasting",
+          "authors": "Ke Liu (SCUEC); Liyu Gong (Oracle Inc); Longjiao Zhang (Oracle Inc); Genyi Huang (Oracle Inc)"
+        },
+        {
+          "id": 634,
+          "title": "Projective Generator Networks for Zero-Refit Multi-Horizon Financial Forecasting",
+          "authors": "Jian Zhang (CHINA CYBERSECURITY REVIEW, CERTIFICATION AND MARKET REGULATION BIG DATA CENTER); RuiFeng Yuan (CHINA CYBERSECURITY REVIEW, CERTIFICATION AND MARKET REGULATION BIG DATA CENTER); Heng Ji (University of Science and Technology of China)"
+        },
+        {
+          "id": 661,
+          "title": "Sampling Stressed Laws at Prescribed Severities: Certified Generative Scenarios",
+          "authors": "­Yechan Jeong (Seoul National University); Juhoon Kang (Seoul National University); Youngjoon Hong (Seoul National University)"
+        },
+        {
+          "id": 689,
+          "title": "In-Context Operator Learning for Impact Prediction and Schedule Choice in AMM Execution",
+          "authors": "Jinrui Yang (National University of Singapore)"
+        },
+        {
+          "id": 706,
+          "title": "Micro-Prudence, Macro-Fragility: Crowding and Strategic Response of Risk-Aware Optimal Execution Agents",
+          "authors": "Sriram Bharadwaj Rangarajan (King's College London); Carmine Ventre (King's College London)"
+        },
+        {
+          "id": 708,
+          "title": "The Division of Research: Information Access and Independent-Book Capacity in LLM Investment Teams",
+          "authors": "Doohwi Cha (Mirae Asset Securities); Minjae Lee (Independent Researcher); Minsuk Sung (Department of Artificial Intelligence, Korea University); Juyeong Lee (EY Consulting); Seunghan Son (Independent Researcher); Donghwa Seo (DS Investment & Securities); Yoontae Tae (Graduated School of Data Science, Pusan National University )"
+        },
+        {
+          "id": 715,
+          "title": "SlipClock: A Conditional Displayed-Depth Cost Benchmark for Evaluating Financial AI Strategies in Crypto Futures",
+          "authors": "seunghan son (Independent Researcher); Doohwi Cha (Mirae Asset Securities); Minjae Lee (Independent Researcher); Juyeong Lee (EY Consulting); Minsuk Sung (Department of Artificial Intelligence, Korea University); Donghwa Seo (DS Investment & Securities); Yoontae Hwang (Graduate School of Data Science, Pusan National University)"
+        },
+        {
+          "id": 718,
+          "title": "What Makes a Financial Benchmark Financial? A Role-Conditioned Audit of Faithfulness and Capability",
+          "authors": "Jiahui Zhang (Nanyang Technological University); Chi Seng Pun (Nanyang Technological University)"
+        },
+        {
+          "id": 751,
+          "title": "When No Enforceable Locus Exists: Availability and Representability in a Financial AI Agent Stack",
+          "authors": "Mulan Zhou (University of California San Diego); Yan Xue (Instinctive Network)"
+        },
+        {
+          "id": 771,
+          "title": "Uncertainty Quantification for Financial Foundation Models: A Survey",
+          "authors": "Mingjun Sun (Carnegie Mellon University); Zijie Zhao (Massachusetts Institute of Technology); Shenbo Xu (Massachusetts Institute of Technology)"
+        },
+        {
+          "id": 793,
+          "title": "Execution-Aware Benchmarking of Reinforcement Learning for Concentrated Liquidity Provision",
+          "authors": "Arjun Mahesh (Duke University); Alessio Brini (Duke University)"
+        },
+        {
+          "id": 805,
+          "title": "Why Block Withholding Is Self-Limiting: Energy Costs, Bounded Attackers, and Learning Agents",
+          "authors": "Zining Wang (University of Bristol)"
+        },
+        {
+          "id": 807,
+          "title": "Risk-Preference-Conditioned Generative Reinforcement Learning for Hedging Prediction-Market Contracts",
+          "authors": "Quanyan Zhu (New York University)"
+        },
+        {
+          "id": 811,
+          "title": "CARB: A Verifiable Benchmark for Accounts-Receivable Agents",
+          "authors": "Jason Jho (Stuut); Naman Kedia (Stuut)"
+        },
+        {
+          "id": 881,
+          "title": "Reproducibility of Mojo GPU Kernels in Financial AI",
+          "authors": "Henry Han (Baylor University)"
+        },
+        {
+          "id": 884,
+          "title": "Deep-MKV-TS: Path-Dependent McKean–Vlasov Control for Financial Time Series Generation",
+          "authors": "Samer El Boustany (Murex SAS); Théo Basséras (Murex SAS); Samy Mekkaoui (Polytechnique); Yadh Hafsi (Polytechnique); Alexandre Alouadi (Polytechnique); Huyen Pham (Polytechnique)"
+        },
+        {
+          "id": 911,
+          "title": "AssetPAG: Proposal Authorization and Governance for Neural Portfolios",
+          "authors": "Silu Li (Princeton University); John Mulvey (Princeton University); Siyu Li (Westlake University)"
+        },
+        {
+          "id": 916,
+          "title": "FUSE: Factor Learning with Uncertainty-Aware Selection and Estimation",
+          "authors": "Ryan Engel (Stony Brook University); Pawel Polak (Stony Brook University)"
+        },
+        {
+          "id": 930,
+          "title": "REFLEX: Reflexive Equilibrium Fixed-point Learning for Endogenous eXchanges",
+          "authors": "Vignesh Nagarajan (Texas A&M University); Shriraghav Ashok (University of California, Berkeley)"
+        },
+        {
+          "id": 944,
+          "title": "The Grid Is the Alpha: Measuring Effective Multiplicity and Permutation Nulls in LLM Event-Driven Trading",
+          "authors": "Simarjot Khanna (Independent Researcher)"
+        },
+        {
+          "id": 953,
+          "title": "L0 Feature Selection via Monte Carlo Tree Search in High-Dimensional Financial Regression",
+          "authors": "Cameron Mouangue (École Polytechnique); Tristan Cazenave (LAMSADE, Université Paris Dauphine - PSL)"
+        },
+        {
+          "id": 955,
+          "title": "When Synthetic Markets Look Real but Aren't: Cross-asset tail dependence as a realism diagnostic for financial data generators",
+          "authors": "Ming Yin Ivan Sit (UCLA)"
+        },
+        {
+          "id": 977,
+          "title": "Agent Policy-Value Audit: Separating Transition Composition from Event Selection in Financial LLM Agents",
+          "authors": "Mingyang Chen (Emory University); Yida Xu (Emory University); Huiwen Chen (Emory University); Yiming Lu (Emory University); Wei Jin (Emory University)"
+        },
+        {
+          "id": 989,
+          "title": "Can a Multi-Agentic Small Language Model framework Compete with a Single-Agent LLM in Portfolio Rebalancing?",
+          "authors": "Anjalika Arora (Georgia Institute of Technology); Krishaang Gupta (Georgia Institute of Technology); Vani Gupta (Georgia Institute of Technology)"
+        },
+        {
+          "id": 990,
+          "title": "STRAPSim: A Portfolio Similarity Metric for ETF Alignment and Portfolio Trades",
+          "authors": "Mingshu Li (BlackRock, Inc.); Dhruv Desai (BlackRock, Inc.); Jerinsh Jeyapaulraj (BlackRock, Inc.); Philip Sommer (BlackRock, Inc.); Riya Jain (BlackRock, Inc); Peter Chu (BlackRock, Inc.); Dhagash Mehta (BlackRock, Inc.)"
+        },
+        {
+          "id": 1032,
+          "title": "A Hybrid Cross-Encoder for Scalable Transaction Linking",
+          "authors": "Sarthak Malik (Mastercard); Ashish Kumar (Mastercard); Arya Topale (Mastercard); Maria Spaeth (Mastercard); Aakarsh Malhotra (Mastercard)"
+        },
+        {
+          "id": 1036,
+          "title": "Beyond Gaussian Forecasts: OFI-Conditioned Predictive Distributions for High-Frequency Returns and Volatility",
+          "authors": "Hamidreza Bandealinaeini (Sharif University of Technology); Mohammad Sharifkhani (Sharif University of Technology); Erfan Salavati (Amirkabir University of Technology)"
+        },
+        {
+          "id": 1062,
+          "title": "When Does “Post-Call” Begin? An Availability Contract for Earnings-Call NLP Benchmarks",
+          "authors": "Xiaoyu Ma (National University of Singapore ); Kelvin Koa (National University of Singapore); Yuncong Liu (National University of Singapore); Ke-wei Huang (National University of Singapore)"
+        },
+        {
+          "id": 1068,
+          "title": "Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation",
+          "authors": "Zeynep Yıldız (Boğaziçi University); Satchit Chatterji (University of Amsterdam); Ercan Atam (Boğaziçi University); Erman Acar ( University of Amsterdam)"
+        },
+        {
+          "id": 1071,
+          "title": "Faithful by Audit: Chain-of-Thought Faithfulness in Financial Decisions",
+          "authors": "Ashkan Golgoon (U.S. Bank); Giacomo Domeniconi (U.S. Bank); Samuel Atkins (U.S. Bank)"
+        }
+      ]
+    }
+  ]
+}
