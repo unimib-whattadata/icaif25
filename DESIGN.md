@@ -274,6 +274,10 @@ The session action row now contains the agenda button without a repeated “Sess
 
 The map retains a textual hotel list and a static image fallback. Hotel markers outside the painted viewport leave the tab order; redraws and popup closure preserve focus on a visible marker or map control. Camera and route motion respects the visitor's motion preference and the explicit pause control.
 
+### Accepted Papers
+
+The catalogue preserves the same identity with a compact navy introduction, pale supporting note band and flat rows. A sticky search/category toolbar uses native daisyUI input, button and menu controls; below 768px a native select takes the category menu's place. The selected category uses the existing navy foreground/background pair. A narrow ID gutter stays beside the semibold title and smaller complete author text at every width. Section counts share the heading baseline; the linked paper receives a thin copper outline. Query/category state, reset and empty recovery belong to this reading surface. Scope and verification live in `.impeccable/surfaces/accepted-papers-html.md`; no global token or typeface changes.
+
 ## Do's and Don'ts
 
 ### Do:

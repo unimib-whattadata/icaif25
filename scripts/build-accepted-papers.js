@@ -26,7 +26,7 @@ function renderAcceptedPapers(source) {
   const total = validateAcceptedPapers(source);
   const updated = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${source.updated}T12:00:00Z`));
   return `    <main id="main-content" tabindex="-1">
-      <section id="page-header" class="hero bg-neutral text-neutral-content">
+      <section id="page-header" class="hero bg-neutral text-neutral-content papers-header">
         <div aria-hidden="true" data-animated-hero-overlay class="hero-overlay bg-primary/20"></div>
         <div class="hero-content page-header-content">
           <div class="max-w-3xl">
@@ -35,28 +35,56 @@ function renderAcceptedPapers(source) {
           </div>
         </div>
       </section>
-      <div class="site-container section-space">
-        <div class="max-w-3xl space-y-4">
-          <p class="text-base sm:text-lg leading-relaxed">Authors will add a link to their presentation on the Whova platform.</p>
-          <p class="text-sm text-base-content/70">Updated <time datetime="${source.updated}">${updated}</time>. Paper IDs, titles, authors and affiliations are listed below.</p>
+      <div class="papers-note">
+        <div class="site-container papers-note-inner">
+          <p>Authors will add a link to their presentation on the Whova platform.</p>
+          <p>Updated <time datetime="${source.updated}">${updated}</time>. Paper IDs, titles, authors and affiliations are listed below.</p>
         </div>
-        <div id="paper-search-panel" class="my-8 max-w-2xl" hidden>
-          <label for="paper-search" class="mb-2 block font-semibold">Search accepted papers</label>
-          <input id="paper-search" class="input min-h-11 w-full text-base" type="search" placeholder="ID, title, author, affiliation" aria-describedby="paper-search-status">
-          <p id="paper-search-status" class="mt-2 text-sm text-base-content/70" role="status" aria-live="polite" aria-atomic="true">${total} papers</p>
+      </div>
+      <div class="papers-tools" id="paper-controls">
+        <div class="site-container papers-controls">
+          <div id="paper-search-panel" class="papers-search" hidden>
+            <label for="paper-search">Search accepted papers</label>
+            <div class="papers-search-row">
+              <input id="paper-search" class="input" type="search" placeholder="Title, author or ID" aria-describedby="paper-search-status">
+              <button type="button" class="btn" data-paper-reset disabled>Reset</button>
+            </div>
+          </div>
+          <nav aria-label="Paper categories" class="papers-categories-nav">
+            <ul class="menu papers-categories">
+              <li data-all-papers hidden><button type="button" data-paper-filter="all" aria-pressed="true">All papers <span data-category-count="all">${total}</span></button></li>
+${source.groups.map((group, index) => `              <li><a href="#${group.id}" data-paper-filter="${group.id}">${['Oral', 'Poster', 'Proceedings only'][index]} <span data-category-count="${group.id}">${group.papers.length}</span></a></li>`).join('\n')}
+            </ul>
+          </nav>
+          <div class="papers-mobile-category" hidden>
+            <label for="paper-category" class="sr-only">Paper category</label>
+            <select id="paper-category" class="select">
+              <option value="all">All papers (${total})</option>
+${source.groups.map((group, index) => `              <option value="${group.id}">${['Oral', 'Poster', 'Proceedings only'][index]} (${group.papers.length})</option>`).join('\n')}
+            </select>
+          </div>
+          <p id="paper-search-status" class="papers-status" role="status" aria-live="polite" aria-atomic="true">${total} papers</p>
         </div>
-        <div class="document-sections mt-10">
-${source.groups.map(group => `          <section aria-labelledby="${group.id}" data-paper-group>
-            <h2 id="${group.id}" class="section-title mb-4 sm:mb-6" data-index-label="${escape(group.label)}">${escape(group.label)}</h2>
-            <p class="mb-2 text-sm text-base-content/70" data-group-count>${group.papers.length} papers</p>
-            <p data-group-empty hidden>No matching papers in this group. Try another title, author or paper ID.</p>
-            <ul class="list">
-${group.papers.map(paper => `              <li id="paper-${paper.id}" class="list-row px-0 py-6 scroll-mt-36" data-paper>
-                <div class="list-col-grow flex flex-col sm:flex-row gap-x-5 gap-y-1 min-w-0">
-                  <a href="#paper-${paper.id}" class="link inline-flex min-h-11 items-center self-start whitespace-nowrap text-sm tabular-nums sm:w-16 sm:shrink-0" aria-label="Paper ${paper.id}">#${paper.id}</a>
-                  <div class="min-w-0">
-                    <h3 class="max-w-[90ch] text-base sm:text-lg font-semibold leading-snug">${escape(paper.title)}</h3>
-                    <p class="mt-2 max-w-[90ch] text-sm sm:text-base leading-relaxed text-base-content/80">${escape(paper.authors)}</p>
+      </div>
+      <div class="site-container papers-content" id="paper-results">
+        <div class="papers-empty" id="papers-empty" hidden>
+          <h2>No papers found</h2>
+          <p>Try a different title, author or affiliation, or reset the filters.</p>
+          <button type="button" class="btn" data-paper-reset>Reset filters</button>
+        </div>
+        <div class="papers-groups">
+${source.groups.map(group => `          <section aria-labelledby="${group.id}" data-paper-group data-category="${group.id}">
+            <div class="papers-group-heading">
+              <h2 id="${group.id}" data-index-label="${escape(group.label)}">${escape(group.label)}</h2>
+              <span data-group-count>${group.papers.length} papers</span>
+            </div>
+            <ul class="list papers-list">
+${group.papers.map(paper => `              <li id="paper-${paper.id}" class="list-row papers-row" tabindex="-1" data-paper>
+                <div class="list-col-grow papers-row-content">
+                  <a href="#paper-${paper.id}" class="link papers-id" aria-label="Paper ${paper.id}">#${paper.id}</a>
+                  <div class="papers-copy">
+                    <h3>${escape(paper.title)}</h3>
+                    <p>${escape(paper.authors)}</p>
                   </div>
                 </div>
               </li>`).join('\n')}
