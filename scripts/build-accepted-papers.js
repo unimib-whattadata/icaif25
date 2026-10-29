@@ -24,7 +24,6 @@ function validateAcceptedPapers(source) {
 
 function renderAcceptedPapers(source) {
   const total = validateAcceptedPapers(source);
-  const updated = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${source.updated}T12:00:00Z`));
   return `    <main id="main-content" tabindex="-1">
       <section id="page-header" class="hero bg-neutral text-neutral-content papers-header">
         <div aria-hidden="true" data-animated-hero-overlay class="hero-overlay bg-primary/20"></div>
@@ -35,12 +34,6 @@ function renderAcceptedPapers(source) {
           </div>
         </div>
       </section>
-      <div class="papers-note">
-        <div class="site-container papers-note-inner">
-          <p>Authors will add a link to their presentation on the Whova platform.</p>
-          <p>Updated <time datetime="${source.updated}">${updated}</time>. Paper IDs, titles, authors and affiliations are listed below.</p>
-        </div>
-      </div>
       <div class="papers-tools" id="paper-controls">
         <div class="site-container papers-controls">
           <div id="paper-search-panel" class="papers-search" hidden>

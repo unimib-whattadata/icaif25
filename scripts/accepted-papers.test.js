@@ -16,7 +16,6 @@ test('publication has all 215 unique papers and applies the later paper 136 corr
   assert.match(containing[0].papers.find(paper => paper.id === 136).title, /^FAAB:/);
   const html = renderAcceptedPapers(source);
   assert.equal((html.match(/ data-paper>/g) || []).length, 215);
-  assert.match(html, /Authors will add a link to their presentation on the Whova platform\./);
   assert.doesNotMatch(html, /data-paper[^>]* hidden/);
   for (const paper of source.groups.flatMap(group => group.papers)) {
     assert.ok(html.includes(`id="paper-${paper.id}"`));
