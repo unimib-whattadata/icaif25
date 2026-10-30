@@ -1,5 +1,43 @@
 # Sponsorship content sources
 
+## Optical balance of individual logos — October 30, 2026
+
+Before the authorized commit and push, the user requested an individual analysis of every logo so that marks within each sponsorship tier look more alike. Both Home and Sponsors & Supporters now compensate for each supplied asset's clear space, aspect ratio and visual weight. The two-band Home composition and decreasing Platinum → Gold → Silver → Bronze hierarchy are preserved.
+
+The analysis uses the original local assets, with SVGs rasterized for measurement only. Images are composited over white; the visible bounding box excludes pixels whose maximum RGB-channel difference from white is at most 16/255. A second diagnostic sums luminance contrast against white, distinguishing fine colored lettering from dense black lettering. These measurements support optical judgment rather than defining a universal measure of perceived size. No shipping artwork is cropped, recolored, redrawn or otherwise modified.
+
+| Logo | Finding | Previous → calibrated Home desktop bound | Calibrated visible artwork, approximately |
+|---|---|---|---|
+| Intesa Sanpaolo IMI CIB | Fine colored lettering has less visual weight than the other Platinum marks. | 320 → 352px wide | 352 × 111px |
+| QRT | The portrait cube/wordmark occupies more height and contrast than its width suggests. | 160 → 144px high | 124 × 142px |
+| LinqAlpha | Dense black lettering dominated the Platinum row at its previous width. | 288 → 248px wide | 248 × 58px |
+| Domyn | A dense wordmark with virtually no blank artboard margin; previously dominated DXC. | 176 → 160px wide | 160 × 39px |
+| DXC Technology | The artwork's bounding box occupies only 43% of its SVG artboard area; its strokes are also lighter. | 176 → 256px wide | 219 × 36px |
+| Bloomberg Engineering | Little blank margin and dense black lettering provide the Silver reference. | 112 → 112px wide | 112 × 45px |
+| Standard Chartered | The artwork's bounding box occupies 46% of the SVG artboard; gray lettering is lighter than Bloomberg. | 96 → 160px wide | 125 × 49px |
+| Vedrai | The only Bronze sponsor; retains the smaller tier size and its supplied tagline. | 80 → 80px wide | 80 × 24px |
+| Needlestack Technologies | The only À la carte sponsor; its already fitted SVG needs no within-tier correction. | Not on Home; Sponsors remains 96/128px wide | 124 × 28px at the 128px bound |
+
+Gold grid columns use a 1:1.6 ratio and Silver a 1:1.4 ratio so that clear-space compensation survives narrower containers. The Platinum gallery gives additional width to Intesa's fine lettering; QRT increases from 84px high on mobile to 112/128/144px as space permits. Sponsors defers QRT's final height until 1280px because its separate tier-label column leaves less gallery space. All images preserve their intrinsic proportions, all existing logo links retain 44px minimum targets, and the original DXC clear space remains intact. Responsive image bounds may be constrained by the available column width.
+
+At the nominal desktop sizes above, the maximum/minimum contrast-area ratio among Platinum marks decreases from 1.64 to 1.03; Domyn/DXC decreases from 4.10 to 1.60; Bloomberg/Standard Chartered decreases from 3.77 to 1.36. Local measurements and analytical comparison figures are under `.codex-artifacts/logo-balance-20261030/`; they show the original artwork at the configured nominal sizes, not a browser screenshot. Browser access to the existing preview tab was rejected by its access policy, so final rendered viewport behavior remains unverified in this pass. The full build and existing tests provide source validation. Shared CSS cache version is `2026103004`.
+
+## Home sponsor hierarchy refinement — October 30, 2026
+
+The user's browser comment requests more prominent Platinum logos and a shared row for Gold, Silver and Bronze, with each successive tier smaller. This supersedes the initial four-column Vedrai layout below. The Home sponsor band now has a full-width Platinum gallery with three marks from 640px, followed by Gold, Silver and Bronze sibling groups on one row from 768px. Narrower screens stack the lower groups; Gold and Silver retain paired logos, and LinqAlpha spans the second Platinum row below 640px. DOM order, official artwork and destinations are preserved.
+
+Desktop logo bounds are 320px for Intesa, 160px high for QRT and 288px for LinqAlpha; Gold uses 176px-wide marks; Silver uses 112px for Bloomberg and 96px for Standard Chartered; Bronze uses 80px. Smaller breakpoints scale these bounds down, and available grid space may constrain them further. All links retain at least 44px target height. Light shared rules separate the tiers; no cards or new theme tokens are introduced.
+
+Verification: the full build passed all 43 existing tests, HTML validation and source/site checks for all 21 canonical pages. Both new grid templates are present in the compiled CSS; the shared cache version is `2026103003`. The layout detector reported no findings. The final detector's four advisories concern pre-existing page colors and circular speaker images outside the sponsor band. Browser access was rejected by the browser security policy, so this refinement has source and build verification only; the earlier screenshots do not validate this layout. The requested browser review remains unavailable in this session.
+
+## Vedrai — October 30, 2026
+
+The user's instruction authorizes the website update requested in the email “Fw: ICAIF Bronze Sponsorship - Vedrai” received on October 30: add the supplied Vedrai logo as a Bronze Sponsor. Vedrai appears in a new Bronze group after Silver on Home and Sponsors & Supporters, before the Sponsors page's À la carte group. Home uses four desktop columns with additional room for Platinum and stacks the tiers below 1024px.
+
+The supplied positive PNG, `Vedrai-NEWpayoff_Logo_Pos (31).png`, is copied unchanged to `img/loghi/vedrai/vedrai-positive.png` (2497 × 737 pixels; 52,325 bytes; SHA-256 `2d202fbfbe436e9ef04c2bb87d5cdc8228bc6cf8086e50b6a50bef2aee7efa99`). The original colors, tagline, transparency and proportions are retained. Both logos link to `https://www.vedrai.com/`, the official destination in the email, retrieved successfully on October 30. Links have descriptive accessible names, a new-tab notice, `noopener noreferrer` and a minimum 44px target height. Only the public logo, company name, sponsorship tier and website are published.
+
+Verification: the full `package.json` build pipeline passed through the bundled Node runtime, including existing tests, HTML validation, generated-route synchronization and site checks for all 21 canonical pages. Native browser inspection covered Home at 1280, 1024, 768, 390 and 320px and Sponsors at 1280, 390 and 320px. All eight Home logos loaded with intact proportions, no horizontal overflow was observed, and Vedrai's link targets measured 44px. At 1024px the DXC logo remains approximately 132px wide. Screenshots and responsive measurements are under `.codex-artifacts/sponsorship-vedrai-20261030/`. Shared CSS cache version is `2026103002`; Home and Sponsors metadata and sitemap use the significant-update date October 30. This records the local website change; the separate print rollup is not part of this repository update.
+
 ## Home sponsor layout and links — October 28, 2026
 
 The user approved all three findings from the Home sponsor critique: compact tablet/mobile layout, optical logo balance and consistent sponsor links. The change is scoped to the Home sponsor band. Desktop retains the three tier columns; at 640–1023px the three Platinum marks share a centered row, and Gold/Silver use two-logo rows below 1024px. Below 640px LinqAlpha is 176px wide and Standard Chartered is 112px wide. Sponsor tiers and supplied artwork are preserved.
