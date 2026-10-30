@@ -1,50 +1,912 @@
 {
   "ground": {
-    "outline": "M46 550L113 80L335 77V190H965L1122 550H46Z",
+    "outline": "M59.2 518.8L136.8 74L344.8 66V174H968V426H1065.6V502.8H1027.2V521.2H808V535.6H59.2Z",
     "spaces": [
-      "M173 150H269L302 275V306H155V275Z",
-      "M173 321H272L286 362H159Z",
-      "M483 244H623V334H483Z",
-      "M670 302H784V362H670Z",
-      "M340 244H435V281H340Z",
-      "M655 398H789V428H655Z",
-      "M895 220H948V339H895Z",
-      "M851 445H1002V482H851Z"
+      "M196 142.8H290.4L313.6 259.6V289.2H172.8V259.6Z",
+      "M175.2 305.2H310.4L326.4 358.8H155.2Z",
+      "M470.4 243.6H489.6V432.4H393.6V370H353.6V255.6H448.8V230.8H470.4Z",
+      "M659.2 384.4H789.6V406.8H659.2Z",
+      "M896 210H948.8V323.6H896Z",
+      "M855.2 431.6H1055.2V466.8H855.2Z",
+      "M353.6 230.8H448.8V254H353.6Z",
+      "M303.2 77.2H352.8V111.6H303.2Z",
+      "M352 466H415.2V490.8H352Z"
     ],
-    "walls": "M126 105H342V124M142 149V307M321 149V307M128 320V378M314 320V378M160 307V320M285 307V320M125 394L383 447V283M380 244V192H623M623 244V191M435 254H483M623 254H647M784 310H806M784 359H806M790 397V441H850M895 220V191H969V443M335 483H401V502H335ZM642 484H698V502H642ZM962 484H1006V512H962ZM143 105V124M210 105V124M274 105V124M897 260H948M897 300H948"
+    "walls": "M140.8 93.2H284.8M140.8 93.2V134M140.8 134H332M332 134V293.2M152.8 135.6V290M172 142.8V290.8M314.4 142.8V290.8M123.2 291.6V433.2H392.8M392.8 290V432.4H470.4M470.4 243.6V289.2H630.4M489.6 320.4H630.4M630.4 174V352.4M630.4 243.6H651.2V352.4H630.4M489.6 352.4V464.4M584.8 421.2V496.4H809.6V409.2M855.2 182V429.2H968.8M950.4 209.2V345.2M968.8 384.4H1012V430M471.2 466H568M490.4 466V502M344.8 93.2V114.8M808.8 465.2V498.8M855.2 475.6H1016",
+    "stairs": [
+      {
+        "x": 441.6,
+        "y": 181.2,
+        "width": 188,
+        "height": 40.8,
+        "id": "ground-main-stairs",
+        "shape": "M441.6 181.2H629.6V222H441.6Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 443.2,
+            "y": 182,
+            "width": 137.6,
+            "height": 16,
+            "direction": "horizontal",
+            "steps": 13
+          },
+          {
+            "x": 443.2,
+            "y": 201.2,
+            "width": 186.4,
+            "height": 20,
+            "direction": "horizontal",
+            "steps": 18
+          }
+        ],
+        "landings": [
+          "M580.8 182H629.6V201.2H580.8Z"
+        ]
+      },
+      {
+        "x": 353.6,
+        "y": 289.2,
+        "width": 39.2,
+        "height": 80.8,
+        "id": "ground-stairs",
+        "shape": "M353.6 289.2H392.8V370H353.6Z",
+        "direction": "vertical",
+        "flights": [
+          {
+            "x": 355.2,
+            "y": 290,
+            "width": 36,
+            "height": 21.6,
+            "direction": "vertical",
+            "steps": 9
+          },
+          {
+            "x": 355.2,
+            "y": 319.6,
+            "width": 36,
+            "height": 20.8,
+            "direction": "vertical",
+            "steps": 9
+          },
+          {
+            "x": 355.2,
+            "y": 348.4,
+            "width": 36,
+            "height": 20.8,
+            "direction": "vertical",
+            "steps": 9
+          }
+        ],
+        "landings": [
+          "M353.6 311.6H392.8V319.6H353.6Z",
+          "M353.6 340.4H392.8V348.4H353.6Z"
+        ]
+      },
+      {
+        "x": 389.6,
+        "y": 231.6,
+        "width": 35.2,
+        "height": 17.6,
+        "id": "ground-foyer-stairs",
+        "shape": "M389.6 231.6H424.8V249.2H389.6Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 396.8,
+            "y": 232.4,
+            "width": 12.8,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 6
+          },
+          {
+            "x": 396.8,
+            "y": 242,
+            "width": 14.4,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M389.6 231.6H396.8V249.2H389.6Z",
+          "M411.2 231.6H424.8V249.2H411.2Z"
+        ]
+      },
+      {
+        "x": 304,
+        "y": 91.6,
+        "width": 36.8,
+        "height": 17.6,
+        "id": "ground-aula-core-stairs",
+        "shape": "M304 91.6H340.8V109.2H304Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 308.8,
+            "y": 92.4,
+            "width": 29.6,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 9
+          },
+          {
+            "x": 308.8,
+            "y": 102,
+            "width": 16,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M304 91.6H308.8V109.2H304Z",
+          "M324.8 101.2H340.8V109.2H324.8Z"
+        ]
+      },
+      {
+        "x": 356,
+        "y": 468.4,
+        "width": 55.2,
+        "height": 19.2,
+        "id": "ground-south-west-stairs",
+        "shape": "M356 468.4H411.2V487.6H356Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 362.4,
+            "y": 469.2,
+            "width": 18.4,
+            "height": 8,
+            "direction": "horizontal",
+            "steps": 7
+          },
+          {
+            "x": 362.4,
+            "y": 479.6,
+            "width": 18.4,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 7
+          }
+        ],
+        "landings": [
+          "M356 468.4H362.4V487.6H356Z",
+          "M380.8 468.4H411.2V487.6H380.8Z"
+        ]
+      },
+      {
+        "x": 658.4,
+        "y": 466.8,
+        "width": 43.2,
+        "height": 18.4,
+        "id": "ground-south-stairs",
+        "shape": "M658.4 466.8H701.6V485.2H658.4Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 666.4,
+            "y": 467.6,
+            "width": 28,
+            "height": 8,
+            "direction": "horizontal",
+            "steps": 9
+          },
+          {
+            "x": 680,
+            "y": 478,
+            "width": 14.4,
+            "height": 6.4,
+            "direction": "horizontal",
+            "steps": 5
+          }
+        ],
+        "landings": [
+          "M658.4 466.8H666.4V485.2H658.4Z"
+        ]
+      },
+      {
+        "x": 915.2,
+        "y": 221.2,
+        "width": 32,
+        "height": 16.8,
+        "id": "ground-east-stairs",
+        "shape": "M915.2 221.2H947.2V238H915.2Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 919.2,
+            "y": 222,
+            "width": 16,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 6
+          },
+          {
+            "x": 919.2,
+            "y": 231.6,
+            "width": 16,
+            "height": 5.6,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M915.2 221.2H919.2V238H915.2Z",
+          "M935.2 221.2H947.2V238H935.2Z"
+        ]
+      },
+      {
+        "x": 694.4,
+        "y": 349.2,
+        "width": 80,
+        "height": 17.6,
+        "id": "ground-central-strip",
+        "shape": "M694.4 349.2H774.4V366.8H694.4Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 696.8,
+            "y": 350.8,
+            "width": 17.6,
+            "height": 14.4,
+            "direction": "horizontal",
+            "steps": 8
+          },
+          {
+            "x": 722.4,
+            "y": 350.8,
+            "width": 17.6,
+            "height": 14.4,
+            "direction": "horizontal",
+            "steps": 8
+          },
+          {
+            "x": 748,
+            "y": 350.8,
+            "width": 17.6,
+            "height": 14.4,
+            "direction": "horizontal",
+            "steps": 8
+          }
+        ],
+        "landings": [
+          "M694.4 349.2H696.8V366.8H694.4Z",
+          "M714.4 349.2H722.4V366.8H714.4Z",
+          "M740 349.2H748V366.8H740Z",
+          "M765.6 349.2H774.4V366.8H765.6Z"
+        ]
+      }
+    ],
+    "lifts": [
+      {
+        "x": 285.6,
+        "y": 90.8,
+        "width": 12.8,
+        "height": 20,
+        "coreId": "ground-lifts"
+      },
+      {
+        "x": 353.6,
+        "y": 231.6,
+        "width": 10.4,
+        "height": 18.4,
+        "coreId": "ground-foyer-lifts"
+      }
+    ],
+    "voids": [
+      {
+        "shape": "M676.8 290H789.6V348.4H676.8Z",
+        "label": "Open to below",
+        "x": 732.8,
+        "y": 320.4,
+        "lines": [
+          "Open to",
+          "below"
+        ]
+      }
+    ],
+    "landmarks": [
+      {
+        "shape": "M196 142.8H290.4L313.6 259.6V289.2H172.8V259.6Z",
+        "label": "Aula Magna volume",
+        "x": 225,
+        "y": 236.4,
+        "lines": [
+          "Aula",
+          "Magna",
+          "volume"
+        ]
+      }
+    ]
   },
   "b1": {
-    "outline": "M32 546L96 80L382 73V180H1008L1156 550H47Z",
+    "outline": "M62.3 514.1L124.2 77.9L394.6 70.2V167.3H984.4L1124.2 525.6H498.5L489.3 530.1H69.9Z",
     "spaces": [
-      "M151 117H317V142H337V165H296V316L288 342L295 368H152L159 342L130 334V327H151Z",
-      "M635 191H714V261H635Z",
-      "M745 191H825V261H745Z",
-      "M892 223H971V285H892V273H879V238H892Z",
-      "M892 302H971V367H892V353H879V317H892Z",
-      "M892 381H971V445H892V432H879V395H892Z",
-      "M340 244H439V285H340Z",
-      "M382 299H437V370H382Z",
-      "M655 403H805V441H655Z",
-      "M635 304H824V367H635Z",
-      "M343 491H406V515H343Z"
+      "M173.1 137.5H312.1V155.8H327.4V174.9H312.1V314.7L328.9 351.4H164.7L170.8 320.8H155.5V314.7H173.1Z",
+      "M631.4 179.5H705.5V247.5H631.4Z",
+      "M735.3 179.5H808.7V247.5H735.3Z",
+      "M872.1 209.3H946.2V273.5H872.1V261.2H859.9V223.8H872.1Z",
+      "M872.1 288H946.2V349.1H872.1V337.6H859.9V302.5H872.1Z",
+      "M872.1 364.4H946.2V425.5H872.1V414H859.9V378.1H872.1Z",
+      "M354.1 229.1H448.8V252.8H354.1Z",
+      "M396.1 282.6H441.2V352.9H396.1Z",
+      "M652.8 383.5H809.4V427.8H652.8Z",
+      "M630.7 288H810.2V349.9H630.7Z",
+      "M354.1 464.4H419.1V488.9H354.1Z"
     ],
-    "walls": "M128 100V327M151 99H255V117M317 100H347V142M347 142H337M130 334L120 400M317 334L327 400M150 99H255V117M270 82V117H350M340 142H368V190M382 207H623V237H438M623 207V181M340 285V370H366M439 244V299H460M460 299V372M635 262V304M825 262V304M824 368V452H635V476H881M656 421H805M880 289V302M880 368V382M993 216V445M1008 182L1085 452V532M635 453H1085M708 477V502H881M881 477V502M580 489V520M343 491V483H406M60 416H89V531M50 532H1085"
+    "walls": "M155.5 92.4V314.7M172.3 93.2H284.6M301.4 92.4H355.6V125.2M355.6 125.2H377.8V166.5M136.4 139V314.7M125.7 315.5V504.2M327.4 174.9V315.5M312.1 137.5V157.3M164.7 351.4L150.9 385M328.9 351.4L335 383.5M354.1 253.6V281.1H396.1M441.2 282.6V352.9H396.1M470.2 249V281.1H630.7M470.2 282.6V352.1H630.7M630.7 248.2V288M810.2 248.2V288M810.2 349.9V463.7H630.7V504.9M946.2 203.9H969.1V430.1M984.4 168L1057 429.3V504.9M859.9 275V288M859.9 349.9V363.6M631.4 428.5H1057.7M660.5 464.4V482.8H810.2M810.2 483.5V504.9M354.1 463.7V455.3H424.4M76.8 504.2H1057.7M664 288V346M684 288V346M704 288V346M724 288V346M744 288V346M764 288V346",
+    "stairs": [
+      {
+        "x": 445,
+        "y": 181,
+        "width": 184.9,
+        "height": 45.8,
+        "id": "b1-stairs",
+        "shape": "M445 181H629.9V226.9H445Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 447.3,
+            "y": 181.8,
+            "width": 133.7,
+            "height": 15.3,
+            "direction": "horizontal",
+            "steps": 13
+          },
+          {
+            "x": 447.3,
+            "y": 201.6,
+            "width": 54.2,
+            "height": 18.3,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M581 181H629.9V201.6H581Z"
+        ]
+      },
+      {
+        "x": 355.6,
+        "y": 290.3,
+        "width": 38.2,
+        "height": 77.9,
+        "id": "b1-side-stairs",
+        "shape": "M355.6 290.3H393.8V368.2H355.6Z",
+        "direction": "vertical",
+        "flights": [
+          {
+            "x": 357.2,
+            "y": 324.6,
+            "width": 35.1,
+            "height": 14.5,
+            "direction": "vertical",
+            "steps": 6
+          },
+          {
+            "x": 357.2,
+            "y": 346.8,
+            "width": 35.1,
+            "height": 20.6,
+            "direction": "vertical",
+            "steps": 9
+          }
+        ],
+        "landings": [
+          "M355.6 339.2H393.8V346.8H355.6Z"
+        ]
+      },
+      {
+        "x": 444.3,
+        "y": 283.4,
+        "width": 26.7,
+        "height": 65.7,
+        "id": "b1-toilet-stairs",
+        "shape": "M444.3 283.4H471V349.1H444.3Z",
+        "direction": "vertical",
+        "flights": [
+          {
+            "x": 445,
+            "y": 284.2,
+            "width": 25.2,
+            "height": 16,
+            "direction": "vertical",
+            "steps": 6
+          },
+          {
+            "x": 445,
+            "y": 307.8,
+            "width": 25.2,
+            "height": 15.3,
+            "direction": "vertical",
+            "steps": 6
+          },
+          {
+            "x": 445,
+            "y": 331.5,
+            "width": 25.2,
+            "height": 16.8,
+            "direction": "vertical",
+            "steps": 7
+          }
+        ],
+        "landings": [
+          "M444.3 300.2H471V307.8H444.3Z",
+          "M444.3 323.1H471V331.5H444.3Z"
+        ]
+      },
+      {
+        "x": 697.1,
+        "y": 349.9,
+        "width": 56.5,
+        "height": 20.6,
+        "id": "b1-central-stairs",
+        "shape": "M697.1 349.9H753.7V370.5H697.1Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 699.4,
+            "y": 351.4,
+            "width": 20.6,
+            "height": 17.6,
+            "direction": "horizontal",
+            "steps": 9
+          },
+          {
+            "x": 727.7,
+            "y": 351.4,
+            "width": 17.6,
+            "height": 17.6,
+            "direction": "horizontal",
+            "steps": 8
+          }
+        ],
+        "landings": [
+          "M697.1 349.9H699.4V370.5H697.1Z",
+          "M720 349.9H727.7V370.5H720Z",
+          "M745.3 349.9H753.7V370.5H745.3Z"
+        ]
+      },
+      {
+        "x": 391.5,
+        "y": 230.7,
+        "width": 34.4,
+        "height": 18.3,
+        "id": "b1-foyer-stairs",
+        "shape": "M391.5 230.7H425.9V249H391.5Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 399.2,
+            "y": 231.4,
+            "width": 12.2,
+            "height": 7.6,
+            "direction": "horizontal",
+            "steps": 6
+          },
+          {
+            "x": 399.2,
+            "y": 241.4,
+            "width": 13,
+            "height": 6.9,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M391.5 230.7H399.2V249H391.5Z",
+          "M412.2 230.7H425.9V249H412.2Z"
+        ]
+      },
+      {
+        "x": 304.5,
+        "y": 91.6,
+        "width": 49.7,
+        "height": 16.8,
+        "id": "b1-aula-core-stairs",
+        "shape": "M304.5 91.6H354.1V108.4H304.5Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 311.3,
+            "y": 92.4,
+            "width": 16.8,
+            "height": 6.9,
+            "direction": "horizontal",
+            "steps": 7
+          },
+          {
+            "x": 311.3,
+            "y": 101.6,
+            "width": 16.8,
+            "height": 6.1,
+            "direction": "horizontal",
+            "steps": 7
+          }
+        ],
+        "landings": [
+          "M304.5 91.6H311.3V108.4H304.5Z",
+          "M328.1 91.6H354.1V108.4H328.1Z"
+        ]
+      },
+      {
+        "x": 354.9,
+        "y": 467.5,
+        "width": 58.8,
+        "height": 19.9,
+        "id": "b1-south-west-stairs",
+        "shape": "M354.9 467.5H413.7V487.4H354.9Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 362.5,
+            "y": 468.3,
+            "width": 22.9,
+            "height": 7.6,
+            "direction": "horizontal",
+            "steps": 8
+          },
+          {
+            "x": 362.5,
+            "y": 478.2,
+            "width": 13.8,
+            "height": 8.4,
+            "direction": "horizontal",
+            "steps": 5
+          }
+        ],
+        "landings": [
+          "M354.9 467.5H362.5V487.4H354.9Z",
+          "M385.4 467.5H413.7V487.4H385.4Z"
+        ]
+      },
+      {
+        "x": 662,
+        "y": 466.7,
+        "width": 39.7,
+        "height": 17.6,
+        "id": "b1-south-stairs",
+        "shape": "M662 466.7H701.7V484.3H662Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 671.2,
+            "y": 467.5,
+            "width": 14.5,
+            "height": 6.9,
+            "direction": "horizontal",
+            "steps": 6
+          },
+          {
+            "x": 671.2,
+            "y": 476.7,
+            "width": 14.5,
+            "height": 6.9,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M662 466.7H671.2V484.3H662Z",
+          "M685.7 466.7H701.7V484.3H685.7Z"
+        ]
+      }
+    ],
+    "lifts": [
+      {
+        "x": 285.4,
+        "y": 90.1,
+        "width": 13,
+        "height": 19.1,
+        "coreId": "b1-lifts"
+      },
+      {
+        "x": 354.9,
+        "y": 230.7,
+        "width": 10.7,
+        "height": 18.3,
+        "coreId": "b1-foyer-lifts"
+      }
+    ],
+    "columns": [
+      {
+        "x": 152.4,
+        "y": 464.4,
+        "width": 3.1,
+        "height": 18.3
+      },
+      {
+        "x": 171.5,
+        "y": 464.4,
+        "width": 3.1,
+        "height": 18.3
+      },
+      {
+        "x": 311.3,
+        "y": 464.4,
+        "width": 3.1,
+        "height": 18.3
+      }
+    ]
   },
   "b2": {
-    "outline": "M40 518L106 32L378 27V160H1018L1115 518Z",
+    "outline": "M60 514.8L122.4 78L391.2 70V166.8H1023.2L1124 526H491.2L483.2 530.8H67.2Z",
     "spaces": [
-      "M150 64H315V128H150Z",
-      "M155 151H294V341H155Z",
-      "M337 222H429V251H337Z",
-      "M376 274H429V342H376Z",
-      "M250 355H298V415H250Z",
-      "M250 438H298V485H250Z",
-      "M456 280H616V358H456Z",
-      "M640 281H783V343H640Z",
-      "M650 374H798V409H650Z",
-      "M336 422H522V461H336Z",
-      "M616 422H798V461H616Z"
+      "M171.2 94H330.4V184.4H171.2Z",
+      "M171.2 202.8H330.4V324.4L337.6 349.2H169.6Z",
+      "M352.8 230H447.2V250.8H352.8Z",
+      "M389.6 282H441.6V384.4H389.6Z",
+      "M268.8 351.6H315.2V423.6H268.8Z",
+      "M268.8 435.6H315.2V487.6H268.8Z",
+      "M630.4 287.6H809.6V347.6H630.4Z",
+      "M659.2 385.2H809.6V427.6H659.2Z",
+      "M332 428.4H536V466H332Z",
+      "M636 430.8H808V465.2H636Z"
     ],
-    "walls": "M133 64V341M150 128V151M294 128V151M315 65V341M315 64H340V102M340 46H366V103M315 160H350M378 181H604M378 190V221M429 233H456M337 251V376H376M429 274V391H337V421M337 391H376M616 261H798M958 196V422H1005M978 176H923V195M1005 422V485M650 392H798M616 343V420M798 343V420M336 461V486H400M456 463V486H522M616 461V486H677M798 461V486H844M60 419H174V461H60M156 341V355M298 341V355M298 415V438M60 500H1048V487"
+    "walls": "M152 94V350M170.4 94H284.8M299.2 90H354.4V118.8M354.4 118.8H384.8V166M331.2 137.2V198.8H384.8M312.8 170.8V200.4M331.2 198.8V386M169.6 183.6H292.8V157.2H331.2M170.4 202H312M169.6 349.2V409.2H152M338.4 350V393.2M352.8 251.6V280.4H388.8M441.6 282V385.2H388.8M468.8 241.2V282.8H490.4M468.8 282.8V346.8H490.4M490.4 346.8V379.6H536V427.6M629.6 247.6V286.8M810.4 246.8V288.4M810.4 348.4V483.6M810.4 430H636M948.8 208.4V428.4H1055.2M965.6 193.2H988.8M965.6 429.2H1055.2V512.4M331.2 428.4V502.8H391.2M442.4 466.8V502.8H536M636 466V501.2H694.4M810.4 466V483.6H791.2M73.6 512.4H1055.2M268 423.6V435.6M315.2 423.6V435.6M664 288V346M684 288V346M704 288V346M724 288V346M744 288V346M764 288V346",
+    "stairs": [
+      {
+        "x": 514.4,
+        "y": 181.2,
+        "width": 76,
+        "height": 18.4,
+        "id": "b2-stairs",
+        "shape": "M514.4 181.2H590.4V199.6H514.4Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 519.2,
+            "y": 182.8,
+            "width": 63.2,
+            "height": 13.6,
+            "direction": "horizontal",
+            "steps": 12
+          }
+        ],
+        "landings": [
+          "M582.4 181.2H590.4V199.6H582.4Z"
+        ]
+      },
+      {
+        "x": 442.4,
+        "y": 282,
+        "width": 28,
+        "height": 64.8,
+        "id": "b2-toilet-stairs",
+        "shape": "M442.4 282H470.4V346.8H442.4Z",
+        "direction": "vertical",
+        "flights": [
+          {
+            "x": 444,
+            "y": 283.6,
+            "width": 25.6,
+            "height": 15.2,
+            "direction": "vertical",
+            "steps": 6
+          },
+          {
+            "x": 444,
+            "y": 308.4,
+            "width": 25.6,
+            "height": 13.6,
+            "direction": "vertical",
+            "steps": 5
+          },
+          {
+            "x": 444,
+            "y": 325.2,
+            "width": 25.6,
+            "height": 20,
+            "direction": "vertical",
+            "steps": 8
+          }
+        ],
+        "landings": [
+          "M442.4 298.8H470.4V308.4H442.4Z",
+          "M442.4 322H470.4V325.2H442.4Z"
+        ]
+      },
+      {
+        "x": 694.4,
+        "y": 348.4,
+        "width": 62.4,
+        "height": 19.2,
+        "id": "b2-central-stairs",
+        "shape": "M694.4 348.4H756.8V367.6H694.4Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 697.6,
+            "y": 350,
+            "width": 21.6,
+            "height": 16,
+            "direction": "horizontal",
+            "steps": 9
+          },
+          {
+            "x": 728.8,
+            "y": 350,
+            "width": 12.8,
+            "height": 16,
+            "direction": "horizontal",
+            "steps": 6
+          }
+        ],
+        "landings": [
+          "M694.4 348.4H697.6V367.6H694.4Z",
+          "M719.2 348.4H728.8V367.6H719.2Z",
+          "M741.6 348.4H756.8V367.6H741.6Z"
+        ]
+      },
+      {
+        "x": 388.8,
+        "y": 231.6,
+        "width": 45.6,
+        "height": 18.4,
+        "id": "b2-foyer-stairs",
+        "shape": "M388.8 231.6H434.4V250H388.8Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 396.8,
+            "y": 232.4,
+            "width": 20.8,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 8
+          },
+          {
+            "x": 396.8,
+            "y": 242,
+            "width": 12.8,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 5
+          }
+        ],
+        "landings": [
+          "M388.8 231.6H396.8V250H388.8Z",
+          "M417.6 231.6H434.4V250H417.6Z"
+        ]
+      },
+      {
+        "x": 301.6,
+        "y": 90.8,
+        "width": 37.6,
+        "height": 18.4,
+        "id": "b2-aula-core-stairs",
+        "shape": "M301.6 90.8H339.2V109.2H301.6Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 307.2,
+            "y": 91.6,
+            "width": 18.4,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 7
+          },
+          {
+            "x": 307.2,
+            "y": 101.2,
+            "width": 12.8,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 5
+          }
+        ],
+        "landings": [
+          "M301.6 90.8H307.2V109.2H301.6Z",
+          "M325.6 90.8H339.2V109.2H325.6Z"
+        ]
+      },
+      {
+        "x": 348,
+        "y": 468.4,
+        "width": 60.8,
+        "height": 16.8,
+        "id": "b2-south-west-stairs",
+        "shape": "M348 468.4H408.8V485.2H348Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 360,
+            "y": 469.2,
+            "width": 23.2,
+            "height": 7.2,
+            "direction": "horizontal",
+            "steps": 8
+          },
+          {
+            "x": 360,
+            "y": 478.8,
+            "width": 12,
+            "height": 5.6,
+            "direction": "horizontal",
+            "steps": 4
+          }
+        ],
+        "landings": [
+          "M348 468.4H360V485.2H348Z",
+          "M383.2 468.4H408.8V485.2H383.2Z"
+        ]
+      },
+      {
+        "x": 649.6,
+        "y": 468.4,
+        "width": 53.6,
+        "height": 24,
+        "id": "b2-south-stairs",
+        "shape": "M649.6 468.4H703.2V492.4H649.6Z",
+        "direction": "horizontal",
+        "flights": [
+          {
+            "x": 670.4,
+            "y": 469.2,
+            "width": 19.2,
+            "height": 8,
+            "direction": "horizontal",
+            "steps": 7
+          },
+          {
+            "x": 670.4,
+            "y": 479.6,
+            "width": 13.6,
+            "height": 6.4,
+            "direction": "horizontal",
+            "steps": 5
+          }
+        ],
+        "landings": [
+          "M649.6 468.4H670.4V492.4H649.6Z",
+          "M689.6 468.4H703.2V492.4H689.6Z"
+        ]
+      }
+    ],
+    "lifts": [
+      {
+        "x": 284.8,
+        "y": 90,
+        "width": 12.8,
+        "height": 20,
+        "coreId": "b2-lifts"
+      },
+      {
+        "x": 352.8,
+        "y": 230.8,
+        "width": 11.2,
+        "height": 18.4,
+        "coreId": "b2-foyer-lifts"
+      }
+    ],
+    "columns": [
+      {
+        "x": 941.6,
+        "y": 466,
+        "width": 4.8,
+        "height": 16
+      },
+      {
+        "x": 963.2,
+        "y": 466,
+        "width": 4.8,
+        "height": 16
+      }
+    ],
+    "landmarks": [
+      {
+        "shape": "M171.2 202.8H330.4V324.4L337.6 349.2H169.6Z",
+        "label": "Aula Magna volume",
+        "x": 225,
+        "y": 273.2,
+        "lines": [
+          "Aula",
+          "Magna",
+          "volume"
+        ]
+      }
+    ]
   }
 }

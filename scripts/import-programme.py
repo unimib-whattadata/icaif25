@@ -10,6 +10,7 @@ from collections import Counter
 from datetime import date, datetime, time
 import hashlib
 from html.parser import HTMLParser
+import importlib.util
 import json
 from pathlib import Path
 import re
@@ -298,8 +299,20 @@ def import_workbook(input_path, updated):
     sessions.sort(key=lambda session: (session["date"], session["start"]))
     days = [{"date": day, "label": date.fromisoformat(day).strftime("%A"),
              "subtitle": DAY_SUBTITLES[day]} for day in sorted(seen_days)]
-    return {"version": 1, "updated": updated, "timezone": TIMEZONE,
-            "days": days, "sessions": sessions}
+    programme = {"version": 1, "updated": updated, "timezone": TIMEZONE,
+                 "days": days, "sessions": sessions}
+    # The October 29 paper workbook supplies the session themes and assignments.
+    # Its reviewed timetable correction also schedules Barr and moves the first
+    # four oral sessions to 11:40, preserving their existing agenda identities.
+    assignments_path = ROOT / "data/programme-papers.json"
+    if assignments_path.exists():
+        spec = importlib.util.spec_from_file_location(
+            "programme_papers", ROOT / "scripts/import-programme-papers.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        assignments = json.loads(assignments_path.read_text(encoding="utf-8"))
+        programme = module.apply_programme_papers(programme, assignments)
+    return programme
 
 
 def main():

@@ -5,53 +5,96 @@
       "id": "ground",
       "name": "Ground floor",
       "short": "Ground",
-      "number": "G",
-      "description": "Explore the foyer and the building’s vertical connections.",
+      "number": "0",
+      "description": "Recognise the Aula Magna volume on the left and the foyer in front of it. The compact foyer core and the long side stair are separate connections.",
       "places": [
         {
           "id": "ground-foyer",
           "name": "Ground-floor foyer",
           "kind": "space",
-          "x": 360,
-          "y": 465,
-          "shape": "M112 405H320L381 390V450H570V520H415V475H335V520H112Z",
-          "description": "The open foyer area on the ground floor. The conference arrival point is still to be confirmed."
+          "x": 287.2,
+          "y": 399.6,
+          "shape": "M124.8 370H392.8V433.2H470.4V465.2H352.8V496.4H124.8Z",
+          "description": "The open ground-floor foyer in front of the Aula Magna volume.",
+          "mapLines": [
+            "Foyer"
+          ]
+        },
+        {
+          "id": "ground-main-stairs",
+          "name": "Main stairs",
+          "kind": "stairs",
+          "x": 536,
+          "y": 202,
+          "description": "The broad straight stair across the upper edge of the foyer, shown with its parallel runs and landing.",
+          "marker": {
+            "x": 580,
+            "y": 190
+          }
         },
         {
           "id": "ground-stairs",
-          "name": "Stairs",
+          "name": "Aula Magna stairs",
           "kind": "stairs",
-          "x": 354,
-          "y": 337,
-          "description": "Staircase beside the Aula Magna volume. Conference access between floors is still to be confirmed.",
-          "label": {
-            "x": 458,
-            "y": 337
+          "x": 373.6,
+          "y": 329.2,
+          "description": "The long flights beside the Aula Magna volume. They connect Ground with Level −1.",
+          "marker": {
+            "x": 445,
+            "y": 355
           }
         },
         {
           "id": "ground-lifts",
-          "name": "Lifts",
+          "name": "Aula Magna lift",
           "kind": "lift",
-          "x": 281,
-          "y": 110,
-          "description": "Lift core shown on the ground-floor plan. The route to the conference spaces is still to be confirmed.",
-          "label": {
-            "x": 281,
-            "y": -10
-          }
+          "x": 292,
+          "y": 100.4,
+          "description": "The lift behind the Aula Magna, beside a return staircase. The same shaft is shown on all three mapped floors."
         },
         {
           "id": "ground-wc",
           "name": "Toilets",
           "kind": "wc",
-          "x": 684,
-          "y": 407,
-          "description": "Toilet facilities shown beside the central service core.",
-          "label": {
-            "x": 815,
-            "y": 410
+          "x": 685.6,
+          "y": 396.4,
+          "description": "Toilets in the service core below the central opening.",
+          "marker": {
+            "x": 705,
+            "y": 420
           }
+        },
+        {
+          "id": "ground-foyer-lifts",
+          "name": "Foyer lift core",
+          "kind": "lift",
+          "x": 358.8,
+          "y": 240.8,
+          "description": "The lift at the left end of the compact foyer core, beside the small staircase and toilet cubicles.",
+          "marker": {
+            "x": 358.8,
+            "y": 240.8
+          }
+        },
+        {
+          "id": "ground-foyer-stairs",
+          "x": 404.8,
+          "y": 241.2,
+          "name": "Foyer stairs",
+          "kind": "stairs",
+          "description": "The small return staircase in the foyer core. It connects Ground, Level −1 and Level −2.",
+          "marker": {
+            "x": 440,
+            "y": 250
+          }
+        }
+      ],
+      "summary": "Floor 0 · Foyer · Aula Magna volume",
+      "notes": [
+        {
+          "label": "GUD Milano Bocconi",
+          "text": "Café on the ground floor.",
+          "source": "https://www.unibocconi.it/en/programs/phd/life-milan-and-life-campus"
         }
       ]
     },
@@ -60,61 +103,145 @@
       "name": "Level −1",
       "short": "Level −1",
       "number": "−1",
-      "description": "Locate the Aula Magna and the large foyer around it.",
+      "description": "Main Hall (Aula Magna) opens onto the foyer on the left. The side stair towards Ground, compact foyer stairs and stair beside the toilets are separate connections.",
       "places": [
         {
           "id": "aula-magna",
-          "name": "Aula Magna",
+          "name": "Main Hall",
+          "alias": "Aula Magna",
+          "mapLines": [
+            "Main",
+            "Hall"
+          ],
+          "programmeRooms": [
+            "Main Hall",
+            "Aula Magna"
+          ],
           "kind": "room",
-          "x": 225,
-          "y": 260,
-          "shape": "M151 117H317V142H337V165H296V316L288 342L295 368H152L159 342L130 334V327H151Z",
-          "description": "The auditorium is shown on this level, opening towards the surrounding foyer. Its programme name is still to be confirmed."
+          "x": 239.5,
+          "y": 241.4,
+          "shape": "M173.1 137.5H312.1V155.8H327.4V174.9H312.1V314.7L328.9 351.4H164.7L170.8 320.8H155.5V314.7H173.1Z",
+          "description": "Aula Magna, called Main Hall in the conference programme. The large auditorium on the left of this floor opens onto the foyer.",
+          "label": {
+            "x": 242,
+            "y": 250
+          }
         },
         {
           "id": "foyer",
           "name": "Foyer",
+          "programmeRooms": [
+            "Foyer"
+          ],
           "kind": "space",
-          "x": 425,
-          "y": 455,
-          "shape": "M80 400H625V465H570V530H415V485H335V530H80Z",
-          "description": "The large open space in front of and beside the Aula Magna. Registration, catering and poster positions are still to be confirmed."
+          "x": 351.8,
+          "y": 411.7,
+          "shape": "M127.2 375.8H469.5V429.3H630.7V463.7H580.2V503.4H425.9V462.9H355.6V503.4H127.2Z",
+          "description": "The broad open space in front of the Aula Magna, extending towards the central stairs and lifts.",
+          "label": {
+            "x": 400,
+            "y": 450
+          }
         },
         {
           "id": "b1-stairs",
-          "name": "Stairs",
+          "name": "Main stairs",
           "kind": "stairs",
-          "x": 505,
-          "y": 218,
-          "description": "The main staircase shown in the central part of this plan. Conference access between floors is still to be confirmed.",
-          "label": {
-            "x": 505,
-            "y": 120
+          "x": 535.9,
+          "y": 203.9,
+          "description": "The broad straight stair along the upper edge of the foyer, with the visible runs and landing kept distinct.",
+          "marker": {
+            "x": 580,
+            "y": 190
+          }
+        },
+        {
+          "id": "b1-central-stairs",
+          "name": "Central stairs",
+          "kind": "stairs",
+          "x": 723.1,
+          "y": 359.8,
+          "description": "The short stair immediately below the large central stepped structure and above the toilet service core.",
+          "marker": {
+            "x": 800,
+            "y": 365
           }
         },
         {
           "id": "b1-lifts",
-          "name": "Lifts",
+          "name": "Aula Magna lift",
           "kind": "lift",
-          "x": 275,
-          "y": 104,
-          "description": "Lift core shown beside the auditorium’s upper service area. Conference access is still to be confirmed.",
-          "label": {
-            "x": 275,
-            "y": -10
-          }
+          "x": 291.9,
+          "y": 99.7,
+          "description": "The lift behind the Aula Magna, beside a return staircase. The same shaft is shown on all three mapped floors."
         },
         {
           "id": "b1-wc",
           "name": "Toilets",
           "kind": "wc",
-          "x": 689,
-          "y": 417,
-          "description": "Toilet facilities shown beside the central service core.",
-          "label": {
-            "x": 744,
-            "y": 465
+          "x": 678,
+          "y": 401.8,
+          "description": "Toilets in the service core below the broad centre-right stair.",
+          "marker": {
+            "x": 705,
+            "y": 425
           }
+        },
+        {
+          "id": "b1-foyer-lifts",
+          "name": "Foyer lift core",
+          "kind": "lift",
+          "x": 360.2,
+          "y": 239.8,
+          "description": "The lift at the left end of the compact foyer core, beside the small staircase and toilet cubicles.",
+          "marker": {
+            "x": 360.2,
+            "y": 239.8
+          }
+        },
+        {
+          "id": "b1-side-stairs",
+          "x": 374.7,
+          "y": 335.3,
+          "name": "Aula Magna stairs",
+          "kind": "stairs",
+          "description": "The long flights beside the Aula Magna. These stairs lead up to Ground.",
+          "marker": {
+            "x": 330,
+            "y": 365
+          }
+        },
+        {
+          "id": "b1-toilet-stairs",
+          "x": 457.2,
+          "y": 316.2,
+          "name": "Stairs beside toilets",
+          "kind": "stairs",
+          "description": "The narrow staircase beside the central toilet block. It connects Level −1 and Level −2.",
+          "marker": {
+            "x": 450,
+            "y": 375
+          }
+        },
+        {
+          "id": "b1-foyer-stairs",
+          "x": 405.3,
+          "y": 240.6,
+          "name": "Foyer stairs",
+          "kind": "stairs",
+          "description": "The small return staircase in the foyer core. It connects Ground, Level −1 and Level −2.",
+          "marker": {
+            "x": 440,
+            "y": 250
+          }
+        }
+      ],
+      "summary": "Main Hall (Aula Magna) · foyer · floor connections",
+      "notes": [
+        {
+          "label": "Water refill",
+          "text": "Near the lifts.",
+          "source": "https://www.unibocconi.it/en/about-us/sustainability/drink-sustainably"
         }
       ]
     },
@@ -123,88 +250,288 @@
       "name": "Level −2",
       "short": "Level −2",
       "number": "−2",
-      "description": "Find the five rooms labelled AS01–AS05 in the supplied plan.",
+      "description": "AS05 and AS04 sit above the broad central stair; AS03, AS02 and AS01 run from top to bottom on the right. The foyer core and stair beside the toilets connect with the floor above.",
       "places": [
         {
           "id": "as01",
           "name": "AS01",
           "kind": "room",
-          "x": 893,
-          "y": 384,
-          "shape": "M862 355H937V414H862V403H850V369H862Z",
-          "description": "The bottom room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+          "x": 901.6,
+          "y": 394.8,
+          "shape": "M866.4 361.2H942.4V426.8H866.4V416.4H857.6V373.2H866.4Z",
+          "description": "The lower room in the group of three on the right. Its doors face the corridor on the left.",
+          "programmeRooms": [
+            "Room 1"
+          ],
+          "label": {
+            "x": 904.4,
+            "y": 394
+          }
         },
         {
           "id": "as02",
           "name": "AS02",
           "kind": "room",
-          "x": 893,
-          "y": 310,
-          "shape": "M862 279H937V341H862V328H850V291H862Z",
-          "description": "The middle room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+          "x": 901.6,
+          "y": 314.8,
+          "shape": "M866.4 285.2H942.4V347.6H866.4V337.2H857.6V296.4H866.4Z",
+          "description": "The middle room in the group of three on the right, between AS01 and AS03.",
+          "alias": "Deutsche Bank Room",
+          "programmeRooms": [
+            "Room 2"
+          ],
+          "label": {
+            "x": 904.4,
+            "y": 316.4
+          }
         },
         {
           "id": "as03",
           "name": "AS03",
           "kind": "room",
-          "x": 893,
-          "y": 233,
-          "shape": "M862 203H937V265H862V252H850V216H862Z",
-          "description": "The upper room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+          "x": 901.6,
+          "y": 235.6,
+          "shape": "M866.4 208.4H942.4V271.6H866.4V261.2H857.6V218.8H866.4Z",
+          "description": "The upper room in the group of three on the right, beside the AS04 end of the corridor.",
+          "programmeRooms": [
+            "Room 3"
+          ],
+          "label": {
+            "x": 904.4,
+            "y": 240
+          }
         },
         {
           "id": "as04",
           "name": "AS04",
           "kind": "room",
-          "x": 760,
-          "y": 204,
-          "shape": "M722 171H798V234H722V225H714V184H722Z",
-          "description": "The right-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."
+          "x": 768.8,
+          "y": 214.8,
+          "shape": "M733.6 183.6H808V247.6H733.6V239.6H727.2V192.4H733.6Z",
+          "description": "The right-hand room in the pair above the central stairwell, next to AS05.",
+          "label": {
+            "x": 770.8,
+            "y": 215.6
+          }
         },
         {
           "id": "as05",
           "name": "AS05",
           "kind": "room",
-          "x": 655,
-          "y": 204,
-          "shape": "M617 171H692V225H700V234H617Z",
-          "description": "The left-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."
+          "x": 668,
+          "y": 214.8,
+          "shape": "M631.2 183.6H703.2V239.6H708.8V247.6H631.2Z",
+          "description": "The left-hand room in the pair above the central stairwell, next to AS04.",
+          "label": {
+            "x": 667.2,
+            "y": 215.6
+          }
+        },
+        {
+          "id": "b2-foyer",
+          "name": "Central foyer",
+          "kind": "space",
+          "x": 545.6,
+          "y": 338,
+          "shape": "M492 250.8H629.6V363.6H536V379.6H492Z",
+          "description": "The open space between the foyer lift core and the corridor leading to AS01–AS05.",
+          "mapLines": [
+            "Foyer"
+          ],
+          "label": {
+            "x": 560,
+            "y": 298
+          }
         },
         {
           "id": "b2-stairs",
-          "name": "Stairs",
+          "name": "Main stairs",
           "kind": "stairs",
-          "x": 505,
+          "x": 550.4,
           "y": 190,
-          "description": "The staircase connection shown above the central open area. Conference access between floors is still to be confirmed.",
-          "label": {
-            "x": 505,
-            "y": 115
+          "description": "The short straight flight along the upper edge of the foyer, to the left of AS05.",
+          "marker": {
+            "x": 580,
+            "y": 190
+          }
+        },
+        {
+          "id": "b2-central-stairs",
+          "name": "Central stairs",
+          "kind": "stairs",
+          "x": 723.2,
+          "y": 358,
+          "description": "The short stair immediately below the large central stepped structure and above the toilet service core.",
+          "marker": {
+            "x": 800,
+            "y": 365
           }
         },
         {
           "id": "b2-lifts",
-          "name": "Lifts",
+          "name": "Aula Magna lift",
           "kind": "lift",
-          "x": 275,
-          "y": 89,
-          "description": "Lift core shown in the service area beside the auditorium volume. Conference access is still to be confirmed.",
-          "label": {
-            "x": 275,
-            "y": -10
-          }
+          "x": 291.2,
+          "y": 100,
+          "description": "The lift behind the Aula Magna, beside a return staircase. The same shaft is shown on all three mapped floors."
         },
         {
           "id": "b2-wc",
           "name": "Toilets",
           "kind": "wc",
-          "x": 684,
-          "y": 386,
-          "description": "Toilet facilities shown beside the central service core.",
-          "label": {
-            "x": 744,
-            "y": 450
+          "x": 681.6,
+          "y": 405.2,
+          "description": "Toilets in the service core below the broad centre-right stair.",
+          "marker": {
+            "x": 705,
+            "y": 425
           }
+        },
+        {
+          "id": "b2-foyer-lifts",
+          "name": "Foyer lift core",
+          "kind": "lift",
+          "x": 358.4,
+          "y": 240,
+          "description": "The lift at the left end of the compact foyer core, beside the small staircase and toilet cubicles.",
+          "marker": {
+            "x": 358.4,
+            "y": 240
+          }
+        },
+        {
+          "id": "b2-toilet-stairs",
+          "x": 456,
+          "y": 314,
+          "name": "Stairs beside toilets",
+          "kind": "stairs",
+          "description": "The narrow staircase beside the central toilet block. It connects Level −1 and Level −2.",
+          "marker": {
+            "x": 450,
+            "y": 375
+          }
+        },
+        {
+          "id": "b2-foyer-stairs",
+          "x": 409.6,
+          "y": 240.4,
+          "name": "Foyer stairs",
+          "kind": "stairs",
+          "description": "The small return staircase in the foyer core. It connects Ground, Level −1 and Level −2.",
+          "marker": {
+            "x": 440,
+            "y": 250
+          }
+        }
+      ],
+      "summary": "AS01–AS05 · conference rooms 1–3 · floor connections",
+      "notes": [
+        {
+          "label": "Water refill",
+          "text": "In front of rooms AS01–AS03.",
+          "source": "https://www.unibocconi.it/en/about-us/sustainability/drink-sustainably"
+        }
+      ]
+    }
+  ],
+  "orientationLabels": [
+    {
+      "text": "Viale Bligny",
+      "x": 31,
+      "y": 325,
+      "rotate": -82
+    },
+    {
+      "text": "Via G. Röntgen",
+      "x": 570,
+      "y": 588
+    }
+  ],
+  "connections": [
+    {
+      "id": "aula-magna-lift",
+      "name": "Aula Magna lift core",
+      "kind": "lift",
+      "stops": [
+        {
+          "floor": "ground",
+          "place": "ground-lifts"
+        },
+        {
+          "floor": "b1",
+          "place": "b1-lifts"
+        },
+        {
+          "floor": "b2",
+          "place": "b2-lifts"
+        }
+      ]
+    },
+    {
+      "id": "foyer-lift",
+      "name": "Foyer lift core",
+      "kind": "lift",
+      "stops": [
+        {
+          "floor": "ground",
+          "place": "ground-foyer-lifts"
+        },
+        {
+          "floor": "b1",
+          "place": "b1-foyer-lifts"
+        },
+        {
+          "floor": "b2",
+          "place": "b2-foyer-lifts"
+        }
+      ]
+    },
+    {
+      "id": "foyer-stairs-s7",
+      "name": "Foyer stairs · S7",
+      "kind": "stairs",
+      "stops": [
+        {
+          "floor": "ground",
+          "place": "ground-foyer-stairs"
+        },
+        {
+          "floor": "b1",
+          "place": "b1-foyer-stairs"
+        },
+        {
+          "floor": "b2",
+          "place": "b2-foyer-stairs"
+        }
+      ]
+    },
+    {
+      "id": "side-stairs-s41",
+      "name": "Side stairs · S41",
+      "kind": "stairs",
+      "stops": [
+        {
+          "floor": "ground",
+          "place": "ground-stairs"
+        },
+        {
+          "floor": "b1",
+          "place": "b1-side-stairs"
+        }
+      ]
+    },
+    {
+      "id": "toilet-stairs-s30",
+      "name": "Stairs beside toilets · S30",
+      "kind": "stairs",
+      "stops": [
+        {
+          "floor": "b1",
+          "place": "b1-toilet-stairs"
+        },
+        {
+          "floor": "b2",
+          "place": "b2-toilet-stairs"
         }
       ]
     }

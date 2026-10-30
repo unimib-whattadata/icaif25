@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-27",
+  "updated": "2026-10-30",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -554,52 +554,88 @@
       "href": ""
     },
     {
-      "id": "session-2026-11-16-1100-fa6e1e7b",
       "date": "2026-11-16",
       "start": "11:00",
-      "end": "13:00",
-      "title": "Oral Session 1",
-      "type": "oral-session",
+      "end": "11:30",
       "room": "Main Hall",
-      "detail": "6 presentations",
+      "id": "keynote-michael-barr",
+      "title": "Keynote: Michael Barr",
+      "type": "keynote",
+      "detail": "Governor of the Federal Reserve.",
       "pending": false,
       "href": ""
+    },
+    {
+      "id": "session-2026-11-16-1100-fa6e1e7b",
+      "date": "2026-11-16",
+      "start": "11:40",
+      "end": "13:00",
+      "title": "Oral Session 1: Generative Models of the Limit Order Book",
+      "type": "oral-session",
+      "room": "Main Hall",
+      "detail": "4 presentations",
+      "pending": false,
+      "href": "",
+      "paperIds": [
+        973,
+        1067,
+        1095,
+        772
+      ]
     },
     {
       "id": "session-2026-11-16-1100-84bb611c",
       "date": "2026-11-16",
-      "start": "11:00",
+      "start": "11:40",
       "end": "13:00",
-      "title": "Oral Session 2",
+      "title": "Oral Session 2: Market Making and Optimal Execution",
       "type": "oral-session",
       "room": "Room 1",
-      "detail": "6 presentations",
+      "detail": "4 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        329,
+        696,
+        959,
+        1016
+      ]
     },
     {
       "id": "session-2026-11-16-1100-e3c6ae03",
       "date": "2026-11-16",
-      "start": "11:00",
+      "start": "11:40",
       "end": "13:00",
-      "title": "Oral Session 3",
+      "title": "Oral Session 3: Language Models for Central Bank and Earnings Communication",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "6 presentations",
+      "detail": "4 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        134,
+        682,
+        1010,
+        397
+      ]
     },
     {
       "id": "session-2026-11-16-1100-baf4f8c4",
       "date": "2026-11-16",
-      "start": "11:00",
+      "start": "11:40",
       "end": "13:00",
-      "title": "Oral Session 4",
+      "title": "Oral Session 4: LLM Agents for Trading: Benchmarks, Governance and Evaluation",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "6 presentations",
+      "detail": "4 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        399,
+        1102,
+        290,
+        841
+      ]
     },
     {
       "id": "session-2026-11-16-1300-cc7b4be2",
@@ -630,60 +666,120 @@
       "date": "2026-11-16",
       "start": "15:00",
       "end": "16:00",
-      "title": "Oral Session 5",
+      "title": "Oral Session 5: Crypto and Decentralized Markets",
       "type": "oral-session",
       "room": "Main Hall",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        178,
+        271,
+        1079
+      ]
     },
     {
       "id": "session-2026-11-16-1500-6ce13ccb",
       "date": "2026-11-16",
       "start": "15:00",
       "end": "16:00",
-      "title": "Oral Session 6",
+      "title": "Oral Session 6: Derivatives: Hedging, Pricing and Option Surfaces",
       "type": "oral-session",
       "room": "Room 1",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        417,
+        512,
+        690
+      ]
     },
     {
       "id": "session-2026-11-16-1500-4b60594c",
       "date": "2026-11-16",
       "start": "15:00",
       "end": "16:00",
-      "title": "Oral Session 7",
+      "title": "Oral Session 7: Cross-Sectional Forecasting and Asset Ranking",
       "type": "oral-session",
       "room": "Room 2",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        244,
+        757,
+        762
+      ]
     },
     {
       "id": "session-2026-11-16-1500-4bedb909",
       "date": "2026-11-16",
       "start": "15:00",
       "end": "16:00",
-      "title": "Oral Session 8",
+      "title": "Oral Session 8: Risk and Volatility Forecasting",
       "type": "oral-session",
       "room": "Room 3",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        428,
+        531,
+        938
+      ]
     },
     {
       "id": "session-2026-11-16-1600-b11f9a03",
       "date": "2026-11-16",
       "start": "16:00",
       "end": "16:30",
-      "title": "Coffee Break + Poster Session 1",
+      "title": "Coffee Break + Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "40 posters",
+      "detail": "38 posters",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        70,
+        92,
+        121,
+        182,
+        198,
+        208,
+        223,
+        227,
+        251,
+        269,
+        300,
+        302,
+        307,
+        311,
+        318,
+        338,
+        348,
+        352,
+        379,
+        405,
+        418,
+        437,
+        441,
+        449,
+        455,
+        464,
+        470,
+        477,
+        490,
+        493,
+        497,
+        513,
+        514,
+        516,
+        533,
+        551,
+        654,
+        136
+      ]
     },
     {
       "id": "session-2026-11-16-1630-2a7abbbc",
@@ -774,60 +870,120 @@
       "date": "2026-11-17",
       "start": "10:00",
       "end": "11:00",
-      "title": "Oral Session 5",
+      "title": "Oral Session 9: Credit, Portfolio Decisions and Fraud Detection",
       "type": "oral-session",
       "room": "Main Hall",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        382,
+        697,
+        1039
+      ]
     },
     {
       "id": "session-2026-11-17-1000-8f035608",
       "date": "2026-11-17",
       "start": "10:00",
       "end": "11:00",
-      "title": "Oral Session 6",
+      "title": "Oral Session 10: Market Dynamics: Generation, Lead–Lag and Irreversibility",
       "type": "oral-session",
       "room": "Room 1",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        592,
+        994,
+        1060
+      ]
     },
     {
       "id": "session-2026-11-17-1000-f1f08be7",
       "date": "2026-11-17",
       "start": "10:00",
       "end": "11:00",
-      "title": "Oral Session 7",
+      "title": "Oral Session 11: Valuation and Disclosure in Private and Prediction Markets",
       "type": "oral-session",
       "room": "Room 2",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        250,
+        401,
+        467
+      ]
     },
     {
       "id": "session-2026-11-17-1000-df7b25ee",
       "date": "2026-11-17",
       "start": "10:00",
       "end": "11:00",
-      "title": "Oral Session 8",
+      "title": "Oral Session 12: Reliability of Foundation Models in Finance",
       "type": "oral-session",
       "room": "Room 3",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        392,
+        702,
+        974
+      ]
     },
     {
       "id": "session-2026-11-17-1100-04fc1ec0",
       "date": "2026-11-17",
       "start": "11:00",
       "end": "11:30",
-      "title": "Coffee Break + Poster Session 2",
+      "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "40 posters",
+      "detail": "38 posters",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        491,
+        494,
+        557,
+        566,
+        567,
+        568,
+        577,
+        588,
+        595,
+        602,
+        607,
+        616,
+        626,
+        627,
+        633,
+        639,
+        641,
+        642,
+        644,
+        645,
+        647,
+        649,
+        656,
+        670,
+        672,
+        680,
+        683,
+        742,
+        753,
+        756,
+        773,
+        777,
+        797,
+        815,
+        820,
+        834,
+        899,
+        918
+      ]
     },
     {
       "id": "session-2026-11-17-1130-c272ddcd",
@@ -906,60 +1062,120 @@
       "date": "2026-11-17",
       "start": "14:30",
       "end": "15:30",
-      "title": "Oral Session 9",
+      "title": "Oral Session 13: High-Frequency Signals and Time-Series Representations",
       "type": "oral-session",
       "room": "Main Hall",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        662,
+        609,
+        986
+      ]
     },
     {
       "id": "session-2026-11-17-1430-bb86f4ea",
       "date": "2026-11-17",
       "start": "14:30",
       "end": "15:30",
-      "title": "Oral Session 10",
+      "title": "Oral Session 14: Responsible AI: Bias, ESG and Compliance",
       "type": "oral-session",
       "room": "Room 2",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        1043,
+        732,
+        949
+      ]
     },
     {
       "id": "session-2026-11-17-1430-7d128ef8",
       "date": "2026-11-17",
       "start": "14:30",
       "end": "15:30",
-      "title": "Oral Session 11",
+      "title": "Oral Session 15: Learning from Market Data: Pipelines, Charts and Filtering",
       "type": "oral-session",
       "room": "Room 3",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        776,
+        941,
+        1034
+      ]
     },
     {
       "id": "session-2026-11-17-1430-97e6b91f",
       "date": "2026-11-17",
       "start": "14:30",
       "end": "15:30",
-      "title": "Oral Session 12",
+      "title": "Oral Session 16: Financial Crime, Compliance and Rare-Event Risk",
       "type": "oral-session",
       "room": "Room 1",
       "detail": "3 presentations",
       "pending": false,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        589,
+        591,
+        707
+      ]
     },
     {
       "id": "session-2026-11-17-1530-4e2fb9a9",
       "date": "2026-11-17",
       "start": "15:30",
       "end": "16:00",
-      "title": "Coffee Break + Poster Session 3",
+      "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "To be confirmed",
-      "detail": "40 posters",
+      "detail": "38 posters",
       "pending": true,
-      "href": ""
+      "href": "",
+      "paperIds": [
+        669,
+        685,
+        698,
+        722,
+        734,
+        775,
+        778,
+        788,
+        827,
+        836,
+        837,
+        850,
+        869,
+        870,
+        873,
+        875,
+        880,
+        897,
+        898,
+        909,
+        917,
+        927,
+        935,
+        939,
+        950,
+        961,
+        972,
+        984,
+        985,
+        998,
+        1007,
+        1027,
+        1044,
+        1050,
+        1061,
+        1074,
+        1092,
+        1106
+      ]
     },
     {
       "id": "session-2026-11-17-1600-fd612ee9",

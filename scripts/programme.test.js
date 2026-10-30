@@ -6,7 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {
   filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme,
-  groupTimelineStops, timelineIndexAtPosition,
+  groupTimelineStops, timelineIndexAtPosition, attachPapers, matchSession,
 } = require("../js/programme.js");
 
 const session = (id, overrides = {}) => ({
@@ -32,6 +32,146 @@ const programme = {
 };
 const ids = (selected) => selected.map((item) => item.id);
 const unfold = (calendar) => calendar.replace(/\r\n[ \t]/g, "");
+const readData = (file) => JSON.parse(fs.readFileSync(path.join(__dirname, `../data/${file}.json`), "utf8"));
+
+const acceptedFixture = {
+  groups: [
+    { id: "oral", papers: [
+      { id: 973, title: "Limit order book generation", authors: "José Silva (University of Milan)" },
+      { id: 1067, title: "Conditional diffusion models", authors: "Alex Chen (University of Oxford)" },
+    ] },
+    { id: "poster", papers: [
+      { id: 136, title: "FAAB: Multi-agent workflows", authors: "Zoë Martin (Research Lab)" },
+    ] },
+    { id: "proceedings-only", papers: [
+      { id: 111, title: "Proceedings contribution", authors: "Sam Lee (Research Lab)" },
+    ] },
+  ],
+};
+
+test("assigned papers make their session searchable by ID, title, author and affiliation", () => {
+  const original = {
+    ...programme,
+    sessions: [
+      session("oral", { type: "oral-session", paperIds: [1067, 973] }),
+      session("poster", { type: "poster-session", room: "Foyer", paperIds: [136] }),
+    ],
+  };
+  const enriched = attachPapers(original, acceptedFixture);
+  assert.deepEqual(enriched.sessions[0].papers.map((paper) => paper.id), [1067, 973], "retain the supplied presentation order");
+  for (const q of ["973", "limit order", "jose silva", "Milan"]) {
+    assert.deepEqual(ids(filterSessions(enriched.sessions, { q })), ["oral"]);
+  }
+  assert.deepEqual(ids(filterSessions(enriched.sessions, { q: "zoe FAAB", room: "Foyer" })), ["poster"]);
+  assert.deepEqual(filterSessions(enriched.sessions, { q: "973", type: "poster-session" }), []);
+  assert.equal(original.sessions[0].papers, undefined, "enrichment must not mutate the source programme");
+});
+
+test("context queries keep the complete session available without treating every paper as a result", () => {
+  const oral = attachPapers({
+    ...programme,
+    sessions: [session("oral", { type: "oral-session", paperIds: [973, 1067] })],
+  }, acceptedFixture).sessions[0];
+  for (const query of [" \t\n ", "  WORKSHOP   ai ", "oral SESSION", "Room 1 08:30"]) {
+    const result = matchSession(oral, query);
+    assert.equal(result.matches, true, `${query} must still find the session`);
+    assert.equal(result.contextMatch, true, `${query} is satisfied by the session's own fields`);
+    assert.deepEqual(result.paperMatches, [], "context-only searches do not force a paper-result list");
+  }
+  const keynote = matchSession(announcement("capponi"), "CAPponi morning columbia");
+  assert.equal(keynote.matches, true, "untimed announcements remain searchable through their own context");
+  assert.equal(keynote.contextMatch, true);
+  assert.deepEqual(keynote.paperMatches, []);
+});
+
+test("paper results combine one paper's title and authors with its session context", () => {
+  const oral = attachPapers({
+    ...programme,
+    sessions: [session("oral", { type: "oral-session", paperIds: [973, 1067] })],
+  }, acceptedFixture).sessions[0];
+  for (const [query, expected] of [
+    [" Room 1  JOSE   generation ", 973],
+    ["JOSÉ university MILAN", 973],
+    ["diffusion oxford", 1067],
+  ]) {
+    const result = matchSession(oral, query);
+    assert.equal(result.matches, true);
+    assert.equal(result.contextMatch, false);
+    assert.deepEqual(result.paperMatches.map((paper) => paper.id), [expected]);
+  }
+});
+
+test("search does not combine unrelated papers to satisfy one query", () => {
+  const oral = attachPapers({
+    ...programme,
+    sessions: [session("oral", { type: "oral-session", paperIds: [973, 1067] })],
+  }, acceptedFixture).sessions[0];
+  for (const query of ["jose diffusion", "973 1067", "Milan Oxford"]) {
+    const result = matchSession(oral, query);
+    assert.equal(result.matches, false, `${query} needs facts from two different papers`);
+    assert.equal(result.contextMatch, false);
+    assert.deepEqual(result.paperMatches, []);
+    assert.deepEqual(filterSessions([oral], { q: query }), []);
+  }
+});
+
+test("the paper 1044 search isolates its contribution inside the real 38-paper poster session", () => {
+  const data = attachPapers(readData("programme"), readData("accepted-papers"));
+  const matchingSessions = filterSessions(data.sessions, { day: "all", q: "1044" });
+  assert.equal(matchingSessions.length, 1);
+  const poster = matchingSessions[0];
+  assert.equal(poster.type, "poster-session");
+  assert.equal(poster.papers.length, 38);
+  const result = matchSession(poster, "1044");
+  assert.equal(result.contextMatch, false);
+  assert.deepEqual(result.paperMatches.map((paper) => paper.id), [1044]);
+  assert.equal(result.paperMatches[0].title, poster.papers.find((paper) => paper.id === 1044).title);
+});
+
+test("precise paper results still intersect day, category, room and saved agenda filters", () => {
+  const data = attachPapers({
+    ...programme,
+    sessions: [
+      session("oral", { type: "oral-session", paperIds: [973] }),
+      session("other", { type: "oral-session", date: "2026-11-15", room: "Room 2", paperIds: [1067] }),
+    ],
+  }, acceptedFixture);
+  const filters = { day: "2026-11-14", type: "oral-session", room: "Room 1", q: "973", saved: true };
+  assert.deepEqual(ids(filterSessions(data.sessions, filters, ["oral"])), ["oral"]);
+  for (const changed of [{ day: "2026-11-15" }, { type: "poster-session" }, { room: "Room 2" }]) {
+    assert.deepEqual(filterSessions(data.sessions, { ...filters, ...changed }, ["oral"]), []);
+  }
+  assert.deepEqual(filterSessions(data.sessions, filters, ["other"]), []);
+  assert.deepEqual(filterSessions(data.sessions, filters, []), []);
+});
+
+test("paper assignments reject unknown IDs, repeated papers and the wrong presentation category", () => {
+  const withSessions = (...items) => ({ ...programme, sessions: items });
+  const oral = (id, paperIds) => session(id, { type: "oral-session", paperIds });
+  for (const invalid of [
+    withSessions(oral("missing", [999999])),
+    withSessions(oral("duplicate", [973, 973])),
+    withSessions(oral("first", [973]), oral("second", [973])),
+    withSessions(oral("wrong-category", [136])),
+    withSessions(session("poster", { type: "poster-session", paperIds: [973] })),
+    withSessions(oral("proceedings", [111])),
+  ]) {
+    assert.throws(() => attachPapers(invalid, acceptedFixture), /paper|assignment/i);
+  }
+});
+
+test("calendar descriptions carry the selected session's papers and authors", () => {
+  const enriched = attachPapers({
+    ...programme,
+    sessions: [session("oral", { type: "oral-session", paperIds: [973] })],
+  }, acceptedFixture);
+  const calendar = unfold(buildCalendar(enriched.sessions));
+  assert.equal((calendar.match(/BEGIN:VEVENT/g) || []).length, 1, "papers remain inside their session event");
+  assert.match(calendar, /DESCRIPTION:[^\r\n]*973[^\r\n]*Limit order book generation/);
+  assert.ok(calendar.includes("José Silva (University of Milan)"));
+  assert.ok(!calendar.includes("Conditional diffusion models"));
+  assert.ok(!calendar.includes("FAAB: Multi-agent workflows"));
+});
 
 test("search ignores accents, case and repeated whitespace, including speaker details", () => {
   assert.deepEqual(ids(filterSessions(sessions, { q: "  STRATEGIE   financiere " })), ["a"]);
@@ -227,8 +367,8 @@ test("optional announcements validate separately and share the programme's uniqu
 });
 
 test("the checked-in programme is valid and every scheduled event can be exported", () => {
-  const data = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme.json"), "utf8"));
-  const announcements = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme-announcements.json"), "utf8"));
+  const data = attachPapers(readData("programme"), readData("accepted-papers"));
+  const announcements = readData("programme-announcements");
   data.announcements = announcements;
   assert.equal(validateProgramme(data), data);
   const calendar = buildCalendar(data.sessions);
@@ -244,6 +384,36 @@ test("the checked-in programme is valid and every scheduled event can be exporte
   }
 });
 
+test("the public timetable assigns every oral and poster paper once with the supplied themes", () => {
+  const accepted = readData("accepted-papers");
+  const data = attachPapers(readData("programme"), accepted);
+  const assignments = readData("programme-papers");
+  const oral = data.sessions.filter((item) => item.type === "oral-session");
+  const poster = data.sessions.filter((item) => item.type === "poster-session" && item.paperIds?.length);
+  assert.equal(oral.length, 16);
+  assert.deepEqual(oral.map((item) => Number(item.title.match(/^Oral Session (\d+):/)[1])),
+    Array.from({ length: 16 }, (_, index) => index + 1));
+  assert.deepEqual(oral.map((item) => item.paperIds.length), [4, 4, 4, 4, ...Array(12).fill(3)]);
+  assert.deepEqual(poster.map((item) => item.paperIds.length), [38, 38, 38]);
+
+  for (const [items, groupId, expectedCount] of [[oral, "oral", 52], [poster, "poster", 114]]) {
+    const assignedIds = items.flatMap((item) => item.paperIds);
+    const acceptedIds = accepted.groups.find((group) => group.id === groupId).papers.map((paper) => paper.id);
+    assert.equal(assignedIds.length, expectedCount);
+    assert.equal(new Set(assignedIds).size, expectedCount, "a paper must not appear in two programme events");
+    assert.deepEqual([...assignedIds].sort((a, b) => a - b), acceptedIds.sort((a, b) => a - b));
+    for (const item of items) {
+      const source = assignments.groups.find((group) => group.paperIds.length === item.paperIds.length &&
+        group.paperIds.every((id, index) => id === item.paperIds[index]));
+      assert.ok(source, `${item.title} must preserve its source assignment and order`);
+      assert.ok(item.title.includes(source.title), `${item.title} must include its supplied session theme`);
+    }
+  }
+
+  assert.ok(poster.find((item) => item.paperIds.includes(136)), "the corrected FAAB paper remains a poster");
+  assert.ok(data.sessions.filter((item) => !item.paperIds?.length).every((item) => !item.papers?.length));
+});
+
 test("organizer updates retain confirmed keynote days and one Monday central-banking panel", () => {
   const data = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme.json"), "utf8"));
   const announcements = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/programme-announcements.json"), "utf8"));
@@ -251,7 +421,18 @@ test("organizer updates retain confirmed keynote days and one Monday central-ban
   assert.equal(capponi.date, "2026-11-15");
   assert.equal(capponi.start, "11:00");
   assert.ok(!announcements.some((item) => item.id === "keynote-agostino-capponi"));
-  assert.equal(announcements.find((item) => item.id === "keynote-michael-barr").date, "2026-11-16");
+  assert.ok(!announcements.some((item) => item.id === "keynote-michael-barr"));
+  const barr = data.sessions.find((item) => item.id === "keynote-michael-barr");
+  assert.equal(barr.title, "Keynote: Michael Barr");
+  assert.equal(barr.date, "2026-11-16");
+  assert.equal(barr.start, "11:00");
+  assert.equal(barr.end, "11:30");
+  assert.equal(barr.room, "Main Hall");
+  const firstOrals = data.sessions.filter((item) => item.date === "2026-11-16" &&
+    /^Oral Session [1-4]:/.test(item.title));
+  assert.equal(firstOrals.length, 4);
+  assert.ok(firstOrals.every((item) => item.start === "11:40" && item.end === "13:00"));
+  assert.equal(findConflicts([barr, ...firstOrals.slice(0, 1)]).size, 0, "Barr must end before the oral sessions begin");
   const afternoonPanels = data.sessions.filter((item) =>
     item.date === "2026-11-16" && item.type === "panel" && item.start >= "12:00");
   assert.equal(afternoonPanels.length, 1);

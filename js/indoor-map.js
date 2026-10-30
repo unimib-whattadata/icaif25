@@ -10,6 +10,7 @@
   const status = explorer.querySelector('[data-indoor-status]');
   const floorById = new Map(data.floors.map(floor => [floor.id, floor]));
   const places = new Map(data.floors.flatMap(floor => floor.places.map(place => [place.id, { ...place, floor }])));
+  const connectionByPlace = new Map((data.connections || []).flatMap(connection => connection.stops.map(stop => [stop.place, connection])));
   let floorId = data.defaultFloor;
   let selected = null;
   let zoom = 1;
@@ -18,6 +19,7 @@
 
   function currentPanel() { return panels.find(panel => panel.dataset.floorPanel === floorId); }
   function currentViewport() { return currentPanel().querySelector('.indoor-viewport'); }
+  function readingZoom() { return Math.max(1, Math.min(3, 900 / currentViewport().clientWidth)); }
   function updateUrl() {
     const url = new URL(location.href);
     url.searchParams.set('floor', floorId);
@@ -30,21 +32,51 @@
     const svg = viewport.querySelector('svg');
     const box = svg.viewBox.baseVal;
     const fittedWidth = Math.min(viewport.clientWidth, viewport.clientHeight * box.width / box.height);
-    const width = Math.max(fittedWidth, 700) * zoom;
+    const width = fittedWidth * zoom;
     svg.style.width = `${width}px`;
-    explorer.querySelector('[data-indoor-zoom="in"]').disabled = zoom >= 2.5;
+    viewport.classList.toggle('is-pannable', width > viewport.clientWidth + 1);
+    const scale = width / box.width;
+    // Labels use screen pixels independently of the drawing's zoom. Small
+    // rooms retain their padding; zooming enlarges the plan rather than the type.
+    const detail = scale >= .72;
+    svg.style.setProperty('--indoor-label-scale', 1 / scale);
+    svg.style.setProperty('--indoor-room-font-size', `${Math.max(16, Math.min(20, 22 * scale))}px`);
+    svg.style.setProperty('--indoor-programme-font-size', `${Math.max(14, Math.min(15, 18 * scale))}px`);
+    svg.style.setProperty('--indoor-service-scale', Math.min(1, Math.max(detail ? .72 : .52, scale)) / scale);
+    svg.classList.toggle('is-detail-view', detail);
+    explorer.querySelector('[data-indoor-zoom="in"]').disabled = zoom >= 3;
     explorer.querySelector('[data-indoor-zoom="out"]').disabled = zoom <= 1;
   }
   function centerPlace() {
-    const place = places.get(selected);
+    const rooms = floorById.get(floorId).places.filter(place => place.kind === 'room');
+    const place = places.get(selected) || (zoom > 1 ? (rooms.length ? { x: rooms.reduce((sum, room) => sum + room.x, 0) / rooms.length, y: rooms.reduce((sum, room) => sum + room.y, 0) / rooms.length } : floorById.get(floorId).places.find(place => place.shape)) : null);
     if (!place) return;
     const viewport = currentViewport();
     const svg = viewport.querySelector('svg');
     const box = svg.viewBox.baseVal;
     const scale = svg.getBoundingClientRect().width / box.width;
-    const x = (place.x + (place.label?.x ?? place.x)) / 2;
-    const y = (place.y + (place.label?.y ?? place.y)) / 2;
-    viewport.scrollTo({ left: Math.max(0, (x - box.x) * scale - viewport.clientWidth / 2), top: Math.max(0, (y - box.y) * scale - viewport.clientHeight / 2), behavior: 'instant' });
+    // The AS rooms fit together on a phone at the reading scale. Keep their
+    // neighbours in view rather than centring an end room against the edge.
+    const focusX = viewport.clientWidth < 640 && /^AS\d+$/.test(place.name || '')
+      ? (Math.min(...rooms.map(room => room.x)) + Math.max(...rooms.map(room => room.x))) / 2
+      : place.x;
+    const offsetX = Math.max(0, (viewport.clientWidth - svg.getBoundingClientRect().width) / 2);
+    const offsetY = Math.max(0, (viewport.clientHeight - svg.getBoundingClientRect().height) / 2);
+    viewport.scrollTo({ left: Math.max(0, offsetX + (focusX - box.x) * scale - viewport.clientWidth / 2), top: Math.max(0, offsetY + (place.y - box.y) * scale - viewport.clientHeight / 2), behavior: 'instant' });
+  }
+  function clearSelection() {
+    selected = null;
+    copyRequest++;
+    const panel = currentPanel();
+    panel.querySelectorAll('[data-place], [data-place-choice]').forEach(element => element.setAttribute('aria-pressed', 'false'));
+    panel.querySelector('[data-detail-name]').textContent = 'Floor overview';
+    panel.querySelector('[data-detail-copy]').textContent = floorById.get(floorId).description;
+    panel.querySelector('[data-copy-place]').hidden = true;
+    panel.querySelector('[data-selection-note]').hidden = true;
+    panel.querySelector('[data-place-select]').value = '';
+    panel.querySelector('[data-floor-links]').hidden = true;
+    panel.querySelector('[data-connection-actions]').replaceChildren();
+    panel.querySelector('.indoor-share-fallback')?.remove();
   }
   function selectPlace(id, writeUrl = true, center = true) {
     const place = places.get(id);
@@ -56,19 +88,47 @@
       const active = (element.dataset.place || element.dataset.placeChoice) === id;
       element.setAttribute('aria-pressed', String(active));
     });
-    panel.querySelector('[data-detail-name]').textContent = place.name;
+    panel.querySelector('[data-detail-name]').textContent = [...new Set([place.name, ...(place.programmeRooms || []), place.alias].filter(Boolean))].join(' · ');
     panel.querySelector('[data-detail-copy]').textContent = place.description;
+    panel.querySelector('[data-selection-note]').hidden = false;
+    panel.querySelector('[data-place-select]').value = id;
+    const connection = connectionByPlace.get(id);
+    panel.querySelector('[data-selection-note]').hidden = Boolean(connection);
+    const links = panel.querySelector('[data-floor-links]');
+    const actions = panel.querySelector('[data-connection-actions]');
+    actions.replaceChildren();
+    links.hidden = !connection;
+    if (connection) {
+      panel.querySelector('[data-connection-label]').textContent = `Same ${connection.kind === 'lift' ? 'lift' : 'stair'} core on`;
+      connection.stops.filter(stop => stop.floor !== floorId).forEach(stop => {
+        const target = places.get(stop.place);
+        const link = document.createElement('a');
+        link.className = 'btn indoor-connection-link';
+        link.href = `?floor=${stop.floor}&place=${stop.place}#inside-building`;
+        link.dataset.floorStop = stop.place;
+        link.textContent = target.floor.short;
+        link.setAttribute('aria-label', `Show ${target.name} on ${target.floor.name}`);
+        actions.append(link);
+      });
+    }
     const copy = panel.querySelector('[data-copy-place]');
     copy.hidden = false;
     copy.textContent = 'Copy place link';
     panel.querySelector('.indoor-share-fallback')?.remove();
     status.textContent = `${place.name}, ${place.floor.name}, selected.`;
+    // Connection links change the available canvas height in the expanded view.
+    sizePlan();
     if (center) centerPlace();
     if (writeUrl) updateUrl();
   }
   function activatePlace(element) {
-    selectPlace(element.dataset.place || element.dataset.placeChoice);
-    if (element.dataset.placeChoice && window.matchMedia('(max-width: 1023px)').matches) {
+    const fromDirectory = element.matches('[data-place-choice], [data-place-select]');
+    if (fromDirectory && window.matchMedia('(max-width: 639px)').matches) {
+      zoom = Math.max(zoom, readingZoom());
+      sizePlan();
+    }
+    selectPlace(element.dataset.place || element.dataset.placeChoice || element.value);
+    if (fromDirectory) {
       currentViewport().scrollIntoView({ block: 'center', behavior: 'instant' });
     }
   }
@@ -78,6 +138,9 @@
     zoom = 1;
     selected = null;
     panels.forEach(panel => { panel.hidden = panel.dataset.floorPanel !== id; });
+    // Start small screens at a scale that keeps full names readable; Whole floor
+    // remains the explicit compact overview.
+    zoom = readingZoom();
     floorChoices.forEach(choice => {
       const active = choice.dataset.floorChoice === id;
       choice.setAttribute('aria-pressed', String(active));
@@ -86,13 +149,25 @@
     sizePlan();
     const floor = floorById.get(id);
     const candidate = places.get(placeId);
-    selectPlace(candidate?.floor.id === id ? placeId : floor.places[0].id, false);
+    if (candidate?.floor.id === id) selectPlace(placeId, false);
+    else {
+      clearSelection();
+      currentViewport().scrollTo({ left: 0, top: 0, behavior: 'instant' });
+      centerPlace();
+      status.textContent = `${floor.name}. ${zoom > 1 ? 'Scroll to explore the floor.' : 'Whole floor shown.'}`;
+    }
     if (writeUrl) updateUrl();
   }
   function readUrl() {
     const params = new URLSearchParams(location.search);
     const place = places.get(params.get('place'));
     showFloor(place?.floor.id || (floorById.has(params.get('floor')) ? params.get('floor') : data.defaultFloor), place?.id, false);
+    if (place && (location.hash === '#inside-building' || location.hash === `#map-place-${place.id}`)) {
+      requestAnimationFrame(() => {
+        currentViewport().scrollIntoView({ block: 'center', behavior: 'instant' });
+        document.getElementById(`map-place-${place.id}`).focus({ preventScroll: true });
+      });
+    }
   }
 
   explorer.classList.add('is-enhanced');
@@ -103,6 +178,20 @@
   });
   explorer.querySelectorAll('[data-place-choice]').forEach(choice => { choice.setAttribute('role', 'button'); });
   explorer.querySelector('.indoor-tools').hidden = false;
+  explorer.querySelectorAll('.indoor-quick-find').forEach(control => { control.hidden = false; });
+  explorer.querySelectorAll('[data-place-select]').forEach(control => {
+    control.addEventListener('change', () => {
+      if (control.value) activatePlace(control);
+      else {
+        zoom = 1;
+        clearSelection();
+        sizePlan();
+        currentViewport().scrollTo({ left: 0, top: 0, behavior: 'instant' });
+        updateUrl();
+        status.textContent = `${floorById.get(floorId).name}. Whole floor shown.`;
+      }
+    });
+  });
   floorChoices.forEach(choice => {
     choice.setAttribute('role', 'button');
     choice.setAttribute('aria-controls', `floor-${choice.dataset.floorChoice}`);
@@ -112,15 +201,36 @@
     });
   });
   explorer.addEventListener('click', async event => {
+    const stop = event.target.closest('[data-floor-stop]');
+    if (stop) {
+      const target = places.get(stop.dataset.floorStop);
+      if (!target) return;
+      event.preventDefault();
+      const previousZoom = zoom;
+      showFloor(target.floor.id, target.id);
+      zoom = previousZoom;
+      sizePlan();
+      centerPlace();
+      document.getElementById(`map-place-${target.id}`).focus({ preventScroll: true });
+      currentViewport().scrollIntoView({ block: 'center', behavior: 'instant' });
+      return;
+    }
     const place = event.target.closest('[data-place], [data-place-choice]');
     if (place) { event.preventDefault(); activatePlace(place); return; }
     const control = event.target.closest('[data-indoor-zoom]');
     if (control) {
       const action = control.dataset.indoorZoom;
-      zoom = action === 'reset' ? 1 : Math.max(1, Math.min(2.5, zoom + (action === 'in' ? .5 : -.5)));
+      zoom = action === 'reset' ? 1 : Math.max(1, Math.min(3, zoom + (action === 'in' ? .5 : -.5)));
       sizePlan();
-      centerPlace();
-      status.textContent = `Floor plan zoom: ${Math.round(zoom * 100)}%.`;
+      if (action === 'reset') {
+        clearSelection();
+        currentViewport().scrollTo({ left: 0, top: 0, behavior: 'instant' });
+        updateUrl();
+        status.textContent = `${floorById.get(floorId).name}. Whole floor shown.`;
+      } else {
+        centerPlace();
+        status.textContent = `Floor plan zoom: ${Math.round(zoom * 100)}%.`;
+      }
       return;
     }
     const copy = event.target.closest('[data-copy-place]');
@@ -172,7 +282,7 @@
       closeButton.className = 'btn';
       closeButton.textContent = 'Close map';
       closeForm.append(closeButton);
-      explorer.append(closeForm);
+      explorer.querySelector('.indoor-tools').append(closeForm);
       explorer.classList.add('modal-box');
       dialog.append(explorer);
       document.body.append(dialog);
@@ -197,6 +307,14 @@
     cancelAnimationFrame(resizeFrame);
     resizeFrame = requestAnimationFrame(() => { sizePlan(); centerPlace(); });
   });
+  if (typeof ResizeObserver !== 'undefined') {
+    const canvasResize = new ResizeObserver(entries => {
+      if (!entries.some(entry => entry.target === currentViewport())) return;
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => { sizePlan(); centerPlace(); });
+    });
+    panels.forEach(panel => canvasResize.observe(panel.querySelector('.indoor-viewport')));
+  }
   window.addEventListener('popstate', readUrl);
   readUrl();
 })();

@@ -4,9 +4,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
-const data = JSON.parse(fs.readFileSync(path.join(root, 'data/programme.json'), 'utf8'));
+const { attachPapers, validateProgramme } = require('../js/programme.js');
+const data = attachPapers(
+  JSON.parse(fs.readFileSync(path.join(root, 'data/programme.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'data/accepted-papers.json'), 'utf8')),
+);
 data.announcements = JSON.parse(fs.readFileSync(path.join(root, 'data/programme-announcements.json'), 'utf8'));
-require('../js/programme.js').validateProgramme(data);
+validateProgramme(data);
 const destination = path.join(root, 'programme.html');
 const typeLabels = {
   workshop: 'Workshop', tutorial: 'Tutorial', keynote: 'Keynote', panel: 'Panel',
@@ -17,9 +21,50 @@ const typeLabels = {
 };
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rooms = ['Main Hall', 'Room 1', 'Room 2', 'Room 3', 'Foyer'];
+const venue = JSON.parse(fs.readFileSync(path.join(root, 'data/venue-floors.json'), 'utf8'));
+const mappedRooms = new Map();
+for (const floor of venue.floors) {
+  for (const place of floor.places.filter(place => place.shape)) {
+    for (const name of new Set([place.name, place.alias, ...(place.programmeRooms || [])].filter(Boolean))) {
+      if (mappedRooms.has(name)) throw new Error(`Ambiguous programme room: ${name}`);
+      mappedRooms.set(name, { floor, place });
+    }
+  }
+}
 const roomRank = room => rooms.includes(room) ? rooms.indexOf(room) : rooms.length;
 const dateLabel = date => new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome', weekday:'long', day:'numeric', month:'long'}).format(new Date(`${date}T12:00:00+01:00`));
 const updatedLabel = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${data.updated}T12:00:00+01:00`));
+
+function renderRoom(room) {
+  const target = mappedRooms.get(room);
+  if (!target) return escape(room === 'To be confirmed' ? 'Room to be confirmed' : room);
+  const { floor, place } = target;
+  const name = place.alias ? `${place.name} (${place.alias})` : place.name;
+  const href = `/venue/?floor=${encodeURIComponent(floor.id)}&place=${encodeURIComponent(place.id)}#inside-building`;
+  return `<a class="link programme-room-link" href="${escape(href)}" aria-label="${escape(room)}: show ${escape(name)} on the ${escape(floor.name)} map">${escape(room)}</a>`;
+}
+
+function renderPapers(session) {
+  if (!session.papers?.length) return '';
+  return `<details class="collapse collapse-arrow programme-papers">
+                  <summary class="collapse-title"><span data-programme-papers-label>View ${session.papers.length} papers &amp; authors</span></summary>
+                  <div class="collapse-content">
+                    <div class="programme-paper-search-tools" data-programme-paper-search-tools hidden>
+                      <p data-programme-paper-search-note></p>
+                      <button type="button" class="btn programme-all-papers" data-programme-all-papers>Show all papers</button>
+                    </div>
+                    <ol class="programme-paper-list">
+${session.papers.map(paper => `                      <li data-programme-paper="${paper.id}">
+                        <span class="programme-paper-id">Paper ${paper.id}</span>
+                        <div class="programme-paper-copy">
+                          <a class="link programme-paper-title" href="/accepted-papers/#paper-${paper.id}">${escape(paper.title)}</a>
+                          <p class="programme-paper-authors">${escape(paper.authors)}</p>
+                        </div>
+                      </li>`).join('\n')}
+                    </ol>
+                  </div>
+                </details>`;
+}
 
 function renderSession(session) {
   const title = session.href
@@ -29,18 +74,23 @@ function renderSession(session) {
     ? 'Session themes, papers and authors to be announced.'
     : session.pending && !/to be confirmed/i.test(session.detail) ? 'Details to be confirmed' : '';
   return `              <article id="${escape(session.id)}" class="programme-session" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">
+                <div class="programme-session-overview">
                 <div class="programme-session-meta">
-                  <p class="programme-room">${escape(session.room)}</p>
+                  <p class="programme-room">${renderRoom(session.room)}</p>
                   <span class="badge programme-type">${escape(typeLabels[session.type])}</span>
                 </div>
+                <div class="programme-session-body">
                 <h4 class="programme-session-title">${title}</h4>
                 <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
-                ${session.detail ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
+                ${session.detail && !session.papers?.length ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
                 ${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
+                </div>
                 <div class="programme-session-actions">
                   <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>
                 </div>
+                </div>
+                ${renderPapers(session)}
               </article>`;
 }
 
@@ -50,7 +100,7 @@ function renderAnnouncement(announcement) {
     : escape(announcement.title);
   return `            <article id="${escape(announcement.id)}" class="programme-session" data-programme-announcement="${escape(announcement.id)}" data-type="${escape(announcement.type)}">
               <div class="programme-session-meta">
-                <p class="programme-room">${escape(announcement.room === 'To be confirmed' ? 'Room to be confirmed' : announcement.room)}</p>
+                <p class="programme-room">${renderRoom(announcement.room)}</p>
                 <span class="badge programme-type">${escape(typeLabels[announcement.type])}</span>
               </div>
               <h3 class="programme-session-title">${title}</h3>
@@ -129,10 +179,8 @@ const main = `    <main id="main-content" tabindex="-1">
         <div class="hero-content page-header-content programme-header">
           <div class="max-w-3xl">
             <h1 class="page-title">Conference programme</h1>
-            <p class="page-lead">Find your sessions and build your ICAIF '26 agenda.</p>
             <p class="programme-header-meta">14–17 November 2026 <span aria-hidden="true">·</span> All times CET (UTC+1)</p>
           </div>
-          <span class="badge programme-preliminary">Preliminary programme</span>
         </div>
       </section>
 
@@ -143,28 +191,30 @@ const main = `    <main id="main-content" tabindex="-1">
 ${dayButtons}
               <button type="button" class="btn programme-date programme-all-dates" data-programme-date="all" aria-pressed="false">All days</button>
             </div>
-            <p class="programme-timezone">Milan time · CET (UTC+1)</p>
           </div>
         </div>
         <div class="site-container programme-filter-container">
           <form data-programme-filters class="programme-filters" role="search" aria-label="Filter the conference programme">
             <div class="programme-search-field">
               <label for="programme-search">Search the programme</label>
-              <input id="programme-search" type="search" class="input w-full" placeholder="Title, topic or speaker…" autocomplete="off" data-programme-search>
+              <input id="programme-search" type="search" class="input w-full" placeholder="Paper ID, title or author…" autocomplete="off" data-programme-search>
             </div>
-            <div>
+            <button type="button" class="btn programme-filter-toggle" aria-controls="programme-extra-filters" aria-expanded="false" data-programme-filter-toggle>Filters <span class="badge" data-programme-filter-count hidden>0</span></button>
+            <div id="programme-extra-filters" class="programme-extra-filters" data-programme-extra-filters>
+              <div>
               <label for="programme-type">Session type</label>
               <select id="programme-type" class="select w-full" data-programme-type>
                 <option value="all">All types</option>
 ${typeOptions}
               </select>
-            </div>
-            <div>
+              </div>
+              <div>
               <label for="programme-room">Room or venue</label>
               <select id="programme-room" class="select w-full" data-programme-room>
                 <option value="all">All locations</option>
 ${roomOptions}
               </select>
+              </div>
             </div>
             <button type="submit" class="sr-only" tabindex="-1">Search programme</button>
           </form>
@@ -175,38 +225,43 @@ ${roomOptions}
         <noscript><p class="programme-source-note">The complete programme is shown below. Enable JavaScript to use search, filters and a personal agenda.</p></noscript>
         <div class="programme-results-toolbar">
           <div>
-            <p data-programme-status role="status" aria-live="polite" aria-atomic="true" class="programme-status">${data.sessions.length} scheduled sessions and ${data.announcements.length} announced keynotes across four days</p>
-            <p class="programme-source-note">Preliminary schedule · updated ${updatedLabel} · subject to change</p>
+            <p data-programme-status role="status" aria-live="polite" aria-atomic="true" class="programme-status">${data.sessions.length} scheduled sessions${data.announcements.length ? ` and ${data.announcements.length} announced keynotes` : ''} across four days</p>
+            <p class="programme-source-note">Preliminary · updated ${updatedLabel}</p>
           </div>
           <div class="programme-actions" data-programme-actions hidden>
             <button type="button" class="btn programme-agenda-button" aria-pressed="false" data-programme-saved-only>My agenda <span class="badge" data-saved-count>0</span></button>
-            <button type="button" class="btn" data-programme-export aria-describedby="programme-storage-note" disabled><i data-heroicon="download" class="size-4" aria-hidden="true"></i> Export calendar</button>
-            <button type="button" class="btn" data-programme-print>Print</button>
-            <button type="button" class="btn programme-reset" data-programme-reset>Reset filters</button>
+            <details class="dropdown dropdown-end programme-utilities" data-programme-utilities>
+              <summary class="btn">Tools</summary>
+              <div class="dropdown-content programme-utility-menu">
+                <button type="button" class="btn" data-programme-export aria-describedby="programme-storage-note" disabled><i data-heroicon="download" class="size-4" aria-hidden="true"></i> Export calendar</button>
+                <button type="button" class="btn" data-programme-print>Print</button>
+                <button type="button" class="btn programme-reset" data-programme-reset>Clear filters</button>
+                <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Save sessions to build your agenda. Your choices stay in this browser.</p>
+              </div>
+            </details>
           </div>
         </div>
-        <p id="programme-storage-note" class="programme-storage-note" data-programme-storage-note hidden>Add sessions to My agenda, then review your choices or export your calendar. Your agenda is kept in this browser.</p>
         <p class="sr-only" data-programme-feedback aria-live="polite" aria-atomic="true"></p>
         <div class="programme-empty" data-programme-empty hidden>
-          <h2 tabindex="-1">No sessions match your view</h2>
+          <h2 tabindex="-1" data-programme-empty-title>No matching sessions</h2>
           <p data-programme-empty-description>Try another day, room or search term.</p>
           <div class="programme-empty-actions">
             <button type="button" class="btn" data-programme-all-days>Search all days</button>
-            <button type="button" class="btn" data-programme-reset>Reset filters</button>
+            <button type="button" class="btn" data-programme-reset data-programme-empty-reset>Clear filters</button>
           </div>
         </div>
       <nav class="programme-navigator" aria-label="Timeline navigator" aria-controls="programme-timeline" data-programme-timeline data-programme-controls hidden>
         <label class="sr-only" for="programme-timeline-day">Choose a programme day</label>
         <select id="programme-timeline-day" class="select programme-navigator-day" data-timeline-day>
-${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,3)} ${Number(day.date.slice(-2))} November</option>`).join('\n')}
+${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,3)} ${Number(day.date.slice(-2))} Nov</option>`).join('\n')}
           <option value="all">All days</option>
         </select>
         <div class="programme-navigator-stepper">
           <button type="button" class="btn" aria-label="Previous time slot" data-timeline-previous><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i></button>
           <p class="programme-navigator-time"><span data-timeline-time>08:15</span> <small>CET</small></p>
           <button type="button" class="btn programme-navigator-picker" aria-haspopup="dialog" aria-controls="programme-time-picker" aria-expanded="false" data-timeline-open>
-            <span>Choose time</span>
-            <strong><span data-timeline-mobile-day>Sat 14 Nov</span> · <span data-timeline-mobile-time>08:15</span></strong>
+            <span>Time</span>
+            <strong><span class="sr-only" data-timeline-mobile-day>Sat 14 Nov</span><span data-timeline-mobile-time>08:15</span></strong>
           </button>
           <button type="button" class="btn" aria-label="Next time slot" data-timeline-next><i data-heroicon="arrow-right" class="size-4" aria-hidden="true"></i></button>
         </div>
@@ -216,7 +271,6 @@ ${data.days.map(day=>`          <option value="${day.date}">${day.label.slice(0,
           <div class="programme-navigator-limits" aria-hidden="true"><span data-timeline-start>08:15</span><span data-timeline-end>16:30</span></div>
         </div>
         <button type="button" class="btn programme-agenda-button programme-navigator-agenda" aria-pressed="false" data-programme-saved-only data-timeline-agenda>My agenda <span class="badge" data-saved-count>0</span></button>
-        <button type="button" class="btn programme-navigator-return" data-timeline-return hidden><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i>Back to previous position</button>
       </nav>
 ${data.days.map(renderDay).join('\n')}
         <p class="programme-closing-note">Looking for workshop calls and organizing teams? <a class="link" href="/workshop/">Explore the workshops</a>.</p>
@@ -229,6 +283,7 @@ ${data.days.map(renderDay).join('\n')}
           </div>
           <div class="programme-time-picker-content">
             <p id="programme-time-picker-description">Choose a day and time, then confirm to move the programme. Times follow your current filters.</p>
+            <button type="button" class="btn programme-navigator-return" data-timeline-return hidden><i data-heroicon="arrow-left" class="size-4" aria-hidden="true"></i>Back to previous position</button>
             <fieldset data-timeline-picker-day-field>
               <legend>Day</legend>
               <div class="programme-time-picker-days" data-timeline-picker-days>
@@ -268,11 +323,11 @@ if (fs.existsSync(destination)) {
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
-html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026102702')
-  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026103007')
-  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026102702');
+html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026103014')
+  .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026103008')
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026103012');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
-html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026100903">\n  </head>');
+html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026103012">\n  </head>');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');

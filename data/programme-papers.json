@@ -1,0 +1,286 @@
+{
+  "updated": "2026-10-30",
+  "source": "https://docs.google.com/spreadsheets/d/1eaf-WIvny0VXIeZrYAlUmVMcyHbpdbmIriB0rINRp08/edit",
+  "groups": [
+    {
+      "id": "oral-1",
+      "title": "Oral Session 1: Generative Models of the Limit Order Book",
+      "paperIds": [
+        973,
+        1067,
+        1095,
+        772
+      ]
+    },
+    {
+      "id": "oral-2",
+      "title": "Oral Session 2: Market Making and Optimal Execution",
+      "paperIds": [
+        329,
+        696,
+        959,
+        1016
+      ]
+    },
+    {
+      "id": "oral-3",
+      "title": "Oral Session 3: Language Models for Central Bank and Earnings Communication",
+      "paperIds": [
+        134,
+        682,
+        1010,
+        397
+      ]
+    },
+    {
+      "id": "oral-4",
+      "title": "Oral Session 4: LLM Agents for Trading: Benchmarks, Governance and Evaluation",
+      "paperIds": [
+        399,
+        1102,
+        290,
+        841
+      ]
+    },
+    {
+      "id": "oral-5",
+      "title": "Oral Session 5: Crypto and Decentralized Markets",
+      "paperIds": [
+        178,
+        271,
+        1079
+      ]
+    },
+    {
+      "id": "oral-6",
+      "title": "Oral Session 6: Derivatives: Hedging, Pricing and Option Surfaces",
+      "paperIds": [
+        417,
+        512,
+        690
+      ]
+    },
+    {
+      "id": "oral-7",
+      "title": "Oral Session 7: Cross-Sectional Forecasting and Asset Ranking",
+      "paperIds": [
+        244,
+        757,
+        762
+      ]
+    },
+    {
+      "id": "oral-8",
+      "title": "Oral Session 8: Risk and Volatility Forecasting",
+      "paperIds": [
+        428,
+        531,
+        938
+      ]
+    },
+    {
+      "id": "oral-9",
+      "title": "Oral Session 9: Credit, Portfolio Decisions and Fraud Detection",
+      "paperIds": [
+        382,
+        697,
+        1039
+      ]
+    },
+    {
+      "id": "oral-10",
+      "title": "Oral Session 10: Market Dynamics: Generation, Lead–Lag and Irreversibility",
+      "paperIds": [
+        592,
+        994,
+        1060
+      ]
+    },
+    {
+      "id": "oral-11",
+      "title": "Oral Session 11: Valuation and Disclosure in Private and Prediction Markets",
+      "paperIds": [
+        250,
+        401,
+        467
+      ]
+    },
+    {
+      "id": "oral-12",
+      "title": "Oral Session 12: Reliability of Foundation Models in Finance",
+      "paperIds": [
+        392,
+        702,
+        974
+      ]
+    },
+    {
+      "id": "oral-13",
+      "title": "Oral Session 13: High-Frequency Signals and Time-Series Representations",
+      "paperIds": [
+        662,
+        609,
+        986
+      ]
+    },
+    {
+      "id": "oral-14",
+      "title": "Oral Session 14: Responsible AI: Bias, ESG and Compliance",
+      "paperIds": [
+        1043,
+        732,
+        949
+      ]
+    },
+    {
+      "id": "oral-15",
+      "title": "Oral Session 15: Learning from Market Data: Pipelines, Charts and Filtering",
+      "paperIds": [
+        776,
+        941,
+        1034
+      ]
+    },
+    {
+      "id": "oral-16",
+      "title": "Oral Session 16: Financial Crime, Compliance and Rare-Event Risk",
+      "paperIds": [
+        589,
+        591,
+        707
+      ]
+    },
+    {
+      "id": "poster-1",
+      "title": "Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
+      "paperIds": [
+        70,
+        92,
+        121,
+        182,
+        198,
+        208,
+        223,
+        227,
+        251,
+        269,
+        300,
+        302,
+        307,
+        311,
+        318,
+        338,
+        348,
+        352,
+        379,
+        405,
+        418,
+        437,
+        441,
+        449,
+        455,
+        464,
+        470,
+        477,
+        490,
+        493,
+        497,
+        513,
+        514,
+        516,
+        533,
+        551,
+        654,
+        136
+      ]
+    },
+    {
+      "id": "poster-2",
+      "title": "Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
+      "paperIds": [
+        491,
+        494,
+        557,
+        566,
+        567,
+        568,
+        577,
+        588,
+        595,
+        602,
+        607,
+        616,
+        626,
+        627,
+        633,
+        639,
+        641,
+        642,
+        644,
+        645,
+        647,
+        649,
+        656,
+        670,
+        672,
+        680,
+        683,
+        742,
+        753,
+        756,
+        773,
+        777,
+        797,
+        815,
+        820,
+        834,
+        899,
+        918
+      ]
+    },
+    {
+      "id": "poster-3",
+      "title": "Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
+      "paperIds": [
+        669,
+        685,
+        698,
+        722,
+        734,
+        775,
+        778,
+        788,
+        827,
+        836,
+        837,
+        850,
+        869,
+        870,
+        873,
+        875,
+        880,
+        897,
+        898,
+        909,
+        917,
+        927,
+        935,
+        939,
+        950,
+        961,
+        972,
+        984,
+        985,
+        998,
+        1007,
+        1027,
+        1044,
+        1050,
+        1061,
+        1074,
+        1092,
+        1106
+      ]
+    }
+  ]
+}

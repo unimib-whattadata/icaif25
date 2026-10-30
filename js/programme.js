@@ -16,20 +16,62 @@
 
   const asIdSet = (ids) => ids instanceof Set ? ids : new Set(Array.isArray(ids) ? ids : []);
 
+  const matchSession = (session, query) => {
+    const terms = normalizeSearch(query).split(" ").filter(Boolean);
+    const context = normalizeSearch([
+      session.title, session.detail, session.room,
+      session.type.replace(/-/g, " "), session.start, session.end, session.timeLabel,
+    ].join(" "));
+    const contextMatch = !terms.length || terms.every((term) => context.includes(term));
+    if (contextMatch) return { matches: true, contextMatch: true, paperMatches: [] };
+    // All terms must describe one paper, allowing its session to supply context.
+    const paperMatches = (session.papers || []).filter((paper) => {
+      const text = `${context} ${normalizeSearch([paper.id, paper.title, paper.authors].join(" "))}`;
+      return terms.every((term) => text.includes(term));
+    });
+    return { matches: paperMatches.length > 0, contextMatch: false, paperMatches };
+  };
+
+  // Resolve only publication fields; assignment sources can also contain private notes.
+  const attachPapers = (programme, accepted) => {
+    const papers = new Map();
+    for (const group of accepted.groups || []) {
+      for (const paper of group.papers || []) {
+        if (!Number.isInteger(paper.id) || papers.has(paper.id) ||
+            typeof paper.title !== "string" || typeof paper.authors !== "string") {
+          throw new Error("Invalid accepted paper data.");
+        }
+        papers.set(paper.id, { group: group.id, paper: {
+          id: paper.id, title: paper.title, authors: paper.authors,
+        } });
+      }
+    }
+    const assigned = new Set();
+    return { ...programme, sessions: programme.sessions.map((session) => {
+      if (session.paperIds === undefined) return { ...session };
+      if (!Array.isArray(session.paperIds) || !session.paperIds.length) {
+        throw new Error("Invalid paper assignments.");
+      }
+      const expected = { "oral-session": "oral", "poster-session": "poster" }[session.type];
+      return { ...session, papers: session.paperIds.map((id) => {
+        const record = papers.get(id);
+        if (!record || record.group !== expected || assigned.has(id)) {
+          throw new Error(`Invalid paper assignment: ${id}`);
+        }
+        assigned.add(id);
+        return { ...record.paper };
+      }) };
+    }) };
+  };
+
   const filterSessions = (sessions, filters = {}, savedIds = []) => {
     const saved = asIdSet(savedIds);
-    const terms = normalizeSearch(filters.q).split(" ").filter(Boolean);
     return sessions.filter((session) => {
       if (filters.day && filters.day !== "all" && session.date !== filters.day) return false;
       if (filters.type && filters.type !== "all" && session.type !== filters.type) return false;
       if (filters.room && filters.room !== "all" && session.room !== filters.room) return false;
       if (filters.saved && !saved.has(session.id)) return false;
-      if (!terms.length) return true;
-      const text = normalizeSearch([
-        session.title, session.detail, session.room,
-        session.type.replace(/-/g, " "), session.start, session.end, session.timeLabel,
-      ].join(" "));
-      return terms.every((term) => text.includes(term));
+      return matchSession(session, filters.q).matches;
     });
   };
 
@@ -124,6 +166,7 @@
     for (const session of ordered) {
       const description = [
         session.detail,
+        ...(session.papers || []).map((paper) => `Paper ${paper.id}: ${paper.title}\n${paper.authors}`),
         session.pending ? "Details to be confirmed." : "",
         "Preliminary programme. Times and sessions are subject to change.",
       ].filter(Boolean).join("\n\n");
@@ -225,7 +268,7 @@
   };
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
+    module.exports = { attachPapers, matchSession, filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
   }
   if (typeof document === "undefined") return;
 
@@ -249,6 +292,17 @@
     slots.forEach((element) => { element.removeAttribute("aria-current"); });
     [...controls, ...saveButtons].forEach((element) => { element.hidden = true; });
     selectAll("[data-programme-conflict]").forEach((element) => { element.hidden = true; });
+    selectAll("[data-programme-paper]").forEach((element) => {
+      element.hidden = false;
+      delete element.dataset.searchMatch;
+    });
+    selectAll("[data-programme-paper-search-tools]").forEach((element) => { element.hidden = true; });
+    selectAll(".programme-paper-list").forEach((list) => {
+      list.append(...[...list.children].sort((a, b) => Number(a.dataset.paperOrder || 0) - Number(b.dataset.paperOrder || 0)));
+      const details = list.closest("details");
+      const label = details && details.querySelector("[data-programme-papers-label]");
+      if (label) label.textContent = `${details.open ? "Hide" : "View"} ${list.children.length} papers & authors`;
+    });
     if (storageNote) storageNote.hidden = true;
     if (empty) empty.hidden = true;
     if (feedback) feedback.textContent = "";
@@ -293,6 +347,13 @@
     const exportButton = document.querySelector("[data-programme-export]");
     const allDaysButtons = selectAll("[data-programme-all-days]");
     const emptyDescription = document.querySelector("[data-programme-empty-description]");
+    const emptyTitle = document.querySelector("[data-programme-empty-title]");
+    const emptyReset = document.querySelector("[data-programme-empty-reset]");
+    const filterToggle = document.querySelector("[data-programme-filter-toggle]");
+    const extraFilters = document.querySelector("[data-programme-extra-filters]");
+    const filterCount = document.querySelector("[data-programme-filter-count]");
+    const utilities = document.querySelector("[data-programme-utilities]");
+    const mobileFilters = window.matchMedia("(max-width: 639px)");
     let storage = null;
     let storageAvailable = false;
     let savedIds = new Set();
@@ -315,6 +376,100 @@
     }
 
     let state = readFiltersFromUrl(window.location.href, programme);
+    let filtersExpanded = state.type !== "all" || state.room !== "all";
+
+    const updateFilterPanel = () => {
+      if (!filterToggle || !extraFilters) return;
+      const expanded = !mobileFilters.matches || filtersExpanded;
+      if (!expanded && extraFilters.contains(document.activeElement)) filterToggle.focus({ preventScroll: true });
+      extraFilters.hidden = !expanded;
+      filterToggle.setAttribute("aria-expanded", String(expanded));
+      const count = Number(state.type !== "all") + Number(state.room !== "all");
+      if (filterCount) {
+        filterCount.textContent = String(count);
+        filterCount.hidden = count === 0;
+      }
+      filterToggle.setAttribute("aria-label", count ? `Filters, ${count} active` : "Filters by session type and room");
+    };
+    if (filterToggle) filterToggle.addEventListener("click", () => {
+      filtersExpanded = !filtersExpanded;
+      updateFilterPanel();
+    });
+    mobileFilters.addEventListener("change", updateFilterPanel);
+
+    const closeUtilities = (restoreFocus = false) => {
+      if (!utilities || !utilities.open) return;
+      utilities.open = false;
+      if (restoreFocus) utilities.querySelector("summary").focus({ preventScroll: true });
+    };
+    if (utilities) {
+      document.addEventListener("click", (event) => {
+        if (utilities.open && !utilities.contains(event.target)) closeUtilities(utilities.contains(document.activeElement));
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && utilities.open) {
+          event.preventDefault();
+          closeUtilities(true);
+        }
+      });
+    }
+
+    const paperViews = new Map(sessions.filter((session) => session.papers?.length).map((session) => {
+      const article = articleById.get(session.id);
+      const details = article.querySelector(".programme-papers");
+      const list = details && details.querySelector(".programme-paper-list");
+      const rows = session.papers.map((paper) => ({
+        paper, element: article.querySelector(`[data-programme-paper="${paper.id}"]`),
+      }));
+      if (!details || !list || rows.some((row) => !row.element)) throw new Error("Programme paper markup is unavailable.");
+      rows.forEach(({ element }, index) => { element.dataset.paperOrder = String(index); });
+      return [session.id, {
+        session, details, list, rows, showAll: false, query: "", matches: [],
+        label: details.querySelector("[data-programme-papers-label]"),
+        tools: details.querySelector("[data-programme-paper-search-tools]"),
+        note: details.querySelector("[data-programme-paper-search-note]"),
+        button: details.querySelector("[data-programme-all-papers]"),
+      }];
+    }));
+
+    const updatePaperView = (view) => {
+      const matchingIds = new Set(view.matches.map((paper) => paper.id));
+      const searchingPapers = matchingIds.size > 0;
+      const ordered = searchingPapers
+        ? [...view.rows.filter(({ paper }) => matchingIds.has(paper.id)), ...view.rows.filter(({ paper }) => !matchingIds.has(paper.id))]
+        : view.rows;
+      if (ordered.some((row, index) => view.list.children[index] !== row.element)) {
+        view.list.append(...ordered.map((row) => row.element));
+      }
+      view.rows.forEach(({ paper, element }) => {
+        const matches = searchingPapers && matchingIds.has(paper.id);
+        element.hidden = searchingPapers && !view.showAll && !matches;
+        if (matches) element.dataset.searchMatch = "true";
+        else delete element.dataset.searchMatch;
+      });
+      if (view.tools) view.tools.hidden = !searchingPapers;
+      if (view.note) view.note.textContent = `${matchingIds.size} matching ${matchingIds.size === 1 ? "paper" : "papers"} · ${view.rows.length} in this session`;
+      if (view.button) {
+        view.button.hidden = !searchingPapers || matchingIds.size === view.rows.length;
+        view.button.textContent = view.showAll
+          ? `Show ${matchingIds.size === 1 ? "matching paper" : "matching papers"} only`
+          : `Show all ${view.rows.length} papers`;
+        view.button.setAttribute("aria-pressed", String(view.showAll));
+      }
+      if (view.label) {
+        const count = searchingPapers && !view.showAll ? matchingIds.size : view.rows.length;
+        view.label.textContent = `${view.details.open ? "Hide" : "View"} ${count}${searchingPapers && !view.showAll ? " matching" : ""} ${count === 1 ? "paper" : "papers"} & authors`;
+      }
+    };
+    paperViews.forEach((view) => {
+      view.details.addEventListener("toggle", () => updatePaperView(view));
+      if (view.button) view.button.addEventListener("click", () => {
+        view.showAll = !view.showAll;
+        updatePaperView(view);
+        scheduleTimelineSync();
+        announce(view.showAll ? `Showing all ${view.rows.length} papers in this session. Search matches appear first.` : `Showing ${view.matches.length} matching ${view.matches.length === 1 ? "paper" : "papers"}.`);
+      });
+    });
 
     const announce = (message) => {
       if (feedback) feedback.textContent = message;
@@ -332,7 +487,7 @@
     const timelineOpen = timeline && timeline.querySelector("[data-timeline-open]");
     const timelineMobileDay = timeline && timeline.querySelector("[data-timeline-mobile-day]");
     const timelineMobileTime = timeline && timeline.querySelector("[data-timeline-mobile-time]");
-    const timelineReturn = timeline && timeline.querySelector("[data-timeline-return]");
+    const timelineReturn = document.querySelector("[data-timeline-return]");
     const timePicker = document.getElementById("programme-time-picker");
     const pickerDays = timePicker && timePicker.querySelector("[data-timeline-picker-days]");
     const pickerDayField = timePicker && timePicker.querySelector("[data-timeline-picker-day-field]");
@@ -405,6 +560,7 @@
       timelineMobileDay.textContent = stop
         ? shortDayFormatter.format(new Date(`${stop.date}T12:00:00Z`)) : "No sessions";
       timelineMobileTime.textContent = stop ? stop.start : "—";
+      timelineOpen.setAttribute("aria-label", stop ? `Choose time, ${dayLabels.get(stop.date)}, ${stop.start} CET` : "Choose time");
       timelineStart.textContent = dayStops.length ? dayStops[0].start : "—";
       timelineEnd.textContent = dayStops.length ? dayStops[dayStops.length - 1].start : "—";
       preserveTimelineFocus(focused);
@@ -571,6 +727,10 @@
         const previous = returnPosition;
         returnPosition = null;
         timelineReturn.hidden = true;
+        if (timePicker.open) {
+          pickerFocusTarget = timelineOpen;
+          timePicker.close();
+        }
         timelineOpen.focus({ preventScroll: true });
         updateTimeline(visibleStops.find((stop) => stop.key === previous.key) || visibleStops[0]);
         scrollTimelineTo(previous.top);
@@ -645,10 +805,31 @@
       const visibleAnnouncementIds = new Set(visibleAnnouncements.map((announcement) => announcement.id));
       const visibleCount = visible.length + visibleAnnouncements.length;
       const conflicts = findConflicts(sessions, savedIds);
+      const query = normalizeSearch(state.q);
+      let matchingPaperCount = 0;
       articles.forEach((article) => {
         const id = article.dataset.programmeSession;
         article.hidden = !visibleIds.has(id);
         article.dataset.saved = String(savedIds.has(id));
+        const view = paperViews.get(id);
+        if (view) {
+          const hadMatches = view.matches.length > 0;
+          view.matches = visibleIds.has(id) ? matchSession(view.session, query).paperMatches : [];
+          const hasMatches = view.matches.length > 0;
+          matchingPaperCount += view.matches.length;
+          if (view.query !== query || hadMatches !== hasMatches) {
+            view.showAll = false;
+            if (hasMatches && !view.details.open) {
+              view.details.open = true;
+              view.details.dataset.searchOpened = "true";
+            } else if (!hasMatches && view.details.dataset.searchOpened) {
+              view.details.open = false;
+              delete view.details.dataset.searchOpened;
+            }
+          }
+          view.query = query;
+          updatePaperView(view);
+        }
         const conflict = article.querySelector("[data-programme-conflict]");
         if (conflict) conflict.hidden = !conflicts.has(id);
       });
@@ -697,6 +878,7 @@
       if (queryInput && queryInput.value !== state.q) queryInput.value = state.q;
       if (typeSelect) typeSelect.value = state.type;
       if (roomSelect) roomSelect.value = state.room;
+      updateFilterPanel();
       savedOnlyButtons.forEach((button) => button.setAttribute("aria-pressed", String(state.saved)));
       selectAll("[data-saved-count]").forEach((count) => { count.textContent = String(savedIds.size); });
       if (exportButton) exportButton.disabled = savedIds.size === 0;
@@ -705,18 +887,23 @@
         const storageMessage = storageAvailable
           ? "Your agenda is kept in this browser."
           : "Your agenda lasts for this visit; browser storage is unavailable.";
-        storageNote.textContent = `Add sessions to My agenda, then review your choices or export your calendar. ${storageMessage}`;
+        storageNote.textContent = `Save sessions, then export them to your calendar. ${storageMessage}`;
       }
       const dateLabel = state.day === "all" ? "All days" : dayLabels.get(state.day);
       if (status) {
         const summaries = [];
+        if (matchingPaperCount) summaries.push(`${matchingPaperCount} matching ${matchingPaperCount === 1 ? "paper" : "papers"}`);
         if (visible.length || !visibleAnnouncements.length) {
           summaries.push(`${visible.length} ${state.saved ? "saved " : ""}${visible.length === 1 ? "session" : "sessions"}`);
         }
         if (visibleAnnouncements.length) {
           summaries.push(`${visibleAnnouncements.length} announced ${visibleAnnouncements.length === 1 ? "keynote" : "keynotes"}`);
         }
-        status.textContent = `${summaries.join(" · ")} · ${dateLabel}`;
+        const filterLabels = [
+          state.type !== "all" && typeSelect ? typeSelect.selectedOptions[0].textContent : "",
+          state.room !== "all" ? state.room : "",
+        ].filter(Boolean);
+        status.textContent = [summaries.join(" · "), dateLabel, ...filterLabels].join(" · ");
       }
       document.body.dataset.programmePrintCompact = String(state.saved || state.type !== "all" || state.room !== "all" || Boolean(state.q.trim()));
       selectAll("[data-programme-print-title]").forEach((title) => {
@@ -733,10 +920,13 @@
       if (empty) empty.hidden = visibleCount > 0;
       const matchesAcrossDays = filterSessions(items, { ...state, day: "all" }, savedIds).length;
       const canExpandDays = !visibleCount && state.day !== "all" && matchesAcrossDays > 0;
+      const emptyAgenda = state.saved && savedIds.size === 0;
+      if (emptyTitle) emptyTitle.textContent = emptyAgenda ? "Your agenda is empty" : "No sessions found";
+      if (emptyReset) emptyReset.textContent = emptyAgenda ? "Browse programme" : "Clear filters";
       allDaysButtons.forEach((button) => { button.hidden = !canExpandDays; });
       if (emptyDescription) {
-        emptyDescription.textContent = state.saved && savedIds.size === 0
-          ? "Your agenda is empty. Use Add to My agenda on a session to include it here."
+        emptyDescription.textContent = emptyAgenda
+          ? "Add sessions to My agenda as you browse, then return here to review or export your choices."
           : canExpandDays
             ? `No ${state.saved ? "saved " : ""}sessions match on this day. Try all days or clear the filters.`
             : `No ${state.saved ? "saved " : ""}sessions match these filters. Clear them to see the programme.`;
@@ -799,7 +989,13 @@
       button.addEventListener("click", () => changeFilters({ day: button.dataset.programmeDate }));
     });
     selectAll("[data-programme-reset]").forEach((button) => {
-      button.addEventListener("click", () => changeFilters({ type: "all", room: "all", q: "", saved: false }));
+      button.addEventListener("click", () => {
+        changeFilters({ type: "all", room: "all", q: "", saved: false });
+        if (utilities && utilities.contains(button)) {
+          closeUtilities();
+          if (queryInput) queryInput.focus({ preventScroll: true });
+        }
+      });
     });
     allDaysButtons.forEach((button) => {
       button.addEventListener("click", () => changeFilters({ day: "all" }));
@@ -840,6 +1036,7 @@
     });
 
     if (exportButton) exportButton.addEventListener("click", () => {
+      closeUtilities(true);
       const selected = sessions.filter((session) => savedIds.has(session.id));
       if (!selected.length) {
         announce("Add a session to My agenda to download your calendar.");
@@ -862,7 +1059,7 @@
       }
     });
     selectAll("[data-programme-print]").forEach((button) => {
-      button.addEventListener("click", () => { window.print(); });
+      button.addEventListener("click", () => { closeUtilities(true); window.print(); });
     });
     window.addEventListener("popstate", readLocation);
     window.addEventListener("hashchange", readLocation);
