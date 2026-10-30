@@ -1,5 +1,13 @@
 # Sponsorship content sources
 
+## ADIA Lab — October 30, 2026
+
+The user's instruction refers to the email “Fw: ICAIF - sessione ADIA domenica” received on October 30, explicitly requesting another Bronze sponsor. The inline `image.png` supplied in that message identifies ADIA Lab. Its original PNG is copied unchanged to `img/loghi/adia-lab/adia-lab.png` (456 × 70 pixels; 10,090 bytes; SHA-256 `7fb85643af26c8cf832fec453f256a428c35d8790ca57e0f7432b108a27f0dbc`). The logo appears alongside Vedrai in the Bronze groups on Home and Sponsors & Supporters and links to `https://www.adialab.ae/`, the official site verified on October 30.
+
+ADIA Lab's much wider aspect ratio requires 80/88/100px responsive image bounds to match Vedrai's 64/72/80px visual weight. Their nominal contrast-area ratios remain within approximately 3%. A 4px optical lift aligns ADIA Lab's lettering with Vedrai's main wordmark above its tagline. Home uses a 1:1.25 Bronze gallery and gives that tier additional room in the shared lower row, allowing both marks to stay alongside each other from tablet widths while preserving the larger Platinum, Gold and Silver tiers. Both links retain descriptive accessible names, a new-tab notice, `noopener noreferrer` and a 44px minimum target height. The source image's colors and proportions remain intact. Only the public brand, logo, sponsorship tier and website are published; the correspondence and preliminary session discussions are excluded from the site. The separate print rollup is outside this website repository update.
+
+Verification: the full build passed all 43 existing tests, HTML validation and source/site checks for all 21 canonical pages. Native browser inspection covered Home at 320, 390, 768, 1024 and 1280px and Sponsors at 320, 768 and 1280px, followed by four targeted confirmations of the optical alignment. All nine Home logos and ten Sponsors logos loaded, no horizontal overflow was observed, both Bronze links measured at least 44px high, and keyboard focus showed the existing 2px outline. Screenshots and measurements are under `.codex-artifacts/sponsorship-adia-20261030/`. Shared CSS cache version is `2026103006`.
+
 ## Optical balance of individual logos — October 30, 2026
 
 Before the authorized commit and push, the user requested an individual analysis of every logo so that marks within each sponsorship tier look more alike. Both Home and Sponsors & Supporters now compensate for each supplied asset's clear space, aspect ratio and visual weight. The two-band Home composition and decreasing Platinum → Gold → Silver → Bronze hierarchy are preserved.
