@@ -1,0 +1,112 @@
+.indoor-section { background: var(--color-base-200); }
+.indoor-intro { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.indoor-intro p { margin-top: .75rem; line-height: 1.6; }
+.indoor-preview { flex-shrink: 0; background: var(--color-base-100); }
+.indoor-preview-note { margin-top: 1rem; max-width: 75ch; font-size: .875rem; line-height: 1.6; color: color-mix(in srgb,var(--color-base-content) 80%,var(--color-base-100)); }
+.indoor-explorer { margin-top: 1.75rem; overflow: hidden; border: 1px solid var(--color-base-300); border-radius: var(--radius-box); background: var(--color-base-100); }
+.indoor-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-base-300); }
+.indoor-floor-picker, .indoor-tools { display: flex; gap: .5rem; align-items: center; }
+.indoor-explorer .btn { min-height: 44px; height: auto; font-size: .875rem; box-shadow: none; }
+.indoor-floor-button { gap: .625rem; padding: .5rem .875rem; }
+.indoor-floor-number { display: grid; place-items: center; width: 1.75rem; height: 1.75rem; font-size: .8125rem; border: 1px solid var(--color-base-300); border-radius: var(--radius-selector); font-variant-numeric: tabular-nums; }
+.indoor-floor-button[aria-pressed="true"] { background: var(--color-neutral); color: var(--color-neutral-content); border-color: var(--color-neutral); }
+.indoor-floor-button[aria-pressed="true"] .indoor-floor-number { border-color: color-mix(in srgb,var(--color-neutral-content) 45%,var(--color-neutral)); }
+.indoor-tools .btn { min-width: 44px; padding: .5rem .75rem; }
+.indoor-tools [data-indoor-zoom]:not([data-indoor-zoom="reset"]) { font-size: 1.25rem; font-weight: 500; }
+.indoor-floor { display: grid; grid-template-columns: minmax(0,1fr) 17rem; }
+.indoor-floor + .indoor-floor { border-top: 1px solid var(--color-base-300); }
+.indoor-plan-column { min-width: 0; }
+.indoor-plan-heading { display: flex; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem 0; }
+.indoor-plan-heading h3 { font-size: 1rem; font-weight: 700; }
+.indoor-plan-heading > span { font-size: .8125rem; color: color-mix(in srgb,var(--color-base-content) 70%,var(--color-base-100)); }
+.indoor-viewport { overflow: auto; height: 550px; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--color-base-300) var(--color-base-100); }
+.indoor-plan { display: block; width: 100%; height: auto; min-height: 100%; margin-inline: auto; }
+.indoor-plan image { pointer-events: none; }
+.indoor-room-shape { fill: var(--color-primary); fill-opacity: .1; stroke: var(--color-primary); stroke-width: 2; stroke-opacity: .65; }
+.indoor-place { cursor: pointer; outline: none; }
+.indoor-label-bg { fill: var(--color-base-100); stroke: var(--color-primary); stroke-width: 1; }
+.indoor-room-label { fill: var(--color-primary); font: 600 21px Inter,Arial,sans-serif; }
+.indoor-place:is(:hover,:focus-visible) .indoor-room-shape { fill-opacity: .18; stroke-width: 3; }
+.indoor-place:focus-visible .indoor-label-bg { stroke-width: 4; stroke: var(--color-accent); }
+.indoor-place[aria-pressed="true"] .indoor-room-shape { fill: var(--color-accent); fill-opacity: .12; stroke: var(--color-accent); stroke-width: 3; stroke-opacity: 1; }
+.indoor-place[aria-pressed="true"] .indoor-label-bg { fill: var(--color-accent); stroke: var(--color-accent); }
+.indoor-place[aria-pressed="true"] .indoor-room-label { fill: var(--color-accent-content); }
+.indoor-marker-hit { fill: transparent; }
+.indoor-facility--stairs { --facility-color: var(--color-primary); }
+.indoor-facility--lift { --facility-color: #6b21a8; }
+.indoor-facility--wc { --facility-color: #115e59; }
+.indoor-service-leader { fill: none; stroke: var(--facility-color); stroke-width: 3; }
+.indoor-service-point { fill: var(--facility-color); stroke: var(--color-base-100); stroke-width: 3; }
+.indoor-service-disc { fill: var(--color-base-100); stroke: var(--facility-color); stroke-width: 2; }
+.indoor-service-tile { fill: var(--facility-color); }
+.indoor-service-icon, .indoor-facility-icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.indoor-service-icon { color: var(--color-base-100); }
+.indoor-service-label { fill: var(--facility-color); font: 700 22px Inter,Arial,sans-serif; }
+.indoor-wc-symbol { fill: currentColor; stroke: none; font: 700 16px Inter,Arial,sans-serif; }
+.indoor-service:is(:hover,:focus-visible,[aria-pressed="true"]) .indoor-service-disc { stroke: var(--color-accent); stroke-width: 4; }
+.indoor-service:is(:hover,:focus-visible,[aria-pressed="true"]) .indoor-service-point { r: 12; }
+.indoor-plan-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: 1rem 1.5rem; font-size: .75rem; }
+.indoor-map-key { display: inline-flex; align-items: center; gap: .5rem; }
+.indoor-map-key > span { width: .75rem; height: .75rem; border: 1px solid var(--color-primary); background: color-mix(in srgb,var(--color-primary) 10%,var(--color-base-100)); }
+.indoor-directory { padding: 1.5rem; border-left: 1px solid var(--color-base-300); }
+.indoor-directory h3 { font-size: .875rem; font-weight: 600; }
+.indoor-place-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .375rem; margin-block: .875rem 1.5rem; }
+.indoor-place-wide { grid-column: 1 / -1; }
+.indoor-place-choice.btn { justify-content: space-between; width: 100%; padding: .5rem .75rem; text-align: left; background: transparent; border-color: transparent; font-weight: 500; }
+.indoor-place-choice.btn:hover { background: var(--color-base-200); }
+.indoor-place-choice[aria-pressed="true"].btn { color: var(--color-accent); background: color-mix(in srgb,var(--color-accent) 8%,var(--color-base-100)); border-color: color-mix(in srgb,var(--color-accent) 30%,var(--color-base-100)); }
+.indoor-choice-arrow { flex-shrink: 0; }
+.indoor-facility-list { margin-top: .625rem; }
+.indoor-facility-choice.btn { justify-content: flex-start; gap: .5rem; padding-inline: .5rem; }
+.indoor-facility-choice:last-child { grid-column: 1 / -1; }
+.indoor-facility-choice .indoor-choice-arrow { display: none; }
+.indoor-facility-choice .indoor-facility-icon { color: var(--facility-color); flex-shrink: 0; }
+.indoor-facility-legend { display: flex; flex-wrap: wrap; gap: .75rem; }
+.indoor-facility-key { display: inline-flex; align-items: center; gap: .25rem; color: var(--facility-color); }
+.indoor-facility-key .indoor-facility-icon { width: 20px; height: 20px; }
+.indoor-detail { padding-top: 1.25rem; border-top: 1px solid var(--color-base-300); }
+.indoor-detail-floor { font-size: .8125rem; font-weight: 500; color: var(--color-primary); }
+.indoor-detail h4 { margin-top: .375rem; font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+.indoor-detail [data-detail-copy] { margin-top: .75rem; font-size: .875rem; line-height: 1.7; color: color-mix(in srgb,var(--color-base-content) 80%,var(--color-base-100)); }
+.indoor-copy { width: 100%; margin-top: 1.25rem; }
+.indoor-share-fallback { display: block; margin-top: .75rem; font-size: .875rem; }
+.indoor-footnote { border-top: 1px solid var(--color-base-300); padding: 1rem 1.5rem; font-size: .75rem; line-height: 1.7; color: color-mix(in srgb,var(--color-base-content) 75%,var(--color-base-100)); }
+.indoor-explorer :is(.btn,a):focus-visible, .indoor-viewport:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -3px; }
+.indoor-explorer [hidden] { display: none !important; }
+.indoor-expanded .indoor-explorer.modal-box { width: 100%; max-width: none; height: 100dvh; max-height: 100dvh; margin: 0; padding: 1rem; overflow: auto; border: 0; border-radius: 0; }
+.indoor-expanded .indoor-toolbar { position: sticky; top: 0; z-index: 2; background: var(--color-base-100); }
+.indoor-expanded .indoor-viewport { height: calc(100dvh - 280px); }
+.indoor-close-action { margin: 0; padding: .75rem 1rem; border-top: 1px solid var(--color-base-300); }
+@media (max-width: 1023px) {
+  .indoor-floor { grid-template-columns: minmax(0,1fr); }
+  .indoor-directory { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; border-left: 0; border-top: 1px solid var(--color-base-300); }
+  .indoor-room-directory, .indoor-facility-directory { grid-column: 1; }
+  .indoor-detail { grid-column: 2; grid-row: 1 / 3; border: 0; padding-top: 0; }
+  .indoor-facility-list { margin-bottom: 0; }
+  .indoor-viewport { height: 390px; }
+}
+@media (max-width: 639px) {
+  .indoor-intro { align-items: flex-start; gap: .75rem; }
+  .indoor-intro .section-title { max-width: 12ch; }
+  .indoor-preview { margin-top: .25rem; font-size: .75rem; }
+  .indoor-toolbar { gap: .75rem; padding: .75rem; }
+  .indoor-floor-picker { width: 100%; gap: .375rem; }
+  .indoor-floor-button { flex: 1; padding: .5rem .375rem; gap: .375rem; font-size: .75rem !important; }
+  .indoor-floor-number { width: 1.375rem; height: 1.5rem; font-size: .75rem; }
+  .indoor-tools { width: 100%; justify-content: flex-end; }
+  .indoor-plan-heading { padding: 1rem 1rem 0; }
+  .indoor-plan-heading > span { font-size: .75rem; }
+  .indoor-viewport { height: 310px; }
+  .indoor-plan-footer, .indoor-footnote { padding: .875rem 1rem; }
+  .indoor-directory { display: block; padding: 1.25rem 1rem; }
+  .indoor-place-list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .375rem; margin-bottom: 1.25rem; }
+  .indoor-place-choice.btn { font-size: .8125rem; }
+  .indoor-detail { padding-top: 1.25rem; border-top: 1px solid var(--color-base-300); }
+  .indoor-copy { width: auto; }
+}
+@media print {
+  .indoor-floor { display: block !important; break-inside: avoid; }
+  .indoor-plan { width: 100% !important; }
+  .indoor-viewport { height: auto; overflow: visible; }
+  .indoor-tools, .indoor-floor-picker, .indoor-directory { display: none !important; }
+}

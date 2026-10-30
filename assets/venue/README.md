@@ -39,3 +39,27 @@ Route geometry is an authored illustration aligned to OSM streets and station lo
 The SVG projection fits the selected route, while Campus keeps the local venue view. A continuous mask reveals the journey in order with a moving indicator; text steps are available immediately. Camera transitions preserve geographic centre and scale, including interrupted motion. A Replay route control repeats the sequence. Selecting another origin fits the new route, and choosing “Explore the area” clears the route. Keyboard selection, responsive projection, Pause/Play, reduced motion, and independent route-data failure are supported. The locator and its external directions link remain available if route data fails.
 
 M2 uses green and M3 uses yellow, following the [ATM network line colours](https://giromilano.atm.it/). These categories appear consistently in the SVG, legend and numbered steps; the yellow line has a dark edge for contrast. Tram 9 stays blue. Alternating authored SVG shoeprints mark walking segments, oriented along the route and revealed progressively by the same mask. A single animation-frame loop owns camera and route motion; path lengths are cached for each reveal.
+
+## Indoor schematic plans
+
+The indoor map is a local orientation trial for the ground floor, Level −1 and Level −2. It uses simplified, authored SVG geometry derived from three user-supplied Bocconi artwork-layout sheets:
+
+- Ground: `grafton foyer pt sculture Layout1 (1).pdf`.
+- Level −1: `grafton foyer -1 sculture Layout1.pdf`.
+- Level −2: `grafton foyer p-2 SCULTURE Layout1 (1).pdf`.
+
+These sheets are spatial source evidence, not a confirmed conference access plan. The redraw retains the principal footprint, room boundaries, service cores and circulation spaces while omitting seating, facade hatching, equipment and artwork annotations. AS01–AS03 retain their stepped fronts, AS04–AS05 their entry recesses, and Aula Magna its irregular envelope. The source PDFs are not published; the three shipping files in `indoor/` are generated SVG backgrounds. No raster artwork was added for the indoor map.
+
+Conference names such as Main Hall/Room 1–3, the arrival entrance, registration and indoor routes remain unassigned pending organizer confirmation. The drawn stairs and lifts do not assert verified conference access or accessible routes. Labels and descriptions are in English.
+
+Facilities use permanent English pictogram callouts with leader lines to their original source points. The plan, Facilities directory and legend share the same symbols and local category colours: blue stairs, purple lifts and teal toilets. Copper outlines show selection. Offset labels improve visibility without changing service positions, room contours or background geometry; the desktop overview shows all three labels, and small-screen directory selection reveals the selected marker.
+
+### Editing and regeneration
+
+1. Edit `data/venue-floors.json` for the room/service directory, descriptions, stable IDs, marker positions and selectable room contours. Facility `label` coordinates control callout placement independently of the source anchor `x`/`y`; preserve the anchor when adjusting label spacing. Edit `data/venue-floor-geometry.json` for the simplified background outlines. Compare shape changes with the relevant source sheet and preserve the approved schematic fidelity.
+2. Run `npm run build:indoor-map` from the repository root to regenerate the indoor section in `venue.html` and `assets/venue/indoor/{ground,b1,b2}.svg`.
+3. Run `npm run build` to update the canonical `venue/index.html` route, styling and site checks. Do not edit the generated panels or SVGs directly.
+
+`js/indoor-map.js` enhances the static plans with floor and place selection, zoom/reset, shareable `floor`/`place` query links, copy feedback and an expanded native dialog. Static plans and anchor links remain available without the runtime. `css/indoor-map.css` reuses the site's existing palette, typography and controls.
+
+The 30 October 2026 finish reviews approved the local trial and the subsequent facilities refinement. Verification included desktop/mobile/narrow and expanded views, selection and query links, keyboard interaction, copy feedback, dialog restoration and the full site build (43 existing tests, HTML validation and 21-page checks). The final mobile reveal change also passed the site checks. Surface decisions and final review evidence are recorded in `.impeccable/surfaces/venue-html.md`.

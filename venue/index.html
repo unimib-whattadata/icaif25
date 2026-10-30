@@ -151,6 +151,7 @@
     <script src="../js/heroicons.js?v=2026100801" defer></script>
     <link rel="stylesheet" href="../css/tailwind.min.css?v=2026103006">
     <link rel="stylesheet" href="../css/venue.css?v=2026100804">
+    <link rel="stylesheet" href="../css/indoor-map.css?v=2026103002">
   </head>
   <body data-page="venue" class="font-sans antialiased min-w-0">
     <a
@@ -439,6 +440,168 @@
         </div>
       </section>
 
+      <!-- INDOOR MAP -->
+      <section id="inside-building" class="section-space indoor-section scroll-mt-24" aria-labelledby="indoor-heading">
+        <div class="site-container">
+          <div class="indoor-intro"><div><h2 id="indoor-heading" data-index-label="Inside the building" class="section-title">Find your way inside</h2><p>Explore the Röntgen building, one floor at a time.</p></div><span class="badge indoor-preview">Map preview</span></div>
+          <p class="indoor-preview-note">Conference room assignments, the arrival entrance and registration point are still being confirmed.</p>
+          <div class="indoor-explorer" data-indoor-map>
+            <div class="indoor-toolbar">
+              <div class="indoor-floor-picker" role="group" aria-label="Choose a floor"><a class="btn indoor-floor-button" href="#floor-ground" data-floor-choice="ground"><span class="indoor-floor-number">G</span>Ground</a><a class="btn indoor-floor-button" href="#floor-b1" data-floor-choice="b1"><span class="indoor-floor-number">−1</span>Level −1</a><a class="btn indoor-floor-button" href="#floor-b2" data-floor-choice="b2"><span class="indoor-floor-number">−2</span>Level −2</a></div>
+              <div class="indoor-tools" role="group" aria-label="Indoor map controls" hidden><button class="btn" type="button" data-indoor-zoom="out" aria-label="Zoom out of floor plan">−</button><button class="btn" type="button" data-indoor-zoom="in" aria-label="Zoom into floor plan">+</button><button class="btn" type="button" data-indoor-zoom="reset">Reset</button><button class="btn indoor-fullscreen" type="button" data-indoor-fullscreen hidden aria-label="View floor plan in full screen"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div>
+            </div>
+            <article class="indoor-floor" id="floor-ground" data-floor-panel="ground">
+    <div class="indoor-plan-column">
+      <div class="indoor-plan-heading"><h3>Ground floor</h3><span>Röntgen building</span></div>
+      <section class="indoor-viewport" tabindex="0" aria-label="Scrollable Ground floor plan"><svg class="indoor-plan" viewBox="0 -60 1200 680" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Ground floor floor plan">
+    <image href="../assets/venue/indoor/ground.svg" width="1200" height="620" aria-hidden="true"/>
+    <g class="indoor-place" id="map-place-ground-foyer" data-place="ground-foyer" aria-label="Ground-floor foyer, Ground floor">
+      <title>Ground-floor foyer</title>
+      <path class="indoor-room-shape" d="M112 405H320L381 390V450H570V520H415V475H335V520H112Z"/>
+      <g class="indoor-marker" transform="translate(360 465)">
+      <rect class="indoor-label-bg" x="-111" y="-18" width="222" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">Ground-floor foyer</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--stairs" id="map-place-ground-stairs" data-place="ground-stairs" aria-label="Stairs, Ground floor">
+      <title>Stairs</title>
+      <path class="indoor-service-leader" d="M354 337L370 337"/><circle class="indoor-service-point" cx="354" cy="337" r="9"/><rect class="indoor-marker-hit" x="362" y="297" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(458 337)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></g><text class="indoor-service-label" x="-19" y="8">Stairs</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--lift" id="map-place-ground-lifts" data-place="ground-lifts" aria-label="Lifts, Ground floor">
+      <title>Lifts</title>
+      <path class="indoor-service-leader" d="M281 110L281 18"/><circle class="indoor-service-point" cx="281" cy="110" r="9"/><rect class="indoor-marker-hit" x="185" y="-50" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(281 -10)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></g><text class="indoor-service-label" x="-19" y="8">Lifts</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--wc" id="map-place-ground-wc" data-place="ground-wc" aria-label="Toilets, Ground floor">
+      <title>Toilets</title>
+      <path class="indoor-service-leader" d="M684 407L727 407"/><circle class="indoor-service-point" cx="684" cy="407" r="9"/><rect class="indoor-marker-hit" x="719" y="370" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(815 410)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></g><text class="indoor-service-label" x="-19" y="8">Toilets</text>
+      </g></g>
+  </svg></section>
+      <div class="indoor-plan-footer"><span class="indoor-map-key"><span aria-hidden="true"></span>Rooms &amp; shared spaces</span><div class="indoor-facility-legend" role="group" aria-label="Facility symbols"><span class="indoor-facility-key indoor-facility--stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg>Stairs</span><span class="indoor-facility-key indoor-facility--lift"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg>Lifts</span><span class="indoor-facility-key indoor-facility--wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg>Toilets</span></div><span>Schematic plan</span></div>
+    </div>
+    <div class="indoor-directory">
+      <div class="indoor-room-directory"><h3>Explore this floor</h3><div class="indoor-place-list"><a class="btn indoor-place-choice indoor-place-wide" href="#map-place-ground-foyer" data-place-choice="ground-foyer"><span>Ground-floor foyer</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-facility-directory"><h3>Facilities</h3><div class="indoor-place-list indoor-facility-list"><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--stairs" href="#map-place-ground-stairs" data-place-choice="ground-stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg><span>Stairs</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--lift" href="#map-place-ground-lifts" data-place-choice="ground-lifts"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg><span>Lifts</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--wc" href="#map-place-ground-wc" data-place-choice="ground-wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg><span>Toilets</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-detail" aria-live="polite" aria-atomic="true"><p class="indoor-detail-floor">Ground floor</p><h4 data-detail-name>Ground-floor foyer</h4><p data-detail-copy>The open foyer area on the ground floor. The conference arrival point is still to be confirmed.</p><button class="btn indoor-copy" type="button" data-copy-place hidden>Copy place link</button></div>
+    </div>
+  </article>
+<article class="indoor-floor" id="floor-b1" data-floor-panel="b1">
+    <div class="indoor-plan-column">
+      <div class="indoor-plan-heading"><h3>Level −1</h3><span>Röntgen building</span></div>
+      <section class="indoor-viewport" tabindex="0" aria-label="Scrollable Level −1 plan"><svg class="indoor-plan" viewBox="0 -60 1200 680" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Level −1 floor plan">
+    <image href="../assets/venue/indoor/b1.svg" width="1200" height="620" aria-hidden="true"/>
+    <g class="indoor-place" id="map-place-aula-magna" data-place="aula-magna" aria-label="Aula Magna, Level −1">
+      <title>Aula Magna</title>
+      <path class="indoor-room-shape" d="M151 117H317V142H337V165H296V316L288 342L295 368H152L159 342L130 334V327H151Z"/>
+      <g class="indoor-marker" transform="translate(225 260)">
+      <rect class="indoor-label-bg" x="-67" y="-18" width="134" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">Aula Magna</text>
+      </g></g>
+<g class="indoor-place" id="map-place-foyer" data-place="foyer" aria-label="Foyer, Level −1">
+      <title>Foyer</title>
+      <path class="indoor-room-shape" d="M80 400H625V465H570V530H415V485H335V530H80Z"/>
+      <g class="indoor-marker" transform="translate(425 455)">
+      <rect class="indoor-label-bg" x="-39.5" y="-18" width="79" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">Foyer</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--stairs" id="map-place-b1-stairs" data-place="b1-stairs" aria-label="Stairs, Level −1">
+      <title>Stairs</title>
+      <path class="indoor-service-leader" d="M505 218L505 148"/><circle class="indoor-service-point" cx="505" cy="218" r="9"/><rect class="indoor-marker-hit" x="409" y="80" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(505 120)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></g><text class="indoor-service-label" x="-19" y="8">Stairs</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--lift" id="map-place-b1-lifts" data-place="b1-lifts" aria-label="Lifts, Level −1">
+      <title>Lifts</title>
+      <path class="indoor-service-leader" d="M275 104L275 18"/><circle class="indoor-service-point" cx="275" cy="104" r="9"/><rect class="indoor-marker-hit" x="179" y="-50" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(275 -10)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></g><text class="indoor-service-label" x="-19" y="8">Lifts</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--wc" id="map-place-b1-wc" data-place="b1-wc" aria-label="Toilets, Level −1">
+      <title>Toilets</title>
+      <path class="indoor-service-leader" d="M689 417L689 437"/><circle class="indoor-service-point" cx="689" cy="417" r="9"/><rect class="indoor-marker-hit" x="648" y="425" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(744 465)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></g><text class="indoor-service-label" x="-19" y="8">Toilets</text>
+      </g></g>
+  </svg></section>
+      <div class="indoor-plan-footer"><span class="indoor-map-key"><span aria-hidden="true"></span>Rooms &amp; shared spaces</span><div class="indoor-facility-legend" role="group" aria-label="Facility symbols"><span class="indoor-facility-key indoor-facility--stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg>Stairs</span><span class="indoor-facility-key indoor-facility--lift"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg>Lifts</span><span class="indoor-facility-key indoor-facility--wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg>Toilets</span></div><span>Schematic plan</span></div>
+    </div>
+    <div class="indoor-directory">
+      <div class="indoor-room-directory"><h3>Explore this floor</h3><div class="indoor-place-list"><a class="btn indoor-place-choice" href="#map-place-aula-magna" data-place-choice="aula-magna"><span>Aula Magna</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice" href="#map-place-foyer" data-place-choice="foyer"><span>Foyer</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-facility-directory"><h3>Facilities</h3><div class="indoor-place-list indoor-facility-list"><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--stairs" href="#map-place-b1-stairs" data-place-choice="b1-stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg><span>Stairs</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--lift" href="#map-place-b1-lifts" data-place-choice="b1-lifts"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg><span>Lifts</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--wc" href="#map-place-b1-wc" data-place-choice="b1-wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg><span>Toilets</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-detail" aria-live="polite" aria-atomic="true"><p class="indoor-detail-floor">Level −1</p><h4 data-detail-name>Aula Magna</h4><p data-detail-copy>The auditorium is shown on this level, opening towards the surrounding foyer. Its programme name is still to be confirmed.</p><button class="btn indoor-copy" type="button" data-copy-place hidden>Copy place link</button></div>
+    </div>
+  </article>
+<article class="indoor-floor" id="floor-b2" data-floor-panel="b2">
+    <div class="indoor-plan-column">
+      <div class="indoor-plan-heading"><h3>Level −2</h3><span>Röntgen building</span></div>
+      <section class="indoor-viewport" tabindex="0" aria-label="Scrollable Level −2 plan"><svg class="indoor-plan" viewBox="0 -60 1200 680" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Level −2 floor plan">
+    <image href="../assets/venue/indoor/b2.svg" width="1200" height="620" aria-hidden="true"/>
+    <g class="indoor-place" id="map-place-as01" data-place="as01" aria-label="AS01, Level −2">
+      <title>AS01</title>
+      <path class="indoor-room-shape" d="M862 355H937V414H862V403H850V369H862Z"/>
+      <g class="indoor-marker" transform="translate(893 384)">
+      <rect class="indoor-label-bg" x="-38" y="-18" width="76" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">AS01</text>
+      </g></g>
+<g class="indoor-place" id="map-place-as02" data-place="as02" aria-label="AS02, Level −2">
+      <title>AS02</title>
+      <path class="indoor-room-shape" d="M862 279H937V341H862V328H850V291H862Z"/>
+      <g class="indoor-marker" transform="translate(893 310)">
+      <rect class="indoor-label-bg" x="-38" y="-18" width="76" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">AS02</text>
+      </g></g>
+<g class="indoor-place" id="map-place-as03" data-place="as03" aria-label="AS03, Level −2">
+      <title>AS03</title>
+      <path class="indoor-room-shape" d="M862 203H937V265H862V252H850V216H862Z"/>
+      <g class="indoor-marker" transform="translate(893 233)">
+      <rect class="indoor-label-bg" x="-38" y="-18" width="76" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">AS03</text>
+      </g></g>
+<g class="indoor-place" id="map-place-as04" data-place="as04" aria-label="AS04, Level −2">
+      <title>AS04</title>
+      <path class="indoor-room-shape" d="M722 171H798V234H722V225H714V184H722Z"/>
+      <g class="indoor-marker" transform="translate(760 204)">
+      <rect class="indoor-label-bg" x="-38" y="-18" width="76" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">AS04</text>
+      </g></g>
+<g class="indoor-place" id="map-place-as05" data-place="as05" aria-label="AS05, Level −2">
+      <title>AS05</title>
+      <path class="indoor-room-shape" d="M617 171H692V225H700V234H617Z"/>
+      <g class="indoor-marker" transform="translate(655 204)">
+      <rect class="indoor-label-bg" x="-38" y="-18" width="76" height="36" rx="5"/><text class="indoor-room-label" text-anchor="middle" y="6">AS05</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--stairs" id="map-place-b2-stairs" data-place="b2-stairs" aria-label="Stairs, Level −2">
+      <title>Stairs</title>
+      <path class="indoor-service-leader" d="M505 190L505 143"/><circle class="indoor-service-point" cx="505" cy="190" r="9"/><rect class="indoor-marker-hit" x="409" y="75" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(505 115)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></g><text class="indoor-service-label" x="-19" y="8">Stairs</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--lift" id="map-place-b2-lifts" data-place="b2-lifts" aria-label="Lifts, Level −2">
+      <title>Lifts</title>
+      <path class="indoor-service-leader" d="M275 89L275 18"/><circle class="indoor-service-point" cx="275" cy="89" r="9"/><rect class="indoor-marker-hit" x="179" y="-50" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(275 -10)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></g><text class="indoor-service-label" x="-19" y="8">Lifts</text>
+      </g></g>
+<g class="indoor-place indoor-service indoor-facility--wc" id="map-place-b2-wc" data-place="b2-wc" aria-label="Toilets, Level −2">
+      <title>Toilets</title>
+      <path class="indoor-service-leader" d="M684 386L684 422"/><circle class="indoor-service-point" cx="684" cy="386" r="9"/><rect class="indoor-marker-hit" x="648" y="410" width="192" height="80"/>
+      <g class="indoor-marker" transform="translate(744 450)">
+      <rect class="indoor-service-disc" x="-88" y="-28" width="176" height="56" rx="8"/><rect class="indoor-service-tile" x="-88" y="-28" width="56" height="56" rx="8"/><g class="indoor-service-icon" transform="translate(-60 0)"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></g><text class="indoor-service-label" x="-19" y="8">Toilets</text>
+      </g></g>
+  </svg></section>
+      <div class="indoor-plan-footer"><span class="indoor-map-key"><span aria-hidden="true"></span>Rooms &amp; shared spaces</span><div class="indoor-facility-legend" role="group" aria-label="Facility symbols"><span class="indoor-facility-key indoor-facility--stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg>Stairs</span><span class="indoor-facility-key indoor-facility--lift"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg>Lifts</span><span class="indoor-facility-key indoor-facility--wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg>Toilets</span></div><span>Schematic plan</span></div>
+    </div>
+    <div class="indoor-directory">
+      <div class="indoor-room-directory"><h3>Explore this floor</h3><div class="indoor-place-list"><a class="btn indoor-place-choice" href="#map-place-as01" data-place-choice="as01"><span>AS01</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice" href="#map-place-as02" data-place-choice="as02"><span>AS02</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice" href="#map-place-as03" data-place-choice="as03"><span>AS03</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice" href="#map-place-as04" data-place-choice="as04"><span>AS04</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice" href="#map-place-as05" data-place-choice="as05"><span>AS05</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-facility-directory"><h3>Facilities</h3><div class="indoor-place-list indoor-facility-list"><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--stairs" href="#map-place-b2-stairs" data-place-choice="b2-stairs"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><path d="M-12 11h8V3h8v-8h8M-12-1 0-13m-7 0h7v7"/></svg><span>Stairs</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--lift" href="#map-place-b2-lifts" data-place-choice="b2-lifts"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><rect x="-12" y="-7" width="24" height="21" rx="2"/><path d="M-8-11l4-4 4 4m2-4 4 4 4-4M-5 5v6m10-6v6"/><circle cx="-5" cy="0" r="2"/><circle cx="5" cy="0" r="2"/></svg><span>Lifts</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn indoor-place-choice indoor-facility-choice indoor-facility--wc" href="#map-place-b2-wc" data-place-choice="b2-wc"><svg class="indoor-facility-icon" viewBox="-18 -18 36 36" width="24" height="24" aria-hidden="true"><text text-anchor="middle" y="6" class="indoor-wc-symbol">WC</text></svg><span>Toilets</span><svg class="indoor-choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div>
+      <div class="indoor-detail" aria-live="polite" aria-atomic="true"><p class="indoor-detail-floor">Level −2</p><h4 data-detail-name>AS01</h4><p data-detail-copy>The bottom room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed.</p><button class="btn indoor-copy" type="button" data-copy-place hidden>Copy place link</button></div>
+    </div>
+  </article>
+            <p class="indoor-footnote">Select a room or facility to highlight it. On a phone, swipe the map to explore.</p>
+            <p class="sr-only" data-indoor-status role="status"></p>
+          </div>
+          <script type="application/json" id="indoor-map-data">{"defaultFloor":"b1","floors":[{"id":"ground","name":"Ground floor","short":"Ground","number":"G","description":"Explore the foyer and the building’s vertical connections.","places":[{"id":"ground-foyer","name":"Ground-floor foyer","kind":"space","x":360,"y":465,"shape":"M112 405H320L381 390V450H570V520H415V475H335V520H112Z","description":"The open foyer area on the ground floor. The conference arrival point is still to be confirmed."},{"id":"ground-stairs","name":"Stairs","kind":"stairs","x":354,"y":337,"description":"Staircase beside the Aula Magna volume. Conference access between floors is still to be confirmed.","label":{"x":458,"y":337}},{"id":"ground-lifts","name":"Lifts","kind":"lift","x":281,"y":110,"description":"Lift core shown on the ground-floor plan. The route to the conference spaces is still to be confirmed.","label":{"x":281,"y":-10}},{"id":"ground-wc","name":"Toilets","kind":"wc","x":684,"y":407,"description":"Toilet facilities shown beside the central service core.","label":{"x":815,"y":410}}]},{"id":"b1","name":"Level −1","short":"Level −1","number":"−1","description":"Locate the Aula Magna and the large foyer around it.","places":[{"id":"aula-magna","name":"Aula Magna","kind":"room","x":225,"y":260,"shape":"M151 117H317V142H337V165H296V316L288 342L295 368H152L159 342L130 334V327H151Z","description":"The auditorium is shown on this level, opening towards the surrounding foyer. Its programme name is still to be confirmed."},{"id":"foyer","name":"Foyer","kind":"space","x":425,"y":455,"shape":"M80 400H625V465H570V530H415V485H335V530H80Z","description":"The large open space in front of and beside the Aula Magna. Registration, catering and poster positions are still to be confirmed."},{"id":"b1-stairs","name":"Stairs","kind":"stairs","x":505,"y":218,"description":"The main staircase shown in the central part of this plan. Conference access between floors is still to be confirmed.","label":{"x":505,"y":120}},{"id":"b1-lifts","name":"Lifts","kind":"lift","x":275,"y":104,"description":"Lift core shown beside the auditorium’s upper service area. Conference access is still to be confirmed.","label":{"x":275,"y":-10}},{"id":"b1-wc","name":"Toilets","kind":"wc","x":689,"y":417,"description":"Toilet facilities shown beside the central service core.","label":{"x":744,"y":465}}]},{"id":"b2","name":"Level −2","short":"Level −2","number":"−2","description":"Find the five rooms labelled AS01–AS05 in the supplied plan.","places":[{"id":"as01","name":"AS01","kind":"room","x":893,"y":384,"shape":"M862 355H937V414H862V403H850V369H862Z","description":"The bottom room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."},{"id":"as02","name":"AS02","kind":"room","x":893,"y":310,"shape":"M862 279H937V341H862V328H850V291H862Z","description":"The middle room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."},{"id":"as03","name":"AS03","kind":"room","x":893,"y":233,"shape":"M862 203H937V265H862V252H850V216H862Z","description":"The upper room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."},{"id":"as04","name":"AS04","kind":"room","x":760,"y":204,"shape":"M722 171H798V234H722V225H714V184H722Z","description":"The right-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."},{"id":"as05","name":"AS05","kind":"room","x":655,"y":204,"shape":"M617 171H692V225H700V234H617Z","description":"The left-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."},{"id":"b2-stairs","name":"Stairs","kind":"stairs","x":505,"y":190,"description":"The staircase connection shown above the central open area. Conference access between floors is still to be confirmed.","label":{"x":505,"y":115}},{"id":"b2-lifts","name":"Lifts","kind":"lift","x":275,"y":89,"description":"Lift core shown in the service area beside the auditorium volume. Conference access is still to be confirmed.","label":{"x":275,"y":-10}},{"id":"b2-wc","name":"Toilets","kind":"wc","x":684,"y":386,"description":"Toilet facilities shown beside the central service core.","label":{"x":744,"y":450}}]}]}</script>
+        </div>
+      </section>
+      <!-- /INDOOR MAP -->
+
       <section class="venue-building-section bg-neutral text-neutral-content" aria-labelledby="building-heading">
         <div class="site-container venue-building-layout">
           <figure class="venue-building-photo">
@@ -647,5 +810,6 @@
     <script src="../js/vendor/d3-geo-3.1.1.min.js" defer></script>
     <script src="../js/venue-map-renderer.js?v=2026100803" defer></script>
     <script src="../js/venue-map.js?v=2026100803" defer></script>
+    <script src="../js/indoor-map.js?v=2026103002" defer></script>
   </body>
 </html>

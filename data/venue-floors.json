@@ -1,0 +1,212 @@
+{
+  "defaultFloor": "b1",
+  "floors": [
+    {
+      "id": "ground",
+      "name": "Ground floor",
+      "short": "Ground",
+      "number": "G",
+      "description": "Explore the foyer and the building’s vertical connections.",
+      "places": [
+        {
+          "id": "ground-foyer",
+          "name": "Ground-floor foyer",
+          "kind": "space",
+          "x": 360,
+          "y": 465,
+          "shape": "M112 405H320L381 390V450H570V520H415V475H335V520H112Z",
+          "description": "The open foyer area on the ground floor. The conference arrival point is still to be confirmed."
+        },
+        {
+          "id": "ground-stairs",
+          "name": "Stairs",
+          "kind": "stairs",
+          "x": 354,
+          "y": 337,
+          "description": "Staircase beside the Aula Magna volume. Conference access between floors is still to be confirmed.",
+          "label": {
+            "x": 458,
+            "y": 337
+          }
+        },
+        {
+          "id": "ground-lifts",
+          "name": "Lifts",
+          "kind": "lift",
+          "x": 281,
+          "y": 110,
+          "description": "Lift core shown on the ground-floor plan. The route to the conference spaces is still to be confirmed.",
+          "label": {
+            "x": 281,
+            "y": -10
+          }
+        },
+        {
+          "id": "ground-wc",
+          "name": "Toilets",
+          "kind": "wc",
+          "x": 684,
+          "y": 407,
+          "description": "Toilet facilities shown beside the central service core.",
+          "label": {
+            "x": 815,
+            "y": 410
+          }
+        }
+      ]
+    },
+    {
+      "id": "b1",
+      "name": "Level −1",
+      "short": "Level −1",
+      "number": "−1",
+      "description": "Locate the Aula Magna and the large foyer around it.",
+      "places": [
+        {
+          "id": "aula-magna",
+          "name": "Aula Magna",
+          "kind": "room",
+          "x": 225,
+          "y": 260,
+          "shape": "M151 117H317V142H337V165H296V316L288 342L295 368H152L159 342L130 334V327H151Z",
+          "description": "The auditorium is shown on this level, opening towards the surrounding foyer. Its programme name is still to be confirmed."
+        },
+        {
+          "id": "foyer",
+          "name": "Foyer",
+          "kind": "space",
+          "x": 425,
+          "y": 455,
+          "shape": "M80 400H625V465H570V530H415V485H335V530H80Z",
+          "description": "The large open space in front of and beside the Aula Magna. Registration, catering and poster positions are still to be confirmed."
+        },
+        {
+          "id": "b1-stairs",
+          "name": "Stairs",
+          "kind": "stairs",
+          "x": 505,
+          "y": 218,
+          "description": "The main staircase shown in the central part of this plan. Conference access between floors is still to be confirmed.",
+          "label": {
+            "x": 505,
+            "y": 120
+          }
+        },
+        {
+          "id": "b1-lifts",
+          "name": "Lifts",
+          "kind": "lift",
+          "x": 275,
+          "y": 104,
+          "description": "Lift core shown beside the auditorium’s upper service area. Conference access is still to be confirmed.",
+          "label": {
+            "x": 275,
+            "y": -10
+          }
+        },
+        {
+          "id": "b1-wc",
+          "name": "Toilets",
+          "kind": "wc",
+          "x": 689,
+          "y": 417,
+          "description": "Toilet facilities shown beside the central service core.",
+          "label": {
+            "x": 744,
+            "y": 465
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "name": "Level −2",
+      "short": "Level −2",
+      "number": "−2",
+      "description": "Find the five rooms labelled AS01–AS05 in the supplied plan.",
+      "places": [
+        {
+          "id": "as01",
+          "name": "AS01",
+          "kind": "room",
+          "x": 893,
+          "y": 384,
+          "shape": "M862 355H937V414H862V403H850V369H862Z",
+          "description": "The bottom room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+        },
+        {
+          "id": "as02",
+          "name": "AS02",
+          "kind": "room",
+          "x": 893,
+          "y": 310,
+          "shape": "M862 279H937V341H862V328H850V291H862Z",
+          "description": "The middle room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+        },
+        {
+          "id": "as03",
+          "name": "AS03",
+          "kind": "room",
+          "x": 893,
+          "y": 233,
+          "shape": "M862 203H937V265H862V252H850V216H862Z",
+          "description": "The upper room in the group of three on the right-hand side of this plan. The ICAIF programme room assignment is still to be confirmed."
+        },
+        {
+          "id": "as04",
+          "name": "AS04",
+          "kind": "room",
+          "x": 760,
+          "y": 204,
+          "shape": "M722 171H798V234H722V225H714V184H722Z",
+          "description": "The right-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."
+        },
+        {
+          "id": "as05",
+          "name": "AS05",
+          "kind": "room",
+          "x": 655,
+          "y": 204,
+          "shape": "M617 171H692V225H700V234H617Z",
+          "description": "The left-hand room in the pair above the central hall. The ICAIF programme room assignment is still to be confirmed."
+        },
+        {
+          "id": "b2-stairs",
+          "name": "Stairs",
+          "kind": "stairs",
+          "x": 505,
+          "y": 190,
+          "description": "The staircase connection shown above the central open area. Conference access between floors is still to be confirmed.",
+          "label": {
+            "x": 505,
+            "y": 115
+          }
+        },
+        {
+          "id": "b2-lifts",
+          "name": "Lifts",
+          "kind": "lift",
+          "x": 275,
+          "y": 89,
+          "description": "Lift core shown in the service area beside the auditorium volume. Conference access is still to be confirmed.",
+          "label": {
+            "x": 275,
+            "y": -10
+          }
+        },
+        {
+          "id": "b2-wc",
+          "name": "Toilets",
+          "kind": "wc",
+          "x": 684,
+          "y": 386,
+          "description": "Toilet facilities shown beside the central service core.",
+          "label": {
+            "x": 744,
+            "y": 450
+          }
+        }
+      ]
+    }
+  ]
+}
