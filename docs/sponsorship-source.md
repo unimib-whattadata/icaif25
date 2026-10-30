@@ -1,5 +1,15 @@
 # Sponsorship content sources
 
+## U.S. Bank — October 30, 2026
+
+The email “Fw: ICAIF U.S. Bank Sponsorship” received on October 30 explicitly requests U.S. Bank as another Bronze sponsor for the website and physical materials. The separate “Fw: US bank logos” email provides alternative formats. This website update adds the logo after Vedrai and ADIA Lab on Home and Sponsors & Supporters; print artwork is outside this repository change.
+
+The supplied `US_Bank_logo_red_blue_RGB.ai` is a single-page PDF-compatible Illustrator file (320 × 146pt, 67,380 bytes; SHA-256 `6710a042c3eb25b3e842734bc77969d0d8c0a20ac717edb5c49899e85ce6614b`). `pdftocairo -svg` converts its vector artwork to `img/loghi/us-bank/us-bank-red-blue.svg` (SHA-256 `640bfbcfdb1fafb7db69465991a1e17cb74877863abf6886077900f1f2fa17b3`), preserving the complete artboard, original red/blue colors and proportions. The alternative brand portal linked by the sender did not resolve during retrieval, so the directly supplied Illustrator artwork is the source. No correspondence, contacts or commercial terms are included in public HTML or assets.
+
+U.S. Bank uses responsive image widths of 68/76/84px, including its artboard clear space. At 84px, its approximate luminance-contrast area is 433px² versus 430px² for Vedrai at 80px and 438px² for ADIA Lab at 100px, using the same diagnostic as the previous optical-balance pass. Home centers U.S. Bank beneath the existing Bronze pair with no extra grid row gap; Sponsors retains its wrapping horizontal list. Both links point to the official `https://www.usbank.com/` destination, verified on October 30, and preserve the descriptive accessible name, new-tab notice, `noopener noreferrer` and minimum 44px target height.
+
+Verification: `npm run build` passed all 43 existing tests, HTML validation and site/source checks for 21 canonical pages. Native browser measurements covered Home at 1280, 1024, 768, 390 and 320px and Sponsors at 1280 and 320px. All ten Home sponsor logos loaded, no horizontal overflow was observed, and every measured sponsor link was at least 44px high. Desktop and mobile screenshots confirmed the Bronze placements and existing keyboard focus treatment. Evidence is under `.codex-artifacts/sponsorship-usbank-20261030/`. Shared CSS cache version is `2026103007`; the clean Sponsors route is regenerated.
+
 ## ADIA Lab — October 30, 2026
 
 The user's instruction refers to the email “Fw: ICAIF - sessione ADIA domenica” received on October 30, explicitly requesting another Bronze sponsor. The inline `image.png` supplied in that message identifies ADIA Lab. Its original PNG is copied unchanged to `img/loghi/adia-lab/adia-lab.png` (456 × 70 pixels; 10,090 bytes; SHA-256 `7fb85643af26c8cf832fec453f256a428c35d8790ca57e0f7432b108a27f0dbc`). The logo appears alongside Vedrai in the Bronze groups on Home and Sponsors & Supporters and links to `https://www.adialab.ae/`, the official site verified on October 30.

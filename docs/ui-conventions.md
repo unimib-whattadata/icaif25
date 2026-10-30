@@ -30,7 +30,7 @@ Align reading columns with the page heading and limit their width with `max-w-3x
 
 Balance sponsor marks by their painted artwork and contrast, rather than identical image-box widths. Preserve official clear space: DXC's artboard is wider than its painted mark, and Standard Chartered has substantial artboard margins. The Gold gallery therefore uses 1:1.6 columns and Silver 1:1.4 columns, with per-brand responsive widths. Keep Intesa's fine lettering wider than the dense LinqAlpha wordmark and size the portrait QRT mark by height. The measured rationale and current bounds are in `docs/sponsorship-source.md`.
 
-The Home Bronze gallery pairs Vedrai and ADIA Lab in 1:1.25 columns. Its additional lower-row width keeps both logos together from 768px; ADIA Lab's longer wordmark uses a larger image-box width to match Vedrai's visible weight while both remain smaller than the higher tiers.
+The Home Bronze gallery pairs Vedrai and ADIA Lab in 1:1.25 columns, with U.S. Bank centered beneath them. Its additional lower-row width keeps both logos together from 768px; ADIA Lab's longer wordmark uses a larger image-box width to match Vedrai's visible weight while both remain smaller than the higher tiers.
 
 ## Interaction
 
