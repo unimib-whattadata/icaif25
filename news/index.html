@@ -301,7 +301,7 @@
     </script>
     <!-- Heroicons -->
     <script src="../js/heroicons.js?v=2026100801" defer></script>
-    <link rel="stylesheet" href="../css/tailwind.min.css?v=2026103008">
+    <link rel="stylesheet" href="../css/tailwind.min.css?v=2026103108">
   </head>
 
   <body data-page="news" class="font-sans antialiased min-w-0">
@@ -784,9 +784,9 @@
     </main>
 
     <!-- --- FOOTER --- -->
-    <footer class="bg-neutral text-neutral-content">
+    <footer class="relative overflow-x-clip bg-neutral text-neutral-content">
       <div
-        class="footer footer-vertical mx-auto max-w-7xl gap-8 px-4 py-10 sm:px-6 md:footer-horizontal lg:px-8"
+        class="footer site-footer-grid footer-vertical mx-auto max-w-7xl gap-8 px-4 py-10 sm:px-6 md:footer-horizontal lg:px-8"
       >
         <aside class="max-w-sm">
           <span class="text-2xl font-bold">ICAIF '26</span>
@@ -855,10 +855,32 @@
         </nav>
       </div>
       <div
-        class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-neutral-content/70 sm:px-6 md:flex-row lg:px-8"
+        class="site-footer-bottom mx-auto grid max-w-7xl grid-cols-2 items-end gap-4 px-4 py-6 text-sm text-neutral-content/70 sm:px-6 md:block lg:px-8"
       >
-        <p>&copy; 2026 ICAIF Conference. All rights reserved.</p>
-        <a href="/privacy-policy/" class="link">Privacy Policy</a>
+        <div class="site-footer-legal flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-x-6">
+          <p>&copy; 2026 ICAIF Conference. All rights reserved.</p>
+          <a href="/privacy-policy/" class="link">Privacy Policy</a>
+        </div>
+        <a
+          href="https://whattadata.it/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Powered by WHATTA DATA (opens in a new tab)"
+          class="link site-footer-brand block w-full justify-self-end"
+        >
+          <span class="site-footer-credit text-neutral-content/70">Powered by</span>
+          <img
+            src="../img/branding/whattadata-cubes-edge-v2-768.webp"
+            srcset="../img/branding/whattadata-cubes-edge-v2-384.webp 384w, ../img/branding/whattadata-cubes-edge-v2-768.webp 768w"
+            sizes="(min-width: 1024px) 352px, (min-width: 768px) 352px, 330px"
+            width="768"
+            height="512"
+            alt="WHATTA DATA"
+            loading="lazy"
+            decoding="async"
+            class="block h-auto w-full"
+          >
+        </a>
       </div>
     </footer>
     <script src="../js/site-layout.js?v=2026101701" defer></script>

@@ -1,5 +1,25 @@
 # Home speaker portraits
 
+## Speaker programme links — October 31, 2026
+
+The user requested links from the Home speaker date labels to their scheduled appearances wherever a named slot exists. `data/programme.json` and the published programme supply nine matches. Each badge now links to `/programme/?day=YYYY-MM-DD#SESSION_ID`; this selects the correct day and reveals the exact session through the existing programme deep-link behavior.
+
+| Speaker | Appearance linked from Home | Programme anchor |
+| --- | --- | --- |
+| Agostino Capponi | November 15, keynote within the 11:00–13:00 competition/awards block | `session-2026-11-15-1100-45f5794e` |
+| Daniele Magazzeni | November 16, 09:00–09:40 keynote | `session-2026-11-16-0900-d5719161` |
+| Michael Barr | November 16, 11:00–11:30 keynote | `keynote-michael-barr` |
+| Mauro Micillo | November 17, 09:00–10:00 fireside chat | `session-2026-11-17-0900-c8abcb8e` |
+| Raffaele Savi | November 17, 09:00–10:00 fireside chat | `session-2026-11-17-0900-c8abcb8e` |
+| Stefano Pasquali | November 17, 14:00–14:30 keynote | `session-2026-11-17-1400-230e8289` |
+| Anastasia Borovykh | November 16, 09:40–10:30 panel | `session-2026-11-16-0940-8f01d4db` |
+| Marc Mézard | November 16, speech within the 19:00–22:00 banquet block | `session-2026-11-16-1900-9e880812` |
+| Fabio Mercurio | November 16, 09:40–10:30 panel | `session-2026-11-16-0940-8f01d4db` |
+
+Times above describe the published session/block, not the length of an individual contribution within a shared event. The six existing date labels keep their approved wording and appearance. Borovykh and Mercurio gain linked “Panel / November 16” labels; Mézard gains “Banquet speech / November 16”. These are explicit current programme matches and supersede the older absence of dated labels for these three people. Pasquali's Home keynote label points to his afternoon keynote, rather than his separate morning fireside chat. Rama Cont, Charles-Albert Lehalle and Huyên Pham have no named slot in the current data, so their cards remain undated.
+
+The change reuses native daisyUI links and the existing semantic orange badges, with accessible names identifying the speaker, appearance and date. Each selected session was checked for the speaker's name and matching date. HTML validation, source/route/fragment checks and the 21-page site checks passed. A browser click on Barr's label selected November 16 and scrolled to his 11:00–11:30 keynote. No programme data, session times, portraits, styles or footer content were changed for this request.
+
 ## Our speakers — October 27, 2026
 
 Marco authorized the changes requested in Andrea Prampolini's October 27 email. The homepage section is now “Our speakers”, covering all twelve named participants without classifying every person as a keynote. The six existing speakers, their approved studio portraits and dates are retained. Six additional participants have portraits and verified affiliations; no unconfirmed speaking dates are assigned.

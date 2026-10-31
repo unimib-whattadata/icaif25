@@ -1,0 +1,16 @@
+{
+  "generator": "Built-in imagegen",
+  "transparent_background": true,
+  "edits": [
+    {
+      "input": "assets/branding/whattadata-cubes-v1.png",
+      "purpose": "Right-edge composition",
+      "prompt": "Use case: precise-object-edit. Edit the supplied existing WHATTA DATA corner illustration for use flush against the RIGHT EDGE of a dark navy website footer. Keep its existing composition, acid-lime tops and violet cube sides, isometric geometry, and transparent background. Make only these edge-composition changes: extend the cube cluster to the extreme right edge, with TWO clearly visible cubes partially cropped by the image's RIGHT boundary, as if the composition continues outside the page. Place the cropped cubes at different heights above the text. The cut must visibly pass through the solid cube faces, with no empty right-side margin in those places. Keep most of the existing cubes and the diagonal open arrangement unchanged. Move the complete white wordmark 'WHATTA DATA' slightly left so its final A has at least 8 percent of the canvas width of safe inset from the right edge; retain WHATTA bold and DATA regular, exact spelling, one wordmark only. Keep the wordmark below the cubes, fully readable and uncut. Do not add a rectangular logo plaque, background card, frame, ground plane or new text. True transparent alpha in all negative space. Preserve the reference artwork's character. A right-edge bleed illustration, not a screenshot of a website."
+    },
+    {
+      "input": "Output of the preceding edge-composition edit",
+      "purpose": "Remove glow; selected output is assets/branding/whattadata-cubes-edge-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit. Edit the supplied WHATTA DATA artwork. REMOVE EVERY GLOW EFFECT completely. This is a hard-edge transparent cutout, not a luminous render. Keep only the solid, opaque geometric cube faces and the solid white WHATTA DATA wordmark. Delete all lime, violet, blue, gray and white blurry clouds, halos, bloom, fog, soft light, reflections and light spill around and between every object and behind the letters; all those pixels must become completely transparent alpha=0. No glow around the cubes or typography whatsoever. Cube faces have flat matte fills with sharp straight edges: acid-lime top faces and violet side faces, no emitted light and no gradients. Typography is solid white with crisp contours, WHATTA bold and DATA regular, exact spelling and unchanged placement. Preserve the current cube positions, isometric geometry, diagonal layout, and the two cubes that are already partially cut by the RIGHT edge. Preserve the fully readable complete wordmark and the empty left area. Do not add a background, checkerboard pattern, floor, new cubes, card, border, new text or any new effect. The final should look like a restrained crisp graphic illustration exported as an actual transparent PNG, suitable to overlay on navy without any luminous cloud."
+    }
+  ]
+}

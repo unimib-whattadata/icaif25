@@ -202,6 +202,8 @@ The hierarchy uses bold, tightly tracked headings and relaxed introductory text.
 
 The home hero has its existing larger headline scale, with the conference date above it in the existing light copper accent. Home's sponsor and speaker headings both use the shared `section-title` hierarchy. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
 
+Home speaker appearance badges use the existing orange treatment and link to the matching day and exact named programme session. Labels identify the confirmed format and date, including Panel and Banquet speech where appropriate; speakers without a named slot retain undated cards. Keep the semantic time, visible link treatment, 44px touch target and speaker-specific accessible name. Sources and current mappings are in `docs/speakers-source.md`.
+
 Tutorial titles now retain the workshop's native card-title hierarchy: 18px at weight 600, with the shared 16.8px/1.4 mobile treatment below 768px. Presenter names use semibold list text with smaller affiliations beneath them, matching workshop organizers. Full abstracts use relaxed leading and a local 72ch maximum reading measure; these are reading-surface choices rather than new typography tokens.
 
 ## Layout
@@ -253,6 +255,8 @@ The programme uses native daisyUI `input` and `select` controls with visible lab
 The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
 Shared keyboard focus CSS uses an offset outline, and native controls also supply their component focus rules. Text links retain offset underlines. The skip link targets a focusable main region. Hidden content is removed from layout and keyboard interaction.
+
+The WHATTA DATA cube illustration is a transparent raster linked to the company website and aligned flush with the viewport's right edge and the bottom of the footer. Its user-requested edge version cuts two cubes at the right boundary, keeps the complete wordmark inset and renders without glow. A live “Powered by” label in the inherited Inter font sits immediately left of the wordmark on the same line; it scales from 10px on phones to 12px from 768px and belongs to the same accessible link. From 768px it occupies the unused space under Previous Editions and Contact, alongside the longer Quick Links column, without adding a separate image band. Copyright and Privacy Policy share the lower-left area. On phones the legal copy and artwork are side by side; a right-aligned image crop removes only unused transparent space to retain the complete visible cube motif at a useful size. Home's full Microsoft CMT acknowledgement remains in the introductory column below the conference description. Responsive WebP sources, native link focus and the existing navy surface apply; no new theme color or animation is introduced. Artwork provenance is in `docs/whattadata-footer-source.md`.
 
 ### Reading Tables
 
