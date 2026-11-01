@@ -1,5 +1,15 @@
 # News editorial source
 
+## Three announcements — November 1, 2026
+
+The user authorized only the first three proposed additions: startup competition finalists, accepted papers and presentation sessions, and a combined new-sponsors announcement. All three are dated November 1, the website announcement date, in a new November month group before the existing October entries. Existing articles and the LinkedIn-curated Home section remain unchanged.
+
+- **Startup competition finalists announced:** Iris Jiang's October 30 email in “ICAIF Start up competition” provides the announcement text and names Pulsar Labs, Refine, Themis AI, Formel AI and Galahad, with Qube Research & Technologies and OpenAI supporting the competition. Edoardo Vittori's October 28 reply confirms the website's slot and Main Hall location. `data/programme.json` supplies November 15, 16:30–18:00 CET and the stable session link. These sources establish selection as finalists, not an additional individual attendance confirmation.
+- **Accepted papers and presentation sessions now online:** the public `data/accepted-papers.json`, `data/programme-papers.json` and `data/programme.json`, based on the October 29–30 organizer emails and later November 1 corrections documented in their respective source files, support titles, authors and oral/poster assignments. Search and personal agenda are existing programme features. The announcement retains the preliminary-schedule qualifier and avoids a paper count that may change.
+- **New sponsors join ICAIF 2026:** the current Home and Sponsors & Supporters listings identify Wellington Management and LinqAlpha as Platinum, Domyn and DXC Technology as Gold, and Vedrai, ADIA Lab and U.S. Bank as Bronze. Sponsorship correspondence and logo provenance are recorded in `docs/sponsorship-source.md`; Wellington Management's Platinum placement was added in commit `6b49150`. This announcement summarizes those public listings without publishing commercial terms.
+
+The News search/social description and structured announcement list are regenerated from the updated page, and its metadata/sitemap update date is November 1. No poster-instructions article or keynote-news revision is included in this request.
+
 The user requested the fifteen main announcements reconstructed from repository history, in English, newest first. The static `news.html` archive groups them by month and links to existing conference pages.
 
 Entry dates are Git author dates in Europe/Rome. They record when the update entered this repository and do not independently establish deployment times. The programme and tutorial publication dates are also supported by `docs/programme-source.md` and `data/tutorials.json`. Dates in announcement text refer to event deadlines or scheduled activities, not publication.

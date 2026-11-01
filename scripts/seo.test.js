@@ -64,6 +64,6 @@ test('News structured list matches visible announcements and their order', () =>
   assert.equal(list.numberOfItems, anchors.length);
   assert.deepEqual(list.itemListElement.map(item => item.url), anchors);
   assert.deepEqual(list.itemListElement.map(item => item.position), anchors.map((_, index) => index + 1));
-  assert.equal(list.itemListElement[0].name, 'Student volunteer applications closed');
+  assert.equal(list.itemListElement[0].name, 'Startup competition finalists announced');
   assert.equal(graph.find(node => node['@type'] === 'WebPage').mainEntity['@id'], list['@id']);
 });
