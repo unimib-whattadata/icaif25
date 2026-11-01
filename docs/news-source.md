@@ -4,7 +4,17 @@
 
 Following the user's browser comment on November 1, the public startup-finalists paragraph names only Qube Research & Technologies as supporting the competition; the OpenAI mention from the source email is omitted at the user's request.
 
-The user authorized only the first three proposed additions: startup competition finalists, accepted papers and presentation sessions, and a combined new-sponsors announcement. All three are dated November 1, the website announcement date, in a new November month group before the existing October entries. Existing articles and the LinkedIn-curated Home section remain unchanged.
+The user authorized only the first three proposed additions: startup competition finalists, accepted papers and presentation sessions, and a combined new-sponsors announcement. These articles were initially added on November 1. The user's subsequent instruction asks to date them by when the underlying changes went online; the verified dates and ordering below supersede that initial common date. Existing articles and the LinkedIn-curated Home section remain unchanged.
+
+GitHub Pages build history was read on November 1. All cited builds have status `built`; timestamps below are the successful build's `updated_at`, converted to Europe/Rome (CET):
+
+| Article | Display date | Publication evidence |
+| --- | --- | --- |
+| Startup competition finalists announced | November 1, 2026 | First website entry in commit `e4be6fd`, deployment completed at 16:05:41. The October 30 email predates website publication. |
+| New sponsors join ICAIF 2026 | October 31, 2026 | The grouped roster became complete with Wellington Management in commit `6b49150`, deployment completed at 10:20:18. Other additions were deployed on October 26 (Domyn), October 27 (LinqAlpha), October 28 (DXC), and October 30 (Vedrai, ADIA Lab and U.S. Bank). |
+| Accepted papers and presentation sessions now online | October 30, 2026 | Session assignments first appeared in commit `de51f13`, deployment completed at 22:32:46. The accepted-paper catalogue itself was deployed earlier, October 29 at 10:51:31, from commit `377f6b3`; the combined article uses the date both were available. |
+
+The finalists article stays in November; the grouped sponsors and paper/session articles move to October in descending date order. These display dates describe the underlying website updates. The articles themselves were added to News on November 1, and the News metadata/sitemap modification date remains November 1. Build completion provides deployment evidence rather than a measurement of every CDN visitor's cache.
 
 - **Startup competition finalists announced:** Iris Jiang's October 30 email in “ICAIF Start up competition” provides the announcement text and names Pulsar Labs, Refine, Themis AI, Formel AI and Galahad, with Qube Research & Technologies and OpenAI supporting the competition. Edoardo Vittori's October 28 reply confirms the website's slot and Main Hall location. `data/programme.json` supplies November 15, 16:30–18:00 CET and the stable session link. These sources establish selection as finalists, not an additional individual attendance confirmation.
 - **Accepted papers and presentation sessions now online:** the public `data/accepted-papers.json`, `data/programme-papers.json` and `data/programme.json`, based on the October 29–30 organizer emails and later November 1 corrections documented in their respective source files, support titles, authors and oral/poster assignments. Search and personal agenda are existing programme features. The announcement retains the preliminary-schedule qualifier and avoids a paper count that may change.
