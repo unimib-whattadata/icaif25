@@ -2,6 +2,8 @@
 
 ## Three announcements — November 1, 2026
 
+Following the user's browser comment on November 1, the public startup-finalists paragraph names only Qube Research & Technologies as supporting the competition; the OpenAI mention from the source email is omitted at the user's request.
+
 The user authorized only the first three proposed additions: startup competition finalists, accepted papers and presentation sessions, and a combined new-sponsors announcement. All three are dated November 1, the website announcement date, in a new November month group before the existing October entries. Existing articles and the LinkedIn-curated Home section remain unchanged.
 
 - **Startup competition finalists announced:** Iris Jiang's October 30 email in “ICAIF Start up competition” provides the announcement text and names Pulsar Labs, Refine, Themis AI, Formel AI and Galahad, with Qube Research & Technologies and OpenAI supporting the competition. Edoardo Vittori's October 28 reply confirms the website's slot and Main Hall location. `data/programme.json` supplies November 15, 16:30–18:00 CET and the stable session link. These sources establish selection as finalists, not an additional individual attendance confirmation.
