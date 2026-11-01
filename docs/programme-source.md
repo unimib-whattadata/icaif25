@@ -1,5 +1,9 @@
 # Programme data
 
+## Poster removal — November 1, 2026
+
+Following Andrea Maurino's 09:42 CET email “paper da rimuovere dalla lista” and the user's explicit instruction, paper 742 (ThemeFlow) is removed from Poster Session 2 in both `data/programme-papers.json` and `data/programme.json`, and from the public poster publication list. Poster totals are now 39, 36 and 38, with all 113 remaining poster papers assigned exactly once. Other paper assignments and all session IDs, dates, times and rooms remain unchanged. This correction supersedes the workbook's paper 742 entry; preserve it when reconciling future imports.
+
 ## Organizer corrections — November 1, 2026
 
 Andrea Maurino's November 1 emails request moving paper 627 from Poster Session 2 to Poster Session 3 and paper 870 (FAP-Bench) from Poster Session 3 to Poster Session 1. Both `data/programme-papers.json` and `data/programme.json` apply these corrections, superseding the October 30 workbook assignments. Poster totals are now 39, 37 and 38; all 114 poster papers still appear exactly once. Paper 494 stays in Poster Session 2. Existing contribution order, session IDs, dates, rooms and times are retained. Paper 870 already belongs to the poster publication group.
