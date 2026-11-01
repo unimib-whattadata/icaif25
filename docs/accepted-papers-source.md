@@ -1,5 +1,9 @@
 # Accepted papers publication source
 
+## Author correction — November 1, 2026
+
+Andrea Maurino's November 1 email asks to verify the authors of paper 428, “FairCreditLens: Consumption-Aware Fair Credit Risk Modeling for Default Prediction”, following corresponding author Yanting Zhang's October 31 request. The complete supplied author order is Lei Zhu, Shuaishuai Gong and Yanting Zhang. The existing University of Macau affiliation for Lei Zhu is retained; Yanting Zhang identifies their institution as Hong Kong University of Science and Technology. No affiliation was supplied for Shuaishuai Gong, so none is inferred. The corrected public author string is shared by the accepted-paper list and programme. This correction supersedes the incomplete workbook author field and does not establish TAPS or DOI publication status.
+
 The user requested publication from Andrea Maurino's emails “paper accettati” (29 October 2026, 09:10 CET) and “piccola variazione dei paper” (09:57 CET). The later attachment, `accepted papers and registered.xlsx`, is authoritative for the publication list.
 
 The public page `/accepted-papers/` separates **52 oral presentations**, **114 poster presentations** and **49 proceedings-only papers**, for **215 unique papers**. Paper **136**, “FAAB: A Benchmark for Fault Detection and Responsibility Attribution in Financial Multi-Agent Workflows”, belongs to the poster group following the second email. The initial page included the requested Whova presentation-link note. The user subsequently requested removal of that supporting block, including its visible update line.

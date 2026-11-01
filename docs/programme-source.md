@@ -1,5 +1,11 @@
 # Programme data
 
+## Organizer corrections — November 1, 2026
+
+Andrea Maurino's November 1 emails request moving paper 627 from Poster Session 2 to Poster Session 3 and paper 870 (FAP-Bench) from Poster Session 3 to Poster Session 1. Both `data/programme-papers.json` and `data/programme.json` apply these corrections, superseding the October 30 workbook assignments. Poster totals are now 39, 37 and 38; all 114 poster papers still appear exactly once. Paper 494 stays in Poster Session 2. Existing contribution order, session IDs, dates, rooms and times are retained. Paper 870 already belongs to the poster publication group.
+
+The complete author list for paper 428 is corrected in `data/accepted-papers.json` and inherited by the programme build; see `docs/accepted-papers-source.md` for provenance.
+
 ## Critique fixes — October 30, 2026
 
 The user authorized the three critique priorities and related microcopy/typography refinements. Paper searches now isolate matching contributions inside the session, with a Show all control, match count and session context. Matches appear first when the full list is requested; clearing search restores the supplied order. All query terms must describe one paper plus its session context, preventing terms from unrelated papers from producing a false result. Topic/session queries retain the complete session without automatically opening every paper list. Calendar exports still include each selected session's complete paper list.

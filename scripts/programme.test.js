@@ -394,7 +394,7 @@ test("the public timetable assigns every oral and poster paper once with the sup
   assert.deepEqual(oral.map((item) => Number(item.title.match(/^Oral Session (\d+):/)[1])),
     Array.from({ length: 16 }, (_, index) => index + 1));
   assert.deepEqual(oral.map((item) => item.paperIds.length), [4, 4, 4, 4, ...Array(12).fill(3)]);
-  assert.deepEqual(poster.map((item) => item.paperIds.length), [38, 38, 38]);
+  assert.deepEqual(poster.map((item) => item.paperIds.length), [39, 37, 38]);
 
   for (const [items, groupId, expectedCount] of [[oral, "oral", 52], [poster, "poster", 114]]) {
     const assignedIds = items.flatMap((item) => item.paperIds);

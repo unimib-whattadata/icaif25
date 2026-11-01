@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -737,7 +737,7 @@
       "title": "Coffee Break + Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "38 posters",
+      "detail": "39 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -778,7 +778,8 @@
         533,
         551,
         654,
-        136
+        136,
+        870
       ]
     },
     {
@@ -941,7 +942,7 @@
       "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "38 posters",
+      "detail": "37 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -958,7 +959,6 @@
         607,
         616,
         626,
-        627,
         633,
         639,
         641,
@@ -1150,7 +1150,6 @@
         837,
         850,
         869,
-        870,
         873,
         875,
         880,
@@ -1174,7 +1173,8 @@
         1061,
         1074,
         1092,
-        1106
+        1106,
+        627
       ]
     },
     {

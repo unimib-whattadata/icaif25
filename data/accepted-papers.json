@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-11-01",
   "groups": [
     {
       "id": "oral",
@@ -73,7 +73,7 @@
         {
           "id": 428,
           "title": "FairCreditLens: Consumption-Aware Fair Credit Risk Modeling for Default Prediction",
-          "authors": "Lei Zhu (University of Macau)"
+          "authors": "Lei Zhu (University of Macau); Shuaishuai Gong; Yanting Zhang (Hong Kong University of Science and Technology)"
         },
         {
           "id": 467,
