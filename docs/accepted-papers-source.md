@@ -1,5 +1,11 @@
 # Accepted papers publication source
 
+## Shared workbook reconciliation — November 2, 2026
+
+The user authorized applying the newly reviewed organizer changes and committing/pushing the website, then explicitly instructed that **the file takes precedence over the emails**. The authoritative shared workbook is [accepted papers and registered (ultimo).xlsx](https://docs.google.com/spreadsheets/d/1VS05PAAh1aVzbSpaNu29cMvcmaI-eCCK/edit), last modified November 2 at 11:58:26.900 UTC and read through Google Drive. Its categorized public tabs are now authoritative for the complete paper set, publication category, title, author string and presentation-session assignment. The public catalogue contains **211 papers: 51 oral, 107 poster and 53 proceedings-only**. Papers 244, 607 and 1007 no longer appear; 820 belongs to proceedings only, 405 is oral, and 523 and 961 are posters. This source policy supersedes the earlier email overrides documented below. Removing public entries does not establish a separate ACM publication decision.
+
+The title and authors in the shared file resolve the Benhamou email's “73” reference to public paper ID **523**, “Can We Stop the Backtest Yet? Anytime-Valid Promotion Tests for Adaptive Financial Research Agents”. Author strings follow the file as instructed: paper 428 lists Lei Zhu, and paper 1067 lists Moshu Xu, Junyu Chen, Lijian Yang and Franklin Liu, with the supplied affiliations. Whitespace and corresponding-author markers are normalized by the existing publication convention; no authors or affiliations are inferred. Paper 742 remains absent from the source. The private workbook and its review, payment and contact fields are not stored in the website repository.
+
 ## Proceedings-only and author corrections — November 2, 2026
 
 The user authorized website changes 1–5 from the reviewed Gmail requests. Andrea Maurino's November 2 messages move paper 397 from oral presentation and papers 669, 672 and 685 from poster presentation to proceedings only. Junyi Ye's follow-up explicitly includes paper 961, consistent with the four-paper proceedings-only agreement quoted in that conversation. All five remain in the accepted-paper catalogue, without presentation assignments. The 214-paper total is unchanged: **51 oral, 109 poster and 54 proceedings-only**.

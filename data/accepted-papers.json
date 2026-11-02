@@ -16,11 +16,6 @@
           "authors": "Liu Haoran (Renmin University of China); Zhou Mingyao (Renmin University of China); Yu Hao (Renmin University of China); Guo Qi (Renmin University of China)"
         },
         {
-          "id": 244,
-          "title": "DeepUSO: Finance-Informed Temporal–Relational Operators for Non-Stationary Cross-Sectional Stock Ranking",
-          "authors": "Liu Bowen (University of Rochester)"
-        },
-        {
           "id": 250,
           "title": "Public-Disclosure Recoverability in Fund Allocation Recommendations",
           "authors": "Tenghan Zhong (University of Southern California); Keyuan Wu (Shanghai Jiao Tong University); Yuxuan Ouyang (Georgia Institute of Technology)"
@@ -61,6 +56,11 @@
           "authors": "Ahsan Alvi (Bloomberg); Thomas Fonlladosa (Bloomberg); Ching-Yu Lin (Bloomberg); Ashwin Bhola (Bloomberg); Chelvi Paramanathan (Bloomberg); Minh Duc Nguyen (Bloomberg); Saher Esmeir (Bloomberg)"
         },
         {
+          "id": 405,
+          "title": "Dependence-Informed Sparse Neural Architecture for Stock Return Prediction",
+          "authors": "Hongyu Lin (UCL); Yulin Chen (UCL); Yuanrong Wang (UCL); Antonio Briola (UCL); Tomaso Aste (UCL)"
+        },
+        {
           "id": 417,
           "title": "Deep Hedging Under Non-Convexity: Geometry and Search-Based Diagnostics",
           "authors": "Matteo Maggiolo (Vigilant Analytics); Giuseppe Nuti (UBS Investment Bank); Miroslav Strupl (IDSIA the Swiss AI Lab USI-SUPSI); Oleg Szehr (IDSIA the Swiss AI Lab USI-SUPSI)"
@@ -68,7 +68,7 @@
         {
           "id": 428,
           "title": "FairCreditLens: Consumption-Aware Fair Credit Risk Modeling for Default Prediction",
-          "authors": "Lei Zhu (University of Macau); Shuaishuai Gong; Yanting Zhang (Hong Kong University of Science and Technology)"
+          "authors": "Lei Zhu (University of Macau)"
         },
         {
           "id": 467,
@@ -243,7 +243,7 @@
         {
           "id": 1067,
           "title": "Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models",
-          "authors": "Junyu Chen (University of Groningen); Franklin Liu (University of Chicago); Moshu Xu (Tsinghua University); Lijian Yang (Tsinghua University)"
+          "authors": "Moshu Xu (Tsinghua University); Junyu Chen (University of Groningen); Lijian Yang (Tsinghua University); Franklin Liu (University of Chicago)"
         },
         {
           "id": 1079,
@@ -367,11 +367,6 @@
           "authors": "Nataliya Tkachenko (Lloyds Banking Group); Sophie Adams (Lloyds Banking Group); Andrew Torr (Lloyds Banking Group)"
         },
         {
-          "id": 405,
-          "title": "Dependence-Informed Sparse Neural Architecture for Stock Return Prediction",
-          "authors": "Hongyu Lin (UCL); Yulin Chen (UCL); Yuanrong Wang (UCL); Antonio Briola (UCL); Tomaso Aste (UCL)"
-        },
-        {
           "id": 418,
           "title": "Sylvester: A Benchmark and Empirical Study of Lifecycle-Aware Entity Resolution on Open Financial Data",
           "authors": "Sheng Chang Li (University of Western Ontario)"
@@ -452,6 +447,11 @@
           "authors": "Yuko Kuroki (Intesa Sanpaolo AI Research); André Panisson (Intesa Sanpaolo AI Research); Alberto Rumi (ntesa Sanpaolo AI Research); Francesco Bonchi (Intesa Sanpaolo AI Research)"
         },
         {
+          "id": 523,
+          "title": "Can We Stop the Backtest Yet? Anytime-Valid Promotion Tests for Adaptive Financial Research Agents",
+          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (Ai For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)"
+        },
+        {
           "id": 533,
           "title": "Structural Sensitivity in Supply Chain Networks for Financial Downside Cascade Prediction",
           "authors": "Amirmohammad Ebrahimi (University of Florida); Hamed Amini (University of Florida)"
@@ -500,11 +500,6 @@
           "id": 602,
           "title": "ConfFiNE: A Confusion-Based Financial Neighborhood Estimator with Directed and Validated Peer Similarity",
           "authors": "Silu Li (Princeton University); Siyu Li (Westlake University); John Mulvey (Princeton University)"
-        },
-        {
-          "id": 607,
-          "title": "When Should Humans Intervene? Capacity-Aware Oversight for Financial AI Agents",
-          "authors": "Brindha Jeyaraman (Aethryx)"
         },
         {
           "id": 616,
@@ -647,11 +642,6 @@
           "authors": "Kwangje Baeg (KT); Janaina Villacis (KDI School of Public Policy and Management)"
         },
         {
-          "id": 820,
-          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
-          "authors": "Wilmer Henao (Invesco)"
-        },
-        {
           "id": 827,
           "title": "Uncertainty-Conditioned Hierarchical Specialist Routing for Dynamic Long-Short Portfolio Allocation",
           "authors": "Isaac Jia Wei Lim (NTU); Siyuan Liu (NTU)"
@@ -752,6 +742,11 @@
           "authors": "Jongho Park (Pohang University of Science and Technology); Youngju Ahn (Pohang University of Science and Technology); Bong-Gyu Jang (Pohang University of Science and Technology)"
         },
         {
+          "id": 961,
+          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
+          "authors": "Junyi Ye (Montclair State University)"
+        },
+        {
           "id": 972,
           "title": "Ordinal Gates, Cardinal Bets: Matching LLM Confidence to the Financial Decision Operator",
           "authors": "Rayansh Singh (Michigan State University); Sara Rezaeimanesh (Michigan State University)"
@@ -770,11 +765,6 @@
           "id": 998,
           "title": "How Much Does the Hint Matter? Scope Conditions for Hindsight Self-Distillation in Financial Reasoning",
           "authors": "Johnny Yu (UC Berkeley)"
-        },
-        {
-          "id": 1007,
-          "title": "When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting",
-          "authors": "Jacqueline PANG (Cornell University)"
         },
         {
           "id": 1027,
@@ -903,11 +893,6 @@
           "authors": "Danning Li (The Hong Kong University of Science and Technology (Guangzhou))"
         },
         {
-          "id": 523,
-          "title": "Can We Stop the Backtest Yet? Anytime-Valid Promotion Tests for Adaptive Financial Research Agents",
-          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (Ai For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)"
-        },
-        {
           "id": 544,
           "title": "TAPES: Terminal Adjoint-Propagated Error Scheduling for Financial Diffusion Samplers",
           "authors": "Yilie Huang (Columbia University)"
@@ -1003,6 +988,11 @@
           "authors": "Jason Jho (Stuut); Naman Kedia (Stuut)"
         },
         {
+          "id": 820,
+          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
+          "authors": "Wilmer Henao (Invesco)"
+        },
+        {
           "id": 881,
           "title": "Reproducibility of Mojo GPU Kernels in Financial AI",
           "authors": "Henry Han (Baylor University)"
@@ -1041,11 +1031,6 @@
           "id": 955,
           "title": "When Synthetic Markets Look Real but Aren't: Cross-asset tail dependence as a realism diagnostic for financial data generators",
           "authors": "Ming Yin Ivan Sit (UCLA)"
-        },
-        {
-          "id": 961,
-          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
-          "authors": "Junyi Ye (Montclair State University)"
         },
         {
           "id": 977,

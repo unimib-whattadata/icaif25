@@ -577,10 +577,10 @@
       "pending": false,
       "href": "",
       "paperIds": [
+        772,
         973,
         1067,
-        1095,
-        772
+        1095
       ]
     },
     {
@@ -630,10 +630,10 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        399,
-        1102,
         290,
-        841
+        399,
+        841,
+        1102
       ]
     },
     {
@@ -706,9 +706,9 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        244,
         757,
-        762
+        762,
+        405
       ]
     },
     {
@@ -736,13 +736,14 @@
       "title": "Coffee Break + Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "39 posters",
+      "detail": "38 posters",
       "pending": false,
       "href": "",
       "paperIds": [
         70,
         92,
         121,
+        136,
         182,
         198,
         208,
@@ -759,7 +760,6 @@
         348,
         352,
         379,
-        405,
         418,
         437,
         441,
@@ -777,7 +777,6 @@
         533,
         551,
         654,
-        136,
         870
       ]
     },
@@ -941,7 +940,7 @@
       "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "35 posters",
+      "detail": "34 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -955,7 +954,6 @@
         588,
         595,
         602,
-        607,
         616,
         626,
         633,
@@ -976,10 +974,10 @@
         777,
         797,
         815,
-        820,
         834,
         899,
-        918
+        918,
+        523
       ]
     },
     {
@@ -1066,8 +1064,8 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        662,
         609,
+        662,
         986
       ]
     },
@@ -1083,9 +1081,9 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        1043,
         732,
-        949
+        949,
+        1043
       ]
     },
     {
@@ -1100,9 +1098,9 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        1079,
         941,
-        1034
+        1034,
+        1079
       ]
     },
     {
@@ -1134,6 +1132,7 @@
       "pending": true,
       "href": "",
       "paperIds": [
+        627,
         698,
         722,
         734,
@@ -1156,19 +1155,18 @@
         935,
         939,
         950,
+        961,
         972,
         984,
         985,
         998,
-        1007,
         1027,
         1044,
         1050,
         1061,
         1074,
         1092,
-        1106,
-        627
+        1106
       ]
     },
     {
