@@ -642,6 +642,11 @@
           "authors": "Kwangje Baeg (KT); Janaina Villacis (KDI School of Public Policy and Management)"
         },
         {
+          "id": 820,
+          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
+          "authors": "Wilmer Henao (Invesco)"
+        },
+        {
           "id": 827,
           "title": "Uncertainty-Conditioned Hierarchical Specialist Routing for Dynamic Long-Short Portfolio Allocation",
           "authors": "Isaac Jia Wei Lim (NTU); Siyuan Liu (NTU)"
@@ -981,11 +986,6 @@
           "id": 811,
           "title": "CARB: A Verifiable Benchmark for Accounts-Receivable Agents",
           "authors": "Jason Jho (Stuut); Naman Kedia (Stuut)"
-        },
-        {
-          "id": 820,
-          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
-          "authors": "Wilmer Henao (Invesco)"
         },
         {
           "id": 881,

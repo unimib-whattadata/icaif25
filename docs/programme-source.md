@@ -1,5 +1,9 @@
 # Programme data
 
+## Paper 820 restored to Poster Session 2 — November 2, 2026
+
+Andrea Maurino's November 2, 16:14 CET [correction to Wilmer Henao](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a19cd387892296d) confirms that paper **820**, “When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval”, belongs to **Poster Session 2**. This supersedes its earlier removal and proceedings-only classification. The shared Google Sheet, both programme assignment sources and Accepted Papers now reflect the correction. Poster Session 2 retains its stable ID, **November 17, 11:00–11:30 CET, Foyer**, and now contains **35 posters**. Poster session totals are **38, 35 and 34**, with **158 unique presentation assignments** overall. Existing contributions retain their order; the restored paper is appended to match the shared poster tab.
+
 ## Morning panel title — November 2, 2026
 
 Andrea Prampolini's November 2, 15:30 CET email, [“Fw: ICAIF Panel assembly”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a19cabb7f16c482), requests the title **“AI agents in Finance: What works and what falls short”** for the November 16, 09:40–10:30 panel in Main Hall. This supersedes the previous “From AI Scientific Discovery to Profitable Trading Strategies: What works, what transfers and what Falls Short?” title below. Participants, moderator, schedule and the stable `session-2026-11-16-0940-8f01d4db` ID are retained, preserving Home links and saved agendas. The timetable importer maps both the old and new titles to the approved wording and existing identity.

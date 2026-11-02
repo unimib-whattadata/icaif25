@@ -1,5 +1,9 @@
 # Accepted papers publication source
 
+## Paper 820 restored to poster presentation — November 2, 2026
+
+Andrea Maurino's November 2, 16:14 CET [correction to Wilmer Henao](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a19cd387892296d) confirms paper **820** in **Poster Session 2**, superseding the earlier removal and proceedings-only classification. The shared Google Sheet and public catalogue now classify the paper as a poster, retaining its title and author. The catalogue contains **211 papers: 51 oral, 107 poster and 53 proceedings-only**. The other reviewed email decisions remain in effect.
+
 ## Email decisions and shared Google Sheet — November 2, 2026
 
 The user corrected the source policy: **decisions discussed in email take precedence over the spreadsheet**. The editable [shared Google Sheet](https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit) has been updated in place for the already-processed requests. Its request-date, message-link, change and sent-confirmation columns and change register remain private to Drive. Existing colors were preserved; only empty rows and columns were trimmed.
