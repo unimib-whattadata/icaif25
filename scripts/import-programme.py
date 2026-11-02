@@ -33,7 +33,8 @@ DAY_SUBTITLES = {
     "2026-11-17": "Main conference",
 }
 
-MORNING_PANEL_TITLE = (
+MORNING_PANEL_TITLE = "AI agents in Finance: What works and what falls short"
+LEGACY_MORNING_PANEL_TITLE = (
     "From AI Scientific Discovery to Profitable Trading Strategies: "
     "What works, what transfers and what Falls Short?"
 )
@@ -149,7 +150,8 @@ def public_title(title, session_type):
     if title == "Financial AI Security, Privacy, and Safety:":
         title = title[:-1]
     elif title in ("Panel Discussion: Intesa, Domyn, Bloomberg, CFM, modera QRT",
-                   "Panel discussion: Intesa, Domyn, Bloomberg & CFM", MORNING_PANEL_TITLE):
+                   "Panel discussion: Intesa, Domyn, Bloomberg & CFM",
+                   LEGACY_MORNING_PANEL_TITLE, MORNING_PANEL_TITLE):
         title = MORNING_PANEL_TITLE
         detail = ("Participants: Andrea Prampolini (Intesa Sanpaolo), Stefano Pasquali (Domyn), "
                   "Anastasia Borovykh (CFM), Fabio Mercurio (Bloomberg).\n"
