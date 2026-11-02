@@ -1,5 +1,11 @@
 # Programme data
 
+## Email decisions and shared Google Sheet — November 2, 2026
+
+The user's latest instruction establishes that **email decisions take precedence over spreadsheet values**. The [editable shared Google Sheet](https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit) has been reconciled with the already-processed email requests and now tracks request dates, source messages, changes and whether confirmation was actually sent. The prior file-first policy below is superseded.
+
+Paper **961** is removed from Poster Session 3 and retained in proceedings only, as explicitly requested by Junyi Ye. The confirmed author lists for **428** and **1067** are restored, with 1067 staying in Oral Session 1. The 16 oral sessions contain **51 papers**; the three numbered poster sessions contain **38, 34 and 34 papers**, for **157 unique presentation assignments**. All existing dates, times, rooms and stable session IDs are retained. The other processed swaps, promotions, removals and Magazzeni fireside format remain in effect.
+
 ## Shared workbook reconciliation — November 2, 2026
 
 The user authorized the reviewed additional changes and their commit/push, then explicitly instructed that **the file takes precedence over the emails**. The current [shared accepted-paper workbook](https://docs.google.com/spreadsheets/d/1VS05PAAh1aVzbSpaNu29cMvcmaI-eCCK/edit), renamed “accepted papers and registered (ultimo).xlsx”, was read through Google Drive after its November 2, 11:58:26.900 UTC modification. Its public categories, paper metadata, assignments and oral themes supersede the older `accepted papers and registered_old` workbook and conflicting email overrides below. Other programme events are outside this scientific-paper workbook.

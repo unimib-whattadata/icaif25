@@ -68,7 +68,7 @@
         {
           "id": 428,
           "title": "FairCreditLens: Consumption-Aware Fair Credit Risk Modeling for Default Prediction",
-          "authors": "Lei Zhu (University of Macau)"
+          "authors": "Lei Zhu (University of Macau); Shuaishuai Gong; Yanting Zhang (Hong Kong University of Science and Technology)"
         },
         {
           "id": 467,
@@ -243,7 +243,7 @@
         {
           "id": 1067,
           "title": "Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models",
-          "authors": "Moshu Xu (Tsinghua University); Junyu Chen (University of Groningen); Lijian Yang (Tsinghua University); Franklin Liu (University of Chicago)"
+          "authors": "Junyu Chen (University of Groningen); Franklin Liu (University of Chicago); Moshu Xu (Tsinghua University); Lijian Yang (Tsinghua University)"
         },
         {
           "id": 1079,
@@ -742,11 +742,6 @@
           "authors": "Jongho Park (Pohang University of Science and Technology); Youngju Ahn (Pohang University of Science and Technology); Bong-Gyu Jang (Pohang University of Science and Technology)"
         },
         {
-          "id": 961,
-          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
-          "authors": "Junyi Ye (Montclair State University)"
-        },
-        {
           "id": 972,
           "title": "Ordinal Gates, Cardinal Bets: Matching LLM Confidence to the Financial Decision Operator",
           "authors": "Rayansh Singh (Michigan State University); Sara Rezaeimanesh (Michigan State University)"
@@ -1031,6 +1026,11 @@
           "id": 955,
           "title": "When Synthetic Markets Look Real but Aren't: Cross-asset tail dependence as a realism diagnostic for financial data generators",
           "authors": "Ming Yin Ivan Sit (UCLA)"
+        },
+        {
+          "id": 961,
+          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
+          "authors": "Junyi Ye (Montclair State University)"
         },
         {
           "id": 977,

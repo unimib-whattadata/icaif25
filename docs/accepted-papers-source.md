@@ -1,5 +1,11 @@
 # Accepted papers publication source
 
+## Email decisions and shared Google Sheet — November 2, 2026
+
+The user corrected the source policy: **decisions discussed in email take precedence over the spreadsheet**. The editable [shared Google Sheet](https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit) has been updated in place for the already-processed requests. Its request-date, message-link, change and sent-confirmation columns and change register remain private to Drive. Existing colors were preserved; only empty rows and columns were trimmed.
+
+This supersedes the file-first reconciliation below. Paper **961** is proceedings-only, per Junyi Ye's explicit November 2 follow-up. Paper **428** lists **Lei Zhu, Shuaishuai Gong and Yanting Zhang**. Paper **1067** uses **Junyu Chen, Franklin Liu, Moshu Xu and Lijian Yang**, and remains in Oral Session 1. The public catalogue still contains **211 papers: 51 oral, 106 poster and 54 proceedings-only**. Other reviewed moves and removals are retained. Preserve these email decisions in future imports rather than restoring stale workbook fields.
+
 ## Shared workbook reconciliation — November 2, 2026
 
 The user authorized applying the newly reviewed organizer changes and committing/pushing the website, then explicitly instructed that **the file takes precedence over the emails**. The authoritative shared workbook is [accepted papers and registered (ultimo).xlsx](https://docs.google.com/spreadsheets/d/1VS05PAAh1aVzbSpaNu29cMvcmaI-eCCK/edit), last modified November 2 at 11:58:26.900 UTC and read through Google Drive. Its categorized public tabs are now authoritative for the complete paper set, publication category, title, author string and presentation-session assignment. The public catalogue contains **211 papers: 51 oral, 107 poster and 53 proceedings-only**. Papers 244, 607 and 1007 no longer appear; 820 belongs to proceedings only, 405 is oral, and 523 and 961 are posters. This source policy supersedes the earlier email overrides documented below. Removing public entries does not establish a separate ACM publication decision.
