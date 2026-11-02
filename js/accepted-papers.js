@@ -3,6 +3,7 @@
   const input = document.getElementById('paper-search');
   if (!input) return;
   const categorySelect = document.getElementById('paper-category');
+  const allLabel = categorySelect.querySelector('option[value="all"]').textContent.replace(/ \(\d+\)$/, '');
   const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const groups = [...document.querySelectorAll('[data-paper-group]')].map(element => ({
     element,
@@ -45,7 +46,7 @@
       categorySelect.querySelector(`option[value="${group.id}"]`).textContent = `${group.shortLabel} (${matching})`;
     }
     document.querySelector('[data-category-count="all"]').textContent = queryMatches;
-    categorySelect.querySelector('option[value="all"]').textContent = `All papers (${queryMatches})`;
+    categorySelect.querySelector('option[value="all"]').textContent = `${allLabel} (${queryMatches})`;
     categorySelect.value = category;
     categoryButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.paperFilter === category)));
     resetButtons.forEach(button => { button.disabled = !terms.length && category === 'all'; });

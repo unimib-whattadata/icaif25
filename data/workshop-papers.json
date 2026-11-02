@@ -1,0 +1,921 @@
+{
+  "updated": "2026-11-02",
+  "groups": [
+    {
+      "id": "responsible-ai-operations-finance",
+      "label": "RAIOps4Fin — Applied Responsible AI Operations for Finance",
+      "shortLabel": "RAIOps4Fin",
+      "papers": [
+        {
+          "id": 1158,
+          "title": "Auditable FRTB Capital Explanations: A Tool Contract for Financial AI Agents",
+          "authors": "Yuhe Sui (Quantitative Research Society)",
+          "presenters": []
+        },
+        {
+          "id": 1189,
+          "title": "Digitalizing AI Governance in Financial Institutions: From Document-Centric Policy to Centralized Lifecycle Management",
+          "authors": "Federica Screti (Deloitte)",
+          "presenters": []
+        },
+        {
+          "id": 1201,
+          "title": "Measuring Sensitive Attribute Biases in LLMs: Credit Risk Assessment as an Empirical Benchmark",
+          "authors": "Federico Ricciuti (CRIF); Diana Komis (CRIF)",
+          "presenters": []
+        },
+        {
+          "id": 1209,
+          "title": "Is It Still the Same Model? Economic Identity Fingerprints for Production Financial AI",
+          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
+          "presenters": []
+        },
+        {
+          "id": 1213,
+          "title": "Enhancing Financial Crisis Prediction Using Generative Adversarial Networks and Explainable Artificial Intelligence",
+          "authors": "Mathurin Aimé Mekam Pouatcha (Università di Pisa); Salvatore Rinzivillo (CNR); Francesca Naretto (Università di Pisa)",
+          "presenters": []
+        },
+        {
+          "id": 1214,
+          "title": "Governing LLM Agents in Financial Compliance: Controls That Survive a Change of Model",
+          "authors": "Aditya Tippanaboena (Independent Researcher); Cameron Collins (Independent Researcher); Sahil Rangwala (Independent Researcher)",
+          "presenters": []
+        },
+        {
+          "id": 1269,
+          "title": "When Synthesis Silences Risk: Auditable Sign-Off in Financial Agent Committees",
+          "authors": "Jeffrey Zhou (California Institute of Technology)",
+          "presenters": []
+        },
+        {
+          "id": 1271,
+          "title": "FiPARM: Financial Prompt Actionable Risk Management A Governance Taxonomy for Prompt-Level Risk Classification in Financial Services",
+          "authors": "Owen O Neill (BNY); Rajitha Ramanayake (BNY); Nicte Thorpe (BNY); Urja Pawar (BNY); Abhishek Mandal (BNY); Houssem Chatbri (BNY); Christopher Martin (BNY)",
+          "presenters": []
+        },
+        {
+          "id": 1272,
+          "title": "AEGIS: An Auditable Evidence-Governed Interface for Cost-Aware AI Workflow Selection in Finance",
+          "authors": "Xiaozhen Wang (CEREMADE, Université PSL); Francois Buet-Golfouse (AIML Global Markets, Barclays)",
+          "presenters": []
+        },
+        {
+          "id": 1305,
+          "title": "Unequal Denial, Similar Recourse Cost: Pricing the Closure of the Mortgage Denial Gap",
+          "authors": "Jonathan Chang (Union County Magnet High School)",
+          "presenters": []
+        }
+      ]
+    },
+    {
+      "id": "reinforcement-learning-llm-agents",
+      "label": "Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)",
+      "shortLabel": "RL4LLM-Agents",
+      "papers": [
+        {
+          "id": 1161,
+          "title": "Expert-Guided Rubrics as Dense Reward Signals for Reinforcement Learning in Non-Verifiable Domains",
+          "authors": "Ashish Bansal (The Vanguard Group)",
+          "presenters": [
+            "Ashish Bansal"
+          ]
+        },
+        {
+          "id": 1180,
+          "title": "Reward Integrity in Adversarial Reinforcement Learning for LLM Guardrail Red-Teaming",
+          "authors": "Hongxu Chen (Commonwealth Bank of Australia)",
+          "presenters": [
+            "Hongxu Chen"
+          ]
+        },
+        {
+          "id": 1195,
+          "title": "Repair, Capture, Polish, Null, or Revert: What RLVR Does to a Tool-Use Agent Depends on the Model Family",
+          "authors": "Ajitabh Kumar (IntelCast)",
+          "presenters": [
+            "Ajitabh Kumar"
+          ]
+        },
+        {
+          "id": 1212,
+          "title": "From Deliberation to Allocation: Voting and Reinforcement Learning over LLM Financial Analysts",
+          "authors": "Sudip Gupta (Johns Hopkins University)",
+          "presenters": [
+            "Sudip Gupta"
+          ]
+        },
+        {
+          "id": 1221,
+          "title": "PIERCEBench: A Benchmark for Joint Evaluation of Financial Trading Agents",
+          "authors": "Anand Gadicherla (Algoverse AI Research)",
+          "presenters": [
+            "Anand Gadicherla"
+          ]
+        },
+        {
+          "id": 1225,
+          "title": "How Not to Evaluate Agent Memory: Episode Overlap, Clustered Inference, and a Null Result under Market Regime Shift",
+          "authors": "Jonathan Chang (Union County Magnet High School)",
+          "presenters": [
+            "Jonathan Chang"
+          ]
+        },
+        {
+          "id": 1229,
+          "title": "Financeharness: Engineering a Finance Retrieval Harness for Search Agents Powered by Sub-10B Models",
+          "authors": "Vineeth Kalluru (NVIDIA)",
+          "presenters": [
+            "Vineeth Kalluru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interpretability-alignment-financial-models",
+      "label": "IAFM’26: Interpretability and Alignment of Financial Models",
+      "shortLabel": "IAFM’26",
+      "papers": [
+        {
+          "id": 1159,
+          "title": "What Post-hoc Attributions of FRTB-IMA Capital Answer",
+          "authors": "Yuhe Sui; Yingzhi Tang",
+          "presenters": []
+        },
+        {
+          "id": 1224,
+          "title": "The Recourse Test: Do LLM Adverse-Action Explanations Survive Repair-and-Replay?",
+          "authors": "Jonathan Chang",
+          "presenters": []
+        },
+        {
+          "id": 1260,
+          "title": "PolicyAttention: A Certifiable and Testable Update Rule for Attention-Based Allocation Controllers",
+          "authors": "Shufang Chen; Yuhe Sui; Yingzhi Tang; Xinyue Wu",
+          "presenters": []
+        },
+        {
+          "id": 1261,
+          "title": "Inside Chat Bankman-Fried: Geometric Insights into LLM Alignment in Finance",
+          "authors": "Chiara Coltellacci; Anastasia Di Blasio; Giulia Iadisernia; Carolina Camassa; Diego Doimo; Andrea Coletta; Aldo Glielmo; Anna Russo Russo",
+          "presenters": []
+        },
+        {
+          "id": 1319,
+          "title": "Text as Structure, Not Signal: Text-Aligned Groups for Distributionally Robust Stock Ranking",
+          "authors": "Jiwon Park; Namhyoung Kim; Sungweon Shin; Jae Wook Song",
+          "presenters": []
+        },
+        {
+          "id": 1326,
+          "title": "AssetDART: Interpreting Neural Portfolio Models Through Decision Regimes",
+          "authors": "Silu Li; John Mulvey; Siyu Li",
+          "presenters": []
+        }
+      ]
+    },
+    {
+      "id": "multimodal-foundation-models-banking",
+      "label": "First Workshop on Multimodal and Foundation Models in Banking (MFMB)",
+      "shortLabel": "MFMB",
+      "papers": [
+        {
+          "id": 1215,
+          "title": "When Do In-Context Tabular Foundation Models Help in Banking?",
+          "authors": "Anna He (Affirm); Tianming Zhou (Affirm); Alexander Statnikov (Affirm)",
+          "presenters": [
+            "Alexander Statnikov"
+          ]
+        },
+        {
+          "id": 1265,
+          "title": "Transformer-Based Contextual Embeddings for Sequential User Behavior in Banking Applications",
+          "authors": "Ignacio Esplugues (BBVA); Ignacio Esplugues (BBVA); Asier Rodriguez (BBVA); Joel Medina (BBVA); Ignacio Sisamón (BBVA)",
+          "presenters": [
+            "Asier Rodríguez González"
+          ]
+        },
+        {
+          "id": 1281,
+          "title": "Scalable Tokenization of Transactional Payment Data for Generative AI Modeling",
+          "authors": "Ngoc Minh Tran (Mastercard Ireland); Arjun Dussa (Mastercard Ireland); James Conway (Mastercard Ireland); Stephen Flinter (Mastercard Ireland)",
+          "presenters": [
+            "Ngoc Minh Tran"
+          ]
+        },
+        {
+          "id": 1287,
+          "title": "Rethinking Credit Risk Through Better Customer Representations",
+          "authors": "Soumya Ghosh (Revolut); Stefan Lessmann (Humboldt-Universität zu Berlin); Victor Medina-Olivares (University of Edinburgh Business School); Tadas Krisciunas (Revolut); Amey Baokar (Revolut)",
+          "presenters": [
+            "Tadas Krisciunas"
+          ]
+        },
+        {
+          "id": 1290,
+          "title": "Combining real-world semantic information and synthetic data generation in Tabular Foundation Models",
+          "authors": "Edoardo Belli (Revolut); Marina Stepanova (Revolut); Amey Baokar (Revolut); María Óskarsdóttir (University of Southampton & Reykjavik University); Cristián Bravo (Western University)",
+          "presenters": [
+            "Edoardo Belli"
+          ]
+        },
+        {
+          "id": 1291,
+          "title": "Multimodal Zero-Shot Prediction for Transaction Data at Scale",
+          "authors": "Parameswaran Kamalaruban (Visa); Viktor Drobnyi (Visa); Maeve Madigan (Visa); Julia Rozanova (Visa); David Sutton (Visa); Stuart Burrell (Visa)",
+          "presenters": [
+            "Stuart Burrell"
+          ]
+        },
+        {
+          "id": 1294,
+          "title": "Enhancing Banking Early Warning Models with Conditional Synthetic Transactional Data",
+          "authors": "Fabrizio Garuti (Prometeia Spa); Simone Luetto (Prometeia Spa)",
+          "presenters": [
+            "Simone Luetto"
+          ]
+        },
+        {
+          "id": 1295,
+          "title": "INTENT: Out-of-Sample, Out-of-Time, and Cold-Start Evaluation on User Event Sequences",
+          "authors": "Mattias Kvist (KTH AI Society); Erik Lidman Hillbom (KTH AI Society); Edoardo De Cal (KTH AI Society); Davis Siemens (KTH AI Society); Adam Fredriksson (Unbox AI); Rickard Brüel-Gabrielsson (Stanford University, MIT, Unbox AI)",
+          "presenters": [
+            "Rickard Brüel-Gabrielsson"
+          ]
+        },
+        {
+          "id": 1299,
+          "title": "Contrastive Learning with Synthetic Interpretations for Financial Transaction Understanding",
+          "authors": "Wen Yao (Plaid)",
+          "presenters": [
+            "Wen Yao"
+          ]
+        },
+        {
+          "id": 1300,
+          "title": "MUSERT: Multitask User Sequence Encoder Representations for Transactions",
+          "authors": "Wen Yao (Plaid)",
+          "presenters": [
+            "Wen Yao"
+          ]
+        },
+        {
+          "id": 1302,
+          "title": "Decoupling Perception from Description: Computation-Grounded Representation Alignment between Multivariate Time Series and Language",
+          "authors": "Xinran Feng (The Hong Kong University of Science and Technology (Guangzhou)); Yi Xie (Technical University of Munich; Heilbronn Data Science Center); Chao Zhang (Thrust of Financial Technology, The Hong Kong University of Science and Technology (Guangzhou)); Ruikun Li (Thrust of Financial Technology, The Hong Kong University of Science and Technology (Guangzhou)); Wanyun Ling (Technical University of Munich; Heilbronn Data Science Center); Ziyue Li (Technical University of Munich; Heilbronn Data Science Center); Chenxi Liu (Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences)",
+          "presenters": [
+            "Yi Xie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "llms-generative-ai-finance",
+      "label": "The 3rd Workshop on LLMs and Generative AI for Finance",
+      "shortLabel": "LLMs & Generative AI",
+      "papers": [
+        {
+          "id": 13,
+          "title": "Ten Thousand Rows Is Not Enough: An Evaluation Protocol for Foundation-Model Return Signals",
+          "authors": "Kuan Ta Wu",
+          "presenters": [
+            "Kuan Ta Wu"
+          ]
+        },
+        {
+          "id": 14,
+          "title": "The Price of Thought: Does Test-Time Reasoning Pay in LLM Trading?",
+          "authors": "Jiayi Chen; Guiling Wang",
+          "presenters": [
+            "Jiayi Chen"
+          ]
+        },
+        {
+          "id": 16,
+          "title": "Can You Trust Your Finance Agent? Drift, Diagnosis and Auditable Intervention on One Shipped Financial Research Agent",
+          "authors": "Cosimo Galeone; Giuseppe Ettorre; Anna Ettorre; Ginevra Mariani; Minsu Park; Daniele Ligorio",
+          "presenters": [
+            "Cosimo Galeone"
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Cross-Lingual Reusability of LLM Pipelines: Financial Extraction, Multilingual Reasoning, and Semantic Screening",
+          "authors": "Joong Ho Choi; Sherine George; Jiayang Zhao; Jayesh Rathi; Ashwin Kandath; Ananya Sane; Vishhvak Srinivasan",
+          "presenters": [
+            "Joong Ho Choi"
+          ]
+        },
+        {
+          "id": 29,
+          "title": "LLM-Generated Counterfactual Stress Scenarios for Portfolio Risk Simulation via Hybrid Prompt-RAG Pipeline",
+          "authors": "Masoud Soleimani",
+          "presenters": [
+            "Masoud Soleimani"
+          ]
+        },
+        {
+          "id": 31,
+          "title": "Replicate the Decision, Not the Paragraph: An Executable Contract for Quantitative-Research Agents",
+          "authors": "Eric Benhamou; Jean-Jacques Ohan; Beatrice Guez; Ethan Setrouk; Chamyl Saadi; Thomas Jacquot",
+          "presenters": []
+        },
+        {
+          "id": 33,
+          "title": "FiPARM: Financial Prompt Actionable Risk Management A Governance Taxonomy for Prompt-Level Risk Classification in Financial Services",
+          "authors": "Owen O'Neill; Rajitha Ramanayake; Nicte Thorp; Urja Pawar; Abhishek Mandal; Houssem Chatbri; Christopher Martin",
+          "presenters": [
+            "Owen O'Neill"
+          ]
+        },
+        {
+          "id": 34,
+          "title": "AI For Everyone: Measuring Assumptions and Mapping a Curriculum in Financial Services",
+          "authors": "Nidhi Singh; Will Flanagan; Rajitha Ramanayake; Sarah Epstein; Ivan Wiryadi; Gisele DeWitt; Ananya Nagireddy; Ana Alfaro Pizana; James Usher",
+          "presenters": [
+            "Nidhi Singh"
+          ]
+        },
+        {
+          "id": 37,
+          "title": "Could This BE Any More Wrong? Teaching VLMs to Know What They Don’t Know in Document Extraction",
+          "authors": "Varad Srivastava; Prabhu R; Victor Daniel Casas Hernandez",
+          "presenters": [
+            "Varad Srivastava"
+          ]
+        },
+        {
+          "id": 39,
+          "title": "Attribution Is a Propagation Problem in Multi-Agent Trading Systems",
+          "authors": "Advije Rizvani; Giovanni Apruzzese; Pavel Laskov; Nils Lukas",
+          "presenters": [
+            "Advije Rizvani"
+          ]
+        },
+        {
+          "id": 40,
+          "title": "When Repeatable Labels Disagree: Prompt Reformulation in LLM Measurement of Financial Disclosures",
+          "authors": "Hongzhen Du",
+          "presenters": [
+            "Hongzhen Du"
+          ]
+        },
+        {
+          "id": 49,
+          "title": "Firm-Level Energy Cost Exposure",
+          "authors": "ZHANG ZHENG; Dong Xu",
+          "presenters": [
+            "Zheng Zhang"
+          ]
+        },
+        {
+          "id": 53,
+          "title": "Evaluating LLM-Directed Model Development: Lessons from Income Prediction",
+          "authors": "Fang Fang; Alexander Statnikov",
+          "presenters": [
+            "Alexander Statnikov"
+          ]
+        },
+        {
+          "id": 54,
+          "title": "A Discussion on Generative Preference Elicitation in Finance",
+          "authors": "Anagha Tiwari; Brian Jabarian; Alexander G. Gray; Nick Feamster; Alex Imas; Alex Kale",
+          "presenters": [
+            "Anagha Tiwari"
+          ]
+        },
+        {
+          "id": 57,
+          "title": "A Holistic Evaluation of Large Language Models for Earnings Forecasting",
+          "authors": "Yurun Sun; Pietro Panzarasa; Valentin Danchev",
+          "presenters": [
+            "Yurun Sun"
+          ]
+        },
+        {
+          "id": 58,
+          "title": "Grounded Event Extraction from SEC 8-K Filings with a Fine-Grained Taxonomy",
+          "authors": "Rian Dolphin; Joe Dursun; Jarrett Blankenship; Katie Adams; Quinton Pike",
+          "presenters": [
+            "Rian Dolphin"
+          ]
+        },
+        {
+          "id": 60,
+          "title": "Do LLMs Understand Limit Order Book Dynamics?",
+          "authors": "Junxiao Chen; Paul Glasserman",
+          "presenters": [
+            "Junxiao Chen"
+          ]
+        },
+        {
+          "id": 63,
+          "title": "Buy the Rumor, Sell the News: When Is News Priced In?",
+          "authors": "Alireza Kargarzadeh; Nariman Khaledian; Navid Parvini; Sid Ghatak; Arman Khaledian",
+          "presenters": [
+            "Arman Khaledian"
+          ]
+        },
+        {
+          "id": 66,
+          "title": "Using LLMs for Table Data Extraction from Public Finance Documents",
+          "authors": "Vikram Aggarwal; Siddarth Raman; Susan Thomas; Jay Kulkarni; Aakriti Narang; Aditi Mascarenhas; Ajay Shah",
+          "presenters": [
+            "Vikram Aggarwal"
+          ]
+        },
+        {
+          "id": 70,
+          "title": "Extracting ESG Fields from Emerging-Market Sustainability Reports with LLM Assistants: A Pilot Evaluation on Kazakh and Uzbek Corporate Disclosures",
+          "authors": "Feruza Kholmukhamedova",
+          "presenters": [
+            "Feruza Kholmukhamedova"
+          ]
+        },
+        {
+          "id": 72,
+          "title": "Honest Small Decision Models for Finance: Scale, Specialization Collapse, and Mixed-Corpus Remediation",
+          "authors": "Ajitabh Kumar",
+          "presenters": [
+            "Ajitabh Kumar"
+          ]
+        },
+        {
+          "id": 73,
+          "title": "MemTrial: Learning When to Trust Memory in LLM Portfolio Agents",
+          "authors": "Guanghao Wu; Zhuo Cai; Shoujin Wang",
+          "presenters": [
+            "Guanghao Wu"
+          ]
+        },
+        {
+          "id": 74,
+          "title": "DealsFlow: An Evidence-Gated Agentic Harness for Venture Capital Deal Triage",
+          "authors": "Ming Ze Tang; David Cutting; Boyd Carson; Vasiliki Carson",
+          "presenters": [
+            "Ming Ze Tang"
+          ]
+        },
+        {
+          "id": 75,
+          "title": "Correct but Unlicensed: Prompt Allowlists and the Traceability of Figures in LLM Financial Assistants",
+          "authors": "Siddhesh Chaubal; Debarya Dutta; Hyeonwoo Jeon",
+          "presenters": [
+            "Hyeonwoo Jeon"
+          ]
+        },
+        {
+          "id": 76,
+          "title": "FinPanel: Selecting LLM Trader Personas for Financial Trading",
+          "authors": "Boming Yang; Yuquan Wang; Yusuke Iwasawa; Yutaka Matsuo; Jiaxian Guo",
+          "presenters": [
+            "Boming Yang"
+          ]
+        },
+        {
+          "id": 80,
+          "title": "SHARP: Structured Hierarchical Agentic Reasoning for Corporate Bond Pricing",
+          "authors": "Ni Ma; Chen-Tse Tsai; Yeu-Chern Harn; Chirag Gupta; Prabhanjan Kambadur; Ioana Baldini; David S Rosenberg; Camilo Ortiz",
+          "presenters": [
+            "Ioana Baldini"
+          ]
+        },
+        {
+          "id": 82,
+          "title": "As-Of: Measuring Temporal Leakage in Retrieval-Grounded Financial Evaluation",
+          "authors": "Jonathan Chang",
+          "presenters": [
+            "Jonathan Chang"
+          ]
+        },
+        {
+          "id": 83,
+          "title": "Universal Diffusion Models for Implied Volatility Surfaces: Learning Shared Dynamics Across Stocks",
+          "authors": "Mingzhi Yang; Sheng Wang; Chao Zhang; Ruikun Li",
+          "presenters": [
+            "Chao Zhang"
+          ]
+        },
+        {
+          "id": 84,
+          "title": "FinALTA: Deterministic Execution with Language-Model Explanations for Auditable Financial Question Answering over Budget Data",
+          "authors": "Areej AlOtaibi; Layali Abdulrahman Alsolami; Tasniem Nasser Alyahya",
+          "presenters": [
+            "Layali Abdulrahman Alsolami"
+          ]
+        },
+        {
+          "id": 89,
+          "title": "From Letter-of-Credit Requirements to Executable Specifications: Evaluating Verification Accuracy and Completeness",
+          "authors": "Ji Sub Choi; Whan choi; SEO YEON GU; Kim suhyun; Inyong Yun",
+          "presenters": [
+            "Ji Sub Choi",
+            "Whan Choi"
+          ]
+        },
+        {
+          "id": 90,
+          "title": "Multidimensional Views Behind Target-Price Revisions: An LLM-Based Representation of Analyst Outlooks",
+          "authors": "Kiyoun Kim; Sung-Yeon Nathan Lim",
+          "presenters": [
+            "Kiyoun Kim"
+          ]
+        },
+        {
+          "id": 91,
+          "title": "PALM: Point-in-Time Adaptation for Financial Language Models",
+          "authors": "Seunghan Lee; Jun Seo; Jaehoon Lee; Junhyeok Kang; Sangjun Han; Sungdong Yoo; Minjae Kim; Tae Yoon Lim; Dongwan Kang; Hwanil Choi; Soonyoung Lee; Wonbin Ahn",
+          "presenters": [
+            "Seunghan Lee"
+          ]
+        },
+        {
+          "id": 92,
+          "title": "Training Scores Are Not Returns: Workflow-Level Evaluation of LLM-Guided Alpha Search",
+          "authors": "Siyan Chen",
+          "presenters": [
+            "Siyan Chen"
+          ]
+        },
+        {
+          "id": 96,
+          "title": "Decision-Focused Representation Adaptation for Cold-Start IPO Future-Peer Retrieval",
+          "authors": "Yeonsuk Jung; Jang Ho Kim",
+          "presenters": [
+            "Jang Ho Kim"
+          ]
+        },
+        {
+          "id": 98,
+          "title": "Can Personalized Advice Improve Investor Behavior? Evidence from a Multi-Agent Simulation of Retail Investors",
+          "authors": "Yu Jeong Lee; Sujin Jung; Jaeho Jo; Junyoung Kwon; Sangjin Jin; Yongjae Lee",
+          "presenters": [
+            "Yu Jeong Lee",
+            "Sujin Jung",
+            "Jaeho Jo"
+          ]
+        },
+        {
+          "id": 99,
+          "title": "ZooBench: Localizing Failure in AI Replication of the Factor Zoo",
+          "authors": "Campbell Taylor; Sebastian Rivera; Sami Naeem; Alejandro Canete",
+          "presenters": [
+            "Alejandro Canete"
+          ]
+        },
+        {
+          "id": 105,
+          "title": "The Expert and the Machine: A Case Study of Human-Steered and Autonomous Agents Iterating a Niche Domain Simulator",
+          "authors": "Ollie Olby; Andreea Bacalum; Kibaek Lee; Namid Stillman",
+          "presenters": [
+            "Namid Stillman"
+          ]
+        },
+        {
+          "id": 109,
+          "title": "Is All the Information in the Price? LLM Embeddings versus GICS and Price-Correlation Stock Clusters in a Factor-Model Test of the Efficient Markets Hypothesis",
+          "authors": "Tucker Balch; Maria Hybinette; Grant Johnson; Bingyang Wang",
+          "presenters": [
+            "Tucker Balch"
+          ]
+        },
+        {
+          "id": 110,
+          "title": "Disagreement About Nothing: A Pre-Registered Stress Test of a Persona-Ensemble Measure of 10-K Complexity",
+          "authors": "Aryan Chhabra; Kuntara Pukthuanthong",
+          "presenters": [
+            "Aryan Chhabra"
+          ]
+        },
+        {
+          "id": 113,
+          "title": "Right Numbers, Wrong Questions: Evaluating LLMs on Underspecified Financial Queries",
+          "authors": "Radha Yadav; Prasanna Devadiga; Peeyush mishra; Apoorv Singh",
+          "presenters": [
+            "Radha Yadav"
+          ]
+        },
+        {
+          "id": 114,
+          "title": "FinCausalAudit: Separating Error Detection from Evidence Use in Financial LLMs",
+          "authors": "Maximilian Nicholson",
+          "presenters": [
+            "Maximilian Nicholson"
+          ]
+        },
+        {
+          "id": 116,
+          "title": "Your AI, On a Dial: Controlling Investment Bias in LLMs with a Single Neuron",
+          "authors": "Sahong Park; Suhwan Park; Hoyoung Lee; Gakyung Kwon; Wonbin Ahn; Jaewon Choi; Alejandro Lopez-Lira; Yoon Kim; CHANYEOL CHOI; HYEONGWOO KONG; Yongjae Lee",
+          "presenters": [
+            "Sahong Park"
+          ]
+        },
+        {
+          "id": 118,
+          "title": "RiskReason: A Benchmark for Verifiable Financial Risk Reasoning",
+          "authors": "Nazanin Yousefi; Mohammadreza Ghafouri; seyedreza tavakoli; Mohammad Javad Gharegozlou; Arman Khaledian; Eghbal Rahimikia; Amir Amini; Gholamali Aminian; Marjan Alirezaie; Ali Habibnia",
+          "presenters": []
+        },
+        {
+          "id": 119,
+          "title": "CLAIM: A Framework for Auditing LLM-Generated Financial Measures",
+          "authors": "Xuan Yao; Kelvin J.L. Koa; Salsabila Fatma Aripa; Dai Yang; Yuxuan Tan; Zhou Yi; Ke-Wei Huang",
+          "presenters": [
+            "Kelvin J.L. Koa"
+          ]
+        },
+        {
+          "id": 121,
+          "title": "Semantic Lifting for Institutional Digital Asset Taxonomies: An Auditable LLM Workflow for DeFi Classification",
+          "authors": "Hyunho Jeon; Seongchan Park; Byungsoo Kang; Gaeun Kim; DAEHYUN KIM",
+          "presenters": [
+            "Hyunho Jeon"
+          ]
+        },
+        {
+          "id": 122,
+          "title": "BTFM: Learning and Transferring Financial Representations from Public Transaction Histories",
+          "authors": "Rodrigo Mendoza Smith",
+          "presenters": [
+            "Rodrigo Mendoza-Smith"
+          ]
+        },
+        {
+          "id": 123,
+          "title": "ClimInvestBench: Evaluating Agentic Investment Report Generation and Maintenance",
+          "authors": "Edward Samuel Richards; Javier Sanz-Cruzado Puig; Richard McCreadie",
+          "presenters": [
+            "Edward Samuel Richards"
+          ]
+        },
+        {
+          "id": 125,
+          "title": "When Filings Are Silent: LLM News Readings and Volatility Forecasts Around Mergers",
+          "authors": "Donghwa Seo; Juyeong Lee; Doohwi Cha; Minsuk Sung; Minjae Lee; seunghan son; Yoontae Hwang",
+          "presenters": [
+            "Donghwa Seo"
+          ]
+        },
+        {
+          "id": 126,
+          "title": "Reading the Market: Portfolio Crash Prediction via Narrative Tracking and News-Coverage Bursts",
+          "authors": "Ziling Liu; Kelvin J.L. Koa; Ke-Wei Huang",
+          "presenters": [
+            "Kelvin J.L. Koa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-private-markets",
+      "label": "Structuring the Unstructured: AI in Private Markets",
+      "shortLabel": "AI in Private Markets",
+      "papers": [
+        {
+          "id": 1192,
+          "title": "Structuring the Sourcing Funnel: Uncertainty-Routed Dual-Process Screening in Private Markets",
+          "authors": "Zihong Liu (LSE); Song Yang (UCL); Marcos Barreto (LSE)",
+          "presenters": []
+        },
+        {
+          "id": 1235,
+          "title": "Reasoning Is Latency: Endogenous Information Processing and Execution in AI Trading",
+          "authors": "Yang Wang (Alibaba Group)",
+          "presenters": []
+        },
+        {
+          "id": 1244,
+          "title": "Asymmetry without Alpha? Separating Economic Downside Protection from Sign-Dependent Private-Market Marks",
+          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
+          "presenters": []
+        },
+        {
+          "id": 1246,
+          "title": "Evidence to Exposure: Auditable Document Intelligence for Private-Market Allocation",
+          "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
+          "presenters": []
+        },
+        {
+          "id": 1296,
+          "title": "Trustworthy LLM-Assisted Venture Screening: Auditing, Diagnosing, and Improving Expert Alignment",
+          "authors": "Durjoy Dey (Concordia University); Jisan Ahmed (Shahjalal University of Science and Technology); Samiul Islam Mugdha (Shahjalal University of Science and Technology); Tausif Ahmed (University of Cincinnati); Yuhong Yan (Concordia University)",
+          "presenters": []
+        },
+        {
+          "id": 1346,
+          "title": "Don't Model the Price, Model the Investors: Price Forecasting through Agent Role Learning with On-Policy Distillation",
+          "authors": "Kelvin Koa (National University of Singapore); Ziling Liu (National University of Singapore); Yuncong Liu (National University of Singapore); Zhengxi Qian (National University of Singapore); Shengqiong Wu (University of Oxford); Michael Wooldridge (University of Oxford); Ke-Wei Huang (National University of Singapore)",
+          "presenters": []
+        }
+      ]
+    },
+    {
+      "id": "quantum-enhanced-ai",
+      "label": "Quantum-Enhanced AI for Financial Decision-Making",
+      "shortLabel": "Quantum-Enhanced AI",
+      "papers": [
+        {
+          "id": 1145,
+          "title": "When a Quantum-Inspired State Helps: Reproducible Directional Forecasting in Linked Carbon Markets",
+          "authors": "BINGRUI WU (student); Tzu Chieh Hung (Undergraduate Program in Intelligent Computing and Big Data Chung Yuan Christian University Taoyuan City, Taiwan); Yen Jui Chang (Master Program in Intelligent Computing and Big Data Chung Yuan Christian University Taoyuan City, Taiwan)",
+          "presenters": []
+        },
+        {
+          "id": 1317,
+          "title": "Benchmarking Quantum-Inspired Portfolio Optimization Against Classical Solvers",
+          "authors": "Santoshi Yadagiri (Georgia Institute of Technology)",
+          "presenters": []
+        },
+        {
+          "id": 1324,
+          "title": "Contextual GHZ Strategies for Cross-Venue Liquidity Coordination: Evidence from U.S. Equity Direct Feeds",
+          "authors": "Silu Li (Princeton University); John Mulvey (Princeton University); Siyu Li (Westlake University)",
+          "presenters": []
+        },
+        {
+          "id": 1329,
+          "title": "Fin-QBM: From Quantum Boltzmann Machines to Financial Decisions with Generative Models",
+          "authors": "Soumya Banerjee (BNP PARIBAS ); Mariam BARRY (BNP PARIBAS)",
+          "presenters": []
+        }
+      ]
+    },
+    {
+      "id": "financial-ai-security",
+      "label": "Financial AI Security, Privacy and Safety",
+      "shortLabel": "Financial AI Security",
+      "papers": [
+        {
+          "id": null,
+          "title": "Authentic FRTB Explanations Can Misguide Financial AI Capital Planning",
+          "authors": "Annie Huaiyu Wang, Yuhe Sui, Yingzhi Tang",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Beyond Text Guardrails: Direct, Transformed, and Integrated Multimodal Controls for Banking",
+          "authors": "Abhishek Mandal, Owen O'Neill, Urja Pawar, Rajitha Ramanayake, Nabeel Kemal, Houssem Chatbri",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Certify the Decision, Not the Shortcut: Fail-Closed Screening for Financial Risk Decisions",
+          "authors": "Yingzhi Tang, Yuhe Sui Affiliations: Quantitative Research Society, The Chinese University of Hong Kong Shenzhen, Nanyang Technological University",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Community-Aware Graph Autoencoders for Anti-Money Laundering",
+          "authors": "Hanieh Ghabelialla Affiliations: University of New Brunswick, UNB",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Evidence-Grounded Evaluation for Financial Agent Governance",
+          "authors": "Sehwa Moon, Hyungbin Yun, Yungyu Lee, Donghyun Kang, Seungmi Oh, Jina Kim, Jin Heo, Sungkwon Cho Affiliations: Shinhan Bank",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Exploring the Privacy–Size Tradeoff for Differentially Private Self-Attentive Variational Autoencoders",
+          "authors": "Rohit Sadavarte, Dhruvi Kothari, Sparsh Gupta, Eric Van Oeveren Affiliations: Foresight, Intuit",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Federated Layer-Wise Exchange for Cross-Client Money Laundering Pattern Detection",
+          "authors": "Selin Ceydeli, Rui Wang, Kubilay Atasu Affiliations: Delft University of Technology",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Gain–Dilution in Target-Disjoint Graph Injection Attacks",
+          "authors": "Jianping Bai, Ruikun Li, Chao Zhang Affiliations: The Hong Kong University of Science and Technology",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "How Much of a Deposit Can Fund a Payment Bounds from Incomplete Transaction Histories",
+          "authors": "Seongyong Kim Affiliations: Dunamu",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "K-BankEval - A Requirements-Driven LLM Benchmark Suite for Model Selection in Korean Banking",
+          "authors": "Kanghee Lee, DOROCKHYUN, Seokgi Lee, Eunhyeok Jang, Youngsoo Lee, Sunguk Choi, Hochan Jeong, JONGGIL PARK Affiliations: Shinhan Bank",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Kiii-Kiii: Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection",
+          "authors": "Eunbin Shin, Sara Yu, Seonghyun Kim, MinKyeong Shin, Yewon hwang, Hanwool Lee",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "LARG: Lifecycle Attacks and Retraining Guards for Algorithmic Trading Systems",
+          "authors": "Advije Rizvani, Luca Demetrio, Maura Pintor, Pavel Laskov, Giovanni Apruzzese Affiliations: Universität Liechtenstein, University of Genoa, University of Cagliari, Universität Liechtenstein, Reykjavík University",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Per-User Personalization in Card-Fraud Detection Pays Only Against Weak Baselines",
+          "authors": "Armaan Gugnani, Sai Anish Palleti, Venkata Sujan Sannidhi Affiliations: Collin County Community College District (collin.edu), Frisco Independent School District (friscoisd.org)",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Pricing Cross-Bank Context in Federated Anti-Money Laundering",
+          "authors": "Lidia Losavio, Dario Fenoglio, Martin Gjoreski, Marc Langheinrich",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Privacy-Preserving GNN Inference on Financial Transaction Graphs via Homomorphic Encryption",
+          "authors": "H. Çağrı Bilgi, Kemal Mutluergil, Ceren Yıldırım, Kubilay Atasu, Erkay Savas",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Secret Orthogonal Rotation in Korean Financial RAG: Exact Retrieval Preservation and Known-Pair Vulnerability",
+          "authors": "JoonHowi Jeon, Kang sumin, Cheol Mo Yang, Minwoo Kim, Dae-Young Park Affiliations: Hana Bank",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines",
+          "authors": "Euan brown Affiliations: University College London, London, United Kingdom",
+          "presenters": []
+        },
+        {
+          "id": null,
+          "title": "Zero-Logit Model Provenance Auditing in Mission-Critical Financial AI: Privacy-Preserving Black-Box Attribution via Prober-Generator Resonance Spectroscopy",
+          "authors": "DEBDIP BANDYOPADHYAY",
+          "presenters": []
+        }
+      ]
+    },
+    {
+      "id": "ai-market-microstructure",
+      "label": "AI-Driven Market Microstructure in Centralized and Decentralized Finance",
+      "shortLabel": "Market Microstructure",
+      "papers": [
+        {
+          "id": 1153,
+          "title": "Beyond Order Book Snapshots: MSTFormer for Message-Aware Spatio-Temporal Forecasting",
+          "authors": "Nazar Aktosun (Ozyegin University); Emre Sefer (Ozyegin University)",
+          "presenters": []
+        },
+        {
+          "id": 1167,
+          "title": "Beyond Supra-Competitive Outcomes: Collusive Behaviour in Deep Reinforcement Learning for Optimal Execution Games",
+          "authors": "Christos-Spyridon Koulouris (University College London); Carlo Campajola (University College London)",
+          "presenters": []
+        },
+        {
+          "id": 1245,
+          "title": "Where Does Learned In-Context Policy Mirror Descent Pay Off in Market Making? A Component Diagnosis",
+          "authors": "Xinyue Wu (Quantitative Research Society); Yuhe Sui (Quantitative Research Society); Shufang Chen ( Quantitative Research Society); Yingzhi Tang (Quantitative Research Society)",
+          "presenters": []
+        },
+        {
+          "id": 1251,
+          "title": "Chat2LOB : A Natural-Language Calibration of Agent-Based LOB Market Simulation using Large Language Models",
+          "authors": "Andrea Quaranta (Luiss); Aldo Glielmo (Banca d'Italia); Andrea Coletta (Banca d'Italia)",
+          "presenters": []
+        },
+        {
+          "id": 1266,
+          "title": "Herding or Racing? Decomposing Cross-Account Order-Flow Persistence in On-Chain Markets",
+          "authors": "Yichong Bai (PolyU HK); Dingyue Kan (PolyU HK)",
+          "presenters": []
+        },
+        {
+          "id": 1327,
+          "title": "Same exposure, different clocks: Price discovery and cost-aware trading in matched ETFs",
+          "authors": "Silu Li (Princeton University); John Mulvey (Princeton University); Siyu Li (Westlake University)",
+          "presenters": []
+        },
+        {
+          "id": 1342,
+          "title": "OrderFlowDiT: Transport-Regularized Diffusion Transformer for Probabilistic Limit-Order Supply Forecasting",
+          "authors": "Jung Hun Phee (Georgia Tech); Tucker Balch (Emory University)",
+          "presenters": []
+        },
+        {
+          "id": 1344,
+          "title": "Implied Volatility Surface Forecasting Under Earnings-Driven Distribution Shift: Transfer from Ordinary Trading Days",
+          "authors": "Hyunoh Yeo (LG AI Research); Jaehoon Lee (LG AI Research); Seunghan Lee (LG AI Research); Jun Seo (LG AI Research); Junhyeok Kang (LG AI Research); Sungdong Yoo (LG AI Research); Minjae Kim (LG AI Research); Tae Yoon Lim (LG AI Research); Sangjun Han (LG AI Research); Dongwan Kang (LG AI Research); Hwanil Choi (LG AI Research); Soonyoung Lee (LG AI Research); Wonbin Ahn (LG AI Research)",
+          "presenters": []
+        },
+        {
+          "id": 1364,
+          "title": "Splitting the Seat: Cooperative Multi-Agent Market Making on Prediction-Market Order Books",
+          "authors": "Skander Lejmi (London School of Economics)",
+          "presenters": []
+        }
+      ]
+    }
+  ]
+}

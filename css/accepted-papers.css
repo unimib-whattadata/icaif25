@@ -1,7 +1,7 @@
 /* Reading and discovery layout for the accepted-paper catalogue. */
-html:has(body[data-page="accepted-papers"]) { scroll-padding-top: 0; }
-body[data-page="accepted-papers"] .page-index { display: none; }
-body[data-page="accepted-papers"] main {
+html:has(body:is([data-page="accepted-papers"], [data-page="workshop-papers"])) { scroll-padding-top: 0; }
+body:is([data-page="accepted-papers"], [data-page="workshop-papers"]) .page-index { display: none; }
+body:is([data-page="accepted-papers"], [data-page="workshop-papers"]) main {
   --papers-nav-height: 4rem;
   --papers-controls-height: 9rem;
   --papers-anchor-offset: calc(var(--papers-nav-height) + var(--papers-controls-height) + 1rem);
@@ -40,7 +40,7 @@ body[data-page="accepted-papers"] main {
 .papers-empty { padding-block: 2rem 3rem; }
 .papers-empty p { margin-block: .75rem 1.25rem; max-width: 65ch; line-height: 1.6; }
 @media (min-width: 640px) {
-  body[data-page="accepted-papers"] main { --papers-nav-height: 5rem; }
+  body:is([data-page="accepted-papers"], [data-page="workshop-papers"]) main { --papers-nav-height: 5rem; }
   .papers-header .page-header-content { padding-block: 2.25rem; }
   .papers-header .page-title { font-size: 2.25rem; }
   .papers-header .page-lead { font-size: 1.125rem; }
@@ -61,6 +61,19 @@ body[data-page="accepted-papers"] main {
   .papers-content { padding-top: 1.25rem; }
 }
 @media (max-height: 500px) { .papers-tools { position: static; } }
+/* Nine workshops share the same catalogue, with a compact native selector. */
+body[data-page="workshop-papers"] .papers-tools.is-enhanced .papers-categories-nav { display: none; }
+body[data-page="workshop-papers"] .papers-tools.is-enhanced .papers-mobile-category { display: block; min-width: 0; }
+body[data-page="workshop-papers"] .papers-mobile-category .select { width: 100%; height: 2.75rem; min-height: 2.75rem; font-size: 1rem; }
+.papers-workshop-label { display: block; font-size: .875rem; font-weight: 600; margin-bottom: .375rem; }
+.papers-workshop-link { font-size: .875rem; min-height: 2.75rem; display: inline-flex; align-items: center; }
+.papers-presenting-author { text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+@media (min-width: 640px) {
+  body[data-page="workshop-papers"] .papers-controls { grid-template-columns: minmax(0, 1fr) minmax(15rem, .8fr); }
+  body[data-page="workshop-papers"] .papers-search { grid-column: 1; }
+  body[data-page="workshop-papers"] .papers-mobile-category { grid-column: 2; }
+  body[data-page="workshop-papers"] .papers-tools.is-enhanced .papers-status { grid-column: 1 / -1; max-width: none; }
+}
 @media print {
   .papers-tools { position: static; }
   .papers-search, .papers-categories-nav, .papers-mobile-category, .papers-status, .papers-empty { display: none !important; }
