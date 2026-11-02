@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "groups": [
     {
       "id": "oral",
@@ -49,11 +49,6 @@
           "id": 392,
           "title": "Agreement Without Information: Spurious Directional Priors in Foundation Models",
           "authors": "Fernando Moreno-Pino (University of Bristol)"
-        },
-        {
-          "id": 397,
-          "title": "Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs",
-          "authors": "Junyi Ye (New Jersey Institute of Technology); Mengjia Yu (Montclair State University); Debapriya Hazra (Montclair State University); Guiling Wang (New Jersey Institute of Technology)"
         },
         {
           "id": 399,
@@ -248,7 +243,7 @@
         {
           "id": 1067,
           "title": "Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models",
-          "authors": "Moshu Xu (Tsinghua University); Junyu Chen (University of Groningen); Lijian Yang (Tsinghua University); Franklin Liu (University of Chicago)"
+          "authors": "Junyu Chen (University of Groningen); Franklin Liu (University of Chicago); Moshu Xu (Tsinghua University); Lijian Yang (Tsinghua University)"
         },
         {
           "id": 1079,
@@ -577,19 +572,9 @@
           "authors": "Danae Savvidi (Delft University of Technology); Çağrı Bilgi (Delft University of Technology); Kubilay Atasu (Delft University of Technology); Arie van Deursen (Delft University of Technology)"
         },
         {
-          "id": 669,
-          "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting",
-          "authors": "Junyi Ye (Montclair State University); Ivy Wanjiku (Montclair State University)"
-        },
-        {
           "id": 670,
           "title": "Actionable Signals in Prediction Markets: Evaluating Public and Private Information through Systematic Trading",
           "authors": "Oriol Saguillo Gonzalez (IMDEA Networks); Lucianna Kiffer (IMDEA Networks); Fabio Giacomelli (Uni Roma)"
-        },
-        {
-          "id": 672,
-          "title": "Regime-Gated Residual Mixture-of-Experts for Cross-Sectional Volatility Forecasting",
-          "authors": "Junyi Ye (Montclair State University); Gargi Vijay Borde (Montclair State University)"
         },
         {
           "id": 680,
@@ -600,11 +585,6 @@
           "id": 683,
           "title": "MLP-Initialized Reinforcement Learning for Exit Timing in SPX Short-Straddle Portfolios",
           "authors": "Jianning Wang (Nanyang Technological University); Robert Ślepaczuk (University of Warsaw); Paweł Sakowski (University of Warsaw)"
-        },
-        {
-          "id": 685,
-          "title": "Magnitude, Not Shape: Volatility Beats Downside- and Tail-Risk Metrics at Forecasting Drawdown",
-          "authors": "Meghanadh Pulivarthi (IBM); Hareen Venigalla (Atlassian)"
         },
         {
           "id": 698,
@@ -772,11 +752,6 @@
           "authors": "Jongho Park (Pohang University of Science and Technology); Youngju Ahn (Pohang University of Science and Technology); Bong-Gyu Jang (Pohang University of Science and Technology)"
         },
         {
-          "id": 961,
-          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
-          "authors": "Junyi Ye (Montclair State University)"
-        },
-        {
           "id": 972,
           "title": "Ordinal Gates, Cardinal Bets: Matching LLM Confidence to the Financial Decision Operator",
           "authors": "Rayansh Singh (Michigan State University); Sara Rezaeimanesh (Michigan State University)"
@@ -903,6 +878,11 @@
           "authors": "Ruichen Deng (Nankai University); Yichi Zhang (University of Oxford)"
         },
         {
+          "id": 397,
+          "title": "Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs",
+          "authors": "Junyi Ye (New Jersey Institute of Technology); Mengjia Yu (Montclair State University); Debapriya Hazra (Montclair State University); Guiling Wang (New Jersey Institute of Technology)"
+        },
+        {
           "id": 411,
           "title": "Recovering Pre-Event Crowd Beliefs in Prediction Markets with a Risk-Calibrated Mixture of Inverse Experts",
           "authors": "Idrees Aziz (middle east technical university)"
@@ -951,6 +931,21 @@
           "id": 661,
           "title": "Sampling Stressed Laws at Prescribed Severities: Certified Generative Scenarios",
           "authors": "­Yechan Jeong (Seoul National University); Juhoon Kang (Seoul National University); Youngjoon Hong (Seoul National University)"
+        },
+        {
+          "id": 669,
+          "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting",
+          "authors": "Junyi Ye (Montclair State University); Ivy Wanjiku (Montclair State University)"
+        },
+        {
+          "id": 672,
+          "title": "Regime-Gated Residual Mixture-of-Experts for Cross-Sectional Volatility Forecasting",
+          "authors": "Junyi Ye (Montclair State University); Gargi Vijay Borde (Montclair State University)"
+        },
+        {
+          "id": 685,
+          "title": "Magnitude, Not Shape: Volatility Beats Downside- and Tail-Risk Metrics at Forecasting Drawdown",
+          "authors": "Meghanadh Pulivarthi (IBM); Hareen Venigalla (Atlassian)"
         },
         {
           "id": 689,
@@ -1046,6 +1041,11 @@
           "id": 955,
           "title": "When Synthetic Markets Look Real but Aren't: Cross-asset tail dependence as a realism diagnostic for financial data generators",
           "authors": "Ming Yin Ivan Sit (UCLA)"
+        },
+        {
+          "id": 961,
+          "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
+          "authors": "Junyi Ye (Montclair State University)"
         },
         {
           "id": 977,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -522,8 +522,8 @@
       "date": "2026-11-16",
       "start": "09:00",
       "end": "09:40",
-      "title": "Keynote: Daniele Magazzeni",
-      "type": "keynote",
+      "title": "Fireside chat: Daniele Magazzeni",
+      "type": "panel",
       "room": "Main Hall",
       "detail": "Group Chief AI Officer at UBS.",
       "pending": false,
@@ -609,14 +609,13 @@
       "title": "Oral Session 3: Language Models for Central Bank and Earnings Communication",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "4 presentations",
+      "detail": "3 presentations",
       "pending": false,
       "href": "",
       "paperIds": [
         134,
         682,
-        1010,
-        397
+        1010
       ]
     },
     {
@@ -675,7 +674,7 @@
       "paperIds": [
         178,
         271,
-        1079
+        776
       ]
     },
     {
@@ -942,7 +941,7 @@
       "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "36 posters",
+      "detail": "35 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -969,7 +968,6 @@
         649,
         656,
         670,
-        672,
         680,
         683,
         753,
@@ -1102,7 +1100,7 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        776,
+        1079,
         941,
         1034
       ]
@@ -1132,12 +1130,10 @@
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "To be confirmed",
-      "detail": "38 posters",
+      "detail": "35 posters",
       "pending": true,
       "href": "",
       "paperIds": [
-        669,
-        685,
         698,
         722,
         734,
@@ -1160,7 +1156,6 @@
         935,
         939,
         950,
-        961,
         972,
         984,
         985,

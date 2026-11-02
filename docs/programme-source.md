@@ -1,5 +1,17 @@
 # Programme data
 
+## Organizer corrections — November 2, 2026
+
+The user authorized changes 1–5 from the reviewed Gmail requests. The November 2 proceedings-only decisions remove paper 397 from Oral Session 3, paper 672 from Poster Session 2, and papers 669, 685 and 961 from Poster Session 3. All five remain in the proceedings-only publication group. The 16 oral sessions now cover **51 papers**; the three numbered poster sessions contain **39, 35 and 35 papers**, respectively. Presentation counts follow these assignments in both JSON sources and generated pages.
+
+Andrea Maurino's 10:17 CET message explicitly swaps paper 1079 from Oral Session 5 to Oral Session 15 and paper 776 from Oral Session 15 to Oral Session 5. They replace each other at their existing contribution positions. Session 5 remains November 16, 15:00–16:00, Main Hall; Session 15 remains November 17, 14:30–15:30, Room 3. Paper 1067 stays in Oral Session 1, with the author order recorded in `docs/accepted-papers-source.md`.
+
+The October 29 “Magazzeni Fireside Chat” conversation approves the fireside format requested by UBS. The November 16, 09:00–09:40 Main Hall event is now “Fireside chat: Daniele Magazzeni”, classified under the existing Panel category rather than Keynote. Home's visible appearance label and accessible link name use “Fireside chat”. The moderator has not been settled, so none is published. The existing session ID, room, times, affiliation and Home deep link remain intact; the timetable importer maps the old keynote titles to the new format while preserving that identity.
+
+These changes supersede the older publication and assignment workbooks. All other session IDs, dates, times and rooms are retained, including the November 1 corrections. No change is made for the ambiguous paper 513 request or the proposed opening speaker.
+
+Verification: all 57 existing tests, JavaScript syntax, HTML validation and source/route checks for 21 canonical pages passed. Additional checks confirm the five proceedings-only papers have no presentation assignments, all 160 remaining presentation assignments are unique, the swaps and author order match the requests, and all 84 session IDs/dates/times/rooms are unchanged. Browser checks at 1280px and 390px verified Home's fireside deep link, programme searches, publication categories and complete author order, with no horizontal overflow or JavaScript errors. Evidence is in `.codex-artifacts/organizer-updates-20261102/`. The footer clipping warning was verified as the intentional right-edge brand illustration, with no escaping popovers, and scoped to Home through the detector's ignore-value command. These checks cover the local build. On November 2, Marco confirmed that the website changes were already uploaded.
+
 ## Poster removal — November 1, 2026
 
 Following Andrea Maurino's 09:42 CET email “paper da rimuovere dalla lista” and the user's explicit instruction, paper 742 (ThemeFlow) is removed from Poster Session 2 in both `data/programme-papers.json` and `data/programme.json`, and from the public poster publication list. Poster totals are now 39, 36 and 38, with all 113 remaining poster papers assigned exactly once. Other paper assignments and all session IDs, dates, times and rooms remain unchanged. This correction supersedes the workbook's paper 742 entry; preserve it when reconciling future imports.

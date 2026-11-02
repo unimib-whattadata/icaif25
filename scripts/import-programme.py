@@ -39,6 +39,7 @@ MORNING_PANEL_TITLE = (
 )
 # Copy corrections keep the identity of the existing event and its saved links.
 IDENTITY_TITLES = {
+    "Fireside chat: Daniele Magazzeni": "Keynote: Daniele Magazzeni",
     "Industry day: AI Governance & DXC spotlight": "FINOS demo & panel",
     "Agostino Capponi Keynote & Perpetual Alpha Competition awards":
         "DXC session + Perpetual Alpha Competition awards",
@@ -166,8 +167,10 @@ def public_title(title, session_type):
         detail = "Speech by Marc Mézard."
     elif title == "ADIA Session":
         title = "ADIA Lab"
-    elif title in ("Keynote: Magazzeni", "Keynote: Daniele Magazzeni"):
-        title = "Keynote: Daniele Magazzeni"
+    elif title in ("Keynote: Magazzeni", "Keynote: Daniele Magazzeni",
+                   "Fireside chat: Daniele Magazzeni"):
+        title = "Fireside chat: Daniele Magazzeni"
+        session_type = "panel"
         detail = "Group Chief AI Officer at UBS."
     elif title in ("Keynote Pasquali", "Keynote: Stefano Pasquali"):
         title = "Keynote: Stefano Pasquali"

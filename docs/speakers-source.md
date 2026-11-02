@@ -1,5 +1,9 @@
 # Home speaker portraits
 
+## Magazzeni format correction — November 2, 2026
+
+The user authorized the October 29 “Magazzeni Fireside Chat” request. The Home appearance badge and accessible link name now identify Daniele Magazzeni's November 16 appearance as a fireside chat, matching the programme's corrected title. The same November 16, 09:00–09:40 Main Hall event and `session-2026-11-16-0900-d5719161` anchor are retained. No moderator is named because the conversation does not establish a final choice. Portrait, affiliation, date and layout remain unchanged. This supersedes the earlier keynote-format labels below.
+
 ## Speaker programme links — October 31, 2026
 
 The user requested links from the Home speaker date labels to their scheduled appearances wherever a named slot exists. `data/programme.json` and the published programme supply nine matches. Each badge now links to `/programme/?day=YYYY-MM-DD#SESSION_ID`; this selects the correct day and reveals the exact session through the existing programme deep-link behavior.

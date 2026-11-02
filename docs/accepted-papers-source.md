@@ -1,5 +1,13 @@
 # Accepted papers publication source
 
+## Proceedings-only and author corrections — November 2, 2026
+
+The user authorized website changes 1–5 from the reviewed Gmail requests. Andrea Maurino's November 2 messages move paper 397 from oral presentation and papers 669, 672 and 685 from poster presentation to proceedings only. Junyi Ye's follow-up explicitly includes paper 961, consistent with the four-paper proceedings-only agreement quoted in that conversation. All five remain in the accepted-paper catalogue, without presentation assignments. The 214-paper total is unchanged: **51 oral, 109 poster and 54 proceedings-only**.
+
+Moshu Xu's reply, forwarded by Andrea on November 2, supplies the correct author order for paper 1067, “Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models”: Junyu Chen, Franklin Liu, Moshu Xu, Lijian Yang. Existing individual affiliations are retained with their respective authors. This order is shared by Accepted Papers and the programme. The authors declined the proposed move to Session 15, so paper 1067 remains in Oral Session 1.
+
+These corrections supersede the older workbook fields. Preserve them, the November 1 paper 428 author correction and the paper 742 removal when reconciling future imports. The ambiguous October 29 request referring to paper 513 is not applied.
+
 ## Poster removal — November 1, 2026
 
 Andrea Maurino's email “paper da rimuovere dalla lista”, sent November 1 at 09:42 CET, requests removing paper 742, “ThemeFlow: From News Headlines to Investable Theme Signals with Contrastive Narrative Geometry”, from the poster list. The user explicitly authorized removal from the public poster list and programme. Paper 742 is removed from the poster publication group and its Poster Session 2 assignment; it is not reassigned to proceedings only. The public list now contains 214 papers: 52 oral, 113 poster and 49 proceedings-only. This instruction supersedes the older workbook entry and does not establish a change to ACM publication status. Preserve this removal when reconciling future workbook imports.

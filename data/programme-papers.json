@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "source": "https://docs.google.com/spreadsheets/d/1eaf-WIvny0VXIeZrYAlUmVMcyHbpdbmIriB0rINRp08/edit",
   "groups": [
     {
@@ -28,8 +28,7 @@
       "paperIds": [
         134,
         682,
-        1010,
-        397
+        1010
       ]
     },
     {
@@ -48,7 +47,7 @@
       "paperIds": [
         178,
         271,
-        1079
+        776
       ]
     },
     {
@@ -136,7 +135,7 @@
       "id": "oral-15",
       "title": "Oral Session 15: Learning from Market Data: Pipelines, Charts and Filtering",
       "paperIds": [
-        776,
+        1079,
         941,
         1034
       ]
@@ -222,7 +221,6 @@
         649,
         656,
         670,
-        672,
         680,
         683,
         753,
@@ -241,8 +239,6 @@
       "id": "poster-3",
       "title": "Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "paperIds": [
-        669,
-        685,
         698,
         722,
         734,
@@ -265,7 +261,6 @@
         935,
         939,
         950,
-        961,
         972,
         984,
         985,
