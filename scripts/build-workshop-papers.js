@@ -64,9 +64,10 @@ function validateWorkshopPapers(source) {
     if (Object.keys(group).sort().join(',') !== 'id,label,papers,shortLabel') throw new Error('Only public workshop fields may be exported.');
     groups.add(group.id);
     for (const paper of group.papers) {
-      if (Object.keys(paper).sort().join(',') !== 'authors,id,presenters,title') throw new Error('Only public paper fields may be exported.');
+      if (Object.keys(paper).sort().join(',') !== 'authors,id,presentation,presenters,title') throw new Error('Only public paper fields may be exported.');
       if (paper.id !== null && (!Number.isSafeInteger(paper.id) || paper.id <= 0)) throw new Error('Invalid paper ID.');
       if (typeof paper.title !== 'string' || !paper.title.trim() || typeof paper.authors !== 'string' || !paper.authors.trim()) throw new Error('Missing paper title or authors.');
+      if (![null, 'oral', 'poster'].includes(paper.presentation)) throw new Error('Invalid presentation type.');
       if (!Array.isArray(paper.presenters) || paper.presenters.some(name => typeof name !== 'string' || !name.trim() || /\b(?:TBD|to be confirmed)\b/i.test(name))) throw new Error('Invalid presenting author.');
       const anchor = paperAnchor(group, paper);
       if (anchors.has(anchor)) throw new Error('Duplicate paper in workshop.');
@@ -86,7 +87,7 @@ function renderWorkshopPapers(source) {
         <div class="hero-content page-header-content">
           <div class="max-w-3xl">
             <h1 class="page-title">Workshop Papers</h1>
-            <p class="page-lead">Explore ${total} papers across ${source.groups.length} ICAIF 2026 workshops. Presenting authors are underlined.</p>
+            <p class="page-lead">Explore ${total} papers across ${source.groups.length} ICAIF 2026 workshops. Poster presentations are labelled. Presenting authors are underlined.</p>
           </div>
         </div>
       </section>
@@ -95,7 +96,7 @@ function renderWorkshopPapers(source) {
           <div id="paper-search-panel" class="papers-search" hidden>
             <label for="paper-search">Search workshop papers</label>
             <div class="papers-search-row">
-              <input id="paper-search" class="input" type="search" placeholder="Title, author or ID" aria-describedby="paper-search-status">
+              <input id="paper-search" class="input" type="search" placeholder="Title, author, ID or poster" aria-describedby="paper-search-status">
               <button type="button" class="btn" data-paper-reset disabled>Reset</button>
             </div>
           </div>
@@ -135,7 +136,7 @@ ${group.papers.map(paper => {
                 <div class="list-col-grow papers-row-content">
                   <a href="#${anchor}" class="link papers-id" aria-label="Link to paper: ${escape(paper.title)}">${paper.id === null ? 'Link' : `#${paper.id}`}</a>
                   <div class="papers-copy">
-                    <h3>${escape(paper.title)}</h3>
+                    <h3>${escape(paper.title)}${paper.presentation === 'poster' ? ' <span class="badge">Poster</span>' : ''}</h3>
                     <p>${renderAuthors(paper)}</p>
                   </div>
                 </div>

@@ -10,61 +10,71 @@
           "id": 1158,
           "title": "Auditable FRTB Capital Explanations: A Tool Contract for Financial AI Agents",
           "authors": "Yuhe Sui (Quantitative Research Society)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1189,
           "title": "Digitalizing AI Governance in Financial Institutions: From Document-Centric Policy to Centralized Lifecycle Management",
           "authors": "Federica Screti (Deloitte)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1201,
           "title": "Measuring Sensitive Attribute Biases in LLMs: Credit Risk Assessment as an Empirical Benchmark",
           "authors": "Federico Ricciuti (CRIF); Diana Komis (CRIF)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1209,
           "title": "Is It Still the Same Model? Economic Identity Fingerprints for Production Financial AI",
           "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1213,
           "title": "Enhancing Financial Crisis Prediction Using Generative Adversarial Networks and Explainable Artificial Intelligence",
           "authors": "Mathurin Aimé Mekam Pouatcha (Università di Pisa); Salvatore Rinzivillo (CNR); Francesca Naretto (Università di Pisa)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1214,
           "title": "Governing LLM Agents in Financial Compliance: Controls That Survive a Change of Model",
           "authors": "Aditya Tippanaboena (Independent Researcher); Cameron Collins (Independent Researcher); Sahil Rangwala (Independent Researcher)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1269,
           "title": "When Synthesis Silences Risk: Auditable Sign-Off in Financial Agent Committees",
           "authors": "Jeffrey Zhou (California Institute of Technology)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1271,
           "title": "FiPARM: Financial Prompt Actionable Risk Management A Governance Taxonomy for Prompt-Level Risk Classification in Financial Services",
           "authors": "Owen O Neill (BNY); Rajitha Ramanayake (BNY); Nicte Thorpe (BNY); Urja Pawar (BNY); Abhishek Mandal (BNY); Houssem Chatbri (BNY); Christopher Martin (BNY)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1272,
           "title": "AEGIS: An Auditable Evidence-Governed Interface for Cost-Aware AI Workflow Selection in Finance",
           "authors": "Xiaozhen Wang (CEREMADE, Université PSL); Francois Buet-Golfouse (AIML Global Markets, Barclays)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1305,
           "title": "Unequal Denial, Similar Recourse Cost: Pricing the Closure of the Mortgage Denial Gap",
           "authors": "Jonathan Chang (Union County Magnet High School)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         }
       ]
     },
@@ -79,7 +89,8 @@
           "authors": "Ashish Bansal (The Vanguard Group)",
           "presenters": [
             "Ashish Bansal"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1180,
@@ -87,7 +98,8 @@
           "authors": "Hongxu Chen (Commonwealth Bank of Australia)",
           "presenters": [
             "Hongxu Chen"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1195,
@@ -95,7 +107,8 @@
           "authors": "Ajitabh Kumar (IntelCast)",
           "presenters": [
             "Ajitabh Kumar"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1212,
@@ -103,7 +116,8 @@
           "authors": "Sudip Gupta (Johns Hopkins University)",
           "presenters": [
             "Sudip Gupta"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1221,
@@ -111,7 +125,8 @@
           "authors": "Anand Gadicherla (Algoverse AI Research)",
           "presenters": [
             "Anand Gadicherla"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1225,
@@ -119,7 +134,8 @@
           "authors": "Jonathan Chang (Union County Magnet High School)",
           "presenters": [
             "Jonathan Chang"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1229,
@@ -127,7 +143,8 @@
           "authors": "Vineeth Kalluru (NVIDIA)",
           "presenters": [
             "Vineeth Kalluru"
-          ]
+          ],
+          "presentation": "oral"
         }
       ]
     },
@@ -140,37 +157,43 @@
           "id": 1159,
           "title": "What Post-hoc Attributions of FRTB-IMA Capital Answer",
           "authors": "Yuhe Sui; Yingzhi Tang",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1224,
           "title": "The Recourse Test: Do LLM Adverse-Action Explanations Survive Repair-and-Replay?",
           "authors": "Jonathan Chang",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1260,
           "title": "PolicyAttention: A Certifiable and Testable Update Rule for Attention-Based Allocation Controllers",
           "authors": "Shufang Chen; Yuhe Sui; Yingzhi Tang; Xinyue Wu",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1261,
           "title": "Inside Chat Bankman-Fried: Geometric Insights into LLM Alignment in Finance",
           "authors": "Chiara Coltellacci; Anastasia Di Blasio; Giulia Iadisernia; Carolina Camassa; Diego Doimo; Andrea Coletta; Aldo Glielmo; Anna Russo Russo",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1319,
           "title": "Text as Structure, Not Signal: Text-Aligned Groups for Distributionally Robust Stock Ranking",
           "authors": "Jiwon Park; Namhyoung Kim; Sungweon Shin; Jae Wook Song",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1326,
           "title": "AssetDART: Interpreting Neural Portfolio Models Through Decision Regimes",
           "authors": "Silu Li; John Mulvey; Siyu Li",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         }
       ]
     },
@@ -185,7 +208,8 @@
           "authors": "Anna He (Affirm); Tianming Zhou (Affirm); Alexander Statnikov (Affirm)",
           "presenters": [
             "Alexander Statnikov"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1265,
@@ -193,7 +217,8 @@
           "authors": "Ignacio Esplugues (BBVA); Ignacio Esplugues (BBVA); Asier Rodriguez (BBVA); Joel Medina (BBVA); Ignacio Sisamón (BBVA)",
           "presenters": [
             "Asier Rodríguez González"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1281,
@@ -201,7 +226,8 @@
           "authors": "Ngoc Minh Tran (Mastercard Ireland); Arjun Dussa (Mastercard Ireland); James Conway (Mastercard Ireland); Stephen Flinter (Mastercard Ireland)",
           "presenters": [
             "Ngoc Minh Tran"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 1287,
@@ -209,7 +235,8 @@
           "authors": "Soumya Ghosh (Revolut); Stefan Lessmann (Humboldt-Universität zu Berlin); Victor Medina-Olivares (University of Edinburgh Business School); Tadas Krisciunas (Revolut); Amey Baokar (Revolut)",
           "presenters": [
             "Tadas Krisciunas"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1290,
@@ -217,7 +244,8 @@
           "authors": "Edoardo Belli (Revolut); Marina Stepanova (Revolut); Amey Baokar (Revolut); María Óskarsdóttir (University of Southampton & Reykjavik University); Cristián Bravo (Western University)",
           "presenters": [
             "Edoardo Belli"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 1291,
@@ -225,7 +253,8 @@
           "authors": "Parameswaran Kamalaruban (Visa); Viktor Drobnyi (Visa); Maeve Madigan (Visa); Julia Rozanova (Visa); David Sutton (Visa); Stuart Burrell (Visa)",
           "presenters": [
             "Stuart Burrell"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1294,
@@ -233,7 +262,8 @@
           "authors": "Fabrizio Garuti (Prometeia Spa); Simone Luetto (Prometeia Spa)",
           "presenters": [
             "Simone Luetto"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 1295,
@@ -241,7 +271,8 @@
           "authors": "Mattias Kvist (KTH AI Society); Erik Lidman Hillbom (KTH AI Society); Edoardo De Cal (KTH AI Society); Davis Siemens (KTH AI Society); Adam Fredriksson (Unbox AI); Rickard Brüel-Gabrielsson (Stanford University, MIT, Unbox AI)",
           "presenters": [
             "Rickard Brüel-Gabrielsson"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 1299,
@@ -249,7 +280,8 @@
           "authors": "Wen Yao (Plaid)",
           "presenters": [
             "Wen Yao"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 1300,
@@ -257,7 +289,8 @@
           "authors": "Wen Yao (Plaid)",
           "presenters": [
             "Wen Yao"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 1302,
@@ -265,7 +298,8 @@
           "authors": "Xinran Feng (The Hong Kong University of Science and Technology (Guangzhou)); Yi Xie (Technical University of Munich; Heilbronn Data Science Center); Chao Zhang (Thrust of Financial Technology, The Hong Kong University of Science and Technology (Guangzhou)); Ruikun Li (Thrust of Financial Technology, The Hong Kong University of Science and Technology (Guangzhou)); Wanyun Ling (Technical University of Munich; Heilbronn Data Science Center); Ziyue Li (Technical University of Munich; Heilbronn Data Science Center); Chenxi Liu (Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences)",
           "presenters": [
             "Yi Xie"
-          ]
+          ],
+          "presentation": "oral"
         }
       ]
     },
@@ -280,7 +314,8 @@
           "authors": "Kuan Ta Wu",
           "presenters": [
             "Kuan Ta Wu"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 14,
@@ -288,7 +323,8 @@
           "authors": "Jiayi Chen; Guiling Wang",
           "presenters": [
             "Jiayi Chen"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 16,
@@ -296,7 +332,8 @@
           "authors": "Cosimo Galeone; Giuseppe Ettorre; Anna Ettorre; Ginevra Mariani; Minsu Park; Daniele Ligorio",
           "presenters": [
             "Cosimo Galeone"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 24,
@@ -304,7 +341,8 @@
           "authors": "Joong Ho Choi; Sherine George; Jiayang Zhao; Jayesh Rathi; Ashwin Kandath; Ananya Sane; Vishhvak Srinivasan",
           "presenters": [
             "Joong Ho Choi"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 29,
@@ -312,13 +350,15 @@
           "authors": "Masoud Soleimani",
           "presenters": [
             "Masoud Soleimani"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 31,
           "title": "Replicate the Decision, Not the Paragraph: An Executable Contract for Quantitative-Research Agents",
           "authors": "Eric Benhamou; Jean-Jacques Ohan; Beatrice Guez; Ethan Setrouk; Chamyl Saadi; Thomas Jacquot",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 33,
@@ -326,7 +366,8 @@
           "authors": "Owen O'Neill; Rajitha Ramanayake; Nicte Thorp; Urja Pawar; Abhishek Mandal; Houssem Chatbri; Christopher Martin",
           "presenters": [
             "Owen O'Neill"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 34,
@@ -334,7 +375,8 @@
           "authors": "Nidhi Singh; Will Flanagan; Rajitha Ramanayake; Sarah Epstein; Ivan Wiryadi; Gisele DeWitt; Ananya Nagireddy; Ana Alfaro Pizana; James Usher",
           "presenters": [
             "Nidhi Singh"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 37,
@@ -342,7 +384,8 @@
           "authors": "Varad Srivastava; Prabhu R; Victor Daniel Casas Hernandez",
           "presenters": [
             "Varad Srivastava"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 39,
@@ -350,7 +393,8 @@
           "authors": "Advije Rizvani; Giovanni Apruzzese; Pavel Laskov; Nils Lukas",
           "presenters": [
             "Advije Rizvani"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 40,
@@ -358,7 +402,8 @@
           "authors": "Hongzhen Du",
           "presenters": [
             "Hongzhen Du"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 49,
@@ -366,7 +411,8 @@
           "authors": "ZHANG ZHENG; Dong Xu",
           "presenters": [
             "Zheng Zhang"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 53,
@@ -374,7 +420,8 @@
           "authors": "Fang Fang; Alexander Statnikov",
           "presenters": [
             "Alexander Statnikov"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 54,
@@ -382,7 +429,8 @@
           "authors": "Anagha Tiwari; Brian Jabarian; Alexander G. Gray; Nick Feamster; Alex Imas; Alex Kale",
           "presenters": [
             "Anagha Tiwari"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 57,
@@ -390,7 +438,8 @@
           "authors": "Yurun Sun; Pietro Panzarasa; Valentin Danchev",
           "presenters": [
             "Yurun Sun"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 58,
@@ -398,7 +447,8 @@
           "authors": "Rian Dolphin; Joe Dursun; Jarrett Blankenship; Katie Adams; Quinton Pike",
           "presenters": [
             "Rian Dolphin"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 60,
@@ -406,7 +456,8 @@
           "authors": "Junxiao Chen; Paul Glasserman",
           "presenters": [
             "Junxiao Chen"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 63,
@@ -414,7 +465,8 @@
           "authors": "Alireza Kargarzadeh; Nariman Khaledian; Navid Parvini; Sid Ghatak; Arman Khaledian",
           "presenters": [
             "Arman Khaledian"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 66,
@@ -422,7 +474,8 @@
           "authors": "Vikram Aggarwal; Siddarth Raman; Susan Thomas; Jay Kulkarni; Aakriti Narang; Aditi Mascarenhas; Ajay Shah",
           "presenters": [
             "Vikram Aggarwal"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 70,
@@ -430,7 +483,8 @@
           "authors": "Feruza Kholmukhamedova",
           "presenters": [
             "Feruza Kholmukhamedova"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 72,
@@ -438,7 +492,8 @@
           "authors": "Ajitabh Kumar",
           "presenters": [
             "Ajitabh Kumar"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 73,
@@ -446,7 +501,8 @@
           "authors": "Guanghao Wu; Zhuo Cai; Shoujin Wang",
           "presenters": [
             "Guanghao Wu"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 74,
@@ -454,7 +510,8 @@
           "authors": "Ming Ze Tang; David Cutting; Boyd Carson; Vasiliki Carson",
           "presenters": [
             "Ming Ze Tang"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 75,
@@ -462,7 +519,8 @@
           "authors": "Siddhesh Chaubal; Debarya Dutta; Hyeonwoo Jeon",
           "presenters": [
             "Hyeonwoo Jeon"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 76,
@@ -470,7 +528,8 @@
           "authors": "Boming Yang; Yuquan Wang; Yusuke Iwasawa; Yutaka Matsuo; Jiaxian Guo",
           "presenters": [
             "Boming Yang"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 80,
@@ -478,7 +537,8 @@
           "authors": "Ni Ma; Chen-Tse Tsai; Yeu-Chern Harn; Chirag Gupta; Prabhanjan Kambadur; Ioana Baldini; David S Rosenberg; Camilo Ortiz",
           "presenters": [
             "Ioana Baldini"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 82,
@@ -486,7 +546,8 @@
           "authors": "Jonathan Chang",
           "presenters": [
             "Jonathan Chang"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 83,
@@ -494,7 +555,8 @@
           "authors": "Mingzhi Yang; Sheng Wang; Chao Zhang; Ruikun Li",
           "presenters": [
             "Chao Zhang"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 84,
@@ -502,7 +564,8 @@
           "authors": "Areej AlOtaibi; Layali Abdulrahman Alsolami; Tasniem Nasser Alyahya",
           "presenters": [
             "Layali Abdulrahman Alsolami"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 89,
@@ -511,7 +574,8 @@
           "presenters": [
             "Ji Sub Choi",
             "Whan Choi"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 90,
@@ -519,7 +583,8 @@
           "authors": "Kiyoun Kim; Sung-Yeon Nathan Lim",
           "presenters": [
             "Kiyoun Kim"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 91,
@@ -527,7 +592,8 @@
           "authors": "Seunghan Lee; Jun Seo; Jaehoon Lee; Junhyeok Kang; Sangjun Han; Sungdong Yoo; Minjae Kim; Tae Yoon Lim; Dongwan Kang; Hwanil Choi; Soonyoung Lee; Wonbin Ahn",
           "presenters": [
             "Seunghan Lee"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 92,
@@ -535,7 +601,8 @@
           "authors": "Siyan Chen",
           "presenters": [
             "Siyan Chen"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 96,
@@ -543,7 +610,8 @@
           "authors": "Yeonsuk Jung; Jang Ho Kim",
           "presenters": [
             "Jang Ho Kim"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 98,
@@ -553,7 +621,8 @@
             "Yu Jeong Lee",
             "Sujin Jung",
             "Jaeho Jo"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 99,
@@ -561,7 +630,8 @@
           "authors": "Campbell Taylor; Sebastian Rivera; Sami Naeem; Alejandro Canete",
           "presenters": [
             "Alejandro Canete"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 105,
@@ -569,7 +639,8 @@
           "authors": "Ollie Olby; Andreea Bacalum; Kibaek Lee; Namid Stillman",
           "presenters": [
             "Namid Stillman"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 109,
@@ -577,7 +648,8 @@
           "authors": "Tucker Balch; Maria Hybinette; Grant Johnson; Bingyang Wang",
           "presenters": [
             "Tucker Balch"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 110,
@@ -585,7 +657,8 @@
           "authors": "Aryan Chhabra; Kuntara Pukthuanthong",
           "presenters": [
             "Aryan Chhabra"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 113,
@@ -593,7 +666,8 @@
           "authors": "Radha Yadav; Prasanna Devadiga; Peeyush mishra; Apoorv Singh",
           "presenters": [
             "Radha Yadav"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 114,
@@ -601,7 +675,8 @@
           "authors": "Maximilian Nicholson",
           "presenters": [
             "Maximilian Nicholson"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 116,
@@ -609,13 +684,15 @@
           "authors": "Sahong Park; Suhwan Park; Hoyoung Lee; Gakyung Kwon; Wonbin Ahn; Jaewon Choi; Alejandro Lopez-Lira; Yoon Kim; CHANYEOL CHOI; HYEONGWOO KONG; Yongjae Lee",
           "presenters": [
             "Sahong Park"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 118,
           "title": "RiskReason: A Benchmark for Verifiable Financial Risk Reasoning",
           "authors": "Nazanin Yousefi; Mohammadreza Ghafouri; seyedreza tavakoli; Mohammad Javad Gharegozlou; Arman Khaledian; Eghbal Rahimikia; Amir Amini; Gholamali Aminian; Marjan Alirezaie; Ali Habibnia",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 119,
@@ -623,7 +700,8 @@
           "authors": "Xuan Yao; Kelvin J.L. Koa; Salsabila Fatma Aripa; Dai Yang; Yuxuan Tan; Zhou Yi; Ke-Wei Huang",
           "presenters": [
             "Kelvin J.L. Koa"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 121,
@@ -631,7 +709,8 @@
           "authors": "Hyunho Jeon; Seongchan Park; Byungsoo Kang; Gaeun Kim; DAEHYUN KIM",
           "presenters": [
             "Hyunho Jeon"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 122,
@@ -639,7 +718,8 @@
           "authors": "Rodrigo Mendoza Smith",
           "presenters": [
             "Rodrigo Mendoza-Smith"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 123,
@@ -647,7 +727,8 @@
           "authors": "Edward Samuel Richards; Javier Sanz-Cruzado Puig; Richard McCreadie",
           "presenters": [
             "Edward Samuel Richards"
-          ]
+          ],
+          "presentation": "oral"
         },
         {
           "id": 125,
@@ -655,7 +736,8 @@
           "authors": "Donghwa Seo; Juyeong Lee; Doohwi Cha; Minsuk Sung; Minjae Lee; seunghan son; Yoontae Hwang",
           "presenters": [
             "Donghwa Seo"
-          ]
+          ],
+          "presentation": "poster"
         },
         {
           "id": 126,
@@ -663,7 +745,8 @@
           "authors": "Ziling Liu; Kelvin J.L. Koa; Ke-Wei Huang",
           "presenters": [
             "Kelvin J.L. Koa"
-          ]
+          ],
+          "presentation": "poster"
         }
       ]
     },
@@ -676,37 +759,43 @@
           "id": 1192,
           "title": "Structuring the Sourcing Funnel: Uncertainty-Routed Dual-Process Screening in Private Markets",
           "authors": "Zihong Liu (LSE); Song Yang (UCL); Marcos Barreto (LSE)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 1235,
           "title": "Reasoning Is Latency: Endogenous Information Processing and Execution in AI Trading",
           "authors": "Yang Wang (Alibaba Group)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1244,
           "title": "Asymmetry without Alpha? Separating Economic Downside Protection from Sign-Dependent Private-Market Marks",
           "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1246,
           "title": "Evidence to Exposure: Auditable Document Intelligence for Private-Market Allocation",
           "authors": "Eric Benhamou (AI For Alpha); Jean-Jacques Ohana (AI For Alpha); Beatrice Guez (AI For Alpha); Ethan Setrouk (AI For Alpha); Chamyl Saadi (AI For Alpha); Thomas Jacquot (AI For Alpha)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 1296,
           "title": "Trustworthy LLM-Assisted Venture Screening: Auditing, Diagnosing, and Improving Expert Alignment",
           "authors": "Durjoy Dey (Concordia University); Jisan Ahmed (Shahjalal University of Science and Technology); Samiul Islam Mugdha (Shahjalal University of Science and Technology); Tausif Ahmed (University of Cincinnati); Yuhong Yan (Concordia University)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1346,
           "title": "Don't Model the Price, Model the Investors: Price Forecasting through Agent Role Learning with On-Policy Distillation",
           "authors": "Kelvin Koa (National University of Singapore); Ziling Liu (National University of Singapore); Yuncong Liu (National University of Singapore); Zhengxi Qian (National University of Singapore); Shengqiong Wu (University of Oxford); Michael Wooldridge (University of Oxford); Ke-Wei Huang (National University of Singapore)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         }
       ]
     },
@@ -719,25 +808,29 @@
           "id": 1145,
           "title": "When a Quantum-Inspired State Helps: Reproducible Directional Forecasting in Linked Carbon Markets",
           "authors": "BINGRUI WU (student); Tzu Chieh Hung (Undergraduate Program in Intelligent Computing and Big Data Chung Yuan Christian University Taoyuan City, Taiwan); Yen Jui Chang (Master Program in Intelligent Computing and Big Data Chung Yuan Christian University Taoyuan City, Taiwan)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1317,
           "title": "Benchmarking Quantum-Inspired Portfolio Optimization Against Classical Solvers",
           "authors": "Santoshi Yadagiri (Georgia Institute of Technology)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1324,
           "title": "Contextual GHZ Strategies for Cross-Venue Liquidity Coordination: Evidence from U.S. Equity Direct Feeds",
           "authors": "Silu Li (Princeton University); John Mulvey (Princeton University); Siyu Li (Westlake University)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         },
         {
           "id": 1329,
           "title": "Fin-QBM: From Quantum Boltzmann Machines to Financial Decisions with Generative Models",
           "authors": "Soumya Banerjee (BNP PARIBAS ); Mariam BARRY (BNP PARIBAS)",
-          "presenters": []
+          "presenters": [],
+          "presentation": null
         }
       ]
     },
@@ -750,109 +843,127 @@
           "id": null,
           "title": "Authentic FRTB Explanations Can Misguide Financial AI Capital Planning",
           "authors": "Annie Huaiyu Wang, Yuhe Sui, Yingzhi Tang",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Beyond Text Guardrails: Direct, Transformed, and Integrated Multimodal Controls for Banking",
           "authors": "Abhishek Mandal, Owen O'Neill, Urja Pawar, Rajitha Ramanayake, Nabeel Kemal, Houssem Chatbri",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Certify the Decision, Not the Shortcut: Fail-Closed Screening for Financial Risk Decisions",
           "authors": "Yingzhi Tang, Yuhe Sui Affiliations: Quantitative Research Society, The Chinese University of Hong Kong Shenzhen, Nanyang Technological University",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Community-Aware Graph Autoencoders for Anti-Money Laundering",
           "authors": "Hanieh Ghabelialla Affiliations: University of New Brunswick, UNB",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Evidence-Grounded Evaluation for Financial Agent Governance",
           "authors": "Sehwa Moon, Hyungbin Yun, Yungyu Lee, Donghyun Kang, Seungmi Oh, Jina Kim, Jin Heo, Sungkwon Cho Affiliations: Shinhan Bank",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Exploring the Privacy–Size Tradeoff for Differentially Private Self-Attentive Variational Autoencoders",
           "authors": "Rohit Sadavarte, Dhruvi Kothari, Sparsh Gupta, Eric Van Oeveren Affiliations: Foresight, Intuit",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Federated Layer-Wise Exchange for Cross-Client Money Laundering Pattern Detection",
           "authors": "Selin Ceydeli, Rui Wang, Kubilay Atasu Affiliations: Delft University of Technology",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Gain–Dilution in Target-Disjoint Graph Injection Attacks",
           "authors": "Jianping Bai, Ruikun Li, Chao Zhang Affiliations: The Hong Kong University of Science and Technology",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "How Much of a Deposit Can Fund a Payment Bounds from Incomplete Transaction Histories",
           "authors": "Seongyong Kim Affiliations: Dunamu",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "K-BankEval - A Requirements-Driven LLM Benchmark Suite for Model Selection in Korean Banking",
           "authors": "Kanghee Lee, DOROCKHYUN, Seokgi Lee, Eunhyeok Jang, Youngsoo Lee, Sunguk Choi, Hochan Jeong, JONGGIL PARK Affiliations: Shinhan Bank",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Kiii-Kiii: Korean Identifiers, Identifiability, and Ill-formed Inputs — A Regulation-Grounded Benchmark for Financial PII Detection",
           "authors": "Eunbin Shin, Sara Yu, Seonghyun Kim, MinKyeong Shin, Yewon hwang, Hanwool Lee",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "LARG: Lifecycle Attacks and Retraining Guards for Algorithmic Trading Systems",
           "authors": "Advije Rizvani, Luca Demetrio, Maura Pintor, Pavel Laskov, Giovanni Apruzzese Affiliations: Universität Liechtenstein, University of Genoa, University of Cagliari, Universität Liechtenstein, Reykjavík University",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Per-User Personalization in Card-Fraud Detection Pays Only Against Weak Baselines",
           "authors": "Armaan Gugnani, Sai Anish Palleti, Venkata Sujan Sannidhi Affiliations: Collin County Community College District (collin.edu), Frisco Independent School District (friscoisd.org)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Pricing Cross-Bank Context in Federated Anti-Money Laundering",
           "authors": "Lidia Losavio, Dario Fenoglio, Martin Gjoreski, Marc Langheinrich",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Privacy-Preserving GNN Inference on Financial Transaction Graphs via Homomorphic Encryption",
           "authors": "H. Çağrı Bilgi, Kemal Mutluergil, Ceren Yıldırım, Kubilay Atasu, Erkay Savas",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Secret Orthogonal Rotation in Korean Financial RAG: Exact Retrieval Preservation and Known-Pair Vulnerability",
           "authors": "JoonHowi Jeon, Kang sumin, Cheol Mo Yang, Minwoo Kim, Dae-Young Park Affiliations: Hana Bank",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines",
           "authors": "Euan brown Affiliations: University College London, London, United Kingdom",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": null,
           "title": "Zero-Logit Model Provenance Auditing in Mission-Critical Financial AI: Privacy-Preserving Black-Box Attribution via Prober-Generator Resonance Spectroscopy",
           "authors": "DEBDIP BANDYOPADHYAY",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         }
       ]
     },
@@ -865,55 +976,64 @@
           "id": 1153,
           "title": "Beyond Order Book Snapshots: MSTFormer for Message-Aware Spatio-Temporal Forecasting",
           "authors": "Nazar Aktosun (Ozyegin University); Emre Sefer (Ozyegin University)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 1167,
           "title": "Beyond Supra-Competitive Outcomes: Collusive Behaviour in Deep Reinforcement Learning for Optimal Execution Games",
           "authors": "Christos-Spyridon Koulouris (University College London); Carlo Campajola (University College London)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1245,
           "title": "Where Does Learned In-Context Policy Mirror Descent Pay Off in Market Making? A Component Diagnosis",
           "authors": "Xinyue Wu (Quantitative Research Society); Yuhe Sui (Quantitative Research Society); Shufang Chen ( Quantitative Research Society); Yingzhi Tang (Quantitative Research Society)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 1251,
           "title": "Chat2LOB : A Natural-Language Calibration of Agent-Based LOB Market Simulation using Large Language Models",
           "authors": "Andrea Quaranta (Luiss); Aldo Glielmo (Banca d'Italia); Andrea Coletta (Banca d'Italia)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1266,
           "title": "Herding or Racing? Decomposing Cross-Account Order-Flow Persistence in On-Chain Markets",
           "authors": "Yichong Bai (PolyU HK); Dingyue Kan (PolyU HK)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1327,
           "title": "Same exposure, different clocks: Price discovery and cost-aware trading in matched ETFs",
           "authors": "Silu Li (Princeton University); John Mulvey (Princeton University); Siyu Li (Westlake University)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1342,
           "title": "OrderFlowDiT: Transport-Regularized Diffusion Transformer for Probabilistic Limit-Order Supply Forecasting",
           "authors": "Jung Hun Phee (Georgia Tech); Tucker Balch (Emory University)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1344,
           "title": "Implied Volatility Surface Forecasting Under Earnings-Driven Distribution Shift: Transfer from Ordinary Trading Days",
           "authors": "Hyunoh Yeo (LG AI Research); Jaehoon Lee (LG AI Research); Seunghan Lee (LG AI Research); Jun Seo (LG AI Research); Junhyeok Kang (LG AI Research); Sungdong Yoo (LG AI Research); Minjae Kim (LG AI Research); Tae Yoon Lim (LG AI Research); Sangjun Han (LG AI Research); Dongwan Kang (LG AI Research); Hwanil Choi (LG AI Research); Soonyoung Lee (LG AI Research); Wonbin Ahn (LG AI Research)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         },
         {
           "id": 1364,
           "title": "Splitting the Seat: Cooperative Multi-Agent Market Making on Prediction-Market Order Books",
           "authors": "Skander Lejmi (London School of Economics)",
-          "presenters": []
+          "presenters": [],
+          "presentation": "poster"
         }
       ]
     }

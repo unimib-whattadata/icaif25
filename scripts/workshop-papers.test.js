@@ -9,17 +9,27 @@ const source = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/workshop
 test('the approved publication includes 120 workshop papers, without keynote entries or private records', () => {
   assert.equal(validateWorkshopPapers(source), 120);
   assert.deepEqual(source.groups.map(group => group.papers.length), [10, 7, 6, 11, 49, 6, 4, 18, 9]);
+  assert.deepEqual(source.groups.map(group => group.papers.filter(paper => paper.presentation === 'poster').length), [0, 0, 0, 5, 40, 2, 0, 18, 4]);
+  assert.equal(source.groups.flatMap(group => group.papers).filter(paper => paper.presentation === null).length, 20);
   const html = renderWorkshopPapers(source);
   assert.equal((html.match(/ data-paper>/g) || []).length, 120);
   assert.equal((html.match(/class="papers-presenting-author"/g) || []).length, 68);
+  assert.equal((html.match(/<span class="badge">Poster<\/span>/g) || []).length, 69);
   assert.doesNotMatch(html, /General Chair|PAYMENT PENDING|COMPLIMENTARY PASS|@|When Proofs Are Abundant/);
-  for (const group of source.groups) for (const paper of group.papers) assert.ok(html.includes(`id="${paperAnchor(group, paper)}"`));
+  for (const group of source.groups) for (const paper of group.papers) {
+    const entry = html.match(new RegExp(`<li id="${paperAnchor(group, paper)}"[\\s\\S]*?<\\/li>`))?.[0];
+    assert.ok(entry, `Paper is present: ${paper.title}`);
+    assert.equal(entry.includes('<span class="badge">Poster</span>'), paper.presentation === 'poster', `Poster label follows the source: ${paper.title}`);
+  }
 });
 
 test('public schema rejects payment/contact data and duplicate workshop entries', () => {
   const privateCopy = structuredClone(source);
   privateCopy.groups[0].papers[0].paymentStatus = 'PAID';
   assert.throws(() => validateWorkshopPapers(privateCopy), /Only public paper fields/);
+  const invalidPresentation = structuredClone(source);
+  invalidPresentation.groups[0].papers[0].presentation = 'Keynote Talk';
+  assert.throws(() => validateWorkshopPapers(invalidPresentation), /Invalid presentation type/);
   const duplicate = structuredClone(source);
   duplicate.groups[0].papers.push(duplicate.groups[0].papers[0]);
   assert.throws(() => validateWorkshopPapers(duplicate), /Duplicate paper/);
@@ -53,7 +63,7 @@ test('paper anchors remain unique across workshops and stable for source papers 
 
 test('titles, author names and presenter markup are escaped', () => {
   const copy = structuredClone(source);
-  copy.groups[0].papers[0] = { id: 1, title: '<script>alert("x")</script>', authors: '<Researcher> & Company', presenters: ['<Researcher> & Company'] };
+  copy.groups[0].papers[0] = { id: 1, title: '<script>alert("x")</script>', authors: '<Researcher> & Company', presenters: ['<Researcher> & Company'], presentation: 'poster' };
   const html = renderWorkshopPapers(copy);
   assert.ok(html.includes('&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;'));
   assert.ok(html.includes('>&lt;Researcher&gt; &amp; Company</u>'));
