@@ -226,7 +226,7 @@ def apply_programme_papers(programme, assignments):
                    "room": "Main Hall"}
         result["sessions"].append(session)
     session.update({"id": "keynote-michael-barr", "title": "Keynote: Michael Barr",
-                    "type": "keynote", "detail": "Governor of the Federal Reserve.",
+                    "type": "keynote", "detail": "Member of the Board of Governors of the Federal Reserve System.",
                     "pending": False, "href": ""})
     result["sessions"].sort(key=lambda item: (item["date"], item["start"]))
     if len({session["id"] for session in result["sessions"]}) != len(result["sessions"]):

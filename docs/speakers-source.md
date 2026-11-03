@@ -1,5 +1,9 @@
 # Home speaker portraits
 
+## Michael Barr role clarification — November 3, 2026
+
+At Marco's request, the Home card and programme now use “Member of the Board of Governors of the Federal Reserve System”, following the [official Federal Reserve biography](https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm), checked November 3, 2026. Barr joined the Board on July 19, 2022, for a term ending January 31, 2032; his separate Vice Chair for Supervision role ended February 28, 2025. This wording supersedes the abbreviated “Governor of the Federal Reserve” used below. The programme importer uses the same description so future timetable imports preserve it.
+
 ## Magazzeni format correction — November 2, 2026
 
 The user authorized the October 29 “Magazzeni Fireside Chat” request. The Home appearance badge and accessible link name now identify Daniele Magazzeni's November 16 appearance as a fireside chat, matching the programme's corrected title. The same November 16, 09:00–09:40 Main Hall event and `session-2026-11-16-0900-d5719161` anchor are retained. No moderator is named because the conversation does not establish a final choice. Portrait, affiliation, date and layout remain unchanged. This supersedes the earlier keynote-format labels below.

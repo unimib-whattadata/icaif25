@@ -193,7 +193,7 @@ test("announced keynotes are searchable and respect filters without supplying a 
     announcement("capponi"),
     announcement("barr", {
       date: "2026-11-16", title: "Keynote: Michael Barr",
-      detail: "Governor of the Federal Reserve.", timeLabel: "Time to be confirmed", href: "",
+      detail: "Member of the Board of Governors of the Federal Reserve System.", timeLabel: "Time to be confirmed", href: "",
     }),
   ];
   assert.deepEqual(ids(filterSessions(announcements, {
