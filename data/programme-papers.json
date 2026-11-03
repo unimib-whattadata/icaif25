@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "source": "https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit",
   "groups": [
     {
@@ -28,7 +28,8 @@
       "paperIds": [
         134,
         682,
-        1010
+        1010,
+        92
       ]
     },
     {
@@ -154,7 +155,6 @@
       "title": "Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
       "paperIds": [
         70,
-        92,
         121,
         136,
         182,
@@ -190,7 +190,8 @@
         533,
         551,
         654,
-        870
+        870,
+        1068
       ]
     },
     {
@@ -271,7 +272,9 @@
         1061,
         1074,
         1092,
-        1106
+        1106,
+        343,
+        1007
       ]
     }
   ]

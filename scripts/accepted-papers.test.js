@@ -8,14 +8,14 @@ const { validateAcceptedPapers, renderAcceptedPapers } = require('./build-accept
 const root = path.resolve(__dirname, '..');
 const source = JSON.parse(fs.readFileSync(path.join(root, 'data/accepted-papers.json'), 'utf8'));
 
-test('publication has all 211 listed papers and applies the later paper 136 correction', () => {
-  assert.equal(validateAcceptedPapers(source), 211);
-  assert.deepEqual(source.groups.map(group => group.papers.length), [51, 107, 53]);
+test('publication has all 212 listed papers and applies the later paper 136 correction', () => {
+  assert.equal(validateAcceptedPapers(source), 212);
+  assert.deepEqual(source.groups.map(group => group.papers.length), [52, 109, 51]);
   const containing = source.groups.filter(group => group.papers.some(paper => paper.id === 136));
   assert.deepEqual(containing.map(group => group.id), ['poster']);
   assert.match(containing[0].papers.find(paper => paper.id === 136).title, /^FAAB:/);
   const html = renderAcceptedPapers(source);
-  assert.equal((html.match(/ data-paper>/g) || []).length, 211);
+  assert.equal((html.match(/ data-paper>/g) || []).length, 212);
   assert.doesNotMatch(html, /data-paper[^>]* hidden/);
   for (const paper of source.groups.flatMap(group => group.papers)) {
     assert.ok(html.includes(`id="paper-${paper.id}"`));

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -609,13 +609,14 @@
       "title": "Oral Session 3: Language Models for Central Bank and Earnings Communication",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "3 presentations",
+      "detail": "4 presentations",
       "pending": false,
       "href": "",
       "paperIds": [
         134,
         682,
-        1010
+        1010,
+        92
       ]
     },
     {
@@ -741,7 +742,6 @@
       "href": "",
       "paperIds": [
         70,
-        92,
         121,
         136,
         182,
@@ -777,7 +777,8 @@
         533,
         551,
         654,
-        870
+        870,
+        1068
       ]
     },
     {
@@ -1129,7 +1130,7 @@
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "To be confirmed",
-      "detail": "35 posters",
+      "detail": "36 posters",
       "pending": true,
       "href": "",
       "paperIds": [
@@ -1166,7 +1167,9 @@
         1061,
         1074,
         1092,
-        1106
+        1106,
+        343,
+        1007
       ]
     },
     {

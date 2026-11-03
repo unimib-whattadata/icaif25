@@ -1,10 +1,15 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "groups": [
     {
       "id": "oral",
       "label": "Oral presentations",
       "papers": [
+        {
+          "id": 92,
+          "title": "Linguistic Passiveness in Earnings Calls and Stock Returns",
+          "authors": "Lynn Tao (University of Toronto); Yuntao Wu (University of Toronto); Charles Martineau (University of Toronto); Vincent Grégoire (HEC Montréal); Andreas Veneris (University of Toronto)"
+        },
         {
           "id": 134,
           "title": "Mind the Shift: Decoding Monetary Policy Stance from FOMC Statements with Large Language Models",
@@ -272,11 +277,6 @@
           "authors": "Medha Kumar (SVNIT)"
         },
         {
-          "id": 92,
-          "title": "Linguistic Passiveness in Earnings Calls and Stock Returns",
-          "authors": "Lynn Tao (University of Toronto); Yuntao Wu (University of Toronto); Charles Martineau (University of Toronto); Vincent Grégoire (HEC Montréal); Andreas Veneris (University of Toronto)"
-        },
-        {
           "id": 121,
           "title": "Catch Alpha: Testing the Evaluator Before Testing the Trading Strategy",
           "authors": "Joris Viaud (Quant AI Lab)"
@@ -350,6 +350,11 @@
           "id": 338,
           "title": "Fair Contracts in Principal-Agent Games with Heterogeneous Types",
           "authors": "Jakub Tłuczek (Université de Neuchâtel); Victor Villin (Université de Neuchâtel); Christos Dimitrakakis (Université de Neuchâtel)"
+        },
+        {
+          "id": 343,
+          "title": "Train Often, Deploy Selectively: Forward-Gated Model Replacement in Crypto Markets",
+          "authors": "Aditya Dutta (Emory University)"
         },
         {
           "id": 348,
@@ -767,6 +772,11 @@
           "authors": "Johnny Yu (UC Berkeley)"
         },
         {
+          "id": 1007,
+          "title": "When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting",
+          "authors": "Jacqueline PANG (Cornell University)"
+        },
+        {
           "id": 1027,
           "title": "Accurate Networks, Wrong Banks: Reconstruction Quality Depends on the Decision It Informs",
           "authors": "Daria Godorozha (London School of Economics); Samuel Inman-Altass (London School of Economics); Nourhan Hashish (European Economics)"
@@ -785,6 +795,11 @@
           "id": 1061,
           "title": "When a Correct Reward Is Not Enough: Diagnosing and Guiding PPO in an Analytically Solved Broker-Trader Game",
           "authors": "Siu Tung Wong (University College London); Carlo Campajola (University College London)"
+        },
+        {
+          "id": 1068,
+          "title": "Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation",
+          "authors": "Zeynep Yıldız (Boğaziçi University); Satchit Chatterji (University of Amsterdam); Ercan Atam (Boğaziçi University); Erman Acar ( University of Amsterdam)"
         },
         {
           "id": 1074,
@@ -851,11 +866,6 @@
           "id": 337,
           "title": "When Drift Does Not Warrant Retraining: A Held-Out Test for In-Context Adaptation versus Retraining in Markets",
           "authors": "Wilfried Mulyawan (Nanyang Technological University); Mengzhong Ma ( Nanyang Technological University); Lin William Cong (Nanyang Technological University)"
-        },
-        {
-          "id": 343,
-          "title": "Train Often, Deploy Selectively: Forward-Gated Model Replacement in Crypto Markets",
-          "authors": "Aditya Dutta (Emory University)"
         },
         {
           "id": 346,
@@ -1061,11 +1071,6 @@
           "id": 1062,
           "title": "When Does “Post-Call” Begin? An Availability Contract for Earnings-Call NLP Benchmarks",
           "authors": "Xiaoyu Ma (National University of Singapore ); Kelvin Koa (National University of Singapore); Yuncong Liu (National University of Singapore); Ke-wei Huang (National University of Singapore)"
-        },
-        {
-          "id": 1068,
-          "title": "Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation",
-          "authors": "Zeynep Yıldız (Boğaziçi University); Satchit Chatterji (University of Amsterdam); Ercan Atam (Boğaziçi University); Erman Acar ( University of Amsterdam)"
         },
         {
           "id": 1071,
