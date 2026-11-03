@@ -1,4 +1,5 @@
 /* Programme-only print edition. Screen styles and filtering remain independent. */
+.programme-print-edition { display: none; }
 @page programme {
   size: A4 portrait;
   margin: 12mm 12mm 15mm;
@@ -142,7 +143,7 @@
     break-after: avoid;
   }
 
-  .programme-print-title > p:first-child {
+  .programme-print-title > :first-child {
     font-size: 20pt;
     font-weight: 750;
     line-height: 1.15;
@@ -272,7 +273,7 @@
   .programme-session:has(.programme-save[aria-pressed="true"]) { background: #fff; }
   .programme-session-overview, .programme-session-body { display: contents; }
   .programme-session[data-type="break"], .programme-session[data-type="registration"] { background: #f8fafc; }
-  .programme-session-meta { align-items: baseline; margin: 0 0 1.5mm; gap: 1mm 1.5mm; }
+  .programme-session-meta { flex-direction: row; flex-wrap: wrap; align-items: baseline; margin: 0 0 1.5mm; gap: 1mm 1.5mm; }
   .programme-room { font-size: 8pt; font-weight: 700; line-height: 1.3; }
   .programme-room-link { min-height: 0; margin: 0; padding: 0; color: inherit; text-decoration: none; }
 
@@ -295,12 +296,16 @@
   .programme-papers { grid-column: 2 / -1; display: block; margin: 2mm 0 0; border: 0; }
   .programme-papers > .collapse-title { min-height: 0; padding: 0; font-size: 7.5pt; }
   .programme-papers > .collapse-title::after { display: none; }
+  .programme-papers > .collapse-title > [data-programme-papers-label] { display: none; }
+  .programme-papers > .collapse-title::before { content: attr(data-print-label); }
+  .programme-papers[open] > .collapse-title::before { content: attr(data-print-open-label); }
   .programme-papers > .collapse-content { padding: 0; }
   .programme-papers:not([open]) > .collapse-content { display: none; }
   .programme-papers[open] > .collapse-content { display: block; visibility: visible; content-visibility: visible; overflow: visible; }
-  .programme-paper-list > li { display: block; break-inside: avoid; padding-block: 1.5mm; }
-  .programme-paper-title { font-size: 7.5pt; line-height: 1.4; }
-  .programme-paper-authors { margin-top: 1mm; font-size: 7pt; line-height: 1.4; }
+  .programme-paper-list > li { display: grid; grid-template-columns: 15mm minmax(0, 1fr); gap: 3mm; break-inside: avoid; padding-block: 2mm; }
+  .programme-paper-id { font-size: 8pt; }
+  .programme-paper-title { font-size: 9pt; line-height: 1.4; text-decoration: none; }
+  .programme-paper-authors { max-width: none; margin-top: 1mm; font-size: 8.5pt; line-height: 1.4; }
   .programme-paper-list > li[data-search-match="true"] { margin-inline: 0; padding-inline: 0; background: transparent; }
   .programme-slot:has(.programme-papers[open]), .programme-session:has(.programme-papers[open]) { break-inside: auto; page-break-inside: auto; }
   .programme-empty { margin: 5mm 0; padding: 5mm; }
@@ -336,4 +341,23 @@
     grid-column: 2 / -1;
     margin: 0;
   }
+
+  /* The measured print copy repeats context and keeps each contribution intact. */
+  [data-programme-print-ready="true"] > main { display: none !important; }
+  .programme-print-edition { display: block; width: 186mm; margin: 0; }
+  /* Leave 1mm tolerance inside the 270mm A4 content height for rounding. */
+  .programme-print-ruler { height: 269mm; }
+  .programme-print-sheet { min-height: 269mm; break-after: page; }
+  .programme-print-sheet:last-child { break-after: auto; }
+  .programme-print-sheet-body { display: flow-root; }
+  .programme-print-sheet .programme-day-heading { margin-bottom: 3mm; }
+  .programme-print-day-transition { margin-top: 5mm; }
+  .programme-print-running-brand { margin: 0 0 3mm; font-size: 8pt; color: #475569; }
+  .programme-print-scope { margin: 0 0 3mm; font-size: 8pt; line-height: 1.4; }
+  .programme-print-paper-details { grid-column: 2 / -1; margin-top: 1.5mm; }
+  .programme-print-expanded > .programme-print-paper-details { grid-column: 1 / -1; margin-top: 3mm; }
+  .programme-print-paper-caption { margin: 0 0 1mm; font-size: 8pt; font-weight: 600; line-height: 1.4; }
+  .programme-print-paper-caption a { color: inherit; text-decoration: none; }
+  .programme-print-oversize, .programme-print-oversize .programme-session,
+  .programme-print-oversize .programme-paper-list > li { break-inside: auto; }
 }

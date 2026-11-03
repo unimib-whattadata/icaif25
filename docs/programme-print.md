@@ -1,0 +1,9 @@
+# Programme print edition
+
+`js/programme-print.js` builds an A4 print copy of the currently visible programme. It preserves day, search, room/type filters, saved agenda and open paper lists. The original DOM is retained; the temporary copy and measurement styles are removed after printing, restoring focus and scroll position.
+
+The copy is measured with the same rules in `css/programme-print.css`, including when Chromium fires `beforeprint` before switching media. Each sheet repeats the day; a split paper list also repeats the session title, room and time. Whole schedule slots and individual contributions stay together. Unfiltered overview days November 16 and 17 start their afternoon sheet at 14:15 and 14:00 respectively, while filtered views use available space. Keep these editorial break points under review when the timetable changes.
+
+The page budget is 269mm within the 270mm A4 content height, leaving 1mm for rounding. Session containers span the same width for breaks, lunches and research sessions. Expanded lists use the full session width, a paper-ID gutter, 9pt titles and 8.5pt author text. Captions distinguish matching papers from the full list of a matching session. Links in the print copy point to the public conference site, including exports generated on localhost.
+
+`scripts/build-programme.js` includes and versions the print assets. The existing CSS print edition remains available without JavaScript. Run `npm run build:programme`, `npm run build:routes` and `npm run check` after changes. Browser verification must also render PDFs: full overview, single day, paper query, expanded poster list, empty search, room/type filters, agenda and a mobile viewport. Verify exact session/paper coverage, repeated context, equal row widths, no blank/overflow sheets, public link destinations and unchanged screen state after printing. The November 3 refinement evidence is in `.codex-artifacts/programme-print-refinement/`.

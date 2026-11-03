@@ -47,7 +47,7 @@ function renderRoom(room) {
 function renderPapers(session) {
   if (!session.papers?.length) return '';
   return `<details class="collapse collapse-arrow programme-papers">
-                  <summary class="collapse-title"><span data-programme-papers-label>View ${session.papers.length} papers &amp; authors</span></summary>
+                  <summary class="collapse-title" data-print-label="${session.papers.length} papers · details online" data-print-open-label="${session.papers.length} papers · authors below"><span data-programme-papers-label>View ${session.papers.length} papers &amp; authors</span></summary>
                   <div class="collapse-content">
                     <div class="programme-paper-search-tools" data-programme-paper-search-tools hidden>
                       <p data-programme-paper-search-note></p>
@@ -327,7 +327,8 @@ html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=20261030
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026103108')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026103012');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
-html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026110301">\n  </head>');
+html = html.replace(/\n\s*<script[^>]*js\/programme-print\.js[^>]*><\/script>/, '');
+html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026110302">\n    <script src="js/programme-print.js?v=2026110301" defer></script>\n  </head>');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');
