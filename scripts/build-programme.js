@@ -327,7 +327,7 @@ html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=20261030
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026103108')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026103012');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
-html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026103012">\n  </head>');
+html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026110301">\n  </head>');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');
