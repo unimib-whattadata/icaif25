@@ -2,6 +2,8 @@
 
 The site uses the existing `icaif` daisyUI theme in `css/tailwind.input.css`: navy navigation and page headers, white/slate content surfaces, copper for the primary action, Inter for interface text and Merriweather for the home introduction. Use semantic theme colors and native daisyUI components.
 
+All pages show the registration closure banner immediately after the primary navigation, in static HTML with the existing copper accent and a clickable eventi@consultaumbria.com address for late registration enquiries. Keep the Home and Registration status copy and actions consistent with the closure notice. The registration button has been removed from the Home hero; late registration email links remain active.
+
 ## Shared styles
 
 | Class | Use |

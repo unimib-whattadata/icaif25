@@ -252,6 +252,8 @@ The programme uses native daisyUI `input` and `select` controls with visible lab
 
 ### Navigation
 
+The registration closure notice sits immediately below the primary navigation on every page. It uses a square-edged, full-width copper band with white text, the shared container and responsive gutters, and an underlined email link for late registration enquiries. Keep the notice in static HTML and allow its complete text and email address to wrap on phones.
+
 The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
 Shared keyboard focus CSS uses an offset outline, and native controls also supply their component focus rules. Text links retain offset underlines. The skip link targets a focusable main region. Hidden content is removed from layout and keyboard interaction.
