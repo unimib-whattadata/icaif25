@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "groups": [
     {
       "id": "oral",
@@ -772,11 +772,6 @@
           "authors": "Johnny Yu (UC Berkeley)"
         },
         {
-          "id": 1007,
-          "title": "When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting",
-          "authors": "Jacqueline PANG (Cornell University)"
-        },
-        {
           "id": 1027,
           "title": "Accurate Networks, Wrong Banks: Reconstruction Quality Depends on the Decision It Informs",
           "authors": "Daria Godorozha (London School of Economics); Samuel Inman-Altass (London School of Economics); Nourhan Hashish (European Economics)"
@@ -1056,6 +1051,11 @@
           "id": 990,
           "title": "STRAPSim: A Portfolio Similarity Metric for ETF Alignment and Portfolio Trades",
           "authors": "Mingshu Li (BlackRock, Inc.); Dhruv Desai (BlackRock, Inc.); Jerinsh Jeyapaulraj (BlackRock, Inc.); Philip Sommer (BlackRock, Inc.); Riya Jain (BlackRock, Inc); Peter Chu (BlackRock, Inc.); Dhagash Mehta (BlackRock, Inc.)"
+        },
+        {
+          "id": 1007,
+          "title": "When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting",
+          "authors": "Jacqueline PANG (Cornell University)"
         },
         {
           "id": 1032,

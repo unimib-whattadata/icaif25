@@ -1,5 +1,15 @@
 # Accepted papers publication source
 
+## Paper 1007 — proceedings only — November 4, 2026
+
+The user requested moving paper **1007**, “When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting”, from **Poster Session 3** to **proceedings only**, retaining it among accepted papers. Jacqueline Pang requested the change on November 4 at 06:18 CET; [Andrea Maurino confirmed it at 08:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a571b067b95cd). This supersedes the November 3 poster reinstatement below.
+
+Both programme assignment sources remove only paper 1007. The public title, author and paper anchor remain intact in Accepted Papers under proceedings only. The catalogue still contains **212 unique papers: 52 oral, 108 poster and 52 proceedings-only**. The programme has **160 unique presentation assignments**, with poster counts **38, 35 and 35**. Session IDs, dates, times and rooms are preserved, including the November 4 Level -1 foyer update retrieved before editing.
+
+The [shared Google Sheet](https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit) moves 1007 from `poster` to `proccedings`, retains its `all accepted` row and lookup formulas, updates its request record and appends the decision to `Registro modifiche` without overwriting history. The confirmation field attributes the existing confirmation to Andrea; no email is sent by this update. Visa and other private administrative details are excluded from public pages.
+
+Verification: all 64 existing tests, JavaScript syntax checks, HTML validation and source/route checks for 22 canonical pages pass. Browser checks confirm paper 1007 appears once under proceedings only and has no programme search result across all days. Google Sheets readback confirms preserved lookup formulas, the retained accepted-paper row, the new history entry and counts 52/108/52 (212 total). Public titles/authors, other paper categories and all timetable fields are unchanged.
+
 ## Four paper updates — November 3, 2026
 
 The user authorized applying the four reviewed email requests to the website and shared Google Sheet, and creating unsent reply drafts. Andrea Maurino confirms paper **92** in **Oral Session 3** ([November 3, 09:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a082f232f439e)), paper **1068** in **Poster Session 1** ([November 2, 17:18 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a19d0e5f25561ba)), and paper **343** in **Poster Session 3** ([November 3, 14:38 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a1a20ca6efe40)). Paper 92 replaces its poster assignment; its author's request to also display the printed poster has not been approved. Papers 1068 and 343 move from proceedings only to poster presentation.

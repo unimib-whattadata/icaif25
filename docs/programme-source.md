@@ -1,5 +1,15 @@
 # Programme data
 
+## Paper 1007 — proceedings only — November 4, 2026
+
+The user requested moving paper **1007**, “When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting”, from **Poster Session 3** to **proceedings only**, retaining it among accepted papers. Jacqueline Pang requested the change on November 4 at 06:18 CET; [Andrea Maurino confirmed it at 08:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a571b067b95cd). This supersedes the November 3 poster reinstatement below.
+
+Both programme assignment sources remove only paper 1007. The public title, author and paper anchor remain intact in Accepted Papers under proceedings only. The catalogue still contains **212 unique papers: 52 oral, 108 poster and 52 proceedings-only**. The programme has **160 unique presentation assignments**, with poster counts **38, 35 and 35**. Session IDs, dates, times and rooms are preserved, including the November 4 Level -1 foyer update retrieved before editing.
+
+The [shared Google Sheet](https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit) moves 1007 from `poster` to `proccedings`, retains its `all accepted` row and lookup formulas, updates its request record and appends the decision to `Registro modifiche` without overwriting history. The confirmation field attributes the existing confirmation to Andrea; no email is sent by this update. Visa and other private administrative details are excluded from public pages.
+
+Verification: all 64 existing tests, JavaScript syntax checks, HTML validation and source/route checks for 22 canonical pages pass. Browser checks confirm paper 1007 appears once under proceedings only and has no programme search result across all days. Google Sheets readback confirms preserved lookup formulas, the retained accepted-paper row, the new history entry and counts 52/108/52 (212 total). Public titles/authors, other paper categories and all timetable fields are unchanged.
+
 ## Poster location correction — November 4, 2026
 
 The user confirms that every poster session takes place in the **Foyer on Level −1**, including the twelve generic poster entries and numbered Poster Session 3, whose room was previously pending. All fifteen poster entries now use `Foyer`, mapped to `/venue/?floor=b1&place=foyer#inside-building`; programme room links show “Foyer (Level −1)”. Poster Session 3 no longer has a pending location. Session IDs, dates, times, paper assignments and all other sessions remain unchanged. Reconcile future workbook imports against this confirmed location while preserving published session IDs. This correction supersedes earlier room assignments recorded below.
