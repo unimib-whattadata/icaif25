@@ -40,8 +40,9 @@ function renderRoom(room) {
   if (!target) return escape(room === 'To be confirmed' ? 'Room to be confirmed' : room);
   const { floor, place } = target;
   const name = place.alias ? `${place.name} (${place.alias})` : place.name;
+  const label = room === 'Foyer' ? `${room} (${floor.short})` : room;
   const href = `/venue/?floor=${encodeURIComponent(floor.id)}&place=${encodeURIComponent(place.id)}#inside-building`;
-  return `<a class="link programme-room-link" href="${escape(href)}" aria-label="${escape(room)}: show ${escape(name)} on the ${escape(floor.name)} map">${escape(room)}</a>`;
+  return `<a class="link programme-room-link" href="${escape(href)}" aria-label="${escape(room)}: show ${escape(name)} on the ${escape(floor.name)} map">${escape(label)}</a>`;
 }
 
 function renderPapers(session) {

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -788,7 +788,7 @@
       "end": "18:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 1",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -800,7 +800,7 @@
       "end": "18:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 2",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -812,7 +812,7 @@
       "end": "18:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 3",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -824,7 +824,7 @@
       "end": "18:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Main Hall",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -989,7 +989,7 @@
       "end": "13:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Main Hall",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1001,7 +1001,7 @@
       "end": "13:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 1",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1013,7 +1013,7 @@
       "end": "13:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 2",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1025,7 +1025,7 @@
       "end": "13:00",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 3",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1129,9 +1129,9 @@
       "end": "16:00",
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
-      "room": "To be confirmed",
+      "room": "Foyer",
       "detail": "36 posters",
-      "pending": true,
+      "pending": false,
       "href": "",
       "paperIds": [
         627,
@@ -1179,7 +1179,7 @@
       "end": "17:40",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Main Hall",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1191,7 +1191,7 @@
       "end": "17:40",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 2",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1203,7 +1203,7 @@
       "end": "17:40",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 3",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""
@@ -1215,7 +1215,7 @@
       "end": "17:40",
       "title": "Poster session",
       "type": "poster-session",
-      "room": "Room 1",
+      "room": "Foyer",
       "detail": "Title and presentation details to be confirmed.",
       "pending": true,
       "href": ""

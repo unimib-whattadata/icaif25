@@ -1,5 +1,9 @@
 # Programme data
 
+## Poster location correction — November 4, 2026
+
+The user confirms that every poster session takes place in the **Foyer on Level −1**, including the twelve generic poster entries and numbered Poster Session 3, whose room was previously pending. All fifteen poster entries now use `Foyer`, mapped to `/venue/?floor=b1&place=foyer#inside-building`; programme room links show “Foyer (Level −1)”. Poster Session 3 no longer has a pending location. Session IDs, dates, times, paper assignments and all other sessions remain unchanged. Reconcile future workbook imports against this confirmed location while preserving published session IDs. This correction supersedes earlier room assignments recorded below.
+
 ## Four paper updates — November 3, 2026
 
 The user authorized applying the four reviewed email requests to the website and shared Google Sheet, and creating unsent reply drafts. Andrea Maurino confirms paper **92** in **Oral Session 3** ([November 3, 09:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a082f232f439e)), paper **1068** in **Poster Session 1** ([November 2, 17:18 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a19d0e5f25561ba)), and paper **343** in **Poster Session 3** ([November 3, 14:38 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a1a20ca6efe40)). Paper 92 replaces its poster assignment; its author's request to also display the printed poster has not been approved. Papers 1068 and 343 move from proceedings only to poster presentation.
