@@ -32,7 +32,7 @@ const descriptions = {
   'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
   'news.html': "Latest ICAIF '26 news: startup competition finalists, accepted papers and presentation sessions, and new sponsors for Milan, November 14–17, 2026.",
   'call-for-student-volunteers.html': 'Student Volunteer applications for ICAIF 2026 in Milan, November 14–17, are closed. The application deadline was October 21, 2026, at 17:00 CEST.',
-  'registration.html': 'ICAIF 2026 registration is closed due to the high number of participants. For late registration enquiries, contact eventi@consultaumbria.com.',
+  'registration.html': 'ICAIF 2026 virtual registration is open for online attendance only, November 14–17. In-person registration is closed; contact eventi@consultaumbria.com for enquiries.',
   'important-dates.html': 'ICAIF 2026 deadlines for papers, workshops, student volunteers and registration. Conference in Milan: November 14–17, 2026.',
   'venue.html': 'ICAIF 2026 at Bocconi University, Via Röntgen 1, Milan, November 14–17. Find the venue map, transport routes, nearby hotels and travel information.',
 };

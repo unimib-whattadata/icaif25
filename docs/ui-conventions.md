@@ -2,7 +2,7 @@
 
 The site uses the existing `icaif` daisyUI theme in `css/tailwind.input.css`: navy navigation and page headers, white/slate content surfaces, copper for the primary action, Inter for interface text and Merriweather for the home introduction. Use semantic theme colors and native daisyUI components.
 
-All pages show the registration closure banner immediately after the primary navigation, in static HTML with the existing copper accent and a clickable eventi@consultaumbria.com address for late registration enquiries. Keep the Home and Registration status copy and actions consistent with the closure notice. The registration button has been removed from the Home hero; late registration email links remain active.
+All pages show the registration status banner immediately after the primary navigation, in static HTML with the existing copper accent. Lead with the open virtual registration and an explicit virtual-only link to https://register.consultaumbria.com/2945, followed by the in-person closure and a clickable eventi@consultaumbria.com address for late in-person registration enquiries. Keep the Home and Registration status copy, actions and metadata consistent. The Home hero retains its programme action; virtual-only registration actions appear in the banner, Home closing section and Registration page. The virtual-only link was supplied by Lapo Citerni (Consulta Umbria), in the email “LINK PER REGISTRAZIONE VIRTUAL” on November 5, 2026.
 
 ## Shared styles
 
