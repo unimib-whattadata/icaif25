@@ -35,7 +35,10 @@
           },
           "description": "Conference registration desk inside the ground-floor entrance, alongside the stairs leading down to Main Hall (Aula Magna).",
           "compact": "R",
-          "zone": "registration"
+          "zone": "registration",
+          "programmeRooms": [
+            "Registration desk (Ground floor)"
+          ]
         },
         {
           "id": "ground-foyer",
@@ -135,7 +138,7 @@
       "name": "Level −1",
       "short": "Level −1",
       "number": "−1",
-      "description": "Main Hall (Aula Magna) opens onto the exhibition area, with four stands in front of it. Catering is in the central foyer; the press room and work area are along the left-hand side.",
+      "description": "Main Hall (Aula Magna) opens onto the foyer used for conference poster sessions. The exhibition area has four stands; catering is in the central open space, with the press room and work area along the left-hand side.",
       "places": [
         {
           "id": "aula-magna",
@@ -161,20 +164,27 @@
         },
         {
           "id": "foyer",
-          "name": "Foyer - 1",
+          "name": "Poster area",
           "programmeRooms": [
-            "Foyer"
+            "Foyer",
+            "Università Bocconi — Foyer"
           ],
-          "kind": "space",
+          "kind": "event",
           "x": 351.8,
           "y": 411.7,
           "shape": "M127.2 375.8H469.5V429.3H630.7V463.7H580.2V503.4H425.9V462.9H355.6V503.4H127.2Z",
-          "description": "The foyer in front of Main Hall includes the exhibition area and continues towards catering in the central open space.",
+          "description": "Conference poster area in the Level −1 foyer beside Main Hall. This foyer also hosts the Sunday Welcome Reception and continues towards the exhibition and catering areas.",
           "label": {
             "x": 400,
-            "y": 442
+            "y": 430
           },
-          "compact": "F1"
+          "compact": "P",
+          "alias": "Foyer - 1",
+          "zone": "posters",
+          "mapLines": [
+            "Poster",
+            "area"
+          ]
         },
         {
           "id": "b1-exhibition",
@@ -363,7 +373,7 @@
           }
         }
       ],
-      "summary": "Main Hall · Exhibition area · Catering area · Foyer - 1",
+      "summary": "Main Hall · Poster area · Exhibition area · Catering area",
       "notes": [
         {
           "label": "Work and recharge",
@@ -375,14 +385,14 @@
           "source": "https://www.unibocconi.it/en/about-us/sustainability/drink-sustainably"
         }
       ],
-      "overviewNote": "E = Exhibition area · C = Catering area · F1 = Foyer - 1 · Stands 1–4."
+      "overviewNote": "P = Poster area (Foyer - 1) · E = Exhibition area · C = Catering area · Stands 1–4."
     },
     {
       "id": "b2",
       "name": "Level −2",
       "short": "Level −2",
       "number": "−2",
-      "description": "The poster area occupies the central foyer. Workshop rooms AS03, AS02 and AS01 run from top to bottom on the right.",
+      "description": "The central foyer leads towards the workshop classrooms. AS03, AS02 and AS01 run from top to bottom on the right.",
       "places": [
         {
           "id": "as01",
@@ -438,23 +448,21 @@
         },
         {
           "id": "b2-foyer",
-          "name": "Poster area",
-          "kind": "event",
+          "name": "Central foyer",
+          "kind": "space",
           "x": 545.6,
           "y": 338,
           "shape": "M492 250.8H629.6V363.6H536V379.6H492Z",
-          "description": "Conference poster area in the central foyer, between the foyer lift core and workshop rooms AS01–AS03.",
+          "description": "Central foyer between the foyer lift core and workshop rooms AS01–AS03. Conference poster sessions take place in the Level −1 foyer beside Main Hall.",
           "mapLines": [
-            "Poster",
-            "area"
+            "Central",
+            "foyer"
           ],
           "label": {
             "x": 560,
             "y": 309
           },
-          "alias": "Central foyer",
-          "compact": "P",
-          "zone": "posters"
+          "compact": "F2"
         },
         {
           "id": "b2-stairs",
@@ -462,7 +470,7 @@
           "kind": "stairs",
           "x": 550.4,
           "y": 190,
-          "description": "The short straight flight along the upper edge of the foyer, above the poster area.",
+          "description": "The short straight flight along the upper edge of the central foyer.",
           "marker": {
             "x": 580,
             "y": 190
@@ -537,7 +545,7 @@
           }
         }
       ],
-      "summary": "Poster area · Workshop rooms AS01–AS03",
+      "summary": "Central foyer · Workshop rooms AS01–AS03",
       "notes": [
         {
           "label": "Workshop rooms",
@@ -549,7 +557,7 @@
           "source": "https://www.unibocconi.it/en/about-us/sustainability/drink-sustainably"
         }
       ],
-      "overviewNote": "P = Poster area · 1–3 = AS01–AS03 · Zoom in for full names."
+      "overviewNote": "F2 = Central foyer · 1–3 = AS01–AS03 · Zoom in for full names."
     }
   ],
   "orientationLabels": [

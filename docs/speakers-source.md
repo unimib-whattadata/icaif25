@@ -1,5 +1,9 @@
 # Home speaker portraits
 
+## Marc Mézard reception link — November 9, 2026
+
+The approved programme consistency correction moves Home's Marc Mézard appearance badge and accessible label from the November 16 banquet to “Welcome Reception speech”, November 15. Its link selects `session-2026-11-15-1900-36beb319`, now scheduled from 18:30 at Università Bocconi, foyer, Level −1. The stable historical `1900` segment of the ID is retained. This supersedes the October 31 Home link recorded below.
+
 ## Michael Barr role clarification — November 3, 2026
 
 At Marco's request, the Home card and programme now use “Member of the Board of Governors of the Federal Reserve System”, following the [official Federal Reserve biography](https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm), checked November 3, 2026. Barr joined the Board on July 19, 2022, for a term ending January 31, 2032; his separate Vice Chair for Supervision role ended February 28, 2025. This wording supersedes the abbreviated “Governor of the Federal Reserve” used below. The programme importer uses the same description so future timetable imports preserve it.

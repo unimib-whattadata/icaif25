@@ -19,6 +19,18 @@ npm run build
 
 The build regenerates the pages and canonical routes and runs the existing checks. Do not edit generated programme markup directly. The dated notes below retain source provenance and historical decisions; their former import procedures are superseded by this JSON workflow.
 
+## Approved programme consistency corrections — November 9, 2026
+
+Following the programme audit, the user approved corrections 1, 2, 3 and 5, while excluding poster-placeholder consolidation and external workshop timetable changes. Home's Marc Mézard card now says “Welcome Reception speech”, November 15, and links to the Sunday reception at 18:30. The Tuesday 09:00 fireside chat uses `panel`, matching the Monday fireside format, without changing its participants, moderator or timetable.
+
+All four registration sessions now use “Registration desk (Ground floor)”, linked to the existing `ground-registration` map destination. Poster wayfinding follows the user's November 4 confirmation of **Level −1**: the existing `foyer` footprint is the poster area, retains Foyer - 1 as an alias, and continues to resolve all Foyer and Welcome Reception programme links. The Level −2 `b2-foyer` remains selectable as Central foyer without a poster assignment. This supersedes the poster allocation in the November 5 annotated plans; no architectural shapes or facility anchors are moved.
+
+All session IDs, paper assignments, dates and current start/end times are preserved. The twelve pending poster entries and every workshop session remain unchanged, as explicitly requested. The reception's already-approved Bocconi location and 18:30 start are included in the same publication update.
+
+## Welcome Reception venue and start — November 9, 2026
+
+The user confirms that the Sunday November 15 Welcome Reception takes place at **Università Bocconi, in the foyer, from 18:30**, replacing Università statale di Milano and the previous 19:00 start. The existing 22:00 end is retained because no replacement end time was supplied. “Speech by Marc Mézard.” remains part of the reception. The existing session ID is preserved for saved agendas and inbound links; its historical `1900` segment does not determine the displayed or exported start. The venue label links to the existing Level −1 foyer on the indoor map, as requested by the user. `data/venue-floors.json` maps “Università Bocconi — Foyer” to the stable `foyer` destination.
+
 ## Programme updates — November 9, 2026
 
 Andrea Prampolini's [November 8 email, “ICAIF aggiornamenti programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1bbed9ad3a0b8e) confirms the following public updates:

@@ -32,6 +32,8 @@ test("Main Hall and its Aula Magna name share one stable mapped destination", ()
 test("every confirmed programme room link selects its real place on both published routes", () => {
   const expected = new Map([
     ["Main Hall", "aula-magna"], ["Foyer", "foyer"],
+    ["Registration desk (Ground floor)", "ground-registration"],
+    ["Università Bocconi — Foyer", "foyer"],
     ["Room 1", "as01"], ["Room 2", "as02"], ["Room 3", "as03"],
   ]);
   for (const file of ["programme.html", "programme/index.html"]) {
