@@ -81,6 +81,56 @@ typography:
     fontFamily: "Merriweather, serif"
     fontSize: "1rem"
     lineHeight: 1.625
+  map-panel-title:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 700
+    lineHeight: 1.4
+  map-control:
+    fontFamily: "Inter, sans-serif"
+    fontSize: ".875rem"
+    fontWeight: 600
+    lineHeight: 1.45
+  map-metadata:
+    fontFamily: "Inter, sans-serif"
+    fontSize: ".8125rem"
+    fontWeight: 400
+    lineHeight: 1.5
+  map-caption:
+    fontFamily: "Inter, sans-serif"
+    fontSize: ".75rem"
+    fontWeight: 400
+    lineHeight: 1.5
+  map-room-label:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: 1.2
+  map-room-compact:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "14px"
+    fontWeight: 700
+    lineHeight: 1.2
+  map-room-print:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: 1.2
+  map-secondary-print:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "18px"
+    fontWeight: 500
+    lineHeight: 1.2
+  map-zoom-symbol:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "1.375rem"
+    fontWeight: 500
+    lineHeight: 1.2
+  map-hotel-symbol:
+    fontFamily: "Inter, sans-serif"
+    fontSize: ".625rem"
+    fontWeight: 800
+    lineHeight: 1.2
 rounded:
   selector: "0.5rem"
   field: "0.5rem"
@@ -183,6 +233,8 @@ The existing **error red** (`error`) identifies saved-session overlaps in the pr
 **The Existing Identity Rule.** Extend the `icaif` semantic palette and established font assignments when adding a surface.
 
 The programme's local `programme-type-*` roles pair dark text with a pale fill and matching border. Workshop uses blue, Tutorial teal, Competition purple, Industry orange, Keynote amber, Panel magenta, Oral session green, Poster session indigo, and Social event/Banquet rose. Registration, Opening and Closing share the neutral default; Break uses lighter slate, and To be confirmed uses a neutral dashed border. These colors support the written type labels, which remain the primary identifier. The recorded text/fill pairs clear 6.38:1; they are category cues rather than global status or action colors.
+
+Indoor wayfinding reuses these palette pairs as functional map roles: blue rooms, slate foyers, copper registration, amber exhibition, teal catering and indigo posters. Each combines a pale fill with dark category text, repeated in the legend and directory. Selection preserves that hue, deepens the pale fill and strengthens the navy contour; facilities retain their type colour when selected. SVG multiply blending leaves architectural linework visible. Named labels and the organiser-requested dashed area outlines provide cues alongside colour.
 
 ## Typography
 
@@ -300,3 +352,5 @@ The catalogue preserves the same identity with a compact navy introduction and f
 - **Don't** force tables, programme sessions, sponsor groups and portraits into identical cards.
 - **Don't** rewrite factual titles, sponsor brands or functional labels solely to satisfy a static design heuristic.
 - **Don't** erase useful state feedback when reducing motion or infer a contrast verdict without the rendered background and state.
+
+The Venue map and indoor floor explorer share an 18px panel-title role, 14px controls and supporting text, 13px secondary metadata and 12px legends/captions. The page uses the shared section-title and 16px introduction roles. Compact phone tabs use 13px; diagram labels retain the bounded 16–20px screen scale, compact 14px codes, and explicit print sizes. Canonical place names appear first; programme numbers and useful physical aliases appear once as secondary metadata. The source programme aliases and stable map IDs remain intact.

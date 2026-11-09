@@ -41,8 +41,8 @@
     const detail = scale >= .72;
     svg.style.setProperty('--indoor-label-scale', 1 / scale);
     svg.style.setProperty('--indoor-room-font-size', `${Math.max(16, Math.min(20, 22 * scale))}px`);
-    svg.style.setProperty('--indoor-programme-font-size', `${Math.max(14, Math.min(15, 18 * scale))}px`);
-    svg.style.setProperty('--indoor-service-scale', Math.min(1, Math.max(detail ? .72 : .52, scale)) / scale);
+    svg.style.setProperty('--indoor-programme-font-size', '14px');
+    svg.style.setProperty('--indoor-service-scale', Math.min(1, Math.max(detail ? .72 : .4, scale)) / scale);
     svg.classList.toggle('is-detail-view', detail);
     explorer.querySelector('[data-indoor-zoom="in"]').disabled = zoom >= 3;
     explorer.querySelector('[data-indoor-zoom="out"]').disabled = zoom <= 1;
@@ -70,6 +70,7 @@
     const panel = currentPanel();
     panel.querySelectorAll('[data-place], [data-place-choice]').forEach(element => element.setAttribute('aria-pressed', 'false'));
     panel.querySelector('[data-detail-name]').textContent = 'Floor overview';
+    panel.querySelector('[data-detail-meta]').hidden = true;
     panel.querySelector('[data-detail-copy]').textContent = floorById.get(floorId).description;
     panel.querySelector('[data-copy-place]').hidden = true;
     panel.querySelector('[data-selection-note]').hidden = true;
@@ -88,7 +89,9 @@
       const active = (element.dataset.place || element.dataset.placeChoice) === id;
       element.setAttribute('aria-pressed', String(active));
     });
-    panel.querySelector('[data-detail-name]').textContent = [...new Set([place.name, ...(place.programmeRooms || []), place.alias].filter(Boolean))].join(' · ');
+    panel.querySelector('[data-detail-name]').textContent = place.name;
+    panel.querySelector('[data-detail-meta]').textContent = place.secondaryLabel || '';
+    panel.querySelector('[data-detail-meta]').hidden = !place.secondaryLabel;
     panel.querySelector('[data-detail-copy]').textContent = place.description;
     panel.querySelector('[data-selection-note]').hidden = false;
     panel.querySelector('[data-place-select]').value = id;
@@ -99,7 +102,7 @@
     actions.replaceChildren();
     links.hidden = !connection;
     if (connection) {
-      panel.querySelector('[data-connection-label]').textContent = `Same ${connection.kind === 'lift' ? 'lift' : 'stair'} core on`;
+      panel.querySelector('[data-connection-label]').textContent = 'Also mapped on';
       connection.stops.filter(stop => stop.floor !== floorId).forEach(stop => {
         const target = places.get(stop.place);
         const link = document.createElement('a');

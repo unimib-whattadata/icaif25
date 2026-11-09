@@ -1,27 +1,34 @@
 /* Venue and journey controls extend the shared ICAIF theme. */
+.venue-map-figure, .indoor-explorer {
+  --map-title-size: 1.125rem;
+  --map-text-size: .875rem;
+  --map-meta-size: .8125rem;
+  --map-caption-size: .75rem;
+}
+.venue-section-lead { max-width: 65ch; margin-top: 1rem; font-size: 1rem; line-height: 1.7; color: color-mix(in srgb,var(--color-base-content) 80%,var(--color-base-100)); }
+
 .venue-layout,
 .venue-travel-layout { display: grid; gap: 2.5rem; }
 .venue-details { padding-top: .5rem; }
-.venue-details .section-title { line-height: 1.12; }
 .venue-facts { margin: 1.75rem 0; padding-block: 1.5rem; border-block: 1px solid var(--color-base-300); }
 .venue-facts > div + div { margin-top: 1.5rem; }
 .venue-facts dt { display: flex; align-items: center; gap: .625rem; font-size: .8125rem; font-weight: 600; color: var(--color-primary); }
 .venue-facts dd { margin: .5rem 0 0 1.875rem; line-height: 1.7; }
 .venue-details > .btn { display: flex; width: fit-content; min-height: 3rem; }
 .venue-map-figure { min-width: 0; overflow: hidden; border: 1px solid var(--color-base-300); border-radius: var(--radius-box); background: #f3f7fa; }
-.venue-map-toolbar { display: flex; min-height: 5.25rem; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 1.5rem; background: var(--color-base-100); border-bottom: 1px solid var(--color-base-300); }
-.venue-map-title h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.4; }
-.venue-map-title p { margin-top: .25rem; font-size: .8125rem; color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
+.venue-map-toolbar { display: flex; min-height: 5.25rem; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1rem 1.25rem; background: var(--color-base-100); border-bottom: 1px solid var(--color-base-300); }
+.venue-map-title h3 { font-size: var(--map-title-size); font-weight: 700; line-height: 1.4; }
+.venue-map-title p { margin-top: .25rem; font-size: var(--map-text-size); color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
 .venue-map-switch { display: flex; flex-shrink: 0; gap: .25rem; padding: .25rem; background: var(--color-base-200); border-radius: var(--radius-field); }
-.venue-map-switch .btn { min-height: 2.75rem; height: 2.75rem; font-size: .75rem; padding-inline: .875rem; border-color: transparent; box-shadow: none; background: transparent; transition: background-color 160ms ease,color 160ms ease; }
+.venue-map-switch .btn { min-height: 2.75rem; height: 2.75rem; font-size: var(--map-text-size); padding-inline: .875rem; border-color: transparent; box-shadow: none; background: transparent; transition: background-color 160ms ease,color 160ms ease; }
 .venue-map-switch .btn:hover { background: var(--color-base-300); }
 .venue-map-switch .btn[aria-pressed="true"] { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-primary-content); }
 .venue-route-picker { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: 1rem; padding: 1.125rem 1.5rem; background: var(--color-base-100); }
-.venue-route-picker label { font-size: .8125rem; font-weight: 600; }
+.venue-route-picker label { font-size: var(--map-text-size); font-weight: 600; }
 .venue-route-picker .select { width: 100%; min-height: 3rem; height: 3rem; font-size: .875rem; border-color: color-mix(in srgb,var(--color-base-content) 65%,var(--color-base-100)); background-color: var(--color-base-200); box-shadow: none; }
 .venue-route-picker .select:hover { border-color: var(--color-primary); }
 .venue-map-figure :is(.btn,.select,a):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-.venue-route-hint { padding: 0 1.5rem 1rem; font-size: .8125rem; line-height: 1.6; background: var(--color-base-100); color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
+.venue-route-hint { padding: 0 1.5rem 1rem; font-size: var(--map-meta-size); line-height: 1.6; background: var(--color-base-100); color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
 #venue-map-picture,
 #venue-map-image { display: block; width: 100%; }
 #venue-map-image { height: auto; aspect-ratio: 5 / 4; }
@@ -33,7 +40,7 @@
 .venue-map-canvas .map-hotel-marker:is(:focus-visible,.is-active) .map-hotel-disc { stroke: #bf4c16; stroke-width: 4; }
 .venue-hotel-popover { position: absolute; z-index: 3; width: min(18rem,calc(100% - 1rem)); background: var(--color-base-100); color: var(--color-base-content); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
 .venue-hotel-popover .card-body { display: block; padding: 1.125rem; }
-.venue-hotel-popover .card-title { max-width: calc(100% - 3rem); font-size: .9375rem; line-height: 1.35; }
+.venue-hotel-popover .card-title { max-width: calc(100% - 3rem); font-size: 1rem; line-height: 1.4; }
 .venue-hotel-meta { margin-top: .375rem; font-size: .75rem; line-height: 1.55; color: color-mix(in oklab,var(--color-base-content) 76%,var(--color-base-100)); }
 .venue-hotel-popover .card-actions { margin-top: .875rem; }
 .venue-hotel-popover .card-actions .btn { min-height: 2.75rem; width: 100%; font-size: .75rem; }
@@ -45,16 +52,16 @@
 .venue-map-tools .btn:disabled { background: var(--color-base-300); }
 .venue-map-tools [data-map-zoom="in"],
 .venue-map-tools [data-map-zoom="out"] { width: 2.75rem; padding: 0; font-size: 1.375rem; }
-.venue-map-tools [data-map-zoom="reset"] { margin-left: auto; font-size: .75rem; }
-#map-motion-toggle { font-size: .75rem; padding-inline: .75rem; }
+.venue-map-tools [data-map-zoom="reset"] { margin-left: auto; font-size: var(--map-text-size); }
+#map-motion-toggle { font-size: var(--map-text-size); padding-inline: .75rem; }
 .venue-map-canvas .map-pulse { transform-box: fill-box; transform-origin: center; }
 .venue-map-canvas .map-pin-icon { transform-origin: 0 0; }
 .venue-route-details { padding: 1.5rem; background: var(--color-base-100); border-top: 1px solid var(--color-base-300); }
 .venue-route-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.venue-route-heading h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.4; }
-.venue-route-mode { margin-top: .375rem; font-size: .75rem; color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
+.venue-route-heading h3 { font-size: var(--map-title-size); font-weight: 700; line-height: 1.4; }
+.venue-route-mode { margin-top: .375rem; font-size: var(--map-meta-size); color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
 .venue-route-actions { display: flex; flex-wrap: wrap; gap: .375rem; }
-.venue-route-actions .btn { min-height: 2.75rem; height: auto; font-size: .75rem; padding-inline: .875rem; }
+.venue-route-actions .btn { min-height: 2.75rem; height: auto; font-size: var(--map-text-size); padding-inline: .875rem; }
 .venue-route-steps { display: grid; gap: 1.25rem; margin: 1.75rem 0; padding: 0; list-style: none; counter-reset: journey; }
 .venue-route-steps li { position: relative; display: grid; grid-template-columns: 1.75rem 1fr; gap: .75rem; counter-increment: journey; font-size: .875rem; line-height: 1.65; }
 .venue-route-steps li::before { content: counter(journey); display: grid; place-items: center; align-self: start; position: relative; z-index: 1; width: 1.75rem; height: 1.75rem; border: 1px solid var(--color-primary); border-radius: 50%; font-size: .75rem; font-weight: 700; color: var(--color-primary-content); background: var(--color-primary); }
@@ -64,14 +71,14 @@
 .venue-route-steps [data-line="walk"]::before { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-content); }
 .venue-route-steps strong { display: block; margin-bottom: .25rem; font-weight: 600; }
 .venue-route-steps span { color: color-mix(in oklab,var(--color-base-content) 80%,var(--color-base-100)); }
-.venue-route-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-bottom: .625rem; font-size: .75rem; }
+.venue-route-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-bottom: .625rem; font-size: var(--map-meta-size); }
 .venue-route-legend > span { display: inline-flex; align-items: center; gap: .5rem; }
 .route-line-key { display: inline-block; width: 1.5rem; height: 4px; background: var(--color-primary); border-radius: 2px; }
 .route-line-key[data-line="M2"] { background: #008746; }
 .route-line-key[data-line="M3"] { height: 6px; background: #ffd200; border: 1px solid #856b00; }
 .route-line-key[data-line="walk"] { display: inline-flex; height: 25px; justify-content: center; color: var(--color-accent); background: none; }
-.venue-route-note { max-width: 70ch; font-size: .75rem; line-height: 1.7; color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
-.venue-map-caption { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: 1rem 1.5rem; border-top: 1px solid var(--color-base-300); background: var(--color-base-100); font-size: .6875rem; color: var(--color-base-content); }
+.venue-route-note { max-width: 70ch; font-size: var(--map-meta-size); line-height: 1.7; color: color-mix(in oklab,var(--color-base-content) 75%,var(--color-base-100)); }
+.venue-map-caption { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: .875rem 1.25rem; border-top: 1px solid var(--color-base-300); background: var(--color-base-100); font-size: var(--map-caption-size); color: var(--color-base-content); }
 .venue-map-caption a { text-decoration: underline; text-underline-offset: 3px; }
 .venue-map-key { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; }
 .venue-map-key > span { width: .5rem; height: .5rem; border-radius: 50%; background: var(--color-accent); }
@@ -100,7 +107,7 @@
 .venue-building-links .link { display: inline-flex; align-items: center; gap: .5rem; color: var(--color-neutral-content); font-size: .875rem; }
 .venue-hotels-layout { display: grid; gap: 2rem; }
 .venue-hotels-intro { display: grid; align-items: end; gap: 1.5rem 3.5rem; }
-.venue-hotels-lead { max-width: 42ch; margin-top: 1rem; font-size: 1.0625rem; line-height: 1.7; color: color-mix(in oklab,var(--color-base-content) 82%,var(--color-base-100)); }
+.venue-hotels-lead { max-width: 42ch; margin-top: 1rem; font-size: 1rem; line-height: 1.7; color: color-mix(in oklab,var(--color-base-content) 82%,var(--color-base-100)); }
 .venue-hotels-map-link { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .5rem; margin-top: 1rem; font-size: .875rem; font-weight: 600; }
 .venue-hotels-map-link svg { color: var(--color-accent); }
 .venue-hotels-note { display: flex; align-items: start; gap: .75rem; max-width: 32rem; padding: 1.125rem 1.25rem; border-radius: .75rem; background: var(--color-base-200); }
@@ -151,12 +158,12 @@
   .venue-facts dt { align-items: start; gap: .375rem; font-size: .75rem; }
   .venue-facts dt svg { flex-shrink: 0; width: 1rem; height: 1rem; }
   .venue-facts dd { margin-left: 0; font-size: .875rem; }
-  .venue-map-toolbar { gap: .75rem; padding: 1rem; }
+  .venue-map-toolbar { gap: .75rem; padding: .75rem; }
   .venue-map-title h3 { font-size: 1rem; }
   .venue-map-title p { display: none; }
   .venue-map-switch .btn { padding-inline: .625rem; }
   .venue-route-picker { grid-template-columns: 1fr; gap: .625rem; padding: 1rem; }
-  .venue-route-hint { padding: 0 1rem 1rem; font-size: .75rem; }
+  .venue-route-hint { padding: 0 1rem 1rem; }
   .venue-map-canvas,
   #venue-map-image { aspect-ratio: 11 / 13; }
   .venue-map-tools { padding: .75rem .75rem 1rem; gap: .375rem; flex-wrap: wrap; }

@@ -1,5 +1,11 @@
 # Programme data
 
+## Paper 778 — Poster Session 1 — November 4, 2026
+
+[Andrea Maurino's November 4, 10:08 CET reply](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a5d1350f0ccda), “Re: ICAIF 2026 | Request to move poster presentation”, confirms moving paper **778**, “Simpler Is Sometimes Better: A Statistical Baseline Beats Neural Models and the Case for Shared-Condition Evaluation”, from **Poster Session 3** to **Poster Session 1**, following Leander Klinger's request. This decision supersedes the previous assignment in the workbook.
+
+Both programme assignment sources place paper 778 once in Poster Session 1, **Monday November 16, 16:00–16:30 CET, Foyer (Level −1)**. The moved paper is appended; other contributions retain their order. Poster session counts are now **39, 35 and 34**, with **160 unique presentation assignments** overall. The 212-paper Accepted Papers catalogue, paper metadata, session IDs, dates, times and rooms are unchanged. Private circumstances from the correspondence are excluded from public pages. Reconcile future workbook imports against this confirmed assignment.
+
 ## Paper 1007 — proceedings only — November 4, 2026
 
 The user requested moving paper **1007**, “When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting”, from **Poster Session 3** to **proceedings only**, retaining it among accepted papers. Jacqueline Pang requested the change on November 4 at 06:18 CET; [Andrea Maurino confirmed it at 08:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a571b067b95cd). This supersedes the November 3 poster reinstatement below.

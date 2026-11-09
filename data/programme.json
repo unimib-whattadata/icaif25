@@ -737,7 +737,7 @@
       "title": "Coffee Break + Poster Session 1 – Derivatives, Multi-Agent Markets and Banking Applications",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "38 posters",
+      "detail": "39 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -778,7 +778,8 @@
         551,
         654,
         870,
-        1068
+        1068,
+        778
       ]
     },
     {
@@ -1130,7 +1131,7 @@
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "Foyer",
-      "detail": "36 posters",
+      "detail": "34 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1139,7 +1140,6 @@
         722,
         734,
         775,
-        778,
         788,
         827,
         836,
