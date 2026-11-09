@@ -1,5 +1,37 @@
 # Programme data
 
+## Current workflow — November 9, 2026
+
+Excel import has been removed at the user's request. Maintain the public JSON files directly:
+
+- `data/programme.json`: timed sessions, titles, details, links and the visible `updated` date.
+- `data/programme-papers.json`: oral/poster themes and ordered paper IDs. When changing assignments, update the corresponding session's `title`, `paperIds` and presentation/poster count in `data/programme.json` as well; the programme tests check both sources agree.
+- `data/accepted-papers.json`: public paper categories, titles, authors and affiliations resolved by the programme builder.
+- `data/programme-announcements.json`: confirmed announcements without a scheduled time.
+- `data/tutorials.json`: tutorial publication copy and presenter metadata synchronized into matching programme sessions during the build.
+
+Preserve existing session and paper IDs when updating copy. Keep confirmed dates, CET times and rooms aligned with organizer instructions. After a programme content update, set the JSON `updated` date, align the programme metadata and sitemap date, then rebuild:
+
+```sh
+node scripts/build-seo.js --updated YYYY-MM-DD --page programme.html
+npm run build
+```
+
+The build regenerates the pages and canonical routes and runs the existing checks. Do not edit generated programme markup directly. The dated notes below retain source provenance and historical decisions; their former import procedures are superseded by this JSON workflow.
+
+## Programme updates — November 9, 2026
+
+Andrea Prampolini's [November 8 email, “ICAIF aggiornamenti programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1bbed9ad3a0b8e) confirms the following public updates:
+
+- Sunday November 15, 11:00: the Agostino Capponi / Perpetual Alpha session title links to `https://perpetual-alpha26.github.io/`.
+- Sunday November 15, 16:30: the QRT Startup Pitch Session title links to `https://www.qube-rt.com/startupcompetition`.
+- Sunday November 15, 14:00: ADIA Lab is renamed “AI in quantitative investment and the future of research”.
+- “Speech by Marc Mézard.” moves from Monday's banquet to Sunday's existing Welcome Reception, 19:00–22:00. Monday's banquet detail becomes “QRT Startup Competition Awards Ceremony”. No separate speech time is supplied or inferred.
+- Monday November 16, 09:00: Daniele Magazzeni's fireside chat adds “Moderator: Edoardo Vittori (Intesa Sanpaolo).”
+- Tuesday November 17, 09:00: Stefano Pasquali (Domyn) is explicitly labelled as moderator; Raffaele Savi and Mauro Micillo remain the named participants.
+
+These decisions supersede the older ADIA Lab title, Monday Mézard placement and unsettled Magazzeni moderator notes below. All 84 session IDs, dates, start/end times, rooms, types and paper assignments remain intact. The public JSON stores these copy and link corrections, including the existing ADIA session identity. The programme's visible and structured update date and sitemap entry are November 9.
+
 ## Paper 778 — Poster Session 1 — November 4, 2026
 
 [Andrea Maurino's November 4, 10:08 CET reply](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a5d1350f0ccda), “Re: ICAIF 2026 | Request to move poster presentation”, confirms moving paper **778**, “Simpler Is Sometimes Better: A Statistical Baseline Beats Neural Models and the Case for Shared-Condition Evaluation”, from **Poster Session 3** to **Poster Session 1**, following Leander Klinger's request. This decision supersedes the previous assignment in the workbook.
@@ -106,7 +138,7 @@ The three numbered coffee-break poster entries receive the corresponding titles,
 
 The programme now contains 84 timed events (19/20/22/23 by day) and no untimed keynote announcements. Earlier pending notes below describe the previous version and are superseded where this update supplies confirmed detail.
 
-Refresh the assignments from an Excel export kept outside the repository with `python3 scripts/import-programme-papers.py /path/to/accepted-papers.xlsx --updated YYYY-MM-DD`, then rebuild the programme, CSS and clean routes. The importer checks every oral/poster ID, title and author against the published list and rejects duplicate, missing or mismatched assignments before writing. It removes only Barr’s former announcement and preserves unrelated announcements. The general timetable importer also reapplies the reviewed assignments and timetable corrections when `data/programme-papers.json` exists. A changed slot layout requires explicit reconciliation; it is not silently remapped.
+Assignments are now maintained directly in the two programme JSON files using the current workflow above.
 
 Validation on October 30: all 47 existing and new JavaScript tests passed, together with HTML validation and source/route checks for 21 canonical pages. Browser checks confirmed paper search, linked titles/authors, agenda selection and a downloaded `.ics` containing the four selected papers with correct CET conversion. The expanded list has no horizontal overflow at 390px or the default desktop viewport. Screenshots are kept under `.codex-artifacts/programme-20261030/`.
 
@@ -134,21 +166,9 @@ The programme builder now labels the generic numbered oral sessions with “Sess
 The desktop timeline navigator is integrated as a sticky horizontal bar, recovering the former side gutter for session comparison. Four parallel sessions reflow to one, two or four columns according to available space. On mobile the dock appears only after the timeline is reached and provides direct day and My agenda controls; returning to the opening tools hides it. Day changes retain the other filters, while My agenda opens saved choices across all days. Confirming a mobile time jump focuses its time heading; dismissing returns focus to the opener. The intro and filter defaults use shorter interface copy without changing programme facts.
 
 
-The preliminary programme is imported from the organizers' [Google Sheets workbook](https://docs.google.com/spreadsheets/d/1Of-L2sAzCzUeFET04vbvnbRgRBaNiTuk/edit?gid=1954323401#gid=1954323401). The source has four tabs, covering November 14–17, 2026. The initial export was read on October 8, 2026; the source modification timestamp was `2026-10-08T07:16:30Z`.
+The preliminary programme was initially imported from the organizers' [Google Sheets workbook](https://docs.google.com/spreadsheets/d/1Of-L2sAzCzUeFET04vbvnbRgRBaNiTuk/edit?gid=1954323401#gid=1954323401). The source has four tabs, covering November 14–17, 2026. The initial export was read on October 8, 2026; the source modification timestamp was `2026-10-08T07:16:30Z`.
 
-`data/programme.json` is the public source used by the programme page. Its timezone is `Europe/Rome`; November conference times are CET (UTC+1). Each source row with a valid date, start, and end becomes one session. Repeated workshop blocks and simultaneous room sessions remain separate entries. Session IDs combine the date/start with a hash of date, start, room, and public title, so row reordering does not associate saved-session references with a different event. Changes to a session's title, room, date, or start time give it a new ID.
-
-## Refresh
-
-Export the workbook as Excel (`.xlsx`) to a location outside the repository. The importer requires Python 3.9+ and `openpyxl`.
-
-```sh
-python3 scripts/import-programme.py /path/to/programme.xlsx --updated 2026-10-08
-```
-
-The default output is `data/programme.json`. Pass `--output /path/to/programme.json` to inspect an import without replacing the public file. The default update date is today in `Europe/Rome`. The importer reads the workbook without modifying it, checks every scheduled row, and fails before writing if a dated row has malformed times, an unknown session type, an unexpected conference date, or duplicate IDs. Refresh the bundled page's static fallback after changing the data, using the page build workflow.
-
-Keep the raw workbook outside the repository. The public JSON excludes notes, totals, and organizational statistics. Workshop links are matched against titles and anchor IDs already present in `workshop.html`; an unmatched title is displayed without a detail link.
+`data/programme.json` is the public source used by the programme page. Its timezone is `Europe/Rome`; November conference times are CET (UTC+1). Each source row with a valid date, start, and end becomes one session. Repeated workshop blocks and simultaneous room sessions remain separate entries. Session IDs combine the date/start with a hash of date, start, room, and public title, so row reordering does not associate saved-session references with a different event. This describes the original import identity scheme; existing IDs are now preserved when editing the JSON directly.
 
 ## Tutorial publication source
 
@@ -156,9 +176,9 @@ The tutorial content supplied by the user for publication on 8 October 2026 is s
 
 The accepted slots are Saturday 14 November 08:30–10:30, 11:00–13:00 and 14:00–16:00, then Sunday 15 November 08:30–10:30, all in Room 3 and all CET (UTC+1). The Tutorials builder requires exactly one programme tutorial matching each title, date, start, end and room. It preserves complete supplied copy, synchronizes that matched session's presenter `detail` and article `href`, and derives its return link from the stable session ID. Its `--check` mode rejects stale page copy or programme presenter metadata without writing.
 
-On reimport, `scripts/import-programme.py` loads the same tutorial JSON. For a matching tutorial title, it compares date, start, end and room before adding presenter names to `detail` and the article anchor to `href`; a mismatch fails before output is written. The October 8 publication extension changes only eight session fields: four `detail` values and four `href` values. All 85 session IDs, dates, start/end times, rooms, public titles, types and pending flags remain exactly as previously imported. The source workbook is read-only and is never rewritten for this enrichment. Search can now find each of the eleven tutorial presenters through the corresponding programme detail.
+Tutorial presenter details and article anchors are synchronized by the Tutorials builder directly from `data/tutorials.json`; Excel import is no longer part of this workflow.
 
-For a presenter or abstract update, edit `data/tutorials.json` and run `npm run build`; no Excel reimport is needed. `build:tutorials` synchronizes the page and matching programme metadata before programme rendering, SEO, CSS and clean-route generation. Confirmed title/date/time/room changes still require reconciling the schedule source and publication data before building. Do not hand-edit generated main content in `tutorials.html` or `programme.html`. Presenter images, institutional links and material URLs were not supplied; none are inferred from names or abstract claims.
+For a presenter or abstract update, edit `data/tutorials.json` and run `npm run build`. `build:tutorials` synchronizes the page and matching programme metadata before programme rendering, SEO, CSS and clean-route generation. Confirmed title/date/time/room changes still require reconciling the schedule source and publication data before building. Do not hand-edit generated main content in `tutorials.html` or `programme.html`. Presenter images, institutional links and material URLs were not supplied; none are inferred from names or abstract claims.
 
 ## Organizer correction — October 9, 2026
 

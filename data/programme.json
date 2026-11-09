@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-09",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -335,7 +335,7 @@
       "room": "Main Hall",
       "detail": "",
       "pending": false,
-      "href": ""
+      "href": "https://perpetual-alpha26.github.io/"
     },
     {
       "id": "session-2026-11-15-1100-de4273d4",
@@ -402,7 +402,7 @@
       "date": "2026-11-15",
       "start": "14:00",
       "end": "16:00",
-      "title": "ADIA Lab",
+      "title": "AI in quantitative investment and the future of research",
       "type": "industry",
       "room": "Main Hall",
       "detail": "",
@@ -443,7 +443,7 @@
       "room": "Main Hall",
       "detail": "",
       "pending": false,
-      "href": ""
+      "href": "https://www.qube-rt.com/startupcompetition"
     },
     {
       "id": "session-2026-11-15-1630-2bca2dec",
@@ -489,7 +489,7 @@
       "title": "Welcome Reception",
       "type": "social",
       "room": "Università statale di Milano",
-      "detail": "",
+      "detail": "Speech by Marc Mézard.",
       "pending": false,
       "href": ""
     },
@@ -525,7 +525,7 @@
       "title": "Fireside chat: Daniele Magazzeni",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Group Chief AI Officer at UBS.",
+      "detail": "Group Chief AI Officer at UBS.\nModerator: Edoardo Vittori (Intesa Sanpaolo).",
       "pending": false,
       "href": ""
     },
@@ -838,7 +838,7 @@
       "title": "Banquet dinner & awards",
       "type": "banquet",
       "room": "Museo della Scienza e della Tecnica",
-      "detail": "Speech by Marc Mézard.",
+      "detail": "QRT Startup Competition Awards Ceremony",
       "pending": false,
       "href": ""
     },
@@ -862,7 +862,7 @@
       "title": "Fireside chat",
       "type": "keynote",
       "room": "Main Hall",
-      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo), Stefano Pasquali (Domyn).",
+      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo).\nModerator: Stefano Pasquali (Domyn).",
       "pending": false,
       "href": ""
     },

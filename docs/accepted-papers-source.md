@@ -1,5 +1,11 @@
 # Accepted papers publication source
 
+## Current workflow — November 9, 2026
+
+Excel import has been removed at the user's request. Edit `data/accepted-papers.json` directly for confirmed paper categories, titles, authors and affiliations, preserving paper IDs and author order. Reconcile presentation category or assignment changes with `data/programme-papers.json` and `data/programme.json`. Set the publication `updated` date for content updates, align the affected page metadata with `node scripts/build-seo.js --updated YYYY-MM-DD --page accepted-papers.html` (and `--page programme.html` when its content changes), then run `npm run build` to regenerate the public pages, canonical routes and checks.
+
+The dated notes below retain historical source evidence. References to former workbook reconciliation describe past decisions; future updates use the public JSON and the organizer's confirmed instructions.
+
 ## Paper 1007 — proceedings only — November 4, 2026
 
 The user requested moving paper **1007**, “When Errors Have Unequal Consequences: Second-Order Complementary Log Loss for Cost-Sensitive Boosting”, from **Poster Session 3** to **proceedings only**, retaining it among accepted papers. Jacqueline Pang requested the change on November 4 at 06:18 CET; [Andrea Maurino confirmed it at 08:24 CET](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1a571b067b95cd). This supersedes the November 3 poster reinstatement below.
@@ -56,8 +62,8 @@ The user requested publication from Andrea Maurino's emails “paper accettati�
 
 The initial public page `/accepted-papers/` separated **52 oral presentations**, **114 poster presentations** and **49 proceedings-only papers**, for **215 unique papers**, before the November 1 removal above. Paper **136**, “FAAB: A Benchmark for Fault Detection and Responsibility Attribution in Financial Multi-Agent Workflows”, belongs to the poster group following the second email. The initial page included the requested Whova presentation-link note. The user subsequently requested removal of that supporting block, including its visible update line.
 
-`scripts/import-accepted-papers.py` reads the three categorized tabs (`oral presentation`, `poster`, `proccedings`), reconciles the complete ID set against `all accepted`, sorts papers by numeric ID within each group, and exports only paper IDs, titles and authors/affiliations to `data/accepted-papers.json`. It normalizes whitespace and removes the source's corresponding-author asterisk. Author order, names, affiliations and title wording are preserved. Organizer availability notes, contacts, reviews, registration details and the original workbook are not public assets. The workbook's summary tab is not used as a publication source.
+The original publication extraction read the three categorized tabs (`oral presentation`, `poster`, `proccedings`), reconciled the complete ID set against `all accepted`, sorted papers by numeric ID within each group, and exported only paper IDs, titles and authors/affiliations to `data/accepted-papers.json`. It normalized whitespace and removed the source's corresponding-author asterisk. Author order, names, affiliations and title wording are preserved. Organizer availability notes, contacts, reviews, registration details and the original workbook are not public assets. The workbook's summary tab is not used as a publication source.
 
-Run `scripts/import-accepted-papers.py PATH --updated YYYY-MM-DD` with Python and openpyxl after reviewing a replacement workbook, then `npm run build`. `scripts/build-accepted-papers.js` renders the complete static list and supports `--check`. Search is a progressive enhancement; all papers are readable without JavaScript. Stable `#paper-ID` links identify individual papers.
+`scripts/build-accepted-papers.js` renders the complete static list and supports `--check`. Search is a progressive enhancement; all papers are readable without JavaScript. Stable `#paper-ID` links identify individual papers.
 
 The first email's oral-session scheduling discussion is addressed to Marcello. It does not supply a revised timetable or paper-to-session assignments, so the list adds no dates or slots and does not change the preliminary programme.
