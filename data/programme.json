@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -522,7 +522,7 @@
       "date": "2026-11-16",
       "start": "09:00",
       "end": "09:40",
-      "title": "Fireside chat: Daniele Magazzeni",
+      "title": "Fireside chat with Daniele Magazzeni: From Research to Real-World Impact - AI in Banking",
       "type": "panel",
       "room": "Main Hall",
       "detail": "Group Chief AI Officer at UBS.\nModerator: Edoardo Vittori (Intesa Sanpaolo).",
@@ -690,8 +690,8 @@
       "pending": false,
       "href": "",
       "paperIds": [
-        417,
         512,
+        417,
         690
       ]
     },
@@ -725,8 +725,8 @@
       "href": "",
       "paperIds": [
         428,
-        531,
-        938
+        938,
+        531
       ]
     },
     {

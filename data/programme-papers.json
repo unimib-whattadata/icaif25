@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-10",
   "source": "https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit",
   "groups": [
     {
@@ -55,8 +55,8 @@
       "id": "oral-6",
       "title": "Oral Session 6: Derivatives: Hedging, Pricing and Option Surfaces",
       "paperIds": [
-        417,
         512,
+        417,
         690
       ]
     },
@@ -74,8 +74,8 @@
       "title": "Oral Session 8: Risk and Volatility Forecasting",
       "paperIds": [
         428,
-        531,
-        938
+        938,
+        531
       ]
     },
     {

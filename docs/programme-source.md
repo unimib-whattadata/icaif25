@@ -19,6 +19,15 @@ npm run build
 
 The build regenerates the pages and canonical routes and runs the existing checks. Do not edit generated programme markup directly. The dated notes below retain source provenance and historical decisions; their former import procedures are superseded by this JSON workflow.
 
+## Fireside title and oral presentation order — November 10, 2026
+
+The user approved two updates from the November 10 correspondence:
+
+- [Edoardo Vittori's reply, “ICAIF aggiornamenti programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1c6186202f6176), supplies the title “Fireside chat with Daniele Magazzeni: From Research to Real-World Impact - AI in Banking”. The existing November 16, 09:00–09:40 CET Main Hall session, moderator and stable ID are retained.
+- [Andrea Maurino's approval of Tue Herlau's request](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1c54f383df93f2) places paper **512 first in Oral Session 6** and paper **531 last in Oral Session 8**. Both sessions remain on November 16, 15:00–16:00 CET, in Room 1 and Room 3 respectively. The ordered IDs are now **512, 417, 690** and **428, 938, 531**, preserving the relative order of the other papers. No individual talk times are inferred.
+
+Both programme assignment sources are aligned. All other session fields, paper metadata, presentation assignments and counts are retained. The programme's visible update date, structured metadata and sitemap date are November 10. The reply drafts refer to these two changes only; the homepage speaker and practical-information requests remain outside this update.
+
 ## Approved programme consistency corrections — November 9, 2026
 
 Following the programme audit, the user approved corrections 1, 2, 3 and 5, while excluding poster-placeholder consolidation and external workshop timetable changes. Home's Marc Mézard card now says “Welcome Reception speech”, November 15, and links to the Sunday reception at 18:30. The Tuesday 09:00 fireside chat uses `panel`, matching the Monday fireside format, without changing its participants, moderator or timetable.
