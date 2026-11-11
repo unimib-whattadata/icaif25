@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -562,6 +562,7 @@
       "title": "Keynote: Michael Barr",
       "type": "keynote",
       "detail": "Member of the Board of Governors of the Federal Reserve System.",
+      "livestreamUrl": "https://us06web.zoom.us/j/84433320946?pwd=zq5qHzI0IgCBc7QKytDbJ5X90yXZKC.1",
       "pending": false,
       "href": ""
     },
@@ -857,12 +858,12 @@
     {
       "id": "session-2026-11-17-0900-c8abcb8e",
       "date": "2026-11-17",
-      "start": "09:00",
-      "end": "10:00",
+      "start": "09:15",
+      "end": "09:45",
       "title": "Fireside chat",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo).\nModerator: Stefano Pasquali (Domyn).",
+      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo).\nModerator: Stefano Pasquali (Domyn).\nApproximately 30 minutes, without Q&A.",
       "pending": false,
       "href": ""
     },

@@ -166,6 +166,7 @@
     for (const session of ordered) {
       const description = [
         session.detail,
+        session.livestreamUrl ? `Live stream: ${session.livestreamUrl}` : "",
         ...(session.papers || []).map((paper) => `Paper ${paper.id}: ${paper.title}\n${paper.authors}`),
         session.pending ? "Details to be confirmed." : "",
         "Preliminary programme. Times and sessions are subject to change.",
@@ -208,7 +209,9 @@
           ids.has(session.id) || !dates.has(session.date) ||
           !TIME_PATTERN.test(session.start) || !TIME_PATTERN.test(session.end) || session.end <= session.start ||
           [session.title, session.type, session.room].some((value) => typeof value !== "string" || !value.trim()) ||
-          (session.detail !== undefined && typeof session.detail !== "string")) {
+          (session.detail !== undefined && typeof session.detail !== "string") ||
+          (session.livestreamUrl !== undefined &&
+            (typeof session.livestreamUrl !== "string" || !/^https:\/\/\S+$/.test(session.livestreamUrl)))) {
         throw new Error("Invalid programme session.");
       }
       ids.add(session.id);

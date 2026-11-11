@@ -84,7 +84,7 @@ function renderSession(session) {
                 <h4 class="programme-session-title">${title}</h4>
                 <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
                 ${session.detail && !session.papers?.length ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
-                ${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
+                ${session.livestreamUrl ? `<p class="programme-detail"><a class="link inline-flex min-h-11 items-center gap-2" href="${escape(session.livestreamUrl)}" target="_blank" rel="noopener noreferrer"><img src="/img/icons/zoom.svg" alt="" width="28" height="28" class="shrink-0">Watch live on Zoom</a></p>\n                ` : ''}${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 </div>
                 <div class="programme-session-actions">
@@ -326,7 +326,7 @@ html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).re
 // Keep the dedicated print sheet after the screen CSS and version it independently.
 html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026103014')
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026110401')
-  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026103012');
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026111101');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace(/\n\s*<script[^>]*js\/programme-print\.js[^>]*><\/script>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026110302">\n    <script src="js/programme-print.js?v=2026110301" defer></script>\n  </head>');
