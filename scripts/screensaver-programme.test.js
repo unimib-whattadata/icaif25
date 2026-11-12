@@ -29,7 +29,7 @@ test('default day is today in Milan, then the first future or final published da
 
 test('day and room are exact filters, with stable chronological order and no source mutation', () => {
   const source = [session('z'), session('other-room', { room: 'Main Hall Annex' }),
-    session('b', { end: '10:30' }), session('other-day', { date: '2026-11-14' }),
+    session('b', { end: '10:30', title: 'Another session' }), session('other-day', { date: '2026-11-14' }),
     session('a', { end: '10:30' }), session('early', { start: '09:00', end: '09:30' })];
   const originalOrder = source.map(item => item.id);
   assert.deepEqual(roomSessions(source, '2026-11-15', 'Main Hall').map(item => item.id), ['early', 'a', 'b', 'z']);
@@ -143,15 +143,45 @@ test('completed days, other selected dates, and empty rooms have no live focus',
     { focus: '', ids: [] });
 });
 
-test('published data is accepted without shortening, deduplicating or modifying factual session titles', () => {
+test('published data retains full titles and every distinct session in the display', () => {
   assert.equal(validateProgramme(official), official);
   for (const day of official.days) {
     for (const room of programmeRooms(official.sessions)) {
       const expected = official.sessions.filter(item => item.date === day.date && item.room === room);
       const actual = roomSessions(official.sessions, day.date, room);
-      assert.equal(actual.length, expected.length);
+      assert.deepEqual(new Set(actual.map(item => JSON.stringify({ ...item, id: '' }))),
+        new Set(expected.map(item => JSON.stringify({ ...item, id: '' }))));
       for (const item of actual) assert.equal(item.title, official.sessions.find(source => source.id === item.id).title);
     }
+  }
+});
+
+test('identical poster placeholders display once per slot, with one live focus and unchanged source data', () => {
+  const original = structuredClone(official);
+  for (const [day, count, slots] of [
+    ['2026-11-16', 4, ['16:30']], ['2026-11-17', 5, ['11:30', '16:00']]
+  ]) {
+    const display = roomSessions(official.sessions, day, 'Foyer');
+    assert.equal(display.length, count);
+    for (const start of slots) {
+      assert.equal(display.filter(item => item.title === 'Poster session' && item.start === start).length, 1);
+      const focus = sessionFocus(sessionStates(display, day, new Date(`${day}T${start}:00+01:00`)));
+      assert.equal(focus.focus, 'current');
+      assert.equal(focus.ids.length, 1);
+    }
+  }
+  assert.deepEqual(official, original);
+});
+
+test('same-time sessions remain separate when any factual field differs', () => {
+  const source = [session('original'), session('duplicate'),
+    session('different-title', { title: 'Another title' }),
+    session('different-detail', { detail: 'A distinct presentation' }),
+    session('different-papers', { paperIds: [512] })];
+  const display = roomSessions(source, '2026-11-15', 'Main Hall');
+  assert.equal(display.length, 4);
+  for (const id of ['different-title', 'different-detail', 'different-papers']) {
+    assert.ok(display.some(item => item.id === id));
   }
 });
 

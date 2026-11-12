@@ -96,8 +96,17 @@
   }
 
   function roomSessions(sessions, day, room) {
+    const seen = new Set();
     return sessions.filter(session => session.date === day && session.room === room)
-      .sort((a, b) => a.start.localeCompare(b.start) || a.end.localeCompare(b.end) || a.id.localeCompare(b.id));
+      .sort((a, b) => a.start.localeCompare(b.start) || a.end.localeCompare(b.end) || a.id.localeCompare(b.id))
+      .filter(session => {
+        // Collapse only records identical in every field except their source ID.
+        const signature = JSON.stringify(Object.keys(session).filter(key => key !== 'id').sort()
+          .map(key => [key, session[key]]));
+        if (seen.has(signature)) return false;
+        seen.add(signature);
+        return true;
+      });
   }
 
   function sessionStates(sessions, day, now = new Date()) {
@@ -267,6 +276,7 @@
         const type = document.createElement('span');
         type.className = 'screensaver__session-type';
         type.textContent = typeLabels[session.type] || session.type;
+        type.hidden = type.textContent.trim().toLowerCase() === session.title.trim().toLowerCase();
         const badge = document.createElement('span');
         badge.className = 'badge screensaver__session-state';
         badge.hidden = true;

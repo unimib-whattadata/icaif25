@@ -157,6 +157,7 @@
 .screensaver__session[data-focus] .screensaver__session-time { color: var(--display-orange); }
 .screensaver__session-meta .badge { height: 1.35em; min-height: 0; margin-left: 10px; padding: 0 .45em; vertical-align: top; font-size: inherit; line-height: 1; color: var(--display-ink); background: var(--display-orange); border: 0; font-weight: 650; }
 .screensaver__session:not([data-focus]) .badge { color: inherit; background: color-mix(in srgb, var(--display-teal) 25%, var(--display-ink)); }
+.screensaver__session-type[hidden] + .badge { margin-left: 0; }
 @media (prefers-reduced-motion: reduce) {
   .screensaver__session { transition: none; }
 }
