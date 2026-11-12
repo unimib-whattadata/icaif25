@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-12",
   "groups": [
     {
       "id": "responsible-ai-operations-finance",
@@ -1003,7 +1003,7 @@
         {
           "id": 1266,
           "title": "Herding or Racing? Decomposing Cross-Account Order-Flow Persistence in On-Chain Markets",
-          "authors": "Yichong Bai (PolyU HK); Dingyue Kan (PolyU HK)",
+          "authors": "Yichong Bai (PolyU HK)",
           "presenters": [],
           "presentation": "oral"
         },

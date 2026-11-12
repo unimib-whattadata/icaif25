@@ -43,3 +43,7 @@ shares the existing Accepted Papers layout and search runtime, with a native
 workshop selector and full static lists as the no-JavaScript fallback. Programme
 navigation and footer links expose `/workshop-papers/` on every canonical page.
 This change is prepared and previewed locally; no production deployment was requested.
+
+On November 12, 2026, the user requested an author correction for Market
+Microstructure paper 1266. Its public author list now contains only Yichong Bai
+(PolyU HK); the paper and its stable link remain in the catalogue.
