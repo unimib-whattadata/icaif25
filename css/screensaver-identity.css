@@ -1,0 +1,32 @@
+/* Static official mark; an orange light travels only along its exact orbit. */
+.screensaver__mark-motion {
+  position: relative;
+  isolation: isolate;
+  flex: none;
+  width: var(--display-mark-width);
+}
+
+.screensaver__mark-motion > .screensaver__mark { width: 100%; }
+
+.screensaver__identity-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-mask: url('../assets/screensaver/icaif-orbit-white.svg') center / 100% 100% no-repeat;
+  mask: url('../assets/screensaver/icaif-orbit-white.svg') center / 100% 100% no-repeat;
+}
+
+.screensaver__identity-orbit-light {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  background: linear-gradient(108deg, transparent 32%, #f48f24 43%, #ffb961 50%, #f48f24 57%, transparent 68%);
+}
+
+/* Retain the incumbent mark width in short desktop windows. */
+@media (max-height: 520px) and (min-aspect-ratio: 1/1) {
+  .screensaver__mark-motion { width: min(24vw, 34vh); }
+}
