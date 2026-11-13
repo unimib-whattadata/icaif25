@@ -19,6 +19,14 @@ npm run build
 
 The build regenerates the pages and canonical routes and runs the existing checks. Do not edit generated programme markup directly. The dated notes below retain source provenance and historical decisions; their former import procedures are superseded by this JSON workflow.
 
+## Sunday industry session details — November 13, 2026
+
+The user authorizes applying Andrea Prampolini's [November 12 email, “Aggiornamenti programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d0a99eb228eeb) to the website and Whova. The existing **Sunday November 15, 08:30–10:30 CET, Main Hall** industry session adds the opening by Sammy Assefa (Wellington Management), “AI in Financial Services: From Readiness to Governance in Action”, the FINOS governance-as-code demo, DXC Spotlight, “From Vision to Production: AI That Delivers Value” and “Compositional drift along the agentic chain and MLOps”, in the supplied order.
+
+The existing **14:00–16:00 CET, Main Hall** industry session adds Marco Lopez de Prado (ADIA Lab), “What is the False Discovery Rate in Finance?”, the panel “How AI is changing academic and practitioner research” with Agostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano) and Massimo Morini (ADIA Lab), moderator Andrea Prampolini, followed by “Keynote Speech: Sandy Pentland”. Public wording follows the supplied email. These are ordered details within the existing two-hour blocks; individual talk times and durations were not supplied. Session titles, IDs, dates, times, rooms and all other programme entries are retained. Whova descriptions are maintained separately from the website's build.
+
+Both Whova descriptions were saved and reopened to verify every supplied line, retaining their existing programme links and Zoom streams. The website build passed all 80 existing tests, HTML validation and source/route checks for 23 canonical pages. A focused comparison confirms that only these two session descriptions changed; the other 82 sessions and all timetable fields are unchanged.
+
 ## Bayesian calibration tutorial — November 13, 2026
 
 The user confirms moving “Amortized Bayesian Calibration of Volatility Models” from Saturday November 14 to **Sunday November 15, 11:00–13:00 CET, Room 3**, retaining its existing two-hour duration. Francesco Muia's affiliation is now **AI & Analytics Solutions di Muia Francesco**, replacing PyMC Labs. Both public JSON sources agree; the existing tutorial anchor and programme session ID `session-2026-11-14-1100-6193b532` remain stable for links and saved agendas. The date embedded in that historical ID does not determine its current schedule. This decision supersedes the original tutorial slots below. Whova is managed separately and is not synchronized by this site's build.

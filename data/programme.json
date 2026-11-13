@@ -273,7 +273,7 @@
       "title": "Industry day: AI Governance & DXC spotlight",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "",
+      "detail": "Opening: Sammy Assefa (Wellington Management)\nAI in Financial Services: From Readiness to Governance in Action\nFINOS approach to governance as code, with demo.\nDXC Spotlight\nFrom Vision to Production: AI That Delivers Value\nCompositional drift along the agentic chain and MLOps",
       "pending": false,
       "href": ""
     },
@@ -405,7 +405,7 @@
       "title": "AI in quantitative investment and the future of research",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "",
+      "detail": "Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\".\nAgostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab).\nModerator: Andrea Prampolini\nKeynote Speech: Sandy Pentland",
       "pending": false,
       "href": ""
     },
