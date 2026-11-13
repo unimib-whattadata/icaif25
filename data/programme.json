@@ -52,8 +52,8 @@
     {
       "id": "session-2026-11-14-0830-17fbd276",
       "date": "2026-11-14",
-      "start": "08:30",
-      "end": "10:30",
+      "start": "09:00",
+      "end": "11:05",
       "title": "Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)",
       "type": "workshop",
       "room": "Room 1",
@@ -100,8 +100,8 @@
     {
       "id": "session-2026-11-14-1100-bb66de44",
       "date": "2026-11-14",
-      "start": "11:00",
-      "end": "13:00",
+      "start": "11:15",
+      "end": "12:40",
       "title": "Workshop on Reinforcement Learning for LLM-based Agents (RL4LLM-Agents)",
       "type": "workshop",
       "room": "Room 1",
@@ -124,8 +124,8 @@
     {
       "id": "session-2026-11-14-1100-204308b0",
       "date": "2026-11-14",
-      "start": "11:00",
-      "end": "13:00",
+      "start": "10:30",
+      "end": "12:30",
       "title": "RAIOps4Fin - Applied Responsible AI Operations for Finance",
       "type": "workshop",
       "room": "Room 2",
@@ -192,6 +192,18 @@
       "detail": "Presenters: Shikhar Dave and Bhaskarjit Sarmah.",
       "pending": false,
       "href": "/tutorials/#confidence-calibration-selective-prediction"
+    },
+    {
+      "id": "session-2026-11-14-1430-private-capital-ai-investing",
+      "date": "2026-11-14",
+      "start": "14:30",
+      "end": "16:00",
+      "title": "Private Capital and AI Investing",
+      "type": "industry",
+      "room": "Room 2",
+      "detail": "Fabio Baldini (ETH & LupAI), Claudio Tebaldi (Bocconi University), Anton Trubakov (QuantumLight) and Marta Zava (SDA Bocconi).\nModerator: Matt Robinson (AI Street).\nHow VC & PE use AI\nRushing capital in AI: effects & consequences\nBecome a VC for 4 days: build your portfolio with AI (app based!)",
+      "pending": false,
+      "href": ""
     },
     {
       "id": "session-2026-11-14-1600-8396b7fd",
@@ -270,10 +282,10 @@
       "date": "2026-11-15",
       "start": "08:30",
       "end": "10:30",
-      "title": "Industry day: AI Governance & DXC spotlight",
+      "title": "AI in Financial Services: From Readiness to Governance in Action",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "Opening: Sammy Assefa (Wellington Management)\nAI in Financial Services: From Readiness to Governance in Action\nFINOS approach to governance as code, with demo.\nDXC Spotlight\nFrom Vision to Production: AI That Delivers Value\nCompositional drift along the agentic chain and MLOps",
+      "detail": "Opening: Sammy Assefa (Wellington Management)\nFINOS approach to governance as code, with demo.\nDXC Spotlight\nFrom Vision to Production: AI That Delivers Value\nCompositional drift along the agentic chain and MLOps",
       "pending": false,
       "href": ""
     },
@@ -388,8 +400,8 @@
     {
       "id": "session-2026-11-15-1400-0b0c32d3",
       "date": "2026-11-15",
-      "start": "14:00",
-      "end": "16:00",
+      "start": "13:30",
+      "end": "15:35",
       "title": "Structuring the Unstructured: AI in Private Markets",
       "type": "workshop",
       "room": "Room 3",
@@ -405,7 +417,7 @@
       "title": "AI in quantitative investment and the future of research",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\".\nAgostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab).\nModerator: Andrea Prampolini\nKeynote Speech: Sandy Pentland",
+      "detail": "Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\".\nAgostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab).\nModerator: Andrea Prampolini (Intesa Sanpaolo)\nKeynote Speech: Sandy Pentland (Stanford University, MIT)",
       "pending": false,
       "href": ""
     },
@@ -472,8 +484,8 @@
     {
       "id": "session-2026-11-15-1630-8c3b9441",
       "date": "2026-11-15",
-      "start": "16:30",
-      "end": "18:00",
+      "start": "16:15",
+      "end": "17:30",
       "title": "Structuring the Unstructured: AI in Private Markets",
       "type": "workshop",
       "room": "Room 3",
@@ -859,11 +871,11 @@
       "id": "session-2026-11-17-0900-c8abcb8e",
       "date": "2026-11-17",
       "start": "09:15",
-      "end": "09:45",
+      "end": "10:00",
       "title": "Fireside chat",
       "type": "panel",
       "room": "Main Hall",
-      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo).\nModerator: Stefano Pasquali (Domyn).\nApproximately 30 minutes, without Q&A.",
+      "detail": "Raffaele Savi (BlackRock Systematic), Mauro Micillo (Intesa Sanpaolo).\nModerator: Stefano Pasquali (Domyn).",
       "pending": false,
       "href": ""
     },
@@ -926,11 +938,10 @@
       "title": "Oral Session 12: Reliability of Foundation Models in Finance",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "3 presentations",
+      "detail": "2 presentations",
       "pending": false,
       "href": "",
       "paperIds": [
-        392,
         702,
         974
       ]

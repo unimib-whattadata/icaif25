@@ -1,5 +1,7 @@
 # Programme data
 
+Latest November 13 session, workshop-timetable and paper 392 corrections: [Gmail review and evidence](email-review-2026-11-13.md). These confirmed updates supersede earlier provisional times and descriptions below where specified; existing session IDs remain stable.
+
 ## Current workflow — November 9, 2026
 
 Excel import has been removed at the user's request. Maintain the public JSON files directly:

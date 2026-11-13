@@ -6,15 +6,15 @@ const path = require('node:path');
 const { validateWorkshopPapers, renderWorkshopPapers, renderAuthors, paperAnchor } = require('./build-workshop-papers');
 const source = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/workshop-papers.json'), 'utf8'));
 
-test('the approved publication includes 120 workshop papers, without keynote entries or private records', () => {
-  assert.equal(validateWorkshopPapers(source), 120);
-  assert.deepEqual(source.groups.map(group => group.papers.length), [10, 7, 6, 11, 49, 6, 4, 18, 9]);
-  assert.deepEqual(source.groups.map(group => group.papers.filter(paper => paper.presentation === 'poster').length), [0, 0, 0, 5, 40, 2, 0, 18, 4]);
-  assert.equal(source.groups.flatMap(group => group.papers).filter(paper => paper.presentation === null).length, 20);
+test('the approved publication includes 111 workshop papers, without keynote entries or private records', () => {
+  assert.equal(validateWorkshopPapers(source), 111);
+  assert.deepEqual(source.groups.map(group => group.papers.length), [10, 6, 6, 11, 42, 6, 4, 18, 8]);
+  assert.deepEqual(source.groups.map(group => group.papers.filter(paper => paper.presentation === 'poster').length), [0, 0, 0, 5, 32, 2, 0, 18, 3]);
+  assert.equal(source.groups.flatMap(group => group.papers).filter(paper => paper.presentation === null).length, 10);
   const html = renderWorkshopPapers(source);
-  assert.equal((html.match(/ data-paper>/g) || []).length, 120);
-  assert.equal((html.match(/class="papers-presenting-author"/g) || []).length, 68);
-  assert.equal((html.match(/<span class="badge">Poster<\/span>/g) || []).length, 69);
+  assert.equal((html.match(/ data-paper>/g) || []).length, 111);
+  assert.equal((html.match(/class="papers-presenting-author"/g) || []).length, 81);
+  assert.equal((html.match(/<span class="badge">Poster<\/span>/g) || []).length, 60);
   assert.doesNotMatch(html, /General Chair|PAYMENT PENDING|COMPLIMENTARY PASS|@|When Proofs Are Abundant/);
   for (const group of source.groups) for (const paper of group.papers) {
     const entry = html.match(new RegExp(`<li id="${paperAnchor(group, paper)}"[\\s\\S]*?<\\/li>`))?.[0];

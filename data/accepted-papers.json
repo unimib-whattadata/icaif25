@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-13",
   "groups": [
     {
       "id": "oral",
@@ -44,11 +44,6 @@
           "id": 382,
           "title": "CARGO: Credit Action Recourse via Regulation-Bounded, Graph-Constrained Ordered Planning",
           "authors": "JIHWAN KIM (PFCT); Yejun Soun (PFCT); Byunggyu Ahn (PFCT); Jeongin Lee (PFCT); Ji Hoon Yoo (PFCT); Daesung Lee (PFCT); Seungho Lee (PFCT); Seokjung Hong (PFCT)"
-        },
-        {
-          "id": 392,
-          "title": "Agreement Without Information: Spurious Directional Priors in Foundation Models",
-          "authors": "Fernando Moreno-Pino (University of Bristol)"
         },
         {
           "id": 399,
@@ -871,6 +866,11 @@
           "id": 391,
           "title": "Lead-Lag Relationships in Financial Markets: A Comparison of Multiple Clustering Algorithms",
           "authors": "Ruichen Deng (Nankai University); Yichi Zhang (University of Oxford)"
+        },
+        {
+          "id": 392,
+          "title": "Agreement Without Information: Spurious Directional Priors in Foundation Models",
+          "authors": "Fernando Moreno-Pino (University of Bristol)"
         },
         {
           "id": 397,

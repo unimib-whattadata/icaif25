@@ -98,6 +98,12 @@ Keep the desktop navigator 240px wide at every desktop height. Reserve its right
 
 `data/programme.json` is the public schedule source. Edit the public JSON directly following `docs/programme-source.md`, then run `npm run build`. Excel import is no longer supported. Generated `programme.html` content belongs in `scripts/build-programme.js`; preserve pending fields, stable IDs and source times rather than filling gaps. Keep the visible preliminary status in search/social descriptions. The root `DESIGN.md` records the sampled incumbent system; detailed programme decisions live in `.impeccable/surfaces/programme-html.md`.
 
+## Workshops
+
+Public workshop agendas stay inside their existing cards as native daisyUI `details` / `summary` disclosures. Summaries show date, room and CET; ordered list rows keep times compact beside wrapping titles and smaller presenter text. Preserve organiser-supplied timing, remote participation and explicit pending details in static HTML. The shared mobile card disclosure remains unchanged. Publish the participant-facing agenda rather than operational attachments; sources and corrections are in `docs/email-review-2026-11-13.md`.
+
+Supplied workshop portraits use the existing round photographic treatment with live names/roles, two columns on phones and three from 640px, and lazy-loaded local WebP images with intrinsic dimensions and source records. RAIOps4Fin, MFMB and the existing Women in AI and Finance card contain these groups; the newly added Women Home section was removed at the user's request. Keep that correction. This extension adds no palette, font, global token, runtime or motion. Detailed scope and evidence are in `.impeccable/surfaces/workshop-html.md`.
+
 ## Tutorials
 
 `/tutorials/` is the reading page for the four accepted tutorials on 14–15 November 2026. Shared header/footer navigation includes Tutorials across all 20 canonical pages and their generated copies. The archived call retains its requirements and closed status, linking both to the detailed Tutorials page and separately to the tutorial-filtered preliminary programme.

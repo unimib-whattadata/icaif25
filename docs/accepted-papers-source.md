@@ -1,5 +1,7 @@
 # Accepted papers publication source
 
+On November 13, [Andrea Maurino confirms](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d5f35bd02bc0d) paper 392 as proceedings only. Preserve its public title/authors and stable paper anchor, and remove its Oral Session 12 assignment from both programme sources. Current totals: **212 papers, 51 oral, 108 poster, 53 proceedings-only**. See [the Gmail review](email-review-2026-11-13.md) for evidence and the separate unresolved CMT 600 discrepancy.
+
 ## Current workflow — November 9, 2026
 
 Excel import has been removed at the user's request. Edit `data/accepted-papers.json` directly for confirmed paper categories, titles, authors and affiliations, preserving paper IDs and author order. Reconcile presentation category or assignment changes with `data/programme-papers.json` and `data/programme.json`. Set the publication `updated` date for content updates, align the affected page metadata with `node scripts/build-seo.js --updated YYYY-MM-DD --page accepted-papers.html` (and `--page programme.html` when its content changes), then run `npm run build` to regenerate the public pages, canonical routes and checks.

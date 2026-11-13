@@ -1,5 +1,7 @@
 # Workshop paper publication
 
+The November 13 organiser corrections supersede the historical snapshot below: **111 papers**, including **60 posters**, **41 oral presentations**, **10 unspecified**, with **81 presenting authors** underlined. See [the Gmail review](email-review-2026-11-13.md) for confirmed withdrawals, formats, presenters, source links and remaining metadata discrepancies.
+
 The November 2, 2026 user request selects workshop contributions from the shared
 `WORKSHOP accepted_papers` workbook. Include a paper when its contribution-level
 status starts with `PAID`, or records a confirmed complimentary pass. The user
