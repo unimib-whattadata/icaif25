@@ -6,7 +6,11 @@ Public sources checked on 30 October 2026; conference overlays updated on 5 Nove
 
 The organiser confirmed in this chat on 30 October 2026 that Main Hall is Aula Magna (Level −1), and Room 1, Room 2 and Room 3 correspond respectively to AS01, AS02 and AS03 (Level −2). The programme's Foyer link selects the Level −1 foyer beside Main Hall. `programmeRooms` in `data/venue-floors.json` is the shared assignment source for map labels and programme links; stable physical place IDs are preserved. AS02 also retains its Deutsche Bank Room alias.
 
-## Current conference allocations — November 9, 2026
+## Current conference allocations — November 13, 2026
+
+The organiser confirmed in this chat that **all posters are on Level −2, between Aula Magna and the classrooms**. The existing `b2-foyer` footprint is now Poster area, retaining Central foyer as an alias. All 15 `poster-session` blocks use `Poster area (Level −2)` and link to that floor/place. The Level −1 `foyer` returns to Foyer - 1 and retains coffee, buffet lunch and Welcome Reception assignments. The workshop page and volunteer guide use the same poster directions. This supersedes the November 9 poster allocation below; room geometry, Main Hall, classroom codes and catering/reception locations are unchanged.
+
+## Previous allocation — November 9, 2026 (superseded)
 
 The user approved aligning registration and poster wayfinding after the programme audit. Registration programme links select `ground-registration` on the ground floor. Poster sessions follow the user's November 4 confirmation: **Level −1**, in the `foyer` beside Main Hall. That footprint is now named Poster area with Foyer - 1 retained as an alias; its existing programme aliases and the Sunday reception link remain valid. The Level −2 `b2-foyer` is Central foyer without a poster allocation. This supersedes the poster placement in the November 5 annotation described below. Geometry and facility anchors are unchanged.
 

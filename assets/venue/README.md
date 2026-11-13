@@ -64,7 +64,7 @@ The readability revision gives the plan the full content width and moves the dir
 
 ### Current event allocations — 9 November 2026
 
-The programme consistency corrections approved by the user place registration at the ground-floor `ground-registration` desk and conference posters in the Level −1 `foyer` beside Main Hall. The latter is shown as Poster area, retains Foyer - 1 as an alias, and is also the destination for the Sunday reception's foyer link. The Level −2 `b2-foyer` is now Central foyer without a poster assignment. This supersedes the earlier annotated poster placement described below; architectural footprints and facility anchors are unchanged.
+The organiser's latest confirmation on 13 November places **all posters on Level −2, between Aula Magna and the classrooms**. The existing `b2-foyer` footprint is Poster area, retaining Central foyer as an alias; all 15 poster programme blocks link there. The Level −1 `foyer` is Foyer - 1 and retains coffee, lunch and Welcome Reception assignments. Registration remains at the ground-floor `ground-registration` desk. This supersedes the November 9 Level −1 poster allocation; architectural footprints and facility anchors are unchanged.
 
 ### Editing and regeneration
 

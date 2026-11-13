@@ -20,7 +20,7 @@ const typeLabels = {
   closing: 'Closing', tbc: 'To be confirmed',
 };
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rooms = ['Main Hall', 'Room 1', 'Room 2', 'Room 3', 'Foyer'];
+const rooms = ['Main Hall', 'Room 1', 'Room 2', 'Room 3', 'Poster area (Level −2)', 'Foyer'];
 const venue = JSON.parse(fs.readFileSync(path.join(root, 'data/venue-floors.json'), 'utf8'));
 const mappedRooms = new Map();
 for (const floor of venue.floors) {

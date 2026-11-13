@@ -34,6 +34,7 @@ test("every confirmed programme room link selects its real place on both publish
     ["Main Hall", "aula-magna"], ["Foyer", "foyer"],
     ["Registration desk (Ground floor)", "ground-registration"],
     ["Università Bocconi — Foyer", "foyer"],
+    ["Poster area (Level −2)", "b2-foyer"],
     ["Room 1", "as01"], ["Room 2", "as02"], ["Room 3", "as03"],
   ]);
   for (const file of ["programme.html", "programme/index.html"]) {
@@ -63,6 +64,22 @@ test("every confirmed programme room link selects its real place on both publish
       }
     }
   }
+});
+
+test("poster sessions use Level −2 while catering and reception retain the Level −1 foyer", () => {
+  const posters = places.get("b2-foyer");
+  assert.equal(posters.floorId, "b2");
+  assert.equal(posters.zone, "posters");
+  assert.equal(posters.name, "Poster area");
+  assert.match(posters.description, /between Aula Magna and the workshop classrooms/);
+  assert.notEqual(places.get("foyer").zone, "posters");
+  const sessions = programme.sessions.filter((session) => session.type === "poster-session");
+  assert.equal(sessions.length, 15);
+  assert.ok(sessions.every((session) => session.room === "Poster area (Level −2)"));
+  assert.ok(programme.sessions.filter((session) => session.type === "break")
+    .every((session) => session.room === "Foyer"));
+  assert.equal(programme.sessions.find((session) => session.title === "Welcome Reception").room,
+    "Università Bocconi — Foyer");
 });
 
 test("confirmed Room 1–3 assignments retain the physical classroom codes and existing aliases", () => {

@@ -41,7 +41,8 @@ test('day and room are exact filters, with stable chronological order and no sou
 
 test('all published rooms remain selectable even when the chosen day is empty', () => {
   const rooms = programmeRooms(official.sessions);
-  assert.equal(rooms.length, 8);
+  assert.equal(rooms.length, 9);
+  assert.ok(rooms.includes('Poster area (Level −2)'));
   assert.equal(rooms[0], 'Main Hall');
   assert.ok(rooms.includes('Museo della Scienza e della Tecnica'));
   assert.deepEqual(roomSessions(official.sessions, '2026-11-14', 'Museo della Scienza e della Tecnica'), []);
@@ -159,9 +160,9 @@ test('published data retains full titles and every distinct session in the displ
 test('identical poster placeholders display once per slot, with one live focus and unchanged source data', () => {
   const original = structuredClone(official);
   for (const [day, count, slots] of [
-    ['2026-11-16', 4, ['16:30']], ['2026-11-17', 5, ['11:30', '16:00']]
+    ['2026-11-16', 2, ['16:30']], ['2026-11-17', 4, ['11:30', '16:00']]
   ]) {
-    const display = roomSessions(official.sessions, day, 'Foyer');
+    const display = roomSessions(official.sessions, day, 'Poster area (Level −2)');
     assert.equal(display.length, count);
     for (const start of slots) {
       assert.equal(display.filter(item => item.title === 'Poster session' && item.start === start).length, 1);

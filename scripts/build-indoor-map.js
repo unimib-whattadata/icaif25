@@ -164,7 +164,7 @@ const markup = `${marker}
       <section id="inside-building" class="section-space indoor-section scroll-mt-24" aria-labelledby="indoor-heading">
         <div class="site-container">
           <div class="indoor-intro"><h2 id="indoor-heading" data-index-label="Inside the building" class="section-title">Inside the building</h2><p class="venue-section-lead">Choose a floor, then select a room, area or facility.</p></div>
-          <p class="indoor-preview-note">Ground floor: entrance and registration. Level −1: Main Hall, posters, exhibition and catering. Level −2: workshop rooms AS01–AS03.</p>
+          <p class="indoor-preview-note">Ground floor: entrance and registration. Level −1: Main Hall, exhibition and catering. Level −2: posters between Aula Magna and the workshop classrooms AS01–AS03.</p>
           <div class="indoor-explorer" data-indoor-map>
             <div class="indoor-toolbar">
               <div class="indoor-floor-picker" role="group" aria-label="Choose a floor">${data.floors.map(floor => `<a class="btn indoor-floor-button" href="#floor-${floor.id}" data-floor-choice="${floor.id}" aria-label="${escape(floor.name)}"><span class="indoor-floor-label">${escape(floor.short)}</span><span class="indoor-floor-compact" aria-hidden="true">${escape(floor.compact || floor.short)}</span></a>`).join('')}</div>
