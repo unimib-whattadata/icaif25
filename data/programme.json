@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -135,7 +135,7 @@
     },
     {
       "id": "session-2026-11-14-1100-6193b532",
-      "date": "2026-11-14",
+      "date": "2026-11-15",
       "start": "11:00",
       "end": "13:00",
       "title": "Amortized Bayesian Calibration of Volatility Models",

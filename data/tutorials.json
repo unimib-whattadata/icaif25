@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-11-13",
   "source": "Tutorial titles, presenters and abstracts supplied for publication on 8 October 2026; rooms checked against the conference programme.",
   "tutorials": [
     {
@@ -22,13 +22,13 @@
     {
       "id": "bayesian-volatility-calibration",
       "indexLabel": "Bayesian calibration",
-      "date": "2026-11-14",
+      "date": "2026-11-15",
       "start": "11:00",
       "end": "13:00",
       "room": "Room 3",
       "title": "Amortized Bayesian Calibration of Volatility Models",
       "presenters": [
-        { "name": "Francesco Muia", "affiliation": "PyMC Labs" },
+        { "name": "Francesco Muia", "affiliation": "AI & Analytics Solutions di Muia Francesco" },
         { "name": "Alexander Fengler", "affiliation": "Brown University" },
         { "name": "Stefan T. Radev", "affiliation": "Rensselaer Polytechnic Institute" },
         { "name": "Jerry M. Huang", "affiliation": "Rensselaer Polytechnic Institute" }

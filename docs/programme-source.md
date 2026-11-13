@@ -19,6 +19,10 @@ npm run build
 
 The build regenerates the pages and canonical routes and runs the existing checks. Do not edit generated programme markup directly. The dated notes below retain source provenance and historical decisions; their former import procedures are superseded by this JSON workflow.
 
+## Bayesian calibration tutorial — November 13, 2026
+
+The user confirms moving “Amortized Bayesian Calibration of Volatility Models” from Saturday November 14 to **Sunday November 15, 11:00–13:00 CET, Room 3**, retaining its existing two-hour duration. Francesco Muia's affiliation is now **AI & Analytics Solutions di Muia Francesco**, replacing PyMC Labs. Both public JSON sources agree; the existing tutorial anchor and programme session ID `session-2026-11-14-1100-6193b532` remain stable for links and saved agendas. The date embedded in that historical ID does not determine its current schedule. This decision supersedes the original tutorial slots below. Whova is managed separately and is not synchronized by this site's build.
+
 ## Fireside title and oral presentation order — November 10, 2026
 
 The user approved two updates from the November 10 correspondence:
