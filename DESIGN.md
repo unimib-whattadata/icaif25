@@ -304,7 +304,7 @@ The programme uses native daisyUI `input` and `select` controls with visible lab
 
 ### Navigation
 
-The registration status notice sits immediately below the primary navigation on every page. It uses a square-edged, full-width copper band with white text, the shared container and responsive gutters. Lead with virtual registration being open and an underlined link explicitly restricted to virtual attendance, then state that in-person registration is closed and retain the email link for late in-person enquiries. Keep the notice in static HTML and allow its complete text and links to wrap on phones.
+The registration status notice sits immediately below the primary navigation on every page. It uses a square-edged, full-width copper band with white text, the shared container and responsive gutters. Show “If you haven't registered in advance, you can register on-site at Bocconi University.” with “register on-site at Bocconi University” in bold. Keep the notice in static HTML and allow its complete text to wrap on phones.
 
 The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
