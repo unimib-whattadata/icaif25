@@ -102,7 +102,7 @@ Keep the desktop navigator 240px wide at every desktop height. Reserve its right
 
 Public workshop agendas stay inside their existing cards as native daisyUI `details` / `summary` disclosures. Summaries show date, room and CET; ordered list rows keep times compact beside wrapping titles and smaller presenter text. Preserve organiser-supplied timing, remote participation and explicit pending details in static HTML. The shared mobile card disclosure remains unchanged. Publish the participant-facing agenda rather than operational attachments; sources and corrections are in `docs/email-review-2026-11-13.md`.
 
-Supplied workshop portraits use the existing round photographic treatment with live names/roles, two columns on phones and three from 640px, and lazy-loaded local WebP images with intrinsic dimensions and source records. RAIOps4Fin, MFMB and the existing Women in AI and Finance card contain these groups; the newly added Women Home section was removed at the user's request. Keep that correction. This extension adds no palette, font, global token, runtime or motion. Detailed scope and evidence are in `.impeccable/surfaces/workshop-html.md`.
+At the user’s request, workshop programmes do not show speaker photos. Preserve the supplied speaker names and roles as native text lists alongside the detailed agendas. The Women in AI and Finance Home section also remains removed. Detailed scope and evidence are in `.impeccable/surfaces/workshop-html.md`.
 
 ## Tutorials
 

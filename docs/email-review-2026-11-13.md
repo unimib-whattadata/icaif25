@@ -41,11 +41,13 @@ The new agendas also include AI4F 107 and Private Markets 1177, 1286, 1331 and 1
 
 ## Speaker photos
 
+Superseding user correction: remove all speaker photographs from the workshop programmes. Retain the supplied names and roles as text lists and keep the six detailed agendas. The following notes record the source and historical preparation of the earlier portraits, which are no longer displayed.
+
 Sources: [Women in AI and Finance thread, Marco's dedicated-home-section proposal and Rachel's replacement photo](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1b762386e4d10c), [workshop speaker photographs](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1cae88e94f3abc).
 
 At the user’s latest request, the dedicated Women in AI and Finance section is omitted from Home. The existing workshop card adds the five supplied photos: Tingting (Rachel) Chung, Hao Ni, Mariam Barry, Claire Nouet and Francesca Primavera. RAIOps4Fin adds its six supplied keynote/panel portraits; MFMB adds Anton Repushko and Tadas Kriščiūnas with the supplied Revolut roles.
 
-Thirteen organiser-supplied originals were converted to WebP and only resized downward to at most 640px on the longer side. No portraits were generated or retouched. Each served file embeds its origin and has a source sidecar in `img/speakers/workshops/`; the source scan reports zero missing records.
+Thirteen organiser-supplied originals were converted to WebP and only resized downward to at most 640px on the longer side. No portraits were generated or retouched. Those earlier files carried embedded origins and source sidecars; they were removed with the unused portrait assets after the user requested text-only workshop programmes. Their source records remain in Git history.
 
 ## Verification and scope
 
