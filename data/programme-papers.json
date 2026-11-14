@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "source": "https://docs.google.com/spreadsheets/d/15Tzag9s0ami_aYx9tWdSVojb7uQPa13c61Il2yiXJqE/edit",
   "groups": [
     {
@@ -110,7 +110,8 @@
       "title": "Oral Session 12: Reliability of Foundation Models in Finance",
       "paperIds": [
         702,
-        974
+        974,
+        1092
       ]
     },
     {
@@ -270,7 +271,6 @@
         1050,
         1061,
         1074,
-        1092,
         1106,
         343
       ]

@@ -1,5 +1,9 @@
 # Programme data
 
+## Paper 1092 — Oral Session 12 — November 14, 2026
+
+The user authorizes applying [Andrea Maurino's November 13 confirmation](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d5f5c7026823e), moving paper **1092**, “Adversarial Post-Training of Foundation Models for High-Frequency Trading”, from **Poster Session 3** to **Oral Session 12**, Tuesday November 17, **10:00–11:00 CET, Room 3**, on the website and Whova. Append it after 702 and 974 because no intervention order was supplied. Oral Session 12 has **3 presentations** and Poster Session 3 has **33 posters**. Both programme assignment sources and Accepted Papers agree. Preserve the paper title, authors and anchor, all session identities and timetable fields, and existing Whova Zoom streams.
+
 Latest November 13 session, workshop-timetable and paper 392 corrections: [Gmail review and evidence](email-review-2026-11-13.md). These confirmed updates supersede earlier provisional times and descriptions below where specified; existing session IDs remain stable.
 
 ## Current workflow — November 9, 2026

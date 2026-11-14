@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "groups": [
     {
       "id": "oral",
@@ -249,6 +249,11 @@
           "id": 1079,
           "title": "A Decaying Buffer: How Median-of-Three Mark Pricing Retimes Liquidation on a Decentralized Perpetual Exchange",
           "authors": "Yihan Guo (Nanyang Technological University)"
+        },
+        {
+          "id": 1092,
+          "title": "Adversarial Post-Training of Foundation Models for High-Frequency Trading",
+          "authors": "Alexandre Bismuth (BOLD, University of Oxford); Kang Li (University of Oxford); Aramis Marti-Shahandeh (University of Oxford); Valentin Mohl (University of Oxford); Jakob Foerster (University of Oxford); Anisoara Calinescu (University of Oxford)"
         },
         {
           "id": 1095,
@@ -795,11 +800,6 @@
           "id": 1074,
           "title": "Don’t Trust, Verify: Adaptive Multi-Agent Feature Engineering for Financial Fraud Detection",
           "authors": "Rishit Jakharia (Mastercard); Subhajit Tarafdar (Mastercard); Anand Vir Singh Chauhan (Mastercard); Anubha Pandey (Mastercard)"
-        },
-        {
-          "id": 1092,
-          "title": "Adversarial Post-Training of Foundation Models for High-Frequency Trading",
-          "authors": "Alexandre Bismuth (BOLD, University of Oxford); Kang Li (University of Oxford); Aramis Marti-Shahandeh (University of Oxford); Valentin Mohl (University of Oxford); Jakob Foerster (University of Oxford); Anisoara Calinescu (University of Oxford)"
         },
         {
           "id": 1106,

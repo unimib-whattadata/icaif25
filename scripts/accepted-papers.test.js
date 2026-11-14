@@ -10,7 +10,7 @@ const source = JSON.parse(fs.readFileSync(path.join(root, 'data/accepted-papers.
 
 test('publication has all 212 listed papers and applies the later paper 136 correction', () => {
   assert.equal(validateAcceptedPapers(source), 212);
-  assert.deepEqual(source.groups.map(group => group.papers.length), [51, 108, 53]);
+  assert.deepEqual(source.groups.map(group => group.papers.length), [52, 107, 53]);
   const containing = source.groups.filter(group => group.papers.some(paper => paper.id === 136));
   assert.deepEqual(containing.map(group => group.id), ['poster']);
   assert.match(containing[0].papers.find(paper => paper.id === 136).title, /^FAAB:/);

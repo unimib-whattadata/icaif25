@@ -1,5 +1,7 @@
 # Accepted papers publication source
 
+On November 14, the user authorizes moving paper **1092** from poster to oral presentation, following [Andrea Maurino's November 13 confirmation](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d5f5c7026823e). It moves from Poster Session 3 to Oral Session 12, retaining its public title, authors and stable anchor. Current totals: **212 papers, 52 oral, 107 poster, 53 proceedings-only**. See [the programme source](programme-source.md) for the session details and order.
+
 On November 13, [Andrea Maurino confirms](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d5f35bd02bc0d) paper 392 as proceedings only. Preserve its public title/authors and stable paper anchor, and remove its Oral Session 12 assignment from both programme sources. Current totals: **212 papers, 51 oral, 108 poster, 53 proceedings-only**. See [the Gmail review](email-review-2026-11-13.md) for evidence and the separate unresolved CMT 600 discrepancy.
 
 ## Current workflow — November 9, 2026
