@@ -1,5 +1,11 @@
 # Programme data
 
+## Paper 447 — Monday poster — November 14, 2026
+
+The user authorizes [Andrea Maurino's November 14 request](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d9441aed0843c) to add CMT **447**, “TRACE-Default: Temporally Calibrated and Capacity-Constrained Early Warning of Corporate Default”, to Monday's poster session on the website and Whova. It is appended to **Poster Session 1, Monday November 16, 16:00–16:30 CET, Poster area (Level −2)**, retaining all existing contribution order and session fields. Both programme JSON sources agree; the session now has **40 posters**. No individual presentation time is inferred. Paper 600 is added only to the proceedings catalogue and has no programme assignment. Source identity and author provenance are recorded in `docs/accepted-papers-source.md`.
+
+Whova's session was saved and reopened: all original 39 contributions remain in order, followed by 447, with a 40-poster count. The Papers resource retains all 215 PDF links and now maps TAPS 55 to CMT 447 and TAPS 90 to CMT 600, explicitly labelled proceedings only. No session date, time, location or stream changed. The full website build and existing checks pass.
+
 ## Paper 1092 — Oral Session 12 — November 14, 2026
 
 The user authorizes applying [Andrea Maurino's November 13 confirmation](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d5f5c7026823e), moving paper **1092**, “Adversarial Post-Training of Foundation Models for High-Frequency Trading”, from **Poster Session 3** to **Oral Session 12**, Tuesday November 17, **10:00–11:00 CET, Room 3**, on the website and Whova. Append it after 702 and 974 because no intervention order was supplied. Oral Session 12 has **3 presentations** and Poster Session 3 has **33 posters**. Both programme assignment sources and Accepted Papers agree. Preserve the paper title, authors and anchor, all session identities and timetable fields, and existing Whova Zoom streams.

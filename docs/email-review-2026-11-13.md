@@ -1,5 +1,7 @@
 # Website updates from Gmail — November 13, 2026
 
+November 14 follow-up: the CMT 600/TAPS 90 identity discrepancy below is resolved using the matching title, authors and original PDF. CMT 447/TAPS 55 is reinstated for Monday's poster session. Both website and Whova updates, including the 40-poster session and corrected resource identifiers, are verified. See `docs/accepted-papers-source.md` and `docs/programme-source.md` for current totals and provenance. The November 14 Home invitation supersedes the earlier Home-section removal described below; Beatrice Cicerchia's proposed addition remains excluded at the user's request.
+
 Reviewed recent ICAIF correspondence in Marco's university Gmail account, including the November 13 replies and workshop programmes supplied November 11–13. Compared requests with the existing website before editing. No Gmail message was sent or modified.
 
 ## Conference programme

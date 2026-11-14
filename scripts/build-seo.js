@@ -22,7 +22,7 @@ const setMeta = (html,key,name,value) => html.replace(/<meta\b[^>]*>/g,tag=>attr
   ? `<meta ${key}="${name}" content="${escape(value)}">` : tag);
 const descriptions = {
   'workshop-papers.html': 'Browse 111 ICAIF 2026 workshop papers across nine workshops, with poster presentations labelled and presenting authors underlined.',
-  'accepted-papers.html': 'Browse the 212 accepted ICAIF 2026 papers: oral presentations, poster presentations and proceedings only, with titles, authors and affiliations.',
+  'accepted-papers.html': 'Browse the 214 accepted ICAIF 2026 papers: oral presentations, poster presentations and proceedings only, with titles, authors and affiliations.',
   'index.html': 'ICAIF 2026, the 7th ACM International Conference on AI in Finance, takes place in Milan on November 14–17. Explore the programme, venue and registration.',
   'call-for-papers.html': "Requirements, research topics and review policies for the ICAIF '26 paper call. Main conference in Milan, Italy, November 16–17, 2026.",
   'call-for-workshop-proposals.html': "Workshop proposal requirements and paper deadlines for ICAIF '26. Explore the accepted workshops in Milan, Italy, November 14–15, 2026.",

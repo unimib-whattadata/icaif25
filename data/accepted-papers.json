@@ -387,6 +387,11 @@
           "authors": "Ajay Poppur Suresh (Affirm); Chencheng Guo (Affirm); Chinmay Raval (Affirm); Alexander Statnikov (Affirm)"
         },
         {
+          "id": 447,
+          "title": "TRACE-Default: Temporally Calibrated and Capacity-Constrained Early Warning of Corporate Default",
+          "authors": "BHUVANESWARI U (Standard Chartered Bank); Jie Huang (Standard Chartered Bank); Balaji Ramanujam (Standard Chartered Bank)"
+        },
+        {
           "id": 449,
           "title": "More Mentions, Less Information? Diagnosing Identity and Alignment in Reddit Embeddings for Volatility Forecasting",
           "authors": "Zhiyu Zheng (University of Chicago)"
@@ -911,6 +916,11 @@
           "id": 565,
           "title": "Lie-DCC: Gated Lie-Algebraic Residual Learning for Reliable Dynamic Covariance Forecasting",
           "authors": "Ke Liu (SCUEC); Liyu Gong (Oracle Inc); Longjiao Zhang (Oracle Inc); Genyi Huang (Oracle Inc)"
+        },
+        {
+          "id": 600,
+          "title": "A Governance Control-Plane for Agentic AI in Regulated Financial Systems: A Fraud-Detection Case Study",
+          "authors": "Sirisha Cherala (SoFi Technologies); Sai Sri Harsha Kanamanapalli (Independent Research)"
         },
         {
           "id": 634,
