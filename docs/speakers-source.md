@@ -1,5 +1,17 @@
 # Home speaker portraits
 
+## Women in AI and Finance — November 14, 2026
+
+Marco explicitly requested a dedicated Home invitation to this session, with the supplied photographs harmonized before publication, then clarified that facial lighting should also match while facial features remain unchanged. This supersedes the November 13 removal of the Home section. Workshop pages and workshop programmes remain photograph-free.
+
+The [organizers' email thread](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1b762386e4d10c) supplies the title “Women in AI and Finance: Cultivating Mentorship, Encouraging Growth” and five names. Isabel Leong's November 10 message includes `Hao-Ni.jpg`, `Mariam-Barry.jpeg`, `Claire-Nouet.jpg` and `Francesca-Primavera.jpeg`; these were also forwarded by Monica Rossolini on November 11. Rachel's later November 10 message explicitly replaces her earlier photograph with `A1 Chung CMU front 2.jpg`, which is the source used here. No additional affiliations or speaker-specific time slots are inferred.
+
+The built-in image generator edited each original separately against the approved `assets/speakers/studio-backdrop-v1.png`, with the existing Daniele Magazzeni studio portrait used solely as a background, framing and lighting reference. Instructions require navy/slate with restrained copper, consistent soft daylight illumination, exposure and white balance, and preservation of identity, facial geometry, expression, gaze, skin tone, texture, clothing and accessories. Results were compared visually with the originals; Mariam's 200px and Francesca's 256px sources limit fine-detail comparison. This is photographic background/lighting harmonization, with no requested facial retouching.
+
+The five published files are `img/speakers/studio/{rachel-chung,hao-ni,mariam-barry,claire-nouet,francesca-primavera}-v1.webp` (640 × 640). Exact final prompts are recorded in `docs/women-studio-prompts.json` and each WebP's provenance sidecar. Source originals and selected full-resolution outputs remain locally in `output/women-studio/`; superseded background-only variants are not used by the site.
+
+Home gives a direct invitation, the supplied subtitle and names, and the current `data/programme.json` slot: November 14, 16:30–18:00 CET, Room 2. Its programme action selects `session-2026-11-14-1630-28c2961d`; a second link opens the existing workshop description. No stream or virtual-access claim is added.
+
 ## Marc Mézard reception link — November 9, 2026
 
 The approved programme consistency correction moves Home's Marc Mézard appearance badge and accessible label from the November 16 banquet to “Welcome Reception speech”, November 15. Its link selects `session-2026-11-15-1900-36beb319`, now scheduled from 18:30 at Università Bocconi, foyer, Level −1. The stable historical `1900` segment of the ID is retained. This supersedes the October 31 Home link recorded below.

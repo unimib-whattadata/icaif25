@@ -6,6 +6,8 @@ All pages with primary navigation show the same registration status banner immed
 
 ## Shared styles
 
+Home includes a dedicated “Join Women in AI and Finance” invitation after Our speakers, as requested November 14, 2026. Use the incumbent pale-slate section, shared heading scale, neutral native programme action, semantic session times and circular 128/160px portraits. The five portraits match the approved navy/slate studio background and soft facial lighting; exact prompts and Gmail sources are documented in `docs/speakers-source.md` and `docs/women-studio-prompts.json`. Keep this Home invitation separate from the main-speaker list. Workshop pages and detailed workshop programmes retain text-only speaker lists.
+
 | Class | Use |
 | --- | --- |
 | `site-nav` | Primary navigation on every page; light dropdowns explicitly use `text-base-content`. |
@@ -102,7 +104,7 @@ Keep the desktop navigator 240px wide at every desktop height. Reserve its right
 
 Public workshop agendas stay inside their existing cards as native daisyUI `details` / `summary` disclosures. Summaries show date, room and CET; ordered list rows keep times compact beside wrapping titles and smaller presenter text. Preserve organiser-supplied timing, remote participation and explicit pending details in static HTML. The shared mobile card disclosure remains unchanged. Publish the participant-facing agenda rather than operational attachments; sources and corrections are in `docs/email-review-2026-11-13.md`.
 
-At the user’s request, workshop programmes do not show speaker photos. Preserve the supplied speaker names and roles as native text lists alongside the detailed agendas. The Women in AI and Finance Home section also remains removed. Detailed scope and evidence are in `.impeccable/surfaces/workshop-html.md`.
+At the user’s request, workshop programmes do not show speaker photos. Preserve the supplied speaker names and roles as native text lists alongside the detailed agendas. The dedicated Women in AI and Finance invitation on Home was restored at the user's explicit November 14 request, with the separate portrait treatment described above. Detailed workshop scope and evidence are in `.impeccable/surfaces/workshop-html.md`.
 
 ## Tutorials
 
