@@ -1,5 +1,9 @@
 # Accepted papers publication source
 
+## ACM proceedings link — November 14, 2026
+
+The user supplies the [ACM proceedings URL](https://dl.acm.org/doi/proceedings/10.1145/3858063) and requests adding it to the website. Home's hero and the Accepted Papers header provide an “ACM proceedings” action linking to this exact address. Both use native daisyUI buttons and open the ACM Digital Library in a new tab with an accessible disclosure. The Accepted Papers builder owns its generated link, including the canonical route. No publication titles, authors, categories or counts change.
+
 ## Papers 447 and 600 — November 14, 2026
 
 The user authorizes the remaining Gmail updates on the website and Whova, excluding Beatrice Cicerchia's Home addition. [Andrea Maurino's November 14 request](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d9441aed0843c) restores CMT **447** as a Monday poster. The author recipient's address matches BHUVANESWARI U in the original TAPS 55 PDF, “TRACE-Default: Temporally Calibrated and Capacity-Constrained Early Warning of Corporate Default”, by BHUVANESWARI U, Jie Huang and Balaji Ramanujam, all Standard Chartered Bank. This identity match reconciles the previously missing TAPS-to-CMT mapping; the November 4 mapping predates the reinstatement. The complete supplied author order and public affiliations come from the original PDF, not the email's administrative discussion.
