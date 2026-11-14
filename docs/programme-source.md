@@ -1,5 +1,15 @@
 # Programme data
 
+## Sunday industry session revision — November 14, 2026
+
+The user authorizes applying Andrea Prampolini's [November 14 email, “altre modifiche programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d9f0dd1239633) to the website. It replaces the descriptions of the two existing **Sunday November 15, Main Hall** industry sessions, superseding the earlier Sunday descriptions below.
+
+The **08:30–10:30 CET** session retains the title “AI in Financial Services: From Readiness to Governance in Action”. Its supplied running order is **08:45** opening by Sammy Assefa (Wellington Management), **09:00** FINOS governance-as-code demo by Luca Borella (FINOS, Algoritmica.ai), **09:15** fireside chat with Bhaskarjit Sarmah (Domyn), **09:30** “From Vision to Production: AI That Delivers Value” by Laura Cavazzana (DXC), and **10:00** “Compositional drift along the agentic chain and MLOps” by Fernando Salguiero (DXC) and Vincenzo Gaudenzi (DXC). The separate “DXC Spotlight” line is removed. The session chair is Andrea Prampolini (Intesa Sanpaolo). The session still starts at 08:30 as explicitly supplied; no activity is inferred for the interval before the opening.
+
+The **14:00–16:00 CET** session retains the title “AI in quantitative investment and the future of research”. The replacement text explicitly labels Marco Lopez de Prado's “What is the False Discovery Rate in Finance?” as a keynote, groups the panel title, four participants and moderator into the supplied paragraph, and uses “Keynote: Sandy Pentland (Stanford University, MIT)”. No individual afternoon times are supplied or inferred. Public names and affiliations follow the email.
+
+Both session IDs, titles, dates, start/end times, types, rooms and links remain stable, as do all other sessions and paper assignments. The JSON update date and programme metadata remain **November 14, 2026**. The generated programme and canonical route share the replacement descriptions; printing, calendar export and the screensaver consume the same updated programme data.
+
 ## Paper 447 — Monday poster — November 14, 2026
 
 The user authorizes [Andrea Maurino's November 14 request](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d9441aed0843c) to add CMT **447**, “TRACE-Default: Temporally Calibrated and Capacity-Constrained Early Warning of Corporate Default”, to Monday's poster session on the website and Whova. It is appended to **Poster Session 1, Monday November 16, 16:00–16:30 CET, Poster area (Level −2)**, retaining all existing contribution order and session fields. Both programme JSON sources agree; the session now has **40 posters**. No individual presentation time is inferred. Paper 600 is added only to the proceedings catalogue and has no programme assignment. Source identity and author provenance are recorded in `docs/accepted-papers-source.md`.

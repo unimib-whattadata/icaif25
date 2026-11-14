@@ -285,7 +285,7 @@
       "title": "AI in Financial Services: From Readiness to Governance in Action",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "Opening: Sammy Assefa (Wellington Management)\nFINOS approach to governance as code, with demo.\nDXC Spotlight\nFrom Vision to Production: AI That Delivers Value\nCompositional drift along the agentic chain and MLOps",
+      "detail": "08:45 Opening: Sammy Assefa (Wellington Management)\n09:00 FINOS approach to governance as code, with demo. Luca Borella (FINOS, Algoritmica.ai)\n09:15 Fireside chat with Bhaskarjit Sarmah (Domyn)\n09:30 From Vision to Production: AI That Delivers Value. Laura Cavazzana (DXC)\n10:00 Compositional drift along the agentic chain and MLOps. Fernando Salguiero (DXC) and Vincenzo Gaudenzi (DXC)\nSession Chair: Andrea Prampolini (Intesa Sanpaolo)",
       "pending": false,
       "href": ""
     },
@@ -417,7 +417,7 @@
       "title": "AI in quantitative investment and the future of research",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\".\nAgostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab).\nModerator: Andrea Prampolini (Intesa Sanpaolo)\nKeynote Speech: Sandy Pentland (Stanford University, MIT)",
+      "detail": "Keynote: Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\". Agostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab). Moderator: Andrea Prampolini (Intesa Sanpaolo)\nKeynote: Sandy Pentland (Stanford University, MIT)",
       "pending": false,
       "href": ""
     },
