@@ -1,5 +1,19 @@
 # Programme data
 
+## IAFM’26 and AI in Private Markets — November 15, 2026
+
+The user authorizes publishing [Alan Perotti's IAFM’26 programme](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1dc9086a336cee) and [Jasmine Lyu's final AI in Private Markets workbook](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1deafb1c624310), attachment `Structuring the Unstructured_ AI in Private Markets 1 (1).xlsx`. Both use **Sunday November 15, CET** and the existing rooms and stable session IDs. The workshop cards retain the native detailed-programme disclosures and text-only names used by the other confirmed workshops.
+
+**IAFM’26, Room 2:** opening 14:00–14:30; papers 1224 14:30–14:55, 1261 14:55–15:20, 1283 15:20–15:40 and 1326 15:40–16:00; coffee 16:00–16:30; papers 1319 16:30–16:50, 1159 16:50–17:10, 1260 17:10–17:30 and 1270 17:30–17:50; closing 17:50–18:00. All papers are oral; only 1159 and 1260 are remote. The supplied lists are shown as authors, without inferring actual presenters or a session chair. Replace the provisional closing-panel claim with the confirmed eight-talk format. The conference blocks remain **14:00–16:00 / 16:30–18:00**.
+
+**AI in Private Markets, Room 3:** opening with Dhagash Mehta 13:30–13:40; panel with Deepika Sharma and Jason Mather, moderated by Tina Zhao (all remote), 13:40–14:20; 1346 (Kelvin Koa) 14:20–14:35; 1235 (Yang Wang) 14:35–14:50; Sudheer Chava keynote 14:50–15:20; poster session and coffee 15:20–16:15, with 1192 (Zihong Liu), 1331 and 1333 (Dhagash Mehta); Shawn Bercuson keynote, remote, 16:15–16:45; 1296 (Durjoy Dey) 16:45–17:00; closing with Dhagash Mehta 17:00–17:15. Chairs remain Dhagash Mehta and Tina Zhao. Dhagash Mehta and Evan Schnidman are no longer listed as panelists in the replacement agenda; their workshop organizer roles remain intact.
+
+The Private Markets conference blocks become **13:30–15:20 / 16:15–17:15**, matching the new keynote boundary and closing time. The workshop's own **15:20–16:15** poster/coffee interval is preserved in its detailed agenda. Lyu asks whether this aligns with conference coffee; no organizer reply confirms a conference-wide change, so the common **16:00–16:30** break is retained. The final agenda supersedes the prior 1177 and 1244 talk slots and the prior 1246/1286 poster listings. Catalogue treatment and remaining author-list gaps are documented in `docs/workshop-papers-source.md`.
+
+Programme and catalogue update dates, workshop-page metadata and sitemap use **November 15, 2026**. Main-conference papers, chairs, timetable fields and all other workshops are retained.
+
+Verification: the full build passes **81 tests**, JavaScript syntax, HTML validation and source/route checks for **23 canonical pages**. Browser checks confirm both detailed agendas open on desktop and mobile, with no horizontal overflow at **390px** and no workshop speaker photos. Readback confirms only the two Private Markets block end times changed in the conference timetable; all other workshop catalogue groups are identical to the prior publication.
+
 ## Papers 820, 757, 639 and 607 — November 15, 2026
 
 The user authorizes the four November 15 organizer decisions recorded in `docs/accepted-papers-source.md`. Remove **757** from Oral Session 7 and append **820** after the remaining papers, giving **762, 405, 820**. No presentation order was supplied for 820; the other papers retain their relative order. Oral Session 7 remains **Monday November 16, 15:00–16:00 CET, Room 2**, with **3 presentations** and the confirmed chair Hongyu Lin (UCL).

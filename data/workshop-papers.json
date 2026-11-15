@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "groups": [
     {
       "id": "responsible-ai-operations-finance",
@@ -169,42 +169,56 @@
           "title": "What Post-hoc Attributions of FRTB-IMA Capital Answer",
           "authors": "Yuhe Sui; Yingzhi Tang",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
         },
         {
           "id": 1224,
           "title": "The Recourse Test: Do LLM Adverse-Action Explanations Survive Repair-and-Replay?",
           "authors": "Jonathan Chang",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
         },
         {
           "id": 1260,
           "title": "PolicyAttention: A Certifiable and Testable Update Rule for Attention-Based Allocation Controllers",
           "authors": "Shufang Chen; Yuhe Sui; Yingzhi Tang; Xinyue Wu",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
         },
         {
           "id": 1261,
           "title": "Inside Chat Bankman-Fried: Geometric Insights into LLM Alignment in Finance",
           "authors": "Chiara Coltellacci; Anastasia Di Blasio; Giulia Iadisernia; Carolina Camassa; Diego Doimo; Andrea Coletta; Aldo Glielmo; Anna Russo Russo",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
+        },
+        {
+          "id": 1270,
+          "title": "Explainability-Informed Evaluation of AI Challengers for Heston Option Pricing: Comparator Choice, Regime Dependence, and Model Risk",
+          "authors": "Bhupendra Kumar Singh; Kashmala Mangrio; Umer Ijaz",
+          "presenters": [],
+          "presentation": "oral"
+        },
+        {
+          "id": 1283,
+          "title": "Two Sides of the Same €-coin: Explaining Euro-Area Economic Activity with Interventional and Observational SHAP",
+          "authors": "Aldo Glielmo; Andrea Coletta; Cristina Conflitti; Giordano Zevi",
+          "presenters": [],
+          "presentation": "oral"
         },
         {
           "id": 1319,
           "title": "Text as Structure, Not Signal: Text-Aligned Groups for Distributionally Robust Stock Ranking",
           "authors": "Jiwon Park; Namhyoung Kim; Sungweon Shin; Jae Wook Song",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
         },
         {
           "id": 1326,
           "title": "AssetDART: Interpreting Neural Portfolio Models Through Decision Regimes",
           "authors": "Silu Li; John Mulvey; Siyu Li",
           "presenters": [],
-          "presentation": null
+          "presentation": "oral"
         }
       ]
     },
@@ -711,14 +725,18 @@
           "id": 1192,
           "title": "Structuring the Sourcing Funnel: Uncertainty-Routed Dual-Process Screening in Private Markets",
           "authors": "Zihong Liu (LSE); Song Yang (UCL); Marcos Barreto (LSE)",
-          "presenters": [],
+          "presenters": [
+            "Zihong Liu"
+          ],
           "presentation": "poster"
         },
         {
           "id": 1235,
           "title": "Reasoning Is Latency: Endogenous Information Processing and Execution in AI Trading",
           "authors": "Yang Wang (Alibaba Group)",
-          "presenters": [],
+          "presenters": [
+            "Yang Wang"
+          ],
           "presentation": "oral"
         },
         {
@@ -739,14 +757,18 @@
           "id": 1296,
           "title": "Trustworthy LLM-Assisted Venture Screening: Auditing, Diagnosing, and Improving Expert Alignment",
           "authors": "Durjoy Dey (Concordia University); Jisan Ahmed (Shahjalal University of Science and Technology); Samiul Islam Mugdha (Shahjalal University of Science and Technology); Tausif Ahmed (University of Cincinnati); Yuhong Yan (Concordia University)",
-          "presenters": [],
+          "presenters": [
+            "Durjoy Dey"
+          ],
           "presentation": "oral"
         },
         {
           "id": 1346,
           "title": "Don't Model the Price, Model the Investors: Price Forecasting through Agent Role Learning with On-Policy Distillation",
           "authors": "Kelvin Koa (National University of Singapore); Ziling Liu (National University of Singapore); Yuncong Liu (National University of Singapore); Zhengxi Qian (National University of Singapore); Shengqiong Wu (University of Oxford); Michael Wooldridge (University of Oxford); Ke-Wei Huang (National University of Singapore)",
-          "presenters": [],
+          "presenters": [
+            "Kelvin Koa"
+          ],
           "presentation": "oral"
         }
       ]

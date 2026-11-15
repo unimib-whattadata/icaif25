@@ -1,5 +1,17 @@
 # Workshop paper publication
 
+## IAFM’26 and AI in Private Markets — November 15, 2026
+
+The user authorizes the two remaining workshop updates identified in the Gmail review. [Alan Perotti's November 15 programme](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1dc9086a336cee) confirms **eight IAFM’26 oral presentations**, with **1159 and 1260 remote** and all others in person; there are no posters or closing panel. Add the complete supplied titles and author lists for **1270** and **1283**, without inventing affiliations. Normalize the email's misdecoded euro sign to **€** in 1283's title. Mark all eight papers oral. The parenthesized name lists identify authors, not a singled-out presenter, so no presenting-author annotations are inferred.
+
+[Jasmine Lyu's November 15 final programme](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1deafb1c624310), attachment `Structuring the Unstructured_ AI in Private Markets 1 (1).xlsx`, supersedes the earlier November 13/14 agendas. Update the existing catalogue presenter fields for **1192 (Zihong Liu), 1235 (Yang Wang), 1296 (Durjoy Dey) and 1346 (Kelvin Koa)**, matching their existing author names and preserving all author order and affiliations.
+
+The final Private Markets agenda schedules **1346, 1235 and 1296** as oral papers and **1192, 1331 and 1333** as posters. It omits the former scheduled items 1177, 1244, 1246 and 1286; the workshop timetable follows that replacement. Omission does not explicitly withdraw an accepted contribution, so existing catalogue entries **1244 and 1246** are retained. Papers **1331 and 1333** retain their supplied titles and presenter Dhagash Mehta in the detailed agenda; their full author lists are still unavailable, so complete catalogue entries are not invented. The earlier missing metadata for Private Markets 1177 and 1286 is no longer needed for the current timetable.
+
+Current catalogue totals: **113 papers, 60 posters, 49 oral presentations and 4 unspecified**, with **85 presenting author names** underlined. Publish only participant-facing titles, names, presentation modes and timings. Contact addresses, telephone numbers, connection requests and operational attachments remain private. The detailed agendas and conference-block timing are recorded in `docs/programme-source.md`. The publication update date and affected metadata are **November 15, 2026**.
+
+## November 13 corrections
+
 The November 13 organiser corrections supersede the historical snapshot below: **111 papers**, including **60 posters**, **41 oral presentations**, **10 unspecified**, with **81 presenting authors** underlined. See [the Gmail review](email-review-2026-11-13.md) for confirmed withdrawals, formats, presenters, source links and remaining metadata discrepancies.
 
 The November 2, 2026 user request selects workshop contributions from the shared
