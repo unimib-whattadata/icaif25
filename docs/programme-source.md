@@ -1,5 +1,13 @@
 # Programme data
 
+## Banquet venue correction — November 15, 2026
+
+The user confirms that the **Monday November 16 banquet dinner, 19:00–22:00 CET**, will take place at **Università Bocconi**, replacing Museo della Scienza e della Tecnica. The initial reference to November 15 was explicitly corrected to November 16. No particular room or floor was supplied, so none is inferred. The session ID, title, date, times, Marc Mézard speech and QRT awards ceremony are retained. Sunday's Welcome Reception remains at Università Bocconi — Foyer, 18:30–22:00 CET. This correction supersedes the museum venue recorded in the earlier entries below.
+
+The screensaver continues to use the same programme data and offers only Main Hall and Room 1–3; the banquet's new campus-level location does not introduce another room page.
+
+Whova's banquet session was saved with **Università Bocconi** and read back in Session Manager, retaining November 16, 19:00–22:00, the Mézard speech and QRT awards. The separate “Welcome reception & banquet dinner” logistics item was also saved and reopened: its Monday venue and Google Maps link now point to Bocconi, and its stale Mézard paragraph is aligned with Monday's banquet. The full website build and checks pass. Readback evidence is in `output/banquet-bocconi-2026-11-15/whova-banquet.jpg`.
+
 ## Whova synchronization — November 15, 2026
 
 At the user's request, **26 existing Whova sessions** were saved and reopened against the latest website programme source: both IAFM’26 and AI in Private Markets blocks now include their detailed programmes; Private Markets ends at **15:20 / 17:15**; both Sunday industry descriptions reflect the latest speakers and running order; all **16 oral sessions** include their confirmed chairs; Oral Session 2 starts with **1016**; Oral Session 7 lists **762, 405, 820**; Poster Session 2 has **33 posters**, excluding 639 and 820; Poster Session 3 has **34 posters**, ending with 607. The final correction moves Marc Mézard's speech from Sunday's reception to Monday's banquet, retaining the QRT awards ceremony.

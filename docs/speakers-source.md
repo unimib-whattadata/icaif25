@@ -26,7 +26,7 @@ Home gives a direct invitation, the supplied subtitle and names, and the current
 
 ## Marc Mézard banquet link — November 15, 2026
 
-The user confirms Marc Mézard's speech at the **Monday November 16 dinner**. Home's existing speaker badge now says “Banquet speech / November 16”, with its accessible label and programme link targeting `session-2026-11-16-1900-9e880812`, the existing **19:00–22:00 CET** banquet at Museo della Scienza e della Tecnica. No individual speech time is inferred. This supersedes the November 9 reception placement below; the portrait and professional role are retained.
+The user confirms Marc Mézard's speech at the **Monday November 16 dinner**. Home's existing speaker badge now says “Banquet speech / November 16”, with its accessible label and programme link targeting `session-2026-11-16-1900-9e880812`, the existing **19:00–22:00 CET** banquet. A subsequent user correction places the banquet at **Università Bocconi**, replacing the museum venue. No individual speech time is inferred. This supersedes the November 9 reception placement below; the portrait and professional role are retained.
 
 ## Marc Mézard reception link — November 9, 2026
 

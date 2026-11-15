@@ -6,6 +6,7 @@
   const STORAGE_KEY = 'icaif2026-screensaver';
   const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
   const TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+  const displayRooms = new Set(['Main Hall', 'Room 1', 'Room 2', 'Room 3']);
   const controllers = new WeakMap();
   const clockFormatter = new Intl.DateTimeFormat('en-GB', {
     timeZone: TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit',
@@ -64,7 +65,7 @@
   }
 
   function programmeRooms(sessions) {
-    return [...new Set(sessions.map(session => session.room))].sort((a, b) => {
+    return [...new Set(sessions.map(session => session.room))].filter(room => displayRooms.has(room)).sort((a, b) => {
       if (a === b) return 0;
       if (a === 'Main Hall') return -1;
       if (b === 'Main Hall') return 1;

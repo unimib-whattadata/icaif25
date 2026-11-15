@@ -39,17 +39,9 @@ test('day and room are exact filters, with stable chronological order and no sou
   assert.deepEqual(roomSessions(source, '2026-11-15', 'Main'), []);
 });
 
-test('all published rooms remain selectable even when the chosen day is empty', () => {
+test('only the four conference rooms remain selectable', () => {
   const rooms = programmeRooms(official.sessions);
-  assert.equal(rooms.length, 9);
-  assert.ok(rooms.includes('Poster area (Level −2)'));
-  assert.equal(rooms[0], 'Main Hall');
-  assert.ok(rooms.includes('Museo della Scienza e della Tecnica'));
-  assert.deepEqual(roomSessions(official.sessions, '2026-11-14', 'Museo della Scienza e della Tecnica'), []);
-  const resolved = resolveSettings(official, {
-    search: '?day=2026-11-14&room=Museo+della+Scienza+e+della+Tecnica', now
-  });
-  assert.equal(resolved.room, 'Museo della Scienza e della Tecnica');
+  assert.deepEqual(rooms, ['Main Hall', 'Room 1', 'Room 2', 'Room 3']);
 });
 
 test('validated URL values override saved settings, while invalid values use saved or sensible defaults', () => {
@@ -65,10 +57,17 @@ test('validated URL values override saved settings, while invalid values use sav
     saved: { display: 'bad', day: 'old', room: 'gone', density: 'tiny' }, now
   }), { display: 'logo', day: '2026-11-15', room: 'Main Hall', density: 'comfortable' });
   assert.equal(resolveSettings(official, { saved: null, now }).room, 'Main Hall');
+  for (const room of ['Foyer', 'Università Bocconi — Foyer', 'Registration desk (Ground floor)',
+    'Museo della Scienza e della Tecnica', 'Poster area (Level −2)', 'Università Bocconi']) {
+    const search = `?room=${encodeURIComponent(room)}`;
+    assert.equal(resolveSettings(official, { search, now }).room, 'Main Hall');
+    assert.equal(resolveSettings(official, { saved: { room }, now }).room, 'Main Hall');
+    assert.equal(resolveSettings(official, { search, saved, now }).room, 'Room 1');
+  }
 });
 
-test('share URLs round-trip every setting, including exact Unicode room names', () => {
-  const settings = { display: 'programme', day: '2026-11-15', room: 'Università Bocconi — Foyer', density: 'compact' };
+test('share URLs round-trip every setting', () => {
+  const settings = { display: 'programme', day: '2026-11-15', room: 'Room 2', density: 'compact' };
   const url = new URL(settingsUrl('https://icaif2026.org/screensaver/?room=old&room=duplicate#display', settings), 'https://icaif2026.org');
   assert.equal(url.pathname, '/screensaver/');
   assert.equal(url.hash, '#display');

@@ -4,6 +4,7 @@ Open `/screensaver/` on a desktop display. Move the mouse to reveal the controls
 
 - **Display → Logo:** static ICAIF identity, moving orange orbit light and animated waves.
 - **Display → Programme:** choose a conference day and the exact room. Full session titles and Milan-local times come from `data/programme.json`. More than five sessions use two chronological columns, read down the left column and then down the right.
+- The room selector offers only Main Hall and Room 1–3, including after venue updates in the shared programme. Existing URLs and saved choices for other locations fall back to another valid saved room or Main Hall; the public conference programme keeps those events.
 - **Layout → Compact:** reduces the programme typography and spacing for a denser view.
 - Identical programme records (all fields except ID) appear once per slot in the display. Distinct sessions keep separate rows. A category matching the title is omitted.
 - **Pause / Resume:** stops or restarts both waves and the orange light. Space provides the same action outside form controls.
