@@ -586,7 +586,7 @@
       "title": "Oral Session 1: Generative Models of the Limit Order Book",
       "type": "oral-session",
       "room": "Main Hall",
-      "detail": "4 presentations",
+      "detail": "4 presentations\nSession chair: Marcello Restelli (Politecnico di Milano)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -604,14 +604,14 @@
       "title": "Oral Session 2: Market Making and Optimal Execution",
       "type": "oral-session",
       "room": "Room 1",
-      "detail": "4 presentations",
+      "detail": "4 presentations\nSession chair: Francesca Primavera (Bocconi University)",
       "pending": false,
       "href": "",
       "paperIds": [
+        1016,
         329,
         696,
-        959,
-        1016
+        959
       ]
     },
     {
@@ -622,7 +622,7 @@
       "title": "Oral Session 3: Language Models for Central Bank and Earnings Communication",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "4 presentations",
+      "detail": "4 presentations\nSession chair: Yongjae Lee (UNIST, LinqAlpha)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -640,7 +640,7 @@
       "title": "Oral Session 4: LLM Agents for Trading: Benchmarks, Governance and Evaluation",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "4 presentations",
+      "detail": "4 presentations\nSession chair: Rachel Chung (Carnegie Mellon University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -682,7 +682,7 @@
       "title": "Oral Session 5: Crypto and Decentralized Markets",
       "type": "oral-session",
       "room": "Main Hall",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Ke Yang (New York University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -699,7 +699,7 @@
       "title": "Oral Session 6: Derivatives: Hedging, Pricing and Option Surfaces",
       "type": "oral-session",
       "room": "Room 1",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Carmine Ventre (King's College London)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -716,13 +716,13 @@
       "title": "Oral Session 7: Cross-Sectional Forecasting and Asset Ranking",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Hongyu Lin (UCL)",
       "pending": false,
       "href": "",
       "paperIds": [
-        757,
         762,
-        405
+        405,
+        820
       ]
     },
     {
@@ -733,7 +733,7 @@
       "title": "Oral Session 8: Risk and Volatility Forecasting",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Bo Guo (Texas A&M University-Texarkana)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -888,7 +888,7 @@
       "title": "Oral Session 9: Credit, Portfolio Decisions and Fraud Detection",
       "type": "oral-session",
       "room": "Main Hall",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Subham Singh (Mastercard)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -905,7 +905,7 @@
       "title": "Oral Session 10: Market Dynamics: Generation, Lead–Lag and Irreversibility",
       "type": "oral-session",
       "room": "Room 1",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Francesca Primavera (Bocconi University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -922,7 +922,7 @@
       "title": "Oral Session 11: Valuation and Disclosure in Private and Prediction Markets",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Ahmed Mahrous (KAUST)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -939,7 +939,7 @@
       "title": "Oral Session 12: Reliability of Foundation Models in Finance",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Yongjae Lee (UNIST, LinqAlpha)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -956,7 +956,7 @@
       "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Poster area (Level −2)",
-      "detail": "35 posters",
+      "detail": "33 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -973,7 +973,6 @@
         616,
         626,
         633,
-        639,
         641,
         642,
         644,
@@ -993,8 +992,7 @@
         834,
         899,
         918,
-        523,
-        820
+        523
       ]
     },
     {
@@ -1077,7 +1075,7 @@
       "title": "Oral Session 13: High-Frequency Signals and Time-Series Representations",
       "type": "oral-session",
       "room": "Main Hall",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Haohan Xu (Stony Brook University, Bloomberg)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1094,7 +1092,7 @@
       "title": "Oral Session 14: Responsible AI: Bias, ESG and Compliance",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Rachel Chung (Carnegie Mellon University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1111,7 +1109,7 @@
       "title": "Oral Session 15: Learning from Market Data: Pipelines, Charts and Filtering",
       "type": "oral-session",
       "room": "Room 3",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Yihan Guo (Nanyang Technological University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1128,7 +1126,7 @@
       "title": "Oral Session 16: Financial Crime, Compliance and Rare-Event Risk",
       "type": "oral-session",
       "room": "Room 1",
-      "detail": "3 presentations",
+      "detail": "3 presentations\nSession chair: Rachel Chung (Carnegie Mellon University)",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1145,7 +1143,7 @@
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "Poster area (Level −2)",
-      "detail": "33 posters",
+      "detail": "34 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -1181,7 +1179,8 @@
         1061,
         1074,
         1106,
-        343
+        343,
+        607
       ]
     },
     {

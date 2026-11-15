@@ -1,5 +1,11 @@
 # Accepted papers publication source
 
+## Papers 820, 757, 639 and 607 — November 15, 2026
+
+The user authorizes four confirmed November 15 email decisions: [Andrea Maurino moves 820 to Oral Session 7](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1df74bb0eb4e90), [757 becomes proceedings only](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de606b80094fc), [639 becomes proceedings only](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de5dfd884a2de), and [607 is confirmed in Tuesday's Poster Session 3](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de901d347220d). Papers 757 and 639 retain their public records and anchors, with their presentation assignments removed. Paper 820 moves from poster to oral and retains its title, authors and anchor.
+
+Restore paper **607**, “When Should Humans Intervene? Capacity-Aware Oversight for Financial AI Agents”, by **Brindha Jeyaraman (Aethryx)**. These public fields come from the previously published `data/accepted-papers.json` at `389d36b^`; the title and paper ID agree with the new confirmation thread. This supersedes the November 2 removal for this paper. Private registration, travel, health and contact details are excluded. Current totals are **215 papers: 52 oral, 107 poster, 56 proceedings only**. The programme and both assignment sources agree; see `docs/programme-source.md` for the updated order and slots. Publication and affected page metadata are dated **November 15, 2026**.
+
 ## ACM proceedings link — November 14, 2026
 
 The user supplies the [ACM proceedings URL](https://dl.acm.org/doi/proceedings/10.1145/3858063) and requests adding it to the website. Home's hero and the Accepted Papers header provide an “ACM proceedings” action linking to this exact address. Both use native daisyUI buttons and open the ACM Digital Library in a new tab with an accessible disclosure. The Accepted Papers builder owns its generated link, including the canonical route. No publication titles, authors, categories or counts change.

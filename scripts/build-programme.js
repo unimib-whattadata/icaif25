@@ -74,6 +74,8 @@ function renderSession(session) {
   const pendingMessage = session.type === 'oral-session' && /^Oral Session \d+$/.test(session.title)
     ? 'Session themes, papers and authors to be announced.'
     : session.pending && !/to be confirmed/i.test(session.detail) ? 'Details to be confirmed' : '';
+  const details = (session.detail || '').split('\n').filter(line => line &&
+    (!session.papers?.length || !/^\d+ (?:presentations|posters)$/.test(line)));
   return `              <article id="${escape(session.id)}" class="programme-session" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">
                 <div class="programme-session-overview">
                 <div class="programme-session-meta">
@@ -83,7 +85,7 @@ function renderSession(session) {
                 <div class="programme-session-body">
                 <h4 class="programme-session-title">${title}</h4>
                 <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
-                ${session.detail && !session.papers?.length ? session.detail.split('\n').map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ') : ''}
+                ${details.map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ')}
                 ${session.livestreamUrl ? `<p class="programme-detail"><a class="link inline-flex min-h-11 items-center gap-2" href="${escape(session.livestreamUrl)}" target="_blank" rel="noopener noreferrer"><img src="/img/icons/zoom.svg" alt="" width="28" height="28" class="shrink-0">Watch live on Zoom</a></p>\n                ` : ''}${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 </div>

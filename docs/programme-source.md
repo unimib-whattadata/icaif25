@@ -1,5 +1,21 @@
 # Programme data
 
+## Papers 820, 757, 639 and 607 — November 15, 2026
+
+The user authorizes the four November 15 organizer decisions recorded in `docs/accepted-papers-source.md`. Remove **757** from Oral Session 7 and append **820** after the remaining papers, giving **762, 405, 820**. No presentation order was supplied for 820; the other papers retain their relative order. Oral Session 7 remains **Monday November 16, 15:00–16:00 CET, Room 2**, with **3 presentations** and the confirmed chair Hongyu Lin (UCL).
+
+Remove **820** and **639** from Poster Session 2, leaving **33 posters** in its existing **Tuesday November 17, 11:00–11:30 CET** slot. Restore **607** at the end of Poster Session 3, after 343, giving **34 posters**, on **Tuesday November 17, 15:30–16:00 CET**. Both poster sessions use **Poster area (Level −2)**. Both programme assignment sources are updated together. Session IDs, themes, dates, times, rooms, all other paper metadata and ordering, all 16 oral-session chair details, and **1016 first in Oral Session 2** are retained. Current presentation totals are **52 oral and 107 poster**. The update date and affected metadata are **November 15, 2026**.
+
+## Oral session chairs — November 15, 2026
+
+The user authorizes [Andrea Maurino's November 15 email, “session chati”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1df721f4868abc), adding the session chairs from [ICAIF2026_session_chairs.xlsx](https://docs.google.com/spreadsheets/d/1PiSX0nXg9V-ZzHv1q9Kppi7JWHxuuMup/edit), last modified November 12. Its **16 oral-session rows** match the current session numbers, full themes and days. Each session's public `detail` adds **Session chair: Name (Affiliation)**, following the existing industry-session convention. Names have normalized whitespace and omit trailing source asterisks; “Bocconi university” is capitalized as “Bocconi University”. Email addresses, back-up fields and signup notes are omitted from the public data.
+
+Andrea explicitly warns that the spreadsheet's papers are outdated. Current assignments, ordering, presentation counts, dates, times, rooms and stable IDs are retained, including **1016 first in Oral Session 2** and **702, 974, 1092 in Oral Session 12**. The renderer displays session details alongside the paper disclosure, suppressing only the redundant standalone presentation/poster count. Existing search, calendar export and print rendering include the chair details. Programme metadata and sitemap retain **November 15, 2026**.
+
+## Paper 1016 — Oral Session 2 presentation order — November 15, 2026
+
+The user authorizes applying [Andrea Maurino's November 15 request, “ICAIF 2026 – Presentation Schedule Conflict (Paper IDs 1016 & 1102)”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1dfa18029e0779). Paper **1016** is now first in **Oral Session 2: Market Making and Optimal Execution**, Monday November 16, **11:40–13:00 CET, Room 1**, so Guanghao Wu can then reach Oral Session 4 to present paper 1102. Both programme assignment sources use the order **1016, 329, 696, 959**. The other papers retain their relative order, and no individual presentation times are inferred. All other session fields and assignments, including paper 1102's position in Oral Session 4, are retained. Programme source dates, metadata and sitemap are **November 15, 2026**.
+
 ## Sunday afternoon correction — November 15, 2026
 
 The user authorizes applying Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6). The **Sunday November 15, 14:00–16:00 CET, Main Hall** session, “AI in quantitative investment and the future of research”, now names **Marcos Lopez de Prado (ADIA Lab, Cornell)** for “What is the False Discovery Rate in Finance?” and replaces Sandy Pentland's keynote with **Marco Morini (Adia Lab), “Time series foundation models”**. Marco Morini's supplied name is distinct from the unchanged panel participant Massimo Morini. The panel title, participants and moderator follow the supplied replacement text.

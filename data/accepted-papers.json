@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "groups": [
     {
       "id": "oral",
@@ -146,11 +146,6 @@
           "authors": "fabrizio dimino (Domyn); Abhinav Arun (Domyn); Mahesh Kumar (Domyn); Bhaskarjit Sarmah (Domyn); Stefano Pasquali (Domyn)"
         },
         {
-          "id": 757,
-          "title": "Long-Horizon Forecasting of Complete Financial Statements with Forma",
-          "authors": "Travis Johnson (University of Texas at Austin); Jiannan Jiang (University of Texas at Austin); Soumyabrata Chaudhuri (University of Texas at Austin); Yihao Chen (University of Texas at Austin); Lauren Falvey (University of Texas at Austin); Donal O'Cofaigh (University of Texas at Austin)"
-        },
-        {
           "id": 762,
           "title": "Regime-Aware Interpretable Ranking for Sector Rotation",
           "authors": "Kelvin Koa (National University of Singapore ); Ziling Liu (National University of Singapore); Xinyang Li (National University of Singapore); Shuowei Feng (National University of Singapore); Ruoyu Liang (National University of Singapore); Mathieu Giroux (Manulife Investment Management); Eugene Y. Wen (Manulife); Xuan Yao (National University of Singapore); Ke-Wei Huang (National University of Singapore); Hugo Lamarre (Manulife Investment Management)"
@@ -164,6 +159,11 @@
           "id": 776,
           "title": "When Does a Crypto Limit Order Book Model Look Predictive? Target Semantics and Oracle-Population Pipeline Specialization",
           "authors": "Jiawei Shuai (University of Edinburgh); Ke Yang (New York University)"
+        },
+        {
+          "id": 820,
+          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
+          "authors": "Wilmer Henao (Invesco)"
         },
         {
           "id": 841,
@@ -512,6 +512,11 @@
           "authors": "Silu Li (Princeton University); Siyu Li (Westlake University); John Mulvey (Princeton University)"
         },
         {
+          "id": 607,
+          "title": "When Should Humans Intervene? Capacity-Aware Oversight for Financial AI Agents",
+          "authors": "Brindha Jeyaraman (Aethryx)"
+        },
+        {
           "id": 616,
           "title": "Learning the Exact SABR Model",
           "authors": "Marco Bianchetti (Intesa Sanpaolo and University of Bologna); Giorgia Rensi (University of Bologna); Pietro Rossi (University of Bologna)"
@@ -530,11 +535,6 @@
           "id": 633,
           "title": "One Basket, Many Experts: Decorrelated Re-ranking for Financial Asset Recommendation",
           "authors": "Ryuki Unno (Hokkaido University); Keigo Sakurai (Hokkaido University); Koshi Watanabe (Hokkaido University); Keisuke Maeda (Hokkaido University); Takahiro Ogawa (Hokkaido University); Miki Haseyama (Hokkaido University)"
-        },
-        {
-          "id": 639,
-          "title": "Neural Realized Measures: Forecast-Supervised Intraday Aggregation for Volatility Forecasting",
-          "authors": "Brian Sing Fan Chan (School of Mathematics and Statistics, The University of Sydney); Jennifer So Kuen Chan (School of Mathematics and Statistics, University of Sydney)"
         },
         {
           "id": 641,
@@ -650,11 +650,6 @@
           "id": 815,
           "title": "Auditing and Repairing Modal Causal Extraction in Financial Text",
           "authors": "Kwangje Baeg (KT); Janaina Villacis (KDI School of Public Policy and Management)"
-        },
-        {
-          "id": 820,
-          "title": "When Text Complements the Return Path: A Strong Baseline for Behavioral Equity-Peer Retrieval",
-          "authors": "Wilmer Henao (Invesco)"
         },
         {
           "id": 827,
@@ -928,6 +923,11 @@
           "authors": "Jian Zhang (CHINA CYBERSECURITY REVIEW, CERTIFICATION AND MARKET REGULATION BIG DATA CENTER); RuiFeng Yuan (CHINA CYBERSECURITY REVIEW, CERTIFICATION AND MARKET REGULATION BIG DATA CENTER); Heng Ji (University of Science and Technology of China)"
         },
         {
+          "id": 639,
+          "title": "Neural Realized Measures: Forecast-Supervised Intraday Aggregation for Volatility Forecasting",
+          "authors": "Brian Sing Fan Chan (School of Mathematics and Statistics, The University of Sydney); Jennifer So Kuen Chan (School of Mathematics and Statistics, University of Sydney)"
+        },
+        {
           "id": 661,
           "title": "Sampling Stressed Laws at Prescribed Severities: Certified Generative Scenarios",
           "authors": "­Yechan Jeong (Seoul National University); Juhoon Kang (Seoul National University); Youngjoon Hong (Seoul National University)"
@@ -976,6 +976,11 @@
           "id": 751,
           "title": "When No Enforceable Locus Exists: Availability and Representability in a Financial AI Agent Stack",
           "authors": "Mulan Zhou (University of California San Diego); Yan Xue (Instinctive Network)"
+        },
+        {
+          "id": 757,
+          "title": "Long-Horizon Forecasting of Complete Financial Statements with Forma",
+          "authors": "Travis Johnson (University of Texas at Austin); Jiannan Jiang (University of Texas at Austin); Soumyabrata Chaudhuri (University of Texas at Austin); Yihao Chen (University of Texas at Austin); Lauren Falvey (University of Texas at Austin); Donal O'Cofaigh (University of Texas at Austin)"
         },
         {
           "id": 771,
