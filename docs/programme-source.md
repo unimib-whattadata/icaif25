@@ -1,5 +1,11 @@
 # Programme data
 
+## Sunday afternoon correction — November 15, 2026
+
+The user authorizes applying Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6). The **Sunday November 15, 14:00–16:00 CET, Main Hall** session, “AI in quantitative investment and the future of research”, now names **Marcos Lopez de Prado (ADIA Lab, Cornell)** for “What is the False Discovery Rate in Finance?” and replaces Sandy Pentland's keynote with **Marco Morini (Adia Lab), “Time series foundation models”**. Marco Morini's supplied name is distinct from the unchanged panel participant Massimo Morini. The panel title, participants and moderator follow the supplied replacement text.
+
+This supersedes the November 14 afternoon description below. The existing session ID `session-2026-11-15-1400-d9635511`, title, date, time, room, type and links remain stable. All other sessions and paper assignments are retained. The programme update date, metadata and sitemap are **November 15, 2026**. Home adds Marcos with the supplied photograph and role, linked to this session; see `docs/speakers-source.md`.
+
 ## Sunday industry session revision — November 14, 2026
 
 The user authorizes applying Andrea Prampolini's [November 14 email, “altre modifiche programma”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1d9f0dd1239633) to the website. It replaces the descriptions of the two existing **Sunday November 15, Main Hall** industry sessions, superseding the earlier Sunday descriptions below.

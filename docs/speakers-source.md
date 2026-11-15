@@ -1,5 +1,11 @@
 # Home speaker portraits
 
+## Marcos Lopez de Prado — November 15, 2026
+
+The user authorizes Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6), requesting Marcos Lopez de Prado's photograph and role on the conference landing page. The first entry in “Our speakers” uses the exact supplied wording, **“Professor of Practice at Cornell University and ADIA Lab Advisory Board”**, and the email's inline `image.png` (Content-ID `930d694b-7945-4faa-8dcc-dfbbca5a65c3`). The original 800 × 800 PNG is stored unchanged as `img/speakers/marcos-lopez-de-prado.png`; circular display uses the existing CSS, without retouching or background replacement.
+
+The existing speaker layout, typography and dated keynote badge are reused. The badge links to **November 15, 14:00–16:00 CET, Main Hall**, `session-2026-11-15-1400-d9635511`, containing his “What is the False Discovery Rate in Finance?” keynote. This is the session's published block, with no inferred individual talk time. Other speakers retain their order, portraits and roles. The related afternoon programme correction is recorded in `docs/programme-source.md`.
+
 ## Women in AI and Finance — November 14, 2026
 
 Marco explicitly requested a dedicated Home invitation to this session, with the supplied photographs harmonized before publication, then clarified that facial lighting should also match while facial features remain unchanged. This supersedes the November 13 removal of the Home section. Workshop pages and workshop programmes remain photograph-free.

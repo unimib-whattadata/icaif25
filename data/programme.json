@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -417,7 +417,7 @@
       "title": "AI in quantitative investment and the future of research",
       "type": "industry",
       "room": "Main Hall",
-      "detail": "Keynote: Marco Lopez de Prado (ADIA Lab), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\". Agostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab). Moderator: Andrea Prampolini (Intesa Sanpaolo)\nKeynote: Sandy Pentland (Stanford University, MIT)",
+      "detail": "Keynote: Marcos Lopez de Prado (ADIA Lab, Cornell), \"What is the False Discovery Rate in Finance?\"\nPanel: \"How AI is changing academic and practitioner research\". Agostino Capponi (Columbia University), Stefano Fabbri (OpenAI), Ernesto Damiani (Università degli Studi di Milano), Massimo Morini (ADIA Lab). Moderator: Andrea Prampolini (Intesa Sanpaolo)\nKeynote: Marco Morini (Adia Lab), \"Time series foundation models\"",
       "pending": false,
       "href": ""
     },
