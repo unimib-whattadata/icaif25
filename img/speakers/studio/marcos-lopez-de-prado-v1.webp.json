@@ -1,0 +1,15 @@
+{
+  "prompt": "Use case: identity-preserve. Asset type: ICAIF conference website speaker portrait matching its existing portrait set. Input image 1 is the ONLY EDIT TARGET: original photograph of Marcos Lopez de Prado. Input image 2 is the approved empty studio backdrop. Input image 3 is a DIFFERENT PERSON, Daniele Magazzeni, provided ONLY as a background appearance and framing reference, NEVER transfer any of his facial features. Replace ONLY the original gray background in image 1 with the approved navy/slate photographic backdrop from image 2, matching the dark exposure and subtle blue texture behind the head and restrained muted copper near the lower edge seen in image 3. Preserve Marcos himself unchanged: exact identity, facial geometry, apparent age, real skin texture and tone, eyes, nose, lips, ears, hair, expression, gaze, head turn and tilt, shoulders, blue suit, white shirt and red tie. Preserve the original facial lighting and color. No beautification, smoothing, facial reshaping, altered expression, invented facial detail, relighting or clothing changes. Keep the SAME original photograph with only the background replaced. Use only uniform scale and translation if needed to fit the existing square head-and-shoulders framing, crown margin around 8-10%, eyes around 38% height, matching the reference set. Do not warp or redraw the subject. Clean natural hair and shoulder edges, no bright halos or remnants of the gray background. Opaque square photo with background to all four edges. No baked circular crop, borders, text, logos, props, visible equipment or other people.",
+  "createdAt": "2026-11-15",
+  "tool": "built-in image_gen",
+  "source": "img/speakers/marcos-lopez-de-prado.png",
+  "references": [
+    "assets/speakers/studio-backdrop-v1.png",
+    "img/speakers/studio/daniele-magazzeni-v1.webp"
+  ],
+  "edit": "Replace the gray background with the approved studio backdrop while preserving the subject.",
+  "dimensions": {
+    "width": 640,
+    "height": 640
+  }
+}

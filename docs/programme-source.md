@@ -1,5 +1,13 @@
 # Programme data
 
+## Whova synchronization — November 15, 2026
+
+At the user's request, **26 existing Whova sessions** were saved and reopened against the latest website programme source: both IAFM’26 and AI in Private Markets blocks now include their detailed programmes; Private Markets ends at **15:20 / 17:15**; both Sunday industry descriptions reflect the latest speakers and running order; all **16 oral sessions** include their confirmed chairs; Oral Session 2 starts with **1016**; Oral Session 7 lists **762, 405, 820**; Poster Session 2 has **33 posters**, excluding 639 and 820; Poster Session 3 has **34 posters**, ending with 607. The final correction moves Marc Mézard's speech from Sunday's reception to Monday's banquet, retaining the QRT awards ceremony.
+
+The timetable comparison covers **85 sessions** (19/21/22/23 by day). Titles, dates, times and physical locations agree, treating “Foyer” and the website's “Foyer (Level −1)” as equivalent labels. The new Private Markets end times and banquet speech follow the latest local website source. Existing Zoom streams, other timetable fields and the remaining contribution order are retained. The alphabetical Papers resource has no session assignments to revise and remains unchanged, including its 215 PDF links.
+
+Readback evidence and screenshots are in `output/whova-sync-2026-11-15/`, including `verification.json`, `private-markets-overview.jpg` and `banquet-mezard.jpg`. This records the Whova changes; it does not publish the local website changes.
+
 ## Marc Mézard banquet speech — November 15, 2026
 
 The user confirms that Marc Mézard will speak at the **Monday November 16 banquet dinner**, superseding the November 9 reception placement. Move “Speech by Marc Mézard.” from Sunday's Welcome Reception to **Banquet dinner & awards, 19:00–22:00 CET, Museo della Scienza e della Tecnica**, retaining “QRT Startup Competition Awards Ceremony”. No individual speech time or talk title is supplied. Both stable session IDs, dates, times, rooms and types remain intact; all other sessions and paper assignments are unchanged. Home's speaker badge returns to “Banquet speech / November 16” and links to `session-2026-11-16-1900-9e880812`. The publication date remains November 15, 2026.

@@ -1,5 +1,11 @@
 # Home speaker portraits
 
+## Marcos Lopez de Prado studio background — November 15, 2026
+
+At the user's request, the Home portrait now uses the same approved navy/slate studio backdrop with restrained copper as the other speakers. The built-in image generator edited the supplied original against `assets/speakers/studio-backdrop-v1.png`, with Daniele Magazzeni's studio portrait used only as a background and framing reference. The prompt requires preserving Marcos's identity, facial features, expression, gaze, pose, clothing and original facial lighting, changing only the background.
+
+Home now serves `img/speakers/studio/marcos-lopez-de-prado-v1.webp` (640 × 640), with the existing circular CSS crop. The original PNG remains unchanged; the selected full-resolution edit is retained locally in `output/keynote-studio/full-resolution/marcos-lopez-de-prado-v1.png`. The exact prompt and source paths are recorded in the WebP's JSON sidecar. This supersedes the original-background treatment described below.
+
 ## Marcos Lopez de Prado — November 15, 2026
 
 The user authorizes Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6), requesting Marcos Lopez de Prado's photograph and role on the conference landing page. The first entry in “Our speakers” uses the exact supplied wording, **“Professor of Practice at Cornell University and ADIA Lab Advisory Board”**, and the email's inline `image.png` (Content-ID `930d694b-7945-4faa-8dcc-dfbbca5a65c3`). The original 800 × 800 PNG is stored unchanged as `img/speakers/marcos-lopez-de-prado.png`; circular display uses the existing CSS, without retouching or background replacement.
