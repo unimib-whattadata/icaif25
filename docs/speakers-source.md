@@ -18,6 +18,10 @@ The five published files are `img/speakers/studio/{rachel-chung,hao-ni,mariam-ba
 
 Home gives a direct invitation, the supplied subtitle and names, and the current `data/programme.json` slot: November 14, 16:30–18:00 CET, Room 2. Its programme action selects `session-2026-11-14-1630-28c2961d`; a second link opens the existing workshop description. No stream or virtual-access claim is added.
 
+## Marc Mézard banquet link — November 15, 2026
+
+The user confirms Marc Mézard's speech at the **Monday November 16 dinner**. Home's existing speaker badge now says “Banquet speech / November 16”, with its accessible label and programme link targeting `session-2026-11-16-1900-9e880812`, the existing **19:00–22:00 CET** banquet at Museo della Scienza e della Tecnica. No individual speech time is inferred. This supersedes the November 9 reception placement below; the portrait and professional role are retained.
+
 ## Marc Mézard reception link — November 9, 2026
 
 The approved programme consistency correction moves Home's Marc Mézard appearance badge and accessible label from the November 16 banquet to “Welcome Reception speech”, November 15. Its link selects `session-2026-11-15-1900-36beb319`, now scheduled from 18:30 at Università Bocconi, foyer, Level −1. The stable historical `1900` segment of the ID is retained. This supersedes the October 31 Home link recorded below.

@@ -1,5 +1,11 @@
 # Programme data
 
+## Marc Mézard banquet speech — November 15, 2026
+
+The user confirms that Marc Mézard will speak at the **Monday November 16 banquet dinner**, superseding the November 9 reception placement. Move “Speech by Marc Mézard.” from Sunday's Welcome Reception to **Banquet dinner & awards, 19:00–22:00 CET, Museo della Scienza e della Tecnica**, retaining “QRT Startup Competition Awards Ceremony”. No individual speech time or talk title is supplied. Both stable session IDs, dates, times, rooms and types remain intact; all other sessions and paper assignments are unchanged. Home's speaker badge returns to “Banquet speech / November 16” and links to `session-2026-11-16-1900-9e880812`. The publication date remains November 15, 2026.
+
+Whova readback in the organizer Session Manager confirms that Monday's banquet already contains “Speech by Marc Mézard.” and the QRT awards ceremony, with the matching date, time, venue and programme link. Sunday's Welcome Reception description contains only its programme link, with no Mézard speech. Both entries are already aligned, so no Whova save is needed. The full website build, existing tests, HTML validation and source/route checks pass; a focused JSON comparison confirms that only these two session descriptions changed.
+
 ## IAFM’26 and AI in Private Markets — November 15, 2026
 
 The user authorizes publishing [Alan Perotti's IAFM’26 programme](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1dc9086a336cee) and [Jasmine Lyu's final AI in Private Markets workbook](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1deafb1c624310), attachment `Structuring the Unstructured_ AI in Private Markets 1 (1).xlsx`. Both use **Sunday November 15, CET** and the existing rooms and stable session IDs. The workshop cards retain the native detailed-programme disclosures and text-only names used by the other confirmed workshops.

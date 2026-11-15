@@ -501,7 +501,7 @@
       "title": "Welcome Reception",
       "type": "social",
       "room": "Università Bocconi — Foyer",
-      "detail": "Speech by Marc Mézard.",
+      "detail": "",
       "pending": false,
       "href": ""
     },
@@ -852,7 +852,7 @@
       "title": "Banquet dinner & awards",
       "type": "banquet",
       "room": "Museo della Scienza e della Tecnica",
-      "detail": "QRT Startup Competition Awards Ceremony",
+      "detail": "Speech by Marc Mézard.\nQRT Startup Competition Awards Ceremony",
       "pending": false,
       "href": ""
     },
