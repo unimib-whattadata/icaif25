@@ -1,5 +1,11 @@
 # Programme data
 
+## Stefano Pasquali keynote title — November 16, 2026
+
+The user requests the website and Whova update from Andrea Prampolini's message in the supplied November 16 screenshot. The **Tuesday November 17, 14:00–14:30 CET, Main Hall** keynote is titled **From copilots to mission-critical AI**, with the supplied subtitle **Crossing the last mile from assistance to accountability, when AI and data are finally trusted and sovereign**. The public heading retains Stefano Pasquali's name and keynote label; the description retains his confirmed Executive VP at Domyn role. The existing `session-2026-11-17-1400-230e8289` ID and timetable fields are preserved.
+
+Whova's session was saved through the organizer Session Manager in @Browser and reopened, confirming the complete title and subtitle, date, times, Main Hall, existing livestream and full-programme link. Readback evidence is in `output/pasquali-keynote-2026-11-16/whova-saved.jpg`. The full website build, existing tests, HTML validation and source/route checks pass. A focused source comparison confirms that only this keynote's title and detail changed.
+
 ## Duplicate Tuesday afternoon poster slot removed — November 16, 2026
 
 The user confirms that the generic **Tuesday November 17, 16:00–17:40 CET** poster slot duplicates the **15:30–16:00 Poster Session 3**. Remove its four identical source records, previously grouped into one displayed entry. The 15:30 session retains all **33 posters**; all other sessions and paper assignments remain unchanged. This supersedes the 16:00 slot retained in the earlier grouping note below.
