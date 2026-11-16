@@ -85,6 +85,7 @@
       day: choose('day', days, defaultDay(programme.days, now)),
       room: choose('room', rooms, rooms.includes('Main Hall') ? 'Main Hall' : rooms[0]),
       density: choose('density', ['comfortable', 'compact'], 'comfortable'),
+      sponsors: choose('sponsors', ['show', 'hide'], 'show'),
       ...(speakers.length ? { speaker: choose('speaker', speakers.map(speaker => speaker.id),
         speakers.some(speaker => speaker.id === 'michael-barr') ? 'michael-barr' : speakers[0].id) } : {})
     };
@@ -92,7 +93,7 @@
 
   function settingsUrl(href, settings) {
     const url = new URL(href);
-    for (const key of ['display', 'day', 'room', 'density', 'speaker']) {
+    for (const key of ['display', 'day', 'room', 'density', 'speaker', 'sponsors']) {
       if (settings[key]) url.searchParams.set(key, settings[key]);
     }
     return `${url.pathname}${url.search}${url.hash}`;
@@ -158,9 +159,11 @@
     const speakerImage = stage.querySelector('[data-speaker-image]');
     const speakerName = stage.querySelector('[data-speaker-name]');
     const speakerRole = stage.querySelector('[data-speaker-role]');
+    const sponsors = document.querySelector('.screensaver__sponsors');
+    const sponsorsToggle = document.querySelector('[data-sponsors-toggle]');
     if (![modeSelect, daySelect, roomSelect, densitySelect, settingsPanel, panel, identity,
       heading, dateLabel, list, message, retry, speakerSelect, speakerSettings, speakerPanel,
-      speakerPortrait, speakerImage, speakerName, speakerRole].every(Boolean)) return { refreshClock() {}, dispose() {} };
+      speakerPortrait, speakerImage, speakerName, speakerRole, sponsors, sponsorsToggle].every(Boolean)) return { refreshClock() {}, dispose() {} };
 
     let speakers = [];
     try {
@@ -184,6 +187,7 @@
     let settings = {
       display: initialChoice('display', modes, 'logo'),
       density: initialChoice('density', ['comfortable', 'compact'], 'comfortable'),
+      sponsors: initialChoice('sponsors', ['show', 'hide'], 'show'),
       speaker: initialChoice('speaker', speakers.map(speaker => speaker.id),
         speakers.find(speaker => speaker.id === 'michael-barr')?.id || speakers[0]?.id)
     };
@@ -210,6 +214,10 @@
       settingsPanel.hidden = !programmeMode;
       speakerPanel.hidden = settings.display !== 'speaker';
       speakerSettings.hidden = settings.display !== 'speaker';
+      const sponsorsVisible = settings.sponsors !== 'hide';
+      sponsors.hidden = !sponsorsVisible;
+      sponsorsToggle.textContent = sponsorsVisible ? 'Hide sponsors' : 'Show sponsors';
+      sponsorsToggle.setAttribute('aria-expanded', String(sponsorsVisible));
       const speaker = speakers.find(item => item.id === settings.speaker);
       if (speaker) {
         speakerSelect.value = speaker.id;
@@ -340,7 +348,8 @@
         if (disposed) return;
         programme = data;
         settings = { ...resolveSettings(data, { search: initialSearch, saved, speakers }),
-          display: settings.display, density: settings.density, speaker: settings.speaker };
+          display: settings.display, density: settings.density, speaker: settings.speaker,
+          sponsors: settings.sponsors };
         setOptions(daySelect, data.days.slice().sort((a, b) => a.date.localeCompare(b.date))
           .map(day => [day.date, dayLabel(day.date)]), settings.day);
         setOptions(roomSelect, programmeRooms(data.sessions).map(room => [room, room]), settings.room);
@@ -370,6 +379,11 @@
       });
     }
     listen(retry, 'click', load);
+    listen(sponsorsToggle, 'click', () => {
+      settings.sponsors = settings.sponsors === 'hide' ? 'show' : 'hide';
+      showMode();
+      persist();
+    });
     listen(speakerSelect, 'change', () => {
       if (!speakers.some(speaker => speaker.id === speakerSelect.value)) return;
       settings.speaker = speakerSelect.value;

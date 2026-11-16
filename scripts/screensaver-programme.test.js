@@ -49,17 +49,17 @@ test('only the four conference rooms remain selectable', () => {
 });
 
 test('validated URL values override saved settings, while invalid values use saved or sensible defaults', () => {
-  const saved = { display: 'logo', day: '2026-11-16', room: 'Room 1', density: 'comfortable' };
+  const saved = { display: 'logo', day: '2026-11-16', room: 'Room 1', density: 'comfortable', sponsors: 'show' };
   assert.deepEqual(resolveSettings(official, {
-    search: '?display=programme&day=2026-11-14&room=Room+2&density=compact', saved, now
-  }), { display: 'programme', day: '2026-11-14', room: 'Room 2', density: 'compact' });
+    search: '?display=programme&day=2026-11-14&room=Room+2&density=compact&sponsors=hide', saved, now
+  }), { display: 'programme', day: '2026-11-14', room: 'Room 2', density: 'compact', sponsors: 'hide' });
   assert.deepEqual(resolveSettings(official, {
-    search: '?display=invalid&day=2026-11-31&room=all&density=tiny', saved, now
+    search: '?display=invalid&day=2026-11-31&room=all&density=tiny&sponsors=invalid', saved, now
   }), saved);
   assert.deepEqual(resolveSettings(official, {
     search: '?display=<script>&day=all&room=Unknown&density=large',
     saved: { display: 'bad', day: 'old', room: 'gone', density: 'tiny' }, now
-  }), { display: 'logo', day: '2026-11-15', room: 'Main Hall', density: 'comfortable' });
+  }), { display: 'logo', day: '2026-11-15', room: 'Main Hall', density: 'comfortable', sponsors: 'show' });
   assert.equal(resolveSettings(official, { saved: null, now }).room, 'Main Hall');
   for (const room of ['Foyer', 'Università Bocconi — Foyer', 'Registration desk (Ground floor)',
     'Museo della Scienza e della Tecnica', 'Poster area (Level −2)', 'Università Bocconi']) {
@@ -71,7 +71,7 @@ test('validated URL values override saved settings, while invalid values use sav
 });
 
 test('share URLs round-trip every setting', () => {
-  const settings = { display: 'programme', day: '2026-11-15', room: 'Room 2', density: 'compact' };
+  const settings = { display: 'programme', day: '2026-11-15', room: 'Room 2', density: 'compact', sponsors: 'hide' };
   const url = new URL(settingsUrl('https://icaif2026.org/screensaver/?room=old&room=duplicate#display', settings), 'https://icaif2026.org');
   assert.equal(url.pathname, '/screensaver/');
   assert.equal(url.hash, '#display');
