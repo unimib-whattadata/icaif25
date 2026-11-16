@@ -79,7 +79,7 @@ function renderSession(session) {
     : session.pending && !/to be confirmed/i.test(session.detail) ? 'Details to be confirmed' : '';
   const details = (session.detail || '').split('\n').filter(line => line &&
     (!session.papers?.length || !/^\d+ (?:presentations|posters)$/.test(line)));
-  return `              <article id="${escape(session.id)}" class="programme-session${banquet ? ' card programme-banquet' : ''}" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">${banquet ? '\n                <img class="programme-banquet-image" src="/assets/venue/cavallerizze.webp" alt="" width="900" height="600" loading="lazy" decoding="async">' : ''}
+  return `              <article id="${escape(session.id)}" class="programme-session${banquet ? ' card programme-banquet' : ''}" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">${banquet ? '\n                <img class="programme-banquet-image" src="/assets/venue/banquet-museum-composition-v1.webp" alt="" width="1200" height="800" loading="lazy" decoding="async">' : ''}
                 <div class="programme-session-overview${banquet ? ' card-body' : ''}">
                 ${banquet ? '' : `<div class="programme-session-meta">
                   <p class="programme-room">${renderRoom(session.room, session.roomUrl)}</p>
@@ -93,8 +93,8 @@ function renderSession(session) {
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 </div>
                 <div class="programme-session-actions">${banquet ? `\n                  <a class="btn programme-maps" href="${escape(session.roomUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Maps: ${escape(session.room)} (opens in a new tab)"><i data-heroicon="map-pin" class="size-4" aria-hidden="true"></i>Open in Google Maps</a>` : ''}
-                  <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>
-                </div>${banquet ? '\n                <p class="programme-photo-credit"><a class="link" href="https://www.museoscienza.it/english/mustlocation/events/cavallerizze.asp" target="_blank" rel="noopener noreferrer">Photo: Museo Nazionale Scienza e Tecnologia</a></p>' : ''}
+                  <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>${banquet ? '\n                  <p class="programme-photo-credit"><a class="link" href="https://www.museoscienza.it/english/mustlocation/events/cavallerizze.asp" target="_blank" rel="noopener noreferrer" aria-label="Illustrative composition based on a museum photograph: view the Cavallerizze photo source">Illustrative composition · museum photo</a></p>' : ''}
+                </div>
                 </div>
                 ${renderPapers(session)}
               </article>`;
@@ -329,7 +329,7 @@ if (fs.existsSync(destination)) {
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
-html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026111601')
+html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026111602')
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026111401')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026111101');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');

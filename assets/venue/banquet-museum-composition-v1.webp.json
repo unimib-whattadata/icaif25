@@ -1,0 +1,13 @@
+{
+  "created": "2026-11-16",
+  "tool": "Built-in imagegen (image_gen.imagegen)",
+  "mode": "edit / compositing",
+  "reference": "assets/venue/cavallerizze.webp",
+  "sourceGallery": "https://www.museoscienza.it/english/mustlocation/events/cavallerizze.asp",
+  "sourcePhotograph": "https://www.museoscienza.it/mustlocation/images/gallery/eventi/cavallerizze01-zoom.jpg",
+  "generatedOriginal": "/Users/marco/.codex/generated_images/01a1e3ec-01af-7ed1-a222-db8653353c1d/exec-a5ae1b31-6c60-4cee-8a8d-3874d22cf201.png",
+  "output": { "width": 1200, "height": 800, "format": "webp", "quality": 84 },
+  "sitePalette": { "navy": "#0f172a", "copper": "#bf4c16", "white": "#ffffff" },
+  "disclosure": "Illustrative dinner composition based on a real museum photograph; not a photograph of the confirmed ICAIF dinner setup.",
+  "prompt": "Use case: compositing. Asset type: refined editorial background artwork for the right-hand image area of a conference banquet information card. Use the attached REAL web photograph of the Cavallerizze at Milan's Museo Nazionale Scienza e Tecnologia Leonardo da Vinci as the architectural edit target and preserve its recognizable original brick walls, timber roof trusses, large framed opening, arched windows and perspective; do not redesign or invent museum architecture. Compose a tasteful close foreground still life of an evening dinner setting: one elegant white ceramic plate, silver fork and knife, folded dark navy linen napkin, one clear stemmed wine glass and a tiny warm candle. Place these dinner elements across the bottom-right foreground, with the museum architecture clearly visible behind and in the upper right, creating a single coherent editorial collage. Muted warm stone, copper and navy details, soft natural photographic lighting. The architecture is the museum component and the table setting is the dinner component; both must be clearly legible at a small card size. Landscape 3:2 framing, medium-wide view, no people, no food hero or menu claims, no logos or text, no watermarks, no borders, no UI. Keep the far left quarter very light and quiet and concentrate visual detail on the right two thirds. Do not make it look like a documentary photograph of an actual ICAIF dinner setup: this is an illustrative composition based on the supplied museum photograph, using a foreground still life. Output only the artwork."
+}

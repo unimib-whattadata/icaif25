@@ -121,14 +121,14 @@
   .programme-banquet .programme-session-actions:has(.programme-save[hidden]) { display: flex; grid-column: 1; justify-content: flex-start; flex-wrap: wrap; gap: .625rem; }
   .programme-banquet .programme-save { width: auto; }
   .programme-maps { min-height: 2.75rem; padding: .5rem .875rem; font-size: .8125rem; box-shadow: none; }
-  .programme-photo-credit { grid-column: 2; grid-row: 2; justify-self: end; max-width: 25ch; padding: .35rem .5rem; font-size: .625rem; line-height: 1.5; background: color-mix(in srgb, var(--color-base-100) 95%, transparent); }
+  .programme-photo-credit { max-width: 25ch; padding: .35rem .5rem; font-size: .625rem; line-height: 1.5; }
   .programme-photo-credit .link { display: inline-flex; align-items: center; min-height: 2.75rem; text-underline-offset: .2em; }
   @media (max-width: 767px) {
     .programme-session.programme-banquet > .programme-session-overview,
     .programme-session.programme-banquet:has(.programme-save[hidden]) > .programme-session-overview { grid-template-columns: minmax(0,1fr); gap: 1.25rem; padding: 1.25rem; }
     .programme-banquet-image { width: 65%; opacity: .3; object-position: 60% top; }
     .programme-banquet::before { background: linear-gradient(90deg, var(--color-base-100) 10%, color-mix(in srgb, var(--color-base-100) 97%, transparent) 45%, color-mix(in srgb, var(--color-base-100) 80%, transparent) 100%); }
-    .programme-photo-credit { grid-column: 1; grid-row: auto; justify-self: start; max-width: none; padding: 0; background: none; }
+    .programme-photo-credit { max-width: none; padding: 0; }
   }
 }
 .programme-save { width: 100%; min-height: 2.75rem; padding: .5rem .75rem; gap: .5rem; font-size: .8125rem; font-weight: 600; line-height: 1.4; box-shadow: none; background: var(--color-base-100); border-color: var(--color-primary); color: var(--color-primary); transition: none; }
