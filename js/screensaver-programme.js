@@ -159,11 +159,12 @@
     const speakerImage = stage.querySelector('[data-speaker-image]');
     const speakerName = stage.querySelector('[data-speaker-name]');
     const speakerRole = stage.querySelector('[data-speaker-role]');
+    const speakerTalkTitle = stage.querySelector('[data-speaker-talk-title]');
     const sponsors = document.querySelector('.screensaver__sponsors');
     const sponsorsToggle = document.querySelector('[data-sponsors-toggle]');
     if (![modeSelect, daySelect, roomSelect, densitySelect, settingsPanel, panel, identity,
       heading, dateLabel, list, message, retry, speakerSelect, speakerSettings, speakerPanel,
-      speakerPortrait, speakerImage, speakerName, speakerRole, sponsors, sponsorsToggle].every(Boolean)) return { refreshClock() {}, dispose() {} };
+      speakerPortrait, speakerImage, speakerName, speakerRole, speakerTalkTitle, sponsors, sponsorsToggle].every(Boolean)) return { refreshClock() {}, dispose() {} };
 
     let speakers = [];
     try {
@@ -223,6 +224,8 @@
         speakerSelect.value = speaker.id;
         speakerName.textContent = speaker.name;
         speakerRole.textContent = speaker.role;
+        speakerTalkTitle.textContent = speaker.talkTitle || '';
+        speakerTalkTitle.hidden = !speaker.talkTitle;
         speakerImage.alt = speaker.name;
         if (speakerImage.getAttribute('src') !== speaker.image) {
           speakerPortrait.hidden = false;

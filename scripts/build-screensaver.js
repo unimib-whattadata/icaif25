@@ -32,6 +32,8 @@ function extractSpeakers(home) {
 }
 
 const speakers = extractSpeakers(fs.readFileSync(path.join(root, 'index.html'), 'utf8'));
+const barr = speakers.find(speaker => speaker.id === 'michael-barr');
+if (barr) barr.talkTitle = 'Some potential financial stability implications of AI.';
 const existing = fs.readFileSync(destination, 'utf8');
 const marker = /(<script id="screensaver-speakers" type="application\/json">)[\s\S]*?(<\/script>)/;
 if (!marker.test(existing)) throw new Error('The screensaver speaker data marker is missing.');
