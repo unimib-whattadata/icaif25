@@ -1,5 +1,11 @@
 # Programme data
 
+## Banquet venue confirmation — November 16, 2026
+
+The user confirms that **today's Monday November 16 banquet dinner** takes place at **Museo della Scienza e della Tecnica**, superseding the November 15 Bocconi correction below. Update the existing banquet session's location and the programme publication date to **November 16, 2026**. The **19:00–22:00 CET** time, stable session ID, Marc Mézard speech and QRT awards ceremony are retained. All other sessions are unchanged.
+
+At the user's additional request, Whova's banquet session was saved with the museum location; Session Manager confirms **Monday November 16, 19:00–22:00, Museo della Scienza e della Tecnica**. The separate **Welcome reception & banquet dinner** logistics item was also saved and reopened, confirming the museum venue and its Google Maps search link while retaining Sunday's Bocconi reception. Readback evidence is in `output/banquet-museum-2026-11-16/whova-logistics.png`. The full website build, all **82 existing tests**, HTML validation and source/route checks pass. A focused JSON comparison confirms that only the banquet room and programme update date changed.
+
 ## Banquet venue correction — November 15, 2026
 
 The user confirms that the **Monday November 16 banquet dinner, 19:00–22:00 CET**, will take place at **Università Bocconi**, replacing Museo della Scienza e della Tecnica. The initial reference to November 15 was explicitly corrected to November 16. No particular room or floor was supplied, so none is inferred. The session ID, title, date, times, Marc Mézard speech and QRT awards ceremony are retained. Sunday's Welcome Reception remains at Università Bocconi — Foyer, 18:30–22:00 CET. This correction supersedes the museum venue recorded in the earlier entries below.

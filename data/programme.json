@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -851,7 +851,7 @@
       "end": "22:00",
       "title": "Banquet dinner & awards",
       "type": "banquet",
-      "room": "Università Bocconi",
+      "room": "Museo della Scienza e della Tecnica",
       "detail": "Speech by Marc Mézard.\nQRT Startup Competition Awards Ceremony",
       "pending": false,
       "href": ""
