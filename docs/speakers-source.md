@@ -1,5 +1,9 @@
 # Home speaker portraits
 
+## Chronological speaker order — November 17, 2026
+
+The user requests ordering Home's speakers by date. Cards follow the date and start time of their existing linked programme appearance: Capponi and Marcos Lopez de Prado on November 15; Magazzeni, Borovykh, Mercurio, Barr and Mézard on November 16; Micillo, Savi and Pasquali on November 17. Participants sharing a session retain their previous relative order. Rama Cont, Charles-Albert Lehalle and Huyên Pham remain last, in their existing order, because no named appearance is confirmed in the current programme. This sorts the highlighted appearance, rather than enumerating all of a person's contributions. All 13 cards retain their complete names, affiliations, portraits, badges, dates and links. The screensaver catalogue follows the same Home order through the existing builder.
+
 ## Marcos Lopez de Prado studio background — November 15, 2026
 
 At the user's request, the Home portrait now uses the same approved navy/slate studio backdrop with restrained copper as the other speakers. The built-in image generator edited the supplied original against `assets/speakers/studio-backdrop-v1.png`, with Daniele Magazzeni's studio portrait used only as a background and framing reference. The prompt requires preserving Marcos's identity, facial features, expression, gaze, pose, clothing and original facial lighting, changing only the background.
