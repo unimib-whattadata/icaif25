@@ -304,7 +304,7 @@ The programme uses native daisyUI `input` and `select` controls with visible lab
 
 ### Navigation
 
-The registration status notice sits immediately below the primary navigation on every page. It uses a square-edged, full-width copper band with white text, the shared container and responsive gutters. Show “If you haven't registered in advance, you can register on-site at Bocconi University.” with “register on-site at Bocconi University” in bold. Keep the notice in static HTML and allow its complete text to wrap on phones.
+The registration status banner was removed site-wide at the user's request on November 17, 2026. Primary navigation now leads directly into the page content. Home's Attendees and Partners next-step rows and the final registration call-to-action section were also removed; retain the Authors workshop row and the established spacing and styles of the remaining content.
 
 The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
