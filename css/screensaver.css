@@ -197,7 +197,9 @@
 .screensaver__speaker-portrait img { width: 100%; height: 100%; object-fit: cover; }
 .screensaver__speaker-copy { min-width: 0; }
 .screensaver__speaker-copy h2 { margin: 0; font-size: max(32px, min(5.3vw, 9vh)); font-weight: 750; line-height: 1.06; letter-spacing: -.035em; text-wrap: balance; }
-.screensaver__speaker-copy p { margin-top: 2.5vh; max-width: 35ch; font-size: max(17px, min(2vw, 3.6vh)); line-height: 1.4; color: color-mix(in srgb, var(--display-teal) 32%, white); }
+.screensaver__speaker-copy p { margin: 0; }
+.screensaver__speaker-copy [data-speaker-role] { margin-top: 1.5vh; max-width: 40ch; font-size: max(17px, min(1.65vw, 3vh)); line-height: 1.4; color: color-mix(in srgb, var(--display-teal) 32%, white); }
+.screensaver__speaker-copy [data-speaker-talk-title] { margin-top: 4vh; max-width: 30ch; font-size: max(24px, min(2.65vw, 4.5vh)); font-weight: 550; line-height: 1.22; letter-spacing: -.015em; text-wrap: balance; color: inherit; }
 .screensaver__speaker[data-portrait="missing"] .screensaver__speaker-layout { grid-template-columns: minmax(0, 1fr); }
 
 @media (max-height: 750px) {
