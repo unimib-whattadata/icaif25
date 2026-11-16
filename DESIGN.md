@@ -328,6 +328,8 @@ Ordered daily timelines connect the time headings and parallel session cells wit
 
 The session action row now contains the agenda button without a repeated “Session link”. Stable article IDs, precise tutorial return paths and calendar URLs continue to support direct navigation. Removing a visible saved session from My agenda returns focus to its visible agenda control.
 
+The banquet session uses a full-width reading column with its title, time/category, complete venue and entrance, admission notice, and two supporting actions: Google Maps and My agenda. The official Cavallerizze photograph appears at the right, fading into the white reading surface; phones keep the photograph faint beneath the complete text. Preserve 44px actions, visible photo credit, and the existing square programme-cell boundary. Print omits the image and credit. Image provenance and the Via Olona context are recorded in `docs/banquet-photo-source.md`.
+
 ### Interactive Venue Map
 
 The map retains a textual hotel list and a static image fallback. Hotel markers outside the painted viewport leave the tab order; redraws and popup closure preserve focus on a visible marker or map control. Camera and route motion respects the visitor's motion preference and the explicit pause control.

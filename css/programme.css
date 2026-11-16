@@ -101,6 +101,36 @@
 .programme-paper-list > li[data-search-match="true"] { margin-inline: -.5rem; padding-inline: .5rem; background: color-mix(in srgb, var(--color-primary) 5%, var(--color-base-100)); }
 .programme-conflict { color: var(--color-error); font-weight: 600; }
 .programme-session-actions { display: flex; align-items: center; justify-content: flex-end; min-width: 0; }
+.programme-banquet-image { display: none; }
+@media screen {
+  .programme-session.programme-banquet { position: relative; isolation: isolate; overflow: hidden; border-radius: 0; background: var(--color-base-100); }
+  .programme-banquet-image { display: block; position: absolute; z-index: -2; inset: 0 0 0 auto; width: 52%; height: 100%; object-fit: cover; object-position: 55% center; }
+  .programme-banquet::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, var(--color-base-100) 0%, var(--color-base-100) 48%, color-mix(in srgb, var(--color-base-100) 97%, transparent) 62%, color-mix(in srgb, var(--color-base-100) 50%, transparent) 79%, transparent 100%); }
+  .programme-session.programme-banquet > .programme-session-overview,
+  .programme-session.programme-banquet:has(.programme-save[hidden]) > .programme-session-overview { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: end; gap: 1.25rem 1.5rem; padding: 1.75rem; }
+  .programme-banquet .programme-session-body { grid-column: 1; }
+  .programme-banquet .programme-session-title { font-size: 1.375rem; line-height: 1.35; }
+  .programme-banquet .programme-session-time { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; font-size: .875rem; }
+  .programme-banquet .programme-type { margin-inline-start: .5rem; }
+  .programme-banquet-venue { margin-top: 1.25rem; font-size: .9375rem; font-weight: 600; line-height: 1.5; }
+  .programme-banquet-venue > span { display: block; }
+  .programme-banquet-venue > span + span { margin-top: .25rem; font-size: .875rem; font-weight: 400; }
+  .programme-banquet .programme-detail { margin-top: .625rem; font-size: .875rem; }
+  .programme-banquet-venue + .programme-detail { margin-top: 1.25rem; font-weight: 600; }
+  .programme-banquet .programme-session-actions,
+  .programme-banquet .programme-session-actions:has(.programme-save[hidden]) { display: flex; grid-column: 1; justify-content: flex-start; flex-wrap: wrap; gap: .625rem; }
+  .programme-banquet .programme-save { width: auto; }
+  .programme-maps { min-height: 2.75rem; padding: .5rem .875rem; font-size: .8125rem; box-shadow: none; }
+  .programme-photo-credit { grid-column: 2; grid-row: 2; justify-self: end; max-width: 25ch; padding: .35rem .5rem; font-size: .625rem; line-height: 1.5; background: color-mix(in srgb, var(--color-base-100) 95%, transparent); }
+  .programme-photo-credit .link { display: inline-flex; align-items: center; min-height: 2.75rem; text-underline-offset: .2em; }
+  @media (max-width: 767px) {
+    .programme-session.programme-banquet > .programme-session-overview,
+    .programme-session.programme-banquet:has(.programme-save[hidden]) > .programme-session-overview { grid-template-columns: minmax(0,1fr); gap: 1.25rem; padding: 1.25rem; }
+    .programme-banquet-image { width: 65%; opacity: .3; object-position: 60% top; }
+    .programme-banquet::before { background: linear-gradient(90deg, var(--color-base-100) 10%, color-mix(in srgb, var(--color-base-100) 97%, transparent) 45%, color-mix(in srgb, var(--color-base-100) 80%, transparent) 100%); }
+    .programme-photo-credit { grid-column: 1; grid-row: auto; justify-self: start; max-width: none; padding: 0; background: none; }
+  }
+}
 .programme-save { width: 100%; min-height: 2.75rem; padding: .5rem .75rem; gap: .5rem; font-size: .8125rem; font-weight: 600; line-height: 1.4; box-shadow: none; background: var(--color-base-100); border-color: var(--color-primary); color: var(--color-primary); transition: none; }
 .programme-save [data-save-label] { min-width: 0; white-space: normal; }
 .programme-save [data-agenda-add-icon], .programme-save [data-agenda-added-icon] { display: inline-flex; flex-shrink: 0; }

@@ -69,6 +69,8 @@ ${session.papers.map(paper => `                      <li data-programme-paper="$
 }
 
 function renderSession(session) {
+  const banquet = session.type === 'banquet' && Boolean(session.roomUrl);
+  const [venueName, venueAddress] = session.room.split(' — ');
   const title = session.href
     ? `<a class="link" href="${escape(session.href)}">${escape(session.title)}</a>`
     : escape(session.title);
@@ -77,22 +79,22 @@ function renderSession(session) {
     : session.pending && !/to be confirmed/i.test(session.detail) ? 'Details to be confirmed' : '';
   const details = (session.detail || '').split('\n').filter(line => line &&
     (!session.papers?.length || !/^\d+ (?:presentations|posters)$/.test(line)));
-  return `              <article id="${escape(session.id)}" class="programme-session" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">
-                <div class="programme-session-overview">
-                <div class="programme-session-meta">
+  return `              <article id="${escape(session.id)}" class="programme-session${banquet ? ' card programme-banquet' : ''}" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">${banquet ? '\n                <img class="programme-banquet-image" src="/assets/venue/cavallerizze.webp" alt="" width="900" height="600" loading="lazy" decoding="async">' : ''}
+                <div class="programme-session-overview${banquet ? ' card-body' : ''}">
+                ${banquet ? '' : `<div class="programme-session-meta">
                   <p class="programme-room">${renderRoom(session.room, session.roomUrl)}</p>
                   <span class="badge programme-type">${escape(typeLabels[session.type])}</span>
-                </div>
+                </div>`}
                 <div class="programme-session-body">
                 <h4 class="programme-session-title">${title}</h4>
-                <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET</p>
+                <p class="programme-session-time"><time datetime="${session.date}T${session.start}:00+01:00">${session.start}</time>–<time datetime="${session.date}T${session.end}:00+01:00">${session.end}</time> CET${banquet ? ` <span class="badge programme-type">${escape(typeLabels[session.type])}</span>` : ''}</p>${banquet ? `\n                <p class="programme-room programme-banquet-venue"><span>${escape(venueName)}</span>${venueAddress ? `<span>${escape(venueAddress)}</span>` : ''}</p>` : ''}
                 ${details.map(line => `<p class="programme-detail">${escape(line)}</p>`).join('\n                ')}
                 ${session.livestreamUrl ? `<p class="programme-detail"><a class="link inline-flex min-h-11 items-center gap-2" href="${escape(session.livestreamUrl)}" target="_blank" rel="noopener noreferrer"><img src="/img/icons/zoom.svg" alt="" width="28" height="28" class="shrink-0">Watch live on Zoom</a></p>\n                ` : ''}${pendingMessage ? `<p class="programme-pending">${pendingMessage}</p>` : ''}
                 <p class="programme-conflict" data-programme-conflict hidden>Overlaps with another saved session.</p>
                 </div>
-                <div class="programme-session-actions">
+                <div class="programme-session-actions">${banquet ? `\n                  <a class="btn programme-maps" href="${escape(session.roomUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Maps: ${escape(session.room)} (opens in a new tab)"><i data-heroicon="map-pin" class="size-4" aria-hidden="true"></i>Open in Google Maps</a>` : ''}
                   <button type="button" class="btn programme-save" data-programme-save="${escape(session.id)}" aria-label="Add to My agenda: ${escape(session.title)} on ${dateLabel(session.date)} at ${session.start}" aria-pressed="false" hidden><span data-agenda-add-icon aria-hidden="true"><i data-heroicon="calendar-clock" class="size-4" aria-hidden="true"></i></span><span data-agenda-added-icon aria-hidden="true" hidden><i data-heroicon="check" class="size-4" aria-hidden="true"></i></span><span data-save-label>Add to My agenda</span></button>
-                </div>
+                </div>${banquet ? '\n                <p class="programme-photo-credit"><a class="link" href="https://www.museoscienza.it/english/mustlocation/events/cavallerizze.asp" target="_blank" rel="noopener noreferrer">Photo: Museo Nazionale Scienza e Tecnologia</a></p>' : ''}
                 </div>
                 ${renderPapers(session)}
               </article>`;
@@ -327,12 +329,12 @@ if (fs.existsSync(destination)) {
 }
 html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).replace(/[\t ]+$/gm,'');
 // Keep the dedicated print sheet after the screen CSS and version it independently.
-html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026103014')
+html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026111601')
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026111401')
   .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026111101');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace(/\n\s*<script[^>]*js\/programme-print\.js[^>]*><\/script>/, '');
-html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026110302">\n    <script src="js/programme-print.js?v=2026110301" defer></script>\n  </head>');
+html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026111601">\n    <script src="js/programme-print.js?v=2026110301" defer></script>\n  </head>');
 if (process.argv.includes('--check')) {
   if (!fs.existsSync(destination) || fs.readFileSync(destination,'utf8') !== html) {
     console.error('Programme page is out of date. Run npm run build:programme.');
