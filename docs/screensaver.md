@@ -4,6 +4,7 @@ Open `/screensaver/` on a desktop display. Move the mouse to reveal the controls
 
 - **Display → Logo:** static ICAIF identity, moving orange orbit light and animated waves.
 - **Display → Programme:** choose a conference day and the exact room. Full session titles and Milan-local times come from `data/programme.json`. More than five sessions use two chronological columns, read down the left column and then down the right.
+- **Display → Speaker:** choose a name to show the speaker's portrait, full name and published role. Michael Barr is the initial speaker. The 13 profiles and existing portrait files come directly from Home's “Our speakers” section; `npm run build:screensaver` synchronizes the embedded catalogue, and the site checks reject stale profiles. Speaker selection works independently of the programme download and stays fixed until changed. Sponsors, waves, Pause and Fullscreen remain available.
 - The room selector offers only Main Hall and Room 1–3, including after venue updates in the shared programme. Existing URLs and saved choices for other locations fall back to another valid saved room or Main Hall; the public conference programme keeps those events.
 - **Layout → Compact:** reduces the programme typography and spacing for a denser view.
 - Identical programme records (all fields except ID) appear once per slot in the display. Distinct sessions keep separate rows. A category matching the title is omitted.
@@ -14,8 +15,10 @@ The selected mode, day, room and layout are saved locally and included in the UR
 
 `/screensaver/?display=programme&day=2026-11-16&room=Main+Hall&density=comfortable`
 
+For Michael Barr's portrait page, use `/screensaver/?display=speaker&speaker=michael-barr`. Speaker links and locally saved choices retain the selected name across reloads. Invalid names fall back to a valid saved speaker or Michael Barr. If a portrait is unavailable, the name and role remain visible.
+
 On the current date in Milan, the programme automatically highlights the session in progress with an orange time, rule and **Now** label. Other sessions remain readable at reduced opacity, with no change in size or position. Between sessions (and before the first one), the next start receives the highlight and **Next** label. Concurrent sessions share the highlight. After the last session, or when viewing another date, all rows return to equal emphasis.
 
 The clock updates at each minute boundary and immediately on returning to the tab, even when animation is paused. The selected day remains fixed until changed. Empty room/day combinations have an explicit message; a failed programme request offers Retry.
 
-The 12 sponsor logos remain visible at rest in both modes. Reduced motion starts with a static frame. Without JavaScript the logo, sponsors and original wave artwork remain visible; programme selection requires JavaScript. Unavailable WebGL uses the same original artwork. Fullscreen wake lock is best effort and depends on the browser and operating system.
+The 12 sponsor logos remain visible at rest in all three modes. Reduced motion starts with a static frame. Without JavaScript the logo, sponsors and original wave artwork remain visible; programme and speaker selection require JavaScript. Unavailable WebGL uses the same original artwork. Fullscreen wake lock is best effort and depends on the browser and operating system.

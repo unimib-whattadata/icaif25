@@ -7,6 +7,10 @@ const {
   settingsUrl, roomSessions, sessionStates, sessionFocus
 } = require('../js/screensaver-programme.js');
 const official = require('../data/programme.json');
+const fs = require('node:fs');
+const path = require('node:path');
+const speakers = JSON.parse(fs.readFileSync(path.join(__dirname, '../screensaver.html'), 'utf8')
+  .match(/<script id="screensaver-speakers" type="application\/json">([\s\S]*?)<\/script>/)[1]);
 const now = new Date('2026-11-15T09:00:00Z');
 const session = (id, overrides = {}) => ({
   id, date: '2026-11-15', room: 'Main Hall', start: '10:00', end: '11:00',
@@ -73,6 +77,24 @@ test('share URLs round-trip every setting', () => {
   assert.equal(url.hash, '#display');
   assert.equal(url.searchParams.getAll('room').length, 1);
   assert.deepEqual(resolveSettings(official, { search: url.search, now }), settings);
+});
+
+test('speaker links preserve the selected portrait across reloads and reject unknown speaker IDs', () => {
+  const settings = resolveSettings(official, {
+    search: '?display=speaker&speaker=michael-barr', speakers, now
+  });
+  assert.equal(settings.display, 'speaker');
+  assert.equal(settings.speaker, 'michael-barr');
+  const saved = { ...settings, speaker: 'marc-mezard' };
+  const url = new URL(settingsUrl('https://icaif2026.org/screensaver/', saved), 'https://icaif2026.org');
+  assert.deepEqual(resolveSettings(official, { search: url.search, speakers, now }), saved);
+  assert.equal(resolveSettings(official, { search: '?speaker=unknown', saved, speakers, now }).speaker, 'marc-mezard');
+  assert.equal(resolveSettings(official, { search: '?display=speaker&speaker=unknown', speakers, now }).speaker, 'michael-barr');
+  assert.equal(resolveSettings(official, { search: '?display=speaker', now }).display, 'logo');
+  const barr = speakers.find(speaker => speaker.id === 'michael-barr');
+  assert.equal(barr.name, 'Michael Barr');
+  assert.equal(barr.role, 'Member of the Board of Governors of the Federal Reserve System');
+  assert.equal(barr.image, '/img/speakers/studio/michael-barr-v1.webp');
 });
 
 test('Now and Next follow exclusive end times, gaps and concurrent next sessions', () => {

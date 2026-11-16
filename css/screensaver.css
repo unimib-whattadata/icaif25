@@ -62,8 +62,8 @@
 .screensaver__tier { min-width: 0; }
 .screensaver__tier h2 { margin: 0 0 10px; font-size: clamp(11px, .68vw, 17px); line-height: 1.4; font-weight: 600; letter-spacing: .025em; color: var(--display-blue); }
 .screensaver__logos { display: flex; align-items: center; justify-content: space-between; gap: 1vw; height: clamp(42px, 4.7vw, 100px); margin: 0; padding: 0; list-style: none; }
-.screensaver__logos li { display: flex; align-items: center; justify-content: center; min-width: 0; }
-.screensaver__logos img { display: block; width: 100%; height: auto; object-fit: contain; }
+.screensaver__logos li { display: flex; align-items: center; justify-content: center; min-width: 0; height: 100%; }
+.screensaver__logos img { display: block; width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 .screensaver__tier--platinum .screensaver__logos li:nth-child(1) { width: 31%; }
 .screensaver__tier--platinum .screensaver__logos li:nth-child(2) { width: 28%; }
 .screensaver__tier--platinum .screensaver__logos li:nth-child(3) { width: 10%; }
@@ -180,9 +180,25 @@
 .screensaver__controls { display: block; max-width: calc(100vw - 36px); }
 .screensaver__settings, .screensaver__programme-settings { display: flex; align-items: end; gap: 12px; }
 .screensaver__settings { padding: 6px 6px 12px; }
+.screensaver__settings { flex-wrap: wrap; }
 .screensaver__setting { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 550; }
 .screensaver__setting .select { min-height: 44px; height: 44px; width: auto; min-width: 130px; max-width: 240px; color: var(--color-base-content); background-color: var(--color-base-100); font-size: 13px; }
 .screensaver__actions { display: flex; justify-content: end; gap: 8px; padding-top: 8px; border-top: 1px solid color-mix(in srgb, var(--color-neutral-content) 18%, transparent); }
+
+/* Speaker pages inherit the existing portrait artwork and projection-scale stage. */
+.screensaver[data-display="speaker"] .screensaver__canvas { opacity: .35; }
+.screensaver[data-display="speaker"] .screensaver__poster { opacity: .15; }
+.screensaver[data-display="speaker"] .screensaver__stage[data-renderer="webgl"] .screensaver__poster { opacity: 0; }
+.screensaver__speaker { position: absolute; inset: 0; padding: 8vh 7vw 5vh; }
+.screensaver__speaker-brand { position: absolute; right: 4.5vw; top: 4vh; }
+.screensaver__speaker-layout { display: grid; grid-template-columns: min(30vw, 50vh) minmax(0, 1fr); align-items: center; gap: 5vw; height: 100%; }
+.screensaver__speaker-portrait, .screensaver__speaker-portrait > div { width: 100%; aspect-ratio: 1; }
+.screensaver__speaker-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.screensaver__speaker-copy { min-width: 0; }
+.screensaver__speaker-copy h2 { margin: 0; font-size: max(32px, min(5.3vw, 9vh)); font-weight: 750; line-height: 1.06; letter-spacing: -.035em; text-wrap: balance; }
+.screensaver__speaker-copy p { margin-top: 2.5vh; max-width: 35ch; font-size: max(17px, min(2vw, 3.6vh)); line-height: 1.4; color: color-mix(in srgb, var(--display-teal) 32%, white); }
+.screensaver__speaker[data-portrait="missing"] .screensaver__speaker-layout { grid-template-columns: minmax(0, 1fr); }
+
 @media (max-height: 750px) {
   .screensaver__programme { padding-block: 24px; }
   .screensaver__programme-header { padding-bottom: 16px; }

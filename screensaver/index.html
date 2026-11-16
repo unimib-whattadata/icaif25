@@ -10,7 +10,7 @@
     <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/tailwind.min.css?v=2026111401">
-    <link rel="stylesheet" href="../css/screensaver.css?v=2026111205">
+    <link rel="stylesheet" href="../css/screensaver.css?v=2026111602">
     <link rel="stylesheet" href="../css/screensaver-identity.css?v=2026111202">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ICAIF 2026">
@@ -130,7 +130,7 @@
         ]
       }
     </script>
-    <script src="../js/screensaver-programme.js?v=2026111505" defer></script>
+    <script src="../js/screensaver-programme.js?v=2026111601" defer></script>
     <script src="../js/screensaver-identity.js?v=2026111202" defer></script>
     <script src="../js/screensaver.js?v=2026111204" defer></script>
   </head>
@@ -159,6 +159,21 @@
           <p class="screensaver__programme-message" data-programme-message role="status"></p>
           <button class="btn" type="button" data-programme-retry hidden>Retry loading programme</button>
         </section>
+        <section class="screensaver__speaker" data-speaker-panel aria-label="Speaker display" hidden>
+          <p class="screensaver__programme-brand screensaver__speaker-brand">ICAIF <span>’26</span></p>
+          <div class="screensaver__speaker-layout">
+            <div class="avatar screensaver__speaker-portrait" data-speaker-portrait>
+              <div class="rounded-full">
+                <img data-speaker-image src="../img/speakers/studio/michael-barr-v1.webp" alt="Michael Barr" width="320" height="320" decoding="async">
+              </div>
+            </div>
+            <div class="screensaver__speaker-copy">
+              <h2 data-speaker-name>Michael Barr</h2>
+              <p data-speaker-role>Member of the Board of Governors of the Federal Reserve System</p>
+            </div>
+          </div>
+        </section>
+        <script id="screensaver-speakers" type="application/json">[{"id":"marcos-lopez-de-prado","name":"Marcos Lopez de Prado","role":"Professor of Practice at Cornell University and ADIA Lab Advisory Board","image":"/img/speakers/studio/marcos-lopez-de-prado-v1.webp"},{"id":"agostino-capponi","name":"Agostino Capponi","role":"Professor, Columbia University","image":"/img/speakers/studio/agostino-capponi-v1.webp"},{"id":"daniele-magazzeni","name":"Daniele Magazzeni","role":"Chief AI Officer at UBS","image":"/img/speakers/studio/daniele-magazzeni-v1.webp"},{"id":"michael-barr","name":"Michael Barr","role":"Member of the Board of Governors of the Federal Reserve System","image":"/img/speakers/studio/michael-barr-v1.webp"},{"id":"mauro-micillo","name":"Mauro Micillo","role":"Chief of IMI Corporate & Investment Banking Division","image":"/img/speakers/studio/mauro-micillo-v1.webp"},{"id":"raffaele-savi","name":"Raffaele Savi","role":"Senior Managing Director and Global Head of BlackRock Systematic","image":"/img/speakers/studio/raffaele-savi-v1.webp"},{"id":"stefano-pasquali","name":"Stefano Pasquali","role":"Executive Vice President, Domyn SpA","image":"/img/speakers/studio/stefano-pasquali-v1.webp"},{"id":"anastasia-borovykh","name":"Anastasia Borovykh","role":"Executive Director, Capital Fund Management","image":"/img/speakers/studio/anastasia-borovykh-v1.webp"},{"id":"marc-mezard","name":"Marc Mézard","role":"Professor of Theoretical Physics, Bocconi University","image":"/img/speakers/studio/marc-mezard-v1.webp"},{"id":"fabio-mercurio","name":"Fabio Mercurio","role":"Global Head of Quantitative Analytics, Bloomberg","image":"/img/speakers/studio/fabio-mercurio-v1.webp"},{"id":"rama-cont","name":"Rama Cont","role":"Professor of Mathematics, University of Oxford","image":"/img/speakers/studio/rama-cont-v1.webp"},{"id":"charles-albert-lehalle","name":"Charles-Albert Lehalle","role":"Professor, École Polytechnique","image":"/img/speakers/studio/charles-albert-lehalle-v1.webp"},{"id":"huyen-pham","name":"Huyên Pham","role":"Professor of Applied Mathematics, École Polytechnique","image":"/img/speakers/studio/huyen-pham-v1.webp"}]</script>
       </section>
 
       <footer class="screensaver__sponsors" aria-label="Conference sponsors">
@@ -210,6 +225,7 @@
           <select class="select" data-display-mode aria-label="Display content">
             <option value="logo">Logo</option>
             <option value="programme">Programme</option>
+            <option value="speaker">Speaker</option>
           </select>
         </label>
         <div class="screensaver__programme-settings" data-programme-settings hidden>
@@ -224,6 +240,11 @@
               <option value="comfortable">Comfortable</option>
               <option value="compact">Compact</option>
             </select>
+          </label>
+        </div>
+        <div data-speaker-settings hidden>
+          <label class="screensaver__setting">Speaker
+            <select class="select" data-display-speaker aria-label="Speaker name"><option value="michael-barr">Michael Barr</option></select>
           </label>
         </div>
       </div>

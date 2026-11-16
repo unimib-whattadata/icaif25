@@ -73,7 +73,7 @@
     });
   }
 
-  function resolveSettings(programme, { search = '', saved = {}, now = new Date() } = {}) {
+  function resolveSettings(programme, { search = '', saved = {}, now = new Date(), speakers = [] } = {}) {
     const query = new URLSearchParams(search);
     const previous = saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
     const days = programme.days.map(day => day.date);
@@ -81,16 +81,18 @@
     const choose = (key, valid, fallback) =>
       valid.includes(query.get(key)) ? query.get(key) : valid.includes(previous[key]) ? previous[key] : fallback;
     return {
-      display: choose('display', ['logo', 'programme'], 'logo'),
+      display: choose('display', ['logo', 'programme', ...(speakers.length ? ['speaker'] : [])], 'logo'),
       day: choose('day', days, defaultDay(programme.days, now)),
       room: choose('room', rooms, rooms.includes('Main Hall') ? 'Main Hall' : rooms[0]),
-      density: choose('density', ['comfortable', 'compact'], 'comfortable')
+      density: choose('density', ['comfortable', 'compact'], 'comfortable'),
+      ...(speakers.length ? { speaker: choose('speaker', speakers.map(speaker => speaker.id),
+        speakers.some(speaker => speaker.id === 'michael-barr') ? 'michael-barr' : speakers[0].id) } : {})
     };
   }
 
   function settingsUrl(href, settings) {
     const url = new URL(href);
-    for (const key of ['display', 'day', 'room', 'density']) {
+    for (const key of ['display', 'day', 'room', 'density', 'speaker']) {
       if (settings[key]) url.searchParams.set(key, settings[key]);
     }
     return `${url.pathname}${url.search}${url.hash}`;
@@ -149,8 +151,26 @@
     const list = stage.querySelector('[data-programme-list]');
     const message = stage.querySelector('[data-programme-message]');
     const retry = stage.querySelector('[data-programme-retry]');
+    const speakerSelect = document.querySelector('[data-display-speaker]');
+    const speakerSettings = document.querySelector('[data-speaker-settings]');
+    const speakerPanel = stage.querySelector('[data-speaker-panel]');
+    const speakerPortrait = stage.querySelector('[data-speaker-portrait]');
+    const speakerImage = stage.querySelector('[data-speaker-image]');
+    const speakerName = stage.querySelector('[data-speaker-name]');
+    const speakerRole = stage.querySelector('[data-speaker-role]');
     if (![modeSelect, daySelect, roomSelect, densitySelect, settingsPanel, panel, identity,
-      heading, dateLabel, list, message, retry].every(Boolean)) return { refreshClock() {}, dispose() {} };
+      heading, dateLabel, list, message, retry, speakerSelect, speakerSettings, speakerPanel,
+      speakerPortrait, speakerImage, speakerName, speakerRole].every(Boolean)) return { refreshClock() {}, dispose() {} };
+
+    let speakers = [];
+    try {
+      const catalogue = JSON.parse(document.getElementById('screensaver-speakers')?.textContent || '[]');
+      if (Array.isArray(catalogue)) speakers = catalogue.filter(speaker => speaker &&
+        ['id', 'name', 'role', 'image'].every(key => typeof speaker[key] === 'string' && speaker[key].trim()) &&
+        speaker.image.startsWith('/img/speakers/'));
+    } catch { /* Logo and Programme remain available without the optional speaker catalogue. */ }
+    const modes = ['logo', 'programme', ...(speakers.length ? ['speaker'] : [])];
+    modeSelect.querySelector('[value="speaker"]').disabled = !speakers.length;
 
     let saved = {};
     try {
@@ -162,8 +182,10 @@
     const initialChoice = (key, options, fallback) => options.includes(query.get(key)) ? query.get(key) :
       options.includes(saved?.[key]) ? saved[key] : fallback;
     let settings = {
-      display: initialChoice('display', ['logo', 'programme'], 'logo'),
-      density: initialChoice('density', ['comfortable', 'compact'], 'comfortable')
+      display: initialChoice('display', modes, 'logo'),
+      density: initialChoice('density', ['comfortable', 'compact'], 'comfortable'),
+      speaker: initialChoice('speaker', speakers.map(speaker => speaker.id),
+        speakers.find(speaker => speaker.id === 'michael-barr')?.id || speakers[0]?.id)
     };
     let programme = null;
     let rows = [];
@@ -183,9 +205,23 @@
       document.body.dataset.display = settings.display;
       modeSelect.value = settings.display;
       densitySelect.value = settings.density;
-      identity.hidden = programmeMode;
+      identity.hidden = settings.display !== 'logo';
       panel.hidden = !programmeMode;
       settingsPanel.hidden = !programmeMode;
+      speakerPanel.hidden = settings.display !== 'speaker';
+      speakerSettings.hidden = settings.display !== 'speaker';
+      const speaker = speakers.find(item => item.id === settings.speaker);
+      if (speaker) {
+        speakerSelect.value = speaker.id;
+        speakerName.textContent = speaker.name;
+        speakerRole.textContent = speaker.role;
+        speakerImage.alt = speaker.name;
+        if (speakerImage.getAttribute('src') !== speaker.image) {
+          speakerPortrait.hidden = false;
+          delete speakerPanel.dataset.portrait;
+          speakerImage.src = speaker.image;
+        }
+      }
     }
 
     function persist() {
@@ -303,8 +339,8 @@
         const data = validateProgramme(await response.json());
         if (disposed) return;
         programme = data;
-        settings = { ...resolveSettings(data, { search: initialSearch, saved }),
-          display: settings.display, density: settings.density };
+        settings = { ...resolveSettings(data, { search: initialSearch, saved, speakers }),
+          display: settings.display, density: settings.density, speaker: settings.speaker };
         setOptions(daySelect, data.days.slice().sort((a, b) => a.date.localeCompare(b.date))
           .map(day => [day.date, dayLabel(day.date)]), settings.day);
         setOptions(roomSelect, programmeRooms(data.sessions).map(room => [room, room]), settings.room);
@@ -320,7 +356,7 @@
     }
 
     listen(modeSelect, 'change', () => {
-      if (!['logo', 'programme'].includes(modeSelect.value)) return;
+      if (!modes.includes(modeSelect.value)) return;
       settings.display = modeSelect.value;
       showMode();
       persist();
@@ -328,12 +364,22 @@
     for (const [select, key] of [[daySelect, 'day'], [roomSelect, 'room'], [densitySelect, 'density']]) {
       listen(select, 'change', () => {
         if (!programme) return;
-        settings = resolveSettings(programme, { saved: { ...settings, [key]: select.value } });
+        settings = resolveSettings(programme, { saved: { ...settings, [key]: select.value }, speakers });
         render();
         persist();
       });
     }
     listen(retry, 'click', load);
+    listen(speakerSelect, 'change', () => {
+      if (!speakers.some(speaker => speaker.id === speakerSelect.value)) return;
+      settings.speaker = speakerSelect.value;
+      showMode();
+      persist();
+    });
+    listen(speakerImage, 'error', () => {
+      speakerPortrait.hidden = true;
+      speakerPanel.dataset.portrait = 'missing';
+    });
 
     const controller = {
       refreshClock,
@@ -346,7 +392,9 @@
       }
     };
     controllers.set(stage, controller);
+    setOptions(speakerSelect, speakers.map(speaker => [speaker.id, speaker.name]), settings.speaker);
     showMode();
+    persist();
     load();
     return controller;
   }
