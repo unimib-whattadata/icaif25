@@ -76,7 +76,7 @@ test("poster sessions use Level −2 while catering and reception retain the Lev
   assert.match(posters.description, /between Aula Magna and the workshop classrooms/);
   assert.notEqual(places.get("foyer").zone, "posters");
   const sessions = programme.sessions.filter((session) => session.type === "poster-session");
-  assert.equal(sessions.length, 15);
+  assert.equal(sessions.length, 7);
   assert.ok(sessions.every((session) => session.room === "Poster area (Level −2)"));
   assert.ok(programme.sessions.filter((session) => session.type === "break")
     .every((session) => session.room === "Foyer"));

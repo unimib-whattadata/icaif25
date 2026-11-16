@@ -116,13 +116,13 @@ test("search does not combine unrelated papers to satisfy one query", () => {
   }
 });
 
-test("the paper 1044 search isolates its contribution inside the real 34-paper poster session", () => {
+test("the paper 1044 search isolates its contribution inside the real 33-paper poster session", () => {
   const data = attachPapers(readData("programme"), readData("accepted-papers"));
   const matchingSessions = filterSessions(data.sessions, { day: "all", q: "1044" });
   assert.equal(matchingSessions.length, 1);
   const poster = matchingSessions[0];
   assert.equal(poster.type, "poster-session");
-  assert.equal(poster.papers.length, 34);
+  assert.equal(poster.papers.length, 33);
   const result = matchSession(poster, "1044");
   assert.equal(result.contextMatch, false);
   assert.deepEqual(result.paperMatches.map((paper) => paper.id), [1044]);
@@ -218,8 +218,8 @@ test("identical poster rows display once per slot without changing source record
   const source = attachPapers(readData("programme"), readData("accepted-papers"));
   const original = structuredClone(source);
   const grouped = collapsePosterSessions(source.sessions);
-  assert.equal(grouped.length, source.sessions.length - 9);
-  for (const [date, start] of [["2026-11-16", "16:30"], ["2026-11-17", "11:30"], ["2026-11-17", "16:00"]]) {
+  assert.equal(grouped.length, source.sessions.length - 3);
+  for (const [date, start] of [["2026-11-16", "16:30"]]) {
     const rows = grouped.filter((item) => item.title === "Poster session" && item.date === date && item.start === start);
     assert.equal(rows.length, 1);
     assert.equal(rows[0].aliases.length, 3);
@@ -254,8 +254,8 @@ test("both published programme routes contain one poster row per duplicate slot 
   for (const file of ["programme.html", "programme/index.html"]) {
     const html = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
     const published = JSON.parse(html.match(/<script id="programme-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
-    assert.equal(published.sessions.length, source.sessions.length - 9);
-    assert.equal((html.match(/<h4 class="programme-session-title">Poster session<\/h4>/g) || []).length, 3);
+    assert.equal(published.sessions.length, source.sessions.length - 3);
+    assert.equal((html.match(/<h4 class="programme-session-title">Poster session<\/h4>/g) || []).length, 1);
     assert.equal((html.match(/data-programme-session="/g) || []).length, published.sessions.length);
     for (const item of source.sessions) {
       assert.equal(html.split(`id="${item.id}"`).length - 1, 1, `${file}: preserve ${item.id} exactly once`);
@@ -468,7 +468,7 @@ test("the public timetable assigns every oral and poster paper once with the sup
   assert.deepEqual(oral.map((item) => Number(item.title.match(/^Oral Session (\d+):/)[1])),
     Array.from({ length: 16 }, (_, index) => index + 1));
   assert.deepEqual(oral.map((item) => item.paperIds.length), [4, 4, 4, 4, ...Array(12).fill(3)]);
-  assert.deepEqual(poster.map((item) => item.paperIds.length), [40, 33, 34]);
+  assert.deepEqual(poster.map((item) => item.paperIds.length), [40, 34, 33]);
 
   for (const [items, groupId, expectedCount] of [[oral, "oral", 52], [poster, "poster", 107]]) {
     const assignedIds = items.flatMap((item) => item.paperIds);

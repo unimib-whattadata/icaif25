@@ -957,7 +957,7 @@
       "title": "Coffee Break + Poster Session 2 – Portfolio Construction, Volatility and Financial Language",
       "type": "poster-session",
       "room": "Poster area (Level −2)",
-      "detail": "33 posters",
+      "detail": "34 posters",
       "pending": false,
       "href": "",
       "paperIds": [
@@ -993,56 +993,9 @@
         834,
         899,
         918,
-        523
+        523,
+        698
       ]
-    },
-    {
-      "id": "session-2026-11-17-1130-c272ddcd",
-      "date": "2026-11-17",
-      "start": "11:30",
-      "end": "13:00",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1130-6c35cbdb",
-      "date": "2026-11-17",
-      "start": "11:30",
-      "end": "13:00",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1130-d33cd5de",
-      "date": "2026-11-17",
-      "start": "11:30",
-      "end": "13:00",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1130-552a69aa",
-      "date": "2026-11-17",
-      "start": "11:30",
-      "end": "13:00",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
     },
     {
       "id": "session-2026-11-17-1310-47b98b3c",
@@ -1144,12 +1097,11 @@
       "title": "Coffee Break + Poster Session 3 – Evaluation, Fraud Detection and Market Foundation Models",
       "type": "poster-session",
       "room": "Poster area (Level −2)",
-      "detail": "34 posters",
+      "detail": "33 posters",
       "pending": false,
       "href": "",
       "paperIds": [
         627,
-        698,
         722,
         734,
         775,
@@ -1183,54 +1135,6 @@
         343,
         607
       ]
-    },
-    {
-      "id": "session-2026-11-17-1600-fd612ee9",
-      "date": "2026-11-17",
-      "start": "16:00",
-      "end": "17:40",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1600-83b11baa",
-      "date": "2026-11-17",
-      "start": "16:00",
-      "end": "17:40",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1600-e3a1df3b",
-      "date": "2026-11-17",
-      "start": "16:00",
-      "end": "17:40",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
-    },
-    {
-      "id": "session-2026-11-17-1600-0733ee69",
-      "date": "2026-11-17",
-      "start": "16:00",
-      "end": "17:40",
-      "title": "Poster session",
-      "type": "poster-session",
-      "room": "Poster area (Level −2)",
-      "detail": "",
-      "pending": false,
-      "href": ""
     },
     {
       "id": "session-2026-11-17-1740-e48fc3b9",

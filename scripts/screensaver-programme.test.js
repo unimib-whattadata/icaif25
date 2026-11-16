@@ -181,7 +181,7 @@ test('published data retains full titles and every distinct session in the displ
 test('identical poster placeholders display once per slot, with one live focus and unchanged source data', () => {
   const original = structuredClone(official);
   for (const [day, count, slots] of [
-    ['2026-11-16', 2, ['16:30']], ['2026-11-17', 4, ['11:30', '16:00']]
+    ['2026-11-16', 2, ['16:30']], ['2026-11-17', 2, []]
   ]) {
     const display = roomSessions(official.sessions, day, 'Poster area (Level −2)');
     assert.equal(display.length, count);

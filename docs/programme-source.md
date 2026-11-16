@@ -1,5 +1,17 @@
 # Programme data
 
+## Duplicate Tuesday afternoon poster slot removed — November 16, 2026
+
+The user confirms that the generic **Tuesday November 17, 16:00–17:40 CET** poster slot duplicates the **15:30–16:00 Poster Session 3**. Remove its four identical source records, previously grouped into one displayed entry. The 15:30 session retains all **33 posters**; all other sessions and paper assignments remain unchanged. This supersedes the 16:00 slot retained in the earlier grouping note below.
+
+## Duplicate Tuesday morning poster slot removed — November 16, 2026
+
+The user confirms that the generic **Tuesday November 17, 11:30–13:00 CET** poster slot duplicates the **11:00–11:30 Poster Session 2**. Remove its four identical source records, previously grouped into one displayed entry. The 11:00 session retains all **34 posters**, including paper **698**, and all other sessions and paper assignments remain unchanged. This supersedes the 11:30 slot retained in the earlier grouping note below.
+
+## Paper 698 moved to the morning — November 16, 2026
+
+At the user's request, move **698**, “Beyond Holdout Error: A Layered Framework for Evaluating Estimators under Selective Labels”, from Poster Session 3 to **Poster Session 2, Tuesday November 17, 11:00–11:30 CET, Poster area (Level −2)**. Append it after the existing contributions, preserving their order. Both programme JSON sources agree; Poster Session 2 now has **34 posters** and Poster Session 3 has **33 posters**, retaining **107 poster assignments** overall. Session IDs, themes and timetable fields remain unchanged.
+
 ## Duplicate poster rows grouped — November 16, 2026
 
 At the user's request, the public programme displays one generic “Poster session” row for each of the three slots: **November 16, 16:30–18:00**, **November 17, 11:30–13:00**, and **November 17, 16:00–17:40 CET**. Only poster records identical in every factual field are grouped. The source retains all original records and IDs; the generated programme preserves duplicate IDs as link aliases and resolves previously saved agenda entries to the displayed session. Counts, search, timeline, calendar export and print use the grouped entries. The three named poster sessions and their 107 paper assignments remain separate.
