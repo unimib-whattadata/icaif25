@@ -1,5 +1,9 @@
 # Programme data
 
+## Duplicate poster rows grouped — November 16, 2026
+
+At the user's request, the public programme displays one generic “Poster session” row for each of the three slots: **November 16, 16:30–18:00**, **November 17, 11:30–13:00**, and **November 17, 16:00–17:40 CET**. Only poster records identical in every factual field are grouped. The source retains all original records and IDs; the generated programme preserves duplicate IDs as link aliases and resolves previously saved agenda entries to the displayed session. Counts, search, timeline, calendar export and print use the grouped entries. The three named poster sessions and their 107 paper assignments remain separate.
+
 ## Poster placeholder copy removed — November 16, 2026
 
 At the user's request, remove “Title and presentation details to be confirmed.” from the **12 generic Poster session entries**. Their `detail` is empty and `pending` is false so the renderer and calendar export do not substitute another confirmation notice. Session IDs, dates, times, rooms and the three named poster sessions with their paper lists are unchanged.

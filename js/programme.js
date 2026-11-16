@@ -16,6 +16,37 @@
 
   const asIdSet = (ids) => ids instanceof Set ? ids : new Set(Array.isArray(ids) ? ids : []);
 
+  // Preserve source IDs as aliases while displaying identical poster rows once.
+  const collapsePosterSessions = (sessions) => {
+    const seen = new Map();
+    const result = [];
+    for (const session of sessions) {
+      if (session.type !== "poster-session") {
+        result.push(session);
+        continue;
+      }
+      const signature = JSON.stringify(Object.keys(session)
+        .filter((key) => key !== "id" && key !== "aliases").sort()
+        .map((key) => [key, session[key]]));
+      const existing = seen.get(signature);
+      if (existing) {
+        existing.aliases = [...(existing.aliases || []), session.id, ...(session.aliases || [])];
+      } else {
+        const canonical = { ...session };
+        if (session.aliases) canonical.aliases = [...session.aliases];
+        seen.set(signature, canonical);
+        result.push(canonical);
+      }
+    }
+    return result;
+  };
+
+  const resolveSavedSessionIds = (sessions, savedIds) => {
+    const canonicalIds = new Map(sessions.flatMap((session) =>
+      [session.id, ...(session.aliases || [])].map((id) => [id, session.id])));
+    return new Set([...asIdSet(savedIds)].map((id) => canonicalIds.get(id)).filter(Boolean));
+  };
+
   const matchSession = (session, query) => {
     const terms = normalizeSearch(query).split(" ").filter(Boolean);
     const context = normalizeSearch([
@@ -217,6 +248,15 @@
         throw new Error("Invalid programme session.");
       }
       ids.add(session.id);
+      if (session.aliases !== undefined && !Array.isArray(session.aliases)) {
+        throw new Error("Invalid programme session alias.");
+      }
+      for (const alias of session.aliases || []) {
+        if (typeof alias !== "string" || !/^[a-zA-Z0-9_-]+$/.test(alias) || ids.has(alias)) {
+          throw new Error("Invalid programme session alias.");
+        }
+        ids.add(alias);
+      }
     }
     if (programme.announcements !== undefined && !Array.isArray(programme.announcements)) {
       throw new Error("Invalid programme announcements.");
@@ -263,7 +303,7 @@
     } catch {
       return { filters, session: null };
     }
-    const session = sessions.find((item) => item.id === id);
+    const session = sessions.find((item) => item.id === id || (item.aliases || []).includes(id));
     if (!session) return { filters, session: null };
     let resolved = { ...filters, day: session.date };
     if (!filterSessions([session], resolved, savedIds).length) {
@@ -273,7 +313,7 @@
   };
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { attachPapers, matchSession, filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
+    module.exports = { attachPapers, collapsePosterSessions, resolveSavedSessionIds, matchSession, filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
   }
   if (typeof document === "undefined") return;
 
@@ -366,7 +406,7 @@
     const parseSavedIds = (value) => {
       try {
         const parsed = JSON.parse(value || "[]");
-        return new Set(Array.isArray(parsed) ? parsed.filter((id) => sessionById.has(id)) : []);
+        return resolveSavedSessionIds(sessions, parsed);
       } catch {
         return new Set();
       }

@@ -40,8 +40,10 @@ test("every confirmed programme room link selects its real place on both publish
   for (const file of ["programme.html", "programme/index.html"]) {
     const articles = sessionArticles(read(file));
     for (const session of programme.sessions) {
-      assert.ok(articles.has(session.id), `${file}: missing session ${session.id}`);
-      const markup = roomMarkup(articles.get(session.id));
+      const article = articles.get(session.id) || [...articles.values()]
+        .find((html) => html.includes(`<span id="${session.id}" aria-hidden="true"></span>`));
+      assert.ok(article, `${file}: missing session or alias ${session.id}`);
+      const markup = roomMarkup(article);
       assert.notEqual(markup, undefined, `${file}: missing room for ${session.id}`);
       const links = hrefs(markup);
       if (expected.has(session.room)) {

@@ -4,12 +4,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
-const { attachPapers, validateProgramme } = require('../js/programme.js');
+const { attachPapers, collapsePosterSessions, validateProgramme } = require('../js/programme.js');
 const data = attachPapers(
   JSON.parse(fs.readFileSync(path.join(root, 'data/programme.json'), 'utf8')),
   JSON.parse(fs.readFileSync(path.join(root, 'data/accepted-papers.json'), 'utf8')),
 );
 data.announcements = JSON.parse(fs.readFileSync(path.join(root, 'data/programme-announcements.json'), 'utf8'));
+validateProgramme(data);
+data.sessions = collapsePosterSessions(data.sessions);
 validateProgramme(data);
 const destination = path.join(root, 'programme.html');
 const typeLabels = {
@@ -80,7 +82,7 @@ function renderSession(session) {
   const details = (session.detail || '').split('\n').filter(line => line &&
     (!session.papers?.length || !/^\d+ (?:presentations|posters)$/.test(line)));
   return `              <article id="${escape(session.id)}" class="programme-session${banquet ? ' card programme-banquet' : ''}" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">${banquet ? '\n                <img class="programme-banquet-image" src="/assets/venue/banquet-museum-composition-v1.webp" alt="" width="1200" height="800" loading="lazy" decoding="async">' : ''}
-                <div class="programme-session-overview${banquet ? ' card-body' : ''}">
+                ${(session.aliases || []).map(id => `<span id="${escape(id)}" aria-hidden="true"></span>`).join('')}${session.aliases?.length ? '\n                ' : ''}<div class="programme-session-overview${banquet ? ' card-body' : ''}">
                 ${banquet ? '' : `<div class="programme-session-meta">
                   <p class="programme-room">${renderRoom(session.room, session.roomUrl)}</p>
                   <span class="badge programme-type">${escape(typeLabels[session.type])}</span>
@@ -331,7 +333,7 @@ html = html.replace(/    <main id="main-content"[^>]*>[\s\S]*?<\/main>/,main).re
 // Keep the dedicated print sheet after the screen CSS and version it independently.
 html = html.replace(/css\/programme\.css\?v=\d+/g, 'css/programme.css?v=2026111602')
   .replace(/css\/tailwind\.min\.css\?v=\d+/g, 'css/tailwind.min.css?v=2026111401')
-  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026111101');
+  .replace(/js\/programme\.js\?v=\d+/g, 'js/programme.js?v=2026111603');
 html = html.replace(/\n\s*<link[^>]*css\/programme-print\.css[^>]*>/, '');
 html = html.replace(/\n\s*<script[^>]*js\/programme-print\.js[^>]*><\/script>/, '');
 html = html.replace('</head>', '    <link rel="stylesheet" href="css/programme-print.css?v=2026111601">\n    <script src="js/programme-print.js?v=2026110301" defer></script>\n  </head>');
@@ -340,7 +342,7 @@ if (process.argv.includes('--check')) {
     console.error('Programme page is out of date. Run npm run build:programme.');
     process.exitCode = 1;
   } else {
-    console.log(`Programme page matches all ${data.sessions.length} source sessions.`);
+    console.log(`Programme page matches all ${data.sessions.length} displayed sessions.`);
   }
 } else {
   fs.writeFileSync(destination,html);

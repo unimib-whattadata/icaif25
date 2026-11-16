@@ -7,6 +7,7 @@ const path = require("node:path");
 const {
   filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme,
   groupTimelineStops, timelineIndexAtPosition, attachPapers, matchSession,
+  collapsePosterSessions, resolveSavedSessionIds,
 } = require("../js/programme.js");
 
 const session = (id, overrides = {}) => ({
@@ -211,6 +212,79 @@ test("My agenda filters saved IDs across all days and still respects a chosen da
   assert.deepEqual(ids(filterSessions(sessions, { day: "all", saved: true }, saved)), ["a", "c"]);
   assert.deepEqual(ids(filterSessions(sessions, { day: "2026-11-15", saved: true }, saved)), ["c"]);
   assert.deepEqual(ids(filterSessions(sessions, { saved: true })), []);
+});
+
+test("identical poster rows display once per slot without changing source records or paper assignments", () => {
+  const source = attachPapers(readData("programme"), readData("accepted-papers"));
+  const original = structuredClone(source);
+  const grouped = collapsePosterSessions(source.sessions);
+  assert.equal(grouped.length, source.sessions.length - 9);
+  for (const [date, start] of [["2026-11-16", "16:30"], ["2026-11-17", "11:30"], ["2026-11-17", "16:00"]]) {
+    const rows = grouped.filter((item) => item.title === "Poster session" && item.date === date && item.start === start);
+    assert.equal(rows.length, 1);
+    assert.equal(rows[0].aliases.length, 3);
+    const originals = source.sessions.filter((item) => item.title === "Poster session" && item.date === date && item.start === start);
+    assert.deepEqual([rows[0].id, ...rows[0].aliases], ids(originals));
+  }
+  const withPapers = (items) => items.filter((item) => item.papers?.length);
+  assert.deepEqual(withPapers(grouped), withPapers(source.sessions));
+  assert.equal(withPapers(grouped).filter((item) => item.type === "poster-session")
+    .reduce((count, item) => count + item.papers.length, 0), 107);
+  assert.deepEqual(source, original);
+  assert.deepEqual(collapsePosterSessions(grouped), grouped);
+});
+
+test("poster grouping keeps same-time sessions separate whenever factual information differs", () => {
+  const poster = (id, fields = {}) => session(id, { type: "poster-session", ...fields });
+  const distinct = [
+    poster("title", { title: "Another poster session" }),
+    poster("room", { room: "Room 2" }), poster("date", { date: "2026-11-15" }),
+    poster("start", { start: "09:00" }), poster("end", { end: "11:00" }),
+    poster("detail", { detail: "Different speakers" }), poster("papers", { paperIds: [136] }),
+    poster("link", { href: "/accepted-papers/" }), poster("pending", { pending: true }),
+    session("workshop-one"), session("workshop-two"),
+  ];
+  const grouped = collapsePosterSessions([poster("first"), poster("copy"), ...distinct]);
+  assert.deepEqual(ids(grouped), ["first", ...ids(distinct)]);
+  assert.deepEqual(grouped[0].aliases, ["copy"]);
+});
+
+test("both published programme routes contain one poster row per duplicate slot and retain every source anchor", () => {
+  const source = readData("programme");
+  for (const file of ["programme.html", "programme/index.html"]) {
+    const html = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
+    const published = JSON.parse(html.match(/<script id="programme-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
+    assert.equal(published.sessions.length, source.sessions.length - 9);
+    assert.equal((html.match(/<h4 class="programme-session-title">Poster session<\/h4>/g) || []).length, 3);
+    assert.equal((html.match(/data-programme-session="/g) || []).length, published.sessions.length);
+    for (const item of source.sessions) {
+      assert.equal(html.split(`id="${item.id}"`).length - 1, 1, `${file}: preserve ${item.id} exactly once`);
+    }
+  }
+});
+
+test("old poster saves and deep links resolve to one agenda entry and calendar event", () => {
+  const source = readData("programme");
+  const grouped = collapsePosterSessions(source.sessions);
+  const poster = grouped.find((item) => item.aliases?.length);
+  const saved = resolveSavedSessionIds(grouped, [poster.aliases[1], poster.id, ...poster.aliases, "removed-id"]);
+  assert.deepEqual([...saved], [poster.id]);
+  const visible = filterSessions(grouped, { saved: true, q: "Poster session", room: poster.room }, saved);
+  assert.deepEqual(ids(visible), [poster.id]);
+  assert.equal(findConflicts(grouped, saved).size, 0);
+  assert.equal(groupTimelineStops(visible)[0].sessionIds.length, 1);
+  assert.equal((buildCalendar(visible).match(/BEGIN:VEVENT/g) || []).length, 1);
+  for (const alias of poster.aliases) {
+    const resolved = resolveHashFilters(`#${alias}`, { day: "all", saved: true }, grouped, saved);
+    assert.equal(resolved.session.id, poster.id);
+    assert.equal(resolved.filters.day, poster.date);
+    assert.equal(resolved.filters.saved, true);
+  }
+  assert.equal(validateProgramme({ ...source, sessions: grouped }).sessions, grouped);
+  for (const aliases of ["bad", [poster.id], ["invalid id"], ["same", "same"], [grouped[0].id]]) {
+    assert.throws(() => validateProgramme({ ...source, sessions: [{ ...poster, aliases }, ...grouped.filter((item) => item !== poster)] }),
+      /Invalid programme session/);
+  }
 });
 
 test("timeline groups parallel starts and sorts stops across days without changing source order", () => {
