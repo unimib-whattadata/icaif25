@@ -1,5 +1,11 @@
 # Programme data
 
+## Banquet entrance, map and admission — November 16, 2026
+
+The user specifies the full dinner venue as **Museo Nazionale Scienza e Tecnologia Leonardo da Vinci — Via Olona 4, Milan**, with a Google Maps link to **Via Olona 4, Milano**. Admission is restricted to attendees who have successfully purchased a valid dinner pass. Publish this notice in the banquet session and the registration page's banquet ticket card, and align Whova's banquet session and reception/banquet logistics. The existing **Monday November 16, 19:00–22:00 CET** slot, stable ID, Marc Mézard speech and QRT awards remain unchanged. The preliminary online check confirmed that the previous museum venue correction was already live; this update makes its name, entrance and admission requirement explicit.
+
+Whova's banquet session and the separate **Welcome reception & banquet dinner** logistics item were saved with the full venue, entrance, Google Maps link and dinner-pass notice. Reopening the session confirms the saved room and all description details; evidence is in `output/banquet-museum-2026-11-16/whova-session-full-address.png`. The logistics notice replaces the prior blanket banquet-inclusion sentence while retaining the reception's registration-entitlement guidance. The full website build, all **82 existing tests**, HTML validation and source/route checks pass.
+
 ## Banquet venue confirmation — November 16, 2026
 
 The user confirms that **today's Monday November 16 banquet dinner** takes place at **Museo della Scienza e della Tecnica**, superseding the November 15 Bocconi correction below. Update the existing banquet session's location and the programme publication date to **November 16, 2026**. The **19:00–22:00 CET** time, stable session ID, Marc Mézard speech and QRT awards ceremony are retained. All other sessions are unchanged.

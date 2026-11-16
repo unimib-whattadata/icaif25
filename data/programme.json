@@ -851,8 +851,9 @@
       "end": "22:00",
       "title": "Banquet dinner & awards",
       "type": "banquet",
-      "room": "Museo della Scienza e della Tecnica",
-      "detail": "Speech by Marc Mézard.\nQRT Startup Competition Awards Ceremony",
+      "room": "Museo Nazionale Scienza e Tecnologia Leonardo da Vinci — Via Olona 4, Milan",
+      "roomUrl": "https://www.google.com/maps/search/?api=1&query=Via%20Olona%204%2C%20Milano",
+      "detail": "Admission is restricted to attendees who have successfully purchased a valid dinner pass.\nSpeech by Marc Mézard.\nQRT Startup Competition Awards Ceremony",
       "pending": false,
       "href": ""
     },

@@ -35,7 +35,8 @@ const roomRank = room => rooms.includes(room) ? rooms.indexOf(room) : rooms.leng
 const dateLabel = date => new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome', weekday:'long', day:'numeric', month:'long'}).format(new Date(`${date}T12:00:00+01:00`));
 const updatedLabel = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${data.updated}T12:00:00+01:00`));
 
-function renderRoom(room) {
+function renderRoom(room, roomUrl) {
+  if (roomUrl) return `<a class="link programme-room-link" href="${escape(roomUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(room)}: open in Google Maps">${escape(room)}</a>`;
   const target = mappedRooms.get(room);
   if (!target) return escape(room === 'To be confirmed' ? 'Room to be confirmed' : room);
   const { floor, place } = target;
@@ -79,7 +80,7 @@ function renderSession(session) {
   return `              <article id="${escape(session.id)}" class="programme-session" data-programme-session="${escape(session.id)}" data-type="${escape(session.type)}">
                 <div class="programme-session-overview">
                 <div class="programme-session-meta">
-                  <p class="programme-room">${renderRoom(session.room)}</p>
+                  <p class="programme-room">${renderRoom(session.room, session.roomUrl)}</p>
                   <span class="badge programme-type">${escape(typeLabels[session.type])}</span>
                 </div>
                 <div class="programme-session-body">

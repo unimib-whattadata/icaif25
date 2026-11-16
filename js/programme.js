@@ -210,6 +210,8 @@
           !TIME_PATTERN.test(session.start) || !TIME_PATTERN.test(session.end) || session.end <= session.start ||
           [session.title, session.type, session.room].some((value) => typeof value !== "string" || !value.trim()) ||
           (session.detail !== undefined && typeof session.detail !== "string") ||
+          (session.roomUrl !== undefined &&
+            (typeof session.roomUrl !== "string" || !/^https:\/\/\S+$/.test(session.roomUrl))) ||
           (session.livestreamUrl !== undefined &&
             (typeof session.livestreamUrl !== "string" || !/^https:\/\/\S+$/.test(session.livestreamUrl)))) {
         throw new Error("Invalid programme session.");
