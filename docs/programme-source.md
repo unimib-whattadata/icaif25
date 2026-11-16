@@ -4,6 +4,12 @@
 
 At the user's request, remove “Title and presentation details to be confirmed.” from the **12 generic Poster session entries**. Their `detail` is empty and `pending` is false so the renderer and calendar export do not substitute another confirmation notice. Session IDs, dates, times, rooms and the three named poster sessions with their paper lists are unchanged.
 
+## Massimo Morini name correction — November 16, 2026
+
+The user confirms **Massimo Morini** as the speaker of “Time series foundation models” in the Sunday November 15, 14:00–16:00 CET Main Hall session, “AI in quantitative investment and the future of research”. This corrects the first name transcribed in the November 15 source entry below. The panel already uses the correct name. The programme data and generated pages use Massimo Morini for both appearances; the session's other fields remain unchanged.
+
+Whova's existing session description was corrected and saved through the organizer Session Manager. Reopening the session confirms “Keynote: Massimo Morini (Adia Lab), \"Time series foundation models\"” alongside the already correct panel name, with the same date, times, room and full-programme link. Readback evidence is in `output/morini-correction-2026-11-16/whova-massimo-morini.jpg`. The website's `npm run check` passes; the local source correction does not independently establish a production deployment.
+
 ## Banquet entrance, map and admission — November 16, 2026
 
 The user specifies the full dinner venue as **Museo Nazionale Scienza e Tecnologia Leonardo da Vinci — Via Olona 4, Milan**, with a Google Maps link to **Via Olona 4, Milano**. Admission is restricted to attendees who have successfully purchased a valid dinner pass. Publish this notice in the banquet session and the registration page's banquet ticket card, and align Whova's banquet session and reception/banquet logistics. The existing **Monday November 16, 19:00–22:00 CET** slot, stable ID, Marc Mézard speech and QRT awards remain unchanged. The preliminary online check confirmed that the previous museum venue correction was already live; this update makes its name, entrance and admission requirement explicit.
@@ -70,7 +76,7 @@ The user authorizes applying [Andrea Maurino's November 15 request, “ICAIF 202
 
 ## Sunday afternoon correction — November 15, 2026
 
-The user authorizes applying Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6). The **Sunday November 15, 14:00–16:00 CET, Main Hall** session, “AI in quantitative investment and the future of research”, now names **Marcos Lopez de Prado (ADIA Lab, Cornell)** for “What is the False Discovery Rate in Finance?” and replaces Sandy Pentland's keynote with **Marco Morini (Adia Lab), “Time series foundation models”**. Marco Morini's supplied name is distinct from the unchanged panel participant Massimo Morini. The panel title, participants and moderator follow the supplied replacement text.
+The user authorizes applying Andrea Prampolini's [November 15 email, “Rettifica sito”](https://mail.google.com/mail/u/?authuser=marco.cremaschi%40unimib.it#all/1a1de91cf61fd9e6). The **Sunday November 15, 14:00–16:00 CET, Main Hall** session, “AI in quantitative investment and the future of research”, now names **Marcos Lopez de Prado (ADIA Lab, Cornell)** for “What is the False Discovery Rate in Finance?” and replaces Sandy Pentland's keynote with **Massimo Morini (Adia Lab), “Time series foundation models”**, using the first-name correction confirmed by the user on November 16. The panel title, participants and moderator follow the supplied replacement text.
 
 This supersedes the November 14 afternoon description below. The existing session ID `session-2026-11-15-1400-d9635511`, title, date, time, room, type and links remain stable. All other sessions and paper assignments are retained. The programme update date, metadata and sitemap are **November 15, 2026**. Home adds Marcos with the supplied photograph and role, linked to this session; see `docs/speakers-source.md`.
 
