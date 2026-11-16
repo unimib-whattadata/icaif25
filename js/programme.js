@@ -47,6 +47,14 @@
     return new Set([...asIdSet(savedIds)].map((id) => canonicalIds.get(id)).filter(Boolean));
   };
 
+  const programmeClock = (now = new Date(), timeZone = "Europe/Rome") => {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+      timeZone, year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+    }).formatToParts(now).map((part) => [part.type, part.value]));
+    return { date: `${parts.year}-${parts.month}-${parts.day}`, time: `${parts.hour}:${parts.minute}` };
+  };
+
   const matchSession = (session, query) => {
     const terms = normalizeSearch(query).split(" ").filter(Boolean);
     const context = normalizeSearch([
@@ -115,6 +123,15 @@
       groups.get(key).sessionIds.push(session.id);
     });
     return [...groups.values()].sort((a, b) => a.key.localeCompare(b.key));
+  };
+
+  const activeTimelineStop = (sessions, now = new Date(), timeZone = "Europe/Rome") => {
+    const clock = programmeClock(now, timeZone);
+    const active = sessions.filter((session) => session.date === clock.date &&
+      session.start <= clock.time && clock.time < session.end);
+    // The latest active start keeps all-day registration from taking precedence.
+    const stops = groupTimelineStops(active);
+    return stops[stops.length - 1] || null;
   };
 
   // Before the schedule, select its first stop; below it, retain the last stop.
@@ -276,7 +293,7 @@
     return programme;
   };
 
-  const readFiltersFromUrl = (url, programme) => {
+  const readFiltersFromUrl = (url, programme, now = new Date()) => {
     const address = new URL(url, SITE_URL);
     const params = address.searchParams;
     const dates = new Set(programme.days.map((day) => day.date));
@@ -287,8 +304,10 @@
     const day = params.get("day");
     const type = params.get("type");
     const room = params.get("room");
+    const today = programmeClock(now, programme.timezone).date;
+    const defaultDay = dates.has(today) ? today : programme.days[0].date;
     return {
-      day: day === "all" || dates.has(day) ? day : saved ? "all" : programme.days[0].date,
+      day: day === "all" || dates.has(day) ? day : saved ? "all" : defaultDay,
       type: types.has(type) ? type : "all",
       room: rooms.has(room) ? room : "all",
       q: (params.get("q") || "").replace(/\s+/g, " ").trim(),
@@ -313,7 +332,7 @@
   };
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { attachPapers, collapsePosterSessions, resolveSavedSessionIds, matchSession, filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, timelineIndexAtPosition };
+    module.exports = { attachPapers, collapsePosterSessions, resolveSavedSessionIds, matchSession, filterSessions, findConflicts, buildCalendar, readFiltersFromUrl, resolveHashFilters, validateProgramme, groupTimelineStops, activeTimelineStop, timelineIndexAtPosition };
   }
   if (typeof document === "undefined") return;
 
@@ -983,9 +1002,9 @@
     const writeUrl = (method = "replace", preserveHash = false) => {
       const address = new URL(window.location.href);
       for (const name of ["day", "type", "room", "q", "saved"]) address.searchParams.delete(name);
-      // My agenda defaults to all days. Keep an explicitly selected first day
-      // in the URL too, so refresh and browser history preserve that choice.
-      if (state.day !== programme.days[0].date || state.saved) address.searchParams.set("day", state.day);
+      // The default day changes with today's date. Keep every selected day
+      // explicit so refresh, shared links and browser history preserve it.
+      address.searchParams.set("day", state.day);
       if (state.type !== "all") address.searchParams.set("type", state.type);
       if (state.room !== "all") address.searchParams.set("room", state.room);
       if (state.q.trim()) address.searchParams.set("q", state.q.trim());
@@ -1011,7 +1030,7 @@
       }
     };
 
-    const readLocation = () => {
+    const readLocation = ({ scrollToActive = false } = {}) => {
       const resolved = resolveHashFilters(window.location.href,
         readFiltersFromUrl(window.location.href, programme), items, savedIds);
       state = resolved.filters;
@@ -1020,6 +1039,11 @@
       if (resolved.session) {
         window.requestAnimationFrame(() => {
           itemArticleById.get(resolved.session.id).scrollIntoView({ block: "start" });
+        });
+      } else if (scrollToActive && timeline && !window.location.hash) {
+        const active = activeTimelineStop(filterSessions(sessions, state, savedIds), new Date(), programme.timezone);
+        if (active) window.requestAnimationFrame(() => {
+          navigateTimeline(visibleStops.find((stop) => stop.key === active.key), { rememberPosition: false });
         });
       }
     };
@@ -1116,7 +1140,7 @@
 
     controls.forEach((element) => { element.hidden = false; });
     saveButtons.forEach((button) => { button.hidden = false; });
-    readLocation();
+    readLocation({ scrollToActive: true });
   };
 
   try {
