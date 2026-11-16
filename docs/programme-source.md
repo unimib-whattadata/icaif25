@@ -1,5 +1,9 @@
 # Programme data
 
+## Poster placeholder copy removed — November 16, 2026
+
+At the user's request, remove “Title and presentation details to be confirmed.” from the **12 generic Poster session entries**. Their `detail` is empty and `pending` is false so the renderer and calendar export do not substitute another confirmation notice. Session IDs, dates, times, rooms and the three named poster sessions with their paper lists are unchanged.
+
 ## Banquet entrance, map and admission — November 16, 2026
 
 The user specifies the full dinner venue as **Museo Nazionale Scienza e Tecnologia Leonardo da Vinci — Via Olona 4, Milan**, with a Google Maps link to **Via Olona 4, Milano**. Admission is restricted to attendees who have successfully purchased a valid dinner pass. Publish this notice in the banquet session and the registration page's banquet ticket card, and align Whova's banquet session and reception/banquet logistics. The existing **Monday November 16, 19:00–22:00 CET** slot, stable ID, Marc Mézard speech and QRT awards remain unchanged. The preliminary online check confirmed that the previous museum venue correction was already live; this update makes its name, entrance and admission requirement explicit.
