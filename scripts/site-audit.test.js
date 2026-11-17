@@ -128,3 +128,40 @@ test('workshop registration extension does not change other author or notificati
   assert.equal(deadlineFor('Author Registration Deadline (Workshop Papers)'),'2026-10-23');
   assert.equal(deadlineFor('Workshop Paper Notification'),'2026-10-16');
 });
+
+test('retired participation pages preserve their routes and history without live application actions',()=>{
+  const archived = ['registration','important-dates','call-for-papers','call-for-workshop-proposals',
+    'call-for-tutorials','call-for-competitions','call-for-student-volunteers',
+    'qrt-student-travel-awards','become-a-sponsor'];
+  const index = read('news.html');
+  for (const slug of archived) {
+    const html = read(`${slug}.html`);
+    assert.ok(pages.includes(`${slug}.html`), slug);
+    assert.match(html, /data-edition-archive/, slug);
+    assert.match(html, /Archived information/, slug);
+    assert.match(html, /data-archived-content/, slug);
+    assert.ok(index.includes(`href="/${slug}/"`), `${slug}: archive entry missing`);
+    assert.ok(!/<a\b[^>]*href="https:\/\/(?:register\.consultaumbria\.com|forms\.gle|docs\.google\.com\/forms)/i.test(html),
+      `${slug}: live registration or application action remains`);
+    const navigation = html.match(/<nav\b[\s\S]*?<\/nav>/)[0];
+    assert.ok(!navigation.includes(`href="/${slug}/"`), `${slug}: obsolete call remains in primary navigation`);
+  }
+  for (const id of ['registration-dates','travel-grants','vat-information','cancellation-policy','support']) {
+    assert.ok(read('registration.html').includes(`id="${id}"`), `old registration link #${id} is broken`);
+  }
+});
+
+test('screensaver URLs retain a static retirement page without a display implementation',()=>{
+  assert.match(read('screensaver.html'), /conference display has been retired/);
+  assert.ok(!/<canvas\b/.test(read('screensaver.html')));
+  assert.ok(!Object.values(JSON.parse(read('package.json')).scripts).some(command=>command.includes('screensaver')));
+  for (const file of ['js/screensaver.js','js/screensaver-identity.js','js/screensaver-programme.js',
+    'css/screensaver.css','css/screensaver-identity.css','scripts/build-screensaver.js',
+    'scripts/screensaver-programme.test.js','assets/screensaver']) {
+    assert.ok(!fs.existsSync(path.join(root,file)), `${file}: retired display code remains`);
+  }
+  for (const file of pages) {
+    assert.ok(!/(?:src|href)="(?:\.\.\/)?(?:js|css|assets)\/screensaver/.test(read(file)), `${file}: retired asset reference remains`);
+    assert.ok(!/<a\b[^>]*href="[^"]*whova/i.test(read(file)), `${file}: Whova link remains`);
+  }
+});

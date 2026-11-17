@@ -206,8 +206,6 @@ function recordSignature(collection, signature, file) {
 
 for (const file of htmlFiles) {
     const html = fs.readFileSync(path.join(root, file), 'utf8');
-    // The conference display intentionally omits the browsing chrome.
-    const isDisplay = file === 'screensaver.html';
     const expectedCanonical = file === 'index.html'
         ? 'https://icaif2026.org/'
         : `https://icaif2026.org/${file.slice(0, -5)}/`;
@@ -232,7 +230,7 @@ for (const file of htmlFiles) {
     if ((html.match(/<h1\b/gi) || []).length !== 1) addError(file, 'must contain exactly one h1');
     if ((html.match(/<main\b/gi) || []).length !== 1) addError(file, 'must contain exactly one main element');
     if (!/<a\b[^>]*href=["']#main-content["']/i.test(html)) addError(file, 'missing skip link to main content');
-    if (!isDisplay) {
+    {
         if (!/<nav\b[^>]*aria-label=["']Primary["']/i.test(html)) addError(file, 'missing labelled primary navigation');
         if (!/aria-label=["']Navigation menu["']/i.test(html)) addError(file, 'mobile navigation trigger needs a stable accessible name');
         if (!/class=["'][^"']*\bmenu\b[^"']*\bmenu-lg\b[^"']*\bdropdown-content\b/i.test(html)) {
@@ -248,7 +246,7 @@ for (const file of htmlFiles) {
     if (/<style\b/i.test(html)) addError(file, 'contains inline CSS; move it to a shared stylesheet');
     if (/\sstyle\s*=/i.test(html)) addError(file, 'contains an inline style attribute');
     if (!/<html\b[^>]*\bdata-theme=["']icaif["']/i.test(html)) addError(file, 'must use the daisyUI icaif theme');
-    if (file !== 'index.html' && !isDisplay) {
+    if (file !== 'index.html') {
         const pageHeaderTag = html.match(/<section\b[^>]*\bid=["']page-header["'][^>]*>/i)?.[0] || '';
         const pageHeaderClasses = new Set((getAttributes(pageHeaderTag).class || '').split(/\s+/).filter(Boolean));
         const animatedHeroClasses = new Set(
@@ -374,7 +372,7 @@ for (const file of htmlFiles) {
         }
     }
 
-    for (const componentClass of isDisplay ? ['btn'] : requiredComponentClasses) {
+    for (const componentClass of requiredComponentClasses) {
         if (!classTokens.has(componentClass)) addError(file, `missing required daisyUI component class ${componentClass}`);
     }
 
@@ -452,7 +450,7 @@ for (const file of htmlFiles) {
         assetVersions.get(asset).add(match[1]);
     }
 
-    if (!isDisplay) {
+    {
         recordSignature(navigationSignatures, getHrefSignature(getBlock(html, 'nav')), file);
         recordSignature(footerSignatures, getHrefSignature(getBlock(html, 'footer')), file);
     }

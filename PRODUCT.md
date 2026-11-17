@@ -8,19 +8,19 @@ web
 
 ## Product Purpose
 
-The existing ICAIF '26 website presents the International Conference on Artificial Intelligence in Finance in Milan, November 14–17, 2026, and provides information for participants.
+The ICAIF '26 website preserves the archive of the International Conference on Artificial Intelligence in Finance, held in Milan on November 14–17, 2026. The conference has concluded; the programme, research, speakers, organisers and sponsors remain available for reference.
 
 ## Capabilities and Constraints
 
-The implementation is a static HTML website, with shared Tailwind CSS 4 / daisyUI 5 styling and local JavaScript. Existing navigation, page headers, footer, English content, and accessibility conventions are preserved.
+The implementation is a static HTML website, with shared Tailwind CSS 4 / daisyUI 5 styling and local JavaScript. Preserve the ICAIF identity, English content and accessibility conventions. Primary navigation focuses on the conference record; historical calls, registration and sponsorship information remain at their original URLs as clearly marked archives, reached from the News edition archive. Registration and application actions are closed. Programme content and functionality must remain unchanged at the user's explicit request; Whova links must be absent. The screensaver implementation has been removed, with its old URLs retained as a static retirement notice.
 
-The user confirmed the Venue page location as Bocconi University, Via Röntgen 1, Milan. The page must include an attractive stylized map using the same libraries as the Viterie Orobiche project: D3 Array and D3 Geo, with OpenStreetMap geographical data. The user additionally requested English map labels, an inline dynamic SVG, animated camera transitions and an animated pin. Selectable illustrated routes from stations and Duomo must be checked against Google Maps and link to its current directions. Metro routes use their line colours (M2 green, M3 yellow), and walking segments use animated SVG footprints.
+The confirmed Venue location is Bocconi University, Via Röntgen 1, Milan. The page retains the static OpenStreetMap-based city map, the building presentation and the archived indoor floor maps needed by programme room links. Travel itineraries, hotel recommendations and visit-planning calls to action have been retired.
 
 ## Brand Commitments
 
 The Venue page also includes a concise English introduction to the Röntgen building, based on the Bocconi campus exhibition, a colour-adapted official building photograph, and links to the exhibition and Bocconi virtual tour.
 
-Preserve the existing ICAIF colors and site identity. The reference map is the Viterie Orobiche contact page in /Users/marco/Sites/viterieorobiche.
+Preserve the existing ICAIF colors and site identity. Home uses the static navy/blue/copper wave artwork generated on November 17, 2026 from the established Figma campaign visual language; its exact prompt and source are in `assets/hero/`. The reference map is the Viterie Orobiche contact page in /Users/marco/Sites/viterieorobiche.
 
 ## Evidence on Hand
 

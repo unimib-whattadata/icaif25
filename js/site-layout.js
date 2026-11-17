@@ -9,20 +9,6 @@
     const navigation = document.querySelector('nav[aria-label="Primary"]');
     if (!navigation) return;
 
-    navigation.querySelectorAll('a[href="/news/"]').forEach((link) => {
-      const dot = document.createElement("span");
-      dot.className = "status status-accent status-md motion-safe:animate-pulse";
-      dot.setAttribute("aria-hidden", "true");
-
-      const updateText = document.createElement("span");
-      updateText.className = "sr-only";
-      updateText.textContent = " — latest updates";
-
-      link.classList.add("gap-1.5");
-      link.title = "Latest conference announcements";
-      link.append(dot, updateText);
-    });
-
     const disclosures = Array.from(navigation.querySelectorAll("details"));
     navigation.addEventListener("click", (event) => {
       const summary = event.target.closest("summary");
@@ -68,7 +54,7 @@
 
   const sectionHeadings = () => {
     const main = document.querySelector("main");
-    if (!main || page === "index" || page === "programme") return [];
+    if (!main || main.hasAttribute("data-edition-archive") || page === "index" || page === "programme") return [];
 
     const headings = Array.from(main.querySelectorAll("h2")).filter(
       (heading) => !heading.closest(".card, .alert"),
@@ -367,6 +353,19 @@
     tableCard?.after(cards);
   };
 
+  // Old deep links still reveal their historical content inside the archive.
+  const revealArchivedTarget = () => {
+    let id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+    const target = id && document.getElementById(id);
+    const archive = target && target.closest("[data-archived-content]");
+    if (!archive) return;
+    archive.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+  };
+
+  revealArchivedTarget();
+  window.addEventListener("hashchange", revealArchivedTarget);
   enhanceNavigation();
   buildPageIndex();
   buildFooterDisclosure();

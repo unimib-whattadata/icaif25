@@ -117,3 +117,17 @@ The call now links to the form from the application dates card and `#application
 At the user's request, two new website announcements dated October 24 lead the News archive: “Student volunteer applications closed” and “Meet the ICAIF '26 keynote speakers”. The closure preserves the original October 21, 17:00 CEST deadline and reflects the Google Form's verified closed state. The October 19 and October 17 historical announcements retain their original dates but use past-tense copy, link to the closure update and no longer link directly to the form.
 
 The keynote announcement reproduces the five approved Home speakers and brochure dates: Daniele Magazzeni and Michael Barr on November 16, Mauro Micillo, Raffaele Savi and Stefano Pasquali on November 17. It links to Home's speaker section and explicitly states that Barr's session time and room remain unconfirmed. These are website announcements, not newly sourced LinkedIn posts; Home's LinkedIn-curated entries retain their existing source policy. News structured data and page metadata are regenerated from the visible archive.
+
+
+## Best Paper and Best Poster awards — November 17, 2026
+
+The user requested one News announcement for the two main-conference awards and directed this task to the earlier chat “Crea certificati per vincitori” (`01a1e9d9-ae01-79f3-8637-74fd1e6c19a9`). The final user instructions in that chat explicitly assign Best Paper to **Signature Methods for Optimal Market Making** (turn `01a1ea21-458a-7790-a8f6-3c2c6bca269d`) and Best Poster to **From Hindsight to Foresight: Adapting Reusable Reasoning Structures from Recurring Financial Events** (turn `01a1ea22-b00b-7833-bc41-bd764a04a9d7`). These final assignments supersede the earlier provisional survey-based certificate choice.
+
+The complete titles, author order and public links are cross-checked against `data/accepted-papers.json`: paper **329**, Francesca Primavera, Thibaut Mastrolia and Alberto Gennaro; paper **869**, Sangjin Jin, Junhyeong Lee, Daehee Han, Kangmin Kim, Suhwan Park, Seonghun Jeong, Daekyung Park, Lukasz Szpruch, Zhangyang Wang, Chanyeol Choi, Youngjun Kwak and Yongjae Lee. All authors are included in the News entry, with links to `/accepted-papers/#paper-329` and `/accepted-papers/#paper-869`.
+
+The announcement date is November 17, 2026; no separate ceremony time, voting totals or selection method is asserted. The stable article anchor is `/news/#best-paper-and-best-poster-awards`. News metadata and the structured announcement list are regenerated from the visible page. The programme and paper catalogue are unchanged.
+
+
+## ICAIF 2027 in Atlanta — November 17, 2026
+
+The user confirmed in this chat that next year's conference will be held in Atlanta and requested a News announcement. With the announcement dated November 17, 2026, next year is explicitly stated as **2027**. The first News entry is “ICAIF 2027 will be held in Atlanta”, at `/news/#icaif-2027-atlanta`. No conference dates, specific venue, organising institution or 2027 website have been supplied or added. News descriptions and the structured announcement list are aligned with the visible entry; the 2026 programme is unchanged.

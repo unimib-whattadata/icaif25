@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "generate",
+  "useCase": "ads-marketing",
+  "created": "2026-11-17",
+  "reference": "https://www.figma.com/design/gVxYd7064IxKLVYlDIaeDW?node-id=526-36",
+  "referenceUse": "Figma artwork visually inspected; its palette, wave meshes, point contours and orange orbit used as written style guidance.",
+  "prompt": "Use case: ads-marketing.\nAsset type: one new panoramic raster background for the ICAIF 2026 conference website hero.\n\nPrimary request: create an original background closely coordinated with the established ICAIF event graphics seen in Figma. Their visual vocabulary is elegant flowing white and icy-blue fine-line mesh waves, dotted point-field contours, sparse tiny connected nodes, and a slender orange orbital arc, on deep petrol blue.\n\nComposition: wide 2:1 landscape, full bleed, no frame. Recompose that brand vocabulary for a DARK website hero. The left 60 percent must remain quiet, deep navy and low contrast for large white live HTML text. Keep the centre sufficiently calm for a mobile crop. Concentrate the beautiful intricate wave structure in the right 40 percent, sweeping from the upper right through the lower right with a subtle tail fading along the bottom. Keep the lower left calm for live buttons.\n\nStyle: refined computational graphic artwork, exceptionally precise thin contour filaments and stippled mesh, fluid organic wave geometry, clear hierarchy between fine and slightly stronger lines. Match the restrained technical elegance of the ICAIF Figma certificate and event artwork. It is an abstract graphic field, not literal cloth, a photograph or a scene. Let a few small white/soft warm nodes follow the wave structure, never scattered randomly. A single extremely slender copper-orange arc threads through the right-side waves, echoing the ICAIF orbital accent.\n\nPalette: deep navy #0f172a, petrol #18405D, muted conference blue #417A8F and #0369a1, icy blue-white filaments, restrained copper #bf4c16 and orange #F48F24 accents. Overall blue/navy, with no orange wash. Subtle depth and tonal light are welcome; preserve crisp linework without haze or excessive glow.\n\nConstraints: background image only; absolutely no words, letters, numbers, logos, wordmarks, skyline, people, UI, cards, watermark or border. No bright white canvas, neon cyberpunk, lens flare, bokeh, decorative circles, repetitive grid, bar charts or stock AI icons. Keep the typography area dark and uncluttered. Deliver one finished image, not a collage or mockup.\n",
+  "master": "assets/hero/icaif-waves-hero-v1.png",
+  "masterSha256": "6ee2dc64b9c9a534890dd33a1f4efd63c73f17043a3b24088cd574d84419d643",
+  "output": {
+    "path": "assets/hero/icaif-waves-hero-v1.png",
+    "width": 1774,
+    "height": 887,
+    "format": "png"
+  }
+}

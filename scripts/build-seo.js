@@ -23,42 +23,51 @@ const setMeta = (html,key,name,value) => html.replace(/<meta\b[^>]*>/g,tag=>attr
 const descriptions = {
   'workshop-papers.html': 'Browse 113 ICAIF 2026 workshop papers across nine workshops, with poster presentations labelled and presenting authors underlined.',
   'accepted-papers.html': 'Browse the 214 accepted ICAIF 2026 papers: oral presentations, poster presentations and proceedings only, with titles, authors and affiliations.',
-  'index.html': 'ICAIF 2026, the 7th ACM International Conference on AI in Finance, takes place in Milan on November 14–17. Explore the programme, venue and registration.',
-  'call-for-papers.html': "Requirements, research topics and review policies for the ICAIF '26 paper call. Main conference in Milan, Italy, November 16–17, 2026.",
-  'call-for-workshop-proposals.html': "Workshop proposal requirements and paper deadlines for ICAIF '26. Explore the accepted workshops in Milan, Italy, November 14–15, 2026.",
-  'call-for-tutorials.html': "Tutorial proposal requirements, selection criteria and deadlines for ICAIF '26. Tutorials take place in Milan, Italy, November 14–15, 2026.",
-  'call-for-competitions.html': "Competition proposal requirements and selection criteria for ICAIF '26. Explore the accepted competitions and preliminary schedule in Milan.",
+  'index.html': 'ICAIF 2026 has concluded. Explore the programme, accepted papers and ACM proceedings from the conference held in Milan on November 14–17, 2026.',
+  'call-for-papers.html': 'Archived ICAIF 2026 paper call: research topics, submission requirements and review policies. The call is closed.',
+  'call-for-workshop-proposals.html': 'Archived ICAIF 2026 workshop proposal call, including its original requirements and deadlines. Submissions are closed.',
+  'call-for-tutorials.html': 'Archived ICAIF 2026 tutorial proposal call, including its original requirements and selection criteria. Submissions are closed.',
+  'call-for-competitions.html': 'Archived ICAIF 2026 competition proposal call, including its original requirements and selection criteria. Submissions are closed.',
   'programme.html': "Preliminary ICAIF '26 programme in Milan, November 14–17, 2026: keynotes, panels, workshops and tutorials. Browse scheduled sessions and save a personal agenda.",
   'tutorials.html': "ICAIF '26 tutorials in Milan on November 14–15, 2026. Explore schedules, presenters and abstracts on trustworthy AI, Bayesian calibration and financial agents.",
-  'news.html': "Latest ICAIF '26 news: startup competition finalists, accepted papers and presentation sessions, and new sponsors for Milan, November 14–17, 2026.",
-  'call-for-student-volunteers.html': 'Student Volunteer applications for ICAIF 2026 in Milan, November 14–17, are closed. The application deadline was October 21, 2026, at 17:00 CEST.',
-  'registration.html': 'ICAIF 2026 registration and fees, November 14–17. Register on-site at Bocconi University in Milan, or register online for virtual attendance only.',
-  'important-dates.html': 'ICAIF 2026 deadlines for papers, workshops, student volunteers and registration. Conference in Milan: November 14–17, 2026.',
-  'venue.html': 'ICAIF 2026 at Bocconi University, Via Röntgen 1, Milan, November 14–17. Find the venue map, transport routes, nearby hotels and travel information.',
+  'news.html': 'ICAIF news: Atlanta will host the 2027 conference. Explore the 2026 Best Paper and Best Poster awards and announcements from the Milan edition.',
+  'call-for-student-volunteers.html': 'Archived ICAIF 2026 Student Volunteer call, including the original duties, eligibility and application dates. Applications are closed.',
+  'registration.html': 'ICAIF 2026 registration is closed. Find administrative support and archived registration information for the November 14–17, 2026 conference.',
+  'important-dates.html': 'Historical ICAIF 2026 dates and deadlines for papers, workshops, student volunteers and registration. All calls and registration periods have ended.',
+  'venue.html': 'ICAIF 2026 was held at Bocconi University, Via Röntgen 1, Milan, on November 14–17. Explore the building and archived conference floor plans.',
+  'become-a-sponsor.html': 'Archived sponsorship prospectus and opportunities for ICAIF 2026. The conference has concluded; its sponsors and supporters remain acknowledged.',
+  'qrt-student-travel-awards.html': 'Archived QRT Student Travel Awards information for ICAIF 2026, including the original eligibility and selection criteria. Applications are closed.',
+  'screensaver.html': 'The ICAIF 2026 conference screensaver has been retired. Visit the programme and research archive from the November 14–17, 2026 edition.',
+  'media-kit.html': 'The ICAIF 2026 media kit has been removed. Visit the conference archive for the programme, research and news from the Milan edition.',
+  'sponsors-and-supporters.html': 'Thank you to the sponsors and supporters of ICAIF 2026, held in Milan on November 14–17, 2026.',
+  'competitions.html': 'Competition descriptions, organisers and resources from ICAIF 2026, held in Milan on November 14–17, 2026.',
+  'workshop.html': 'Workshop descriptions, organisers and detailed agendas from ICAIF 2026, held in Milan on November 14–15, 2026.',
 };
 const titles = {
   'workshop-papers.html': 'Workshop Papers | ICAIF 2026 Milan',
   'accepted-papers.html': 'Accepted Papers | ICAIF 2026 Milan',
   'index.html': 'ICAIF 2026 Milan | ACM Conference on AI in Finance',
-  'registration.html': 'Registration & Fees | ICAIF 2026 Milan',
-  'important-dates.html': 'Important Dates & Deadlines | ICAIF 2026 Milan',
+  'registration.html': 'Registration Archive & Support | ICAIF 2026 Milan',
+  'important-dates.html': 'Dates & Deadlines Archive | ICAIF 2026 Milan',
   'programme.html': 'Conference Programme | ICAIF 2026 Milan',
   'workshop.html': 'AI in Finance Workshops | ICAIF 2026 Milan',
   'tutorials.html': 'AI in Finance Tutorials | ICAIF 2026 Milan',
   'competitions.html': 'AI in Finance Competitions | ICAIF 2026 Milan',
-  'venue.html': 'Venue & Travel: Bocconi University | ICAIF 2026 Milan',
+  'venue.html': 'Venue: Bocconi University | ICAIF 2026 Milan',
+  'screensaver.html': 'Screensaver Retired | ICAIF 2026 Milan',
+  'media-kit.html': 'Media Kit Removed | ICAIF 2026 Milan',
+  'become-a-sponsor.html': 'Sponsorship Archive | ICAIF 2026 Milan',
 };
 const image = {
   '@type': 'ImageObject', '@id': `${origin}/#conference-image`,
-  url: `${origin}/img/piazza-duomo-tramonto.jpg`, width:1536,height:1024,
-  caption:'Milan Cathedral and Piazza del Duomo at sunset',
-  creditText:'Based on Piazza del Duomo by kuhnmi (original photograph: CC BY 2.0). AI-edited for ICAIF 2026: people removed; lighting, sky and colors modified.',
-  isBasedOn:{'@type':'ImageObject',url:'https://commons.wikimedia.org/wiki/File:Piazza_del_Duomo_-_kuhnmi.jpg',license:'https://creativecommons.org/licenses/by/2.0/'},
+  url: `${origin}/img/hero/icaif-waves-hero-v1.jpg`, width:1774,height:887,
+  caption:'ICAIF 2026 navy, blue and copper wave illustration',
+  creditText:'AI-generated for ICAIF 2026, coordinated with the conference brand artwork.',
 };
 const organization = {'@type':'Organization','@id':`${origin}/#organizer`,name:'ACM ICAIF',url:`${origin}/`,email:'andrea.maurino@unimib.it'};
 const event = {
   '@type':'Event','@id':`${origin}/#event`,name:"ICAIF '26 — 7th ACM International Conference on AI in Finance",
-  description:'The 7th ACM International Conference on AI in Finance in Milan, Italy, November 14–17, 2026. Workshops and tutorials on November 14–15; main conference on November 16–17.',
+  description:'The 7th ACM International Conference on AI in Finance was held in Milan, Italy, November 14–17, 2026. Workshops and tutorials on November 14–15; main conference on November 16–17.',
   startDate:'2026-11-14',endDate:'2026-11-17',
   eventAttendanceMode:'https://schema.org/MixedEventAttendanceMode',
   eventStatus:'https://schema.org/EventScheduled',url:`${origin}/`,image:{'@id':image['@id']},
@@ -96,7 +105,12 @@ function buildSeo(root, { updated, onlyPages = [] } = {}) {
     html = setMeta(html,'name','twitter:title',title);
     html = setMeta(html,'property','og:url',url);
     html = setMeta(html,'property','og:site_name',website.name);
+    html = setMeta(html,'property','og:image',image.url);
+    html = setMeta(html,'property','og:image:secure_url',image.url);
+    html = setMeta(html,'property','og:image:width',String(image.width));
+    html = setMeta(html,'property','og:image:height',String(image.height));
     html = setMeta(html,'property','og:image:alt',image.caption);
+    html = setMeta(html,'name','twitter:image',image.url);
     html = setMeta(html,'name','twitter:image:alt',image.caption);
     const page = {'@type':'WebPage','@id':`${url}#webpage`,url,name:title,description,inLanguage:'en',dateModified:modified,isPartOf:{'@id':website['@id']},about:{'@id':event['@id']},primaryImageOfPage:{'@id':image['@id']}};
     const graph = [website,organization,event,image,page];

@@ -252,7 +252,7 @@ The hierarchy uses bold, tightly tracked headings and relaxed introductory text.
 - **Subsection heading:** the `subsection-title` token increases to 24px at 640px. Native card titles retain their component role.
 - **Body:** the `body` token records the shared base text. Existing pages select smaller native control and supporting-text sizes where needed.
 
-The home hero has its existing larger headline scale, with the conference date above it in the existing light copper accent. Home's sponsor and speaker headings both use the shared `section-title` hierarchy. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
+The home hero uses the navy wave illustration from `assets/hero/icaif-waves-hero-v1.png`, generated in coordination with the ICAIF Figma artwork. Fine white/blue meshes, dotted contours and a slender copper orbit concentrate on the right; the left stays calm behind the live text. The static decorative picture uses responsive WebP sources and a JPG fallback with high fetch priority, under the existing semantic navy overlay at 20%. It aligns left to keep bright wave crests away from the copy when narrow screens crop the artwork. The established headline scale and light-copper date remain. Home's sponsor and speaker headings both use the shared `section-title` hierarchy. The programme's compact header and time/session hierarchy are local surface rules, described in its surface record.
 
 Home speaker appearance badges use the existing orange treatment and link to the matching day and exact named programme session. Labels identify the confirmed format and date, including Panel and Banquet speech where appropriate; speakers without a named slot retain undated cards. Keep the semantic time, visible link treatment, 44px touch target and speaker-specific accessible name. Sources and current mappings are in `docs/speakers-source.md`.
 
@@ -274,7 +274,7 @@ Tutorials follows the workshop page composition: the navy header and shared inde
 
 The site combines tonal surfaces with restrained native component depth. Light navigation dropdowns use the existing small shadow; native buttons and fields retain daisyUI depth where their surface does not override it. The programme deliberately removes button shadows and separates flat session cells with slate rules. This local treatment does not prohibit shadows elsewhere in the incumbent site.
 
-The sidecar records the sampled dropdown shadow and native state motion. News is the only primary-navigation item with an orange update dot, in both desktop and mobile menus. At the user's request, it blinks slowly with the native two-second opacity pulse and remains static under reduced motion. Priority-action accents remain static. Reduced-motion rules remove smooth scrolling and disclosure rotation; the venue map uses a static camera/route while short color and opacity feedback remains available.
+Native buttons retain their existing state feedback. The archived News navigation item no longer carries an animated update dot. Priority-action accents remain static. Reduced-motion rules remove smooth scrolling and disclosure rotation.
 
 ## Shapes
 
@@ -304,7 +304,7 @@ The programme uses native daisyUI `input` and `select` controls with visible lab
 
 ### Navigation
 
-The registration status banner was removed site-wide at the user's request on November 17, 2026. Primary navigation now leads directly into the page content. Home's Attendees and Partners next-step rows and the final registration call-to-action section were also removed; retain the Authors workshop row and the established spacing and styles of the remaining content.
+Following the November 17 post-conference cleanup, navigation focuses on the conference record: News archive, Organization, Programme, Venue and Sponsors & Supporters. Home states that ICAIF 2026 has concluded. Registration, expired calls and sponsorship offers are removed from primary navigation; their original pages remain as clearly marked, collapsible archives indexed from News. The programme content and functionality remain unchanged at the user’s explicit request. The screensaver implementation is removed and its old URLs show a static retirement notice.
 
 The existing navy navigation includes light dropdown menus with explicit dark text. The current page's desktop navigation state uses a light tonal fill over navy. Navigation and desktop section-index controls have at least 44px height. Mobile navigation closes with Escape or an outside click through the shared script; Escape returns focus to the relevant disclosure summary. Mobile footer links and disclosure summaries retain the 44px height convention.
 
@@ -330,9 +330,9 @@ The session action row now contains the agenda button without a repeated “Sess
 
 The banquet session uses a full-width reading column with its title, time/category, complete venue and entrance, admission notice, and two supporting actions: Google Maps and My agenda. Its illustrative composition combines the real Cavallerizze photograph with a dinner place setting, using navy linen, white porcelain and warm copper tones from the site's palette. It appears at the right and fades into the white reading surface; phones keep the image faint beneath the complete text. Preserve 44px actions, the illustrative-composition label and linked museum photo credit, and the existing square programme-cell boundary. Print omits the image and credit. Image provenance and the Via Olona context are recorded in `docs/banquet-photo-source.md`.
 
-### Interactive Venue Map
+### Venue Map
 
-The map retains a textual hotel list and a static image fallback. Hotel markers outside the painted viewport leave the tab order; redraws and popup closure preserve focus on a visible marker or map control. Camera and route motion respects the visitor's motion preference and the explicit pause control.
+The venue uses the static city-map images and keeps the archived indoor floor explorer for programme room links. Travel routes, hotels and their runtime/styles have been removed. The media kit and its dedicated logos, photographs, ZIP and build task are removed. Its old HTML routes retain a short notice and archive links, following the screensaver retirement pattern; the shared footer no longer links to it.
 
 ### Accepted Papers
 

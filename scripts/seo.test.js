@@ -64,6 +64,6 @@ test('News structured list matches visible announcements and their order', () =>
   assert.equal(list.numberOfItems, anchors.length);
   assert.deepEqual(list.itemListElement.map(item => item.url), anchors);
   assert.deepEqual(list.itemListElement.map(item => item.position), anchors.map((_, index) => index + 1));
-  assert.equal(list.itemListElement[0].name, 'Startup competition finalists announced');
+  assert.equal(list.itemListElement[0].name, 'ICAIF 2027 will be held in Atlanta');
   assert.equal(graph.find(node => node['@type'] === 'WebPage').mainEntity['@id'], list['@id']);
 });

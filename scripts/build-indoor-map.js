@@ -163,7 +163,7 @@ const clientData = { ...data, floors: data.floors.map(floor => ({ ...floor, plac
 const markup = `${marker}
       <section id="inside-building" class="section-space indoor-section scroll-mt-24" aria-labelledby="indoor-heading">
         <div class="site-container">
-          <div class="indoor-intro"><h2 id="indoor-heading" data-index-label="Inside the building" class="section-title">Inside the building</h2><p class="venue-section-lead">Choose a floor, then select a room, area or facility.</p></div>
+          <div class="indoor-intro"><h2 id="indoor-heading" data-index-label="Archived floor plans" class="section-title">Archived floor plans</h2><p class="venue-section-lead">The conference room maps are preserved for reference alongside the programme.</p></div>
           <p class="indoor-preview-note">Ground floor: entrance and registration. Level −1: Main Hall, exhibition and catering. Level −2: posters between Aula Magna and the workshop classrooms AS01–AS03.</p>
           <div class="indoor-explorer" data-indoor-map>
             <div class="indoor-toolbar">
