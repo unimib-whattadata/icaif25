@@ -1,5 +1,11 @@
 # Programme data
 
+## Oral Session 14 chair — November 17, 2026
+
+The user confirms **Tristan Till (Technical University of Munich)** as chair of **Oral Session 14: Responsible AI: Bias, ESG and Compliance**, replacing Rachel Chung. The session remains **Tuesday November 17, 14:30–15:30 CET, Room 2**, with its existing ID and ordered papers **732, 949, 1043**. The programme update date, metadata and sitemap use **November 17, 2026**.
+
+At the user's additional request, Whova's existing session description was saved and reopened in Session Manager, confirming the new chair with the same title, date, times, Room 2, paper list, full-programme link and existing livestream. Readback evidence is in `output/whova-session14-2026-11-17/whova-saved.jpg`.
+
 ## Stefano Pasquali keynote title — November 16, 2026
 
 The user requests the website and Whova update from Andrea Prampolini's message in the supplied November 16 screenshot. The **Tuesday November 17, 14:00–14:30 CET, Main Hall** keynote is titled **From copilots to mission-critical AI**, with the supplied subtitle **Crossing the last mile from assistance to accountability, when AI and data are finally trusted and sovereign**. The public heading retains Stefano Pasquali's name and keynote label; the description retains his confirmed Executive VP at Domyn role. The existing `session-2026-11-17-1400-230e8289` ID and timetable fields are preserved.

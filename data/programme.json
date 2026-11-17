@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "timezone": "Europe/Rome",
   "days": [
     {
@@ -1046,7 +1046,7 @@
       "title": "Oral Session 14: Responsible AI: Bias, ESG and Compliance",
       "type": "oral-session",
       "room": "Room 2",
-      "detail": "3 presentations\nSession chair: Rachel Chung (Carnegie Mellon University)",
+      "detail": "3 presentations\nSession chair: Tristan Till (Technical University of Munich)",
       "pending": false,
       "href": "",
       "paperIds": [
